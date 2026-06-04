@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tata AIG Workstation Booking System – RethinkingWeb Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/case4.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+
+  <!-- ───────── NAV ───────── -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+      </a>
+
+      <!-- DESKTOP LINKS -->
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html" class="nav__link">Home</a>
+
+        <div class="nav__dropdown">
+          <a href="solutions.html" class="nav__link">
+            Solutions
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </a>
+          <div class="dropdown__panel">
+            <a href="managed.html">Managed Services</a>
+            <a href="consulting.html">IT Consulting &amp; Advisory</a>
+            <a href="cyber.html">Cyber Security</a>
+            <a href="web_development.html">Web Development</a>
+            <a href="mobile-development.html">Mobile Development</a>
+            <a href="cloud.html">Cloud Services</a>
+            <a href="software.html">Software Development</a>
+            <a href="airtable.html">Enterprise Airtable</a>
+            <a href="web-performance.html">Web Performance Optimization</a>
+            <a href="seo.html">On-page Technical SEO</a>
+          </div>
+        </div>
+
+        <div class="nav__dropdown">
+          <a href="about.html" class="nav__link">
+            Company
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </a>
+          <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+            <a href="about.html">About Us</a>
+            <a href="whyus.html">Why Us</a>
+            <a href="team.html">Team</a>
+            <a href="careers.html">Careers</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="case.html">Case Studies</a>
+          </div>
+        </div>
+
+        <a href="case.html" class="nav__link nav__link--active">Case Studies</a>
+        <a href="blogs.html" class="nav__link">Blogs</a>
+
+        <div class="nav-actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+        </div>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
+        <a href="contact.html" class="btn btn--primary">Contact Us</a>
+      </div>
+
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ───────── MOBILE NAV DRAWER ───────── -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav__header">
+      <a href="index.html">
+        <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+      </a>
+      <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="mobile-nav__links">
+      <a href="index.html" class="mob-link">Home</a>
+
+      <div class="mob-accordion">
+        <div class="mob-accordion__header"></div>
+        <button class="mob-accordion__btn" aria-expanded="false">
+          <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+          <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="mob-accordion__panel">
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable Managed Services</a>
+          <a href="web-performance.html">Web Performance Optimization</a>
+          <a href="seo.html">On-page Technical SEO</a>
+        </div>
+      </div>
+
+      <div class="mob-accordion">
+        <button class="mob-accordion__btn" aria-expanded="false">
+          <a href="about.html" class="mob-accordion__link">Company</a>
+          <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="mob-accordion__panel">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="mob-link">Case Studies</a>
+      <a href="blogs.html" class="mob-link">Blogs</a>
+      <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+    </nav>
+  </div>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ───────── HERO ───────── -->
+  <section class="cs-detail-hero">
+    <div class="cs-hero__bg">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="container cs-detail-hero__inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="case.html">Case Studies</a>
+        <span>›</span>
+        <span>Tata AIG Workstation Booking System</span>
+      </div>
+      <div class="section-label">Software Development</div>
+      <h1 class="cs-detail-hero__title">Developing a Workstation Booking System <em>for Tata AIG</em></h1>
+      <div class="cs-detail-hero__meta">
+        <span class="meta-tag">Insurance</span>
+        <span class="meta-tag">Software Development</span>
+        <span class="meta-tag">India</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── HERO IMAGE ───────── -->
+  <div class="container cs-hero-image-wrap">
+    <div class="cs-hero-image">
+      <img src="images/3.webp" alt="Tata AIG Workstation Booking System" />
+    </div>
+  </div>
+
+  <!-- ───────── MAIN CONTENT ───────── -->
+  <section class="cs-content-section">
+    <div class="container cs-content-grid">
+
+      <!-- SIDEBAR -->
+      <aside class="cs-sidebar">
+        <div class="sidebar-card">
+          <h4>Industry</h4>
+          <p>Insurance / Financial Services</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Service</h4>
+          <p>Software Development / IT Solutions</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Location</h4>
+          <p>India</p>
+        </div>
+        <div class="sidebar-card sidebar-card--highlight">
+          <h4>Results at a Glance</h4>
+          <ul>
+            <li>✔ Optimized Workspace Allocation</li>
+            <li>✔ Improved Employee Productivity</li>
+            <li>✔ Automated Booking Processes</li>
+            <li>✔ Enhanced Employee Satisfaction</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn btn--primary btn--full sidebar-cta">Start Your Project</a>
+      </aside>
+
+      <!-- ARTICLE -->
+      <article class="cs-article">
+
+        <div class="cs-section-block">
+          <h2>Introduction</h2>
+          <p>Tata AIG, a leading insurance company and a prominent joint venture between the Tata Group and AIG, recognized the growing need for an efficient and streamlined approach to managing office workspaces. As hybrid work models became increasingly prevalent, the challenge of workspace allocation and utilization became a critical operational concern for organizations of Tata AIG's scale.</p>
+          <p>This case study focuses on the development of a customized Workstation Booking System (WBS) to improve workspace management and employee experience at Tata AIG. RethinkingWeb partnered with Tata AIG to design and deliver a tailored digital solution that would automate desk bookings, optimize space utilization, and significantly improve the day-to-day working experience for employees across their offices in India.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Problem Statement</h2>
+          <p>Tata AIG faced significant challenges related to workspace allocation, desk availability, and manual booking processes. With a large workforce operating across multiple floors and office locations, the existing ad hoc approach to desk management was proving inefficient and creating friction for employees every day.</p>
+          <p>The absence of a centralized system meant that employees had no reliable way to check desk availability before arriving at the office, leading to frequent conflicts over seating arrangements. Managers lacked visibility into actual space utilization, making it difficult to plan capacity effectively. The manual processes in place were time-consuming, prone to errors, and lacked proper audit controls — ultimately reducing employee satisfaction and overall productivity. A robust, automated, and scalable solution was urgently needed to bring order and efficiency to Tata AIG's workspace management.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Solutions</h2>
+          <p>In collaboration with RethinkingWeb, a specialized IT solutions partner, Tata AIG developed a comprehensive and customized Workstation Booking System. The solution was designed to provide employees with a seamless, user-friendly interface to book workstations, manage desk availability in real time, and enable management to optimize workspace utilization across all office locations. The key solution components included:</p>
+
+          <div class="cs-solution-cards">
+            <div class="solution-card">
+              <div class="solution-card__icon">🖥️</div>
+              <h3>Centralized Booking Portal</h3>
+              <p>A unified web-based portal was developed to allow all employees to view real-time desk availability across floors and office locations, and make hassle-free bookings in advance or on the same day.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon">📅</div>
+              <h3>Real-Time Availability Management</h3>
+              <p>The system provides live updates on workstation status — available, booked, or temporarily reserved — eliminating conflicts and ensuring employees always have accurate seating information before they arrive.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon">🗺️</div>
+              <h3>Interactive Floor Map</h3>
+              <p>An interactive, visual floor-plan interface was integrated, enabling employees to intuitively select their preferred workstation by viewing the actual layout of each floor, making the booking experience natural and efficient.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon">📊</div>
+              <h3>Admin Dashboard &amp; Analytics</h3>
+              <p>A powerful management dashboard was built for HR and facilities teams, providing insights into space utilization trends, peak booking periods, and occupancy rates to support data-driven space planning decisions.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon">🔔</div>
+              <h3>Automated Notifications</h3>
+              <p>Automated email and in-app notifications were integrated to confirm bookings, send reminders, and alert employees of any changes to their reserved workstations, reducing no-shows and last-minute confusion.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon">🔐</div>
+              <h3>Role-Based Access Control</h3>
+              <p>A secure, role-based access control framework was implemented to ensure that employees, team leads, and administrators each have appropriate levels of access and permissions within the system, maintaining data integrity and security.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Implementation</h2>
+          <p>The implementation of the Workstation Booking System followed a structured and agile methodology. RethinkingWeb began with a thorough discovery phase involving detailed consultations with Tata AIG's HR, facilities management, and IT teams to understand their existing workflows, pain points, and specific requirements. This collaborative approach ensured that the solution was precisely tailored to Tata AIG's operational context.</p>
+          <p>The development team designed the system architecture with scalability and security at its core, leveraging modern web technologies to build a robust and responsive application. User acceptance testing (UAT) was conducted with representative employee groups across different departments to validate usability and gather feedback before full deployment. The rollout was phased to allow for smooth adoption, with dedicated training sessions and support materials provided to help employees and administrators transition confidently to the new system. Ongoing technical support ensured any post-launch issues were swiftly resolved.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Results &amp; Achievements</h2>
+          <p>The successful development and deployment of the Workstation Booking System delivered measurable and lasting benefits for Tata AIG, transforming how the organization manages and utilizes its office spaces:</p>
+
+          <div class="cs-results-grid">
+            <div class="result-item">
+              <div class="result-item__icon">🏆</div>
+              <h3>Optimized Workspace Allocation</h3>
+              <p>The WBS enabled Tata AIG to significantly improve workspace allocation efficiency. Facilities teams gained real-time visibility into desk utilization, allowing them to right-size office spaces and eliminate wasted capacity.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon">📈</div>
+              <h3>Improved Employee Productivity</h3>
+              <p>Employees no longer wasted time searching for available desks upon arrival. The ability to pre-book preferred workstations allowed staff to start their workday immediately, directly contributing to measurable gains in productivity.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon">⚙️</div>
+              <h3>Fully Automated Processes</h3>
+              <p>Manual, error-prone booking processes were completely eliminated. The automated system reduced administrative overhead, minimized booking conflicts, and freed up HR and facilities staff to focus on higher-value activities.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon">😊</div>
+              <h3>Enhanced Employee Satisfaction</h3>
+              <p>The intuitive, self-service booking experience was met with strong positive feedback from employees. The system empowered staff with greater control over their work environment, contributing to a more employee-centric workplace culture.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-summary-box">
+          <h2>Conclusion</h2>
+          <p>Through the successful development and implementation of the Workstation Booking System, RethinkingWeb transformed the way Tata AIG's employees managed and utilized workspaces. The system optimized workspace allocation, improved productivity, and enhanced employee satisfaction — positioning Tata AIG as a forward-thinking organization committed to creating a streamlined and employee-centric work environment. This case study demonstrates how purpose-built software solutions can solve real operational challenges and drive meaningful business impact. Our software development expertise can help your organization achieve similar transformation — reach out to start a conversation.</p>
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+  <!-- ───────── MORE CASE STUDIES ───────── -->
+  <section class="cs-more">
+    <div class="container">
+      <div class="section-label">Case Studies</div>
+      <h2 class="section-title">See More <em>Case Studies</em></h2>
+
+      <div class="cs-more-grid">
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/1.webp" alt="One Australia Group" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Transforming the Australian Business Landscape: One Australia Group</h3>
+            <p class="cs-card__desc">This case study showcases the development of a professional website for A One Australia Education Group, a premier coaching institute specialising in IELTS, PTE, and NAATI CCL preparation, helping them reach students globally.</p>
+            <a href="case1.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/soezi.webp" alt="Soezi Website Development" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Innovating Web Experiences: The Soezi Website Development</h3>
+            <p class="cs-card__desc">This case study focuses on the development of the Soezi e-commerce website, aimed at establishing a strong online presence for Bollywood celebrity Sonakshi Sinha's press-on nail brand in India.</p>
+            <a href="case2.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/2.webp" alt="Insurance UAM" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Developing User Access Management for Information Security at Leading Insurance Company</h3>
+            <p class="cs-card__desc">This case study focuses on the development of a robust User Access Management (UAM) system to enhance security and control access to sensitive information at a leading Indian insurance provider.</p>
+            <a href="case3.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CONTACT ───────── -->
+    <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
+            <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p>Streamlining IT for an Ever Changing World</p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Solutions</h4>
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable Managed Services</a>
+          <a href="web-performance.html">Web Performance Optimization Services</a>
+          <a href="seo.html">On-page Technical SEO implementation</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank">Mulund East, Mumbai, India – 400081</a>
+          <a href="tel:+919920996021">+91-9920-9960-21</a>
+          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <a href="index.html"><span>© 2026 RethinkingWeb</span></a>
+        <div class="footer__links">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/case4.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>

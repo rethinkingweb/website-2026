@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On-Page Technical SEO Implementation | RethinkingWeb</title>
+  <meta name="description" content="Expert on-page technical SEO implementation — structured data, Core Web Vitals, meta optimization, and schema markup that drives organic growth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/seo.css" />
+</head>
+<body>
+
+  <!-- ── Ambient Background ── -->
+  <div class="hero__bg" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+ <!-- ───────── NAV ───────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html" class="nav__link">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel">
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable</a>
+          <a href="web-performance.html">Web Performance Optimization</a>
+          <a href="seo.html">On-page Technical SEO</a>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link">Case Studies</a>
+      <a href="blogs.html" class="nav__link">Blogs</a>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
+      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav__header">
+    <a href="index.html">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav__links">
+    <a href="index.html" class="mob-link">Home</a>
+
+    
+    <!-- Solutions accordion -->
+    <div class="mob-accordion">
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion">
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link">Case Studies</a>
+    <a href="blogs.html" class="mob-link">Blogs</a>
+    <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+  <!-- ══════════════════════════
+       HERO
+  ══════════════════════════ -->
+  <section class="md-hero">
+    <div class="container">
+      <div class="md-hero__inner">
+
+        <!-- Left: Copy -->
+        <div class="md-hero__content">
+          <div class="md-breadcrumb">
+            <a href="#">Home</a>
+            <span>›</span>
+            <a href="#">Services</a>
+            <span>›</span>
+            <span>On-Page Technical SEO</span>
+          </div>
+
+          <div class="hero__badge">
+            <span class="badge__dot"></span>
+            Trusted by 200+ Websites
+          </div>
+
+          <h1 class="md-hero__title">
+            On-Page <em>Technical SEO</em><br>Implementation
+          </h1>
+
+          <p class="md-hero__sub">
+            We go beyond keywords. Our technical SEO specialists fix the foundations — structured data, Core Web Vitals, crawlability, and schema — so Google understands and ranks your site.
+          </p>
+
+          <div class="md-hero__cta">
+            <a class="btn btn--primary btn--lg" href="#form">Schedule a Free Consultation</a>
+            <a class="btn btn--outline btn--lg" href="#services">See What We Fix</a>
+          </div>
+
+          <div class="hero__social-proof">
+            <span class="stars">★★★★★</span>
+            <strong>4.9/5</strong>
+            <span class="divider">|</span>
+            <span>From 180+ verified client reviews</span>
+          </div>
+        </div>
+
+        <!-- Right: Visual -->
+        <div class="md-hero__visual">
+
+          <!-- Phone -->
+          <div class="phone-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-status-bar"><span>9:41</span><span>▲ LTE ■</span></div>
+                <div class="phone-app-bar">
+                  <div class="phone-app-icon" style="background:#4285F4;color:#fff;">G</div>
+                  <span class="phone-app-title">Search Results</span>
+                </div>
+                <div class="phone-banner" style="display:flex;align-items:center;justify-content:center;padding:0 10px;">
+                  <span style="font-size:0.6rem;font-weight:800;color:#fff;text-align:center;line-height:1.3">#1 RANK<br>YOUR SITE</span>
+                </div>
+                <div class="phone-cards-row" style="margin-top:8px;">
+                  <div class="phone-mini-card mc--orange" style="display:flex;align-items:center;justify-content:center;">
+                    <span style="font-size:0.55rem;color:#fff;font-weight:700;">Schema ✓</span>
+                  </div>
+                  <div class="phone-mini-card mc--pale" style="display:flex;align-items:center;justify-content:center;">
+                    <span style="font-size:0.55rem;color:#7A6F68;font-weight:700;">CWV ✓</span>
+                  </div>
+                </div>
+                <div class="phone-list-items">
+                  <div class="phone-list-item"></div>
+                  <div class="phone-list-item pli--short"></div>
+                  <div class="phone-list-item"></div>
+                  <div class="phone-list-item pli--short"></div>
+                  <div class="phone-list-item"></div>
+                </div>
+                <div class="phone-bottom-bar">
+                  <span>🔍</span><span>🏠</span><span>📊</span><span>⚙️</span>
+                </div>
+              </div>
+            </div>
+            <div class="phone-glow"></div>
+          </div>
+
+          <!-- Icon Grid -->
+          <div class="md-icon-grid">
+            <div class="md-icon-card" data-delay="0">
+              <span>🏷️</span>
+              <p>Meta Tags</p>
+            </div>
+            <div class="md-icon-card" data-delay="100">
+              <span>⚡</span>
+              <p>Core Web Vitals</p>
+            </div>
+            <div class="md-icon-card" data-delay="200">
+              <span>🗂️</span>
+              <p>Schema Markup</p>
+            </div>
+            <div class="md-icon-card" data-delay="300">
+              <span>🔗</span>
+              <p>Canonical URLs</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- /visual -->
+      </div>
+
+      <!-- Stats Strip -->
+      <div class="md-stats reveal">
+        <div class="md-stat">
+          <div class="stat-num">3<span class="stat-plus">×</span></div>
+          <span class="stat-label">Average organic traffic increase</span>
+        </div>
+        <div class="md-stat">
+          <div class="stat-num">95<span class="stat-plus">+</span></div>
+          <span class="stat-label">PageSpeed scores achieved</span>
+        </div>
+        <div class="md-stat">
+          <div class="stat-num">200<span class="stat-plus">+</span></div>
+          <span class="stat-label">Websites fully optimized</span>
+        </div>
+        <div class="md-stat">
+          <div class="stat-num">48<span class="stat-plus">h</span></div>
+          <span class="stat-label">Avg. implementation turnaround</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       BENEFITS
+  ══════════════════════════ -->
+  <section class="md-benefits" id="services">
+    <div class="container">
+      <div class="md-benefits__grid">
+
+        <div class="reveal">
+          <div class="section-label">Why It Matters</div>
+          <h2 class="section-title">Technical SEO is the <em>foundation</em> of every ranking</h2>
+          <p class="md-lead">
+            Great content means nothing if search engines can't crawl, index, or understand it. Our on-page technical SEO service fixes every layer — from HTML structure to server responses — so your pages perform exactly as intended.
+          </p>
+          <p class="md-lead">
+            We combine manual expertise with automated auditing tools to identify issues competitors miss, then implement fixes with precision and speed.
+          </p>
+          <!-- <a class="btn btn--primary" href="#contact" style="margin-top:1rem;">Start Your Audit →</a> -->
+        </div>
+
+        <div class="md-benefits__cards">
+          <div class="md-benefit-card reveal">
+            <div class="md-benefit-card__icon">🏷️</div>
+            <h3>Meta Tag Optimization</h3>
+            <p>Title tags, meta descriptions, and Open Graph tags crafted for CTR and crawlability — every page, perfectly structured.</p>
+          </div>
+          <div class="md-benefit-card reveal">
+            <div class="md-benefit-card__icon">⚡</div>
+            <h3>Core Web Vitals</h3>
+            <p>LCP, FID, and CLS scores fixed to meet Google's page experience thresholds. Faster pages rank higher and convert better.</p>
+          </div>
+          <div class="md-benefit-card reveal">
+            <div class="md-benefit-card__icon">🗂️</div>
+            <h3>Schema & Structured Data</h3>
+            <p>JSON-LD schema markup for FAQs, reviews, breadcrumbs, products, and more — unlocking rich results in SERPs.</p>
+          </div>
+          <div class="md-benefit-card reveal">
+            <div class="md-benefit-card__icon">🔗</div>
+            <h3>Canonical & URL Structure</h3>
+            <p>Eliminate duplicate content, consolidate link equity, and ensure every URL is clean, crawlable, and canonicalized correctly.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       FOCUS DARK BAND
+  ══════════════════════════ -->
+  <section class="md-focus">
+    <div class="container">
+      <div class="md-focus__inner">
+
+        <div class="md-focus__text reveal">
+          <div class="section-label">Our Process</div>
+          <h2 class="section-title">Every fix is <em>deliberate</em>, documented &amp; measurable</h2>
+          <p>We don't run generic audits and dump a PDF on your desk. Every on-page recommendation is prioritized by ranking impact, implemented with developer-grade precision, and tracked in a live report you can check anytime.</p>
+          <div class="md-focus__checklist" style="margin-top:2rem;">
+            <div class="md-focus__check"><span>✓</span> Full technical audit with 150+ checkpoint evaluation</div>
+            <div class="md-focus__check"><span>✓</span> Prioritized fix list — high-impact items first</div>
+            <div class="md-focus__check"><span>✓</span> Implementation by our in-house SEO engineers</div>
+            <div class="md-focus__check"><span>✓</span> Post-implementation crawl verification</div>
+            <div class="md-focus__check"><span>✓</span> Monthly performance reporting &amp; re-audit</div>
+          </div>
+        </div>
+
+        <div class="md-focus__cta reveal">
+          <div class="md-focus__review">
+            <div>
+              <div class="md-focus__stars">★★★★★</div>
+              <p style="color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:0.35rem;font-style:italic;">"Our organic impressions doubled in 60 days. The schema implementation alone got us 4 rich result types."</p>
+              <strong style="font-size:0.85rem;color:#fff;display:block;margin-top:0.5rem;">— Priya S., E-commerce Director</strong>
+            </div>
+          </div>
+          <a class="btn btn--primary btn--full btn--lg" href="#contact">Get Your Free Technical Audit</a>
+          <a class="btn btn--outline btn--full" href="#what-we-fix" style="border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);">View Full Service Checklist</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       WHAT WE FIX (CLIENTS STYLE)
+  ══════════════════════════ -->
+  <section class="md-clients" id="what-we-fix">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">What We Fix</div>
+        <h2 class="section-title">150+ on-page signals, <em>covered</em></h2>
+        <p class="md-clients__sub">From HTML-level issues to server-side configurations, here's a sample of what our implementation team addresses on every engagement.</p>
+      </div>
+      <div class="md-clients__logos reveal">
+        <div class="client-logo">Title Tag Optimization</div>
+        <div class="client-logo">Meta Descriptions</div>
+        <div class="client-logo">H1–H6 Hierarchy</div>
+        <div class="client-logo">Image Alt Text</div>
+        <div class="client-logo">Robots.txt</div>
+        <div class="client-logo">XML Sitemap</div>
+        <div class="client-logo">Canonical Tags</div>
+        <div class="client-logo">Hreflang Tags</div>
+        <div class="client-logo">Open Graph Tags</div>
+        <div class="client-logo">Twitter Cards</div>
+        <div class="client-logo">JSON-LD Schema</div>
+        <div class="client-logo">Breadcrumb Markup</div>
+        <div class="client-logo">FAQ Schema</div>
+        <div class="client-logo">Product Schema</div>
+        <div class="client-logo">Review Schema</div>
+        <div class="client-logo">Core Web Vitals</div>
+        <div class="client-logo">LCP Optimization</div>
+        <div class="client-logo">CLS Fixes</div>
+        <div class="client-logo">301/302 Redirects</div>
+        <div class="client-logo">404 Error Handling</div>
+        <div class="client-logo">Internal Linking</div>
+        <div class="client-logo">URL Structure</div>
+        <div class="client-logo">Pagination Tags</div>
+        <div class="client-logo">Duplicate Content</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       RELATED SERVICES
+  ══════════════════════════ -->
+  <section class="md-related">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Related Services</div>
+        <h2 class="section-title">Complete your <em>SEO stack</em></h2>
+        <p class="md-related__sub">On-page technical SEO is the foundation — pair it with these services for maximum organic growth.</p>
+      </div>
+
+      <div class="md-related__grid">
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">01</div>
+          <div class="md-related-card__icon">🔍</div>
+          <h3>Keyword Research &amp; Mapping</h3>
+          <p>Deep keyword clustering and intent mapping so every page targets the right query at the right funnel stage.</p>
+          <a class="btn btn--outline" href="#" style="margin-top:0.75rem;width:fit-content;">Learn More </a>
+        </div>
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">02</div>
+          <div class="md-related-card__icon">✍️</div>
+          <h3>SEO Content Strategy</h3>
+          <p>Topic clusters, pillar pages, and content briefs optimized for topical authority and E-E-A-T signals.</p>
+          <a class="btn btn--outline" href="#" style="margin-top:0.75rem;width:fit-content;">Learn More </a>
+        </div>
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">03</div>
+          <div class="md-related-card__icon">🔗</div>
+          <h3>Link Building</h3>
+          <p>White-hat backlink acquisition through digital PR, HARO, and niche edits — building real authority over time.</p>
+          <a class="btn btn--outline" href="#" style="margin-top:0.75rem;width:fit-content;">Learn More </a>
+        </div>
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">04</div>
+          <div class="md-related-card__icon">📍</div>
+          <h3>Local SEO</h3>
+          <p>Google Business Profile optimization, NAP consistency, and local schema to dominate map pack rankings.</p>
+          <a class="btn btn--outline" href="#" style="margin-top:0.75rem;width:fit-content;">Learn More </a>
+        </div>
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">05</div>
+          <div class="md-related-card__icon">📊</div>
+          <h3>SEO Analytics &amp; Reporting</h3>
+          <p>Custom GA4 dashboards, Search Console integration, and monthly executive reports tied to business KPIs.</p>
+          <a class="btn btn--outline" href="#" style="margin-top:0.75rem;width:fit-content;">Learn More </a>
+        </div>
+        <div class="md-related-card md-related-card--cta reveal">
+          <div class="md-related-card__icon">🚀</div>
+          <h3>Ready to rank higher?</h3>
+          <p>Get a free technical SEO audit — no strings attached, no sales pitch.</p>
+          <a class="btn btn--primary btn--full" href="#contact" style="margin-top:0.5rem;">Book Free Audit </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       TESTIMONIALS
+  ══════════════════════════ -->
+  <section class="testimonials">
+  <div class="testi-glow1"></div>
+  <div class="testi-glow2"></div>
+
+  <div class="container">
+    <div class="testimonials__head">
+      <div>
+        <div class="section-label">What clients say</div>
+        <h2 class="section-title">Trusted by <em>Leaders</em></h2>
+      </div>
+      <!-- <div class="testi-badge">
+        <div class="testi-badge-dot"></div>
+        5-star rated
+      </div> -->
+    </div>
+  </div>
+
+  <div class="testimonials__track-outer">
+    <div class="testimonials__track" id="testiTrack">
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb implemented a robust platform allowing uninterrupted service even when our team switched to remote work during COVID-19. The transition was completely seamless.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Mustafa Khambati</strong>
+            <span>CEO, Global Voyages — Dubai, UAE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. Professionalism, expertise, and dedication to customer service — they played a vital role building our IT infrastructure.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Saqib Khan</strong>
+            <span>CEO, Smarkerz</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>As a customer for over ten years, RethinkingWeb exemplifies how Managed Services should be executed. They consistently go above and beyond to ensure success.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">HG</div>
+          <div>
+            <strong>Haresh Gajra</strong>
+            <span>Head of Technology, GajraBros</span>
+          </div>
+        </div>
+      </div>
+   <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. After understanding my requirements,
+           they recommended the right approach instead of a proprietary solution. Their expertise, optimization skills,
+           and ongoing support played a vital role in delivering a high-quality website experience.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Malcolm Kalwachwala</strong>
+            <span>Founder, one Australia Group</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb has always been a great partner to work with. They successfully redesigned and developed our eCommerce website,
+           delivering it on time and within budget.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Sanjay Vyas</strong>
+            <span>TendersOnTime</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+ <!-- ───────── CONTACT ───────── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
+             <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p>Streamlining IT for an Ever Changing World</p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Solutions</h4>
+   <a href="managed.html">Managed Services</a>
+   <a href="consulting.html">IT Consulting & Advisory</a>
+   <a href="cyber.html">Cyber Security</a>
+   <a href="web_development.html">Web Development</a>
+    <a href="mobile-development.html">Mobile Development</a>
+    <a href="cloud.html">Cloud Services</a>
+    <a href="software.html">Software Development</a>
+    <a href="airtable.html">Enterprise Airtable Managed Services</a>
+    <a href="web-performance.html">Web Performance Optimization Services</a>
+    <a href="seo.html">On-page Technical SEO implementation</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="office-card__dir">Mulund East, Mumbai, India – 400081</a>
+          <a href="tel:+919920996021">+91-9920-9960-21</a>
+          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+       <a href="index.html">
+  <span>© 2026 RethinkingWeb</span>
+</a>
+        <div class="footer__links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Toast -->
+  <div class="toast" id="toast">🎉 Your SEO audit request has been submitted!</div>
+
+  <script src="js/script.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>

@@ -1,0 +1,683 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manufacturing IT Solutions | RethinkingWeb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/industry.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ───────── NAV ───────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html" class="nav__link">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel">
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable</a>
+          <a href="web-performance.html">Web Performance Optimization</a>
+          <a href="seo.html">On-page Technical SEO</a>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link">Case Studies</a>
+      <a href="blogs.html" class="nav__link">Blogs</a>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
+      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav__header">
+    <a href="index.html">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav__links">
+    <a href="index.html" class="mob-link">Home</a>
+
+    
+    <!-- Solutions accordion -->
+    <div class="mob-accordion">
+        <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion">
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link">Case Studies</a>
+    <a href="blogs.html" class="mob-link">Blogs</a>
+    <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero__bg">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="orb orb--3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>&#8250;</span>
+        <a href="/industries/">Industries</a>
+        <span>&#8250;</span>
+        <span>Industry Manufacturing</span>
+      </div>
+      <div class="page-hero__inner">
+        <div class="page-hero__left">
+          <div class="hero__badge">
+            <span class="badge__dot"></span>
+            Industry Focus
+          </div>
+          <h1 class="page-hero__title">Industry <em>Manufacturing</em></h1>
+          <p class="page-hero__sub">Insightful and reliable manufacturer IT services for productive and effective business.</p>
+          <div class="page-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Get a Free Consultation</a>
+            <a href="#services" class="btn btn--outline btn--lg">Our Services</a>
+          </div>
+          <div class="hero__social-proof">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span>5.0 on Google</span>
+            <span class="divider">|</span>
+            <span>22 Reviews</span>
+          </div>
+        </div>
+        <div class="page-hero__right">
+
+          <div class="hero__image">
+    <img src="images/industryy.avif" alt="Industry">
+  </div>
+          <!-- <img src="images/industryy.avif" alt="Industry"> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS / INTRO -->
+  <section class="focus-section">
+    <div class="container">
+      <div class="focus-grid">
+        <div class="focus-content">
+          <div class="section-label">Focus</div>
+          <h2 class="section-title">Why Manufacturing <em>Businesses Choose Us</em></h2>
+          <p class="focus-text">You have got orders to fill, shipments to make, and clients to keep happy. Why spend your time and precious production resources worrying over your IT infrastructure? With the right managed service provider, you can rest easy that all your daily IT tasks are covered, so you can focus on getting the job done.</p>
+          <p class="focus-text">At RethinkingWeb, we understand the unique demands of managing IT in a manufacturing environment, whether it is maintaining your IOT or ensuring that your ERP system is being properly patched and updated. Let us help you keep your shop humming and create an IT infrastructure plan you can grow on.</p>
+        </div>
+        <div class="focus-checklist">
+          <div class="check-item reveal">
+            <div class="check-icon">&#10003;</div>
+            <div>
+              <strong>24/7 Help Desk Support</strong>
+              <p>US-based, round-the-clock help desk available at any hour to keep your facility running.</p>
+            </div>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-icon">&#10003;</div>
+            <div>
+              <strong>Dedicated vCIO</strong>
+              <p>Your local virtual Chief Information Officer conducts strategic assessments and gap analysis for your IT.</p>
+            </div>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-icon">&#10003;</div>
+            <div>
+              <strong>NIST &amp; CMMC Compliant Security</strong>
+              <p>Cybersecurity solutions designed specifically for manufacturing compliance requirements.</p>
+            </div>
+          </div>
+          <div class="check-item reveal">
+            <div class="check-icon">&#10003;</div>
+            <div>
+              <strong>On-Site &amp; Remote Coverage</strong>
+              <p>Locally based engineers backed by a national network of highly trained technicians.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL PARTNER SECTION -->
+  <section class="partner-section">
+    <div class="container">
+      <div class="section-label">Your Partner</div>
+      <h2 class="section-title">Your local manufacturing IT partner, <em>on-site and on-call</em></h2>
+      <div class="partner-grid">
+        <div class="partner-text">
+          <p>RethinkingWeb offers our clients the best of both worlds: locally based engineers, service staff and vCIOs (virtual Chief Information Officers) who manage your account and service calls, backed up by a national network of highly trained techs. Your facility will be covered by us at any hour.</p>
+          <p>Your local, dedicated vCIO will conduct strategic assessments, gap analysis, and project management for your IT. They ensure our clients have the right network capacity, hardware/software, and cybersecurity solutions they need to fulfill your company needs, whether that is on the shop floor, in the field, or in the office.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box reveal">
+            <span class="stat-num" data-target="10" data-suffix="+">0+</span>
+            <span class="stat-label">Years Proven Track Record</span>
+          </div>
+          <div class="stat-box reveal">
+            <span class="stat-num" data-target="98" data-suffix="%">0%</span>
+            <span class="stat-label">Customer Satisfaction</span>
+          </div>
+          <div class="stat-box reveal">
+            <span class="stat-num" data-target="698" data-suffix="">0</span>
+            <span class="stat-label">Projects Across Technologies</span>
+          </div>
+          <div class="stat-box reveal">
+            <span class="stat-num" data-target="3" data-suffix="">0</span>
+            <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IT SERVICES DELIVERED AT SCALE -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-label">Solutions</div>
+      <h2 class="section-title">Manufacturing IT services, <em>delivered at scale</em></h2>
+      <p class="benefits-intro">We provide end-to-end IT solutions tailored specifically to the manufacturing industry. From ERP to IoT, we have got you covered.</p>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-card__icon">&#128202;</div>
+          <h3>Enterprise Resource Planning (ERP) System</h3>
+          <p>An ERP system integrates various business functions such as inventory management, production planning, supply chain management, finance, and human resources over different aspects of the manufacturing process.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">&#9881;</div>
+          <h3>Manufacturing Execution System (MES)</h3>
+          <p>MES solutions help in managing and monitoring the shop floor operations in real-time. They provide insights into production activities, track work orders, optimize scheduling, and monitor equipment performance.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">&#128260;</div>
+          <h3>Product Lifecycle Management (PLM) System</h3>
+          <p>PLM systems manage the entire lifecycle of a product, from design and development to manufacturing and maintenance. They facilitate collaboration, improve control, and streamline product data and change management.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">&#128666;</div>
+          <h3>Supply Chain Management (SCM) System</h3>
+          <p>SCM systems optimize the supply chain by automating processes such as procurement, inventory management, logistics, and demand forecasting. It reduces lead times, inventory costs, and improves supplier collaboration.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">&#128268;</div>
+          <h3>Internet of Things (IoT) Solutions</h3>
+          <p>IoT technologies gather data from connected devices and sensors across the manufacturing process. This data can be used to monitor performance, track inventory, and optimize production workflows.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">&#128200;</div>
+          <h3>Data Analytics and Business Intelligence (BI) Tools</h3>
+          <p>BI tools help manufacturers analyze large volumes of data collected from various sources. These tools provide valuable insights into production trends, quality control, resource utilization, and supply chain optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IT SERVICES LIST BAND -->
+  <section class="services-band">
+    <div class="container">
+      <div class="services-band__inner">
+        <div class="services-band__left">
+          <div class="section-label">What We Cover</div>
+          <h2 class="section-title" style="color:#fff">Our IT services <em>for manufacturers</em></h2>
+          <a href="#form" class="btn btn--primary btn--lg">Get a Free Consultation</a>
+        </div>
+        <div class="services-band__list">
+          <div class="services-list-col">
+            <div class="services-list-item">&#10003; &nbsp; 24/7 help desk support</div>
+            <div class="services-list-item">&#10003; &nbsp; System design and networking</div>
+            <div class="services-list-item">&#10003; &nbsp; Software license management</div>
+          </div>
+          <div class="services-list-col">
+            <div class="services-list-item">&#10003; &nbsp; Cabling and phone systems</div>
+            <div class="services-list-item">&#10003; &nbsp; On-site systems maintenance</div>
+            <div class="services-list-item">&#10003; &nbsp; NIST and CMMC compliant cybersecurity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- ═══════════════════════════════
+   REVIEWS & TESTIMONIALS
+═══════════════════════════════ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+
+    <!-- ── Section Header ── -->
+    <div class="reviews__header">
+
+      <div class="reviews__header-left">
+        <div class="section-label">Client Reviews</div>
+        <h2 class="section-title">What our clients say about<br><em>working with us</em></h2>
+        <p class="reviews__sub">
+          Rated 5.0 across 22+ Google reviews. Real results, real relationships —
+          every project delivered on time, on budget, and beyond expectations.
+        </p>
+
+        <!-- Google Rating Badge -->
+        <div class="google-badge">
+          <div class="google-badge__logo">
+            <!-- Google G SVG -->
+            <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
+              <path d="M43.6 20.5H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z" fill="#FFC107"/>
+              <path d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4c-7.8 0-14.5 4.4-17.7 10.7z" fill="#FF3D00"/>
+              <path d="M24 44c5.2 0 9.9-1.9 13.5-5.1L31 33.5C29 35 26.6 36 24 36c-5.3 0-9.7-3.4-11.3-8H6.4C9.6 35.5 16.3 44 24 44z" fill="#4CAF50"/>
+              <path d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l.1-.1 6.5 5.4C37.3 39.1 44 34 44 24c0-1.2-.1-2.5-.4-3.5z" fill="#1976D2"/>
+            </svg>
+          </div>
+          <div class="google-badge__info">
+            <div class="google-badge__stars" aria-label="5 stars">★★★★★</div>
+            <div class="google-badge__text">
+              5.0 ·
+              <a href="https://www.google.com/search?q=rethinkingweb" target="_blank" rel="noopener noreferrer">
+                22 Google Reviews
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="reviews__stats">
+        <div class="review-stat" data-count="22" data-suffix="+">
+          <div class="review-stat__num"><span class="count-up">22</span><span>+</span></div>
+          <div class="review-stat__label">Verified Reviews</div>
+        </div>
+        <div class="review-stat" data-count="5.0">
+          <div class="review-stat__num"><span class="count-up">5.0</span></div>
+          <div class="review-stat__label">Average Rating</div>
+        </div>
+        <div class="review-stat" data-count="100" data-suffix="%">
+          <div class="review-stat__num"><span class="count-up">100</span><span>%</span></div>
+          <div class="review-stat__label">On-time Delivery</div>
+        </div>
+        <div class="review-stat" data-count="8" data-suffix="+">
+          <div class="review-stat__num"><span class="count-up">8</span><span>+</span></div>
+          <div class="review-stat__label">Industries Served</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Review Cards ── -->
+    <div class="reviews__grid">
+
+      <!-- Card 1 — Featured -->
+      <div class="review-card review-card--featured" data-aos>
+        <div class="review-card__top">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <div class="review-card__platform">
+            <svg width="13" height="13" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M43.6 20.5H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z" fill="#FFC107"/>
+              <path d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4c-7.8 0-14.5 4.4-17.7 10.7z" fill="#FF3D00"/>
+              <path d="M24 44c5.2 0 9.9-1.9 13.5-5.1L31 33.5C29 35 26.6 36 24 36c-5.3 0-9.7-3.4-11.3-8H6.4C9.6 35.5 16.3 44 24 44z" fill="#4CAF50"/>
+              <path d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l.1-.1 6.5 5.4C37.3 39.1 44 34 44 24c0-1.2-.1-2.5-.4-3.5z" fill="#1976D2"/>
+            </svg>
+            Google
+          </div>
+        </div>
+        <div class="review-card__quote" aria-hidden="true">"</div>
+        <p class="review-card__text">
+          RethinkingWeb is an energized, proficient yet economical company to work with. They have always delivered on due dates and offer awesome communication. We've utilized them for customised PHP tasks, performance testing, and eCommerce development. We will keep on working with RethinkingWeb on future opportunities.
+        </p>
+        <div class="review-card__author">
+          <div class="review-card__avatar" aria-hidden="true">HG</div>
+          <div class="review-card__author-info">
+            <strong>Haresh Gajra</strong>
+            <span>Director · Gajra Bros</span>
+            <a href="https://www.gajrabros.com" target="_blank" rel="noopener noreferrer" class="review-card__site">
+              gajrabros.com ↗
+            </a>
+          </div>
+        </div>
+        <div class="review-card__tag">eCommerce · PHP Development</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="review-card" data-aos>
+        <div class="review-card__top">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <div class="review-card__platform">
+            <svg width="13" height="13" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M43.6 20.5H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z" fill="#FFC107"/>
+              <path d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4c-7.8 0-14.5 4.4-17.7 10.7z" fill="#FF3D00"/>
+              <path d="M24 44c5.2 0 9.9-1.9 13.5-5.1L31 33.5C29 35 26.6 36 24 36c-5.3 0-9.7-3.4-11.3-8H6.4C9.6 35.5 16.3 44 24 44z" fill="#4CAF50"/>
+              <path d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l.1-.1 6.5 5.4C37.3 39.1 44 34 44 24c0-1.2-.1-2.5-.4-3.5z" fill="#1976D2"/>
+            </svg>
+            Google
+          </div>
+        </div>
+        <div class="review-card__quote" aria-hidden="true">"</div>
+        <p class="review-card__text">
+          After evaluating several web development organizations, I reached RethinkingWeb. They proposed an Open Source customization instead of a proprietary platform — a smart move. I'm extremely happy with the result. Best site optimization and after-completion support I've ever encountered.
+        </p>
+        <div class="review-card__author">
+          <div class="review-card__avatar" aria-hidden="true">MK</div>
+          <div class="review-card__author-info">
+            <strong>Malcolm Kalwachwala</strong>
+            <span>Founder · A One Australia</span>
+            <a href="https://oneaustraliagroup.com" target="_blank" rel="noopener noreferrer" class="review-card__site">
+              oneaustraliagroup.com ↗
+            </a>
+          </div>
+        </div>
+        <div class="review-card__tag">Web Development · Open Source</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="review-card" data-aos>
+        <div class="review-card__top">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <div class="review-card__platform">
+            <svg width="13" height="13" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M43.6 20.5H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z" fill="#FFC107"/>
+              <path d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4c-7.8 0-14.5 4.4-17.7 10.7z" fill="#FF3D00"/>
+              <path d="M24 44c5.2 0 9.9-1.9 13.5-5.1L31 33.5C29 35 26.6 36 24 36c-5.3 0-9.7-3.4-11.3-8H6.4C9.6 35.5 16.3 44 24 44z" fill="#4CAF50"/>
+              <path d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l.1-.1 6.5 5.4C37.3 39.1 44 34 44 24c0-1.2-.1-2.5-.4-3.5z" fill="#1976D2"/>
+            </svg>
+            Google
+          </div>
+        </div>
+        <div class="review-card__quote" aria-hidden="true">"</div>
+        <p class="review-card__text">
+          RethinkingWeb redesigned and developed our eCommerce website — it's live now. They finished the project in budget, on time, and with expert and clear correspondence throughout. We would gladly recommend them to any organization searching for software development services.
+        </p>
+        <div class="review-card__author">
+          <div class="review-card__avatar" aria-hidden="true">SV</div>
+          <div class="review-card__author-info">
+            <strong>Sanjay Vyas</strong>
+            <span>CEO · TendersOnTime</span>
+            <a href="https://www.tendersontime.com" target="_blank" rel="noopener noreferrer" class="review-card__site">
+              tendersontime.com ↗
+            </a>
+          </div>
+        </div>
+        <div class="review-card__tag">eCommerce · Software Dev</div>
+      </div>
+
+    </div><!-- /.reviews__grid -->
+
+    <!-- ── CTA Row ── -->
+    <div class="reviews__cta">
+      <a
+        href="https://www.google.com/search?q=rethinkingweb"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="reviews__google-btn"
+      >
+        <svg width="17" height="17" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M43.6 20.5H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z" fill="#FFC107"/>
+          <path d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4c-7.8 0-14.5 4.4-17.7 10.7z" fill="#FF3D00"/>
+          <path d="M24 44c5.2 0 9.9-1.9 13.5-5.1L31 33.5C29 35 26.6 36 24 36c-5.3 0-9.7-3.4-11.3-8H6.4C9.6 35.5 16.3 44 24 44z" fill="#4CAF50"/>
+          <path d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l.1-.1 6.5 5.4C37.3 39.1 44 34 44 24c0-1.2-.1-2.5-.4-3.5z" fill="#1976D2"/>
+        </svg>
+        Read all 22 reviews on Google
+      </a>
+      <!-- <a href="/reviews-awards/" class="btn btn--outline">View all testimonials →</a> -->
+    </div>
+
+  </div>
+</section>
+
+  <!-- CUT COSTS CTA BAND -->
+  <!-- <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2>Cut costs while you improve your productivity</h2>
+          <p>With our managed service packages, we will handle all the headaches for you. No more spending hours on the phone, playing vendor roulette while your systems are down. We have got you.</p>
+        </div>
+        <a href="#form" class="btn btn--primary btn--lg">Get a Free Consultation &#8594;</a>
+      </div>
+    </div>
+  </section> -->
+
+   <!-- ───────── CONTACT ───────── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
+             <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p>Streamlining IT for an Ever Changing World</p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Solutions</h4>
+   <a href="managed.html">Managed Services</a>
+   <a href="consulting.html">IT Consulting & Advisory</a>
+   <a href="cyber.html">Cyber Security</a>
+   <a href="web_development.html">Web Development</a>
+    <a href="mobile-development.html">Mobile Development</a>
+    <a href="cloud.html">Cloud Services</a>
+    <a href="software.html">Software Development</a>
+    <a href="airtable.html">Enterprise Airtable Managed Services</a>
+    <a href="web-performance.html">Web Performance Optimization Services</a>
+    <a href="seo.html">On-page Technical SEO implementation</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="office-card__dir">Mulund East, Mumbai, India – 400081</a>
+          <a href="tel:+919920996021">+91-9920-9960-21</a>
+          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+       <a href="index.html">
+  <span>© 2026 RethinkingWeb</span>
+</a>
+        <div class="footer__links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="toast" id="toast"></div>
+  <script src="js/industry.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>

@@ -1,0 +1,760 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mobile-development — RethinkingWeb</title>
+  <link rel="stylesheet" href="css/mobile-development.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- ───────── NAV ───────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html" class="nav__link">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel">
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable</a>
+          <a href="web-performance.html">Web Performance Optimization</a>
+          <a href="seo.html">On-page Technical SEO</a>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link">Case Studies</a>
+      <a href="blogs.html" class="nav__link">Blogs</a>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
+      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav__header">
+    <a href="index.html">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav__links">
+    <a href="index.html" class="mob-link">Home</a>
+
+    
+    <!-- Solutions accordion -->
+    <div class="mob-accordion">
+        <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion">
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link">Case Studies</a>
+    <a href="blogs.html" class="mob-link">Blogs</a>
+    <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="md-hero">
+    <div class="container">
+      <div class="md-hero__inner">
+
+        <!-- Left: Content -->
+        <div class="md-hero__content">
+          <nav class="md-breadcrumb">
+            <a href="#">Solutions</a>
+            <span>›</span>
+            <span>mobile-development</span>
+          </nav>
+          <div class="hero__badge">
+            <span class="badge__dot"></span>
+            Powering Mobile Experiences
+          </div>
+          <h1 class="md-hero__title">Mobile <em>Development</em></h1>
+          <p class="md-hero__sub">Trust us to leverage the latest tech &amp; industry best practices to develop scalable, secure &amp; high-performance mobile solutions that propel your business forward.</p>
+          <div class="md-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Schedule a Free Consultation</a>
+            <a href="#benefits" class="btn btn--outline btn--lg">Explore Benefits</a>
+          </div>
+          <div class="hero__social-proof">
+            <span class="stars">★★★★★</span>
+            <strong>5/5</strong>
+            <span class="divider">|</span>
+            <span>22 Reviews on Google</span>
+          </div>
+        </div>
+
+        <!-- Right: Phone visual + icon grid -->
+        <div class="md-hero__visual">
+          <div class="phone-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-status-bar">
+                  <span>9:41</span>
+                  <span>●●●</span>
+                </div>
+                <div class="phone-app-bar">
+                  <div class="phone-app-icon" style="background:var(--orange)">📱</div>
+                  <div class="phone-app-title">MyApp</div>
+                </div>
+                <div class="phone-banner"></div>
+                <div class="phone-cards-row">
+                  <div class="phone-mini-card mc--orange"></div>
+                  <div class="phone-mini-card mc--pale"></div>
+                </div>
+                <div class="phone-list-items">
+                  <div class="phone-list-item"></div>
+                  <div class="phone-list-item pli--short"></div>
+                  <div class="phone-list-item"></div>
+                </div>
+                <div class="phone-bottom-bar">
+                  <span>🏠</span><span>🔍</span><span>❤️</span><span>👤</span>
+                </div>
+              </div>
+            </div>
+            <div class="phone-glow"></div>
+          </div>
+
+          <div class="md-icon-grid">
+            <div class="md-icon-card" data-delay="0">
+              <span>🍎</span>
+              <p>iOS</p>
+            </div>
+            <div class="md-icon-card" data-delay="100">
+              <span>🤖</span>
+              <p>Android</p>
+            </div>
+            <div class="md-icon-card" data-delay="200">
+              <span>⚡</span>
+              <p>React Native</p>
+            </div>
+            <div class="md-icon-card" data-delay="300">
+              <span>🦋</span>
+              <p>Flutter</p>
+            </div>
+            <div class="md-icon-card" data-delay="400">
+              <span>🌐</span>
+              <p>PWA</p>
+            </div>
+            <div class="md-icon-card" data-delay="500">
+              <span>☁️</span>
+              <p>Cloud-Ready</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Stats strip -->
+      <div class="md-stats">
+        <div class="md-stat">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years Proven Track Record</span>
+        </div>
+        <div class="md-stat">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="md-stat">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects Across Technologies</span>
+        </div>
+        <div class="md-stat">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BENEFITS ═══ -->
+  <section class="md-benefits" id="benefits">
+    <div class="container">
+      <div class="md-benefits__grid">
+
+        <!-- Left: intro text -->
+        <div class="md-benefits__left reveal">
+          <div class="section-label">Why Choose Us</div>
+          <h2 class="section-title">Benefits of mobile-development<br>provided by <em>RethinkingWeb</em></h2>
+          <p class="md-lead">Our expert team specializes in creating innovative and user-centric mobile applications that drive engagement and deliver exceptional user experiences.</p>
+          <p class="md-lead">Whether you need a native app for iOS or Android, a cross-platform solution, or a progressive web app, we have the expertise to bring your mobile vision to life.</p>
+          <!-- <a href="#form" class="btn btn--primary" style="margin-top:1.25rem;">Start Your App Project</a> -->
+        </div>
+
+        <!-- Right: benefit cards -->
+        <div class="md-benefits__cards">
+          <div class="md-benefit-card reveal">
+            <div class="md-benefit-card__icon">📡</div>
+            <h3>Expanded Reach</h3>
+            <p>Tap into the vast mobile user base, reaching potential customers on smartphones and tablets. Connect with users anytime, anywhere, and increase your brand's visibility.</p>
+          </div>
+          <div class="md-benefit-card reveal">
+            <div class="md-benefit-card__icon">💬</div>
+            <h3>Increased Customer Engagement</h3>
+            <p>Enable direct and personalized communication through push notifications, in-app messaging, and interactive features that drive retention and conversions.</p>
+          </div>
+          <div class="md-benefit-card reveal">
+            <div class="md-benefit-card__icon">✨</div>
+            <h3>Enhanced User Experience</h3>
+            <p>Deliver seamless and intuitive experiences tailored to the mobile platform — smooth navigation, optimized interfaces, and personalized features that delight users.</p>
+          </div>
+          <div class="md-benefit-card reveal">
+            <div class="md-benefit-card__icon">📈</div>
+            <h3>Business Growth &amp; Revenue</h3>
+            <p>Drive business growth through convenient mobile experiences that attract new customers, increase engagement, and facilitate seamless transactions via mobile commerce.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOCUS BAND (dark) ═══ -->
+  <section class="md-focus">
+    <div class="container">
+      <div class="md-focus__inner">
+        <div class="md-focus__text reveal">
+          <div class="section-label">Our Approach</div>
+          <h2 class="section-title">Our mobile-development services<br>let you concentrate on <em>what matters</em></h2>
+          <p>With our mobile-development services we help you reach and engage customers, drive growth, and stay ahead in the mobile-driven digital landscape. We handle the complexity so you can focus on your core business.</p>
+        </div>
+        <div class="md-focus__cta reveal">
+          <div class="md-focus__review">
+            <div>
+              <div class="md-focus__stars">★★★★★</div>
+              <div style="color:rgba(255,255,255,0.55);font-size:0.82rem;margin-top:0.25rem;">5/5 · 22 Google Reviews</div>
+            </div>
+            <div style="border-left:1px solid rgba(255,255,255,0.15);padding-left:1rem;">
+              <div style="color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;">Reviewed on</div>
+              <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;">Google</div>
+            </div>
+          </div>
+          <div class="md-focus__checklist">
+            <div class="md-focus__check"><span>✓</span> Native iOS &amp; Android apps</div>
+            <div class="md-focus__check"><span>✓</span> Cross-platform React Native &amp; Flutter</div>
+            <div class="md-focus__check"><span>✓</span> Progressive Web Apps (PWA)</div>
+            <div class="md-focus__check"><span>✓</span> End-to-end app lifecycle support</div>
+          </div>
+          <a href="#form" class="btn btn--primary btn--lg">Get a Free Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CLIENTS ═══ -->
+<section class="clients">
+  <div class="clients-wrap">
+
+    <!-- LEFT: Text content -->
+    <div class="clients-left">
+      <div style="margin-bottom: 18px"><span class="label-pill">Our Clients</span></div>
+      <h2 class="clients__headline">Working with<br>the <em>best</em> in<br>the industry</h2>
+      <p class="clients__sub">We serve a diverse range of clients who rely on us for innovative solutions that exceed expectations, every single time.</p>
+      <a href="contact.html" class="btn btn-dark">Become a partner </a>
+    </div>
+
+    <!-- RIGHT: Scrolling logo columns -->
+    <div class="clients-right">
+
+      <!-- Column 1 — scrolls UP -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--up">
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
+          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
+          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
+        </div>
+      </div>
+
+      <!-- Column 2 — scrolls DOWN (offset start) -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--down">
+          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
+          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
+          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
+          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+           <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
+          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
+        </div>
+      </div>
+
+      <!-- Column 3 — scrolls UP (slightly faster) -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--up logo-track--fast">
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+        </div>
+      </div>
+
+    </div><!-- /.clients-right -->
+  </div>
+</section>
+
+  <!-- ═══ RELATED SERVICES ═══ -->
+  <section class="md-related" id="services">
+    <div class="container">
+      <div class="section-label">Full-Spectrum Coverage</div>
+      <h2 class="section-title">Related Services in<br><em>IT mobile-development</em></h2>
+      <p class="md-related__sub">We offer a range of related services to enhance your mobile presence and ensure a seamless user experience from concept to launch and beyond.</p>
+
+      <div class="md-related__grid">
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">01</div>
+          <div class="md-related-card__icon">🎨</div>
+          <h3>UI/UX Design</h3>
+          <p>Our expert designers create visually appealing and intuitive user interfaces that enhance the overall experience of your mobile app — focused on usability, accessibility, and engagement.</p>
+        </div>
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">02</div>
+          <div class="md-related-card__icon">🧪</div>
+          <h3>Mobile App Testing</h3>
+          <p>Comprehensive testing across different devices, screen sizes, and operating systems. We identify and resolve bugs, glitches, and performance issues before your launch.</p>
+        </div>
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">03</div>
+          <div class="md-related-card__icon">📊</div>
+          <h3>App Store Optimization (ASO)</h3>
+          <p>We optimize your app's visibility in app stores through keyword research, compelling descriptions, screenshots, and ratings — helping you rank higher and attract more downloads.</p>
+        </div>
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">04</div>
+          <div class="md-related-card__icon">📉</div>
+          <h3>Mobile App Analytics</h3>
+          <p>Gain valuable insights into user behavior, engagement, and app performance. We track retention, session duration, conversion rates, and in-app interactions to drive data-driven decisions.</p>
+        </div>
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">05</div>
+          <div class="md-related-card__icon">🔧</div>
+          <h3>App Maintenance &amp; Support</h3>
+          <p>Our services extend beyond development — we keep your app updated with latest OS versions, ensure device compatibility, and address any issues to keep it running smoothly.</p>
+        </div>
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">06</div>
+          <div class="md-related-card__icon">🔒</div>
+          <h3>Mobile App Security</h3>
+          <p>Protect your app and user data with robust encryption, authentication, and secure data storage techniques that safeguard against potential security breaches.</p>
+        </div>
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">07</div>
+          <div class="md-related-card__icon">⚙️</div>
+          <h3>Performance Optimization</h3>
+          <p>We optimize your mobile app for fast loading times, smooth navigation, and efficient resource utilization by fine-tuning code, server configurations, and database queries.</p>
+        </div>
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">08</div>
+          <div class="md-related-card__icon">🗂️</div>
+          <h3>Wireframing &amp; Prototyping</h3>
+          <p>We create wireframes and interactive prototypes that visually represent your app's UI and UX, letting you validate the flow and design before investing in full-scale development.</p>
+        </div>
+
+        <div class="md-related-card reveal">
+          <div class="md-related-card__num">09</div>
+          <div class="md-related-card__icon">📋</div>
+          <h3>Technical Feasibility &amp; Requirements</h3>
+          <p>We evaluate your app concept's technical feasibility across platforms and work closely with you to document functional requirements, technical specs, and project scope.</p>
+        </div>
+
+        <div class="md-related-card md-related-card--cta reveal">
+          <div class="section-label" style="margin-bottom:0.75rem;">Ready to build?</div>
+          <h3 style="color:var(--charcoal);font-size:1.3rem;">Launch your mobile app today</h3>
+          <p>Schedule a free consultation and let our mobile experts craft the perfect solution for your business.</p>
+          <a href="#form" class="btn btn--primary" style="margin-top:0.5rem;">Schedule Consultation</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="testimonials">
+  <div class="testi-glow1"></div>
+  <div class="testi-glow2"></div>
+
+  <div class="container">
+    <div class="testimonials__head">
+      <div>
+        <div class="section-label">What clients say</div>
+        <h2 class="section-title">Trusted by <em>Leaders</em></h2>
+      </div>
+      <!-- <div class="testi-badge">
+        <div class="testi-badge-dot"></div>
+        5-star rated
+      </div> -->
+    </div>
+  </div>
+
+  <div class="testimonials__track-outer">
+    <div class="testimonials__track" id="testiTrack">
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb implemented a robust platform allowing uninterrupted service even when our team switched to remote work during COVID-19. The transition was completely seamless.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Mustafa Khambati</strong>
+            <span>CEO, Global Voyages — Dubai, UAE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. Professionalism, expertise, and dedication to customer service — they played a vital role building our IT infrastructure.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Saqib Khan</strong>
+            <span>CEO, Smarkerz</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>As a customer for over ten years, RethinkingWeb exemplifies how Managed Services should be executed. They consistently go above and beyond to ensure success.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">HG</div>
+          <div>
+            <strong>Haresh Gajra</strong>
+            <span>Head of Technology, GajraBros</span>
+          </div>
+        </div>
+      </div>
+   <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. After understanding my requirements,
+           they recommended the right approach instead of a proprietary solution. Their expertise, optimization skills,
+           and ongoing support played a vital role in delivering a high-quality website experience.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Malcolm Kalwachwala</strong>
+            <span>Founder, one Australia Group</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb has always been a great partner to work with. They successfully redesigned and developed our eCommerce website,
+           delivering it on time and within budget.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Sanjay Vyas</strong>
+            <span>TendersOnTime</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  <!-- ═══ CONTACT ═══ -->
+    <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
+             <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p>Streamlining IT for an Ever Changing World</p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Solutions</h4>
+   <a href="managed.html">Managed Services</a>
+   <a href="consulting.html">IT Consulting & Advisory</a>
+   <a href="cyber.html">Cyber Security</a>
+   <a href="web_development.html">Web Development</a>
+    <a href="mobile-development.html">Mobile Development</a>
+    <a href="cloud.html">Cloud Services</a>
+    <a href="software.html">Software Development</a>
+    <a href="airtable.html">Enterprise Airtable Managed Services</a>
+    <a href="web-performance.html">Web Performance Optimization Services</a>
+    <a href="seo.html">On-page Technical SEO implementation</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="office-card__dir">Mulund East, Mumbai, India – 400081</a>
+          <a href="tel:+919920996021">+91-9920-9960-21</a>
+          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+       <a href="index.html">
+  <span>© 2026 RethinkingWeb</span>
+</a>
+        <div class="footer__links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/mobile-development.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>

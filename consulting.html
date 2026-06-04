@@ -1,0 +1,736 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Consulting & Advisory Services — RethinkingWeb</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/consulting.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ───────── NAV ───────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html" class="nav__link">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel">
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable</a>
+          <a href="web-performance.html">Web Performance Optimization</a>
+          <a href="seo.html">On-page Technical SEO</a>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link">Case Studies</a>
+      <a href="blogs.html" class="nav__link">Blogs</a>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
+      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav__header">
+    <a href="index.html">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav__links">
+    <a href="index.html" class="mob-link">Home</a>
+
+    
+    <!-- Solutions accordion -->
+    <div class="mob-accordion">
+        <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion">
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link">Case Studies</a>
+    <a href="blogs.html" class="mob-link">Blogs</a>
+    <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+    <!-- ═══ HERO ═══ -->
+    <section class="itc-hero">
+      <div class="hero__bg">
+        <div class="orb orb--1"></div>
+        <div class="orb orb--2"></div>
+        <div class="orb orb--3"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="itc-hero__inner">
+
+          <!-- Left content -->
+          <div class="itc-hero__content">
+            <div class="itc-breadcrumb">
+              <a href="solutions.html">Solutions</a>
+              <span>›</span>
+              <span>IT Consulting &amp; Advisory</span>
+            </div>
+            <div class="section-label">Expert Advisory</div>
+            <h1 class="itc-hero__title">IT Consulting <br/>&amp; <em>Advisory</em></h1>
+            <p class="itc-hero__sub">IT consulting services help implementing scalable solutions — we empower businesses to make informed decisions and achieve your technology goals.</p>
+            <div class="itc-hero__cta">
+              <a href="#form" class="btn btn--primary btn--lg">Schedule a Free Consultation</a>
+              <a href="#benefits" class="btn btn--outline btn--lg">See Benefits</a>
+            </div>
+          </div>
+
+          <!-- Right visual -->
+          <div class="itc-hero__visual">
+            <div class="itc-process">
+              <div class="itc-process__step reveal-card">
+                <div class="itc-process__num">01</div>
+                <div class="itc-process__body">
+                  <h4>Assess</h4>
+                  <p>Evaluate your current IT infrastructure &amp; identify gaps</p>
+                </div>
+              </div>
+              <div class="itc-process__connector"></div>
+              <div class="itc-process__step reveal-card">
+                <div class="itc-process__num">02</div>
+                <div class="itc-process__body">
+                  <h4>Strategise</h4>
+                  <p>Build a technology roadmap aligned with business goals</p>
+                </div>
+              </div>
+              <div class="itc-process__connector"></div>
+              <div class="itc-process__step reveal-card">
+                <div class="itc-process__num">03</div>
+                <div class="itc-process__body">
+                  <h4>Implement</h4>
+                  <p>Deploy scalable solutions with expert project management</p>
+                </div>
+              </div>
+              <div class="itc-process__connector"></div>
+              <div class="itc-process__step reveal-card">
+                <div class="itc-process__num">04</div>
+                <div class="itc-process__body">
+                  <h4>Optimise</h4>
+                  <p>Monitor, measure and continuously improve outcomes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Stats strip -->
+        <div class="itc-stats">
+          <div class="itc-stat reveal">
+            <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Track Record</span>
+          </div>
+          <div class="itc-stat reveal">
+            <span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span>
+            <span class="stat-label">Customer Satisfaction</span>
+          </div>
+          <div class="itc-stat reveal">
+            <span class="stat-num" data-target="698">0</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="itc-stat reveal">
+            <span class="stat-num" data-target="3">0</span>
+            <span class="stat-label">Global Offices</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BENEFITS ═══ -->
+    <section class="itc-benefits" id="benefits">
+      <div class="container">
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">Benefits of IT Consulting &amp; Advisory<br/><em>provided by RethinkingWeb</em></h2>
+
+        <p class="itc-lead reveal">IT consulting services bring significant value to your businesses by providing expert guidance, cost savings, risk mitigation, scalability, and a competitive edge. With our support, your organisations can optimise your technology infrastructure, drive innovation, and achieve your business objectives efficiently and effectively.</p>
+
+        <div class="itc-benefits__grid">
+          <div class="itc-benefit-card reveal">
+            <div class="itc-benefit-card__icon">🎓</div>
+            <h3>Expert Guidance</h3>
+            <p>We offer access to expert guidance and advice from experienced professionals who specialise in IT, giving your team the edge it needs.</p>
+          </div>
+          <div class="itc-benefit-card reveal">
+            <div class="itc-benefit-card__icon">💰</div>
+            <h3>Cost Savings</h3>
+            <p>We analyse your IT operations and suggest optimisations — streamlining processes, adopting cost-effective solutions, or identifying areas for automation to reduce unnecessary expenses.</p>
+          </div>
+          <div class="itc-benefit-card reveal">
+            <div class="itc-benefit-card__icon">🗺️</div>
+            <h3>Technology Roadmap</h3>
+            <p>We help you develop a comprehensive technology roadmap aligned with your business objectives, ensuring every investment moves you forward.</p>
+          </div>
+          <div class="itc-benefit-card reveal">
+            <div class="itc-benefit-card__icon">🛡️</div>
+            <h3>Risk Mitigation</h3>
+            <p>We assist in mitigating risks associated with technology, cybersecurity, and compliance — protecting your business from potential threats and penalties.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOCUS DARK BAND ═══ -->
+    <section class="itc-focus">
+      <div class="container">
+        <div class="itc-focus__inner reveal">
+          <div class="itc-focus__text">
+            <div class="section-label" style="color:var(--orange-light);">Our Approach</div>
+            <h2 class="section-title" style="color:#fff;">Our IT Consulting &amp; Advisory Services let you <em>concentrate on what matters</em></h2>
+            <p>Our IT consulting and advisory services offer numerous benefits, including strategic planning, expertise, cost optimisation, enhanced security, scalability, vendor management, change management, competitive advantage, access to specialised skills, and the ability to focus on core business objectives.</p>
+          </div>
+          <div class="itc-focus__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Get Expert Advice</a>
+            <div class="itc-focus__review">
+              <div class="itc-focus__stars">★★★★★</div>
+              <div>
+                <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Reviewed on Google</div>
+                <div style="font-size:0.95rem;font-weight:700;color:#fff;">22 Reviews · 5/5</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CLIENTS ═══ -->
+<section class="clients">
+  <div class="clients-wrap">
+
+    <!-- LEFT: Text content -->
+    <div class="clients-left">
+      <div style="margin-bottom: 18px"><span class="label-pill">Our Clients</span></div>
+      <h2 class="clients__headline">Working with<br>the <em>best</em> in<br>the industry</h2>
+      <p class="clients__sub">We serve a diverse range of clients who rely on us for innovative solutions that exceed expectations, every single time.</p>
+      <a href="contact.html" class="btn btn-dark">Become a partner →</a>
+    </div>
+
+    <!-- RIGHT: Scrolling logo columns -->
+    <div class="clients-right">
+
+      <!-- Column 1 — scrolls UP -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--up">
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
+          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
+          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
+        </div>
+      </div>
+
+      <!-- Column 2 — scrolls DOWN (offset start) -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--down">
+          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
+          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
+          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
+          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+           <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
+          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
+        </div>
+      </div>
+
+      <!-- Column 3 — scrolls UP (slightly faster) -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--up logo-track--fast">
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+        </div>
+      </div>
+
+    </div><!-- /.clients-right -->
+  </div>
+</section>
+
+
+    <!-- ═══ RELATED SERVICES (accordion) ═══ -->
+    <section class="itc-related">
+      <div class="container">
+        <div class="section-label">What's Included</div>
+        <h2 class="section-title">Related Services in<br/><em>IT Consultancy</em></h2>
+        <p class="itc-related__sub">We provide comprehensive IT advisory and consultancy services, offering expert guidance, strategic planning, and tailored solutions to drive your organisation's success in the ever-evolving digital landscape.</p>
+
+        <div class="itc-accordion">
+
+          <!-- 1 -->
+          <div class="itc-acc-item reveal">
+            <button class="itc-acc-header">
+              <span class="itc-acc-icon">🔄</span>
+              <span class="itc-acc-title">Digital Transformation</span>
+              <span class="itc-acc-arrow">▾</span>
+            </button>
+            <div class="itc-acc-body">
+              <ul class="ms-list">
+                <li><span class="ms-list__dot"></span>Our expert consultants specialise in guiding businesses through the complexities of digital transformation.</li>
+                <li><span class="ms-list__dot"></span>We'll empower you to thrive in the digital era and stay ahead of the competition.</li>
+                <li><span class="ms-list__dot"></span>Embark on your digital transformation journey with confidence, knowing that our team is here to navigate the path to success alongside you.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="itc-acc-item reveal">
+            <button class="itc-acc-header">
+              <span class="itc-acc-icon">🧭</span>
+              <span class="itc-acc-title">IT Strategy</span>
+              <span class="itc-acc-arrow">▾</span>
+            </button>
+            <div class="itc-acc-body">
+              <ul class="ms-list">
+                <li><span class="ms-list__dot"></span>Our expert consultants specialise in IT strategy, providing valuable insights and tailored solutions to align technology with your business objectives.</li>
+                <li><span class="ms-list__dot"></span>Partner with us to unlock the full potential of your IT infrastructure and gain a competitive advantage in today's rapidly evolving digital landscape.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="itc-acc-item reveal">
+            <button class="itc-acc-header">
+              <span class="itc-acc-icon">🤝</span>
+              <span class="itc-acc-title">Outsourcing</span>
+              <span class="itc-acc-arrow">▾</span>
+            </button>
+            <div class="itc-acc-body">
+              <ul class="ms-list">
+                <li><span class="ms-list__dot"></span>Our team of skilled professionals is ready to handle your IT needs, from infrastructure management to software development and support.</li>
+                <li><span class="ms-list__dot"></span>By outsourcing your IT operations to us, you can reduce costs, increase productivity, and access specialised expertise.</li>
+                <li><span class="ms-list__dot"></span>Experience the benefits of streamlined IT operations and elevate your business to new heights with our trusted IT outsourcing services.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="itc-acc-item reveal">
+            <button class="itc-acc-header">
+              <span class="itc-acc-icon">⚙️</span>
+              <span class="itc-acc-title">Consulting for Various Operational Areas</span>
+              <span class="itc-acc-arrow">▾</span>
+            </button>
+            <div class="itc-acc-body">
+              <ul class="ms-list">
+                <li><span class="ms-list__dot"></span>We ensure your IT-related activities are cost-effective, efficiently executed, and deliver maximum returns.</li>
+                <li><span class="ms-list__dot"></span>We analyse your processes, identify areas for improvement, and implement strategic solutions.</li>
+                <li><span class="ms-list__dot"></span>Our user experience design consultants help you create intuitive and engaging experiences for your customers.</li>
+                <li><span class="ms-list__dot"></span>We provide guidance on interface design, usability testing, and interaction optimisation to deliver exceptional user experiences.</li>
+                <li><span class="ms-list__dot"></span>With our governance and oversight consulting, we help you establish robust IT governance frameworks and processes.</li>
+                <li><span class="ms-list__dot"></span>We assist you in navigating complex regulatory landscapes, developing compliance strategies, and conducting audits to ensure adherence to industry standards.</li>
+                <li><span class="ms-list__dot"></span>We help you implement robust security measures, incident response plans, and ongoing monitoring to safeguard your critical assets.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="itc-acc-item reveal">
+            <button class="itc-acc-header">
+              <span class="itc-acc-icon">🔍</span>
+              <span class="itc-acc-title">Comprehensive IT Assessment</span>
+              <span class="itc-acc-arrow">▾</span>
+            </button>
+            <div class="itc-acc-body">
+              <ul class="ms-list">
+                <li><span class="ms-list__dot"></span><strong>Business Applications:</strong> We assess enterprise software, CRM systems, and productivity tools to identify improvement opportunities.</li>
+                <li><span class="ms-list__dot"></span><strong>Network Security:</strong> We analyse firewalls, intrusion detection systems, and access controls to identify vulnerabilities and strengthen security defences.</li>
+                <li><span class="ms-list__dot"></span><strong>IT Policies &amp; Procedures:</strong> We ensure they align with industry best practices and regulatory requirements, identifying gaps in your IT governance framework.</li>
+                <li><span class="ms-list__dot"></span><strong>Network Infrastructure:</strong> We analyse routers, switches, and firewalls for performance and reliability.</li>
+                <li><span class="ms-list__dot"></span><strong>Data Storage Infrastructure:</strong> We evaluate storage systems, backup solutions, and disaster recovery plans to ensure data protection and business continuity.</li>
+                <li><span class="ms-list__dot"></span><strong>Cloud Services:</strong> We assess cloud architecture, scalability, security, and cost-effectiveness.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="itc-acc-item reveal">
+            <button class="itc-acc-header">
+              <span class="itc-acc-icon">📋</span>
+              <span class="itc-acc-title">IT Project &amp; Programme Management</span>
+              <span class="itc-acc-arrow">▾</span>
+            </button>
+            <div class="itc-acc-body">
+              <ul class="ms-list">
+                <li><span class="ms-list__dot"></span>By leveraging our project management expertise, you can expect faster project execution, improved collaboration, and enhanced project success rates.</li>
+                <li><span class="ms-list__dot"></span>We closely monitor project milestones, timelines, and deliverables, ensuring projects stay on track and align with your business objectives.</li>
+                <li><span class="ms-list__dot"></span>Our proactive approach enables us to identify and address potential bottlenecks and risks early on, minimising disruptions and maximising project efficiency.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TESTIMONIALS ═══ -->
+    <section class="testimonials">
+  <div class="testi-glow1"></div>
+  <div class="testi-glow2"></div>
+
+  <div class="container">
+    <div class="testimonials__head">
+      <div>
+        <div class="section-label">What clients say</div>
+        <h2 class="section-title">Trusted by <em>Leaders</em></h2>
+      </div>
+      <!-- <div class="testi-badge">
+        <div class="testi-badge-dot"></div>
+        5-star rated
+      </div> -->
+    </div>
+  </div>
+
+  <div class="testimonials__track-outer">
+    <div class="testimonials__track" id="testiTrack">
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb implemented a robust platform allowing uninterrupted service even when our team switched to remote work during COVID-19. The transition was completely seamless.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Mustafa Khambati</strong>
+            <span>CEO, Global Voyages — Dubai, UAE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. Professionalism, expertise, and dedication to customer service — they played a vital role building our IT infrastructure.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Saqib Khan</strong>
+            <span>CEO, Smarkerz</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>As a customer for over ten years, RethinkingWeb exemplifies how Managed Services should be executed. They consistently go above and beyond to ensure success.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">HG</div>
+          <div>
+            <strong>Haresh Gajra</strong>
+            <span>Head of Technology, GajraBros</span>
+          </div>
+        </div>
+      </div>
+   <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. After understanding my requirements,
+           they recommended the right approach instead of a proprietary solution. Their expertise, optimization skills,
+           and ongoing support played a vital role in delivering a high-quality website experience.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Malcolm Kalwachwala</strong>
+            <span>Founder, one Australia Group</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb has always been a great partner to work with. They successfully redesigned and developed our eCommerce website,
+           delivering it on time and within budget.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Sanjay Vyas</strong>
+            <span>TendersOnTime</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+    <!-- ═══ CONTACT FORM ═══ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
+             <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p>Streamlining IT for an Ever Changing World</p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Solutions</h4>
+   <a href="managed.html">Managed Services</a>
+   <a href="consulting.html">IT Consulting & Advisory</a>
+   <a href="cyber.html">Cyber Security</a>
+   <a href="web_development.html">Web Development</a>
+    <a href="mobile-development.html">Mobile Development</a>
+    <a href="cloud.html">Cloud Services</a>
+    <a href="software.html">Software Development</a>
+    <a href="airtable.html">Enterprise Airtable Managed Services</a>
+    <a href="web-performance.html">Web Performance Optimization Services</a>
+    <a href="seo.html">On-page Technical SEO implementation</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="office-card__dir">Mulund East, Mumbai, India – 400081</a>
+          <a href="tel:+919920996021">+91-9920-9960-21</a>
+          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+       <a href="index.html">
+  <span>© 2026 RethinkingWeb</span>
+</a>
+        <div class="footer__links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/consulting.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>

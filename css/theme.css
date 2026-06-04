@@ -1,0 +1,231 @@
+﻿/* ─────────────────────────────────────────────
+   theme.css — Dark / Light mode
+   Link this on EVERY page:
+   <link rel="stylesheet" href="theme.css" />
+   (style.css already has the dark vars, but
+    this file handles things style.css misses
+    like nav text, cards, forms, logos etc.)
+───────────────────────────────────────────── */
+
+/* ═══ Prevent flash of wrong theme on load ═══ */
+html.dark-init { visibility: hidden; }
+
+/* ══════════════════════════════════════════════
+   DARK MODE VARIABLE OVERRIDES
+   (mirrors what style.css sets, kept here so
+    every page gets them even without style.css
+    being 100% identical)
+══════════════════════════════════════════════ */
+body.dark {
+  --bg:          #0f172a;
+  --bg2:         #111827;
+  --bg3:         #1f2937;
+  --surface:     #1e293b;
+  --surface2:    #334155;
+  --charcoal:    #f8fafc;
+  --charcoal2:   #e2e8f0;
+  --charcoal3:   #cbd5e1;
+  --text:        #f1f5f9;
+  --text-muted:  #94a3b8;
+  --border:      #1e293b;
+  --border-dark: #334155;
+  --white:       #1e293b;
+}
+
+/* ══════════════════════════════════════════════
+   NAV
+══════════════════════════════════════════════ */
+body.dark .nav {
+  background: rgba(15, 23, 42, 0) !important;
+}
+body.dark .nav.scrolled {
+  background: rgba(15, 23, 42, 0.97) !important;
+  border-bottom-color: #1e293b;
+}
+body.dark .nav__link         { color: #94a3b8; }
+body.dark .nav__link:hover   { color: var(--orange); }
+body.dark .nav__phone        { color: #94a3b8; }
+body.dark .nav__phone:hover  { color: var(--orange); }
+body.dark .logo-text         { color: #f1f5f9; }
+
+/* Dropdown panel */
+body.dark .dropdown__panel {
+  background: #1e293b;
+  border-color: #334155;
+}
+body.dark .dropdown__panel a       { color: #94a3b8; }
+body.dark .dropdown__panel a:hover { background: rgba(240,78,35,0.15); color: var(--orange); }
+
+/* Mobile nav */
+body.dark .mobile-nav {
+  background: #0f172a;
+  border-left-color: var(--orange);
+}
+body.dark .mobile-nav a            { color: #f1f5f9; border-bottom-color: #1e293b; }
+body.dark .mobile-nav a:hover      { color: var(--orange); }
+body.dark .mobile-nav__close       { color: #f1f5f9; }
+
+/* Burger lines */
+body.dark .nav__burger span { background: #f1f5f9; }
+
+/* ══════════════════════════════════════════════
+   BACKGROUNDS
+══════════════════════════════════════════════ */
+body.dark                         { background: var(--bg); }
+body.dark .hero__bg               { background: var(--bg); }
+body.dark .what-we-do             { background: var(--bg2); }
+body.dark .solutions              { background: var(--bg); }
+body.dark .industries             { background: var(--bg2); }
+body.dark .cases                  { background: var(--bg); }
+body.dark .clients                { background: var(--bg2); }
+body.dark .contact                { background: var(--bg); }
+body.dark .offices                { background: var(--bg2); }
+body.dark .contact-hero           { background: var(--bg); }
+
+/* ══════════════════════════════════════════════
+   TYPOGRAPHY
+══════════════════════════════════════════════ */
+body.dark .section-title {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  background: none !important;
+}
+body.dark .section-title em {
+  background: linear-gradient(135deg, var(--orange), var(--orange-light)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+body.dark .hero__headline {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  background: none !important;
+}
+body.dark h1, body.dark h2, body.dark h3 { color: #f1f5f9; }
+body.dark p  { color: var(--text-muted); }
+
+/* ══════════════════════════════════════════════
+   CARDS — Pillar / Solution / Case / Office
+══════════════════════════════════════════════ */
+body.dark .pillar,
+body.dark .solution-card,
+body.dark .case-card,
+body.dark .office-card,
+body.dark .stat-card {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9;
+}
+body.dark .pillar h3,
+body.dark .solution-card h3,
+body.dark .case-card h3,
+body.dark .office-card h3       { color: #f1f5f9; }
+body.dark .pillar p,
+body.dark .solution-card p,
+body.dark .case-card p,
+body.dark .office-card p        { color: #94a3b8; }
+
+/* CTA card */
+body.dark .solution-card--cta  { background: #1e293b !important; }
+body.dark .solution-card--cta p { color: #94a3b8; }
+body.dark .solution-card--cta .btn--primary {
+  background: var(--orange);
+  color: #fff;
+}
+
+/* Client logo chips */
+body.dark .client-logo {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #94a3b8;
+}
+body.dark .client-logo:hover { border-color: var(--orange) !important; color: var(--orange); }
+
+/* ══════════════════════════════════════════════
+   CONTACT FORM
+══════════════════════════════════════════════ */
+body.dark .contact__form-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+body.dark .contact__form-card h3 { color: #f1f5f9; }
+body.dark .form-group label      { color: #94a3b8; }
+body.dark .form-group input,
+body.dark .form-group select,
+body.dark .form-group textarea {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+body.dark .form-group input::placeholder,
+body.dark .form-group textarea::placeholder { color: #475569; }
+body.dark .form-group input:focus,
+body.dark .form-group select:focus,
+body.dark .form-group textarea:focus {
+  border-color: var(--orange);
+  background: #1e293b;
+}
+body.dark .form-group select option { background: #1e293b; color: #f1f5f9; }
+
+/* contact page quick bar */
+body.dark .contact-hero__quick {
+  background: #1e293b;
+  border-color: #334155;
+}
+body.dark .quick-val  { color: #f1f5f9; }
+body.dark .quick-divider { background: #334155; }
+body.dark .quick-item:hover { background: rgba(240,78,35,0.12); }
+
+/* contact left column */
+body.dark .contact__left > p  { color: #94a3b8; }
+body.dark .contact__steps h4  { color: #64748b; }
+body.dark .benefit            { color: #94a3b8; }
+body.dark .step               { color: #94a3b8; }
+
+/* reviews badge */
+body.dark .reviews-badge {
+  background: rgba(240,78,35,0.12);
+  border-color: rgba(240,78,35,0.3);
+}
+body.dark .reviews-count { color: #f1f5f9; }
+body.dark .reviews-label { color: #64748b; }
+
+/* ══════════════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════════════ */
+body.dark .btn--outline {
+  color: var(--orange);
+  border-color: var(--orange);
+}
+body.dark .btn--outline:hover { background: rgba(240,78,35,0.12); }
+
+/* ══════════════════════════════════════════════
+   GRID OVERLAY (lighter in dark)
+══════════════════════════════════════════════ */
+body.dark .grid-overlay {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* ══════════════════════════════════════════════
+   THEME TOGGLE BUTTON
+══════════════════════════════════════════════ */
+.btn-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  transition:  0.2s ease;
+  line-height: 1;
+}
+.btn-icon:hover { background: rgba(240,78,35,0.1); }
+
+/* Keep nav-actions in the links row */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}

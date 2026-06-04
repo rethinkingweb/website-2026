@@ -1,0 +1,719 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development — RethinkingWeb</title>
+  <link rel="stylesheet" href="css/web_development.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- ───────── NAV ───────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html" class="nav__link">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel">
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable</a>
+          <a href="web-performance.html">Web Performance Optimization</a>
+          <a href="seo.html">On-page Technical SEO</a>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link">Case Studies</a>
+      <a href="blogs.html" class="nav__link">Blogs</a>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
+      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav__header">
+    <a href="index.html">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav__links">
+    <a href="index.html" class="mob-link">Home</a>
+
+    
+    <!-- Solutions accordion -->
+    <div class="mob-accordion">
+        <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion">
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link">Case Studies</a>
+    <a href="blogs.html" class="mob-link">Blogs</a>
+    <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__inner">
+
+        <!-- Left: Content -->
+        <div class="page-hero__content">
+          <nav class="breadcrumb">
+            <a href="#">Solutions</a>
+            <span>›</span>
+            <span>Web Development</span>
+          </nav>
+          <div class="hero__badge">
+            <span class="badge__dot"></span>
+            Building Digital Experiences
+          </div>
+          <h1 class="page-hero__title">Web <em>Development</em></h1>
+          <p class="page-hero__sub">Unlock your business's online potential with expert Web Development services for immersive user experiences to drive digital success.</p>
+          <div class="page-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Schedule a Free Consultation</a>
+            <a href="#services" class="btn btn--outline btn--lg">Explore Benefits</a>
+          </div>
+          <div class="hero__social-proof">
+            <span class="stars">★★★★★</span>
+            <strong>5/5</strong>
+            <span class="divider">|</span>
+            <span>22 Reviews on Google</span>
+          </div>
+        </div>
+
+        <!-- Right: Browser Visual -->
+        <div class="page-hero__visual">
+          <div class="browser-graphic">
+            <div class="browser-bar">
+              <span class="browser-dot" style="background:#ff5f57"></span>
+              <span class="browser-dot" style="background:#febc2e"></span>
+              <span class="browser-dot" style="background:#28c840"></span>
+              <!-- <div class="browser-url">rethinkingweb.com</div> -->
+               <img src="images/web.webp" alt="image">
+            </div>
+            <div class="browser-body">
+              <div class="browser-hero-block">
+                <div class="browser-line bw-60"></div>
+                <div class="browser-line bw-40"></div>
+              </div>
+              <div class="browser-cards">
+                <div class="browser-card bc-orange"></div>
+                <div class="browser-card bc-light"></div>
+                <div class="browser-card bc-light"></div>
+              </div>
+              <div class="browser-img-block"></div>
+              <div class="browser-text-lines">
+                <div class="browser-line bw-80"></div>
+                <div class="browser-line bw-60"></div>
+                <div class="browser-line bw-70"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Stats -->
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years Proven Track Record</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects Across Technologies</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BENEFITS / PILLARS ═══ -->
+  <section class="what-we-do" id="services">
+    <div class="container">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Benefits of Web Development services<br>provided by <em>RethinkingWeb</em></h2>
+      <p class="benefits-intro">Web Development services encompass the creation, design, and maintenance of websites, combining technical expertise and creative skills to build interactive and functional online platforms tailored to meet businesses' specific needs. From small business websites to large e-commerce platforms, we create dynamic and visually appealing websites that engage visitors and enhance your online experience.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar__icon">🤝</div>
+          <h3>Web Service for You</h3>
+          <p>Our development process is collaborative, working closely with our clients to understand your objectives and deliver a product that truly fits your needs.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__icon">📱</div>
+          <h3>Fully Compatible</h3>
+          <p>We ensure that the websites we develop are fully compatible across various devices and platforms, delivering a seamless experience to every visitor.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__icon">🎯</div>
+          <h3>Focus on Brand</h3>
+          <p>Deliver a website that aligns with your brand identity. With a focus on responsiveness and optimization, your digital presence stands out from the crowd.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__icon">💪</div>
+          <h3>Our Team is Ready to Help</h3>
+          <p>Trust us to bring your vision to life and provide you with a robust online presence that drives measurable results for your business.</p>
+        
+        </div>
+      </div>
+    </div>
+   
+  </section>
+
+  <!-- ═══ FOCUS SECTION ═══ -->
+  <section class="focus-section">
+    <div class="container">
+      <div class="focus-grid">
+        <div class="focus-content">
+          <div class="section-label">Our Approach</div>
+          <h2 class="section-title">Our managed Web Development services<br>let you concentrate on <em>what matters</em></h2>
+          <p>Our website development services cater to the specific requirements of our clients, offering professional and customized solutions. We utilize cutting-edge technologies and industry best practices to ensure optimal performance, security, and scalability for every project.</p>
+          <a href="#form" class="btn btn--primary btn--lg" style="margin-top:1.5rem;">Start Your Project</a>
+        </div>
+        <div class="focus-checklist">
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Custom Solutions</strong>
+              <p>Every website is built from the ground up to match your unique business goals</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Performance Optimized</strong>
+              <p>Fast-loading, SEO-friendly websites that rank well and convert visitors</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Scalable Architecture</strong>
+              <p>Built to grow with your business — from launch day to long-term success</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Ongoing Support</strong>
+              <p>We don't disappear after launch — ongoing maintenance and updates included</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RELATED SERVICES ═══ -->
+  <section class="solutions" id="related">
+    <div class="container">
+      <div class="section-label">Comprehensive Solutions</div>
+      <h2 class="section-title">Related Services in<br><em>Web Development</em></h2>
+      <p style="color:var(--text-muted);margin-bottom:2.5rem;max-width:640px;">In addition to website development, we provide a range of related services to enhance your web presence and maximize your online success.</p>
+      <div class="solutions__grid">
+
+        <div class="solution-card">
+          <div class="solution-card__num">01</div>
+          <h3>Web Design</h3>
+          <p>Our skilled designers create visually appealing and user-friendly interfaces that align with your brand identity and captivate your audience from the first click.</p>
+          <a href="#form" class="solution-card__link">Learn more </a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">02</div>
+          <h3>E-commerce Solutions</h3>
+          <p>We specialize in developing robust and secure e-commerce platforms that enable seamless online transactions and enhance your customers' shopping experience.</p>
+          <a href="#form" class="solution-card__link">Learn more </a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">03</div>
+          <h3>Content Management Systems (CMS)</h3>
+          <p>We implement powerful CMS platforms that empower you to manage and update your website content easily, without the need for technical expertise.</p>
+          <a href="#form" class="solution-card__link">Learn more </a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">04</div>
+          <h3>Responsive Web Design</h3>
+          <p>We ensure that your website adapts and performs optimally across different devices and screen sizes, offering a consistent experience to all users.</p>
+          <a href="#form" class="solution-card__link">Learn more </a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">05</div>
+          <h3>Custom Design</h3>
+          <p>Transform your business with a custom-designed website including wireframing and page design, ensuring a site that perfectly aligns with your unique business requirements.</p>
+          <a href="#form" class="solution-card__link">Learn more </a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">06</div>
+          <h3>Advanced Integrations</h3>
+          <p>Take your website to the next level with advanced integrations with your favourite tools and platforms — CRM systems, payment gateways, and more.</p>
+          <a href="#form" class="solution-card__link">Learn more </a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">07</div>
+          <h3>Website Maintenance &amp; Support</h3>
+          <p>We provide ongoing maintenance and support services to ensure your website remains secure, up-to-date, and performing at its best at all times.</p>
+          <a href="#form" class="solution-card__link">Learn more </a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__num">08</div>
+          <h3>Leading-Edge Technology</h3>
+          <p>Harness the power of cutting-edge technology to elevate your web presence. Our team brings advanced technical expertise and thoroughly QA-tested solutions to every project.</p>
+          <a href="#form" class="solution-card__link">Learn more </a>
+        </div>
+
+        <div class="solution-card solution-card--cta">
+          <div class="section-label" style="margin-bottom:0.75rem;">Ready to build?</div>
+          <h3 style="color:var(--charcoal);font-size:1.3rem;">Launch your next web project</h3>
+          <p>Schedule a free consultation and let our experts craft the perfect digital solution for your business.</p>
+          <a href="#form" class="btn btn--primary">Schedule Consultation</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CLIENTS ═══ -->
+<section class="clients">
+  <div class="clients-wrap">
+
+    <!-- LEFT: Text content -->
+    <div class="clients-left">
+      <div style="margin-bottom: 18px"><span class="label-pill">Our Clients</span></div>
+      <h2 class="clients__headline">Working with<br>the <em>best</em> in<br>the industry</h2>
+      <p class="clients__sub">We serve a diverse range of clients who rely on us for innovative solutions that exceed expectations, every single time.</p>
+      <a href="contact.html" class="btn btn-dark">Become a partner →</a>
+    </div>
+
+    <!-- RIGHT: Scrolling logo columns -->
+    <div class="clients-right">
+
+      <!-- Column 1 — scrolls UP -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--up">
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
+          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
+          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
+        </div>
+      </div>
+
+      <!-- Column 2 — scrolls DOWN (offset start) -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--down">
+          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
+          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
+          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
+          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+           <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
+          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
+        </div>
+      </div>
+
+      <!-- Column 3 — scrolls UP (slightly faster) -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--up logo-track--fast">
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+        </div>
+      </div>
+
+    </div><!-- /.clients-right -->
+  </div>
+</section>
+
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+ <section class="testimonials">
+  <div class="testi-glow1"></div>
+  <div class="testi-glow2"></div>
+
+  <div class="container">
+    <div class="testimonials__head">
+      <div>
+        <div class="section-label">What clients say</div>
+        <h2 class="section-title">Trusted by <em>Leaders</em></h2>
+      </div>
+      <!-- <div class="testi-badge">
+        <div class="testi-badge-dot"></div>
+        5-star rated
+      </div> -->
+    </div>
+  </div>
+
+  <div class="testimonials__track-outer">
+    <div class="testimonials__track" id="testiTrack">
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb implemented a robust platform allowing uninterrupted service even when our team switched to remote work during COVID-19. The transition was completely seamless.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Mustafa Khambati</strong>
+            <span>CEO, Global Voyages — Dubai, UAE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. Professionalism, expertise, and dedication to customer service — they played a vital role building our IT infrastructure.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Saqib Khan</strong>
+            <span>CEO, Smarkerz</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>As a customer for over ten years, RethinkingWeb exemplifies how Managed Services should be executed. They consistently go above and beyond to ensure success.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">HG</div>
+          <div>
+            <strong>Haresh Gajra</strong>
+            <span>Head of Technology, GajraBros</span>
+          </div>
+        </div>
+      </div>
+   <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. After understanding my requirements,
+           they recommended the right approach instead of a proprietary solution. Their expertise, optimization skills,
+           and ongoing support played a vital role in delivering a high-quality website experience.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Malcolm Kalwachwala</strong>
+            <span>Founder, one Australia Group</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb has always been a great partner to work with. They successfully redesigned and developed our eCommerce website,
+           delivering it on time and within budget.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Sanjay Vyas</strong>
+            <span>TendersOnTime</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+  <!-- ═══ CONTACT ═══ -->
+   <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
+             <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p>Streamlining IT for an Ever Changing World</p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Solutions</h4>
+   <a href="managed.html">Managed Services</a>
+   <a href="consulting.html">IT Consulting & Advisory</a>
+   <a href="cyber.html">Cyber Security</a>
+   <a href="web_development.html">Web Development</a>
+    <a href="mobile-development.html">Mobile Development</a>
+    <a href="cloud.html">Cloud Services</a>
+    <a href="software.html">Software Development</a>
+    <a href="airtable.html">Enterprise Airtable Managed Services</a>
+    <a href="web-performance.html">Web Performance Optimization Services</a>
+    <a href="seo.html">On-page Technical SEO implementation</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="office-card__dir">Mulund East, Mumbai, India – 400081</a>
+          <a href="tel:+919920996021">+91-9920-9960-21</a>
+          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+       <a href="index.html">
+  <span>© 2026 RethinkingWeb</span>
+</a>
+        <div class="footer__links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/web_development.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>

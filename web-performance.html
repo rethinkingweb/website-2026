@@ -1,0 +1,774 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>web-Performance Optimization Services | RethinkingWeb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/web-Performance.css" />
+</head>
+<body>
+
+  <!-- ── Animated background orbs ── -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+   <!-- ───────── NAV ───────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html" class="nav__link">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel">
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable</a>
+          <a href="web-performance.html">Web Performance Optimization</a>
+          <a href="seo.html">On-page Technical SEO</a>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link">Case Studies</a>
+      <a href="blogs.html" class="nav__link">Blogs</a>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
+      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav__header">
+    <a href="index.html">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav__links">
+    <a href="index.html" class="mob-link">Home</a>
+
+    
+    <!-- Solutions accordion -->
+    <div class="mob-accordion">
+        <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-Performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion">
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link">Case Studies</a>
+    <a href="blogs.html" class="mob-link">Blogs</a>
+    <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+  <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+  <section class="cs-hero">
+    <div class="container">
+      <div class="cs-hero__inner">
+
+        <!-- Left: Copy -->
+        <div class="cs-hero__copy">
+          <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span>›</span>
+            <a href="#">Services</a>
+            <span>›</span>
+            <span>web-Performance Optimization</span>
+          </nav>
+
+          <div class="hero__badge">
+            <span class="badge__dot"></span>
+            Core Web Vitals · Page Speed · LCP · CLS · FID
+          </div>
+
+          <h1 class="cs-hero__title">
+           web-Performance <br>
+            <em>Optimization Services</em>
+          </h1>
+
+          <p class="cs-hero__sub">
+            We audit, optimise, and continuously monitor your web-Performance — slashing load times, boosting Core Web Vitals scores, and turning every millisecond saved into real revenue growth.
+          </p>
+
+          <div class="cs-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Schedule Free Consultation</a>
+            <a href="#benefits" class="btn btn--outline btn--lg">See What We Fix</a>
+          </div>
+
+          <div class="hero__social-proof">
+            <span class="stars">★★★★★</span>
+            <strong>4.9/5</strong>
+            <span class="divider">|</span>
+            <span>Avg. 68% load time improvement</span>
+            <span class="divider">|</span>
+            <span>50+ sites optimised</span>
+          </div>
+        </div>
+
+        <!-- Right: Performance Visual -->
+        <div class="cs-hero__visual">
+          <div class="at-wrap">
+            <div class="at-frame">
+              <div class="at-screen">
+
+                <!-- Speed Score Meter -->
+                <div class="at-header">
+                  <span class="at-icon">⚡</span>
+                  <span class="at-title">PageSpeed Insights — After Optimisation</span>
+                </div>
+
+                <div class="perf-scores">
+                  <div class="score-ring score--green">
+                    <svg viewBox="0 0 42 42" class="score-svg">
+                      <circle cx="21" cy="21" r="16" fill="none" stroke="#e8e2dc" stroke-width="4"/>
+                      <circle cx="21" cy="21" r="16" fill="none" stroke="#22c55e" stroke-width="4"
+                              stroke-dasharray="96 4" stroke-dashoffset="25" stroke-linecap="round"/>
+                    </svg>
+                    <span class="score-num">97</span>
+                  </div>
+                  <div class="score-labels">
+                    <div class="score-row"><span class="score-dot green"></span><span>Performance</span><strong>97</strong></div>
+                    <div class="score-row"><span class="score-dot green"></span><span>Accessibility</span><strong>98</strong></div>
+                    <div class="score-row"><span class="score-dot green"></span><span>Best Practices</span><strong>100</strong></div>
+                    <div class="score-row"><span class="score-dot green"></span><span>SEO</span><strong>99</strong></div>
+                  </div>
+                </div>
+
+                <!-- Vitals table -->
+                <div class="at-table">
+                  <div class="at-row">
+                    <div class="at-cell at-cell--header">Metric</div>
+                    <div class="at-cell at-cell--header">Before</div>
+                    <div class="at-cell at-cell--header">After</div>
+                  </div>
+                  <div class="at-row">
+                    <div class="at-cell">LCP</div>
+                    <div class="at-cell at-cell--tag yellow">4.8s</div>
+                    <div class="at-cell at-cell--tag">1.2s</div>
+                  </div>
+                  <div class="at-row">
+                    <div class="at-cell">FID</div>
+                    <div class="at-cell at-cell--tag yellow">210ms</div>
+                    <div class="at-cell at-cell--tag">18ms</div>
+                  </div>
+                  <div class="at-row">
+                    <div class="at-cell">CLS</div>
+                    <div class="at-cell at-cell--tag yellow">0.32</div>
+                    <div class="at-cell at-cell--tag">0.02</div>
+                  </div>
+                  <div class="at-row">
+                    <div class="at-cell">TTFB</div>
+                    <div class="at-cell at-cell--tag yellow">820ms</div>
+                    <div class="at-cell at-cell--tag">95ms</div>
+                  </div>
+                </div>
+
+                <div class="at-views">
+                  <div class="at-view av--active">Mobile</div>
+                  <div class="at-view">Desktop</div>
+                  <div class="at-view">Lighthouse</div>
+                </div>
+
+                <div class="at-status">
+                  <span class="status-dot"></span>
+                  All Core Web Vitals: Passed ✓
+                </div>
+
+              </div>
+            </div>
+            <div class="at-glow"></div>
+          </div>
+
+          <!-- Icon grid beside phone -->
+          <div class="cs-icon-grid">
+            <div class="cs-icon-card">
+              <span>🚀</span><p>Speed Boost</p>
+            </div>
+            <div class="cs-icon-card">
+              <span>📊</span><p>CWV Audit</p>
+            </div>
+            <div class="cs-icon-card">
+              <span>🖼️</span><p>Image Opt.</p>
+            </div>
+            <div class="cs-icon-card">
+              <span>🌐</span><p>CDN Setup</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Stats strip -->
+      <div class="cs-stats">
+        <div class="cs-stat reveal">
+          <div class="stat-num">68<span class="stat-plus">%</span></div>
+          <span class="stat-label">Avg. Load Time Reduction</span>
+        </div>
+        <div class="cs-stat reveal">
+          <div class="stat-num">50<span class="stat-plus">+</span></div>
+          <span class="stat-label">Websites Optimised</span>
+        </div>
+        <div class="cs-stat reveal">
+          <div class="stat-num">3×</div>
+          <span class="stat-label">Avg. Conversion Uplift</span>
+        </div>
+        <div class="cs-stat reveal">
+          <div class="stat-num">99<span class="stat-plus">%</span></div>
+          <span class="stat-label">Client Satisfaction Rate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       BENEFITS
+  ══════════════════════════════ -->
+  <section class="cs-benefits" id="benefits">
+    <div class="container">
+      <div class="cs-benefits__grid">
+        <div>
+          <div class="section-label">Why Performance Matters</div>
+          <h2 class="section-title">Slow sites lose<br><em>customers & rankings</em></h2>
+          <p class="cs-lead">A 1-second delay in page load time can reduce conversions by 7%, lower search rankings, and spike bounce rates. We fix the root causes — not just the symptoms.</p>
+          <p class="cs-lead">Our performance engineers go deep: JavaScript bundles, render-blocking resources, server response times, third-party scripts, and more — systematically eliminated.</p>
+          <!-- <a href="#contact" class="btn btn--primary" style="margin-top:1.5rem">Start With a Free Audit</a> -->
+        </div>
+
+        <div class="cs-benefits__cards">
+          <div class="cs-benefit-card reveal">
+            <div class="cs-benefit-card__icon">⚡</div>
+            <h3>Core Web Vitals Fixes</h3>
+            <p>LCP, FID, CLS — we diagnose and resolve every Google CWV flag to protect your search visibility.</p>
+          </div>
+          <div class="cs-benefit-card reveal">
+            <div class="cs-benefit-card__icon">🖼️</div>
+            <h3>Image & Asset Optimisation</h3>
+            <p>Next-gen formats (WebP/AVIF), lazy loading, responsive images, and compression without quality loss.</p>
+          </div>
+          <div class="cs-benefit-card reveal">
+            <div class="cs-benefit-card__icon">📦</div>
+            <h3>JavaScript Optimisation</h3>
+            <p>Code splitting, tree-shaking, deferred loading, and removal of unused scripts that bloat your pages.</p>
+          </div>
+          <div class="cs-benefit-card reveal">
+            <div class="cs-benefit-card__icon">🌐</div>
+            <h3>CDN & Caching Strategy</h3>
+            <p>Global edge delivery, browser caching headers, server-side caching, and smart invalidation rules.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       FOCUS (DARK BAND)
+  ══════════════════════════════ -->
+  <section class="cs-focus">
+    <div class="container">
+      <div class="cs-focus__inner">
+        <div class="cs-focus__text">
+          <div class="section-label">Our Approach</div>
+          <h2 class="section-title">Performance as a<br><em>continuous practice</em></h2>
+          <p>We don't just run a one-off audit and disappear. Our managed performance service means your site is monitored, tested, and improved every single month — keeping you ahead of algorithm updates and user expectations.</p>
+          <div class="cs-focus__checklist" style="margin-top:2rem">
+            <div class="cs-focus__check"><span>✓</span> Full Lighthouse & CWV baseline audit</div>
+            <div class="cs-focus__check"><span>✓</span> Prioritised fix roadmap with effort vs. impact scoring</div>
+            <div class="cs-focus__check"><span>✓</span> Monthly monitoring reports & regression alerts</div>
+            <div class="cs-focus__check"><span>✓</span> Ongoing optimisation sprints — not a one-time fix</div>
+            <div class="cs-focus__check"><span>✓</span> Dedicated performance engineer assigned to your account</div>
+          </div>
+        </div>
+
+        <div class="cs-focus__cta">
+          <div class="cs-focus__review">
+            <div>
+              <div class="cs-focus__stars">★★★★★</div>
+              <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;margin-top:0.4rem;font-style:italic">"Our site went from a 42 to a 97 PageSpeed score. Revenue up 34% in 60 days."</p>
+              <p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:0.5rem">— Rohan M., E-commerce Director</p>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn--primary btn--lg btn--full">Book a Performance Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       CLIENTS
+  ══════════════════════════════ -->
+ <section class="clients">
+  <div class="clients-wrap">
+
+    <!-- LEFT: Text content -->
+    <div class="clients-left">
+      <div style="margin-bottom: 18px"><span class="label-pill">Our Clients</span></div>
+      <h2 class="clients__headline">Working with<br>the <em>best</em> in<br>the industry</h2>
+      <p class="clients__sub">We serve a diverse range of clients who rely on us for innovative solutions that exceed expectations, every single time.</p>
+      <a href="contact.html" class="btn btn-dark">Become a partner </a>
+    </div>
+
+    <!-- RIGHT: Scrolling logo columns -->
+    <div class="clients-right">
+
+      <!-- Column 1 — scrolls UP -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--up">
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
+          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
+          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
+        </div>
+      </div>
+
+      <!-- Column 2 — scrolls DOWN (offset start) -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--down">
+          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
+          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+          <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
+          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
+          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
+           <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
+          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
+        </div>
+      </div>
+
+      <!-- Column 3 — scrolls UP (slightly faster) -->
+      <div class="logo-col">
+        <div class="logo-track logo-track--up logo-track--fast">
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="logo-card"><img src="images/soezi.webp" alt="Soezi"><span>Soezi</span></div>
+          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
+          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
+          <div class="logo-card"><img src="images/4.webp" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
+        </div>
+      </div>
+
+    </div><!-- /.clients-right -->
+  </div>
+</section>
+
+  <!-- ══════════════════════════════
+       RELATED SERVICES
+  ══════════════════════════════ -->
+  <section class="cs-related">
+    <div class="container">
+      <div class="section-label">Related Services</div>
+      <h2 class="section-title">Everything your site<br><em>needs to win</em></h2>
+      <p class="cs-related__sub">web-Performance is just the start. Pair it with our complementary services to build an unstoppable digital foundation.</p>
+
+      <div class="cs-related__grid">
+        <div class="cs-related-card reveal">
+          <div class="cs-related-card__num">01</div>
+          <div class="cs-related-card__icon">🔍</div>
+          <h3>Technical SEO Audit</h3>
+          <p>Speed and structure go hand-in-hand. Our SEO audits surface crawl issues, structured data gaps, and indexability problems that slow your rankings.</p>
+        </div>
+        <div class="cs-related-card reveal">
+          <div class="cs-related-card__num">02</div>
+          <div class="cs-related-card__icon">☁️</div>
+          <h3>Cloud & Hosting Migration</h3>
+          <p>Move to performant infrastructure — AWS, Cloudflare, Vercel, or a custom stack — with zero downtime and measurable TTFB improvements.</p>
+        </div>
+        <div class="cs-related-card reveal">
+          <div class="cs-related-card__num">03</div>
+          <div class="cs-related-card__icon">📱</div>
+          <h3>Mobile Performance</h3>
+          <p>Over 60% of traffic is mobile. We apply mobile-first optimisation strategies — AMP, responsive images, viewport rendering fixes, and more.</p>
+        </div>
+        <div class="cs-related-card reveal">
+          <div class="cs-related-card__num">04</div>
+          <div class="cs-related-card__icon">🔒</div>
+          <h3>Security & HTTPS Hardening</h3>
+          <p>HTTP/2, HSTS, TLS 1.3, and CSP headers — security improvements that also unlock browser rendering performance gains.</p>
+        </div>
+        <div class="cs-related-card reveal">
+          <div class="cs-related-card__num">05</div>
+          <div class="cs-related-card__icon">📊</div>
+          <h3>Analytics & RUM Setup</h3>
+          <p>Real User Monitoring (RUM), Google Analytics 4, and custom dashboards so you always know exactly how fast your site feels to real users.</p>
+        </div>
+        <div class="cs-related-card cs-related-card--cta reveal">
+          <div class="cs-related-card__icon">🤝</div>
+          <h3>Not sure where to start?</h3>
+          <p>Book a free 30-minute strategy call and we'll map the right services to your goals.</p>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:0.5rem">Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════ -->
+  <section class="testimonials">
+  <div class="testi-glow1"></div>
+  <div class="testi-glow2"></div>
+
+  <div class="container">
+    <div class="testimonials__head">
+      <div>
+        <div class="section-label">What clients say</div>
+        <h2 class="section-title">Trusted by <em>Leaders</em></h2>
+      </div>
+      <!-- <div class="testi-badge">
+        <div class="testi-badge-dot"></div>
+        5-star rated
+      </div> -->
+    </div>
+  </div>
+
+  <div class="testimonials__track-outer">
+    <div class="testimonials__track" id="testiTrack">
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb implemented a robust platform allowing uninterrupted service even when our team switched to remote work during COVID-19. The transition was completely seamless.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Mustafa Khambati</strong>
+            <span>CEO, Global Voyages — Dubai, UAE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. Professionalism, expertise, and dedication to customer service — they played a vital role building our IT infrastructure.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Saqib Khan</strong>
+            <span>CEO, Smarkerz</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>As a customer for over ten years, RethinkingWeb exemplifies how Managed Services should be executed. They consistently go above and beyond to ensure success.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">HG</div>
+          <div>
+            <strong>Haresh Gajra</strong>
+            <span>Head of Technology, GajraBros</span>
+          </div>
+        </div>
+      </div>
+   <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb proved to be an exceptional partner. After understanding my requirements,
+           they recommended the right approach instead of a proprietary solution. Their expertise, optimization skills,
+           and ongoing support played a vital role in delivering a high-quality website experience.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <strong>Malcolm Kalwachwala</strong>
+            <span>Founder, one Australia Group</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card__top">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-qbig">"</div>
+        </div>
+        <p>RethinkingWeb has always been a great partner to work with. They successfully redesigned and developed our eCommerce website,
+           delivering it on time and within budget.</p>
+        <div class="testi-sep"></div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <strong>Sanjay Vyas</strong>
+            <span>TendersOnTime</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+  <!-- ───────── CONTACT ───────── -->
+   <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
+             <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p>Streamlining IT for an Ever Changing World</p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Solutions</h4>
+   <a href="managed.html">Managed Services</a>
+   <a href="consulting.html">IT Consulting & Advisory</a>
+   <a href="cyber.html">Cyber Security</a>
+   <a href="web_development.html">Web Development</a>
+    <a href="mobile-development.html">Mobile Development</a>
+    <a href="cloud.html">Cloud Services</a>
+    <a href="software.html">Software Development</a>
+    <a href="airtable.html">Enterprise Airtable Managed Services</a>
+    <a href="web-Performance.html">Web Performance Optimization Services</a>
+    <a href="seo.html">On-page Technical SEO implementation</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="office-card__dir">Mulund East, Mumbai, India – 400081</a>
+          <a href="tel:+919920996021">+91-9920-9960-21</a>
+          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+       <a href="index.html">
+  <span>© 2026 RethinkingWeb</span>
+</a>
+        <div class="footer__links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast">⚡ Audit request received!</div>
+
+  <script src="js/Web-performance.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – Who We Are | RethinkingWeb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/theme.css">
+  
+</head>
+<body>
+  <!-- ───────── NAV ───────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html" class="nav__link">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel">
+          <a href="managed.html">Managed Services</a>
+          <a href="consulting.html">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html">Cyber Security</a>
+          <a href="web_development.html">Web Development</a>
+          <a href="mobile-development.html">Mobile Development</a>
+          <a href="cloud.html">Cloud Services</a>
+          <a href="software.html">Software Development</a>
+          <a href="airtable.html">Enterprise Airtable</a>
+          <a href="web-performance.html">Web Performance Optimization</a>
+          <a href="seo.html">On-page Technical SEO</a>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link">Case Studies</a>
+      <a href="blogs.html" class="nav__link">Blogs</a>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
+      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav__header">
+    <a href="index.html">
+      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-nav__links">
+    <a href="index.html" class="mob-link">Home</a>
+
+    
+    <!-- Solutions accordion -->
+    <div class="mob-accordion">
+        <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion">
+      <button class="mob-accordion__btn" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link">Case Studies</a>
+    <a href="blogs.html" class="mob-link">Blogs</a>
+    <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero">
+  <div class="page-hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="grid-overlay"></div> <!-- ADD THIS -->
+  </div>
+
+  <div class="container page-hero__inner center">
+    <div class="section-label">About</div>
+
+    <h1 class="page-hero__title">
+      Dedicated to delivering <em>excellence</em>
+    </h1>
+
+    <p class="page-hero__sub">
+      Everyone has a story. Here is ours.
+    </p>
+  </div>
+</section>
+
+  <!-- ═══ STORY SECTION ═══ -->
+  <section class="about-story">
+    <div class="container">
+      <div class="story-grid">
+
+        <!-- Left: Text blocks -->
+        <div class="story-block">
+          <div class="story-item">
+            <h3>The Beginning</h3>
+            <p>
+              Established in 2011, RethinkingWeb has grown from a curious idea to a thriving
+              technology team. We're dedicated to transforming businesses online, focusing on
+              users, ethics, and sustainability. Join us in shaping a better digital future.
+            </p>
+          </div>
+
+          <div class="story-item">
+            <h3>Mission</h3>
+            <p>
+              Our mission at RethinkingWeb is to revolutionize the online experience by
+              championing user-centric design, ethical practices, and sustainable development.
+              We strive to create a digital landscape that is inclusive, empowering, and
+              harmonious with the needs of individuals, societies, and the environment.
+              Together, let's redefine the web for a brighter future.
+            </p>
+          </div>
+
+          <div class="story-item">
+            <h3>We Are Global</h3>
+            <p>
+              At RethinkingWeb, we embrace the concept of being glocal. We understand the
+              interconnectedness of the global and local contexts and seek to leverage this
+              understanding to create meaningful impact. By bridging cultures, communities,
+              and perspectives, we strive to develop digital solutions that resonate both
+              globally and locally, addressing the unique needs and aspirations of diverse
+              populations. Through our glocal approach, we aim to build a more inclusive and
+              globally conscious web that fosters collaboration, empathy, and mutual
+              understanding.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Images -->
+        <div>
+          <div class="story-img" style="margin-bottom:1.5rem;">
+            <img
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format"
+              alt="Team collaboration"
+            />
+          </div>
+          <div class="story-images--double">
+            <div class="story-img">
+              <img
+                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&q=80&auto=format"
+                alt="Strategy meeting"
+              />
+            </div>
+            <div class="story-img">
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format"
+                alt="Modern workspace"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY US BAND ═══ -->
+  <section class="why-band">
+    <div class="container why-band__inner">
+      <div class="section-label">Why Us</div>
+      <p class="why-band__text">
+        RethinkingWeb understands that business can be chaotic. That's where we come in.
+        We're focused on adding some much-needed balance to the mix. We accomplish that by
+        forging real partnerships with our clients. When you work with us, you're working
+        with a team who understands your pain points and your goals. We'll help you find
+        order in the midst of the chaos.
+      </p>
+      <a href="/why-us/" class="btn btn--primary btn--lg">Learn More </a>
+    </div>
+  </section>
+
+  <!-- ═══ CORE VALUES ═══ -->
+  <section class="values">
+    <div class="container">
+      <div class="values-intro">
+        <div class="section-label">Our Core Values</div>
+        <h2 class="section-title">
+          Our culture is built around four key attributes that
+          <em>differentiate us</em> from our competition.
+        </h2>
+      </div>
+
+      <div class="values__grid">
+        <div class="value-card">
+          <div class="value-card__icon">⏱️</div>
+          <h3>Timely Delivery</h3>
+          <p>Timely development and delivery — on time, every time, without compromise.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">🔍</div>
+          <h3>Transparency &amp; Trust</h3>
+          <p>A model of transparency and trust that keeps you informed at every step.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">💬</div>
+          <h3>Communication</h3>
+          <p>Improving communication so you always know where things stand.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">🚀</div>
+          <h3>Speed &amp; Efficiency</h3>
+          <p>Reducing turn-around times to get you from idea to impact, faster.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BETTER TOGETHER ═══ -->
+  <section class="better-together">
+    <div class="container">
+      <div class="together-grid">
+
+        <!-- Left: Text -->
+        <div class="together-content">
+          <div class="section-label">Better Together</div>
+          <h2 class="section-title">Work hard, <em>play harder</em></h2>
+          <p>
+            We know that work is important, but so is play! We respect all of our
+            partnerships, and we make every effort to engage in fun ways that solve critical
+            problems and leave a smile on your face at the same time.
+          </p>
+          <p>
+            We love our job and love helping our clients. Life is just too short to not
+            enjoy every minute!
+          </p>
+          <a href="/contact/" class="btn btn--primary btn--lg">Get in Touch </a>
+        </div>
+
+        <!-- Right: Review badge -->
+        <div class="together-visual">
+          <div class="review-badge">
+            <div class="review-label">Reviewed on</div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-score">5 / 5</div>
+            <div class="google-badge">
+              <p>Find us on</p>
+              <div class="g-logo">
+                <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+              </div>
+            </div>
+            <a
+              href="https://www.google.com/search?q=rethinkingweb"
+              target="_blank"
+              class="review-count"
+            >
+              22 Reviews →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS ═══ -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years</span>
+          <span class="stat-sub">Proven Track Record</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects</span>
+          <span class="stat-sub">Across several technologies</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices</span>
+          <span class="stat-sub">Mumbai · Vadodara · Portland</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact" id="form">
+    <div class="container">
+      <div class="contact__grid">
+
+        <!-- Left: Info -->
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">
+            Collaborate with us to achieve all-inclusive <em>IT solutions.</em>
+          </h2>
+          <p>
+            We're happy to answer any questions you may have and help you determine which
+            of our services best fit your needs.
+          </p>
+          <a href="tel:+919920996021" class="contact__phone">
+            📞 Call us at: +91-99209-96021
+          </a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✅ Client-oriented</div>
+              <div class="benefit">✅ Independent</div>
+              <div class="benefit">✅ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✅ Results-driven</div>
+              <div class="benefit">✅ Problem-solving</div>
+              <div class="benefit">✅ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step">
+              <div class="step-num">1</div>
+              <span>We schedule a call at your convenience</span>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <span>We do a discovery and consulting meeting</span>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <span>We prepare a proposal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact__form-card">
+          <h3>Schedule a Free Consultation</h3>
+         <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
+             <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p>Streamlining IT for an Ever Changing World</p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Solutions</h4>
+   <a href="managed.html">Managed Services</a>
+   <a href="consulting.html">IT Consulting & Advisory</a>
+   <a href="cyber.html">Cyber Security</a>
+   <a href="web_development.html">Web Development</a>
+    <a href="mobile-development.html">Mobile Development</a>
+    <a href="cloud.html">Cloud Services</a>
+    <a href="software.html">Software Development</a>
+    <a href="airtable.html">Enterprise Airtable Managed Services</a>
+    <a href="web-performance.html">Web Performance Optimization Services</a>
+    <a href="seo.html">On-page Technical SEO implementation</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="office-card__dir">Mulund East, Mumbai, India – 400081</a>
+          <a href="tel:+919920996021">+91-9920-9960-21</a>
+          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
+          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+       <a href="index.html">
+  <span>© 2026 RethinkingWeb</span>
+</a>
+        <div class="footer__links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/about.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>
