@@ -67,8 +67,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── 4. Desktop dropdowns ── */
+  /* ── 4. Desktop dropdowns — hover with leave-delay + mobile click ── */
   document.querySelectorAll('.nav__dropdown').forEach(dd => {
+    let leaveTimer = null;
+
+    // Desktop: open on mouseenter, close with delay on mouseleave
+    dd.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 1024) {
+        clearTimeout(leaveTimer);
+        document.querySelectorAll('.nav__dropdown').forEach(o => o !== dd && o.classList.remove('active'));
+        dd.classList.add('active');
+      }
+    });
+    dd.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 1024) {
+        leaveTimer = setTimeout(() => dd.classList.remove('active'), 180);
+      }
+    });
+
+    // Mobile: toggle on click
     dd.querySelector('.nav__link')?.addEventListener('click', e => {
       if (window.innerWidth <= 1024) {
         e.preventDefault();

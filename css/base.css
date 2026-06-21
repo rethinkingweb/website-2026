@@ -76,7 +76,7 @@ input, select, textarea, button { font-family: inherit; }
 .nav--light:not(.scrolled) .nav__link:hover          { color: var(--orange); }
 .nav--light:not(.scrolled) .nav__burger span         { background: var(--charcoal); }
 .nav--light:not(.scrolled) .nav-connect-btn          { background: var(--orange); border-color: var(--orange); color: #fff; animation: btn-ring-orange 2.4s ease-out infinite; }
-.nav--light:not(.scrolled) .nav-connect-btn:hover    { background: var(--orange-dark) !important; box-shadow: 0 8px 28px rgba(240,78,35,0.45); animation: none; }
+.nav--light:not(.scrolled) .nav-connect-btn:hover    { background: var(--orange-dark) !important; box-shadow: 0 8px 28px rgba(231,92,35,0.45); animation: none; }
 .nav--light:not(.scrolled) .nav-connect-btn::before  { background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent); }
 
 /* ── Dropdown (hover + JS .active) ── */
@@ -112,6 +112,15 @@ input, select, textarea, button { font-family: inherit; }
 }
 .nav__dropdown:hover .mega-menu,
 .nav__dropdown.active .mega-menu { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+
+/* Invisible bridge fills the gap so hover doesn't break mid-travel */
+.mega-menu::before,
+.dropdown__panel::before {
+  content: '';
+  position: absolute;
+  top: -12px; left: 0; right: 0;
+  height: 12px;
+}
 
 .mega-menu__header {
   display: flex; align-items: center; justify-content: space-between;
@@ -238,7 +247,7 @@ input, select, textarea, button { font-family: inherit; }
   height: 3px;
   background: linear-gradient(90deg, var(--orange), var(--orange-light));
 }
-.btn--primary:hover, .btn--ghost:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(240,78,35,0.35); }
+.btn--primary:hover, .btn--ghost:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(231,92,35,0.35); }
 .btn--outline:hover { background: var(--orange-pale); }
 .btn-icon:hover { color: var(--orange); }
 
@@ -272,11 +281,11 @@ input, select, textarea, button { font-family: inherit; }
 
 /* Connect scrolled state — orange ring */
 .nav.scrolled .nav-connect-btn           { animation: btn-ring-orange 2.4s ease-out infinite; }
-.nav.scrolled .nav-connect-btn:hover     { background: var(--orange-dark) !important; box-shadow: 0 8px 28px rgba(240,78,35,0.45); animation: none; }
+.nav.scrolled .nav-connect-btn:hover     { background: var(--orange-dark) !important; box-shadow: 0 8px 28px rgba(231,92,35,0.45); animation: none; }
 
 /* Schedule button — orange ring (always on dark hero) */
 .btn-schedule { animation: btn-ring-orange 2.4s ease-out infinite; }
-.btn-schedule:hover { background: var(--orange-dark) !important; box-shadow: 0 10px 32px rgba(240,78,35,0.5); }
+.btn-schedule:hover { background: var(--orange-dark) !important; box-shadow: 0 10px 32px rgba(231,92,35,0.5); }
 
 @keyframes btn-shimmer {
   0%          { left: -75%; opacity: 0; }

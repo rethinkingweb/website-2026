@@ -136,15 +136,33 @@ if (solutionsToggle && solutionsDropdown) {
     }
   });
 }
-// ── Nav dropdowns ──
+// ── Nav dropdowns — hover with leave-delay + mobile click ──
 const dropdowns = document.querySelectorAll('.nav__dropdown');
 dropdowns.forEach(dropdown => {
+  let leaveTimer = null;
+
+  dropdown.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 1024) {
+      clearTimeout(leaveTimer);
+      dropdowns.forEach(d => d !== dropdown && d.classList.remove('active'));
+      dropdown.classList.add('active');
+    }
+  });
+  dropdown.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 1024) {
+      leaveTimer = setTimeout(() => dropdown.classList.remove('active'), 180);
+    }
+  });
+
   const toggle = dropdown.querySelector('.nav__link');
-  if (!toggle) return;  // FIXED: guard if link missing
+  if (!toggle) return;
   toggle.addEventListener('click', function (e) {
-    e.preventDefault();
-    dropdowns.forEach(d => { if (d !== dropdown) d.classList.remove('active'); });
-    dropdown.classList.toggle('active');
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+      const isOpen = dropdown.classList.contains('active');
+      dropdowns.forEach(d => d.classList.remove('active'));
+      if (!isOpen) dropdown.classList.add('active');
+    }
   });
 });
 document.addEventListener('click', function (e) {

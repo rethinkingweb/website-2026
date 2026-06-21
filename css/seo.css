@@ -60,13 +60,13 @@ input, select, textarea, button { font-family: inherit; }
 .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; }
 .orb--1 {
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(240,78,35,0.18), transparent);
+  background: radial-gradient(circle, rgba(231,92,35,0.18), transparent);
   top: -200px; right: -150px;
   animation: float1 9s ease-in-out infinite;
 }
 .orb--2 {
   width: 450px; height: 450px;
-  background: radial-gradient(circle, rgba(240,78,35,0.1), transparent);
+  background: radial-gradient(circle, rgba(231,92,35,0.1), transparent);
   bottom: 5%; left: -120px;
   animation: float2 11s ease-in-out infinite;
 }
@@ -110,7 +110,7 @@ input, select, textarea, button { font-family: inherit; }
 .hero__badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: var(--orange-pale);
-  border: 1px solid rgba(240,78,35,0.25);
+  border: 1px solid rgba(231,92,35,0.25);
   border-radius: 50px; padding: 0.4rem 1rem;
   font-size: 0.8rem; font-weight: 600; color: var(--orange);
   margin-bottom: 1.5rem;
@@ -285,7 +285,7 @@ input, select, textarea, button { font-family: inherit; }
   transform: scaleX(0); transform-origin: left; transition: transform var(--trans);
 }
 .md-benefit-card:hover::before { transform: scaleX(1); }
-.md-benefit-card:hover { border-color: rgba(240,78,35,0.25); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
+.md-benefit-card:hover { border-color: rgba(231,92,35,0.25); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
 .md-benefit-card__icon { font-size: 2rem; margin-bottom: 0.75rem; }
 .md-benefit-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.5rem; }
 .md-benefit-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
@@ -359,7 +359,7 @@ input, select, textarea, button { font-family: inherit; }
   transform: scaleX(0); transform-origin: left; transition: transform var(--trans);
 }
 .md-related-card:hover::after { transform: scaleX(1); }
-.md-related-card:hover { border-color: rgba(240,78,35,0.25); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
+.md-related-card:hover { border-color: rgba(231,92,35,0.25); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
 .md-related-card--cta { display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; }
 .md-related-card__num { font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; color: var(--orange); }
 .md-related-card__icon { font-size: 2rem; }
@@ -371,8 +371,8 @@ input, select, textarea, button { font-family: inherit; }
 ═══════════════════════════════ */
 .testimonials { padding: 6rem 0; background: var(--bg); position: relative; overflow: hidden; }
 .testi-glow1, .testi-glow2 { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
-.testi-glow1 { width: 400px; height: 400px; background: rgba(240,78,35,0.08); top: -100px; left: -100px; }
-.testi-glow2 { width: 300px; height: 300px; background: rgba(240,78,35,0.06); bottom: -80px; right: -80px; }
+.testi-glow1 { width: 400px; height: 400px; background: rgba(231,92,35,0.08); top: -100px; left: -100px; }
+.testi-glow2 { width: 300px; height: 300px; background: rgba(231,92,35,0.06); bottom: -80px; right: -80px; }
 
 .testimonials__head {
   display: flex;
@@ -424,7 +424,7 @@ input, select, textarea, button { font-family: inherit; }
   opacity: 0;
   transition: opacity 0.25s ease;
 }
-.testi-card:hover { transform: translateY(-5px); background: var(--orange-light); border-color: rgba(240,78,35,0.32); }
+.testi-card:hover { transform: translateY(-5px); background: var(--orange-light); border-color: rgba(231,92,35,0.32); }
 .testi-card:hover::after { opacity: 1; }
 .testi-card__top { display: flex; align-items: flex-start; justify-content: space-between; }
 .testi-stars { color: #F59E0B; font-size: 1rem; letter-spacing: 2px; }
@@ -461,7 +461,7 @@ input, select, textarea, button { font-family: inherit; }
 .step-num {
   width: 28px; height: 28px; flex-shrink: 0;
   background: var(--orange-pale);
-  border: 1.5px solid rgba(240,78,35,0.35);
+  border: 1.5px solid rgba(231,92,35,0.35);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--orange);

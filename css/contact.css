@@ -142,7 +142,7 @@
 
 .office-card:hover::before { transform: scaleX(1); }
 .office-card:hover {
-  border-color: rgba(240,78,35,0.25);
+  border-color: rgba(231,92,35,0.25);
   transform: translateY(-6px);
   box-shadow: var(--shadow-orange);
 }
@@ -207,7 +207,7 @@
   margin-top: 2rem;
   padding: 1rem 1.5rem;
   background: var(--orange-pale);
-  border: 1px solid rgba(240,78,35,0.2);
+  border: 1px solid rgba(231,92,35,0.2);
   border-radius: var(--radius);
   width: fit-content;
 }

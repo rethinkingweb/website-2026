@@ -53,8 +53,8 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══ BACKGROUND ═══ */
 .hero__bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--bg); }
 .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; }
-.orb--1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(240,78,35,0.18), transparent); top: -200px; right: -150px; animation: float1 9s ease-in-out infinite; }
-.orb--2 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(240,78,35,0.1), transparent); bottom: 5%; left: -120px; animation: float2 11s ease-in-out infinite; }
+.orb--1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(231,92,35,0.18), transparent); top: -200px; right: -150px; animation: float1 9s ease-in-out infinite; }
+.orb--2 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(231,92,35,0.1), transparent); bottom: 5%; left: -120px; animation: float2 11s ease-in-out infinite; }
 .orb--3 { width: 280px; height: 280px; background: radial-gradient(circle, rgba(255,180,140,0.2), transparent); top: 45%; right: 28%; animation: float1 13s ease-in-out infinite reverse; }
 @keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-40px)} }
 @keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,30px)} }
@@ -89,7 +89,7 @@ input, select, textarea, button { font-family: inherit; }
   display: inline-flex;
   align-items: center; gap: 0.5rem;
   background: var(--orange-pale);
-  border: 1px solid rgba(240,78,35,0.25);
+  border: 1px solid rgba(231,92,35,0.25);
   border-radius: 50px;
   padding: 0.4rem 1rem;
   font-size: 0.8rem; font-weight: 600;
@@ -168,12 +168,12 @@ input, select, textarea, button { font-family: inherit; }
 .shield-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px solid rgba(240,78,35,0.2);
+  border: 1.5px solid rgba(231,92,35,0.2);
   animation: spin-slow linear infinite;
 }
 .shield-ring--1 { width: 300px; height: 300px; animation-duration: 20s; }
-.shield-ring--2 { width: 220px; height: 220px; animation-duration: 14s; animation-direction: reverse; border-color: rgba(240,78,35,0.3); }
-.shield-ring--3 { width: 140px; height: 140px; animation-duration: 8s; border-color: rgba(240,78,35,0.15); }
+.shield-ring--2 { width: 220px; height: 220px; animation-duration: 14s; animation-direction: reverse; border-color: rgba(231,92,35,0.3); }
+.shield-ring--3 { width: 140px; height: 140px; animation-duration: 8s; border-color: rgba(231,92,35,0.15); }
 @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 .shield-core {
@@ -182,17 +182,17 @@ input, select, textarea, button { font-family: inherit; }
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 2.5rem;
-  box-shadow: 0 0 40px rgba(240,78,35,0.4), 0 0 80px rgba(240,78,35,0.15);
+  box-shadow: 0 0 40px rgba(231,92,35,0.4), 0 0 80px rgba(231,92,35,0.15);
   animation: pulse-glow 3s ease-in-out infinite;
 }
-@keyframes pulse-glow { 0%,100%{box-shadow:0 0 40px rgba(240,78,35,0.4),0 0 80px rgba(240,78,35,0.15)} 50%{box-shadow:0 0 60px rgba(240,78,35,0.6),0 0 120px rgba(240,78,35,0.25)} }
+@keyframes pulse-glow { 0%,100%{box-shadow:0 0 40px rgba(231,92,35,0.4),0 0 80px rgba(231,92,35,0.15)} 50%{box-shadow:0 0 60px rgba(231,92,35,0.6),0 0 120px rgba(231,92,35,0.25)} }
 
 .orbit-dot {
   position: absolute;
   width: 12px; height: 12px;
   background: var(--orange);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(240,78,35,0.6);
+  box-shadow: 0 0 10px rgba(231,92,35,0.6);
 }
 .orbit-dot--1 { top: 10px; left: 50%; transform: translateX(-50%); }
 .orbit-dot--2 { bottom: 25px; right: 35px; background: var(--orange-light); }
@@ -244,7 +244,7 @@ input, select, textarea, button { font-family: inherit; }
 .pillar.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
 .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--orange), var(--orange-light)); transform: scaleX(0); transform-origin: left; transition: transform var(--trans); }
 .pillar:hover::before { transform: scaleX(1); }
-.pillar:hover { border-color: rgba(240,78,35,0.25); transform: translateY(-6px); box-shadow: var(--shadow-orange); }
+.pillar:hover { border-color: rgba(231,92,35,0.25); transform: translateY(-6px); box-shadow: var(--shadow-orange); }
 .pillar__icon { font-size: 2rem; margin-bottom: 1rem; }
 .pillar h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.6rem; }
 .pillar p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
@@ -268,11 +268,11 @@ input, select, textarea, button { font-family: inherit; }
   box-shadow: var(--shadow);
   transition: all var(--trans);
 }
-.check-item:hover { border-color: rgba(240,78,35,0.3); transform: translateX(4px); box-shadow: var(--shadow-orange); }
+.check-item:hover { border-color: rgba(231,92,35,0.3); transform: translateX(4px); box-shadow: var(--shadow-orange); }
 .check-icon {
   width: 32px; height: 32px; flex-shrink: 0;
   background: var(--orange-pale);
-  border: 1.5px solid rgba(240,78,35,0.3);
+  border: 1.5px solid rgba(231,92,35,0.3);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   color: var(--orange); font-weight: 700; font-size: 0.9rem;
@@ -299,7 +299,7 @@ input, select, textarea, button { font-family: inherit; }
 }
 .solution-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--orange), var(--orange-light)); transform: scaleX(0); transform-origin: left; transition: transform var(--trans); }
 .solution-card:hover::after { transform: scaleX(1); }
-.solution-card:hover { border-color: rgba(240,78,35,0.2); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
+.solution-card:hover { border-color: rgba(231,92,35,0.2); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
 .solution-card--cta {
   display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
   background: linear-gradient(135deg, var(--orange-pale), #fff5f2);
@@ -351,7 +351,7 @@ input, select, textarea, button { font-family: inherit; }
   scroll-snap-align: start; flex-shrink: 0;
   transition: all var(--trans);
 }
-.testi-card:hover { background: rgba(240,78,35,0.12); border-color: rgba(240,78,35,0.35); }
+.testi-card:hover { background: rgba(231,92,35,0.12); border-color: rgba(231,92,35,0.35); }
 .testi-stars { color: #F59E0B; font-size: 1.1rem; }
 .testi-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.7; flex: 1; font-style: italic; }
 .testi-author { display: flex; align-items: center; gap: 0.75rem; }
@@ -374,7 +374,7 @@ input, select, textarea, button { font-family: inherit; }
 .benefit { font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem; }
 .contact__steps h4 { font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
 .step { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.75rem; }
-.step-num { width: 28px; height: 28px; flex-shrink: 0; background: var(--orange-pale); border: 1.5px solid rgba(240,78,35,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--orange); }
+.step-num { width: 28px; height: 28px; flex-shrink: 0; background: var(--orange-pale); border: 1.5px solid rgba(231,92,35,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--orange); }
 .contact__form-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); }
 .contact__form-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1.75rem; }
 .contact-form { display: flex; flex-direction: column; gap: 1rem; }

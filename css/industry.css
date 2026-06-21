@@ -50,8 +50,8 @@ input, select, textarea, button { font-family: inherit; }
 /* ── HERO BG ── */
 .hero__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--bg); }
 .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; }
-.orb--1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(240,78,35,0.18), transparent); top: -200px; right: -150px; animation: float1 9s ease-in-out infinite; }
-.orb--2 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(240,78,35,0.1), transparent); bottom: 5%; left: -120px; animation: float2 11s ease-in-out infinite; }
+.orb--1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(231,92,35,0.18), transparent); top: -200px; right: -150px; animation: float1 9s ease-in-out infinite; }
+.orb--2 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(231,92,35,0.1), transparent); bottom: 5%; left: -120px; animation: float2 11s ease-in-out infinite; }
 .orb--3 { width: 280px; height: 280px; background: radial-gradient(circle, rgba(255,180,140,0.2), transparent); top: 45%; right: 28%; animation: float1 13s ease-in-out infinite reverse; }
 @keyframes float1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px,-40px); } }
 @keyframes float2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-20px,30px); } }
@@ -77,7 +77,7 @@ input, select, textarea, button { font-family: inherit; }
 .breadcrumb a:hover { text-decoration: underline; }
 .hero__badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--orange-pale); border: 1px solid rgba(240,78,35,0.25);
+  background: var(--orange-pale); border: 1px solid rgba(231,92,35,0.25);
   border-radius: 50px; padding: 0.4rem 1rem;
   font-size: 0.8rem; font-weight: 600; color: var(--orange);
   margin-bottom: 1.5rem; animation: fadeUp 0.7s ease both;
@@ -114,7 +114,7 @@ input, select, textarea, button { font-family: inherit; }
 }
 .culture-card__badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--orange-pale); border: 1px solid rgba(240,78,35,0.2);
+  background: var(--orange-pale); border: 1px solid rgba(231,92,35,0.2);
   border-radius: 50px; padding: 0.35rem 0.9rem;
   font-size: 0.78rem; font-weight: 700; color: var(--orange); margin-bottom: 1.25rem;
 }
@@ -141,10 +141,10 @@ input, select, textarea, button { font-family: inherit; }
   border: 1px solid var(--border); border-radius: var(--radius);
   box-shadow: var(--shadow); transition: all var(--trans);
 }
-.check-item:hover { border-color: rgba(240,78,35,0.3); transform: translateX(4px); box-shadow: var(--shadow-orange); }
+.check-item:hover { border-color: rgba(231,92,35,0.3); transform: translateX(4px); box-shadow: var(--shadow-orange); }
 .check-icon {
   width: 32px; height: 32px; flex-shrink: 0;
-  background: var(--orange-pale); border: 1.5px solid rgba(240,78,35,0.3);
+  background: var(--orange-pale); border: 1.5px solid rgba(231,92,35,0.3);
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
   color: var(--orange); font-weight: 700; font-size: 0.9rem;
 }
@@ -168,7 +168,7 @@ input, select, textarea, button { font-family: inherit; }
   transform: scaleX(0); transform-origin: left; transition: transform var(--trans);
 }
 .stat-box:hover::before { transform: scaleX(1); }
-.stat-box:hover { border-color: rgba(240,78,35,0.25); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
+.stat-box:hover { border-color: rgba(231,92,35,0.25); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
 .stat-num { display: block; font-size: 2.4rem; font-weight: 900; color: var(--orange); line-height: 1; margin-bottom: 0.5rem; }
 .stat-label { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; }
 
@@ -187,7 +187,7 @@ input, select, textarea, button { font-family: inherit; }
   transform: scaleX(0); transform-origin: left; transition: transform var(--trans);
 }
 .service-card:hover::before { transform: scaleX(1); }
-.service-card:hover { border-color: rgba(240,78,35,0.25); transform: translateY(-6px); box-shadow: var(--shadow-orange); }
+.service-card:hover { border-color: rgba(231,92,35,0.25); transform: translateY(-6px); box-shadow: var(--shadow-orange); }
 .service-card__icon { font-size: 2rem; margin-bottom: 1rem; }
 .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.6rem; }
 .service-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
@@ -205,7 +205,7 @@ input, select, textarea, button { font-family: inherit; }
   background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px; transition: all var(--trans);
 }
-.services-list-item:hover { background: rgba(240,78,35,0.15); border-color: rgba(240,78,35,0.4); color: var(--white); }
+.services-list-item:hover { background: rgba(231,92,35,0.15); border-color: rgba(231,92,35,0.4); color: var(--white); }
 
 /* ── TESTIMONIALS ── */
 .testimonials-section { padding: 6rem 0; background: var(--bg); }
@@ -227,7 +227,7 @@ input, select, textarea, button { font-family: inherit; }
   transform: scaleX(0); transform-origin: left; transition: transform var(--trans);
 }
 .testimonial-card:hover::before { transform: scaleX(1); }
-.testimonial-card:hover { border-color: rgba(240,78,35,0.25); transform: translateY(-6px); box-shadow: var(--shadow-orange); }
+.testimonial-card:hover { border-color: rgba(231,92,35,0.25); transform: translateY(-6px); box-shadow: var(--shadow-orange); }
 .testimonial-stars { color: #F59E0B; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
 .testimonial-text {
   font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.75rem;
@@ -273,7 +273,7 @@ input, select, textarea, button { font-family: inherit; }
 .step-num {
   width: 28px; height: 28px; flex-shrink: 0;
   background: var(--orange-pale);
-  border: 1.5px solid rgba(240,78,35,0.35);
+  border: 1.5px solid rgba(231,92,35,0.35);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--orange);

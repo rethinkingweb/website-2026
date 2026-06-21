@@ -77,7 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
      4. DESKTOP DROPDOWNS
   ══════════════════════════════ */
   document.querySelectorAll('.nav__dropdown').forEach(dd => {
-    dd.querySelector('.nav__link')?.addEventListener('click', e => {
+    let leaveTimer = null;
+
+    dd.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 1024) {
+        clearTimeout(leaveTimer);
+        document.querySelectorAll('.nav__dropdown').forEach(o => o !== dd && o.classList.remove('active'));
+        dd.classList.add('active');
+      }
+    });
+    dd.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 1024) {
+        leaveTimer = setTimeout(() => dd.classList.remove('active'), 180);
+      }
+    });
+
+        dd.querySelector('.nav__link')?.addEventListener('click', e => {
       if (window.innerWidth <= 1024) {
         e.preventDefault();
         const isOpen = dd.classList.contains('active');
