@@ -28,18 +28,17 @@ So `case1.html` loads `css/case1.css` + `js/case1.js`, `about.html` loads `css/a
 
 Exceptions to the naming rule:
 - `index.html` uses `css/style.css` + `js/script.js` (not `index.*`).
-- `css/main.css` is the About-page base (legacy name); `about.html` uses it.
 
-### Two truly global files, linked on every page
+### Global files, linked on every page
 
-- **`css/theme.css`** — dark/light mode. Defines `body.dark { ... }` CSS-variable overrides for nav text, cards, forms, logos that the per-page CSS misses. Always linked *after* the page CSS.
+- **`css/base.css`** — single source of truth for brand tokens (CSS custom properties), resets, keyframes, and dark-mode overrides (`body.dark { ... }`). Linked *first*, before the page CSS and Tailwind CDN. Do not redeclare `:root` tokens in per-page CSS; consume variables from `base.css` instead.
 - **`js/theme.js`** — the dark/light toggle. Reads/writes `localStorage['rtw-theme']`, applies `body.dark` before paint to avoid flash, and binds `#themeToggle` plus any `[data-theme-toggle]` buttons.
 
-When adding a new page, you must include both, plus the EmailJS snippet (below), or the page silently loses dark mode and its form.
+When adding a new page, include `css/base.css` (first), the page CSS, Tailwind CDN, then `js/theme.js` and the EmailJS block, or the page loses dark mode and its form.
 
 ### Design tokens
 
-Brand colors and neutrals are CSS custom properties under `:root` (e.g. `--orange: #F04E23`, `--charcoal`, `--bg`, `--border`). These are **redeclared in each page's CSS file** rather than imported, and overridden for dark mode in `theme.css`. Keep token names consistent across files; dark mode only works for elements that consume the variables.
+Brand colors and neutrals are CSS custom properties in `css/base.css` (e.g. `--orange: #F04E23`, `--charcoal`, `--bg`, `--border`). Dark-mode overrides live there too under `body.dark`. Keep token names consistent; dark mode only works for elements that consume the variables.
 
 ## Forms: EmailJS, no backend
 
@@ -63,4 +62,4 @@ Contact/consultation forms submit client-side via EmailJS — there is no server
 
 - Match the surrounding page's existing CSS-variable names and BEM-ish class style (`nav__link`, `solution-card`, `svc-card`, `mob-accordion__btn`).
 - Many HTML files begin with a UTF-8 BOM — preserve it; don't reformat whole files.
-- New page → copy an existing similar page's `<head>`/nav/footer, then create matching `css/X.css` and `js/X.js`, and keep `theme.css` + `theme.js` + the EmailJS block.
+- New page → copy an existing similar page's `<head>`/nav/footer, then create matching `css/X.css` and `js/X.js`. Link order in `<head>`: `css/base.css` → `css/X.css` → Tailwind CDN. Scripts at end of body: `js/X.js` → `js/theme.js` → EmailJS block.

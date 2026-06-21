@@ -1,0 +1,252 @@
+/* ─────────────────────────────────────────────
+   base.css — Single source of truth
+   Replaces all per-page :root blocks + theme.css
+   Linked on every page BEFORE tailwind CDN.
+   Only contains: tokens, reset, JS-toggled states,
+   pseudo-elements, keyframes, and dark-mode overrides.
+───────────────────────────────────────────── */
+
+/* ── Brand tokens ── */
+:root {
+  --orange:        #F04E23;
+  --orange-dark:   #C93D15;
+  --orange-light:  #FF6B42;
+  --orange-pale:   #FFF0EB;
+  --orange-glow:   rgba(240, 78, 35, 0.15);
+  --bg:            #FFFFFF;
+  --bg2:           #F8F6F4;
+  --bg3:           #F2EFEC;
+  --surface:       #FFFFFF;
+  --surface2:      #F5F2EF;
+  --charcoal:      #1A1A1A;
+  --charcoal2:     #2D2D2D;
+  --charcoal3:     #3D3D3D;
+  --border:        #E8E2DC;
+  --border-dark:   #D4CCC4;
+  --text:          #1A1A1A;
+  --text-muted:    #7A6F68;
+  --white:         #FFFFFF;
+  --card-bg:       #ffffff;
+  --font-display:  "Inter Tight", sans-serif;
+  --font-body:     "Inter Tight", sans-serif;
+  --radius:        12px;
+  --radius-lg:     20px;
+  --trans:         0.3s ease;
+  --shadow:        0 4px 24px rgba(0,0,0,0.08);
+  --shadow-md:     0 8px 40px rgba(0,0,0,0.1);
+  --shadow-lg:     0 12px 30px rgba(0,0,0,0.08);
+  --shadow-orange: 0 8px 30px rgba(240,78,35,0.25);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+input, select, textarea, button { font-family: inherit; }
+
+
+/* ── JS-toggled nav states ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 0; transition: all var(--trans); background: transparent; }
+.nav.scrolled { background: rgba(255,240,235,0.92); backdrop-filter: blur(16px); padding: .75rem 0; border-bottom: 1px solid var(--border); box-shadow: var(--shadow); }
+
+/* ── Nav inverted (white) before scroll — sits on dark hero gradient ── */
+.nav:not(.scrolled) .nav__link                { color: rgba(255,255,255,0.82); }
+.nav:not(.scrolled) .nav__link:hover          { color: #fff; }
+.nav:not(.scrolled) .nav__burger span         { background: #fff; }
+.nav:not(.scrolled) .nav-connect-btn          { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.35); color: #fff; backdrop-filter: blur(8px); animation: btn-ring-white 2.4s ease-out infinite; }
+.nav:not(.scrolled) .nav-connect-btn:hover    { background: rgba(255,255,255,0.28) !important; border-color: rgba(255,255,255,0.6); box-shadow: none; animation: none; }
+/* shimmer stays active — white gradient on dark bg */
+.nav:not(.scrolled) .nav-connect-btn::before  { background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent); }
+/* Keep dropdown readable on scroll since it opens on a light panel */
+.nav:not(.scrolled) .dropdown__panel .nav__link { color: var(--text-muted); }
+
+/* ── Inner-page nav — solid light background so dark links contrast on light heroes ── */
+.nav--light:not(.scrolled) { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav--light:not(.scrolled) .nav__link                { color: var(--charcoal3); }
+.nav--light:not(.scrolled) .nav__link:hover          { color: var(--orange); }
+.nav--light:not(.scrolled) .nav__burger span         { background: var(--charcoal); }
+.nav--light:not(.scrolled) .nav-connect-btn          { background: var(--orange); border-color: var(--orange); color: #fff; animation: btn-ring-orange 2.4s ease-out infinite; }
+.nav--light:not(.scrolled) .nav-connect-btn:hover    { background: var(--orange-dark) !important; box-shadow: 0 8px 28px rgba(240,78,35,0.45); animation: none; }
+.nav--light:not(.scrolled) .nav-connect-btn::before  { background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent); }
+
+/* ── Dropdown (hover + JS .active) ── */
+.nav__dropdown { position: relative; }
+.dropdown__panel {
+  position: absolute; top: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 15px 20px;
+  min-width: 500px; opacity: 0; pointer-events: none;
+  transition: all var(--trans); box-shadow: var(--shadow-lg);
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 10px 30px;
+  z-index: 100;
+}
+.nav__dropdown:hover .dropdown__panel,
+.nav__dropdown.active .dropdown__panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+.dropdown__panel a { display: block; padding: .5rem .75rem; font-size: .875rem; color: var(--text-muted); border-radius: 6px; transition: all var(--trans); white-space: nowrap; font-weight: 600; }
+.dropdown__panel a:hover { background: var(--orange-pale); color: var(--orange); }
+
+/* ── Mobile nav drawer (JS toggles .open / .is-open) ── */
+.mobile-nav {
+  position: fixed; inset: 0; z-index: 2000;
+  background: var(--white); display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform .4s cubic-bezier(.77,0,.175,1);
+  border-left: 3px solid var(--orange); overflow-y: auto;
+}
+.mobile-nav.open, .mobile-nav.is-open { transform: translateX(0); }
+
+/* ── Overlay (JS toggles .active / .is-open) ── */
+.nav-overlay { position: fixed; inset: 0; z-index: 1999; background: rgba(0,0,0,0.45); display: none; pointer-events: none; }
+.nav-overlay.active, .nav-overlay.is-open { display: block; pointer-events: auto; }
+
+/* ── Mobile accordion (JS sets maxHeight) ── */
+.mob-accordion__panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; background: var(--bg2); border-radius: 0 0 8px 8px; }
+.mob-accordion__panel a { display: block !important; font-size: 0.875rem !important; font-weight: 600 !important; color: var(--text-muted) !important; padding: 0.65rem 1rem !important; border-bottom: 1px solid var(--border) !important; text-decoration: none !important; transition: color var(--trans), background var(--trans); }
+.mob-accordion__panel a:last-child { border-bottom: none !important; }
+.mob-accordion__panel a:hover { color: var(--orange) !important; background: var(--orange-pale); }
+.mob-chevron { flex-shrink: 0; transition: transform 0.3s ease; }
+.mob-accordion.open .mob-chevron,
+[aria-expanded="true"] .mob-chevron { transform: rotate(180deg); }
+
+/* ── Burger open state (JS adds .is-open) ── */
+.nav__burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__burger.is-open span:nth-child(2) { opacity: 0; }
+.nav__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Shared layout utilities ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.center { text-align: center; }
+.mt-3 { margin-top: 3rem; }
+
+/* ── Section typography ── */
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800; line-height: 1.15;
+  color: var(--charcoal); margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+  .section-title { font-size: 1.8rem; line-height: 1.2; margin-bottom: 1.5rem; text-align: center; }
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.65rem 1.4rem; border-radius: 8px;
+  font-family: var(--font-display); font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; transition: all var(--trans); border: none; white-space: nowrap;
+}
+.btn--primary, .btn--ghost { background: var(--orange); color: white; }
+.btn--outline { background: transparent; color: var(--orange); border: 1.5px solid var(--orange); }
+.btn--lg { padding: 0.85rem 1.8rem; font-size: 1rem; border-radius: 10px; }
+.btn--full { width: 100%; justify-content: center; }
+
+
+/* ── Pseudo-elements that Tailwind can't express ── */
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 2px;
+  background: var(--orange);
+  border-radius: 2px;
+}
+.section-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-pill::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-light));
+}
+.btn--primary:hover, .btn--ghost:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(240,78,35,0.35); }
+.btn--outline:hover { background: var(--orange-pale); }
+.btn-icon:hover { color: var(--orange); }
+
+/* ── Connect button — shimmer + pulse-ring animation ── */
+/* ── Shared shimmer + ring mixin applied to Connect & Schedule ── */
+.nav-connect-btn,
+.btn-schedule {
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  animation: btn-ring-white 2.4s ease-out infinite;
+}
+.nav-connect-btn::before,
+.btn-schedule::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.32), transparent);
+  transform: skewX(-20deg);
+  animation: btn-shimmer 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+.nav-connect-btn:hover,
+.btn-schedule:hover {
+  transform: translateY(-2px);
+  animation: none;
+}
+.nav-connect-btn:hover::before,
+.btn-schedule:hover::before { animation: none; opacity: 0; }
+
+/* Connect scrolled state — orange ring */
+.nav.scrolled .nav-connect-btn           { animation: btn-ring-orange 2.4s ease-out infinite; }
+.nav.scrolled .nav-connect-btn:hover     { background: var(--orange-dark) !important; box-shadow: 0 8px 28px rgba(240,78,35,0.45); animation: none; }
+
+/* Schedule button — orange ring (always on dark hero) */
+.btn-schedule { animation: btn-ring-orange 2.4s ease-out infinite; }
+.btn-schedule:hover { background: var(--orange-dark) !important; box-shadow: 0 10px 32px rgba(240,78,35,0.5); }
+
+@keyframes btn-shimmer {
+  0%          { left: -75%; opacity: 0; }
+  25%         { opacity: 1; }
+  55%         { left: 130%; opacity: 0; }
+  100%        { left: 130%; opacity: 0; }
+}
+@keyframes btn-ring-orange {
+  0%   { box-shadow: 0 0 0 0   rgba(240,78,35,0.55); }
+  60%  { box-shadow: 0 0 0 9px rgba(240,78,35,0);    }
+  100% { box-shadow: 0 0 0 0   rgba(240,78,35,0);    }
+}
+@keyframes btn-ring-white {
+  0%   { box-shadow: 0 0 0 0   rgba(255,255,255,0.5); }
+  60%  { box-shadow: 0 0 0 9px rgba(255,255,255,0);   }
+  100% { box-shadow: 0 0 0 0   rgba(255,255,255,0);   }
+}
+
+/* ── Keyframes ── */
+@keyframes fadeUp   { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes float1   { 0%,100%{transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-12px) rotate(2deg);} }
+@keyframes float2   { 0%,100%{transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-8px) rotate(-2deg);} }
+@keyframes pulse    { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+@keyframes shimmer  { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
+@keyframes scrollLeft  { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+@keyframes scrollRight { from{transform:translateX(-50%);} to{transform:translateX(0);} }
+@keyframes testi-marquee { from{transform:translateX(0);} to{transform:translateX(calc(-50% - 10px));} }
+@keyframes blink    { 0%,100%{opacity:1;} 50%{opacity:0;} }
+@keyframes spin-slow { to{transform:rotate(360deg);} }
+@keyframes cardReveal { from{opacity:0;transform:translateY(18px);} to{opacity:1;transform:translateY(0);} }
+@keyframes v2Pulse  { 0%,100%{opacity:0.5;transform:scale(1);} 50%{opacity:1;transform:scale(1.05);} }
+
+/* ── Font Awesome icon styling in section cards ── */
+[class*="__icon"] i.fas,
+[class*="__icon"] i.far,
+[class*="__icon"] i.fab {
+  font-size: 1.5rem;
+  color: var(--orange);
+}

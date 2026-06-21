@@ -1,4 +1,4 @@
-﻿/* ─────────────────────────────────────────────
+/* ─────────────────────────────────────────────
    contact.css  — Page-specific styles
    Relies on style.css variables & base rules
 ───────────────────────────────────────────── */
@@ -256,7 +256,6 @@
 
 .check-label a { color: var(--orange); text-decoration: underline; }
 
-
 /* Form success message */
 .form-success {
   display: none;
@@ -295,11 +294,6 @@
 /* ═══════════════════════════════
    NAV btn--sm helper
 ═══════════════════════════════ */
-.btn--sm {
-  padding: 0.5rem 1.1rem;
-  font-size: 0.82rem;
-  border-radius: 7px;
-}
 
 /* ═══════════════════════════════
    RESPONSIVE
@@ -332,24 +326,3 @@
 /* ═══════════════════════════════
    DARK MODE OVERRIDES
 ═══════════════════════════════ */
-body.dark .contact-hero { background: var(--bg); }
-body.dark .contact-hero__title { color: var(--orange); }
-body.dark .quick-val { color: var(--white); }
-body.dark .contact-hero__quick { background: var(--surface); border-color: var(--border); }
-body.dark .quick-divider { background: var(--border); }
-body.dark .office-card { background: var(--surface); border-color: var(--border); }
-body.dark .office-card h3 { color: var(--orange); }
-body.dark .reviews-badge { background: rgba(240,78,35,0.12); border-color: rgba(240,78,35,0.3); }
-body.dark .reviews-count { color: var(--white); }
-.dropdown__panel {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-  gap: 10px 30px; /* row gap + column gap */
-  padding: 15px 20px;
-  min-width: 500px; /* increase width */
-}
-
-.dropdown__panel a {
-  display: block;
-  white-space: nowrap; /* prevent breaking */
-}

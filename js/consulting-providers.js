@@ -182,18 +182,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ══════════════════════════════
-     10. THEME TOGGLE
-  ══════════════════════════════ */
-  const themeBtn = document.getElementById('themeToggle');
-  if (themeBtn) {
-    const saved = localStorage.getItem('rtw-theme');
-    if (saved === 'dark') { document.body.classList.add('dark'); themeBtn.textContent = '☀️'; }
-    themeBtn.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('dark');
-      themeBtn.textContent = isDark ? '☀️' : '🌙';
-      localStorage.setItem('rtw-theme', isDark ? 'dark' : 'light');
-    });
-  }
 
 });

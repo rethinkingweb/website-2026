@@ -1,4 +1,4 @@
-﻿/* ─────────────────────────────────────────────
+/* ─────────────────────────────────────────────
    managed-services.css
    Page-specific styles — relies on style.css
    variables and base rules.
@@ -397,25 +397,6 @@
 /* ═══════════════════════════════
    DARK MODE OVERRIDES
 ═══════════════════════════════ */
-body.dark .ms-hero        { background: var(--bg); }
-body.dark .ms-hero__title { color: #f1f5f9 !important; -webkit-text-fill-color: #f1f5f9 !important; background: none !important; }
-body.dark .ms-hero__title em {
-  background: linear-gradient(135deg, var(--orange), var(--orange-light)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-}
-body.dark .ms-icon-card   { background: #1e293b; border-color: #334155; }
-body.dark .ms-icon-card p { color: #94a3b8; }
-body.dark .ms-stat        { background: #1e293b; border-color: #334155; }
-body.dark .ms-benefits    { background: var(--bg2); }
-body.dark .ms-benefit-card { background: #1e293b; border-color: #334155; }
-body.dark .ms-benefit-card h3 { color: #f1f5f9; }
-body.dark .ms-clients     { background: var(--bg2); }
-body.dark .ms-related     { background: var(--bg); }
-body.dark .ms-related-card { background: #1e293b !important; border-color: #334155; }
-body.dark .ms-related-card h3 { color: #f1f5f9; }
-body.dark .ms-stats       { border-top-color: #1e293b; }
 
 /* ═══════════════════════════════
    RESPONSIVE
@@ -448,16 +429,4 @@ body.dark .ms-stats       { border-top-color: #1e293b; }
 
 @media (max-width: 480px) {
   .ms-stats { grid-template-columns: 1fr 1fr; }
-}
-.dropdown__panel {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-  gap: 10px 30px; /* row gap + column gap */
-  padding: 15px 20px;
-  min-width: 500px; /* increase width */
-}
-
-.dropdown__panel a {
-  display: block;
-  white-space: nowrap; /* prevent breaking */
 }

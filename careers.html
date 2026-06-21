@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,26 +6,57 @@
   <title>Careers — Grow Your Career With Us</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/base.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/careers.css" />
-  <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/style.css" />    
+  <!-- Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#F04E23', dark: '#C93D15', light: '#FF6B42', pale: '#FFF0EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(240,78,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
 
-  <!-- ───────── NAV ───────── -->
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="index.html" class="nav__logo">
-      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:40px;width:auto;" />
+<!-- ───────── NAV ───────── -->
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
     </a>
 
     <!-- DESKTOP LINKS -->
-    <nav class="nav__links" id="navLinks">
-      <a href="index.html" class="nav__link">Home</a>
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+      <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
 
       <div class="nav__dropdown">
-        <a href="solutions.html" class="nav__link">
+        <a href="solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
           Solutions
           <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </a>
@@ -44,7 +75,7 @@
       </div>
 
       <div class="nav__dropdown">
-        <a href="about.html" class="nav__link">
+        <a href="about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
           Company
           <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </a>
@@ -58,45 +89,41 @@
         </div>
       </div>
 
-      <a href="case.html" class="nav__link">Case Studies</a>
-      <a href="blogs.html" class="nav__link">Blogs</a>
-
-      <div class="nav-actions">
-        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
-      </div>
+      <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+      
     </nav>
 
-    <div class="nav__actions">
-      <a href="tel:+919920996021" class="nav__phone">+91 99209 96021</a>
-      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
     </div>
 
     <!-- HAMBURGER BUTTON -->
-    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
     </button>
   </div>
 </header>
 
 <!-- ───────── MOBILE NAV DRAWER ───────── -->
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-  <div class="mobile-nav__header">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
     <a href="index.html">
-      <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:34px;width:auto;" />
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
     </a>
-    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">✕</button>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
   </div>
 
-  <nav class="mobile-nav__links">
-    <a href="index.html" class="mob-link">Home</a>
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
 
-    
     <!-- Solutions accordion -->
-    <div class="mob-accordion">
-        <div class="mob-accordion__header"></div>
-      <button class="mob-accordion__btn" aria-expanded="false">
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
         <a href="solutions.html" class="mob-accordion__link">Solutions</a>
-        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
@@ -115,10 +142,10 @@
     </div>
 
     <!-- Company accordion -->
-    <div class="mob-accordion">
-      <button class="mob-accordion__btn" aria-expanded="false">
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
         <a href="about.html" class="mob-accordion__link">Company</a>
-        <svg class="mob-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none">
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
@@ -132,14 +159,15 @@
       </div>
     </div>
 
-    <a href="case.html" class="mob-link">Case Studies</a>
-    <a href="blogs.html" class="mob-link">Blogs</a>
-    <a href="contact.html" class="mob-link mob-link--cta">Contact Us</a>
+    <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+    
+    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
   </nav>
 </div>
 
 <!-- Overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
+
   <!-- ═══ HERO ═══ -->
   <section class="page-hero">
     <div class="hero__bg">
@@ -261,42 +289,42 @@
       <p class="benefits-intro">We take care of our people — because happy people build the best products and deliver the best service.</p>
       <div class="benefits-grid">
         <div class="benefit-card" data-animate>
-          <div class="benefit-card__icon">🏖️</div>
+          <div class="benefit-card__icon"><i class="fas fa-umbrella-beach"></i></div>
           <h3>Four Weeks Paid Vacation</h3>
           <p>Our base for all employees, plus another week at year five and ten with the company.</p>
         </div>
         <div class="benefit-card" data-animate>
-          <div class="benefit-card__icon">💰</div>
+          <div class="benefit-card__icon"><i class="fas fa-dollar-sign"></i></div>
           <h3>Sales Referral Program</h3>
           <p>For all employees, not just sales. Up to a free company Tesla. Yes, for real.</p>
         </div>
         <div class="benefit-card" data-animate>
-          <div class="benefit-card__icon">🏥</div>
+          <div class="benefit-card__icon"><i class="fas fa-hospital"></i></div>
           <h3>Competitive Insurance</h3>
           <p>Including vision and dental, disability, and life insurance options for you and your family.</p>
         </div>
         <div class="benefit-card" data-animate>
-          <div class="benefit-card__icon">🎯</div>
+          <div class="benefit-card__icon"><i class="fas fa-bullseye"></i></div>
           <h3>Performance Bonuses</h3>
           <p>Company wide. Do great work, be rewarded for it — it's that simple. Every quarter.</p>
         </div>
         <div class="benefit-card" data-animate>
-          <div class="benefit-card__icon">🎉</div>
+          <div class="benefit-card__icon"><i class="fas fa-party-horn"></i></div>
           <h3>Company Holidays</h3>
           <p>Two weeks worth every year — including your birthday. Because you deserve it.</p>
         </div>
         <div class="benefit-card" data-animate>
-          <div class="benefit-card__icon">💼</div>
+          <div class="benefit-card__icon"><i class="fas fa-briefcase"></i></div>
           <h3>401k / Retirement Plan</h3>
           <p>We provide competitive company matching to help you plan, save, and invest for your future.</p>
         </div>
         <div class="benefit-card" data-animate>
-          <div class="benefit-card__icon">🎓</div>
+          <div class="benefit-card__icon"><i class="fas fa-graduation-cap"></i></div>
           <h3>Training &amp; Education</h3>
           <p>Internships, reimbursement for certifications, a leadership training track, and much more.</p>
         </div>
         <div class="benefit-card" data-animate>
-          <div class="benefit-card__icon">🎊</div>
+          <div class="benefit-card__icon"><i class="fas fa-party-horn"></i></div>
           <h3>Fun Team Events</h3>
           <p>Happy hours, team get-togethers, and other fun events to connect with your colleagues.</p>
         </div>
@@ -544,69 +572,72 @@
   </section>
 
    <!-- ───────── FOOTER ───────── -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="index.html" class="nav__logo" style="margin-bottom:1rem">
-             <img src="images/LOGO_1 (1).webp" alt="RethinkingWeb" style="height:38px;width:auto;" />
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="index.html" class="inline-block mb-4">
+            <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
           </a>
-          <p>Streamlining IT for an Ever Changing World</p>
-          <div class="footer__social">
-            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/" target="_blank">GitHub</a>
-            <a href="https://www.facebook.com/rethinkingweb/" target="_blank">Facebook</a>
+          <p class="text-white/60 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
           </div>
         </div>
 
-        <div class="footer__col">
-          <h4>Solutions</h4>
-   <a href="managed.html">Managed Services</a>
-   <a href="consulting.html">IT Consulting & Advisory</a>
-   <a href="cyber.html">Cyber Security</a>
-   <a href="web_development.html">Web Development</a>
-    <a href="mobile-development.html">Mobile Development</a>
-    <a href="cloud.html">Cloud Services</a>
-    <a href="software.html">Software Development</a>
-    <a href="airtable.html">Enterprise Airtable Managed Services</a>
-    <a href="web-performance.html">Web Performance Optimization Services</a>
-    <a href="seo.html">On-page Technical SEO implementation</a>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white/35 mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="managed.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="consulting.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="cyber.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="mobile-development.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="cloud.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="software.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="airtable.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="web-performance.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="seo.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
         </div>
 
-        <div class="footer__col">
-          <h4>Company</h4>
-          <a href="about.html">About Us</a>
-          <a href="whyus.html">Why Us</a>
-          <a href="team.html">Team</a>
-          <a href="careers.html">Careers</a>
-          <a href="testimonials.html">Testimonials</a>
-          <a href="case.html">Case Studies</a>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white/35 mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="about.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="whyus.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="team.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="careers.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="testimonials.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="case.html" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
         </div>
 
-        <div class="footer__col">
-          <h4>Contact</h4>
-          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="office-card__dir">Mulund East, Mumbai, India – 400081</a>
-          <a href="tel:+919920996021">+91-9920-9960-21</a>
-          <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
-          <a href="contact.html" class="btn btn--primary" style="margin-top:1rem">Schedule Consultation</a>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white/35 mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white/50 hover:text-white/90 hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
         </div>
       </div>
 
-      <div class="footer__bottom">
-       <a href="index.html">
-  <span>© 2026 RethinkingWeb</span>
-</a>
-        <div class="footer__links">
-          <a href="terms.html">Terms & Conditions</a>
-          <a href="privacy.html">Privacy Policy</a>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <a href="index.html" class="text-xs font-light tracking-wide text-white/30 hover:text-white/60 transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="terms.html" class="text-xs font-light tracking-wide text-white/30 hover:text-white/60 transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="privacy.html" class="text-xs font-light tracking-wide text-white/30 hover:text-white/60 transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
         </div>
       </div>
     </div>
   </footer>
+
   <div class="toast" id="toast"></div>
 
   <script src="js/careers.js"></script>
-  <script src="js/theme.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
   <script src="js/form-handler.js"></script>
