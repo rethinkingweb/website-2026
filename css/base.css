@@ -8,11 +8,19 @@
 
 /* ── Brand tokens ── */
 :root {
-  --orange:        #F04E23;
-  --orange-dark:   #C93D15;
-  --orange-light:  #FF6B42;
-  --orange-pale:   #FFF0EB;
-  --orange-glow:   rgba(240, 78, 35, 0.15);
+  --orange:        #E75C23;
+  --orange-dark:   #C44A18;
+  --orange-light:  #FFA213;
+  --orange-pale:   #FFF3EB;
+  --orange-glow:   rgba(231, 92, 35, 0.15);
+  --amber:         #FFA213;
+  --amber-dark:    #E08A00;
+  --purple:        #480058;
+  --purple-dark:   #320040;
+  --purple-light:  #6B1080;
+  --purple-glow:   rgba(72, 0, 88, 0.20);
+  --blue:          #4B75FF;
+  --blue-dark:     #3358CC;
   --bg:            #FFFFFF;
   --bg2:           #F8F6F4;
   --bg3:           #F2EFEC;
@@ -35,7 +43,7 @@
   --shadow:        0 4px 24px rgba(0,0,0,0.08);
   --shadow-md:     0 8px 40px rgba(0,0,0,0.1);
   --shadow-lg:     0 12px 30px rgba(0,0,0,0.08);
-  --shadow-orange: 0 8px 30px rgba(240,78,35,0.25);
+  --shadow-orange: 0 8px 30px rgba(231,92,35,0.25);
 }
 
 /* ── Reset ── */
@@ -161,7 +169,7 @@ input, select, textarea, button { font-family: inherit; }
 }
 .section-title em {
   font-style: normal;
-  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  background: linear-gradient(135deg, var(--orange), var(--amber));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -219,9 +227,9 @@ input, select, textarea, button { font-family: inherit; }
   100%        { left: 130%; opacity: 0; }
 }
 @keyframes btn-ring-orange {
-  0%   { box-shadow: 0 0 0 0   rgba(240,78,35,0.55); }
-  60%  { box-shadow: 0 0 0 9px rgba(240,78,35,0);    }
-  100% { box-shadow: 0 0 0 0   rgba(240,78,35,0);    }
+  0%   { box-shadow: 0 0 0 0   rgba(231,92,35,0.55); }
+  60%  { box-shadow: 0 0 0 9px rgba(231,92,35,0);    }
+  100% { box-shadow: 0 0 0 0   rgba(231,92,35,0);    }
 }
 @keyframes btn-ring-white {
   0%   { box-shadow: 0 0 0 0   rgba(255,255,255,0.5); }

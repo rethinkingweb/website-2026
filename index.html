@@ -14,7 +14,10 @@
       theme: {
         extend: {
           colors: {
-            orange: { DEFAULT: '#F04E23', dark: '#C93D15', light: '#FF6B42', pale: '#FFF0EB' },
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            amber:  { DEFAULT: '#FFA213', dark: '#E08A00' },
+            purple: { DEFAULT: '#480058', dark: '#320040', light: '#6B1080' },
+            blue:   { DEFAULT: '#4B75FF', dark: '#3358CC' },
             charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
             bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
             surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
@@ -176,12 +179,13 @@
         <path d="M0 0H1440V320C1250 430 1050 470 820 445C620 422 420 320 220 310C110 305 40 345 0 370V0Z" fill="url(#waveGrad2)" opacity="0.35"/>
         <defs>
           <linearGradient id="waveGrad1" x1="0" y1="0" x2="1440" y2="560" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#F04E23" stop-opacity="0.18"/>
-            <stop offset="100%" stop-color="#FF8C5A" stop-opacity="0.08"/>
+            <stop offset="0%" stop-color="#480058" stop-opacity="0.30"/>
+            <stop offset="60%" stop-color="#E75C23" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#FFA213" stop-opacity="0.10"/>
           </linearGradient>
           <linearGradient id="waveGrad2" x1="0" y1="0" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#F04E23" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="#FFD0BC" stop-opacity="0.05"/>
+            <stop offset="0%" stop-color="#E75C23" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="#480058" stop-opacity="0.08"/>
           </linearGradient>
         </defs>
       </svg>
@@ -365,7 +369,7 @@
   </section>
 
 
-<section class="clients" style="background:linear-gradient(to bottom,#fff8f5 0%,#ffffff 100%);padding:5rem 0;">
+<section class="clients" style="background:linear-gradient(to bottom,#f8f0ff 0%,#ffffff 100%);padding:5rem 0;">
   <div class="clients-wrap">
 
     <!-- LEFT: Text content -->
