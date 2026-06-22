@@ -243,15 +243,21 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="md-hero">
+    <div class="hero__bg">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="orb orb--3"></div>
+      <div class="grid-overlay"></div>
+    </div>
     <div class="container">
       <div class="md-hero__inner">
 
         <!-- Left: Content -->
         <div class="md-hero__content">
           <nav class="md-breadcrumb">
-            <a href="#">Solutions</a>
+            <a href="solutions.html">Solutions</a>
             <span>›</span>
-            <span>mobile-development</span>
+            <span>Mobile Development</span>
           </nav>
           <div class="hero__badge">
             <span class="badge__dot"></span>
@@ -260,8 +266,8 @@
           <h1 class="md-hero__title">Mobile <em>Development</em></h1>
           <p class="md-hero__sub">Trust us to leverage the latest tech &amp; industry best practices to develop scalable, secure &amp; high-performance mobile solutions that propel your business forward.</p>
           <div class="md-hero__cta">
-            <a href="#form" class="btn btn--primary btn--lg">Schedule a Free Consultation</a>
-            <a href="#benefits" class="btn btn--outline btn--lg">Explore Benefits</a>
+            <a href="#form" class="btn btn--primary btn--lg btn-schedule">Schedule a Free Consultation →</a>
+            <a href="#benefits" class="btn btn-explore btn--lg">Explore Benefits →</a>
           </div>
           <div class="hero__social-proof">
             <span class="stars">★★★★★</span>
@@ -271,62 +277,81 @@
           </div>
         </div>
 
-        <!-- Right: Phone visual + icon grid -->
+        <!-- Right: Phone mockup -->
         <div class="md-hero__visual">
-          <div class="phone-wrap">
-            <div class="phone-frame">
-              <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <div class="phone-status-bar">
-                  <span>9:41</span>
-                  <span>●●●</span>
+
+          <!-- floating tech chips -->
+          <div class="md-chip md-chip--1"><span class="md-chip__dot" style="background:#16181d;"></span>iOS</div>
+          <div class="md-chip md-chip--2"><span class="md-chip__dot" style="background:#3ddc84;"></span>Android</div>
+          <div class="md-chip md-chip--3"><span class="md-chip__dot" style="background:#61dafb;"></span>React Native</div>
+          <div class="md-chip md-chip--4"><span class="md-chip__dot" style="background:#54c5f8;"></span>Flutter</div>
+
+          <!-- phone mockup -->
+          <div class="md-phone">
+            <div class="md-phone__frame">
+              <div class="md-phone__screen">
+                <div class="md-phone__glow"></div>
+
+                <div class="md-phone__status"><span>9:41</span><span>•••</span></div>
+
+                <div class="md-phone__header">
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <div class="md-phone__icon">✦</div>
+                    <div>
+                      <div class="md-phone__app-name">MyApp AI</div>
+                      <div class="md-phone__app-sub">Intelligence Suite</div>
+                    </div>
+                  </div>
+                  <div class="md-phone__online"><span class="md-online-dot"></span> Online</div>
                 </div>
-                <div class="phone-app-bar">
-                  <div class="phone-app-icon" style="background:var(--orange)">📱</div>
-                  <div class="phone-app-title">MyApp</div>
+
+                <div class="md-phone__body">
+                  <!-- AI insight card -->
+                  <div class="md-ai-card">
+                    <div class="md-ai-card__glow"></div>
+                    <div class="md-ai-card__row">
+                      <span class="md-ai-card__label">✦ AI Insights</span>
+                      <span class="md-ai-live"><span class="md-live-dot"></span>LIVE</span>
+                    </div>
+                    <p class="md-ai-card__text">Revenue is up <strong>12.4%</strong> this week — driven by a surge in mobile checkout conversions.</p>
+                    <div class="md-ai-card__bar-row">
+                      <div class="md-ai-card__bar"><div class="md-ai-card__fill"></div></div>
+                      <span class="md-ai-card__conf">94% confidence</span>
+                    </div>
+                  </div>
+
+                  <!-- metrics -->
+                  <div class="md-metrics">
+                    <div class="md-metric">
+                      <div class="md-metric__label">Predicted MRR</div>
+                      <div class="md-metric__val">$48.2K <span class="md-metric__up">▲12%</span></div>
+                    </div>
+                    <div class="md-metric">
+                      <div class="md-metric__label">Active Users</div>
+                      <div class="md-metric__val">2,847 <span class="md-metric__up">▲6%</span></div>
+                    </div>
+                  </div>
+
+                  <!-- sparkline -->
+                  <div class="md-spark">
+                    <div class="md-spark__head"><span>Engagement</span><span>7d</span></div>
+                    <div class="md-spark__bars">
+                      <div style="height:36%"></div><div style="height:58%"></div><div style="height:46%"></div>
+                      <div style="height:74%"></div><div style="height:62%"></div>
+                      <div style="height:100%;background:linear-gradient(180deg,#f5934f,#E75C23);"></div>
+                      <div style="height:82%"></div>
+                    </div>
+                  </div>
+
+                  <!-- ask bar -->
+                  <div class="md-ask"><span>Ask AI anything…</span><span class="md-ask__btn">↑</span></div>
                 </div>
-                <div class="phone-banner"></div>
-                <div class="phone-cards-row">
-                  <div class="phone-mini-card mc--orange"></div>
-                  <div class="phone-mini-card mc--pale"></div>
-                </div>
-                <div class="phone-list-items">
-                  <div class="phone-list-item"></div>
-                  <div class="phone-list-item pli--short"></div>
-                  <div class="phone-list-item"></div>
-                </div>
-                <div class="phone-bottom-bar">
-                  <span>🏠</span><span>🔍</span><span>❤️</span><span>👤</span>
+
+                <div class="md-phone__tabs">
+                  <span class="md-tab md-tab--active"></span>
+                  <span class="md-tab"></span><span class="md-tab"></span><span class="md-tab"></span>
                 </div>
               </div>
-            </div>
-            <div class="phone-glow"></div>
-          </div>
-
-          <div class="md-icon-grid">
-            <div class="md-icon-card" data-delay="0">
-              <span>🍎</span>
-              <p>iOS</p>
-            </div>
-            <div class="md-icon-card" data-delay="100">
-              <span>🤖</span>
-              <p>Android</p>
-            </div>
-            <div class="md-icon-card" data-delay="200">
-              <span>⚡</span>
-              <p>React Native</p>
-            </div>
-            <div class="md-icon-card" data-delay="300">
-              <span>🦋</span>
-              <p>Flutter</p>
-            </div>
-            <div class="md-icon-card" data-delay="400">
-              <span>🌐</span>
-              <p>PWA</p>
-            </div>
-            <div class="md-icon-card" data-delay="500">
-              <span>☁️</span>
-              <p>Cloud-Ready</p>
             </div>
           </div>
         </div>
