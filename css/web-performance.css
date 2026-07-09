@@ -452,7 +452,6 @@ input, select, textarea, button { font-family: inherit; }
   .nav__actions { display: none; }   /* ← THIS LINE must be present */
   .nav__burger  { display: flex; margin-left: auto; }
   /* ... rest unchanged ... */
-}
   .cs-hero                  { padding: 5rem 0 3rem; }
   .cs-stats                 { grid-template-columns: repeat(2,1fr); }
   .cs-benefits__cards       { grid-template-columns: 1fr; }
@@ -470,6 +469,7 @@ input, select, textarea, button { font-family: inherit; }
   .cs-footer__top           { grid-template-columns: 1fr; }
   .cs-footer__bottom        { flex-direction: column; gap: 1rem; text-align: center; }
   .testi-card               { min-width: 300px; }
+}
 @media (max-width: 480px) {
   .cs-stats              { grid-template-columns: 1fr 1fr; }
   .cs-form-card          { padding: 1.5rem; }
