@@ -11,8 +11,24 @@
   position: relative;
   padding: 9rem 2rem 4rem;
   overflow: hidden;
-  background: var(--bg);
+  background:
+    radial-gradient(at 8% 8%, #0a000f, transparent 42%),
+    radial-gradient(at 88% 15%, rgba(72,0,88,0.75), transparent 50%),
+    radial-gradient(at 90% 82%, rgba(231,92,35,0.50), transparent 48%),
+    radial-gradient(at 15% 85%, rgba(72,0,88,0.45), transparent 46%),
+    radial-gradient(at 55% 50%, rgba(255,162,19,0.10), transparent 42%),
+    linear-gradient(148deg, #0d000f 0%, #1a0025 35%, #2a0830 60%, #12001a);
 }
+/* Dark hero: let the gradient show through the fixed bg layer */
+.itc-hero .hero__bg { display: none; }
+
+/* Dark hero text overrides */
+.itc-hero .itc-breadcrumb { color: rgba(255,255,255,0.7); }
+.itc-hero .itc-breadcrumb a { color: var(--orange-light); }
+.itc-hero .itc-breadcrumb span { color: rgba(255,255,255,0.7); }
+.itc-hero .section-label { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); color: #fff; }
+.itc-hero .btn--outline { color: #fff; border-color: rgba(255,255,255,0.35); }
+.itc-hero .btn--outline:hover { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
 
 .itc-hero__inner {
   display: grid;
@@ -42,20 +58,20 @@
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.025em;
-  color: var(--charcoal);
+  color: #fff;
   margin-bottom: 1.25rem;
   animation: fadeUp 0.7s 0.1s ease both;
 }
 .itc-hero__title em {
   font-style: normal;
-  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  background: linear-gradient(135deg, #FFA213 0%, #E75C23 50%, #c47fff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .itc-hero__sub {
   font-size: 1.1rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.72);
   margin-bottom: 2.25rem;
   line-height: 1.75;
   animation: fadeUp 0.7s 0.2s ease both;
