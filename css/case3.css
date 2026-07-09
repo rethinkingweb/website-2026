@@ -28,7 +28,8 @@ input, select, textarea, button { font-family: inherit; }
   overflow: hidden;
 }
 .cs-hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.cs-detail-hero__inner { position: relative; z-index: 1; }
+.cs-detail-hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.cs-detail-hero__text { min-width: 0; }
 
 .breadcrumb {
   display: flex; align-items: center; gap: .5rem;
@@ -69,14 +70,14 @@ input, select, textarea, button { font-family: inherit; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
 
 /* ── Hero Image ── */
-.cs-hero-image-wrap { margin-top: -2rem; margin-bottom: 3rem; }
-.cs-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.cs-hero-image { min-width: 0; }
+.cs-hero-image img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
 
 /* ═══════════════════════════════
    CONTENT LAYOUT
 ═══════════════════════════════ */
 .cs-content-section { padding: 4rem 0 3rem; background: var(--bg2); }
-.cs-content-grid { display: block; grid-template-columns: 1fr 300px; gap: 3.5rem; align-items: start; }
+.cs-content-grid { display: grid; grid-template-columns: 300px 1fr; gap: 3.5rem; align-items: start; }
 
 /* ── Sidebar ── */
 .cs-sidebar { top: 7rem; display: flex; flex-direction: column; gap: 1rem; }
@@ -217,6 +218,7 @@ input, select, textarea, button { font-family: inherit; }
 ═══════════════════════════════ */
 @media (max-width: 1024px) {
   .cs-content-grid { grid-template-columns: 1fr; }
+  .cs-detail-hero__inner { grid-template-columns: 1fr; gap: 2rem; }
   .cs-sidebar { position: static; flex-direction: row; flex-wrap: wrap; }
   .sidebar-card { flex: 1 1 200px; }
   .sidebar-cta { flex: 1 1 100%; }
