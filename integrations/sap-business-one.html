@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAP Business One Integration Services | RethinkingWeb</title>
+  <meta name="description" content="Connect SAP Business One to your CRM, ecommerce, and field service systems. Platform-agnostic integration consulting with honest costs and timelines." />
+  <link rel="canonical" href="https://rethinkingweb.com/integrations/sap-business-one.html" />
+    <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- ═══ STRUCTURED DATA ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "SAP Business One Integration Services",
+        "serviceType": "ERP Integration Consulting",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "RethinkingWeb",
+          "url": "https://rethinkingweb.com/",
+          "areaServed": ["US", "GB", "AU", "IN"]
+        },
+        "description": "Independent SAP Business One integration consulting connecting SAP B1 to CRM, ecommerce, field service, payments, and shipping systems.",
+        "url": "https://rethinkingweb.com/integrations/sap-business-one.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/integrations/" },
+          { "@type": "ListItem", "position": 3, "name": "SAP Business One" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does SAP Business One have an API?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. SAP B1 offers the Service Layer (REST/OData), the DI API (COM), and the Integration Framework (B1if). The Service Layer is the modern choice for new builds." } },
+          { "@type": "Question", "name": "What's the difference between the DI API and the Service Layer?", "acceptedAnswer": { "@type": "Answer", "text": "The DI API is an older COM-based interface, strongest on SQL deployments. The Service Layer is a REST API built for HANA (and SQL from version 10) that handles higher volumes and modern web integration patterns." } },
+          { "@type": "Question", "name": "Do I need B1if for integration?", "acceptedAnswer": { "@type": "Answer", "text": "Usually not. B1if excels at SAP-to-SAP and intercompany scenarios, but for connecting non-SAP systems an iPaaS or a Service Layer build is typically faster and easier to maintain." } },
+          { "@type": "Question", "name": "Can SAP Business One integrate with ecommerce platforms?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Shopify, WooCommerce, Magento, and BigCommerce are among the most common SAP B1 integrations, syncing orders, inventory, pricing, and customers." } },
+          { "@type": "Question", "name": "Is real-time integration possible with SAP B1?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, using webhooks or event triggers on the connected system and the Service Layer on the B1 side. Some flows (like large master data syncs) run better on schedules." } },
+          { "@type": "Question", "name": "Does integration work with on-premise SAP Business One?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. On-premise B1 integrates through a secure agent, VPN, or exposed Service Layer endpoint. We handle the network setup as part of the build." } },
+          { "@type": "Question", "name": "How much does SAP Business One integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects land between $2,500 and $25,000 depending on approach and entity count. See the cost table for a full breakdown by method." } },
+          { "@type": "Question", "name": "Can you fix or take over an existing integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work is a large share of our practice: broken connectors, abandoned custom builds, and integrations that no longer match the business process." } },
+          { "@type": "Question", "name": "Which iPaaS platforms work with SAP Business One?", "acceptedAnswer": { "@type": "Answer", "text": "APPSeCONNECT, Celigo, Alumio, Boomi, and Jitterbit all offer B1 connectivity, and general platforms like Make and n8n can orchestrate against the Service Layer." } },
+          { "@type": "Question", "name": "Do you build AI automation on SAP Business One?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build AI agents on the Claude API that query and act on B1 data: natural-language reporting, automated order handling, and intelligent lead routing." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+<!-- ───────── NAV ───────── -->
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+      <a href="../index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="../solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="../solutions.html" class="mega-menu__all">View all services <span>→</span></a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="../managed.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Managed Services</span>
+                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+              </div>
+            </a>
+            <a href="../consulting.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
+                <span class="mega-item__desc">Strategic technology guidance</span>
+              </div>
+            </a>
+            <a href="../cyber.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cyber Security</span>
+                <span class="mega-item__desc">Protect your digital assets</span>
+              </div>
+            </a>
+            <a href="web_development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Development</span>
+                <span class="mega-item__desc">Custom websites &amp; web apps</span>
+              </div>
+            </a>
+            <a href="../mobile-development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Mobile Development</span>
+                <span class="mega-item__desc">iOS &amp; Android solutions</span>
+              </div>
+            </a>
+            <a href="../cloud.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cloud Services</span>
+                <span class="mega-item__desc">Scalable cloud infrastructure</span>
+              </div>
+            </a>
+            <a href="../software.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Software Development</span>
+                <span class="mega-item__desc">Bespoke software solutions</span>
+              </div>
+            </a>
+            <a href="../airtable.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Enterprise Airtable</span>
+                <span class="mega-item__desc">No-code workflow automation</span>
+              </div>
+            </a>
+            <a href="../web-performance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Performance</span>
+                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
+              </div>
+            </a>
+            <a href="../seo.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">On-page Technical SEO</span>
+                <span class="mega-item__desc">Rank higher, grow faster</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="../about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="../about.html">About Us</a>
+          <a href="../whyus.html">Why Us</a>
+          <a href="../team.html">Team</a>
+          <a href="../careers.html">Careers</a>
+          <a href="../testimonials.html">Testimonials</a>
+          <a href="../case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="../case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="../contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="../index.html">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+
+    <!-- Solutions accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../managed.html">Managed Services</a>
+        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="../cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="../mobile-development.html">Mobile Development</a>
+        <a href="../cloud.html">Cloud Services</a>
+        <a href="../software.html">Software Development</a>
+        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="../web-performance.html">Web Performance Optimization</a>
+        <a href="../seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../about.html">About Us</a>
+        <a href="../whyus.html">Why Us</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+
+    <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ═══════════════════════════════════════════
+     PILLAR PAGE CONTENT
+═══════════════════════════════════════════ -->
+<main class="sap">
+
+  <!-- ───────── HERO ───────── -->
+  <section class="sap-hero">
+    <div class="container">
+      <div class="sap-hero__inner">
+        <div class="sap-hero__text">
+          <nav class="sap-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>›</span>
+            <span>Integrations</span>
+            <span>›</span>
+            <span class="current">SAP Business One</span>
+          </nav>
+          <div class="sap-badge"><span class="badge__dot"></span> Independent Integration Consultancy</div>
+          <h1 class="sap-hero__title">SAP Business One <em>Integration Services</em></h1>
+          <p class="sap-hero__sub">
+            <strong>SAP Business One integration</strong> connects your ERP to the systems your business runs on — CRM, ecommerce, field service, payments, and shipping. We build these as an independent consultancy: we don't sell a connector, so we recommend the approach that actually fits your requirement.
+          </p>
+          <div class="sap-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+            <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
+          </div>
+        </div>
+
+        <!-- Integration hub visual -->
+        <div class="sap-hero__visual" aria-hidden="true">
+          <div class="sap-hub">
+            <div class="sap-hub__ring"></div>
+            <div class="sap-hub__core"><strong>SAP&nbsp;B1</strong><span>ERP Core</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-headset"></i> Zuper</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-cart-shopping"></i> Shopify</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-cloud"></i> Salesforce</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-store"></i> Amazon</div>
+            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-credit-card"></i> Stripe</div>
+            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-file-invoice"></i> EDI</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="sap-stats">
+        <div class="sap-stat"><div class="stat-num">13+</div><span class="stat-label">Systems we integrate with B1</span></div>
+        <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
+        <div class="sap-stat"><div class="stat-num">2–12</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHAT IS ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">The Basics</div>
+        <h2 class="section-title">What Is SAP Business One <em>Integration</em>?</h2>
+      </div>
+      <div class="sap-body reveal">
+        <p>SAP Business One integration is the process of exchanging data automatically between SAP B1 and external applications, so records like customers, items, orders, and invoices stay consistent across systems without manual re-entry. It's how a Shopify order becomes a B1 sales order, or a completed field service job becomes a B1 invoice, in minutes instead of days.</p>
+        <p>Most SAP B1 companies run five or more other systems. Every one of them is a potential silo. Integration turns that stack into a single operating picture, cuts data entry, and removes the errors that come with copying records by hand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHAT CAN YOU INTEGRATE ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Compatibility</div>
+        <h2 class="section-title">What Can You Integrate with <em>SAP Business One</em>?</h2>
+        <p class="sap-lead">You can integrate SAP Business One with almost any modern system that exposes an API. The most common categories we work with are ecommerce, CRM, field service, marketplaces, payments, and shipping.</p>
+      </div>
+      <div class="sap-cards">
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
+          <h3>Field Service</h3>
+          <p class="sap-card__systems"><a href="sap-business-one-zuper-integration.html">Zuper</a></p>
+          <p class="sap-card__flows">Service calls, equipment, contracts, technician stock</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-cart-shopping"></i></div>
+          <h3>Ecommerce</h3>
+          <p class="sap-card__systems">Shopify, WooCommerce, Magento, BigCommerce</p>
+          <p class="sap-card__flows">Orders, inventory, pricing, customers, fulfillment</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-cloud"></i></div>
+          <h3>CRM</h3>
+          <p class="sap-card__systems">Salesforce, HubSpot, Zoho CRM, Twenty CRM</p>
+          <p class="sap-card__flows">Accounts, contacts, quotes, order &amp; payment status</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-store"></i></div>
+          <h3>Marketplaces</h3>
+          <p class="sap-card__systems">Amazon</p>
+          <p class="sap-card__flows">Orders, inventory, settlement data</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Payments &amp; Shipping</h3>
+          <p class="sap-card__systems">Stripe, ShipStation</p>
+          <p class="sap-card__flows">Payments, reconciliation, labels, tracking</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-file-invoice"></i></div>
+          <h3>B2B &amp; AI</h3>
+          <p class="sap-card__systems">EDI, AI agents for SAP B1</p>
+          <p class="sap-card__flows">Purchase orders, ASNs, invoices, natural-language workflows</p>
+        </div>
+      </div>
+      <div class="sap-body reveal">
+        <p>If your system isn't listed, it's almost certainly still integrable. We scope against your actual requirement, not a connector catalogue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── HOW DO YOU INTEGRATE ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Methods</div>
+        <h2 class="section-title">How Do You Integrate SAP Business One with <em>Other Systems</em>?</h2>
+        <p class="sap-lead">SAP Business One exposes four main integration paths: the <strong>Service Layer</strong>, the <strong>DI API</strong>, the <strong>Integration Framework (B1if)</strong>, and third-party <strong>iPaaS platforms</strong> that wrap these APIs in pre-built connectors. The right choice depends on your B1 version, database, transaction volume, and how standard your requirement is.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Service Layer</strong></td><td>REST/OData API exposing B1 business objects</td><td>Modern custom builds, high volumes, real-time needs</td><td>Requires development skill; HANA-first (SQL support in v10+)</td></tr>
+            <tr><td><strong>DI API</strong></td><td>COM-based API for reading and writing B1 objects</td><td>SQL deployments, legacy environments, deep object access</td><td>Older technology; slower at scale</td></tr>
+            <tr><td><strong>B1if</strong></td><td>SAP's bundled integration framework</td><td>SAP-to-SAP scenarios, intercompany, mobile services</td><td>Steep learning curve; clunky for non-SAP systems</td></tr>
+            <tr><td><strong>iPaaS connectors</strong></td><td>Pre-built templates on platforms like APPSeCONNECT, Celigo, or Alumio</td><td>Standard flows (ecommerce orders, CRM sync) going live fast</td><td>Subscription cost forever; templates bend only so far</td></tr>
+            <tr><td><strong>Custom middleware</strong></td><td>Purpose-built orchestration (Make, n8n, or code) using the APIs above</td><td>Non-standard requirements, multi-system workflows, AI automation</td><td>Needs a partner who can maintain it (that's us)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-callout reveal">
+        <i class="fas fa-circle-check"></i>
+        <p><strong>The truth most vendors won't tell you:</strong> a pre-built connector is genuinely the right answer for many standard requirements. We'll tell you when it is, help you choose and configure it, and only build custom when your requirement demands it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── COST ───────── -->
+  <section class="sap-section sap-section--alt" id="cost">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">How Much Does SAP Business One Integration <em>Cost</em>?</h2>
+        <p class="sap-lead">A typical SAP Business One integration costs between <strong>$2,500 and $25,000</strong> to implement, depending on the approach. Templated iPaaS connectors sit at the low end plus a monthly platform subscription; fully custom Service Layer builds sit at the high end with no recurring platform fee.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
+          <tbody>
+            <tr><td>Templated iPaaS connector</td><td><strong>$2,500 – $8,000</strong></td><td>$99 – $600/month platform subscription</td></tr>
+            <tr><td>iPaaS orchestration (Make, n8n)</td><td><strong>$4,000 – $12,000</strong></td><td>$50 – $300/month platform + support retainer</td></tr>
+            <tr><td>Custom Service Layer / DI API build</td><td><strong>$8,000 – $25,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-body reveal">
+        <p>Three factors move the number most: how many <strong>entities</strong> you sync (customers, items, orders, invoices), whether flows are <strong>one-way or bi-directional</strong>, and how much <strong>transformation logic</strong> sits between the systems. We quote fixed prices after a scoping call, so you know the cost before we write a line of configuration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── TIMELINE ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Timeline</div>
+        <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
+        <p class="sap-lead">The single biggest schedule risk isn't development — it's unclean master data in B1, which is why data review is the first step of our process.</p>
+      </div>
+      <div class="sap-timeline reveal">
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">2–4 weeks</div>
+          <h4>Templated integrations</h4>
+          <p>Standard entity sets on a pre-built connector or iPaaS template, live fast.</p>
+        </div>
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">6–12 weeks</div>
+          <h4>Custom builds</h4>
+          <p>Bespoke Service Layer / DI API work, scaled to entity count and testing depth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── PROCESS ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title">What Does Our Integration Process <em>Look Like</em>?</h2>
+        <p class="sap-lead">Every engagement follows the same five stages — you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
+      </div>
+      <div class="sap-steps">
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your systems, entities, volumes, and the business outcome you need.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement on the chosen platform or codebase, in a sandbox against a B1 test company.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real transaction scenarios end to end — failure cases, retries, duplicate handling.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CONSULTANT VS CONNECTOR ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Why a Consultant</div>
+        <h2 class="section-title">Consultant vs. <em>Buying a Connector</em></h2>
+        <p class="sap-lead">A connector vendor can only sell you their connector. An independent consultant starts from your requirement and picks the tool afterwards — which matters most when your workflow doesn't match the template.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table sap-table--compare">
+          <thead><tr><th></th><th>Connector vendor</th><th>RethinkingWeb</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Recommends</strong></td><td>Their product</td><td>Whatever fits, including their product</td></tr>
+            <tr><td><strong>Non-standard requirements</strong></td><td>Change requests or workarounds</td><td>Custom logic is the core offering</td></tr>
+            <tr><td><strong>Pricing</strong></td><td>Subscription, per-connector</td><td>Fixed-price project + optional retainer</td></tr>
+            <tr><td><strong>When it breaks</strong></td><td>Support ticket queue</td><td>Named engineer who built it</td></tr>
+            <tr><td><strong>Multiple systems</strong></td><td>One connector per pair</td><td>One orchestrated architecture</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHY RTW (dark band) ───────── -->
+  <section class="sap-why">
+    <div class="container">
+      <div class="sap-why__inner">
+        <div class="sap-why__text reveal">
+          <div class="section-label">Why RethinkingWeb</div>
+          <h2 class="section-title">The Team on <em>Both Sides</em> of the Sync</h2>
+          <p>We build and run integrations for companies across the US, UK, Australia, and India. Our team combines ERP integration work with deep roots in the platforms on the other side of the sync: we're a WordPress and WooCommerce development agency, an official Twenty CRM partner, and we build AI automation on the Claude API.</p>
+          <p>We specialize in <strong>field service integration</strong>, connecting SAP Business One with Zuper for service businesses that dispatch technicians against ERP data. Read how that works in our <a href="sap-business-one-zuper-integration.html">SAP Business One and Zuper integration</a> guide.</p>
+          <div class="sap-midcta">
+            <a href="#form" class="btn btn--primary btn--lg">Get a Fixed-Price Integration Quote</a>
+          </div>
+        </div>
+        <div class="sap-why__aside reveal">
+          <div class="sap-why__check"><i class="fas fa-check"></i> Platform-agnostic — we recommend, not resell</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Fixed pricing before we build</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> We understand both ERP and the connected app</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Rescue &amp; take-over of broken integrations</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> AI automation on the Claude API</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── TRUST FACTORS ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Why Trust Us</div>
+        <h2 class="section-title">Why Integrate with <em>RethinkingWeb</em></h2>
+        <p class="sap-lead">Integration only pays off if it keeps running after go-live. These are the reasons companies hand us the connection between their ERP and everything else — and keep us on to look after it.</p>
+      </div>
+      <div class="sap-trust">
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Vendor-Neutral by Design</h3>
+          <p>We don't sell a connector, so we have no reason to push one. We recommend the approach that fits your requirement — even when that means a product we don't earn a cent from.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Fixed Price Before We Build</h3>
+          <p>You approve a signed mapping sheet and a fixed quote before a single field is configured. No open-ended hourly meters, no scope surprises mid-project.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-user-gear"></i></div>
+          <h3>A Named Engineer, Not a Queue</h3>
+          <p>The person who built your integration is the person who answers when something changes. No ticket lottery, no re-explaining your setup to a new agent each time.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-handshake-angle"></i></div>
+          <h3>Official Twenty CRM Partner</h3>
+          <p>We're a recognized Twenty CRM partner and a WordPress &amp; WooCommerce development agency — so we know both sides of the sync, not just the ERP half.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-globe"></i></div>
+          <h3>Proven Across Four Countries</h3>
+          <p>We build and run integrations for businesses in the US, UK, Australia, and India, spanning field service, ecommerce, and B2B distribution.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-life-ring"></i></div>
+          <h3>Rescue &amp; Take-Over Specialists</h3>
+          <p>A large share of our work is fixing abandoned custom builds and broken connectors. If your last integration failed, we've almost certainly seen your exact situation.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-robot"></i></div>
+          <h3>AI Automation on the Claude API</h3>
+          <p>Beyond moving data, we build AI agents on the Claude API that act on your B1 records — natural-language reporting, automated order handling, and smart routing.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Monitored After Go-Live</h3>
+          <p>Every integration ships with logging, alerting, and retry handling, so a failed sync surfaces to us before it becomes a problem you have to chase down.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FAQ ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      </div>
+      <div class="sap-faq">
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Does SAP Business One have an API?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. SAP B1 offers the Service Layer (REST/OData), the DI API (COM), and the Integration Framework (B1if). The Service Layer is the modern choice for new builds.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">What's the difference between the DI API and the Service Layer?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>The DI API is an older COM-based interface, strongest on SQL deployments. The Service Layer is a REST API built for HANA (and SQL from version 10) that handles higher volumes and modern web integration patterns.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Do I need B1if for integration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Usually not. B1if excels at SAP-to-SAP and intercompany scenarios, but for connecting non-SAP systems an iPaaS or a Service Layer build is typically faster and easier to maintain.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can SAP Business One integrate with ecommerce platforms?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Shopify, WooCommerce, Magento, and BigCommerce are among the most common SAP B1 integrations, syncing orders, inventory, pricing, and customers.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Is real-time integration possible with SAP B1?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes, using webhooks or event triggers on the connected system and the Service Layer on the B1 side. Some flows (like large master data syncs) run better on schedules.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Does integration work with on-premise SAP Business One?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. On-premise B1 integrates through a secure agent, VPN, or exposed Service Layer endpoint. We handle the network setup as part of the build.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How much does SAP Business One integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most projects land between $2,500 and $25,000 depending on approach and entity count. See the cost table above for a full breakdown by method.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you fix or take over an existing integration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work is a large share of our practice: broken connectors, abandoned custom builds, and integrations that no longer match the business process.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Which iPaaS platforms work with SAP Business One?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>APPSeCONNECT, Celigo, Alumio, Boomi, and Jitterbit all offer B1 connectivity, and general platforms like Make and n8n can orchestrate against the Service Layer. We help you choose based on fit, not commission.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Do you build AI automation on SAP Business One?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. We build AI agents on the Claude API that query and act on B1 data: natural-language reporting, automated order handling, and intelligent lead routing.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FINAL CTA ───────── -->
+  <section class="sap-finalcta">
+    <div class="container">
+      <h2>Ready to Connect SAP Business One to the Rest of Your Stack?</h2>
+      <p>Every week your systems stay disconnected, your team re-keys data another few hundred times. A scoped <strong>SAP Business One integration</strong> removes that work permanently — and you'll know the exact cost before we start.</p>
+      <div class="sap-finalcta__btns">
+        <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+        <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>SAP Business One Integration</option>
+      <option>SAP B1 + Zuper (Field Service)</option>
+      <option>SAP B1 + Ecommerce</option>
+      <option>SAP B1 + CRM</option>
+      <option>Fix / Take Over an Integration</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your systems and what you need to sync..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- ───────── FOOTER ───────── -->
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="../index.html" class="inline-block mb-4">
+            <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="../consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="../cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="../mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="../cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="../software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="../airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="../web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="../seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="../whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="../team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="../careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="../testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="../contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="../terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="../privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="../js/sap-business-one-integration.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="../js/form-handler.js"></script>
+</body>
+</html>
