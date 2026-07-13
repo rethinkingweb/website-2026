@@ -99,6 +99,56 @@
 .sap-hub__node--5 { top: 73%; left: 8%; }
 .sap-hub__node--6 { top: 27%; left: 8%; }
 
+/* ── Interchange visual (SAP B1 ⇄ Zuper) ── */
+.sap-xchg {
+  display: flex; align-items: center; justify-content: center; gap: 0;
+  width: 100%; max-width: 440px; margin: 0 auto;
+}
+.sap-xchg__node {
+  flex: 0 0 auto; width: 152px; height: 152px; border-radius: 26px;
+  display: grid; place-items: center; padding: 1.5rem;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.4); backdrop-filter: blur(6px);
+  animation: xchgFloat 5s ease-in-out infinite;
+}
+.sap-xchg__node--zuper { animation-delay: -2.5s; }
+.sap-xchg__node--zuper img { width: 100%; height: auto; border-radius: 10px; display: block; }
+.sap-xchg__sap { text-align: center; color: #fff; line-height: 1; }
+.sap-xchg__sap strong {
+  display: block; font-family: var(--font-display); font-weight: 900; font-size: 2.5rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #5bb8ff, #0a6ed1);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.sap-xchg__sap span {
+  display: block; margin-top: 0.5rem; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+}
+/* Bi-directional flow connector */
+.sap-xchg__flow { position: relative; flex: 1 1 auto; height: 60px; min-width: 72px; }
+.sap-xchg__track {
+  position: absolute; top: 50%; left: 4px; right: 4px; height: 2px; transform: translateY(-50%);
+  background: linear-gradient(90deg, #0a6ed1, var(--orange));
+  opacity: 0.5;
+}
+.sap-xchg__packet {
+  position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+.sap-xchg__packet--r { color: var(--orange); background: var(--orange); margin-top: -10px; animation: xchgRight 2.6s linear infinite; }
+.sap-xchg__packet--l { color: #5bb8ff; background: #5bb8ff; margin-top: 2px;   animation: xchgLeft 2.6s linear infinite; }
+.sap-xchg__sync {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: #0f172a; border: 1px solid rgba(255,255,255,0.18); color: var(--orange-light);
+  font-size: 0.9rem; box-shadow: 0 6px 18px rgba(0,0,0,0.5); z-index: 2;
+  animation: xchgSpin 6s linear infinite;
+}
+@keyframes xchgFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes xchgRight { 0% { left: 2%; opacity: 0; } 15% { opacity: 1; } 40% { opacity: 1; } 46%,54% { opacity: 0; } 60% { opacity: 1; } 85% { opacity: 1; } 100% { left: 98%; opacity: 0; } }
+@keyframes xchgLeft  { 0% { right: 2%; opacity: 0; } 15% { opacity: 1; } 40% { opacity: 1; } 46%,54% { opacity: 0; } 60% { opacity: 1; } 85% { opacity: 1; } 100% { right: 98%; opacity: 0; } }
+@keyframes xchgSpin  { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
 /* ── Hero stats strip ── */
 .sap-stats {
   display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem;
@@ -317,6 +367,8 @@
 @media (max-width: 1024px) {
   .sap-hero__inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .sap-hero__visual { display: none; }
+  /* Keep the SAP⇄Zuper interchange visible on tablet/phone (hub visual stays hidden) */
+  .sap-hero__visual:has(.sap-xchg) { display: block; }
   .sap-cards { grid-template-columns: repeat(2,1fr); }
   .sap-steps { grid-template-columns: repeat(2,1fr); }
   .sap-trust { grid-template-columns: repeat(2,1fr); }
@@ -334,4 +386,8 @@
   .sap-steps { grid-template-columns: 1fr; }
   .sap-trust { grid-template-columns: 1fr; }
   .sap-stats { grid-template-columns: 1fr 1fr; }
+  .sap-xchg__node { width: 118px; height: 118px; padding: 1.1rem; border-radius: 22px; }
+  .sap-xchg__sap strong { font-size: 2rem; }
+  .sap-xchg__sap span { font-size: 0.62rem; letter-spacing: 0.1em; }
+  .sap-xchg__sync { width: 34px; height: 34px; font-size: 0.8rem; }
 }

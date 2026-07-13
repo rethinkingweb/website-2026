@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBooks Integration Services | RethinkingWeb</title>
+  <meta name="description" content="Connect QuickBooks Online &amp; Desktop to your CRM, ecommerce, POS, and inventory systems. Fixed-price integration consulting with honest costs and timelines." />
+  <link rel="canonical" href="https://rethinkingweb.com/integrations/quickbooks.html" />
+    <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- ═══ STRUCTURED DATA ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "QuickBooks Integration Services",
+        "serviceType": "Accounting Integration Consulting",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "RethinkingWeb",
+          "url": "https://rethinkingweb.com/",
+          "areaServed": ["US", "GB", "AU", "IN"]
+        },
+        "description": "Independent QuickBooks integration consulting connecting QuickBooks Online and Desktop to CRM, ecommerce, POS, payments, and inventory systems.",
+        "url": "https://rethinkingweb.com/integrations/quickbooks.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/integrations/" },
+          { "@type": "ListItem", "position": 3, "name": "QuickBooks" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does QuickBooks have an API?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. QuickBooks Online offers a modern REST API secured with OAuth 2.0. QuickBooks Desktop connects through the Web Connector using QBXML/qbXML SDK requests rather than a cloud REST API." } },
+          { "@type": "Question", "name": "What's the difference between QuickBooks Online and Desktop integration?", "acceptedAnswer": { "@type": "Answer", "text": "QuickBooks Online integrates over its cloud REST API with OAuth 2.0 and supports webhooks for near real-time events. QuickBooks Desktop is a local application that integrates through the QuickBooks Web Connector or a hosted middleware agent using QBXML, typically on a schedule." } },
+          { "@type": "Question", "name": "What is the QuickBooks Web Connector?", "acceptedAnswer": { "@type": "Answer", "text": "The Web Connector is Intuit's tool for QuickBooks Desktop. It runs on the machine hosting the company file and exchanges QBXML requests with a remote web service on a schedule, letting Desktop sync with cloud systems it can't reach directly." } },
+          { "@type": "Question", "name": "Can you sync QuickBooks with Shopify or Salesforce?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Syncing QuickBooks with Shopify, WooCommerce, Salesforce, and HubSpot is among the most common requests, moving customers, invoices, items, and payments between the systems automatically." } },
+          { "@type": "Question", "name": "Is QuickBooks integration real-time or scheduled?", "acceptedAnswer": { "@type": "Answer", "text": "QuickBooks Online supports near real-time flows using webhooks and its REST API. QuickBooks Desktop runs on the Web Connector's polling schedule, so it is closer to batch than instant. We match the pattern to your data volume and urgency." } },
+          { "@type": "Question", "name": "Can you sync invoices and payments both ways?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Two-way sync of invoices, payments, customers, and items is possible, though we design bi-directional flows carefully with clear rules on which system owns each field to avoid duplicate or conflicting records." } },
+          { "@type": "Question", "name": "How much does QuickBooks integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most QuickBooks integrations land between $2,000 and $18,000 depending on approach, entity count, and whether it's QuickBooks Online or Desktop. See the cost table for a breakdown by method." } },
+          { "@type": "Question", "name": "Can you fix a broken QuickBooks integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work is a large share of our practice: broken connectors, failed Web Connector syncs, abandoned custom builds, and duplicate-record messes that no longer match the business process." } },
+          { "@type": "Question", "name": "Can you connect QuickBooks to a POS or inventory system?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We connect QuickBooks to POS and retail systems like Square and Shopify POS, and to inventory and operations platforms, syncing sales receipts, items, stock levels, and cost of goods." } },
+          { "@type": "Question", "name": "Does QuickBooks integration support multi-entity or multi-company setups?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. QuickBooks handles one company file per instance, so multi-entity groups need one connection per company or file. We design middleware that routes records to the right entity and consolidates reporting across them." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+<!-- ───────── NAV ───────── -->
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+      <a href="../index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="../solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="../solutions.html" class="mega-menu__all">View all services <span>→</span></a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="../managed.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Managed Services</span>
+                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+              </div>
+            </a>
+            <a href="../consulting.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
+                <span class="mega-item__desc">Strategic technology guidance</span>
+              </div>
+            </a>
+            <a href="../cyber.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cyber Security</span>
+                <span class="mega-item__desc">Protect your digital assets</span>
+              </div>
+            </a>
+            <a href="web_development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Development</span>
+                <span class="mega-item__desc">Custom websites &amp; web apps</span>
+              </div>
+            </a>
+            <a href="../mobile-development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Mobile Development</span>
+                <span class="mega-item__desc">iOS &amp; Android solutions</span>
+              </div>
+            </a>
+            <a href="../cloud.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cloud Services</span>
+                <span class="mega-item__desc">Scalable cloud infrastructure</span>
+              </div>
+            </a>
+            <a href="../software.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Software Development</span>
+                <span class="mega-item__desc">Bespoke software solutions</span>
+              </div>
+            </a>
+            <a href="../airtable.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Enterprise Airtable</span>
+                <span class="mega-item__desc">No-code workflow automation</span>
+              </div>
+            </a>
+            <a href="../web-performance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Performance</span>
+                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
+              </div>
+            </a>
+            <a href="../seo.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">On-page Technical SEO</span>
+                <span class="mega-item__desc">Rank higher, grow faster</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="../about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="../about.html">About Us</a>
+          <a href="../whyus.html">Why Us</a>
+          <a href="../team.html">Team</a>
+          <a href="../careers.html">Careers</a>
+          <a href="../testimonials.html">Testimonials</a>
+          <a href="../case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="../case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="../contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="../index.html">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+
+    <!-- Solutions accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../managed.html">Managed Services</a>
+        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="../cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="../mobile-development.html">Mobile Development</a>
+        <a href="../cloud.html">Cloud Services</a>
+        <a href="../software.html">Software Development</a>
+        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="../web-performance.html">Web Performance Optimization</a>
+        <a href="../seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../about.html">About Us</a>
+        <a href="../whyus.html">Why Us</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+
+    <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ═══════════════════════════════════════════
+     PILLAR PAGE CONTENT
+═══════════════════════════════════════════ -->
+<main class="sap">
+
+  <!-- ───────── HERO ───────── -->
+  <section class="sap-hero">
+    <div class="container">
+      <div class="sap-hero__inner">
+        <div class="sap-hero__text">
+          <nav class="sap-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>›</span>
+            <span>Integrations</span>
+            <span>›</span>
+            <span class="current">QuickBooks</span>
+          </nav>
+          <div class="sap-badge"><span class="badge__dot"></span> Accounting Integration Consultancy</div>
+          <h1 class="sap-hero__title">QuickBooks <em>Integration Services</em></h1>
+          <p class="sap-hero__sub">
+            <strong>QuickBooks integration</strong> connects your accounting to the systems your business runs on — CRM, ecommerce, POS, payments, and inventory. We build for both <strong>QuickBooks Online</strong> and <strong>QuickBooks Desktop</strong> as an independent consultancy: we don't sell a connector, so we recommend the approach that actually fits your requirement.
+          </p>
+          <div class="sap-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+            <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
+          </div>
+        </div>
+
+        <!-- Integration hub visual -->
+        <div class="sap-hero__visual" aria-hidden="true">
+          <div class="sap-hub">
+            <div class="sap-hub__ring"></div>
+            <div class="sap-hub__core"><strong>QuickBooks</strong><span>Accounting Core</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-cart-shopping"></i> Shopify</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-cloud"></i> Salesforce</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fab fa-wordpress"></i> WooCommerce</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-credit-card"></i> Stripe</div>
+            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-bullseye"></i> HubSpot</div>
+            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-cash-register"></i> POS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="sap-stats">
+        <div class="sap-stat"><div class="stat-num">12+</div><span class="stat-label">Systems we sync with QuickBooks</span></div>
+        <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
+        <div class="sap-stat"><div class="stat-num">2–10</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHAT IS ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">The Basics</div>
+        <h2 class="section-title">What Is QuickBooks <em>Integration</em>?</h2>
+      </div>
+      <div class="sap-body reveal">
+        <p>QuickBooks integration is the process of exchanging data automatically between QuickBooks and the other applications you run, so records like customers, items, invoices, payments, and bills stay consistent everywhere without manual re-entry. It's how a Shopify order becomes a QuickBooks invoice, or a Stripe charge becomes a matched payment, in minutes instead of at month-end.</p>
+        <p>This works for both editions, but the mechanics differ. <strong>QuickBooks Online</strong> is a cloud product with a modern REST API and webhooks, so it supports near real-time syncing. <strong>QuickBooks Desktop</strong> is a local application whose company file is reached through the QuickBooks Web Connector on a schedule. Knowing which edition you run — and its limits — is the first thing that shapes an integration design.</p>
+        <p>Most QuickBooks companies run several other systems: a store, a CRM, a payment processor, a POS. Every one is a potential silo of duplicate data entry. Integration turns that stack into a single financial picture, cuts re-keying, and removes the reconciliation errors that come from copying records by hand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHAT CAN YOU INTEGRATE ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Compatibility</div>
+        <h2 class="section-title">What Can You Integrate with <em>QuickBooks</em>?</h2>
+        <p class="sap-lead">You can integrate QuickBooks with almost any modern system that exposes an API. The most common categories we work with are ecommerce, CRM, payments, POS &amp; retail, inventory, and payroll &amp; expenses — feeding sales, invoices, and costs into your books automatically.</p>
+      </div>
+      <div class="sap-cards">
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-cart-shopping"></i></div>
+          <h3>Ecommerce</h3>
+          <p class="sap-card__systems">Shopify, WooCommerce, BigCommerce</p>
+          <p class="sap-card__flows">Orders as invoices/sales receipts, items, customers, payouts</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-cloud"></i></div>
+          <h3>CRM</h3>
+          <p class="sap-card__systems">Salesforce, HubSpot, Zoho CRM, Twenty CRM</p>
+          <p class="sap-card__flows">Customers, invoices, payment status back to the sales team</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Payments</h3>
+          <p class="sap-card__systems">Stripe, Square, PayPal</p>
+          <p class="sap-card__flows">Charges, refunds, fees, deposit reconciliation</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-cash-register"></i></div>
+          <h3>POS &amp; Retail</h3>
+          <p class="sap-card__systems">Square POS, Shopify POS, Lightspeed</p>
+          <p class="sap-card__flows">Daily sales receipts, tax, tips, item-level revenue</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-boxes-stacked"></i></div>
+          <h3>Inventory &amp; Ops</h3>
+          <p class="sap-card__systems">Cin7, Katana, custom systems</p>
+          <p class="sap-card__flows">Items, stock levels, purchase orders, cost of goods sold</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Payroll &amp; Expenses</h3>
+          <p class="sap-card__systems">Gusto, Expensify, bill-pay tools</p>
+          <p class="sap-card__flows">Journal entries, bills, expense claims, vendor payments</p>
+        </div>
+      </div>
+      <div class="sap-body reveal">
+        <p>If your system isn't listed, it's almost certainly still integrable. We scope against your actual requirement, not a connector catalogue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── HOW DO YOU INTEGRATE ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Methods</div>
+        <h2 class="section-title">How Do You Integrate QuickBooks with <em>Other Systems</em>?</h2>
+        <p class="sap-lead">The path depends heavily on your edition. <strong>QuickBooks Online</strong> exposes a cloud <strong>REST API secured with OAuth 2.0</strong>, plus <strong>webhooks</strong> for event-driven flows. <strong>QuickBooks Desktop</strong> has no cloud API — it connects through the <strong>Web Connector using QBXML</strong>, or a hosted middleware agent. Around both sit <strong>iPaaS connectors</strong> that wrap these APIs in pre-built templates.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
+          <tbody>
+            <tr><td><strong>QBO REST API</strong></td><td>Cloud REST API for QuickBooks Online, OAuth 2.0 secured</td><td>Modern custom builds on QuickBooks Online, near real-time needs</td><td>Online only; rate limits and the sandbox-to-production app review</td></tr>
+            <tr><td><strong>Web Connector (Desktop/QBXML)</strong></td><td>Intuit tool that exchanges QBXML with the local company file on a schedule</td><td>QuickBooks Desktop syncing to a cloud service it can't reach directly</td><td>Runs on the host machine; polling only, not real-time</td></tr>
+            <tr><td><strong>Webhooks</strong></td><td>QuickBooks Online push notifications on entity changes</td><td>Triggering downstream flows the moment an invoice or payment changes</td><td>Online only; still fetch the record over the API after the ping</td></tr>
+            <tr><td><strong>iPaaS connectors</strong></td><td>Pre-built templates on platforms like Celigo, Zapier, or MuleSoft</td><td>Standard flows (store orders, payment sync) going live fast</td><td>Subscription cost forever; templates bend only so far</td></tr>
+            <tr><td><strong>Custom middleware</strong></td><td>Purpose-built orchestration (Make, n8n, or code) over the APIs above</td><td>Non-standard requirements, multi-company workflows, AI automation</td><td>Needs a partner who can maintain it (that's us)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-callout reveal">
+        <i class="fas fa-circle-check"></i>
+        <p><strong>The truth most vendors won't tell you:</strong> a pre-built connector is genuinely the right answer for many standard QuickBooks Online requirements. We'll tell you when it is, help you choose and configure it, and only build custom when your requirement — or a Desktop company file — demands it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── COST ───────── -->
+  <section class="sap-section sap-section--alt" id="cost">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">How Much Does QuickBooks Integration <em>Cost</em>?</h2>
+        <p class="sap-lead">A typical QuickBooks integration costs between <strong>$2,000 and $18,000</strong> to implement, depending on the approach. Templated iPaaS connectors sit at the low end plus a monthly platform subscription; custom builds — and most QuickBooks Desktop / Web Connector work — sit at the high end with no recurring platform fee.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
+          <tbody>
+            <tr><td>Templated iPaaS connector (QBO)</td><td><strong>$2,000 – $6,000</strong></td><td>$50 – $500/month platform subscription</td></tr>
+            <tr><td>iPaaS orchestration (Make, n8n)</td><td><strong>$3,500 – $10,000</strong></td><td>$50 – $300/month platform + support retainer</td></tr>
+            <tr><td>Custom REST API / Web Connector build</td><td><strong>$7,000 – $18,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-body reveal">
+        <p>Four factors move the number most: whether you're on <strong>QuickBooks Online or Desktop</strong> (Desktop's Web Connector adds setup), how many <strong>entities</strong> you sync (customers, items, invoices, payments, bills), whether flows are <strong>one-way or bi-directional</strong>, and how much <strong>transformation logic</strong> sits between the systems. We quote fixed prices after a scoping call, so you know the cost before we write a line of configuration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── TIMELINE ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Timeline</div>
+        <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
+        <p class="sap-lead">The single biggest schedule risk isn't development — it's messy chart-of-accounts mapping and duplicate customers/items in QuickBooks, which is why data review is the first step of our process.</p>
+      </div>
+      <div class="sap-timeline reveal">
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">2–3 weeks</div>
+          <h4>Templated integrations</h4>
+          <p>Standard entity sets on a pre-built connector or iPaaS template against QuickBooks Online, live fast.</p>
+        </div>
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">5–10 weeks</div>
+          <h4>Custom builds</h4>
+          <p>Bespoke REST API or Web Connector / QBXML work, scaled to entity count, edition, and testing depth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── PROCESS ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title">What Does Our Integration Process <em>Look Like</em>?</h2>
+        <p class="sap-lead">Every engagement follows the same five stages — you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
+      </div>
+      <div class="sap-steps">
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your systems, entities, volumes, and the business outcome you need.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement on the chosen platform or codebase, in a QuickBooks sandbox or a test company file.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real transaction scenarios end to end — failure cases, retries, duplicate handling.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CONSULTANT VS CONNECTOR ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Why a Consultant</div>
+        <h2 class="section-title">Consultant vs. <em>Buying a Connector</em></h2>
+        <p class="sap-lead">A connector vendor can only sell you their connector. An independent consultant starts from your requirement and picks the tool afterwards — which matters most when your workflow doesn't match the template, or you're on QuickBooks Desktop.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table sap-table--compare">
+          <thead><tr><th></th><th>Connector vendor</th><th>RethinkingWeb</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Recommends</strong></td><td>Their product</td><td>Whatever fits, including their product</td></tr>
+            <tr><td><strong>Non-standard requirements</strong></td><td>Change requests or workarounds</td><td>Custom logic is the core offering</td></tr>
+            <tr><td><strong>Pricing</strong></td><td>Subscription, per-connector</td><td>Fixed-price project + optional retainer</td></tr>
+            <tr><td><strong>When it breaks</strong></td><td>Support ticket queue</td><td>Named engineer who built it</td></tr>
+            <tr><td><strong>Multiple systems</strong></td><td>One connector per pair</td><td>One orchestrated architecture</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHY RTW (dark band) ───────── -->
+  <section class="sap-why">
+    <div class="container">
+      <div class="sap-why__inner">
+        <div class="sap-why__text reveal">
+          <div class="section-label">Why RethinkingWeb</div>
+          <h2 class="section-title">The Team on <em>Both Sides</em> of the Sync</h2>
+          <p>We build and run integrations for companies across the US, UK, Australia, and India. Our team combines QuickBooks integration work with deep roots in the platforms on the other side of the sync: we're a WordPress and WooCommerce development agency, an official Twenty CRM partner, and we build AI automation on the Claude API.</p>
+          <p>QuickBooks is one hub among several we connect. We also build integrations for <a href="sap-business-one.html">SAP Business One</a>, <a href="shopify.html">Shopify</a>, <a href="woocommerce.html">WooCommerce</a>, and <a href="salesforce.html">Salesforce</a> — so whichever system sits opposite QuickBooks, we know it from the inside.</p>
+          <div class="sap-midcta">
+            <a href="#form" class="btn btn--primary btn--lg">Get a Fixed-Price Integration Quote</a>
+          </div>
+        </div>
+        <div class="sap-why__aside reveal">
+          <div class="sap-why__check"><i class="fas fa-check"></i> Platform-agnostic — we recommend, not resell</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Fixed pricing before we build</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> We handle both QuickBooks Online and Desktop</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Rescue &amp; take-over of broken integrations</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> AI automation on the Claude API</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── TRUST FACTORS ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Why Trust Us</div>
+        <h2 class="section-title">Why Integrate with <em>RethinkingWeb</em></h2>
+        <p class="sap-lead">Integration only pays off if it keeps running after go-live. These are the reasons companies hand us the connection between their books and everything else — and keep us on to look after it.</p>
+      </div>
+      <div class="sap-trust">
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Vendor-Neutral by Design</h3>
+          <p>We don't sell a connector, so we have no reason to push one. We recommend the approach that fits your requirement — even when that means a product we don't earn a cent from.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Fixed Price Before We Build</h3>
+          <p>You approve a signed mapping sheet and a fixed quote before a single field is configured. No open-ended hourly meters, no scope surprises mid-project.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-user-gear"></i></div>
+          <h3>A Named Engineer, Not a Queue</h3>
+          <p>The person who built your integration is the person who answers when something changes. No ticket lottery, no re-explaining your setup to a new agent each time.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-handshake-angle"></i></div>
+          <h3>Official Twenty CRM Partner</h3>
+          <p>We're a recognized Twenty CRM partner and a WordPress &amp; WooCommerce development agency — so we know both sides of the sync, not just the accounting half.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-globe"></i></div>
+          <h3>Proven Across Four Countries</h3>
+          <p>We build and run integrations for businesses in the US, UK, Australia, and India, spanning ecommerce, retail, and professional services accounting.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-life-ring"></i></div>
+          <h3>Rescue &amp; Take-Over Specialists</h3>
+          <p>A large share of our work is fixing abandoned custom builds, failed Web Connector syncs, and duplicate-record messes. If your last QuickBooks integration failed, we've almost certainly seen your exact situation.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-robot"></i></div>
+          <h3>AI Automation on the Claude API</h3>
+          <p>Beyond moving data, we build AI agents on the Claude API that act on your QuickBooks records — natural-language financial reporting, automated invoice handling, and smart transaction categorisation.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Monitored After Go-Live</h3>
+          <p>Every integration ships with logging, alerting, and retry handling, so a failed sync surfaces to us before it becomes a problem you have to chase down.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FAQ ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      </div>
+      <div class="sap-faq">
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Does QuickBooks have an API?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. QuickBooks Online offers a modern REST API secured with OAuth 2.0. QuickBooks Desktop connects through the Web Connector using QBXML/qbXML SDK requests rather than a cloud REST API.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">What's the difference between QuickBooks Online and Desktop integration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>QuickBooks Online integrates over its cloud REST API with OAuth 2.0 and supports webhooks for near real-time events. QuickBooks Desktop is a local application that integrates through the QuickBooks Web Connector or a hosted middleware agent using QBXML, typically on a schedule.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">What is the QuickBooks Web Connector?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>The Web Connector is Intuit's tool for QuickBooks Desktop. It runs on the machine hosting the company file and exchanges QBXML requests with a remote web service on a schedule, letting Desktop sync with cloud systems it can't reach directly.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you sync QuickBooks with Shopify or Salesforce?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Syncing QuickBooks with Shopify, WooCommerce, Salesforce, and HubSpot is among the most common requests, moving customers, invoices, items, and payments between the systems automatically.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Is QuickBooks integration real-time or scheduled?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>QuickBooks Online supports near real-time flows using webhooks and its REST API. QuickBooks Desktop runs on the Web Connector's polling schedule, so it is closer to batch than instant. We match the pattern to your data volume and urgency.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you sync invoices and payments both ways?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Two-way sync of invoices, payments, customers, and items is possible, though we design bi-directional flows carefully with clear rules on which system owns each field to avoid duplicate or conflicting records.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How much does QuickBooks integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most QuickBooks integrations land between $2,000 and $18,000 depending on approach, entity count, and whether it's QuickBooks Online or Desktop. See the cost table above for a breakdown by method.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken QuickBooks integration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work is a large share of our practice: broken connectors, failed Web Connector syncs, abandoned custom builds, and duplicate-record messes that no longer match the business process.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you connect QuickBooks to a POS or inventory system?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. We connect QuickBooks to POS and retail systems like Square and Shopify POS, and to inventory and operations platforms, syncing sales receipts, items, stock levels, and cost of goods.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Does QuickBooks integration support multi-entity or multi-company setups?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. QuickBooks handles one company file per instance, so multi-entity groups need one connection per company or file. We design middleware that routes records to the right entity and consolidates reporting across them.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FINAL CTA ───────── -->
+  <section class="sap-finalcta">
+    <div class="container">
+      <h2>Ready to Connect QuickBooks to the Rest of Your Stack?</h2>
+      <p>Every week your systems stay disconnected, your team re-keys invoices and payments another few hundred times. A scoped <strong>QuickBooks integration</strong> removes that work permanently — and you'll know the exact cost before we start.</p>
+      <div class="sap-finalcta__btns">
+        <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+        <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>QuickBooks Integration</option>
+      <option>QuickBooks + Ecommerce</option>
+      <option>QuickBooks + CRM</option>
+      <option>QuickBooks + POS / Payments</option>
+      <option>Fix / Take Over an Integration</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your systems and what you need to sync..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- ───────── FOOTER ───────── -->
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="../index.html" class="inline-block mb-4">
+            <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="../consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="../cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="../mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="../cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="../software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="../airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="../web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="../seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="../whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="../team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="../careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="../testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="../contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="../terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="../privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="../js/sap-business-one-integration.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="../js/form-handler.js"></script>
+</body>
+</html>
