@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenders & Bidding Discovery Platform (Angular JS) – RethinkingWeb Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/base.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/case2.css" />
+  <!-- Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+<!-- ───────── NAV ───────── -->
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+      <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="solutions.html" class="mega-menu__all">View all services <span>→</span></a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="managed.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Managed Services</span>
+                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+              </div>
+            </a>
+            <a href="consulting.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
+                <span class="mega-item__desc">Strategic technology guidance</span>
+              </div>
+            </a>
+            <a href="cyber.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cyber Security</span>
+                <span class="mega-item__desc">Protect your digital assets</span>
+              </div>
+            </a>
+            <a href="web_development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Development</span>
+                <span class="mega-item__desc">Custom websites &amp; web apps</span>
+              </div>
+            </a>
+            <a href="mobile-development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Mobile Development</span>
+                <span class="mega-item__desc">iOS &amp; Android solutions</span>
+              </div>
+            </a>
+            <a href="cloud.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cloud Services</span>
+                <span class="mega-item__desc">Scalable cloud infrastructure</span>
+              </div>
+            </a>
+            <a href="software.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Software Development</span>
+                <span class="mega-item__desc">Bespoke software solutions</span>
+              </div>
+            </a>
+            <a href="airtable.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Enterprise Airtable</span>
+                <span class="mega-item__desc">No-code workflow automation</span>
+              </div>
+            </a>
+            <a href="web-performance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Performance</span>
+                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
+              </div>
+            </a>
+            <a href="seo.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">On-page Technical SEO</span>
+                <span class="mega-item__desc">Rank higher, grow faster</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="integrations/sap-business-one.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Integrations
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--integrations">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Integrations</span>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="integrations/sap-business-one.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">SAP Business One</span>
+                <span class="mega-item__desc">ERP integration &amp; consulting</span>
+              </div>
+            </a>
+            <a href="integrations/salesforce.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Salesforce</span>
+                <span class="mega-item__desc">CRM &amp; order-to-cash sync</span>
+              </div>
+            </a>
+            <a href="integrations/netsuite.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0C3B5D"/><text x="12" y="17" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">N</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">NetSuite</span>
+                <span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span>
+              </div>
+            </a>
+            <a href="integrations/shopify.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/><path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z" opacity=".12"/><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Shopify</span>
+                <span class="mega-item__desc">Ecommerce &#8596; back office</span>
+              </div>
+            </a>
+            <a href="integrations/quickbooks.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">QuickBooks</span>
+                <span class="mega-item__desc">Accounting &amp; invoice sync</span>
+              </div>
+            </a>
+            <a href="integrations/woocommerce.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">WooCommerce</span>
+                <span class="mega-item__desc">WordPress store integration</span>
+              </div>
+            </a>
+            <a href="integrations/zoho.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Zoho</span>
+                <span class="mega-item__desc">Zoho One suite integration</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="index.html">
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+
+    <!-- Solutions accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Integrations accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="integrations/sap-business-one.html" class="mob-accordion__link">Integrations</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="integrations/sap-business-one.html">SAP Business One</a>
+        <a href="integrations/salesforce.html">Salesforce</a>
+        <a href="integrations/netsuite.html">NetSuite</a>
+        <a href="integrations/shopify.html">Shopify</a>
+        <a href="integrations/quickbooks.html">QuickBooks</a>
+        <a href="integrations/woocommerce.html">WooCommerce</a>
+        <a href="integrations/zoho.html">Zoho</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+
+    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+
+  <!-- ───────── HERO ───────── -->
+  <section class="cs-detail-hero">
+    <div class="cs-hero__bg">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="container cs-detail-hero__inner">
+      <div class="cs-detail-hero__text">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="case.html">Case Studies</a>
+          <span>›</span>
+          <span>Tenders & Bidding Platform</span>
+        </div>
+        <div class="section-label">Software Development - Custom Application</div>
+        <h1 class="cs-detail-hero__title">Building a <em>Tenders &amp; Bidding</em> Discovery Platform</h1>
+        <div class="cs-detail-hero__meta">
+          <span class="meta-tag">Angular JS</span>
+          <span class="meta-tag">MySQL</span>
+          <span class="meta-tag">Asia Pacific</span>
+          
+        </div>
+      </div>
+      <div class="cs-hero-image">
+        <img src="images/case-software-finance.jpeg" alt="Tenders & Bidding Discovery Platform (Angular JS)" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── MAIN CONTENT ───────── -->
+  <section class="cs-content-section">
+    <div class="container cs-content-grid">
+
+      <!-- SIDEBAR -->
+      <aside class="cs-sidebar">
+        <div class="sidebar-card">
+          <h4>Industry</h4>
+          <p>GovTech / Procurement</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Service</h4>
+          <p>Software Development - Custom Application</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Location</h4>
+          <p>Asia Pacific</p>
+        </div>
+        <div class="sidebar-card sidebar-card--highlight">
+          <h4>Results at a Glance</h4>
+          <ul>
+            <li>✔ Tender Aggregation Engine</li>
+            <li>✔ Advanced Search &amp; Filters</li>
+            <li>✔ Bid Alert Notifications</li>
+            <li>✔ 1-Month Build</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn btn--primary btn--full sidebar-cta">Start Your Project</a>
+      </aside>
+
+      <!-- ARTICLE -->
+      <article class="cs-article">
+
+        <div class="cs-section-block">
+          <h2>Introduction</h2>
+          <p>A procurement technology company needed a platform to aggregate government and private tenders from multiple sources into one searchable destination for businesses looking to bid. RethinkingWeb built the platform on Angular JS and MySQL within a one-month timeline.</p>
+          <p>The result is a platform that turns scattered tender listings into a single, searchable, alert-driven destination.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Problem Statement</h2>
+          <p>Businesses looking to bid on tenders had to check multiple government and private sources individually, often missing relevant opportunities entirely. There was no single place to search and filter tenders by industry, region, or value.</p>
+          <p>The company needed a platform that aggregated tenders from multiple sources and made them searchable, with alerts for new opportunities matching a business's interests.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Solutions</h2>
+          <p>RethinkingWeb built the platform on Angular JS with a MySQL back end. Key elements included:</p>
+
+          <div class="cs-solution-cards">
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-layer-group"></i></div>
+              <h3>Tender Aggregation Engine</h3>
+              <p>Tenders are pulled in from multiple sources into a single database.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-magnifying-glass"></i></div>
+              <h3>Advanced Search &amp; Filters</h3>
+              <p>Users search and filter tenders by industry, region, and value.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-bell"></i></div>
+              <h3>Bid Alert Notifications</h3>
+              <p>Businesses receive alerts when new tenders match their criteria.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-bookmark"></i></div>
+              <h3>Saved Tenders</h3>
+              <p>Users bookmark tenders of interest for later review.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-angular"></i></div>
+              <h3>Angular JS Front End</h3>
+              <p>A responsive Angular JS interface for searching and browsing tenders.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-database"></i></div>
+              <h3>MySQL Data Layer</h3>
+              <p>A structured MySQL database supports search and aggregation at scale.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Implementation</h2>
+          <p>The engagement covered the Angular JS front end, the tender aggregation engine, search and filter logic, and the alert notification system — delivered within one month.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Results &amp; Achievements</h2>
+          <p>The company came away with a platform built to simplify tender discovery:</p>
+
+          <div class="cs-results-grid">
+            <div class="result-item">
+              <div class="result-item__icon"><i class="fas fa-layer-group"></i></div>
+              <h3>Consolidated Tender Access</h3>
+              <p>Users search tenders from multiple sources in one place.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon"><i class="fas fa-bell"></i></div>
+              <h3>Fewer Missed Opportunities</h3>
+              <p>Alerts surface relevant new tenders automatically.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon"><i class="fas fa-magnifying-glass"></i></div>
+              <h3>Faster Discovery</h3>
+              <p>Advanced filters help businesses find relevant tenders quickly.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon"><i class="fas fa-stopwatch"></i></div>
+              <h3>On-Time Delivery</h3>
+              <p>The platform was delivered within the one-month timeline.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-summary-box">
+          <h2>Conclusion</h2>
+          <p>By aggregating tenders into one searchable, alert-driven platform, RethinkingWeb helped the company make bidding opportunities easier to find and act on.</p>
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+  <!-- ───────── MORE CASE STUDIES ───────── -->
+  <section class="cs-more">
+    <div class="container">
+      <div class="section-label">Case Studies</div>
+      <h2 class="section-title">See More <em>Case Studies</em></h2>
+
+      <div class="cs-more-grid">
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/case-software-finance.jpeg" alt="Security Workforce Management Platform (Flutter &amp; NodeJS)" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Building a Security Workforce Management Platform</h3>
+            <p class="cs-card__desc">The result is a platform that gives guards a simple mobile workflow and gives management verified, real-time visibility into every shift.</p>
+            <a href="security-workforce-management-platform.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/case-software-finance.jpeg" alt="Cross-Platform Faith &amp; Lifestyle Mobile App" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Building an Offline-First Lifestyle App</h3>
+            <p class="cs-card__desc">The result is an app that keeps its core content available offline while still supporting reminders, audio playback, and a manageable content library behind the scenes.</p>
+            <a href="faith-lifestyle-mobile-app.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/case-software-finance.jpeg" alt="Healthcare Provider Booking Platform (iOS/Android)" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Building a Healthcare Provider Booking Platform</h3>
+            <p class="cs-card__desc">The result is a platform that makes it simple for patients to find the right provider and for practices to manage their availability.</p>
+            <a href="healthcare-provider-booking-platform.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CONTACT ───────── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" name="first_name" placeholder="John" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" name="last_name" placeholder="Doe" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Company / Organization</label>
+    <input type="text" name="company" placeholder="Acme Corp">
+  </div>
+
+  <div class="form-group">
+    <label>Company Email</label>
+    <input type="email" name="email" placeholder="john@company.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" name="phone" placeholder="+91 00000 00000">
+  </div>
+
+  <div class="form-group">
+    <label>How Can We Help You?</label>
+    <select name="service" required>
+      <option value="">Select Option</option>
+      <option>Managed Services</option>
+      <option>IT Consulting & Advisory</option>
+      <option>Cyber Security</option>
+      <option>Web Development</option>
+      <option>Mobile Development</option>
+      <option>Cloud Services</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FOOTER ───────── -->
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="index.html" class="inline-block mb-4">
+            <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <a href="index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/case2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="js/form-handler.js"></script>
+</body>
+</html>
