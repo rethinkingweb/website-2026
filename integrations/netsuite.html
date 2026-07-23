@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/netsuite-pairings.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <!-- Tailwind CSS -->
   <script>
@@ -446,31 +447,31 @@
         <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-cloud"></i></div>
           <h3>CRM</h3>
-          <p class="sap-card__systems">Salesforce, HubSpot, Zoho CRM, Twenty CRM</p>
+          <p class="sap-card__systems"><a href="netsuite-salesforce-integration.html">Salesforce</a>, <a href="netsuite-hubspot-integration.html">HubSpot</a>, Zoho CRM, Twenty CRM</p>
           <p class="sap-card__flows">Accounts, contacts, quotes, order &amp; payment status</p>
         </div>
         <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-cart-shopping"></i></div>
           <h3>Ecommerce</h3>
-          <p class="sap-card__systems">Shopify, BigCommerce, Magento</p>
+          <p class="sap-card__systems"><a href="netsuite-shopify-integration.html">Shopify</a>, BigCommerce, Magento</p>
           <p class="sap-card__flows">Orders, inventory, pricing, customers, fulfillment</p>
         </div>
         <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-file-invoice"></i></div>
           <h3>EDI &amp; B2B</h3>
-          <p class="sap-card__systems">SPS Commerce, TrueCommerce, custom EDI</p>
+          <p class="sap-card__systems"><a href="netsuite-edi-integration.html">SPS Commerce, TrueCommerce, custom EDI</a></p>
           <p class="sap-card__flows">Purchase orders, ASNs, invoices, 850/856/810 documents</p>
         </div>
         <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-warehouse"></i></div>
           <h3>3PL / WMS / Logistics</h3>
-          <p class="sap-card__systems">3PL portals, ShipStation, warehouse systems</p>
+          <p class="sap-card__systems"><a href="netsuite-3pl-wms-integration.html">3PL portals</a>, ShipStation, warehouse systems</p>
           <p class="sap-card__flows">Fulfillments, shipments, tracking, real-time inventory</p>
         </div>
         <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-percent"></i></div>
           <h3>Tax &amp; Payments</h3>
-          <p class="sap-card__systems">Avalara, Stripe</p>
+          <p class="sap-card__systems"><a href="netsuite-avalara-integration.html">Avalara</a>, Stripe</p>
           <p class="sap-card__flows">Sales tax calculation, payments, reconciliation</p>
         </div>
         <div class="sap-card reveal">
@@ -482,6 +483,97 @@
       </div>
       <div class="sap-body reveal">
         <p>If your system isn't listed, it's almost certainly still integrable. Because NetSuite exposes nearly every record through SuiteTalk and SuiteScript, we scope against your actual requirement, not a connector catalogue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── POPULAR INTEGRATIONS ───────── -->
+  <section class="sap-section sap-popular">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Popular Pairings</div>
+        <h2 class="section-title">Popular NetSuite <em>Integrations</em></h2>
+        <p class="sap-lead">These are the NetSuite pairings we build most often. Click any card to see how that integration works.</p>
+      </div>
+
+      <div class="sap-popular__grid">
+
+        <a href="netsuite-salesforce-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--netsuite">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0C3B5D"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">NetSuite</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--salesforce">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg>
+            </span>
+          </div>
+          <h3>NetSuite <em>+</em> Salesforce</h3>
+          <p>Accounts, opportunities &amp; order status sync</p>
+        </a>
+
+        <a href="netsuite-shopify-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--netsuite">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0C3B5D"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">NetSuite</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--shopify">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/><path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z" opacity=".12"/><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg>
+            </span>
+          </div>
+          <h3>NetSuite <em>+</em> Shopify</h3>
+          <p>Orders, inventory &amp; fulfillment sync</p>
+        </a>
+
+        <a href="netsuite-hubspot-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--netsuite">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0C3B5D"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">NetSuite</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--hubspot"><i class="fab fa-hubspot"></i></span>
+          </div>
+          <h3>NetSuite <em>+</em> HubSpot</h3>
+          <p>Deals to sales orders, revenue back to CRM</p>
+        </a>
+
+        <a href="netsuite-edi-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--netsuite">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0C3B5D"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">NetSuite</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--edi"><i class="fas fa-file-invoice"></i></span>
+          </div>
+          <h3>NetSuite <em>+</em> EDI</h3>
+          <p>Purchase orders, ASNs &amp; invoices</p>
+        </a>
+
+        <a href="netsuite-avalara-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--netsuite">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0C3B5D"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">NetSuite</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--avalara"><i class="fas fa-percent"></i></span>
+          </div>
+          <h3>NetSuite <em>+</em> Avalara</h3>
+          <p>Real-time tax, exemptions &amp; returns data</p>
+        </a>
+
+        <a href="netsuite-3pl-wms-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--netsuite">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0C3B5D"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">NetSuite</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--wms"><i class="fas fa-warehouse"></i></span>
+          </div>
+          <h3>NetSuite <em>+</em> 3PL / WMS</h3>
+          <p>Orders out, shipments &amp; stock back</p>
+        </a>
+
       </div>
     </div>
   </section>
@@ -786,6 +878,7 @@
       <option>NetSuite + CRM (Salesforce / HubSpot)</option>
       <option>NetSuite + Ecommerce (Shopify)</option>
       <option>NetSuite + EDI / 3PL / WMS</option>
+      <option>NetSuite + Tax (Avalara)</option>
       <option>Fix / Take Over an Integration</option>
       <option>Other</option>
     </select>

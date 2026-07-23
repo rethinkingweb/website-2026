@@ -1,0 +1,51 @@
+
+:root {
+  --woo-purple:      #7F54B3;
+  --woo-purple-dark: #674399;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--woocommerce     { background: transparent; }
+.sap-popular__logo--woocommerce svg { border-radius: 5px; }
+
+.sap-popular__logo--netsuite        { background: transparent; }
+.sap-popular__logo--netsuite svg    { border-radius: 5px; }
+
+.sap-popular__logo--quickbooks      { background: #EFF9EE; }
+.sap-popular__logo--salesforce      { background: #E8F6FD; }
+
+.sap-popular__logo--shipstation     { background: #EAF2FB; }
+.sap-popular__logo--shipstation i   { color: #1D5FA8; }
+
+.sap-popular__logo--mailchimp       { background: #FFFAE0; }
+.sap-popular__logo--mailchimp i     { color: #3B2C1E; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+═══════════════════════════════ */
+.woo-pairing .sap-hub__core {
+  background: linear-gradient(160deg, #674399 0%, #9B6FD1 100%);
+}
+
+.woo-pairing .sap-badge .badge__dot { background: var(--woo-purple, #7F54B3); }
+
+.woo-pairing .sap-hero__visual .sap-hub__node--1,
+.woo-pairing .sap-hero__visual .sap-hub__node--2,
+.woo-pairing .sap-hero__visual .sap-hub__node--3,
+.woo-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(127, 84, 179, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.woo-pairing--sap         .sap-hub__node i { color: #0a3d8f; }
+.woo-pairing--netsuite    .sap-hub__node i { color: #0C3B5D; }
+.woo-pairing--quickbooks  .sap-hub__node i { color: #2CA01C; }
+.woo-pairing--salesforce  .sap-hub__node i { color: #00A1E0; }
+.woo-pairing--shipstation .sap-hub__node i { color: #1D5FA8; }
+.woo-pairing--mailchimp   .sap-hub__node i { color: #3B2C1E; }

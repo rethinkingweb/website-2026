@@ -1,0 +1,22 @@
+/* ─── SAP Business One + EDI — page-specific overrides ───
+   Loaded after base.css, sap-business-one-integration.css, and style.css.
+   Only contains tweaks unique to this pairing page. */
+
+.sap-pairing--edi .sap-hub__core {
+  background: linear-gradient(160deg, #0a3d8f 0%, #00aeef 100%);
+}
+
+.sap-pairing--edi .sap-hub__node i {
+  color: #2D2D2D; /* neutral document-exchange accent for the four data-flow nodes */
+}
+
+.sap-pairing--edi .sap-badge .badge__dot {
+  background: #3D3D3D;
+}
+
+.sap-pairing--edi .sap-hero__visual .sap-hub__node--1,
+.sap-pairing--edi .sap-hero__visual .sap-hub__node--2,
+.sap-pairing--edi .sap-hero__visual .sap-hub__node--3,
+.sap-pairing--edi .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(45, 45, 45, 0.25);
+}

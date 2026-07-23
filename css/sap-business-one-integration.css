@@ -205,6 +205,50 @@
 .sap-card__systems a { color: var(--orange); }
 .sap-card__flows { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
 
+/* ═══════════════════════════════
+   POPULAR INTEGRATIONS — SAP + Partner card grid
+   (per-pairing cards, like the appseconnect.com reference,
+    reskinned to the RethinkingWeb orange/charcoal system)
+═══════════════════════════════ */
+.sap-popular__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2rem;
+}
+.sap-popular__card {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.9rem;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 2rem 1.5rem;
+  box-shadow: var(--shadow); transition: all var(--trans);
+  text-decoration: none; position: relative; overflow: hidden;
+}
+.sap-popular__card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-light));
+  transform: scaleX(0); transform-origin: left; transition: transform var(--trans);
+}
+.sap-popular__card:hover::before { transform: scaleX(1); }
+.sap-popular__card:hover {
+  border-color: rgba(231,92,35,0.3); transform: translateY(-6px); box-shadow: var(--shadow-orange);
+}
+.sap-popular__logos { display: flex; align-items: center; justify-content: center; gap: 0.85rem; }
+.sap-popular__logo {
+  width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center;
+  background: var(--bg2); border: 1px solid var(--border); flex-shrink: 0;
+  transition: transform var(--trans);
+}
+.sap-popular__card:hover .sap-popular__logo { transform: translateY(-2px); }
+.sap-popular__logo--sap svg { width: 40px; height: auto; }
+.sap-popular__logo i { font-size: 1.35rem; }
+.sap-popular__logo--shopify svg,
+.sap-popular__logo--salesforce svg { width: 30px; height: 30px; }
+.sap-popular__logo--zuper       { color: #0EA5A4; background: rgba(14,165,164,0.08); border-color: rgba(14,165,164,0.2); }
+.sap-popular__logo--amazon      { color: #FF9900; background: rgba(255,153,0,0.08); border-color: rgba(255,153,0,0.2); }
+.sap-popular__logo--stripe      { color: #635BFF; background: rgba(99,91,255,0.08); border-color: rgba(99,91,255,0.2); }
+.sap-popular__logo--edi         { color: var(--charcoal2); background: var(--bg3); }
+.sap-popular__plus { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-muted); }
+.sap-popular__card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--charcoal); line-height: 1.35; }
+.sap-popular__card h3 em { font-style: normal; color: var(--orange); }
+.sap-popular__card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+
 /* ── Tables ── */
 .sap-table-wrap { overflow-x: auto; margin: 1.75rem 0; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow); }
 .sap-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: var(--card-bg); min-width: 600px; }
@@ -370,6 +414,7 @@
   /* Keep the SAP⇄Zuper interchange visible on tablet/phone (hub visual stays hidden) */
   .sap-hero__visual:has(.sap-xchg) { display: block; }
   .sap-cards { grid-template-columns: repeat(2,1fr); }
+  .sap-popular__grid { grid-template-columns: repeat(3,1fr); }
   .sap-steps { grid-template-columns: repeat(2,1fr); }
   .sap-trust { grid-template-columns: repeat(2,1fr); }
   .sap-why__inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -377,12 +422,14 @@
 @media (max-width: 768px) {
   .sap-hero { padding: 6.5rem 0 3rem; }
   .sap-stats { grid-template-columns: repeat(2,1fr); }
+  .sap-popular__grid { grid-template-columns: repeat(2,1fr); }
   .sap-timeline { grid-template-columns: 1fr; }
   .sap-hero__cta { flex-direction: column; align-items: stretch; }
   .sap-hero__cta .btn { justify-content: center; }
 }
 @media (max-width: 560px) {
   .sap-cards { grid-template-columns: 1fr; }
+  .sap-popular__grid { grid-template-columns: 1fr; }
   .sap-steps { grid-template-columns: 1fr; }
   .sap-trust { grid-template-columns: 1fr; }
   .sap-stats { grid-template-columns: 1fr 1fr; }

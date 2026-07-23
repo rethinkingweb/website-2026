@@ -1,0 +1,21 @@
+/* ─── SAP Business One + Amazon — page-specific overrides ───
+   Loaded after base.css, sap-business-one-integration.css, and style.css.
+   Only contains tweaks unique to this pairing page; all shared layout,
+   card, table, and section styling comes from sap-business-one-integration.css. */
+
+.sap-pairing--amazon .sap-hub__core {
+  background: linear-gradient(160deg, #0a3d8f 0%, #00aeef 100%);
+}
+
+.sap-pairing--amazon .sap-hub__node i {
+  color: #FF9900; /* Amazon orange accent for the four data-flow nodes */
+}
+
+.sap-pairing--amazon .sap-badge .badge__dot {
+  background: #FF9900;
+}
+
+.sap-pairing--amazon .sap-hero__visual .sap-hub__node--1 { border-color: rgba(255, 153, 0, 0.35); }
+.sap-pairing--amazon .sap-hero__visual .sap-hub__node--2 { border-color: rgba(255, 153, 0, 0.35); }
+.sap-pairing--amazon .sap-hero__visual .sap-hub__node--3 { border-color: rgba(255, 153, 0, 0.35); }
+.sap-pairing--amazon .sap-hero__visual .sap-hub__node--4 { border-color: rgba(255, 153, 0, 0.35); }

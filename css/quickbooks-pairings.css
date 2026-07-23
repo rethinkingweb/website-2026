@@ -1,0 +1,52 @@
+
+:root {
+  --qb-green:       #2CA01C;
+  --qb-green-light: #53B848;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--quickbooks     { background: transparent; }
+.sap-popular__logo--quickbooks svg { border-radius: 5px; }
+
+.sap-popular__logo--woocommerce    { background: #F4EEFA; }
+.sap-popular__logo--woocommerce i  { color: #7F54B3; }
+
+.sap-popular__logo--hubspot        { background: #FFF1EC; }
+.sap-popular__logo--hubspot i      { color: #FF7A59; }
+
+.sap-popular__logo--pos            { background: #EFF3F6; }
+.sap-popular__logo--pos i          { color: #2D3E50; }
+
+/* .sap-popular__logo--stripe and --shopify already exist on the SAP
+   page; these only fill in a background if that rule doesn't set one. */
+.sap-popular__logo--stripe i       { color: #635BFF; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+═══════════════════════════════ */
+.qb-pairing .sap-hub__core {
+  background: linear-gradient(160deg, #1E7714 0%, #2CA01C 100%);
+}
+
+.qb-pairing .sap-badge .badge__dot { background: var(--qb-green, #2CA01C); }
+
+.qb-pairing .sap-hero__visual .sap-hub__node--1,
+.qb-pairing .sap-hero__visual .sap-hub__node--2,
+.qb-pairing .sap-hero__visual .sap-hub__node--3,
+.qb-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(44, 160, 28, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.qb-pairing--shopify     .sap-hub__node i { color: #5E8E3E; }
+.qb-pairing--salesforce  .sap-hub__node i { color: #00A1E0; }
+.qb-pairing--woocommerce .sap-hub__node i { color: #7F54B3; }
+.qb-pairing--stripe      .sap-hub__node i { color: #635BFF; }
+.qb-pairing--hubspot     .sap-hub__node i { color: #FF7A59; }
+.qb-pairing--pos         .sap-hub__node i { color: #2D3E50; }

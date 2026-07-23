@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetSuite + Salesforce Integration | RethinkingWeb</title>
+  <meta name="description" content="Connect Salesforce to NetSuite — accounts, opportunities, orders, invoices, and payment status. Fixed-price, platform-agnostic integration consulting." />
+  <link rel="canonical" href="https://rethinkingweb.com/integrations/netsuite-salesforce-integration.html" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/netsuite-pairings.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "NetSuite + Salesforce Integration",
+      "serviceType": "CRM to ERP Integration Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "RethinkingWeb",
+        "url": "https://rethinkingweb.com/",
+        "areaServed": [
+          "US",
+          "GB",
+          "AU",
+          "IN"
+        ]
+      },
+      "description": "Connect Salesforce to NetSuite \u2014 accounts, opportunities, orders, invoices, and payment status. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://rethinkingweb.com/integrations/netsuite-salesforce-integration.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rethinkingweb.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Integrations",
+          "item": "https://rethinkingweb.com/integrations/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "NetSuite",
+          "item": "https://rethinkingweb.com/integrations/netsuite.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Salesforce"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does Salesforce connect to NetSuite?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Through NetSuite's SuiteTalk REST API or custom RESTlets on one side, and Salesforce's REST, Bulk, and Platform Event APIs on the other, orchestrated either by an iPaaS or by purpose-built middleware."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which system should own the customer record?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually NetSuite, because billing and credit live there \u2014 but sales often needs to create prospects in Salesforce first. We handle that with a defined promotion point where a Salesforce account becomes a NetSuite customer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can sales see invoice and payment status in Salesforce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Invoice, balance, and payment status are pushed back onto the account or opportunity, so reps stop emailing finance for updates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle duplicate customer records?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We define matching rules on a shared external ID and run a de-duplication pass before go-live, since duplicates are the most common cause of failed syncs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a NetSuite + Salesforce integration cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most projects run $6,000 to $30,000 depending on object count, direction, and subsidiary structure. See the cost table above for a full breakdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you fix an existing Salesforce to NetSuite sync?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Rescue work is a large share of our practice \u2014 abandoned connector setups, silent sync failures, and integrations that no longer match how the sales process actually runs."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+      <a href="../index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="../solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="../solutions.html" class="mega-menu__all">View all services <span>&rarr;</span></a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="../managed.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-server"></i></div><div class="mega-item__content"><span class="mega-item__title">Managed Services</span><span class="mega-item__desc">24/7 IT infrastructure &amp; support</span></div></a>
+            <a href="../consulting.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div><div class="mega-item__content"><span class="mega-item__title">IT Consulting &amp; Advisory</span><span class="mega-item__desc">Strategic technology guidance</span></div></a>
+            <a href="../cyber.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div><div class="mega-item__content"><span class="mega-item__title">Cyber Security</span><span class="mega-item__desc">Protect your digital assets</span></div></a>
+            <a href="web_development.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-code"></i></div><div class="mega-item__content"><span class="mega-item__title">Web Development</span><span class="mega-item__desc">Custom websites &amp; web apps</span></div></a>
+            <a href="../mobile-development.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div><div class="mega-item__content"><span class="mega-item__title">Mobile Development</span><span class="mega-item__desc">iOS &amp; Android solutions</span></div></a>
+            <a href="../cloud.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-cloud"></i></div><div class="mega-item__content"><span class="mega-item__title">Cloud Services</span><span class="mega-item__desc">Scalable cloud infrastructure</span></div></a>
+            <a href="../software.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div><div class="mega-item__content"><span class="mega-item__title">Software Development</span><span class="mega-item__desc">Bespoke software solutions</span></div></a>
+            <a href="../airtable.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-table-cells"></i></div><div class="mega-item__content"><span class="mega-item__title">Enterprise Airtable</span><span class="mega-item__desc">No-code workflow automation</span></div></a>
+            <a href="../web-performance.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div><div class="mega-item__content"><span class="mega-item__title">Web Performance</span><span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span></div></a>
+            <a href="../seo.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div><div class="mega-item__content"><span class="mega-item__title">On-page Technical SEO</span><span class="mega-item__desc">Rank higher, grow faster</span></div></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="sap-business-one.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Integrations
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--integrations">
+          <div class="mega-menu__header"><span class="mega-menu__label">Integrations</span></div>
+          <div class="mega-menu__grid">
+            <a href="sap-business-one.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div><div class="mega-item__content"><span class="mega-item__title">SAP Business One</span><span class="mega-item__desc">ERP integration &amp; consulting</span></div></a>
+            <a href="salesforce.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg></div><div class="mega-item__content"><span class="mega-item__title">Salesforce</span><span class="mega-item__desc">CRM &amp; order-to-cash sync</span></div></a>
+            <a href="netsuite.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0C3B5D"/><text x="12" y="17" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">N</text></svg></div><div class="mega-item__content"><span class="mega-item__title">NetSuite</span><span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span></div></a>
+            <a href="shopify.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#95BF47"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg></div><div class="mega-item__content"><span class="mega-item__title">Shopify</span><span class="mega-item__desc">Ecommerce &#8596; back office</span></div></a>
+            <a href="quickbooks.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div><div class="mega-item__content"><span class="mega-item__title">QuickBooks</span><span class="mega-item__desc">Accounting &amp; invoice sync</span></div></a>
+            <a href="woocommerce.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div><div class="mega-item__content"><span class="mega-item__title">WooCommerce</span><span class="mega-item__desc">WordPress store integration</span></div></a>
+            <a href="zoho.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div><div class="mega-item__content"><span class="mega-item__title">Zoho</span><span class="mega-item__desc">Zoho One suite integration</span></div></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="../about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="../about.html">About Us</a>
+          <a href="../whyus.html">Why Us</a>
+          <a href="../team.html">Team</a>
+          <a href="../careers.html">Careers</a>
+          <a href="../testimonials.html">Testimonials</a>
+          <a href="../case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="../case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="../contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    </div>
+
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="../index.html"><img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" /></a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">&#10005;</button>
+  </div>
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../managed.html">Managed Services</a>
+        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="../cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="../mobile-development.html">Mobile Development</a>
+        <a href="../cloud.html">Cloud Services</a>
+        <a href="../software.html">Software Development</a>
+        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="../web-performance.html">Web Performance Optimization</a>
+        <a href="../seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="sap-business-one.html" class="mob-accordion__link">Integrations</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="sap-business-one.html">SAP Business One</a>
+        <a href="salesforce.html">Salesforce</a>
+        <a href="netsuite.html">NetSuite</a>
+        <a href="shopify.html">Shopify</a>
+        <a href="quickbooks.html">QuickBooks</a>
+        <a href="woocommerce.html">WooCommerce</a>
+        <a href="zoho.html">Zoho</a>
+      </div>
+    </div>
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../about.html">About Us</a>
+        <a href="../whyus.html">Why Us</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../case.html">Case Studies</a>
+      </div>
+    </div>
+    <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+    <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+  </nav>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main class="sap sap-pairing ns-pairing ns-pairing--salesforce">
+
+  <section class="sap-hero">
+    <div class="container">
+      <div class="sap-hero__inner">
+        <div class="sap-hero__text">
+          <nav class="sap-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>&rsaquo;</span>
+            <a href="netsuite.html">Integrations</a><span>&rsaquo;</span>
+            <a href="netsuite.html">NetSuite</a><span>&rsaquo;</span>
+            <span class="current">Salesforce</span>
+          </nav>
+          <div class="sap-badge"><span class="badge__dot"></span> CRM Integration</div>
+          <h1 class="sap-hero__title">NetSuite <em>+ Salesforce</em> Integration</h1>
+          <p class="sap-hero__sub">
+            Connect Salesforce to <strong>NetSuite</strong> so a closed-won opportunity becomes a sales order without anyone re-keying it — and so your sales team can see fulfilment and payment status without asking finance.
+          </p>
+          <div class="sap-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+            <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
+          </div>
+        </div>
+        <div class="sap-hero__visual" aria-hidden="true">
+          <div class="sap-hub sap-hub--pair">
+            <div class="sap-hub__ring"></div>
+            <div class="sap-hub__core"><strong>NetSuite</strong><span>ERP Core</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-building"></i> Accounts</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-handshake"></i> Opportunities</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-file-signature"></i> Orders</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-file-invoice-dollar"></i> Invoices</div>
+          </div>
+        </div>
+      </div>
+      <div class="sap-stats">
+        <div class="sap-stat"><div class="stat-num">Bi-directional</div><span class="stat-label">CRM and ERP stay in step</span></div>
+        <div class="sap-stat"><div class="stat-num">Real-time</div><span class="stat-label">Platform Events &amp; REST triggers</span></div>
+        <div class="sap-stat"><div class="stat-num">4–12</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">The Basics</div>
+        <h2 class="section-title">What Does This <em>Integration Do</em>?</h2>
+      </div>
+      <div class="sap-body reveal">
+        <p>Salesforce owns the pipeline; NetSuite owns the money. Without a sync, someone copies the closed-won opportunity into a NetSuite sales order by hand, and every &ldquo;where is my order?&rdquo; question from a rep turns into an email to finance.</p>
+        <p>This integration keeps customer records aligned in both directions, turns approved Salesforce quotes and opportunities into NetSuite sales orders, and pushes fulfilment, invoice, and payment status back onto the Salesforce account so reps can answer their own questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Data Flow</div>
+        <h2 class="section-title">What <em>Syncs</em>, and Which Way</h2>
+        <p class="sap-lead">Most NetSuite + Salesforce projects sync the same core objects. We agree the system of record for each one before anything is built.</p>
+      </div>
+      <div class="sap-cards">
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-building"></i></div>
+          <h3>Accounts &amp; Contacts</h3>
+          <p class="sap-card__systems">Both directions</p>
+          <p class="sap-card__flows">Customer records matched on a shared external ID, with a defined system of record</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-handshake"></i></div>
+          <h3>Opportunities &amp; Quotes</h3>
+          <p class="sap-card__systems">Salesforce → NetSuite</p>
+          <p class="sap-card__flows">Closed-won deals and approved quotes create NetSuite sales orders</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-boxes-stacked"></i></div>
+          <h3>Items &amp; Pricing</h3>
+          <p class="sap-card__systems">NetSuite → Salesforce</p>
+          <p class="sap-card__flows">Product catalogue, price books, and discount rules kept current for reps</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-truck-fast"></i></div>
+          <h3>Fulfilment Status</h3>
+          <p class="sap-card__systems">NetSuite → Salesforce</p>
+          <p class="sap-card__flows">Ship dates and tracking numbers visible on the account record</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Invoices &amp; Payments</h3>
+          <p class="sap-card__systems">NetSuite → Salesforce</p>
+          <p class="sap-card__flows">Invoice, balance, and payment status surfaced to sales and CS</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-triangle-exclamation"></i></div>
+          <h3>Credit Holds</h3>
+          <p class="sap-card__systems">NetSuite → Salesforce</p>
+          <p class="sap-card__flows">Credit limits and holds flagged before a rep promises a delivery date</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Methods</div>
+        <h2 class="section-title">How We <em>Build It</em></h2>
+        <p class="sap-lead">NetSuite and Salesforce both expose solid APIs, so the real decision is orchestration: a pre-built connector, an iPaaS, or a purpose-built middleware layer.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
+          <tbody>
+            <tr><td><strong>NetSuite SuiteTalk REST</strong></td><td>Modern REST/OData access to NetSuite records</td><td>New builds, standard record types, real-time posting</td><td>Governance limits on high-volume bursts</td></tr>
+            <tr><td><strong>RESTlets / SuiteScript</strong></td><td>Custom NetSuite endpoints written in SuiteScript</td><td>Non-standard records, bundled logic, heavy transformation</td><td>Custom code lives in NetSuite and needs maintaining</td></tr>
+            <tr><td><strong>Salesforce REST &amp; Bulk API</strong></td><td>Record-level and batch access, plus Platform Events</td><td>Triggering on close, syncing large account volumes</td><td>API call limits on lower Salesforce editions</td></tr>
+            <tr><td><strong>iPaaS connectors</strong></td><td>Pre-built templates on Celigo, Boomi, or Workato</td><td>Standard opportunity-to-order flows going live fast</td><td>Subscription cost forever; templates bend only so far</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-callout reveal">
+        <i class="fas fa-circle-check"></i>
+        <p><strong>The truth most vendors won't tell you:</strong> if your flow really is opportunity &rarr; sales order &rarr; invoice status, a pre-built connector is a fine answer and we'll help you configure it. Custom middleware earns its cost when approval logic, multi-subsidiary rules, or non-standard records enter the picture.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section sap-section--alt" id="cost">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">How Much Does It <em>Cost</em>?</h2>
+        <p class="sap-lead">A NetSuite + Salesforce integration typically costs between <strong>$6,000 and $30,000</strong> to implement, depending on object count and how much logic sits between the two systems.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
+          <tbody>
+            <tr><td>One-way opportunity to sales order</td><td><strong>$6,000 &ndash; $12,000</strong></td><td>Support retainer only</td></tr>
+            <tr><td>Bi-directional accounts, orders &amp; invoice status</td><td><strong>$12,000 &ndash; $22,000</strong></td><td>Platform subscription if iPaaS is used</td></tr>
+            <tr><td>Multi-subsidiary / custom object build</td><td><strong>$20,000 &ndash; $30,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-body reveal">
+        <p>The number moves most on <strong>object count</strong>, whether records sync <strong>one-way or bi-directionally</strong>, and whether <strong>multi-subsidiary or multi-currency</strong> rules apply. We quote a fixed price after a scoping call, so you know the cost before we write a line of code.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Timeline</div>
+        <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
+        <p class="sap-lead">The biggest schedule risk is duplicate customer records across the two systems — which is why matching rules and a de-duplication pass come before any build work.</p>
+      </div>
+      <div class="sap-timeline reveal">
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">4–6 weeks</div>
+          <h4>Standard CRM to ERP flow</h4>
+          <p>Accounts, opportunities, and sales orders with status back to Salesforce.</p>
+        </div>
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">8–12 weeks</div>
+          <h4>Bi-directional / multi-subsidiary</h4>
+          <p>Two-way master data, custom objects, approval logic, and multi-currency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title">What Does Our Integration Process <em>Look Like</em>?</h2>
+        <p class="sap-lead">Every engagement follows the same five stages &mdash; you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
+      </div>
+      <div class="sap-steps">
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your Salesforce objects, NetSuite records, and the system of record for each.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, matching rule, and error case before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a NetSuite sandbox and a Salesforce full or partial sandbox.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real deals end to end — amendments, cancellations, duplicates, and failures.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      </div>
+      <div class="sap-faq">
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How does Salesforce connect to NetSuite?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Through NetSuite's SuiteTalk REST API or custom RESTlets on one side, and Salesforce's REST, Bulk, and Platform Event APIs on the other, orchestrated either by an iPaaS or by purpose-built middleware.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Which system should own the customer record?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Usually NetSuite, because billing and credit live there — but sales often needs to create prospects in Salesforce first. We handle that with a defined promotion point where a Salesforce account becomes a NetSuite customer.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can sales see invoice and payment status in Salesforce?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Invoice, balance, and payment status are pushed back onto the account or opportunity, so reps stop emailing finance for updates.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Do you handle duplicate customer records?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. We define matching rules on a shared external ID and run a de-duplication pass before go-live, since duplicates are the most common cause of failed syncs.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How much does a NetSuite + Salesforce integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most projects run $6,000 to $30,000 depending on object count, direction, and subsidiary structure. See the cost table above for a full breakdown.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you fix an existing Salesforce to NetSuite sync?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work is a large share of our practice — abandoned connector setups, silent sync failures, and integrations that no longer match how the sales process actually runs.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-finalcta">
+    <div class="container">
+      <h2>Ready to Connect Salesforce to NetSuite?</h2>
+      <p>Every closed-won deal typed into NetSuite by hand is a delayed order and a support ticket waiting to happen. A scoped integration removes that work permanently — and you'll know the exact cost before we start.</p>
+      <div class="sap-finalcta__btns">
+        <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+        <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">&#128222; +91-99209-96021</a>
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">&#10003; Client-oriented</div>
+              <div class="benefit">&#10003; Independent</div>
+              <div class="benefit">&#10003; Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">&#10003; Results-driven</div>
+              <div class="benefit">&#10003; Problem-solving</div>
+              <div class="benefit">&#10003; Transparent</div>
+            </div>
+          </div>
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+              <div class="form-row">
+                <div class="form-group"><label>First name</label><input type="text" name="first_name" placeholder="John" required></div>
+                <div class="form-group"><label>Last name</label><input type="text" name="last_name" placeholder="Doe" required></div>
+              </div>
+              <div class="form-group"><label>Company / Organization</label><input type="text" name="company" placeholder="Acme Corp"></div>
+              <div class="form-group"><label>Company Email</label><input type="email" name="email" placeholder="john@company.com" required></div>
+              <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+91 00000 00000"></div>
+              <div class="form-group">
+                <label>How Can We Help You?</label>
+                <select name="service" required>
+                  <option value="">Select Option</option>
+                  <option>NetSuite Integration</option>
+                  <option selected>NetSuite + Salesforce</option>
+                  <option>NetSuite + Ecommerce</option>
+                  <option>NetSuite + EDI</option>
+                  <option>NetSuite + Tax / Avalara</option>
+                  <option>NetSuite + 3PL / WMS</option>
+                  <option>Fix / Take Over an Integration</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group"><label>Message</label><textarea name="message" rows="4" placeholder="Tell us about your Salesforce setup and what you need to sync..."></textarea></div>
+              <button type="submit" class="btn btn--primary btn--full">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="../index.html" class="inline-block mb-4"><img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" /></a>
+          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="../consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="../cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="../mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="../cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="../software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="../airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="../web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="../seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="../whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="../team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="../careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="../testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India &ndash; 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="../contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">&copy; 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="../terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="../privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../js/sap-business-one-integration.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="../js/form-handler.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+:root {
+  --sf-blue:       #00A1E0;
+  --sf-blue-dark:  #0176D3;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--salesforce  { background: #E8F6FD; }
+
+.sap-popular__logo--netsuite    { background: transparent; }
+.sap-popular__logo--netsuite svg { border-radius: 5px; }
+
+.sap-popular__logo--quickbooks  { background: #EFF9EE; }
+
+.sap-popular__logo--marketo     { background: #F3ECFB; }
+.sap-popular__logo--marketo i   { color: #5C4C9F; }
+
+.sap-popular__logo--slack       { background: #F4ECF6; }
+.sap-popular__logo--slack i     { color: #4A154B; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+═══════════════════════════════ */
+.sf-pairing .sap-hub__core {
+  background: linear-gradient(160deg, #0176D3 0%, #00A1E0 100%);
+}
+
+.sf-pairing .sap-badge .badge__dot { background: var(--sf-blue, #00A1E0); }
+
+.sf-pairing .sap-hero__visual .sap-hub__node--1,
+.sf-pairing .sap-hero__visual .sap-hub__node--2,
+.sf-pairing .sap-hero__visual .sap-hub__node--3,
+.sf-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(0, 161, 224, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.sf-pairing--sapb1   .sap-hub__node i { color: #0a3d8f; }
+.sf-pairing--shopify .sap-hub__node i { color: #5E8E3E; }
+.sf-pairing--marketo .sap-hub__node i { color: #5C4C9F; }
+.sf-pairing--slack   .sap-hub__node i { color: #4A154B; }

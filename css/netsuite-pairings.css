@@ -1,0 +1,51 @@
+
+:root {
+  --ns-blue:       #0C3B5D;
+  --ns-blue-light: #1B6CA8;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--netsuite     { background: transparent; }
+.sap-popular__logo--netsuite svg { border-radius: 5px; }
+
+.sap-popular__logo--hubspot    { background: #FFF1EC; }
+.sap-popular__logo--hubspot i  { color: #FF7A59; }
+
+.sap-popular__logo--avalara    { background: #FFF4E8; }
+.sap-popular__logo--avalara i  { color: #F08214; }
+
+.sap-popular__logo--wms        { background: #EEF3F8; }
+.sap-popular__logo--wms i      { color: #1B6CA8; }
+
+.sap-popular__logo--edi        { background: #F2F4F7; }
+.sap-popular__logo--edi i      { color: #3D3D3D; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+═══════════════════════════════ */
+.ns-pairing .sap-hub__core {
+  background: linear-gradient(160deg, #0C3B5D 0%, #1B6CA8 100%);
+}
+
+.ns-pairing .sap-badge .badge__dot { background: var(--ns-blue, #0C3B5D); }
+
+.ns-pairing .sap-hero__visual .sap-hub__node--1,
+.ns-pairing .sap-hero__visual .sap-hub__node--2,
+.ns-pairing .sap-hero__visual .sap-hub__node--3,
+.ns-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(12, 59, 93, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.ns-pairing--salesforce .sap-hub__node i { color: #00A1E0; }
+.ns-pairing--shopify    .sap-hub__node i { color: #5E8E3E; }
+.ns-pairing--hubspot    .sap-hub__node i { color: #FF7A59; }
+.ns-pairing--edi        .sap-hub__node i { color: #2D2D2D; }
+.ns-pairing--avalara    .sap-hub__node i { color: #F08214; }
+.ns-pairing--wms        .sap-hub__node i { color: #1B6CA8; }

@@ -1,0 +1,22 @@
+/* ─── SAP Business One + Stripe — page-specific overrides ───
+   Loaded after base.css, sap-business-one-integration.css, and style.css.
+   Only contains tweaks unique to this pairing page. */
+
+.sap-pairing--stripe .sap-hub__core {
+  background: linear-gradient(160deg, #0a3d8f 0%, #00aeef 100%);
+}
+
+.sap-pairing--stripe .sap-hub__node i {
+  color: #635BFF; /* Stripe purple accent for the four data-flow nodes */
+}
+
+.sap-pairing--stripe .sap-badge .badge__dot {
+  background: #635BFF;
+}
+
+.sap-pairing--stripe .sap-hero__visual .sap-hub__node--1,
+.sap-pairing--stripe .sap-hero__visual .sap-hub__node--2,
+.sap-pairing--stripe .sap-hero__visual .sap-hub__node--3,
+.sap-pairing--stripe .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(99, 91, 255, 0.35);
+}

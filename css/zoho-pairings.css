@@ -1,0 +1,57 @@
+:root {
+  --zoho-red:    #E42527;
+  --zoho-yellow: #F9B21D;
+  --zoho-green:  #089949;
+  --zoho-blue:   #226DB4;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--zoho        { background: transparent; }
+.sap-popular__logo--zoho svg    { border-radius: 5px; }
+
+.sap-popular__logo--quickbooks  { background: transparent; }
+.sap-popular__logo--quickbooks svg { border-radius: 5px; }
+
+.sap-popular__logo--shopify     { background: transparent; }
+.sap-popular__logo--shopify svg { border-radius: 5px; }
+
+.sap-popular__logo--salesforce  { background: #EAF7FD; }
+
+.sap-popular__logo--sap         { background: transparent; }
+.sap-popular__logo--sap svg     { border-radius: 5px; }
+
+.sap-popular__logo--twilio      { background: #FDEEF0; }
+.sap-popular__logo--twilio i    { color: #F22F46; }
+
+.sap-popular__logo--mailchimp   { background: #FFFBEA; }
+.sap-popular__logo--mailchimp i { color: #241C15; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+═══════════════════════════════ */
+.zoho-pairing .sap-hub__core {
+  background: linear-gradient(160deg, #C81E20 0%, var(--zoho-red, #E42527) 100%);
+}
+
+.zoho-pairing .sap-badge .badge__dot { background: var(--zoho-red, #E42527); }
+
+.zoho-pairing .sap-hero__visual .sap-hub__node--1,
+.zoho-pairing .sap-hero__visual .sap-hub__node--2,
+.zoho-pairing .sap-hero__visual .sap-hub__node--3,
+.zoho-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(228, 37, 39, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.zoho-pairing--quickbooks .sap-hub__node i { color: #2CA01C; }
+.zoho-pairing--shopify    .sap-hub__node i { color: #95BF47; }
+.zoho-pairing--salesforce .sap-hub__node i { color: #00A1E0; }
+.zoho-pairing--twilio     .sap-hub__node i { color: #F22F46; }
+.zoho-pairing--mailchimp  .sap-hub__node i { color: #FFE01B; }
+.zoho-pairing--sap        .sap-hub__node i { color: #0a3d8f; }

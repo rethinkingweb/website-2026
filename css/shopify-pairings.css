@@ -1,0 +1,57 @@
+:root {
+  --shf-green:      #95BF47;
+  --shf-green-dark: #5E8E3E;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--shopify     { background: #EAF4DF; }
+
+.sap-popular__logo--netsuite    { background: transparent; }
+.sap-popular__logo--netsuite svg { border-radius: 5px; }
+
+.sap-popular__logo--sap         { background: transparent; }
+.sap-popular__logo--sap svg      { border-radius: 5px; }
+
+.sap-popular__logo--quickbooks  { background: #EFF9EE; }
+
+.sap-popular__logo--salesforce  { background: #E8F6FD; }
+
+.sap-popular__logo--shipstation { background: #FFF1E6; }
+.sap-popular__logo--shipstation i { color: #F47920; }
+
+.sap-popular__logo--amazon      { background: #FFF3E0; }
+.sap-popular__logo--amazon i    { color: #232F3E; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+
+   Apply to <main class="sap sap-pairing shf-pairing shf-pairing--<partner>">
+   e.g. shf-pairing--netsuite, shf-pairing--sapb1, shf-pairing--quickbooks,
+        shf-pairing--salesforce, shf-pairing--shipstation, shf-pairing--amazon
+═══════════════════════════════ */
+.shf-pairing .sap-hub__core {
+  background: linear-gradient(160deg, var(--shf-green-dark) 0%, var(--shf-green) 100%);
+}
+
+.shf-pairing .sap-badge .badge__dot { background: var(--shf-green); }
+
+.shf-pairing .sap-hero__visual .sap-hub__node--1,
+.shf-pairing .sap-hero__visual .sap-hub__node--2,
+.shf-pairing .sap-hero__visual .sap-hub__node--3,
+.shf-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(149, 191, 71, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.shf-pairing--netsuite    .sap-hub__node i { color: #0C3B5D; }
+.shf-pairing--sapb1       .sap-hub__node i { color: #0A3D8F; }
+.shf-pairing--quickbooks  .sap-hub__node i { color: #2CA01C; }
+.shf-pairing--salesforce  .sap-hub__node i { color: #00A1E0; }
+.shf-pairing--shipstation .sap-hub__node i { color: #F47920; }
+.shf-pairing--amazon      .sap-hub__node i { color: #232F3E; }
