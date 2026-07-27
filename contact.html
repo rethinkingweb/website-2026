@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <!-- Flatpickr (calendar / date-time picker) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <!-- Google reCAPTCHA v3 (invisible) -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lex32ctAAAAAP-vtWE2yGkfjnF9ESYqUMvKRcdi"></script>
   <!-- Tailwind CSS -->
   <script>
     tailwind.config = {
@@ -41,6 +43,12 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<style>
+  /* Hide the default reCAPTCHA v3 badge — required if you add the
+     "protected by reCAPTCHA" notice somewhere else on the page,
+     per Google's ToS. See the note below the form. */
+  .grecaptcha-badge { visibility: hidden; }
+</style>
 </head>
 <body>
 
@@ -507,6 +515,9 @@
                 </div>
               </div>
 
+              <!-- Hidden field: filled by reCAPTCHA v3 right before submit -->
+              <input type="hidden" name="g_recaptcha_token" id="gRecaptchaToken">
+
               <div class="form-nav">
                 <button type="button" class="btn btn--ghost" id="btnBack" style="visibility:hidden;">← Back</button>
                 <button type="button" class="btn btn--primary" id="btnNext">Continue →</button>
@@ -515,6 +526,12 @@
                   <span id="btnLoader" style="display:none;">Sending…</span>
                 </button>
               </div>
+
+              <p class="text-xs text-muted mt-2" style="font-size:0.75rem; color:#7A6F68; margin-top:0.5rem;">
+                This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration:underline;">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms" target="_blank" style="text-decoration:underline;">Terms of Service</a> apply.
+              </p>
 
               <div class="form-success" id="formSuccess">
                 ✅ Thanks! We've received your message and will be in touch shortly.

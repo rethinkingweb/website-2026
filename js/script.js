@@ -66,26 +66,10 @@ document.querySelectorAll('.solution-card, .case-card, .industry-card, .testi-ca
   fadeObserver.observe(el);
 });
 
-// ── Form submit ──
-const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const original = btn.textContent;
-    btn.textContent = '✓ Sent! We\'ll be in touch.';
-    btn.style.background = '#06ffa5';
-    btn.style.color = '#080c14';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = original;
-      btn.style.background = '';
-      btn.style.color = '';
-      btn.disabled = false;
-      form.reset();
-    }, 4000);
-  });
-}
+// ── Contact form ──
+// The homepage contact form is now the 2-step wizard handled by js/home-contact.js
+// (calendar booking + reCAPTCHA v3 + EmailJS + Google Sheet). The old placeholder
+// submit handler was removed from here so it doesn't clash with the real one.
 
 // ── Smooth scroll for anchors ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -425,7 +409,7 @@ const cardObs  = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 svcCards.forEach(c => { c.style.opacity = '0'; cardObs.observe(c); });
 
-// ── EmailJS contact form ──  FIXED: null check so it won't crash on other pages
+// ── EmailJS contact form ──  (kept: only binds if a #contact-form element exists)
 const contactFormEmailJS = document.getElementById('contact-form');
 if (contactFormEmailJS) {
   contactFormEmailJS.addEventListener('submit', function (e) {
@@ -439,3 +423,284 @@ if (contactFormEmailJS) {
       });
   });
 }
+
+
+/* ════════════════════════════════════════════════════════════════
+   RethinkingWeb — Homepage contact form
+   2-step wizard + calendar booking + reCAPTCHA v3 + EmailJS + Google Sheet
+
+   Self-contained IIFE: all variables are scoped locally, so this never
+   collides with the top-level `const form` / `const nav` etc. in script.js.
+   Drop this file in your /js folder next to script.js.
+════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  const form = document.getElementById('contactForm');
+  if (!form) return; // no wizard form on this page → do nothing
+
+  const btnText       = document.getElementById('btnText');
+  const btnLoader     = document.getElementById('btnLoader');
+  const submitBtn     = document.getElementById('submitBtn');
+  const btnNext       = document.getElementById('btnNext');
+  const btnBack       = document.getElementById('btnBack');
+  const formSuccess   = document.getElementById('formSuccess');
+  const progressFill  = document.getElementById('progressFill');
+  const stepCurrentEl = document.getElementById('stepCurrent');
+  const stepTotalEl   = document.getElementById('stepTotal');
+
+  /* ── EmailJS (same IDs as your contact page) ── */
+  const EMAILJS_SERVICE_ID  = 'service_je1sqvd';
+  const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
+
+  /* ── Google Sheet webhook (Apps Script Web App URL — same as contact page) ── */
+  const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2NxwLReS8WOyddezixEbnXWEsFNSd5qvLAJtulaCJ8IJ61K0Jyb6irBktfFsy7H/exec';
+
+  /* ── reCAPTCHA v3 (invisible) ── */
+  const RECAPTCHA_SITE_KEY = '6Lex32ctAAAAAP-vtWE2yGkfjnF9ESYqUMvKRcdi';
+  const RECAPTCHA_ACTION   = 'contact_form_submit';
+
+  function getRecaptchaToken() {
+    return new Promise((resolve, reject) => {
+      if (typeof grecaptcha === 'undefined') {
+        reject(new Error('reCAPTCHA script did not load.'));
+        return;
+      }
+      grecaptcha.ready(() => {
+        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
+  }
+
+  /* ── Business hours offered per day (24h format) ── */
+  const AVAILABLE_TIMES = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'];
+
+  const steps = Array.from(form.querySelectorAll('.form-step'));
+  let current = 0;
+  if (stepTotalEl) stepTotalEl.textContent = steps.length;
+
+  /* ── Calendar (Flatpickr) ── */
+  const dateInput  = document.getElementById('preferredDate');
+  const timeSelect = document.getElementById('preferredTime');
+  let fp = null;
+
+  if (dateInput && window.flatpickr) {
+    fp = flatpickr(dateInput, {
+      minDate: 'today',
+      maxDate: new Date().fp_incr(60), // bookable up to 60 days out
+      dateFormat: 'Y-m-d',
+      altInput: true,
+      altFormat: 'F j, Y (l)',
+      disable: [
+        date => (date.getDay() === 0 || date.getDay() === 6) // no weekends
+      ],
+      onChange: () => {
+        validateField(dateInput);
+        populateTimes();
+      }
+    });
+  }
+
+  function populateTimes() {
+    if (!timeSelect) return;
+    timeSelect.innerHTML = '<option value="">Select a time</option>';
+    AVAILABLE_TIMES.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t;
+      const [h, m] = t.split(':');
+      const hour12 = ((+h % 12) || 12);
+      const ampm = +h < 12 ? 'AM' : 'PM';
+      opt.textContent = `${hour12}:${m} ${ampm}`;
+      timeSelect.appendChild(opt);
+    });
+  }
+
+  function validateField(input) {
+    const group = input.closest('.form-group');
+    if (!group) return true;
+
+    const isValid = input.checkValidity();
+    group.classList.toggle('error', !isValid);
+    group.classList.toggle('valid', isValid && input.value.trim() !== '');
+
+    let errEl = group.querySelector('.field-error');
+    if (!isValid) {
+      if (!errEl) {
+        errEl = document.createElement('span');
+        errEl.className = 'field-error';
+        group.appendChild(errEl);
+      }
+      errEl.textContent = input.validationMessage || 'This field is required.';
+    } else if (errEl) {
+      errEl.remove();
+    }
+    return isValid;
+  }
+
+  const errorStyle = document.createElement('style');
+  errorStyle.textContent = `
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+      border-color: #ef4444 !important;
+      background: #fff5f5 !important;
+    }
+    .form-group.valid input,
+    .form-group.valid select,
+    .form-group.valid textarea {
+      border-color: #22c55e !important;
+    }
+    .field-error {
+      font-size: 0.78rem;
+      color: #ef4444;
+      margin-top: 0.2rem;
+      font-weight: 500;
+    }
+  `;
+  document.head.appendChild(errorStyle);
+
+  form.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener('blur', () => validateField(input));
+    input.addEventListener('input', () => {
+      if (input.closest('.form-group')?.classList.contains('error')) validateField(input);
+    });
+    input.addEventListener('change', () => {
+      if (input.closest('.form-group')?.classList.contains('error')) validateField(input);
+    });
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && input.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        goNext();
+      }
+    });
+  });
+
+  function validateStep(index) {
+    const fields = steps[index].querySelectorAll('input[required], select[required], textarea[required]');
+    let allValid = true;
+    fields.forEach(f => { if (!validateField(f)) allValid = false; });
+    return allValid;
+  }
+
+  function showStep(index) {
+    steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
+    current = index;
+
+    if (progressFill)  progressFill.style.width = `${((index + 1) / steps.length) * 100}%`;
+    if (stepCurrentEl) stepCurrentEl.textContent = index + 1;
+
+    btnBack.style.visibility = index === 0 ? 'hidden' : 'visible';
+
+    const isLast = index === steps.length - 1;
+    btnNext.style.display   = isLast ? 'none' : 'inline-flex';
+    submitBtn.style.display = isLast ? 'inline-flex' : 'none';
+
+    const firstField = steps[index].querySelector('input, select, textarea');
+    if (firstField) firstField.focus({ preventScroll: true });
+
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function goNext() {
+    if (!validateStep(current)) return;
+    if (current < steps.length - 1) showStep(current + 1);
+  }
+
+  function goBack() {
+    if (current > 0) showStep(current - 1);
+  }
+
+  btnNext.addEventListener('click', goNext);
+  btnBack.addEventListener('click', goBack);
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    if (!validateStep(current)) return;
+
+    const privacy = document.getElementById('privacy');
+    if (privacy && !privacy.checked) {
+      const group = privacy.closest('.form-group');
+      let errEl = group?.querySelector('.field-error');
+      if (group && !errEl) {
+        errEl = document.createElement('span');
+        errEl.className = 'field-error';
+        group.appendChild(errEl);
+      }
+      if (errEl) errEl.textContent = 'Please accept the Privacy Policy to continue.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoader.style.display = 'inline';
+
+    const data = new FormData(form);
+    const payload = {
+      first_name: data.get('first_name') || '',
+      last_name: data.get('last_name') || '',
+      email: data.get('email') || '',
+      phone: data.get('phone') || '',
+      company: data.get('company') || '',
+      service: data.get('service') || '',
+      message: data.get('message') || '',
+      preferred_date: data.get('preferred_date') || '',
+      preferred_time: data.get('preferred_time') || '',
+      submitted_at: new Date().toISOString(),
+      recaptcha_token: '',
+      recaptcha_action: RECAPTCHA_ACTION
+    };
+
+    try {
+      // 1) Fresh reCAPTCHA v3 token for this submission
+      const token = await getRecaptchaToken();
+      payload.recaptcha_token = token;
+      const tokenField = document.getElementById('gRecaptchaToken');
+      if (tokenField) tokenField.value = token;
+
+      // 2) Send to Apps Script webhook FIRST — it verifies the token
+      //    server-side, logs the row to your Sheet, and returns { success }.
+      let verification = { success: true }; // default-open if no webhook set
+
+      if (GOOGLE_SHEET_WEBHOOK_URL && !GOOGLE_SHEET_WEBHOOK_URL.startsWith('PASTE_')) {
+        const sheetRes = await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+        verification = await sheetRes.json();
+      }
+
+      if (!verification.success) {
+        alert('We could not verify your submission as human. Please try again.');
+        return;
+      }
+
+      // 3) Verified → send the notification email via EmailJS
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+
+      form.reset();
+      form.querySelectorAll('.form-group').forEach(g => g.classList.remove('error', 'valid'));
+      form.querySelectorAll('.field-error').forEach(el => el.remove());
+      if (fp) fp.clear();
+      populateTimes();
+      showStep(0);
+
+      formSuccess.classList.add('show');
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      setTimeout(() => formSuccess.classList.remove('show'), 6000);
+    } catch (err) {
+      console.error('Submission error:', err);
+      alert('Something went wrong sending your message. Please try again or email us directly at info@rethinkingweb.com.');
+    } finally {
+      btnText.style.display = 'inline';
+      btnLoader.style.display = 'none';
+      submitBtn.disabled = false;
+    }
+  });
+
+  populateTimes();
+  showStep(0);
+})();

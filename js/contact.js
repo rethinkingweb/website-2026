@@ -115,7 +115,7 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-/* ═══ CONTACT FORM — 2-STEP WIZARD + CALENDAR BOOKING ═══ */
+/* ═══ CONTACT FORM — 2-STEP WIZARD + CALENDAR BOOKING + reCAPTCHA v3 ═══ */
 const form         = document.getElementById('contactForm');
 const btnText       = document.getElementById('btnText');
 const btnLoader     = document.getElementById('btnLoader');
@@ -136,6 +136,26 @@ const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
      See setup instructions provided separately. Paste the
      "Web app" URL you get after deploying the Apps Script here. */
  const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2NxwLReS8WOyddezixEbnXWEsFNSd5qvLAJtulaCJ8IJ61K0Jyb6irBktfFsy7H/exec';
+
+  /* ── reCAPTCHA v3 (invisible) — site key only, secret key stays server-side in Apps Script ── */
+  const RECAPTCHA_SITE_KEY = '6Lex32ctAAAAAP-vtWE2yGkfjnF9ESYqUMvKRcdi';
+  const RECAPTCHA_ACTION   = 'contact_form_submit';
+
+  /* Runs grecaptcha.execute() and resolves with a fresh token. */
+  function getRecaptchaToken() {
+    return new Promise((resolve, reject) => {
+      if (typeof grecaptcha === 'undefined') {
+        reject(new Error('reCAPTCHA script did not load.'));
+        return;
+      }
+      grecaptcha.ready(() => {
+        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
+  }
+
   /* ── Business hours offered per day (24h format) ── */
   const AVAILABLE_TIMES = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'];
 
@@ -311,25 +331,40 @@ const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
       message: data.get('message') || '',
       preferred_date: data.get('preferred_date') || '',
       preferred_time: data.get('preferred_time') || '',
-      submitted_at: new Date().toISOString()
+      submitted_at: new Date().toISOString(),
+      recaptcha_token: '',
+      recaptcha_action: RECAPTCHA_ACTION
     };
 
     try {
-      // 1) Send email via EmailJS (goes to the "To Email" set in your EmailJS template)
-      const emailPromise = emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+      // 1) Get a fresh invisible reCAPTCHA v3 token for this submission
+      const token = await getRecaptchaToken();
+      payload.recaptcha_token = token;
+      const tokenField = document.getElementById('gRecaptchaToken');
+      if (tokenField) tokenField.value = token;
 
-      // 2) Log the submission to Google Sheets via Apps Script webhook
-      let sheetPromise = Promise.resolve();
+      // 2) Send the token + form data to the Apps Script webhook FIRST.
+      //    The webhook verifies the token server-side (with the secret key)
+      //    before logging the row, and tells us whether it passed.
+      let verification = { success: true }; // default-open if no webhook configured
+
       if (GOOGLE_SHEET_WEBHOOK_URL && !GOOGLE_SHEET_WEBHOOK_URL.startsWith('PASTE_')) {
-        sheetPromise = fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+        const sheetRes = await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
           method: 'POST',
-          mode: 'no-cors', // Apps Script web apps don't return CORS headers by default
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload)
         });
+        verification = await sheetRes.json();
       }
 
-      await Promise.all([emailPromise, sheetPromise]);
+      if (!verification.success) {
+        // Failed reCAPTCHA check (likely a bot, or score too low) — do not send email.
+        alert('We could not verify your submission as human. Please try again.');
+        return;
+      }
+
+      // 3) Verified — now send the notification email via EmailJS
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
 
       form.reset();
       form.querySelectorAll('.form-group').forEach(g => g.classList.remove('error', 'valid'));
