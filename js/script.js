@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   RethinkingWeb — script.js  (fixed)
+   RethinkingWeb — script.js  (fixed: no auto-scroll on load)
 ───────────────────────────────────────────── */
 
 // ── Counter Animation ──
@@ -66,11 +66,6 @@ document.querySelectorAll('.solution-card, .case-card, .industry-card, .testi-ca
   fadeObserver.observe(el);
 });
 
-// ── Contact form ──
-// The homepage contact form is now the 2-step wizard handled by js/home-contact.js
-// (calendar booking + reCAPTCHA v3 + EmailJS + Google Sheet). The old placeholder
-// submit handler was removed from here so it doesn't clash with the real one.
-
 // ── Smooth scroll for anchors ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -120,6 +115,7 @@ if (solutionsToggle && solutionsDropdown) {
     }
   });
 }
+
 // ── Nav dropdowns — hover with leave-delay + mobile click ──
 const dropdowns = document.querySelectorAll('.nav__dropdown');
 dropdowns.forEach(dropdown => {
@@ -287,17 +283,6 @@ setTimeout(() => {
   });
 }, 100);
 
-// ── Fade-in on scroll ──
-const scrollFadeObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity   = '1';
-      entry.target.style.transform = 'translateY(0)';
-      scrollFadeObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
 // ── Sticky Nav ──
 const nav = document.getElementById('nav');
 if (nav) {
@@ -430,8 +415,7 @@ if (contactFormEmailJS) {
    2-step wizard + calendar booking + reCAPTCHA v3 + EmailJS + Google Sheet
 
    Self-contained IIFE: all variables are scoped locally, so this never
-   collides with the top-level `const form` / `const nav` etc. in script.js.
-   Drop this file in your /js folder next to script.js.
+   collides with the top-level `const form` / `const nav` etc. above.
 ════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -584,7 +568,10 @@ if (contactFormEmailJS) {
     return allValid;
   }
 
-  function showStep(index) {
+  /* ── FIX: showStep now takes a shouldScroll flag.
+        Default true (Next/Back/reset still scroll),
+        but the very first call on page load passes false. ── */
+  function showStep(index, shouldScroll = true) {
     steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
     current = index;
 
@@ -600,7 +587,9 @@ if (contactFormEmailJS) {
     const firstField = steps[index].querySelector('input, select, textarea');
     if (firstField) firstField.focus({ preventScroll: true });
 
-    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (shouldScroll) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   function goNext() {
@@ -686,7 +675,7 @@ if (contactFormEmailJS) {
       form.querySelectorAll('.field-error').forEach(el => el.remove());
       if (fp) fp.clear();
       populateTimes();
-      showStep(0);
+      showStep(0, false); // reset to step 1 without an extra scroll jolt
 
       formSuccess.classList.add('show');
       formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -702,5 +691,5 @@ if (contactFormEmailJS) {
   });
 
   populateTimes();
-  showStep(0);
+  showStep(0, false); // FIX: don't scroll on initial page load
 })();

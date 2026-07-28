@@ -1,103 +1,107 @@
+/* ─────────────────────────────────────────────
+   RethinkingWeb — contact.js  (fixed: no auto-scroll on load)
+───────────────────────────────────────────── */
+
 /* ══════════════════════════════
-     1. NAV — scroll behaviour
-  ══════════════════════════════ */
-  const nav = document.getElementById('nav');
-  if (nav) {
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+   1. NAV — scroll behaviour
+══════════════════════════════ */
+const nav = document.getElementById('nav');
+if (nav) {
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
-  /* ══════════════════════════════
-     2. MOBILE NAV
-  ══════════════════════════════ */
-  const burger    = document.getElementById('navBurger');
-  const mobileNav = document.getElementById('mobileNav');
-  const closeBtn  = document.getElementById('mobileClose');
-  const overlay   = document.getElementById('navOverlay');
+/* ══════════════════════════════
+   2. MOBILE NAV
+══════════════════════════════ */
+const burger    = document.getElementById('navBurger');
+const mobileNav = document.getElementById('mobileNav');
+const closeBtn  = document.getElementById('mobileClose');
+const overlay   = document.getElementById('navOverlay');
 
-  if (burger && mobileNav) {
-    const openNav = () => {
-      mobileNav.classList.add('open');
-      if (overlay) overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      burger.setAttribute('aria-expanded', 'true');
-      mobileNav.setAttribute('aria-hidden', 'false');
-    };
-    const closeNav = () => {
-      mobileNav.classList.remove('open');
-      if (overlay) overlay.classList.remove('active');
-      document.body.style.overflow = '';
-      burger.setAttribute('aria-expanded', 'false');
-      mobileNav.setAttribute('aria-hidden', 'true');
-    };
+if (burger && mobileNav) {
+  const openNav = () => {
+    mobileNav.classList.add('open');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    burger.setAttribute('aria-expanded', 'true');
+    mobileNav.setAttribute('aria-hidden', 'false');
+  };
+  const closeNav = () => {
+    mobileNav.classList.remove('open');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    burger.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  };
 
-    burger.addEventListener('click', openNav);
-    if (closeBtn) closeBtn.addEventListener('click', closeNav);
-    if (overlay)  overlay.addEventListener('click', closeNav);
+  burger.addEventListener('click', openNav);
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  if (overlay)  overlay.addEventListener('click', closeNav);
 
-    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
-  }
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+}
 
-  /* ══════════════════════════════
-     3. MOBILE ACCORDION
-  ══════════════════════════════ */
-  document.querySelectorAll('.mob-accordion__btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const accordion = btn.closest('.mob-accordion');
-      const panel     = accordion.querySelector('.mob-accordion__panel');
-      const isOpen    = accordion.classList.contains('open');
+/* ══════════════════════════════
+   3. MOBILE ACCORDION
+══════════════════════════════ */
+document.querySelectorAll('.mob-accordion__btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const accordion = btn.closest('.mob-accordion');
+    const panel     = accordion.querySelector('.mob-accordion__panel');
+    const isOpen    = accordion.classList.contains('open');
 
-      document.querySelectorAll('.mob-accordion').forEach(a => {
-        a.classList.remove('open');
-        a.querySelector('.mob-accordion__btn').setAttribute('aria-expanded', 'false');
-        const p = a.querySelector('.mob-accordion__panel');
-        if (p) p.style.maxHeight = null;
-      });
-
-      if (!isOpen) {
-        accordion.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
-      }
-    });
-  });
-
-  /* ══════════════════════════════
-     4. DESKTOP DROPDOWNS
-  ══════════════════════════════ */
-  document.querySelectorAll('.nav__dropdown').forEach(dd => {
-    let leaveTimer = null;
-
-    dd.addEventListener('mouseenter', () => {
-      if (window.innerWidth > 1024) {
-        clearTimeout(leaveTimer);
-        document.querySelectorAll('.nav__dropdown').forEach(o => o !== dd && o.classList.remove('active'));
-        dd.classList.add('active');
-      }
-    });
-    dd.addEventListener('mouseleave', () => {
-      if (window.innerWidth > 1024) {
-        leaveTimer = setTimeout(() => dd.classList.remove('active'), 180);
-      }
+    document.querySelectorAll('.mob-accordion').forEach(a => {
+      a.classList.remove('open');
+      a.querySelector('.mob-accordion__btn').setAttribute('aria-expanded', 'false');
+      const p = a.querySelector('.mob-accordion__panel');
+      if (p) p.style.maxHeight = null;
     });
 
-    dd.querySelector('.nav__link')?.addEventListener('click', e => {
-      if (window.innerWidth <= 1024) {
-        e.preventDefault();
-        const isOpen = dd.classList.contains('active');
-        document.querySelectorAll('.nav__dropdown').forEach(o => o.classList.remove('active'));
-        if (!isOpen) dd.classList.add('active');
-      }
-    });
-  });
-
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.nav__dropdown')) {
-      document.querySelectorAll('.nav__dropdown').forEach(dd => dd.classList.remove('active'));
+    if (!isOpen) {
+      accordion.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
     }
   });
+});
+
+/* ══════════════════════════════
+   4. DESKTOP DROPDOWNS
+══════════════════════════════ */
+document.querySelectorAll('.nav__dropdown').forEach(dd => {
+  let leaveTimer = null;
+
+  dd.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 1024) {
+      clearTimeout(leaveTimer);
+      document.querySelectorAll('.nav__dropdown').forEach(o => o !== dd && o.classList.remove('active'));
+      dd.classList.add('active');
+    }
+  });
+  dd.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 1024) {
+      leaveTimer = setTimeout(() => dd.classList.remove('active'), 180);
+    }
+  });
+
+  dd.querySelector('.nav__link')?.addEventListener('click', e => {
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+      const isOpen = dd.classList.contains('active');
+      document.querySelectorAll('.nav__dropdown').forEach(o => o.classList.remove('active'));
+      if (!isOpen) dd.classList.add('active');
+    }
+  });
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav__dropdown')) {
+    document.querySelectorAll('.nav__dropdown').forEach(dd => dd.classList.remove('active'));
+  }
+});
 
 
 /* ═══ REVEAL ON SCROLL ═══ */
@@ -129,13 +133,11 @@ const stepTotalEl   = document.getElementById('stepTotal');
 
 if (form) {
   /* ── EmailJS (Email Templates tab in your EmailJS dashboard) ── */
-const EMAILJS_SERVICE_ID  = 'service_je1sqvd';   
-const EMAILJS_TEMPLATE_ID = 'template_51rsawi';  
+  const EMAILJS_SERVICE_ID  = 'service_je1sqvd';
+  const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
 
-  /* ── Google Sheet webhook (Google Apps Script Web App URL) ──
-     See setup instructions provided separately. Paste the
-     "Web app" URL you get after deploying the Apps Script here. */
- const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2NxwLReS8WOyddezixEbnXWEsFNSd5qvLAJtulaCJ8IJ61K0Jyb6irBktfFsy7H/exec';
+  /* ── Google Sheet webhook (Google Apps Script Web App URL) ── */
+  const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2NxwLReS8WOyddezixEbnXWEsFNSd5qvLAJtulaCJ8IJ61K0Jyb6irBktfFsy7H/exec';
 
   /* ── reCAPTCHA v3 (invisible) — site key only, secret key stays server-side in Apps Script ── */
   const RECAPTCHA_SITE_KEY = '6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99';
@@ -267,7 +269,10 @@ const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
     return allValid;
   }
 
-  function showStep(index) {
+  /* ── FIX: showStep now takes a shouldScroll flag.
+        Default true (Next/Back/reset still scroll),
+        but the very first call on page load passes false. ── */
+  function showStep(index, shouldScroll = true) {
     steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
     current = index;
 
@@ -283,7 +288,9 @@ const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
     const firstField = steps[index].querySelector('input, select, textarea');
     if (firstField) firstField.focus({ preventScroll: true });
 
-    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (shouldScroll) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   function goNext() {
@@ -371,7 +378,7 @@ const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
       form.querySelectorAll('.field-error').forEach(el => el.remove());
       if (fp) fp.clear();
       populateTimes();
-      showStep(0);
+      showStep(0, false); // reset to step 1 without an extra scroll jolt
 
       formSuccess.classList.add('show');
       formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -387,7 +394,7 @@ const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
   });
 
   populateTimes();
-  showStep(0);
+  showStep(0, false); // FIX: don't scroll on initial page load
 }
 
 /* ═══ SMOOTH SCROLL FOR ANCHOR LINKS ═══ */
