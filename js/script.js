@@ -457,7 +457,7 @@ if (contactFormEmailJS) {
   const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2NxwLReS8WOyddezixEbnXWEsFNSd5qvLAJtulaCJ8IJ61K0Jyb6irBktfFsy7H/exec';
 
   /* ── reCAPTCHA v3 (invisible) ── */
-  const RECAPTCHA_SITE_KEY = '6Lex32ctAAAAAP-vtWE2yGkfjnF9ESYqUMvKRcdi';
+  const RECAPTCHA_SITE_KEY = '6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99';
   const RECAPTCHA_ACTION   = 'contact_form_submit';
 
   function getRecaptchaToken() {
