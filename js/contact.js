@@ -364,11 +364,15 @@ if (form) {
         verification = await sheetRes.json();
       }
 
-      if (!verification.success) {
-        // Failed reCAPTCHA check (likely a bot, or score too low) — do not send email.
-        alert('We could not verify your submission as human. Please try again.');
-        return;
-      }
+    if (!verification.success) {
+  console.error('Verification failed:', verification);
+  if (verification.reason === 'server_error') {
+    alert('Something went wrong saving your message on our end (' + (verification.message || 'unknown error') + '). Please email us directly at info@rethinkingweb.com.');
+  } else {
+    alert('We could not verify your submission as human. Please try again.');
+  }
+  return;
+}
 
       // 3) Verified — now send the notification email via EmailJS
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);

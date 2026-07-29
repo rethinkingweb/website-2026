@@ -438,7 +438,7 @@ if (contactFormEmailJS) {
   const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
 
   /* ── Google Sheet webhook (Apps Script Web App URL — same as contact page) ── */
-  const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2NxwLReS8WOyddezixEbnXWEsFNSd5qvLAJtulaCJ8IJ61K0Jyb6irBktfFsy7H/exec';
+const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2NxwLReS8WOyddezixEbnXWEsFNSd5qvLAJtulaCJ8IJ61K0Jyb6irBktfFsy7H/exec';
 
   /* ── reCAPTCHA v3 (invisible) ── */
   const RECAPTCHA_SITE_KEY = '6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99';
