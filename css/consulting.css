@@ -26,7 +26,7 @@
 .itc-hero .itc-breadcrumb { color: rgba(255,255,255,0.7); }
 .itc-hero .itc-breadcrumb a { color: var(--orange-light); }
 .itc-hero .itc-breadcrumb span { color: rgba(255,255,255,0.7); }
-.itc-hero .section-label { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); color: #fff; }
+/* .itc-hero .section-label { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); color: #fff; } */
 .itc-hero .btn--outline { color: #fff; border-color: rgba(255,255,255,0.35); }
 .itc-hero .btn--outline:hover { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
 

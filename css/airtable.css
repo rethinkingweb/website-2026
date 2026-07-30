@@ -12,38 +12,6 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 input, select, textarea, button { font-family: inherit; }
 
-/* ── Utility ── */
-
-/* ── Buttons ── */
-
-/* ═══════════════════════════════
-   NAV
-═══════════════════════════════ */
-
-/* Dropdown */
-
-/* Burger — hidden desktop, flex on mobile */
-
-/* ── Overlay ── */
-
-/* ── Mobile Nav Drawer ── */
-
-/* Header row inside drawer */
-
-/* Links wrapper */
-
-/* Plain links */
-
-/* CTA link */
-
-/* Accordion wrapper */
-
-/* Accordion trigger */
-
-/* Chevron */
-
-/* Panel — JS sets maxHeight on open */
-
 /* ═══════════════════════════════
    BACKGROUND
 ═══════════════════════════════ */
@@ -326,7 +294,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    TESTIMONIALS
 ═══════════════════════════════ */
-.cs-testimonials { padding: 6rem 0; background: #0f172a; overflow: hidden; }
+/* .cs-testimonials { padding: 6rem 0; background: #0f172a; overflow: hidden; }
 .cs-testimonials .section-label { color: var(--orange-light); }
 .cs-testimonials .section-label::before { background: var(--orange-light); }
 .cs-testimonials .section-title { color: var(--white); }
@@ -366,12 +334,12 @@ input, select, textarea, button { font-family: inherit; }
   border-radius: 50%; color: var(--white); font-size: 1.1rem; cursor: pointer;
   transition: all var(--trans); display: flex; align-items: center; justify-content: center;
 }
-.cs-testi__nav button:hover { background: var(--orange); border-color: var(--orange); }
+.cs-testi__nav button:hover { background: var(--orange); border-color: var(--orange); } */
 
 /* ═══════════════════════════════
    CONTACT
 ═══════════════════════════════ */
-.cs-contact { padding: 3rem 0; background: var(--bg); }
+/* .cs-contact { padding: 3rem 0; background: var(--bg); }
 .cs-contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .cs-contact__left { position: sticky; top: 7rem; }
 .cs-contact__left > p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
@@ -422,7 +390,7 @@ input, select, textarea, button { font-family: inherit; }
   border: 1px solid #6ee7b7; border-radius: 8px;
   font-size: 0.9rem; font-weight: 600; color: #065f46;
 }
-.form-success.show { display: flex; }
+.form-success.show { display: flex; } */
 
 /* ═══════════════════════════════
    FOOTER

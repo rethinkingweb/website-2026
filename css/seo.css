@@ -18,37 +18,6 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 input, select, textarea, button { font-family: inherit; }
 
-/* ── Utility ── */
-
-/* ── Buttons ── */
-
-/* ═══════════════════════════════
-   NAV
-═══════════════════════════════ */
-
-/* Dropdown */
-
-/* Burger — hidden desktop, flex on mobile */
-
-/* ── Overlay ── */
-
-/* ── Mobile Nav Drawer ── */
-
-/* Header row inside drawer */
-
-/* Links wrapper */
-
-/* Plain links */
-
-/* CTA link */
-
-/* Accordion wrapper */
-
-/* Accordion trigger */
-
-/* Chevron */
-
-/* Panel — JS sets maxHeight on open */
 
 /* ═══════════════════════════════
    BACKGROUND
@@ -385,7 +354,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    TESTIMONIALS
 ═══════════════════════════════ */
-.testimonials { padding: 6rem 0; background: var(--bg); position: relative; overflow: hidden; }
+/* .testimonials { padding: 6rem 0; background: var(--bg); position: relative; overflow: hidden; }
 .testi-glow1, .testi-glow2 { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
 .testi-glow1 { width: 400px; height: 400px; background: rgba(231,92,35,0.08); top: -100px; left: -100px; }
 .testi-glow2 { width: 300px; height: 300px; background: rgba(231,92,35,0.06); bottom: -80px; right: -80px; }
@@ -450,12 +419,12 @@ input, select, textarea, button { font-family: inherit; }
 .testi-author { display: flex; align-items: center; gap: 12px; }
 .testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: #fff; flex-shrink: 0; }
 .testi-author strong { display: block; font-size: 0.875rem; color: #000; font-weight: 600; margin-bottom: 2px; }
-.testi-author span { font-size: 0.775rem; color: rgba(0,0,0,0.45); }
+.testi-author span { font-size: 0.775rem; color: rgba(0,0,0,0.45); } */
 
 /* ═══════════════════════════════
    CONTACT  — matches about page layout exactly
 ═══════════════════════════════ */
-.contact { padding: 6rem 0; background: var(--bg); }
+/* .contact { padding: 6rem 0; background: var(--bg); }
 .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .contact__left { position: sticky; top: 7rem; }
 .contact__left > p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
@@ -510,11 +479,9 @@ input, select, textarea, button { font-family: inherit; }
 .form-group select:focus,
 .form-group textarea:focus { border-color: var(--orange); background: var(--white); }
 .form-group select option { background: var(--white); }
-.form-group textarea { resize: vertical; min-height: 100px; }
+.form-group textarea { resize: vertical; min-height: 100px; } */
 
-/* ═══════════════════════════════
-   FOOTER  (dark)
-═══════════════════════════════ */
+
 
 /* ═══════════════════════════════
    REVEAL ANIMATION  — fixed: starts hidden
