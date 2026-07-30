@@ -435,7 +435,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    TESTIMONIALS
 ═══════════════════════════════ */
-.md-testimonials { padding: 6rem 0; background: #0f172a; overflow: hidden; }
+/* .md-testimonials { padding: 6rem 0; background: #0f172a; overflow: hidden; }
 .md-testimonials .section-label { color: var(--orange-light); }
 .md-testimonials .section-label::before { background: var(--orange-light); }
 .md-testimonials .section-title { color: var(--white); }
@@ -475,7 +475,7 @@ input, select, textarea, button { font-family: inherit; }
   border-radius: 50%; color: var(--white); font-size: 1.1rem; cursor: pointer;
   transition: all var(--trans); display: flex; align-items: center; justify-content: center;
 }
-.md-testi__nav button:hover { background: var(--orange); border-color: var(--orange); }
+.md-testi__nav button:hover { background: var(--orange); border-color: var(--orange); } */
 
 /* ═══════════════════════════════
    CONTACT

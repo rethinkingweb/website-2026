@@ -365,7 +365,7 @@ input, select, textarea, button { font-family: inherit; }
 
 /* ═══ TESTIMONIALS ═══ */
 /* .testimonials { padding: 6rem 0; background: #0f172a; overflow: hidden; } */
-.testimonials .section-label { color: var(--orange-light); }
+/* .testimonials .section-label { color: var(--orange-light); }
 .testimonials .section-label::before { background: var(--orange-light); }
 .testimonials .section-title { color: var(--charcoal); }
 .testimonials .section-title em { background: var(--orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -390,7 +390,7 @@ input, select, textarea, button { font-family: inherit; }
 .testi-author span { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 .testimonials__nav { display: flex; gap: 0.75rem; margin-top: 2rem; }
 .testimonials__nav button { width: 44px; height: 44px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; color: var(--white); font-size: 1.1rem; cursor: pointer; transition: all var(--trans); display: flex; align-items: center; justify-content: center; }
-.testimonials__nav button:hover { background: var(--orange); border-color: var(--orange); }
+.testimonials__nav button:hover { background: var(--orange); border-color: var(--orange); } */
 
 /* ═══ CONTACT ═══ */
 .contact { padding: 6rem 0; background: var(--bg); }
