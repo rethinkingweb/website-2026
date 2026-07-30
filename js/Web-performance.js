@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (shouldScroll) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  function goNext() { if (!validateStep(current)) return; if (current < steps.length - 1) showStep(current + 1); }
+ function goNext() { if (!validateStep(current)) return; if (current < steps.length - 1) showStep(current + 1); }
   function goBack() { if (current > 0) showStep(current - 1); }
 
   btnNext.addEventListener('click', goNext);

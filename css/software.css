@@ -11,39 +11,6 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--text);
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 input, select, textarea, button { font-family: inherit; }
-
-/* ── Utility ── */
-
-/* ── Buttons ── */
-
-/* ═══════════════════════════════
-   NAV
-═══════════════════════════════ */
-
-/* Dropdown */
-
-/* Burger — hidden desktop, flex on mobile */
-
-/* ── Overlay ── */
-
-/* ── Mobile Nav Drawer ── */
-
-/* Header row inside drawer */
-
-/* Links wrapper */
-
-/* Plain links */
-
-/* CTA link */
-
-/* Accordion wrapper */
-
-/* Accordion trigger */
-
-/* Chevron */
-
-/* Panel — JS sets maxHeight on open */
-
 /* ═══════════════════════════════
    BACKGROUND
 ═══════════════════════════════ */
