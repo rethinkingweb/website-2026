@@ -168,50 +168,219 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener('click', () => track.scrollBy({ left:  cardW(), behavior: 'smooth' }));
   }
 
-  /* ═══ FORM SUBMIT ═══ */
-  const submitBtn  = document.getElementById('submitBtn');
-  const form       = document.getElementById('contactForm');
-  const successMsg = document.getElementById('formSuccess');
+   /* ═══ CONTACT FORM ═══ */
+  (function () {
+  'use strict';
 
-  submitBtn?.addEventListener('click', () => {
-    const firstName = form.querySelector('input[placeholder="John"]');
-    const email     = form.querySelector('input[type="email"]');
-    const service   = form.querySelector('select');
-    let valid = true;
+  const form = document.getElementById('contactForm');
+  if (!form) return; // no contact form on this page → do nothing
 
-    [firstName, email, service].forEach(el => { if (el) el.style.borderColor = ''; });
+  const btnText       = document.getElementById('btnText');
+  const btnLoader     = document.getElementById('btnLoader');
+  const submitBtn     = document.getElementById('submitBtn');
+  const btnNext       = document.getElementById('btnNext');
+  const btnBack       = document.getElementById('btnBack');
+  const formSuccess   = document.getElementById('formSuccess');
+  const progressFill  = document.getElementById('progressFill');
+  const stepCurrentEl = document.getElementById('stepCurrent');
+  const stepTotalEl   = document.getElementById('stepTotal');
 
-    if (!firstName?.value.trim()) { firstName && (firstName.style.borderColor = '#ef4444'); valid = false; }
-    if (!email?.value.trim())     { email     && (email.style.borderColor     = '#ef4444'); valid = false; }
-    if (!service?.value)          { service   && (service.style.borderColor   = '#ef4444'); valid = false; }
+  const EMAILJS_SERVICE_ID  = 'service_je1sqvd';
+  const EMAILJS_TEMPLATE_ID = 'template_51rsawi';
+  const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2NxwLReS8WOyddezixEbnXWEsFNSd5qvLAJtulaCJ8IJ61K0Jyb6irBktfFsy7H/exec';
+  const RECAPTCHA_SITE_KEY = '6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99';
+  const RECAPTCHA_ACTION   = 'contact_form_submit';
 
-    if (!valid) {
-      showToast('Please fill in the required fields.');
+  function getRecaptchaToken() {
+    return new Promise((resolve, reject) => {
+      if (typeof grecaptcha === 'undefined') {
+        reject(new Error('reCAPTCHA script did not load.'));
+        return;
+      }
+      grecaptcha.ready(() => {
+        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
+  }
+
+  const AVAILABLE_TIMES = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'];
+  const steps = Array.from(form.querySelectorAll('.form-step'));
+  let current = 0;
+  if (stepTotalEl) stepTotalEl.textContent = steps.length;
+
+  const dateInput  = document.getElementById('preferredDate');
+  const timeSelect = document.getElementById('preferredTime');
+  let fp = null;
+
+  if (dateInput && window.flatpickr) {
+    fp = flatpickr(dateInput, {
+      minDate: 'today',
+      maxDate: new Date().fp_incr(60),
+      dateFormat: 'Y-m-d',
+      altInput: true,
+      altFormat: 'F j, Y (l)',
+      disable: [date => (date.getDay() === 0 || date.getDay() === 6)],
+      onChange: () => { validateField(dateInput); populateTimes(); }
+    });
+  }
+
+  function populateTimes() {
+    if (!timeSelect) return;
+    timeSelect.innerHTML = '<option value="">Select a time</option>';
+    AVAILABLE_TIMES.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t;
+      const [h, m] = t.split(':');
+      const hour12 = ((+h % 12) || 12);
+      const ampm = +h < 12 ? 'AM' : 'PM';
+      opt.textContent = `${hour12}:${m} ${ampm}`;
+      timeSelect.appendChild(opt);
+    });
+  }
+
+  function validateField(input) {
+    const group = input.closest('.form-group');
+    if (!group) return true;
+    const isValid = input.checkValidity();
+    group.classList.toggle('error', !isValid);
+    group.classList.toggle('valid', isValid && input.value.trim() !== '');
+    let errEl = group.querySelector('.field-error');
+    if (!isValid) {
+      if (!errEl) { errEl = document.createElement('span'); errEl.className = 'field-error'; group.appendChild(errEl); }
+      errEl.textContent = input.validationMessage || 'This field is required.';
+    } else if (errEl) { errEl.remove(); }
+    return isValid;
+  }
+
+  const errorStyle = document.createElement('style');
+  errorStyle.textContent = `
+    .form-group.error input, .form-group.error select, .form-group.error textarea { border-color: #ef4444 !important; background: #fff5f5 !important; }
+    .form-group.valid input, .form-group.valid select, .form-group.valid textarea { border-color: #22c55e !important; }
+    .field-error { font-size: 0.78rem; color: #ef4444; margin-top: 0.2rem; font-weight: 500; }
+  `;
+  document.head.appendChild(errorStyle);
+
+  form.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener('blur', () => validateField(input));
+    input.addEventListener('input', () => { if (input.closest('.form-group')?.classList.contains('error')) validateField(input); });
+    input.addEventListener('change', () => { if (input.closest('.form-group')?.classList.contains('error')) validateField(input); });
+    input.addEventListener('keydown', e => { if (e.key === 'Enter' && input.tagName !== 'TEXTAREA') { e.preventDefault(); goNext(); } });
+  });
+
+  function validateStep(index) {
+    const fields = steps[index].querySelectorAll('input[required], select[required], textarea[required]');
+    let allValid = true;
+    fields.forEach(f => { if (!validateField(f)) allValid = false; });
+    return allValid;
+  }
+
+  function showStep(index, shouldScroll = true) {
+    steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
+    current = index;
+    if (progressFill)  progressFill.style.width = `${((index + 1) / steps.length) * 100}%`;
+    if (stepCurrentEl) stepCurrentEl.textContent = index + 1;
+    btnBack.style.visibility = index === 0 ? 'hidden' : 'visible';
+    const isLast = index === steps.length - 1;
+    btnNext.style.display   = isLast ? 'none' : 'inline-flex';
+    submitBtn.style.display = isLast ? 'inline-flex' : 'none';
+    const firstField = steps[index].querySelector('input, select, textarea');
+    if (firstField) firstField.focus({ preventScroll: true });
+    if (shouldScroll) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function goNext() { if (!validateStep(current)) return; if (current < steps.length - 1) showStep(current + 1); }
+  function goBack() { if (current > 0) showStep(current - 1); }
+
+  btnNext.addEventListener('click', goNext);
+  btnBack.addEventListener('click', goBack);
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!validateStep(current)) return;
+
+    const privacy = document.getElementById('privacy');
+    if (privacy && !privacy.checked) {
+      const group = privacy.closest('.form-group');
+      let errEl = group?.querySelector('.field-error');
+      if (group && !errEl) { errEl = document.createElement('span'); errEl.className = 'field-error'; group.appendChild(errEl); }
+      if (errEl) errEl.textContent = 'Please accept the Privacy Policy to continue.';
       return;
     }
 
-    submitBtn.textContent = 'Sending…';
-    submitBtn.disabled    = true;
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoader.style.display = 'inline';
 
-    setTimeout(() => {
-      submitBtn.style.display = 'none';
-      successMsg?.classList.add('show');
-      showToast('Thank you! We will be in touch shortly.');
+    const data = new FormData(form);
+    const payload = {
+      first_name: data.get('first_name') || '',
+      last_name: data.get('last_name') || '',
+      email: data.get('email') || '',
+      phone: data.get('phone') || '',
+      company: data.get('company') || '',
+      service: data.get('service') || '',
+      message: data.get('message') || '',
+      preferred_date: data.get('preferred_date') || '',
+      preferred_time: data.get('preferred_time') || '',
+      submitted_at: new Date().toISOString(),
+      recaptcha_token: '',
+      recaptcha_action: RECAPTCHA_ACTION ,
+         page_url: window.location.href
+    };
 
-      setTimeout(() => {
-        submitBtn.style.display  = '';
-        submitBtn.textContent    = 'Submit';
-        submitBtn.disabled       = false;
-        successMsg?.classList.remove('show');
-        form.querySelectorAll('input, textarea').forEach(el => {
-          el.value = '';
-          el.style.borderColor = '';
+    try {
+      const token = await getRecaptchaToken();
+      payload.recaptcha_token = token;
+      const tokenField = document.getElementById('gRecaptchaToken');
+      if (tokenField) tokenField.value = token;
+
+      let verification = { success: true };
+      if (GOOGLE_SHEET_WEBHOOK_URL && !GOOGLE_SHEET_WEBHOOK_URL.startsWith('PASTE_')) {
+        const sheetRes = await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
         });
-        if (service) { service.selectedIndex = 0; service.style.borderColor = ''; }
-      }, 5000);
-    }, 1200);
+        verification = await sheetRes.json();
+      }
+
+      if (!verification.success) {
+        console.error('Verification failed:', verification);
+        if (verification.reason === 'server_error') {
+          alert('Something went wrong saving your message on our end (' + (verification.message || 'unknown error') + '). Please email us directly at info@rethinkingweb.com.');
+        } else {
+          alert('We could not verify your submission as human. Please try again.');
+        }
+        return;
+      }
+
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+
+      form.reset();
+      form.querySelectorAll('.form-group').forEach(g => g.classList.remove('error', 'valid'));
+      form.querySelectorAll('.field-error').forEach(el => el.remove());
+      if (fp) fp.clear();
+      populateTimes();
+      showStep(0, false);
+
+      formSuccess.classList.add('show');
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      setTimeout(() => formSuccess.classList.remove('show'), 6000);
+    } catch (err) {
+      console.error('Submission error:', err);
+      alert('Something went wrong sending your message. Please try again or email us directly at info@rethinkingweb.com.');
+    } finally {
+      btnText.style.display = 'inline';
+      btnLoader.style.display = 'none';
+      submitBtn.disabled = false;
+    }
   });
 
+  populateTimes();
+  showStep(0, false);
+})();
   /* ═══ TOAST ═══ */
   function showToast(msg) {
     const toast = document.getElementById('toast');
