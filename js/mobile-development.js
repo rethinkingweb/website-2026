@@ -321,7 +321,8 @@ document.addEventListener('DOMContentLoaded', () => {
       preferred_time: data.get('preferred_time') || '',
       submitted_at: new Date().toISOString(),
       recaptcha_token: '',
-      recaptcha_action: RECAPTCHA_ACTION
+      recaptcha_action: RECAPTCHA_ACTION ,
+        page_url: window.location.href
     };
 
     try {
