@@ -6,10 +6,11 @@
   <title>Shopify + Amazon Integration | RethinkingWeb</title>
   <meta name="description" content="Sync Shopify listings, orders and inventory with Amazon Marketplace. Fixed-price Shopify-Amazon integration consulting with a named engineer." />
   <link rel="canonical" href="https://rethinkingweb.com/integrations/shopify-amazon-integration.html" />
-    <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/shopify-pairings.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -24,56 +25,66 @@
             'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
             muted: '#7A6F68',
           },
-          fontFamily: { display: ['"Inter Tight"', 'sans-serif'], body: ['"Inter Tight"', 'sans-serif'] },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
           maxWidth: { container: '1200px', nav: '1280px' },
           boxShadow: {
-            card: '0 4px 24px rgba(0,0,0,0.08)',
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
             'card-md':'0 8px 40px rgba(0,0,0,0.1)',
             'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
-            orange: '0 8px 30px rgba(231,92,35,0.25)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
           },
         }
       }
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
+  <style>.grecaptcha-badge { visibility: hidden; }</style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "name": "Shopify + Amazon Integration Services",
-        "serviceType": "Ecommerce Integration Consulting",
-        "provider": { "@type": "ProfessionalService", "name": "RethinkingWeb", "url": "https://rethinkingweb.com/", "areaServed": ["US", "GB", "AU", "IN"] },
-        "description": "Independent consulting to connect Shopify with Amazon Marketplace — listings, orders, inventory and settlement data kept in sync to prevent overselling across channels.",
-        "url": "https://rethinkingweb.com/integrations/shopify-amazon-integration.html"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "NetSuite + 3PL / WMS Integration",
+      "serviceType": "Warehouse and Logistics Integration Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "RethinkingWeb",
+        "url": "https://rethinkingweb.com/",
+        "areaServed": ["US", "GB", "AU", "IN"]
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
-          { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/integrations/" },
-          { "@type": "ListItem", "position": 3, "name": "Shopify", "item": "https://rethinkingweb.com/integrations/shopify.html" },
-          { "@type": "ListItem", "position": 4, "name": "Amazon" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "Does Shopify have a native Amazon integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Shopify offers an Amazon sales channel app that syncs eligible listings and pulls orders into Shopify, which works well for smaller catalogs on standard FBM fulfillment." } },
-          { "@type": "Question", "name": "What's the difference between using the SP-API directly and Shopify's Amazon channel?", "acceptedAnswer": { "@type": "Answer", "text": "Shopify's channel is faster to set up but limited to what the app supports. The Amazon Selling Partner API gives full access to listings, pricing, inventory and reports, at the cost of needing custom development to use it." } },
-          { "@type": "Question", "name": "Can you prevent overselling between Shopify and Amazon?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We sync available stock bi-directionally so a sale on either channel immediately reduces the shared inventory count on the other." } },
-          { "@type": "Question", "name": "Do you handle both FBA and FBM fulfillment?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We route orders correctly whether a SKU is Fulfilled by Amazon or Fulfilled by Merchant, and can support sellers running a mix of both across their catalog." } },
-          { "@type": "Question", "name": "Can you reconcile Amazon settlement reports against our books?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can break Amazon's settlement reports into sales, fees, and refunds and feed that into QuickBooks, Xero, or an ERP for accurate reconciliation." } },
-          { "@type": "Question", "name": "Can you fix a broken Shopify-Amazon integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work includes correcting stock drift between channels, fixing listings that fell out of sync, and reconnecting integrations broken by an SP-API policy change." } },
-          { "@type": "Question", "name": "How is pricing structured?", "acceptedAnswer": { "@type": "Answer", "text": "We quote a fixed price after reviewing your catalog size and fulfillment mix — see the cost table above for typical ranges." } }
-        ]
-      }
-    ]
-  }
+      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://rethinkingweb.com/integrations/netsuite-3pl-wms-integration.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/integrations/" },
+        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/integrations/netsuite.html" },
+        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
+        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
+        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
+        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
+        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
+        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -609,63 +620,149 @@
 
 </main>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact__grid">
-        <div class="contact__left">
-          <div class="section-label">Contact us</div>
-          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
-          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
-          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
-          <div class="contact__benefits">
-            <div class="benefit-col">
-              <div class="benefit">✓ Client-oriented</div>
-              <div class="benefit">✓ Independent</div>
-              <div class="benefit">✓ Competent</div>
-            </div>
-            <div class="benefit-col">
-              <div class="benefit">✓ Results-driven</div>
-              <div class="benefit">✓ Problem-solving</div>
-              <div class="benefit">✓ Transparent</div>
-            </div>
+  <!-- ═══ CONTACT ═══ -->
+ <section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__left">
+        <div class="section-label">Contact us</div>
+        <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+        <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+        <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+        <div class="contact__benefits">
+          <div class="benefit-col">
+            <div class="benefit">✓ Client-oriented</div>
+            <div class="benefit">✓ Independent</div>
+            <div class="benefit">✓ Competent</div>
           </div>
-          <div class="contact__steps">
-            <h4>What happens next?</h4>
-            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
-            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
-            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          <div class="benefit-col">
+            <div class="benefit">✓ Results-driven</div>
+            <div class="benefit">✓ Problem-solving</div>
+            <div class="benefit">✓ Transparent</div>
           </div>
         </div>
 
-        <div class="contact__right">
-          <div class="contact__form-card" id="form">
-            <h3>Schedule a Free Consultation</h3>
-            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
-  <div class="form-row">
-    <div class="form-group"><label>First name</label><input type="text" name="first_name" placeholder="John" required></div>
-    <div class="form-group"><label>Last name</label><input type="text" name="last_name" placeholder="Doe" required></div>
-  </div>
-  <div class="form-group"><label>Company / Organization</label><input type="text" name="company" placeholder="Acme Corp"></div>
-  <div class="form-group"><label>Company Email</label><input type="email" name="email" placeholder="john@company.com" required></div>
-  <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+91 00000 00000"></div>
-  <div class="form-group">
-    <label>How Can We Help You?</label>
-    <select name="service" required>
-      <option value="">Select Option</option>
-      <option selected>Shopify + Marketplace (Amazon)</option>
-      <option>Shopify Integration</option>
-      <option>Fix / Take Over an Integration</option>
-      <option>Other</option>
-    </select>
-  </div>
-  <div class="form-group"><label>Message</label><textarea name="message" rows="4" placeholder="Tell us about your systems and what you need to sync..."></textarea></div>
-  <button type="submit" class="btn btn--primary btn--full">Submit</button>
-</form>
+        <div class="contact__steps">
+          <h4>What happens next?</h4>
+          <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+          <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+          <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+        </div>
+      </div>
+
+      <div class="contact__right">
+        <div class="contact__form-card" id="form">
+          <h3>Schedule a Free Consultation</h3>
+
+          <div class="form-progress">
+            <div class="form-progress__bar"><div class="form-progress__fill" id="progressFill"></div></div>
+            <span class="form-progress__label"><span id="stepCurrent">1</span> of <span id="stepTotal">2</span></span>
           </div>
+
+          <form class="contact-form contact-form--wizard" id="contactForm" novalidate>
+
+            <div class="form-step is-active" data-step="1">
+              <div class="form-step__eyebrow">Tell us about you</div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First name</label>
+                  <input type="text" name="first_name" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                  <label>Last name</label>
+                  <input type="text" name="last_name" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Company Email</label>
+                  <input type="email" name="email" placeholder="john@company.com" required>
+                </div>
+                <div class="form-group">
+                  <label>Phone <span class="optional-tag">(optional)</span></label>
+                  <input type="tel" name="phone" placeholder="+91 00000 00000">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Company / Organization <span class="optional-tag">(optional)</span></label>
+                  <input type="text" name="company" placeholder="Acme Corp">
+                </div>
+                <div class="form-group">
+                  <label>How Can We Help You?</label>
+                  <select name="service" required>
+                    <option value="">Select Option</option>
+                    <option>Managed Services</option>
+                    <option>IT Consulting &amp; Advisory</option>
+                    <option>Cyber Security</option>
+                    <option>Web Development</option>
+                    <option>Mobile Development</option>
+                    <option>Cloud Services</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Message <span class="optional-tag">(optional)</span></label>
+                <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-step" data-step="2">
+              <div class="form-step__eyebrow">Pick a date &amp; time that works for you</div>
+
+              <div class="form-group">
+                <label>Preferred Date</label>
+                <input type="text" name="preferred_date" id="preferredDate" placeholder="Select a date" required readonly>
+              </div>
+
+              <div class="form-group">
+                <label>Preferred Time</label>
+                <select name="preferred_time" id="preferredTime" required>
+                  <option value="">Select a date first</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group--check">
+                <label class="check-label">
+                  <input type="checkbox" id="privacy" name="privacy" required>
+                  I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and consent to being contacted.
+                </label>
+              </div>
+            </div>
+
+            <input type="hidden" name="g_recaptcha_token" id="gRecaptchaToken">
+
+            <div class="form-nav">
+              <button type="button" class="btn btn--ghost" id="btnBack" style="visibility:hidden;">← Back</button>
+              <button type="button" class="btn btn--primary" id="btnNext">Continue →</button>
+              <button type="submit" class="btn btn--primary" id="submitBtn" style="display:none;">
+                <span id="btnText">Submit</span>
+                <span id="btnLoader" style="display:none;">Sending…</span>
+              </button>
+            </div>
+
+            <p class="text-xs text-muted mt-2" style="font-size:0.75rem; color:#7A6F68; margin-top:0.5rem;">
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration:underline;">Privacy Policy</a> and
+              <a href="https://policies.google.com/terms" target="_blank" style="text-decoration:underline;">Terms of Service</a> apply.
+            </p>
+
+            <div class="form-success" id="formSuccess">
+              ✅ Thanks! We've received your message and will be in touch shortly.
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 <footer class="bg-[#0f172a] text-white pt-16 pb-8">
     <div class="max-w-[1200px] mx-auto px-8">
@@ -723,12 +820,14 @@
       </div>
     </div>
   </footer>
-
+    <!-- Toast -->
   <div class="toast" id="toast"></div>
+
   <script src="../js/sap-business-one-integration.js"></script>
   <script src="../js/theme.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
-  <script src="../js/form-handler.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+  <script src="../js/contact-form.js"></script>
 </body>
 </html>
