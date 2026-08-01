@@ -400,14 +400,14 @@ document.addEventListener('DOMContentLoaded', () => {
   showStep(0, false);
 })();
   /* ═══ TOAST ═══ */
-  function showToast(msg) {
-    const toast = document.getElementById('toast');
-    if (!toast) return;
-    toast.textContent = msg;
-    toast.classList.add('show');
-    clearTimeout(toast._timer);
-    toast._timer = setTimeout(() => toast.classList.remove('show'), 3500);
-  }
+  // function showToast(msg) {
+  //   const toast = document.getElementById('toast');
+  //   if (!toast) return;
+  //   toast.textContent = msg;
+  //   toast.classList.add('show');
+  //   clearTimeout(toast._timer);
+  //   toast._timer = setTimeout(() => toast.classList.remove('show'), 3500);
+  // }
 
   /* ═══ SMOOTH ANCHOR SCROLL ═══ */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
