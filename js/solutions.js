@@ -255,11 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* ════════════════════════════════════════════════════════════════
-   RethinkingWeb — Contact form (same as homepage script.js)
-   2-step wizard + calendar booking + reCAPTCHA v3 + EmailJS + Google Sheet
-
-   Self-contained IIFE: all variables are scoped locally, so this never
-   collides with the DOMContentLoaded block above.
+contact form
 ════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';

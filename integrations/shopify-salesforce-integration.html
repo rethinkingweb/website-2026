@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopify + Salesforce Integration | RethinkingWeb</title>
+   <title>Shopify + Salesforce Integration | RethinkingWeb</title>
   <meta name="description" content="Sync Shopify customers, orders and lifetime value into Salesforce CRM. Fixed-price Shopify-Salesforce integration consulting with a named engineer." />
   <link rel="canonical" href="https://rethinkingweb.com/integrations/shopify-salesforce-integration.html" />
-    <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/shopify-pairings.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -24,56 +25,66 @@
             'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
             muted: '#7A6F68',
           },
-          fontFamily: { display: ['"Inter Tight"', 'sans-serif'], body: ['"Inter Tight"', 'sans-serif'] },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
           maxWidth: { container: '1200px', nav: '1280px' },
           boxShadow: {
-            card: '0 4px 24px rgba(0,0,0,0.08)',
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
             'card-md':'0 8px 40px rgba(0,0,0,0.1)',
             'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
-            orange: '0 8px 30px rgba(231,92,35,0.25)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
           },
         }
       }
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
+  <style>.grecaptcha-badge { visibility: hidden; }</style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "name": "Shopify + Salesforce Integration Services",
-        "serviceType": "Ecommerce Integration Consulting",
-        "provider": { "@type": "ProfessionalService", "name": "RethinkingWeb", "url": "https://rethinkingweb.com/", "areaServed": ["US", "GB", "AU", "IN"] },
-        "description": "Independent consulting to connect Shopify with Salesforce — customers, order history, lifetime value and support cases, kept in sync for sales and service teams.",
-        "url": "https://rethinkingweb.com/integrations/shopify-salesforce-integration.html"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "NetSuite + 3PL / WMS Integration",
+      "serviceType": "Warehouse and Logistics Integration Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "RethinkingWeb",
+        "url": "https://rethinkingweb.com/",
+        "areaServed": ["US", "GB", "AU", "IN"]
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
-          { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/integrations/" },
-          { "@type": "ListItem", "position": 3, "name": "Shopify", "item": "https://rethinkingweb.com/integrations/shopify.html" },
-          { "@type": "ListItem", "position": 4, "name": "Salesforce" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "Does Shopify integrate natively with Salesforce?", "acceptedAnswer": { "@type": "Answer", "text": "There's no single official Shopify-Salesforce connector, but there are proven AppExchange packages and Salesforce's own Commerce Cloud tooling for teams already invested in that ecosystem, plus custom Apex/API options for bespoke requirements." } },
-          { "@type": "Question", "name": "Can you sync Shopify order history onto the Salesforce Contact record?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. This is the most common request — order history, order count, and lifetime value visible directly on the Contact or Account page for sales and support teams." } },
-          { "@type": "Question", "name": "Do you support both Sales Cloud and Service Cloud?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can sync the same Shopify data into Sales Cloud for account visibility and Service Cloud for case context, either as one orchestrated integration or as separate scoped flows." } },
-          { "@type": "Question", "name": "Can abandoned carts trigger a sales follow-up in Salesforce?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. For B2B or high-touch DTC brands, we can surface abandoned or high-value cart activity in Salesforce so reps can follow up directly, rather than relying on Shopify's own automated emails alone." } },
-          { "@type": "Question", "name": "Can you fix a broken Shopify-Salesforce integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work is a large share of our practice: abandoned Apex customizations, misconfigured AppExchange packages, duplicate Contact records, and syncs broken after a Salesforce API version retirement." } },
-          { "@type": "Question", "name": "How is pricing structured?", "acceptedAnswer": { "@type": "Answer", "text": "We quote a fixed price after reviewing your Salesforce org and requirement — see the cost table above for typical ranges." } },
-          { "@type": "Question", "name": "Do you also connect Salesforce to other systems besides Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We commonly extend a Shopify-Salesforce integration to include an ERP like NetSuite or SAP Business One within the same orchestrated architecture." } }
-        ]
-      }
-    ]
-  }
+      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://rethinkingweb.com/integrations/netsuite-3pl-wms-integration.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/integrations/" },
+        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/integrations/netsuite.html" },
+        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
+        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
+        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
+        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
+        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
+        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -808,8 +819,7 @@
       </div>
     </div>
   </footer>
-
- <!-- Toast -->
+<!-- Toast -->
   <div class="toast" id="toast"></div>
 
   <script src="../js/sap-business-one-integration.js"></script>

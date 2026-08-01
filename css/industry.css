@@ -17,35 +17,6 @@ input, select, textarea, button { font-family: inherit; }
 
 .benefits-intro { color: var(--text-muted); max-width: 720px; margin-bottom: 2.5rem; font-size: 0.95rem; line-height: 1.8; }
 
-/* Buttons */
-
-/* ═══════════════════════════════
-   NAV
-═══════════════════════════════ */
-
-/* Dropdown */
-
-/* Burger — hidden desktop, flex on mobile */
-
-/* ── Overlay ── */
-
-/* ── Mobile Nav Drawer ── */
-
-/* Header row inside drawer */
-
-/* Links wrapper */
-
-/* Plain links */
-
-/* CTA link */
-
-/* Accordion wrapper */
-
-/* Accordion trigger */
-
-/* Chevron */
-
-/* Panel — JS sets maxHeight on open */
 
 /* ── HERO BG ── */
 .hero__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--bg); }

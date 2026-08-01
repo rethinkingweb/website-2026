@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Banks &amp; Insurance IT Solutions – RethinkingWeb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Banks &amp; Insurance IT Solutions – RethinkingWeb</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="css/base.css" />
@@ -41,6 +41,14 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Contact-form styles (wizard, progress bar, success message) -->
+  <link rel="stylesheet" href="css/contact.css" />
+  <!-- Flatpickr (calendar / date-time picker) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <!-- Google reCAPTCHA v3 (invisible) -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
+  <style>.grecaptcha-badge { visibility: hidden; }</style>
 </head>
 <body>
 
@@ -695,7 +703,7 @@
   </div>
 </section>
 
- <!-- ───────── CONTACT ───────── -->
+   <!-- ───────── CONTACT ───────── -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact__grid">
@@ -729,55 +737,112 @@
         <div class="contact__right">
           <div class="contact__form-card" id="form">
             <h3>Schedule a Free Consultation</h3>
-            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
-  <div class="form-row">
-    <div class="form-group">
-      <label>First name</label>
-      <input type="text" name="first_name" placeholder="John" required>
-    </div>
 
-    <div class="form-group">
-      <label>Last name</label>
-      <input type="text" name="last_name" placeholder="Doe" required>
-    </div>
-  </div>
+            <div class="form-progress">
+              <div class="form-progress__bar"><div class="form-progress__fill" id="progressFill"></div></div>
+              <span class="form-progress__label"><span id="stepCurrent">1</span> of <span id="stepTotal">2</span></span>
+            </div>
 
-  <div class="form-group">
-    <label>Company / Organization</label>
-    <input type="text" name="company" placeholder="Acme Corp">
-  </div>
+            <form class="contact-form contact-form--wizard" id="contactForm" novalidate>
 
-  <div class="form-group">
-    <label>Company Email</label>
-    <input type="email" name="email" placeholder="john@company.com" required>
-  </div>
+              <!-- STEP 1 — Name & details -->
+              <div class="form-step is-active" data-step="1">
+                <div class="form-step__eyebrow">Tell us about you</div>
 
-  <div class="form-group">
-    <label>Phone</label>
-    <input type="tel" name="phone" placeholder="+91 00000 00000">
-  </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>First name</label>
+                    <input type="text" name="first_name" placeholder="John" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Last name</label>
+                    <input type="text" name="last_name" placeholder="Doe" required>
+                  </div>
+                </div>
 
-  <div class="form-group">
-    <label>How Can We Help You?</label>
-    <select name="service" required>
-      <option value="">Select Option</option>
-      <option>Managed Services</option>
-      <option>IT Consulting & Advisory</option>
-      <option>Cyber Security</option>
-      <option>Web Development</option>
-      <option>Mobile Development</option>
-      <option>Cloud Services</option>
-      <option>Other</option>
-    </select>
-  </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Company Email</label>
+                    <input type="email" name="email" placeholder="john@company.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Phone <span class="optional-tag">(optional)</span></label>
+                    <input type="tel" name="phone" placeholder="+91 00000 00000">
+                  </div>
+                </div>
 
-  <div class="form-group">
-    <label>Message</label>
-    <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
-  </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Company / Organization <span class="optional-tag">(optional)</span></label>
+                    <input type="text" name="company" placeholder="Acme Corp">
+                  </div>
+                  <div class="form-group">
+                    <label>How Can We Help You?</label>
+                    <select name="service" required>
+                      <option value="">Select Option</option>
+                      <option>Managed Services</option>
+                      <option>IT Consulting &amp; Advisory</option>
+                      <option>Cyber Security</option>
+                      <option>Web Development</option>
+                      <option>Mobile Development</option>
+                      <option>Cloud Services</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
 
-  <button type="submit" class="btn btn--primary btn--full">Submit</button>
-</form>
+                <div class="form-group">
+                  <label>Message <span class="optional-tag">(optional)</span></label>
+                  <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
+                </div>
+              </div>
+
+              <!-- STEP 2 — Calendar booking -->
+              <div class="form-step" data-step="2">
+                <div class="form-step__eyebrow">Pick a date &amp; time that works for you</div>
+
+                <div class="form-group">
+                  <label>Preferred Date</label>
+                  <input type="text" name="preferred_date" id="preferredDate" placeholder="Select a date" required readonly>
+                </div>
+
+                <div class="form-group">
+                  <label>Preferred Time</label>
+                  <select name="preferred_time" id="preferredTime" required>
+                    <option value="">Select a date first</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-group--check">
+                  <label class="check-label">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and consent to being contacted.
+                  </label>
+                </div>
+              </div>
+
+              <!-- Hidden field: filled by reCAPTCHA v3 right before submit -->
+              <input type="hidden" name="g_recaptcha_token" id="gRecaptchaToken">
+
+              <div class="form-nav">
+                <button type="button" class="btn btn--ghost" id="btnBack" style="visibility:hidden;">← Back</button>
+                <button type="button" class="btn btn--primary" id="btnNext">Continue →</button>
+                <button type="submit" class="btn btn--primary" id="submitBtn" style="display:none;">
+                  <span id="btnText">Submit</span>
+                  <span id="btnLoader" style="display:none;">Sending…</span>
+                </button>
+              </div>
+
+              <p class="text-xs text-muted mt-2" style="font-size:0.75rem; color:#7A6F68; margin-top:0.5rem;">
+                This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration:underline;">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms" target="_blank" style="text-decoration:underline;">Terms of Service</a> apply.
+              </p>
+
+              <div class="form-success" id="formSuccess">
+                ✅ Thanks! We've received your message and will be in touch shortly.
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -852,9 +917,12 @@
   <!-- Toast -->
   <div class="toast" id="toast">🎉 Thanks! We'll be in touch shortly.</div>
 
-  <script src="js/banks.js"></script>
+ <!-- EmailJS (must load before the wizard handler in solutions.js) -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
-  <script src="js/form-handler.js"></script>
+  <!-- Flatpickr (calendar) — must load before solutions.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+  <!-- Page JS: nav, animations + the 2-step wizard contact form -->
+  <script src="js/banks.js"></script>
 </body>
 </html>
