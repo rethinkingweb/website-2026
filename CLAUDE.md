@@ -50,7 +50,7 @@ Contact/consultation forms submit client-side via EmailJS — there is no server
   ```html
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
-  <script src="js/form-handler.js"></script>
+  <script src="/js/form-handler.js"></script>
   ```
 - Note: `js/script.js` also contains a separate, simpler form handler (fake "Sent!" button) and an unused `#contact-form` EmailJS block. On any page that loads `form-handler.js`, that handler is the real one — don't duplicate submit logic.
 

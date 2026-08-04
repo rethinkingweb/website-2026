@@ -1,7 +1,4 @@
-/* ─────────────────────────────────────────────
-   RETHINKINGWEB — Web Performance Optimization
-   script.js  (fixed)
-───────────────────────────────────────────── */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
