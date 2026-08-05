@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopify + ShipStation Integration | RethinkingWeb</title>
-  <meta name="description" content="Route Shopify orders to ShipStation for fulfillment and sync tracking, labels and stock back. Fixed-price Shopify-ShipStation integration consulting." />
+  <title>Zuper Integration Services | RethinkingWeb</title>
+  <meta name="description" content="Connect Zuper field service management to your CRM, accounting, payments, and supplier systems with fixed-price integration consulting — honest costs and timelines." />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/shopify-pairings.css" />
+  <link rel="stylesheet" href="../css/zuper-pairings.css" />
   <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/integrations/shopify-shipstation-integration.html" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/integrations/zuper.html" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -52,35 +52,34 @@
   "@graph": [
     {
       "@type": "Service",
-      "name": "NetSuite + 3PL / WMS Integration",
-      "serviceType": "Warehouse and Logistics Integration Consulting",
+      "name": "Zuper Integration Services",
+      "serviceType": "Field Service Management Integration Consulting",
       "provider": {
         "@type": "ProfessionalService",
         "name": "RethinkingWeb",
         "url": "https://rethinkingweb.com/",
         "areaServed": ["US", "GB", "AU", "IN"]
       },
-      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://rethinkingweb.com/integrations/netsuite-3pl-wms-integration.html"
+      "description": "Connect Zuper field service management to your CRM, accounting, payments, and supplier systems. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://rethinkingweb.com/integrations/zuper.html"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
         { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/integrations/" },
-        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/integrations/netsuite.html" },
-        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
+        { "@type": "ListItem", "position": 3, "name": "Zuper" }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
-        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
-        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
-        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
-        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
-        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
+        { "@type": "Question", "name": "Does Zuper have an API?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zuper exposes a REST API and webhooks, plus 60+ pre-built native integrations in its app marketplace." } },
+        { "@type": "Question", "name": "What's the difference between a native integration and a custom build?", "acceptedAnswer": { "@type": "Answer", "text": "Native integrations are pre-built and free to turn on inside Zuper for supported apps. Custom builds use Zuper's API and webhooks directly when your requirement goes beyond what the native connector supports." } },
+        { "@type": "Question", "name": "Can you sync Zuper with HubSpot or Salesforce?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. These are two of the most common Zuper CRM integrations, syncing deals and leads into scheduled jobs and pushing job status back to the CRM." } },
+        { "@type": "Question", "name": "Can you connect Zuper to QuickBooks or Xero?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Job completion and invoicing data sync automatically to QuickBooks Online, QuickBooks Desktop, or Xero." } },
+        { "@type": "Question", "name": "How much does Zuper integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most Zuper integrations run $3,000 to $25,000 depending on approach and entity count. See the cost table above for a full breakdown." } },
+        { "@type": "Question", "name": "Can you fix a broken Zuper integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work on failed native connectors, broken middleware, and abandoned custom builds is a regular part of our practice." } }
       ]
     }
   ]
@@ -89,6 +88,7 @@
 </head>
 <body>
 
+  <!-- ═══ BACKGROUND ═══ -->
   <div class="hero__bg">
     <div class="orb orb--1"></div>
     <div class="orb orb--2"></div>
@@ -102,6 +102,7 @@
       <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
     </a>
 
+    <!-- DESKTOP LINKS -->
     <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
       <a href="../index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
 
@@ -118,43 +119,73 @@
           <div class="mega-menu__grid">
             <a href="../managed.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-server"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">Managed Services</span><span class="mega-item__desc">24/7 IT infrastructure &amp; support</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Managed Services</span>
+                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+              </div>
             </a>
             <a href="../consulting.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">IT Consulting &amp; Advisory</span><span class="mega-item__desc">Strategic technology guidance</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
+                <span class="mega-item__desc">Strategic technology guidance</span>
+              </div>
             </a>
             <a href="../cyber.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">Cyber Security</span><span class="mega-item__desc">Protect your digital assets</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cyber Security</span>
+                <span class="mega-item__desc">Protect your digital assets</span>
+              </div>
             </a>
             <a href="web_development.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-code"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">Web Development</span><span class="mega-item__desc">Custom websites &amp; web apps</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Development</span>
+                <span class="mega-item__desc">Custom websites &amp; web apps</span>
+              </div>
             </a>
             <a href="../mobile-development.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">Mobile Development</span><span class="mega-item__desc">iOS &amp; Android solutions</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Mobile Development</span>
+                <span class="mega-item__desc">iOS &amp; Android solutions</span>
+              </div>
             </a>
             <a href="../cloud.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">Cloud Services</span><span class="mega-item__desc">Scalable cloud infrastructure</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cloud Services</span>
+                <span class="mega-item__desc">Scalable cloud infrastructure</span>
+              </div>
             </a>
             <a href="../software.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">Software Development</span><span class="mega-item__desc">Bespoke software solutions</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Software Development</span>
+                <span class="mega-item__desc">Bespoke software solutions</span>
+              </div>
             </a>
             <a href="../airtable.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">Enterprise Airtable</span><span class="mega-item__desc">No-code workflow automation</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Enterprise Airtable</span>
+                <span class="mega-item__desc">No-code workflow automation</span>
+              </div>
             </a>
             <a href="../web-performance.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">Web Performance</span><span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Performance</span>
+                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
+              </div>
             </a>
             <a href="../seo.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-              <div class="mega-item__content"><span class="mega-item__title">On-page Technical SEO</span><span class="mega-item__desc">Rank higher, grow faster</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">On-page Technical SEO</span>
+                <span class="mega-item__desc">Rank higher, grow faster</span>
+              </div>
             </a>
           </div>
         </div>
@@ -166,37 +197,60 @@
           <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </a>
         <div class="mega-menu mega-menu--integrations">
-          <div class="mega-menu__header"><span class="mega-menu__label">Integrations</span></div>
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Integrations</span>
+          </div>
           <div class="mega-menu__grid">
             <a href="sap-business-one.html" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap5)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div>
-              <div class="mega-item__content"><span class="mega-item__title">SAP Business One</span><span class="mega-item__desc">ERP integration &amp; consulting</span></div>
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">SAP Business One</span>
+                <span class="mega-item__desc">ERP integration &amp; consulting</span>
+              </div>
             </a>
             <a href="salesforce.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg></div>
-              <div class="mega-item__content"><span class="mega-item__title">Salesforce</span><span class="mega-item__desc">CRM &amp; order-to-cash sync</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Salesforce</span>
+                <span class="mega-item__desc">CRM &amp; order-to-cash sync</span>
+              </div>
             </a>
             <a href="netsuite.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0C3B5D"/><text x="12" y="17" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">N</text></svg></div>
-              <div class="mega-item__content"><span class="mega-item__title">NetSuite</span><span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">NetSuite</span>
+                <span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span>
+              </div>
             </a>
             <a href="shopify.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/><path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z" opacity=".12"/><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg></div>
-              <div class="mega-item__content"><span class="mega-item__title">Shopify</span><span class="mega-item__desc">Ecommerce &#8596; back office</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Shopify</span>
+                <span class="mega-item__desc">Ecommerce &#8596; back office</span>
+              </div>
             </a>
             <a href="quickbooks.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div>
-              <div class="mega-item__content"><span class="mega-item__title">QuickBooks</span><span class="mega-item__desc">Accounting &amp; invoice sync</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">QuickBooks</span>
+                <span class="mega-item__desc">Accounting &amp; invoice sync</span>
+              </div>
             </a>
             <a href="woocommerce.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div>
-              <div class="mega-item__content"><span class="mega-item__title">WooCommerce</span><span class="mega-item__desc">WordPress store integration</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">WooCommerce</span>
+                <span class="mega-item__desc">WordPress store integration</span>
+              </div>
             </a>
             <a href="zoho.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div>
-              <div class="mega-item__content"><span class="mega-item__title">Zoho</span><span class="mega-item__desc">Zoho One suite integration</span></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Zoho</span>
+                <span class="mega-item__desc">Zoho One suite integration</span>
+              </div>
             </a>
- <a href="zuper.html" class="mega-item">
+            <a href="zuper.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Zuper</span>
@@ -223,12 +277,14 @@
       </div>
 
       <a href="../case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+
     </nav>
 
     <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
       <a href="../contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
     </div>
 
+    <!-- HAMBURGER BUTTON -->
     <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
       <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
       <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
@@ -240,15 +296,23 @@
 <!-- ───────── MOBILE NAV DRAWER ───────── -->
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
-    <a href="../index.html"><img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" /></a>
+    <a href="../index.html">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
     <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
   </div>
+
   <nav class="flex flex-col px-6 pb-8 pt-3">
     <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+
+    <!-- Solutions accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
+      <div class="mob-accordion__header"></div>
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
         <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
       </button>
       <div class="mob-accordion__panel">
         <a href="../managed.html">Managed Services</a>
@@ -263,10 +327,14 @@
         <a href="../seo.html">On-page Technical SEO</a>
       </div>
     </div>
+
+    <!-- Integrations accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
         <a href="sap-business-one.html" class="mob-accordion__link">Integrations</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
       </button>
       <div class="mob-accordion__panel">
         <a href="sap-business-one.html">SAP Business One</a>
@@ -277,12 +345,17 @@
         <a href="woocommerce.html">WooCommerce</a>
         <a href="zoho.html">Zoho</a>
  <a href="zuper.html">zuper</a>
+        <a href="zuper.html">Zuper</a>
       </div>
     </div>
+
+    <!-- Company accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
         <a href="../about.html" class="mob-accordion__link">Company</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
       </button>
       <div class="mob-accordion__panel">
         <a href="../about.html">About Us</a>
@@ -293,13 +366,20 @@
         <a href="../case.html">Case Studies</a>
       </div>
     </div>
+
     <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+
     <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
   </nav>
 </div>
+
+<!-- Overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
 
-<main class="sap sap-pairing shf-pairing shf-pairing--shipstation">
+<!-- ═══════════════════════════════════════════
+     PILLAR PAGE CONTENT
+═══════════════════════════════════════════ -->
+<main class="sap zp-page">
 
   <!-- ───────── HERO ───────── -->
   <section class="sap-hero">
@@ -309,37 +389,41 @@
           <nav class="sap-breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a>
             <span>›</span>
-            <a href="shopify.html">Shopify</a>
+            <span>Integrations</span>
             <span>›</span>
-            <span class="current">ShipStation</span>
+            <span class="current">Zuper</span>
           </nav>
-          <div class="sap-badge"><span class="badge__dot"></span> Ecommerce ↔ Fulfillment Integration</div>
-          <h1 class="sap-hero__title">Shopify <em>+ ShipStation</em> Integration</h1>
-          <p class="sap-hero__sub">A <strong>Shopify-ShipStation integration</strong> pushes new orders straight to fulfillment, generates the right carrier label automatically, and writes tracking numbers back to Shopify the moment a package ships — closing the loop without your team touching a spreadsheet. We work independently of any one 3PL or carrier, so we scope the routing rules and stock sync around how your warehouse actually operates.</p>
+          <div class="sap-badge"><span class="badge__dot"></span> Field Service Integration Consultancy</div>
+          <h1 class="sap-hero__title">Zuper <em>Integration Services</em></h1>
+          <p class="sap-hero__sub">
+            <strong>Zuper integration</strong> connects the Zuper field service management platform to the CRM, accounting, payments, and supplier systems your business already runs on. We build these as an independent consultancy: we don't resell a single connector, so we recommend the approach that actually fits your requirement.
+          </p>
           <div class="sap-hero__cta">
             <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
             <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
           </div>
         </div>
 
+        <!-- Integration hub visual -->
         <div class="sap-hero__visual" aria-hidden="true">
           <div class="sap-hub">
             <div class="sap-hub__ring"></div>
-            <div class="sap-hub__core"><strong>Shopify</strong><span>+ ShipStation</span></div>
-            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-cart-shopping"></i> Orders</div>
-            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-route"></i> Order Routing</div>
-            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-tag"></i> Shipping Labels</div>
-            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-truck-fast"></i> Tracking Numbers</div>
-            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-warehouse"></i> Stock Levels</div>
-            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-triangle-exclamation"></i> Split & Backorders</div>
+            <div class="sap-hub__core"><strong>Zuper</strong><span>Field Service Core</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-arrows-spin"></i> HubSpot</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-file-invoice-dollar"></i> QuickBooks</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-cloud"></i> Salesforce</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-credit-card"></i> Stripe</div>
+            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-headset"></i> Zendesk</div>
+            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-message"></i> Slack</div>
           </div>
         </div>
       </div>
 
+      <!-- Stats strip -->
       <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">5+</div><span class="stat-label">Fulfillment entities kept in sync</span></div>
+        <div class="sap-stat"><div class="stat-num">60+</div><span class="stat-label">Systems Zuper already connects to</span></div>
         <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
-        <div class="sap-stat"><div class="stat-num">1–5</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">1–12</div><span class="stat-label">Weeks to typical go-live</span></div>
         <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
       </div>
     </div>
@@ -350,61 +434,180 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">The Basics</div>
-        <h2 class="section-title">What Is Shopify <em>+ ShipStation</em> Integration?</h2>
+        <h2 class="section-title">What Is Zuper <em>Integration</em>?</h2>
       </div>
       <div class="sap-body reveal">
-        <p>Shopify-ShipStation integration is the automated flow of orders out to fulfillment and tracking data back into Shopify. ShipStation already ships with a native Shopify connection, so for most merchants the work isn't building a connector from scratch — it's configuring routing rules, carrier logic, and multi-warehouse splits correctly so the right order goes to the right warehouse with the right shipping method every time.</p>
-        <p>The gap usually shows up as orders shipping isn't the problem — order routing is. Multi-warehouse merchants, split shipments, backorders, and marketplace orders arriving through Shopify alongside direct-to-consumer orders all need rules that ShipStation's default setup doesn't handle out of the box. That's where a scoped configuration or custom middleware layer earns its cost back quickly in reduced manual intervention.</p>
+        <p>Zuper integration is the process of exchanging data automatically between the Zuper field service platform and external applications, so records like customers, jobs, invoices, payments, and leads stay consistent across systems without manual re-entry. It's how a HubSpot deal becomes a scheduled, dispatched Zuper job, or a completed job in Zuper becomes a QuickBooks invoice, in minutes instead of days.</p>
+        <p>Most Zuper customers run field crews alongside a CRM, an accounting system, a payments processor, and a handful of supplier or measurement tools. Every one of them is a potential silo. Integration turns that stack into a single operating picture, cuts double data entry, and removes the errors that come from copying job and customer records by hand.</p>
       </div>
     </div>
   </section>
 
-  <!-- ───────── WHAT SYNCS ───────── -->
+  <!-- ───────── WHAT CAN YOU INTEGRATE ───────── -->
   <section class="sap-section sap-section--alt">
     <div class="container">
       <div class="sap-section__head reveal">
-        <div class="section-label">Data Flow</div>
-        <h2 class="section-title">What Data Syncs Between <em>Shopify &amp; ShipStation</em>?</h2>
-        <p class="sap-lead">A Shopify-ShipStation integration is bi-directional: orders flow out to fulfillment, and shipping confirmation flows back to the buyer.</p>
+        <div class="section-label">Compatibility</div>
+        <h2 class="section-title">What Can You Integrate with <em>Zuper</em>?</h2>
+        <p class="sap-lead">Zuper ships 60+ native integrations out of the box. The most common categories we work with are CRM, accounting and expense management, payments and financing, measurements, suppliers, and customer service.</p>
       </div>
-      <div class="sap-table-wrap reveal">
-        <table class="sap-table">
-          <thead><tr><th>Entity</th><th>Direction</th><th>What moves</th></tr></thead>
-          <tbody>
-            <tr><td><strong>New orders</strong></td><td>Shopify → ShipStation</td><td>Orders imported with items, addresses, and shipping method selected at checkout</td></tr>
-            <tr><td><strong>Order routing</strong></td><td>Within ShipStation</td><td>Rules assign orders to the correct warehouse, store, or fulfillment queue</td></tr>
-            <tr><td><strong>Shipping labels</strong></td><td>ShipStation → carrier</td><td>Labels generated with negotiated carrier rates based on weight and destination</td></tr>
-            <tr><td><strong>Tracking numbers</strong></td><td>ShipStation → Shopify</td><td>Tracking pushed back so Shopify sends the customer's shipping confirmation email</td></tr>
-            <tr><td><strong>Stock levels</strong></td><td>Warehouse/3PL → Shopify</td><td>Available stock synced back so the storefront reflects real inventory</td></tr>
-            <tr><td><strong>Split &amp; backorder handling</strong></td><td>ShipStation ↔ Shopify</td><td>Partial shipments and backordered items tracked and reflected accurately to the buyer</td></tr>
-          </tbody>
-        </table>
+      <div class="sap-cards">
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-cloud"></i></div>
+          <h3>CRM</h3>
+          <p class="sap-card__systems"><a href="zuper-hubspot-integration.html">HubSpot</a>, <a href="zuper-salesforce-integration.html">Salesforce</a>, Zoho, RepCard</p>
+          <p class="sap-card__flows">Deals, leads, customers, service requests, job status back to CRM</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Accounting &amp; Expense</h3>
+          <p class="sap-card__systems"><a href="zuper-quickbooks-integration.html">QuickBooks</a>, Xero, Zoho Books, Sage Intacct, Concur, Clyr</p>
+          <p class="sap-card__flows">Invoices, payments, job costing, expense reports</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Payments &amp; Financing</h3>
+          <p class="sap-card__systems"><a href="zuper-stripe-integration.html">Stripe</a>, Wisetack</p>
+          <p class="sap-card__flows">Online payments, card processing, customer financing at estimate stage</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-ruler-combined"></i></div>
+          <h3>Measurements</h3>
+          <p class="sap-card__systems">Hover, EagleView, RoofScope, GAF QuickMeasure</p>
+          <p class="sap-card__flows">Roof, gutter &amp; siding measurement reports synced into the job</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-truck-field"></i></div>
+          <h3>Suppliers</h3>
+          <p class="sap-card__systems">ABC Supply, SRS Distribution, QXO</p>
+          <p class="sap-card__flows">Purchase orders sent to the supplier branch from the work order</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
+          <h3>Customer Service &amp; Collaboration</h3>
+          <p class="sap-card__systems"><a href="zuper-zendesk-integration.html">Zendesk</a>, Freshdesk, <a href="zuper-slack-integration.html">Slack</a>, Microsoft Teams</p>
+          <p class="sap-card__flows">Tickets, timesheet &amp; job updates, team notifications</p>
+        </div>
+      </div>
+      <div class="sap-body reveal">
+        <p>If your system isn't listed, it's almost certainly still integrable. Zuper already ships 60+ native integrations and exposes a REST API and webhooks, so we scope against your actual requirement, not a connector catalogue.</p>
       </div>
     </div>
   </section>
 
-  <!-- ───────── METHODS ───────── -->
+  <!-- ───────── POPULAR INTEGRATIONS ───────── -->
+  <section class="sap-section sap-popular">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Popular Pairings</div>
+        <h2 class="section-title">Popular Zuper <em>Integrations</em></h2>
+        <p class="sap-lead">These are the Zuper pairings we build most often. Click any card to see how that integration works.</p>
+      </div>
+
+      <div class="sap-popular__grid">
+
+        <a href="zuper-hubspot-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--zuper">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0B3B6F"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Zuper</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--hubspot"><i class="fab fa-hubspot"></i></span>
+          </div>
+          <h3>Zuper <em>+</em> HubSpot</h3>
+          <p>Deals and tickets become scheduled, dispatched jobs</p>
+        </a>
+
+        <a href="zuper-quickbooks-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--zuper">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0B3B6F"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Zuper</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--quickbooks">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg>
+            </span>
+          </div>
+          <h3>Zuper <em>+</em> QuickBooks</h3>
+          <p>Automated invoicing &amp; accounting sync</p>
+        </a>
+
+        <a href="zuper-salesforce-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--zuper">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0B3B6F"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Zuper</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--salesforce">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg>
+            </span>
+          </div>
+          <h3>Zuper <em>+</em> Salesforce</h3>
+          <p>Keep customer records in sync across sales &amp; field ops</p>
+        </a>
+
+        <a href="zuper-stripe-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--zuper">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0B3B6F"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Zuper</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--stripe"><i class="fab fa-stripe"></i></span>
+          </div>
+          <h3>Zuper <em>+</em> Stripe</h3>
+          <p>Accept card &amp; online payments on the job</p>
+        </a>
+
+        <a href="zuper-zendesk-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--zuper">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0B3B6F"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Zuper</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--zendesk"><i class="fas fa-headset"></i></span>
+          </div>
+          <h3>Zuper <em>+</em> Zendesk</h3>
+          <p>Turn support tickets into dispatched field jobs</p>
+        </a>
+
+        <a href="zuper-slack-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--zuper">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0B3B6F"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Zuper</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--slack"><i class="fab fa-slack"></i></span>
+          </div>
+          <h3>Zuper <em>+</em> Slack</h3>
+          <p>Timesheet, job &amp; dispatch alerts pushed to your team</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── HOW DO YOU INTEGRATE ───────── -->
   <section class="sap-section">
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Methods</div>
-        <h2 class="section-title">How Do You Connect <em>Shopify to ShipStation</em>?</h2>
-        <p class="sap-lead">ShipStation ships with a native Shopify connection, so most projects are about correct configuration rather than custom development — except where multi-warehouse routing or a non-ShipStation 3PL is involved.</p>
+        <h2 class="section-title">How Do You Integrate Zuper with <em>Other Systems</em>?</h2>
+        <p class="sap-lead">Zuper integration is built on a mix of <strong>native marketplace connectors</strong>, a <strong>REST API and webhooks</strong> for direct access to jobs, customers, and invoices, and <strong>iPaaS middleware</strong> like Zapier, Make, or n8n. The right choice depends on your record types, transaction volume, and how standard your requirement is.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
           <tbody>
-            <tr><td><strong>Native ShipStation-Shopify connection</strong></td><td>Built-in integration inside ShipStation's settings</td><td>Single-warehouse merchants with standard fulfillment</td><td>Default routing rules rarely fit multi-warehouse needs out of the box</td></tr>
-            <tr><td><strong>ShipStation automation rules</strong></td><td>Conditional logic for routing, tagging, and splitting orders</td><td>Multi-warehouse, multi-brand, or marketplace-blended order flows</td><td>Rules can get complex and need documentation to maintain</td></tr>
-            <tr><td><strong>Direct 3PL/WMS API integration</strong></td><td>Custom connection bypassing ShipStation for a specific warehouse system</td><td>Merchants on a WMS or 3PL that isn't well served by ShipStation</td><td>Requires the 3PL to expose a usable API</td></tr>
-            <tr><td><strong>Middleware layer</strong></td><td>Orchestration combining Shopify, ShipStation, and other systems (ERP, CRM)</td><td>Fulfillment data needing to reach an ERP or accounting system too</td><td>More moving parts to monitor after go-live</td></tr>
+            <tr><td><strong>Native integrations</strong></td><td>Pre-built connectors in the Zuper marketplace (HubSpot, QuickBooks, Salesforce, Stripe, etc.)</td><td>Standard flows, fastest go-live</td><td>Only covers Zuper's supported app list</td></tr>
+            <tr><td><strong>Zuper REST API / Webhooks</strong></td><td>Direct API access to jobs, customers, invoices, and assets</td><td>Custom builds, real-time flows, non-standard requirements</td><td>Requires developer resource on your side or ours</td></tr>
+            <tr><td><strong>iPaaS / middleware</strong></td><td>Orchestration layer (Zapier, Make, n8n) wrapping Zuper's API with the other app's API</td><td>Mid-complexity flows without heavy custom code</td><td>Subscription cost; templates bend only so far</td></tr>
+            <tr><td><strong>Custom middleware</strong></td><td>Purpose-built orchestration (code, n8n) for multi-system or AI-driven workflows</td><td>Non-standard requirements, multi-system workflows, AI automation</td><td>Needs a partner who can maintain it (that's us)</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-callout reveal">
         <i class="fas fa-circle-check"></i>
-        <p><strong>The truth most vendors won't tell you:</strong> ShipStation's native Shopify connection already covers most single-warehouse merchants well — the value we add is usually in the routing rules and stock sync, not rebuilding the connection itself.</p>
+        <p><strong>The truth most vendors won't tell you:</strong> Zuper's native marketplace is genuinely the right answer for most standard integrations — it's free and pre-built. We'll tell you when it is, help you turn it on and configure it correctly, and only build custom API/webhook work when your requirement goes beyond it.</p>
       </div>
     </div>
   </section>
@@ -414,21 +617,21 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">How Much Does Shopify <em>+ ShipStation</em> Integration Cost?</h2>
-        <p class="sap-lead">A Shopify-ShipStation integration typically costs <strong>$1,500 to $14,000</strong> to configure and set up correctly, depending on warehouse count and routing complexity.</p>
+        <h2 class="section-title">How Much Does Zuper Integration <em>Cost</em>?</h2>
+        <p class="sap-lead">A typical Zuper integration costs between <strong>$3,000 and $25,000</strong> to implement — turning on and configuring a native connector sits at the low end; a fully custom API/webhook build sits at the high end. Fixed price, quoted before we start.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
           <tbody>
-            <tr><td>Native connection setup &amp; rules</td><td><strong>$1,500 – $4,500</strong></td><td>ShipStation's own subscription (existing cost)</td></tr>
-            <tr><td>Multi-warehouse routing configuration</td><td><strong>$3,500 – $8,000</strong></td><td>Support retainer for rule maintenance</td></tr>
-            <tr><td>Custom 3PL/WMS or middleware build</td><td><strong>$6,000 – $14,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+            <tr><td>Native integration setup &amp; configuration</td><td><strong>$3,000 – $8,000</strong></td><td>Included in your Zuper subscription</td></tr>
+            <tr><td>iPaaS orchestration (Zapier / Make / n8n)</td><td><strong>$6,000 – $15,000</strong></td><td>$50 – $400/month platform + support retainer</td></tr>
+            <tr><td>Custom API / webhook build</td><td><strong>$10,000 – $25,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-body reveal">
-        <p>Multiple warehouses, blended marketplace and direct orders, and split-shipment or backorder handling are the factors that most often add configuration time. We quote fixed prices after reviewing your actual order and fulfillment patterns.</p>
+        <p>Three factors move the number most: how many <strong>entities</strong> you sync (customers, jobs, invoices, assets), whether flows are <strong>one-way or bi-directional</strong>, and how much <strong>transformation logic</strong> sits between the systems. We quote fixed prices after a scoping call, so you know the cost before we write a line of code.</p>
       </div>
     </div>
   </section>
@@ -439,18 +642,18 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Timeline</div>
         <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
-        <p class="sap-lead">The biggest schedule risk is undocumented routing exceptions — orders that need to go to a specific warehouse for reasons that live in someone's head, not a rule. We surface these during discovery before configuring anything.</p>
+        <p class="sap-lead">The single biggest schedule risk isn't development — it's unclean master data in Zuper and the connected system, which is why data review is the first step of our process.</p>
       </div>
       <div class="sap-timeline reveal">
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">1–2 weeks</div>
-          <h4>Single-warehouse setup</h4>
-          <p>Native connection with standard order routing and label automation.</p>
+          <div class="sap-timeline__weeks">1–3 weeks</div>
+          <h4>Native integrations</h4>
+          <p>Turn on and configure an existing Zuper marketplace connector, live fast against your account.</p>
         </div>
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">4–8 weeks</div>
-          <h4>Multi-warehouse / custom builds</h4>
-          <p>Complex routing rules, blended marketplace orders, or a custom 3PL/WMS integration.</p>
+          <div class="sap-timeline__weeks">6–12 weeks</div>
+          <h4>Custom builds</h4>
+          <p>Bespoke API / webhook work, scaled to entity count, custom fields, and testing depth.</p>
         </div>
       </div>
     </div>
@@ -465,34 +668,64 @@
         <p class="sap-lead">Every engagement follows the same five stages — you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
       </div>
       <div class="sap-steps">
-        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your systems, entities, volumes, and the business outcome you need.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your systems, Zuper objects (jobs, customers, assets, invoices), volumes, and the outcome you need.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement on the chosen platform or codebase, in a sandbox against a Shopify development store.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real transaction scenarios end to end — failure cases, retries, duplicate handling.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement via native connector, API/webhook, or middleware, in a Zuper sandbox account.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real job, customer, and invoice scenarios end to end — failure cases, retries, duplicate handling.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ───────── CONSULTANT VS OFF-THE-SHELF ───────── -->
+  <!-- ───────── TRUST FACTORS ───────── -->
   <section class="sap-section">
     <div class="container">
       <div class="sap-section__head reveal">
-        <div class="section-label">Why a Consultant</div>
-        <h2 class="section-title">Consultant vs. <em>Buying a Connector</em></h2>
-        <p class="sap-lead">ShipStation's own onboarding gets you connected but rarely configures routing rules around your specific warehouse setup. We start from your actual fulfillment map and build the rules to match.</p>
+        <div class="section-label">Why Trust Us</div>
+        <h2 class="section-title">Why Integrate with <em>RethinkingWeb</em></h2>
+        <p class="sap-lead">Integration only pays off if it keeps running after go-live. These are the reasons companies hand us the connection between Zuper and everything else — and keep us on to look after it.</p>
       </div>
-      <div class="sap-table-wrap reveal">
-        <table class="sap-table">
-          <thead><tr><th></th><th>Default onboarding</th><th>RethinkingWeb</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Recommends</strong></td><td>Standard default setup</td><td>Whatever fits, including a light-touch setup</td></tr>
-            <tr><td><strong>Multi-warehouse routing</strong></td><td>Left to you to configure</td><td>Scoped and documented as part of the project</td></tr>
-            <tr><td><strong>Pricing</strong></td><td>ShipStation subscription only</td><td>Fixed-price setup + optional retainer</td></tr>
-            <tr><td><strong>When it breaks</strong></td><td>Generic support queue</td><td>Named engineer who configured it</td></tr>
-            <tr><td><strong>Non-ShipStation 3PLs</strong></td><td>Out of scope</td><td>Custom API work available</td></tr>
-          </tbody>
-        </table>
+      <div class="sap-trust">
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Vendor-Neutral by Design</h3>
+          <p>We don't resell a single connector, so we have no reason to push one. We recommend the approach that fits your requirement — even when that means a product we don't earn a cent from.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Fixed Price Before We Build</h3>
+          <p>You approve a signed mapping sheet and a fixed quote before a single field is configured. No open-ended hourly meters, no scope surprises mid-project.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-user-gear"></i></div>
+          <h3>A Named Engineer, Not a Queue</h3>
+          <p>The person who built your integration is the person who answers when something changes. No ticket lottery, no re-explaining your setup to a new agent each time.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-handshake-angle"></i></div>
+          <h3>Official Twenty CRM Partner</h3>
+          <p>We're a recognized Twenty CRM partner and a WordPress &amp; WooCommerce development agency — so we know both sides of the sync, not just the field service half.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-globe"></i></div>
+          <h3>Proven Across Four Countries</h3>
+          <p>We build and run integrations for businesses in the US, UK, Australia, and India, spanning field service, home services, and B2B trading.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-life-ring"></i></div>
+          <h3>Rescue &amp; Take-Over Specialists</h3>
+          <p>A large share of our work is fixing abandoned integrations and broken connectors. If your last Zuper integration failed, we've almost certainly seen your exact situation.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-robot"></i></div>
+          <h3>AI Automation on the Claude API</h3>
+          <p>Beyond moving data, we build AI agents on the Claude API that act on your Zuper records — natural-language reporting, automated job handling, and smart routing.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Monitored After Go-Live</h3>
+          <p>Every integration ships with logging, alerting, and retry handling, so a failed sync surfaces to us before it becomes a problem you have to chase down.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -504,8 +737,8 @@
         <div class="sap-why__text reveal">
           <div class="section-label">Why RethinkingWeb</div>
           <h2 class="section-title">The Team on <em>Both Sides</em> of the Sync</h2>
-          <p>We build and configure Shopify-ShipStation and 3PL integrations for companies across the US, UK, Australia, and India, as a working ecommerce development agency that understands both the storefront and the warehouse side of fulfillment.</p>
-          <p>Because we don't sell a 3PL or shipping platform, we start from your actual warehouse map and order patterns and configure ShipStation — or build custom middleware — to match, rather than forcing your fulfillment into a default template.</p>
+          <p>We build and run integrations for companies across the US, UK, Australia, and India. Our team combines Zuper integration work with deep roots in the platforms on the other side of the sync: we're a WordPress and WooCommerce development agency, an official Twenty CRM partner, and we build AI automation on the Claude API.</p>
+          <p>Zuper is one field service platform among several systems we connect. If you're weighing platforms or run more than one, see our <a href="salesforce.html">Salesforce integration</a> work, our <a href="quickbooks.html">QuickBooks integration</a> services, and our <a href="netsuite.html">NetSuite integration</a> practice.</p>
           <div class="sap-midcta">
             <a href="#form" class="btn btn--primary btn--lg">Get a Fixed-Price Integration Quote</a>
           </div>
@@ -513,7 +746,7 @@
         <div class="sap-why__aside reveal">
           <div class="sap-why__check"><i class="fas fa-check"></i> Platform-agnostic — we recommend, not resell</div>
           <div class="sap-why__check"><i class="fas fa-check"></i> Fixed pricing before we build</div>
-          <div class="sap-why__check"><i class="fas fa-check"></i> We understand both Shopify and fulfillment logic</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> We understand both Zuper and the connected app</div>
           <div class="sap-why__check"><i class="fas fa-check"></i> Rescue &amp; take-over of broken integrations</div>
           <div class="sap-why__check"><i class="fas fa-check"></i> AI automation on the Claude API</div>
         </div>
@@ -521,61 +754,8 @@
     </div>
   </section>
 
-  <!-- ───────── TRUST FACTORS ───────── -->
-  <section class="sap-section sap-section--alt">
-    <div class="container">
-      <div class="sap-section__head reveal">
-        <div class="section-label">Why Trust Us</div>
-        <h2 class="section-title">Why Integrate with <em>RethinkingWeb</em></h2>
-        <p class="sap-lead">Integration only pays off if orders ship correctly after go-live. These are the reasons Shopify merchants hand us the connection between their store and fulfillment.</p>
-      </div>
-      <div class="sap-trust">
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-scale-balanced"></i></div>
-          <h3>Vendor-Neutral by Design</h3>
-          <p>We don't sell a 3PL or shipping platform, so we have no reason to push one. We recommend the approach that fits how your warehouse actually operates.</p>
-        </div>
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-file-signature"></i></div>
-          <h3>Fixed Price Before We Build</h3>
-          <p>You approve a signed routing-rule sheet and a fixed quote before a single rule is configured. No open-ended hourly meters.</p>
-        </div>
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-user-gear"></i></div>
-          <h3>A Named Engineer, Not a Queue</h3>
-          <p>The person who configured your integration is the person who answers when a new warehouse or carrier gets added.</p>
-        </div>
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-route"></i></div>
-          <h3>We Document the Routing Logic</h3>
-          <p>Order-routing exceptions that used to live in someone's head get written down as explicit, maintainable rules.</p>
-        </div>
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fab fa-shopify"></i></div>
-          <h3>Ecommerce Development Agency</h3>
-          <p>We're a working WordPress/WooCommerce and Shopify-adjacent agency, so we understand order data from checkout through to the warehouse.</p>
-        </div>
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-globe"></i></div>
-          <h3>Proven Across Four Countries</h3>
-          <p>We build and run integrations for businesses in the US, UK, Australia, and India, spanning single-warehouse DTC to multi-node distribution.</p>
-        </div>
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-robot"></i></div>
-          <h3>AI Automation on the Claude API</h3>
-          <p>Beyond routing orders, we build AI agents on the Claude API for exception handling and natural-language fulfillment reporting.</p>
-        </div>
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-shield-halved"></i></div>
-          <h3>Monitored After Go-Live</h3>
-          <p>Every integration ships with alerting so a stuck order or failed label surfaces to us before the customer notices.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ───────── FAQ ───────── -->
-  <section class="sap-section">
+  <section class="sap-section sap-section--alt">
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">FAQ</div>
@@ -583,32 +763,36 @@
       </div>
       <div class="sap-faq">
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Does Shopify connect natively to ShipStation?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. ShipStation has a built-in Shopify connection that imports orders automatically, but the default setup rarely handles multi-warehouse routing or blended marketplace orders without additional configuration.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Does Zuper have an API?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Zuper exposes a REST API and webhooks, plus 60+ pre-built native integrations in its app marketplace.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you route orders to different warehouses automatically?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. We build ShipStation automation rules — based on SKU, destination, weight, or tags — so orders land at the correct warehouse without manual sorting.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">What's the difference between a native integration and a custom build?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Native integrations are pre-built and free to turn on inside Zuper for supported apps. Custom builds use Zuper's API and webhooks directly when your requirement goes beyond what the native connector supports.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Do you work with 3PLs other than ShipStation?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. We connect Shopify directly to 3PL and WMS platforms like ShipBob and other warehouse systems when ShipStation isn't the right fit for your setup.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you sync Zuper with HubSpot or Salesforce?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. These are two of the most common Zuper CRM integrations, syncing deals and leads into scheduled jobs and pushing job status back to the CRM.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can tracking numbers update automatically in Shopify?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Once a label is created in ShipStation, tracking is pushed back to the Shopify order automatically, triggering the customer's shipping confirmation email.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you connect Zuper to QuickBooks or Xero?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Job completion and invoicing data sync automatically to QuickBooks Online, QuickBooks Desktop, or Xero.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How do you handle split shipments and backorders?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>We configure rules so partially fulfilled orders and backordered items are tracked accurately and reflected correctly to the buyer, rather than showing an order as fully shipped when it isn't.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Real-time or scheduled integration with Zuper?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Both. Native connectors and webhooks handle real-time flows; high-volume batch syncs, such as supplier purchase orders or tax data, can run on a schedule.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Shopify-fulfillment integration?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Rescue work includes cleaning up conflicting routing rules, fixing stock levels that drifted out of sync, and reconnecting integrations broken by an API change.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How much does Zuper integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most Zuper integrations land between $3,000 and $25,000 depending on approach and entity count. See the cost table above for a full breakdown.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How is pricing structured?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>We quote a fixed price after reviewing your warehouse count and order patterns — see the cost table above for typical ranges.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Zuper integration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work — failed native connectors, broken middleware, abandoned custom builds — is a regular part of our practice.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you build AI automation on Zuper data?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. We build AI agents on the Claude API that query and act on Zuper job, customer, and invoice data.</p></div>
         </div>
       </div>
     </div>
@@ -617,8 +801,8 @@
   <!-- ───────── FINAL CTA ───────── -->
   <section class="sap-finalcta">
     <div class="container">
-      <h2>Ready to Automate Shopify Fulfillment?</h2>
-      <p>Every week your team manually sorts and routes orders, fulfillment slows down and mistakes creep in. A scoped <strong>Shopify-ShipStation integration</strong> removes that work permanently — and you'll know the exact cost before we start.</p>
+      <h2>Ready to Connect Zuper to the Rest of Your Stack?</h2>
+      <p>Every week your systems stay disconnected, your team re-keys data another few hundred times. A scoped <strong>Zuper integration</strong> removes that work permanently — and you'll know the exact cost before we start.</p>
       <div class="sap-finalcta__btns">
         <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
         <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
@@ -771,11 +955,14 @@
   </div>
 </section>
 
+   <!-- ───────── FOOTER ───────── -->
 <footer class="bg-[#0f172a] text-white pt-16 pb-8">
     <div class="max-w-[1200px] mx-auto px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
         <div>
-          <a href="../index.html" class="inline-block mb-4"><img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" /></a>
+          <a href="../index.html" class="inline-block mb-4">
+            <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
           <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
           <div class="flex gap-4">
             <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
@@ -783,6 +970,7 @@
             <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
           </div>
         </div>
+
         <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
           <div class="flex flex-col gap-3">
@@ -798,6 +986,7 @@
             <a href="../seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
           </div>
         </div>
+
         <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
           <div class="flex flex-col gap-3">
@@ -809,6 +998,7 @@
             <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
           </div>
         </div>
+
         <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
           <div class="flex flex-col gap-3">
@@ -818,6 +1008,7 @@
           </div>
         </div>
       </div>
+
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
         <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
         <div class="flex gap-6">
@@ -827,10 +1018,12 @@
       </div>
     </div>
   </footer>
-<!-- Toast -->
+
+
+  <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <script src="../js/sap-business-one-integration.js"></script>
+ <script src="../js/sap-business-one-integration.js"></script>
   <script src="../js/theme.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>

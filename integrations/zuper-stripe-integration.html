@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>WooCommerce + QuickBooks Integration | RethinkingWeb</title>
-  <meta name="description" content="Sync WooCommerce orders, refunds, and gateway deposits into QuickBooks Online or Desktop. Fixed-price consulting from a WooCommerce development agency." />
+  <title>Zuper + Stripe Integration | RethinkingWeb</title>
+  <meta name="description" content="Take card and online payments on Zuper jobs with Stripe, and sync payment status back automatically. Fixed-price, platform-agnostic integration consulting." />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/woocommerce-pairings.css" />
+  <link rel="stylesheet" href="../css/zuper-pairings.css" />
   <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/integrations/woocommerce-quickbooks-integration.html" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/integrations/zuper-stripe-integration.html" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -25,17 +25,9 @@
             'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
             muted: '#7A6F68',
           },
-          fontFamily: {
-            display: ['"Inter Tight"', 'sans-serif'],
-            body:    ['"Inter Tight"', 'sans-serif'],
-          },
+          fontFamily: { display: ['"Inter Tight"', 'sans-serif'], body: ['"Inter Tight"', 'sans-serif'] },
           maxWidth: { container: '1200px', nav: '1280px' },
-          boxShadow: {
-            card:    '0 4px 24px rgba(0,0,0,0.08)',
-            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
-            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
-            orange:  '0 8px 30px rgba(231,92,35,0.25)',
-          },
+          boxShadow: { card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)', 'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange: '0 8px 30px rgba(231,92,35,0.25)' },
         }
       }
     }
@@ -52,35 +44,101 @@
   "@graph": [
     {
       "@type": "Service",
-      "name": "NetSuite + 3PL / WMS Integration",
-      "serviceType": "Warehouse and Logistics Integration Consulting",
+      "name": "Zuper + Stripe Integration",
+      "serviceType": "Payments and Field Service Integration Consulting",
       "provider": {
         "@type": "ProfessionalService",
         "name": "RethinkingWeb",
         "url": "https://rethinkingweb.com/",
-        "areaServed": ["US", "GB", "AU", "IN"]
+        "areaServed": [
+          "US",
+          "GB",
+          "AU",
+          "IN"
+        ]
       },
-      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://rethinkingweb.com/integrations/netsuite-3pl-wms-integration.html"
+      "description": "Take card and online payments on Zuper jobs with Stripe, and sync payment status back automatically. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://www.rethinkingweb.com/integrations/zuper-stripe-integration.html"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
-        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/integrations/" },
-        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/integrations/netsuite.html" },
-        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rethinkingweb.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Integrations",
+          "item": "https://rethinkingweb.com/integrations/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Zuper",
+          "item": "https://rethinkingweb.com/integrations/zuper.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Stripe"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
-        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
-        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
-        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
-        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
-        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
+        {
+          "@type": "Question",
+          "name": "Can customers pay a Zuper job by card with Stripe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A Zuper invoice can raise a Stripe charge for on-site card payment or generate a hosted payment link the customer pays online, with settlement written back to the job."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does payment status update the Zuper job automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Stripe webhooks confirm paid, pending, and failed states in real time and that status is written straight back onto the Zuper job, so no one reconciles by hand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you handle deposits and part-payments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with a custom build. Deposits taken at estimate stage and part-payments against a job are mapped explicitly so the balance and settlement stay accurate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are refunds handled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Refunds issued in Stripe are reflected back on the corresponding Zuper job, so the record matches what actually cleared and what was returned."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a Zuper + Stripe integration cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most projects run $3,000 to $16,000 depending on collection points, deposits, and refund handling. See the cost table above for a full breakdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you fix a broken Stripe to Zuper connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Rescue work &mdash; payments that didn't post back, mishandled declines, and refunds that never reconciled &mdash; is a regular part of our practice."
+          }
+        }
       ]
     }
   ]
@@ -101,20 +159,14 @@
     <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
       <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
     </a>
-
     <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
       <a href="../index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
-
       <div class="nav__dropdown">
-        <a href="../solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
-          Solutions
+        <a href="../solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">Solutions
           <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </a>
         <div class="mega-menu">
-          <div class="mega-menu__header">
-            <span class="mega-menu__label">Our Solutions</span>
-            <a href="../solutions.html" class="mega-menu__all">View all services <span>&rarr;</span></a>
-          </div>
+          <div class="mega-menu__header"><span class="mega-menu__label">Our Solutions</span><a href="../solutions.html" class="mega-menu__all">View all services <span>&rarr;</span></a></div>
           <div class="mega-menu__grid">
             <a href="../managed.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-server"></i></div><div class="mega-item__content"><span class="mega-item__title">Managed Services</span><span class="mega-item__desc">24/7 IT infrastructure &amp; support</span></div></a>
             <a href="../consulting.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div><div class="mega-item__content"><span class="mega-item__title">IT Consulting &amp; Advisory</span><span class="mega-item__desc">Strategic technology guidance</span></div></a>
@@ -129,10 +181,8 @@
           </div>
         </div>
       </div>
-
       <div class="nav__dropdown">
-        <a href="sap-business-one.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
-          Integrations
+        <a href="sap-business-one.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">Integrations
           <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </a>
         <div class="mega-menu mega-menu--integrations">
@@ -145,33 +195,23 @@
             <a href="quickbooks.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div><div class="mega-item__content"><span class="mega-item__title">QuickBooks</span><span class="mega-item__desc">Accounting &amp; invoice sync</span></div></a>
             <a href="woocommerce.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div><div class="mega-item__content"><span class="mega-item__title">WooCommerce</span><span class="mega-item__desc">WordPress store integration</span></div></a>
             <a href="zoho.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div><div class="mega-item__content"><span class="mega-item__title">Zoho</span><span class="mega-item__desc">Zoho One suite integration</span></div></a>
-<a href="zuper.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div><div class="mega-item__content"><span class="mega-item__title">Zuper</span><span class="mega-item__desc">Field service management sync</span></div></a>        
-     </div>
+            <a href="zuper.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div><div class="mega-item__content"><span class="mega-item__title">Zuper</span><span class="mega-item__desc">Field service management sync</span></div></a>
+          </div>
         </div>
       </div>
-
       <div class="nav__dropdown">
-        <a href="../about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
-          Company
+        <a href="../about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">Company
           <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </a>
         <div class="dropdown__panel" style="grid-template-columns: 1fr;">
-          <a href="../about.html">About Us</a>
-          <a href="../whyus.html">Why Us</a>
-          <a href="../team.html">Team</a>
-          <a href="../careers.html">Careers</a>
-          <a href="../testimonials.html">Testimonials</a>
-          <a href="../case.html">Case Studies</a>
+          <a href="../about.html">About Us</a><a href="../whyus.html">Why Us</a><a href="../team.html">Team</a><a href="../careers.html">Careers</a><a href="../testimonials.html">Testimonials</a><a href="../case.html">Case Studies</a>
         </div>
       </div>
-
       <a href="../case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
     </nav>
-
     <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
       <a href="../contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
     </div>
-
     <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
       <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
       <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
@@ -188,52 +228,16 @@
   <nav class="flex flex-col px-6 pb-8 pt-3">
     <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
     <div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="../managed.html">Managed Services</a>
-        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
-        <a href="../cyber.html">Cyber Security</a>
-        <a href="web_development.html">Web Development</a>
-        <a href="../mobile-development.html">Mobile Development</a>
-        <a href="../cloud.html">Cloud Services</a>
-        <a href="../software.html">Software Development</a>
-        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
-        <a href="../web-performance.html">Web Performance Optimization</a>
-        <a href="../seo.html">On-page Technical SEO</a>
-      </div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false"><a href="../solutions.html" class="mob-accordion__link">Solutions</a><svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="mob-accordion__panel"><a href="../managed.html">Managed Services</a><a href="../consulting.html">IT Consulting &amp; Advisory</a><a href="../cyber.html">Cyber Security</a><a href="web_development.html">Web Development</a><a href="../mobile-development.html">Mobile Development</a><a href="../cloud.html">Cloud Services</a><a href="../software.html">Software Development</a><a href="../airtable.html">Enterprise Airtable Managed Services</a><a href="../web-performance.html">Web Performance Optimization</a><a href="../seo.html">On-page Technical SEO</a></div>
     </div>
     <div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="sap-business-one.html" class="mob-accordion__link">Integrations</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="sap-business-one.html">SAP Business One</a>
-        <a href="salesforce.html">Salesforce</a>
-        <a href="netsuite.html">NetSuite</a>
-        <a href="shopify.html">Shopify</a>
-        <a href="quickbooks.html">QuickBooks</a>
-        <a href="woocommerce.html">WooCommerce</a>
-        <a href="zoho.html">Zoho</a>
- <a href="zuper.html">zuper</a>
-      </div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false"><a href="sap-business-one.html" class="mob-accordion__link">Integrations</a><svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="mob-accordion__panel"><a href="sap-business-one.html">SAP Business One</a><a href="salesforce.html">Salesforce</a><a href="netsuite.html">NetSuite</a><a href="shopify.html">Shopify</a><a href="quickbooks.html">QuickBooks</a><a href="woocommerce.html">WooCommerce</a><a href="zoho.html">Zoho</a><a href="zuper.html">Zuper</a></div>
     </div>
     <div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="../about.html" class="mob-accordion__link">Company</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="../about.html">About Us</a>
-        <a href="../whyus.html">Why Us</a>
-        <a href="../team.html">Team</a>
-        <a href="../careers.html">Careers</a>
-        <a href="../testimonials.html">Testimonials</a>
-        <a href="../case.html">Case Studies</a>
-      </div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false"><a href="../about.html" class="mob-accordion__link">Company</a><svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="mob-accordion__panel"><a href="../about.html">About Us</a><a href="../whyus.html">Why Us</a><a href="../team.html">Team</a><a href="../careers.html">Careers</a><a href="../testimonials.html">Testimonials</a><a href="../case.html">Case Studies</a></div>
     </div>
     <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
     <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
@@ -241,7 +245,7 @@
 </div>
 <div class="nav-overlay" id="navOverlay"></div>
 
-<main class="sap sap-pairing woo-pairing woo-pairing--quickbooks">
+<main class="sap sap-pairing zp-pairing zp-pairing--stripe">
 
   <section class="sap-hero">
     <div class="container">
@@ -249,15 +253,13 @@
         <div class="sap-hero__text">
           <nav class="sap-breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a><span>&rsaquo;</span>
-            <a href="woocommerce.html">Integrations</a><span>&rsaquo;</span>
-            <a href="woocommerce.html">Salesforce</a><span>&rsaquo;</span>
-            <span class="current">QuickBooks</span>
+            <a href="zuper.html">Integrations</a><span>&rsaquo;</span>
+            <a href="zuper.html">Zuper</a><span>&rsaquo;</span>
+            <span class="current">Stripe</span>
           </nav>
-          <div class="sap-badge"><span class="badge__dot"></span> Accounting Integration</div>
-          <h1 class="sap-hero__title">WooCommerce <em>+ QuickBooks</em> Integration</h1>
-          <p class="sap-hero__sub">
-            Connect <strong>WooCommerce</strong> to QuickBooks so store orders, refunds, and gateway deposits post themselves — built by a team that develops WooCommerce stores, not just the accounting half.
-          </p>
+          <div class="sap-badge"><span class="badge__dot"></span> Payments Integration</div>
+          <h1 class="sap-hero__title">Zuper <em>+ Stripe</em> Integration</h1>
+          <p class="sap-hero__sub">Connect Stripe to <strong>Zuper</strong> so customers can pay a job by card or payment link, settlement is confirmed automatically, and your field and finance teams stop chasing who has actually paid.</p>
           <div class="sap-hero__cta">
             <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
             <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
@@ -266,18 +268,18 @@
         <div class="sap-hero__visual" aria-hidden="true">
           <div class="sap-hub sap-hub--pair">
             <div class="sap-hub__ring"></div>
-            <div class="sap-hub__core"><strong>Woo</strong><span>WooCommerce Store</span></div>
-            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-cart-shopping"></i> Orders</div>
-            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-rotate-left"></i> Refunds</div>
-            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-building-columns"></i> Deposits</div>
-            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-boxes-stacked"></i> Items</div>
+            <div class="sap-hub__core"><strong>Zuper</strong><span>Field Service Core</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-credit-card"></i> Payments</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-link"></i> Payment Links</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-arrows-rotate"></i> Status</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-rotate-left"></i> Refunds</div>
           </div>
         </div>
       </div>
       <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">QBO + Desktop</div><span class="stat-label">Both editions supported</span></div>
-        <div class="sap-stat"><div class="stat-num">Webhooks</div><span class="stat-label">Orders post as they are placed</span></div>
-        <div class="sap-stat"><div class="stat-num">2–5</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Charges out, status back</span></div>
+        <div class="sap-stat"><div class="stat-num">Webhooks</div><span class="stat-label">Settlement confirmed in real time</span></div>
+        <div class="sap-stat"><div class="stat-num">1&ndash;7</div><span class="stat-label">Weeks to typical go-live</span></div>
         <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
       </div>
     </div>
@@ -290,9 +292,8 @@
         <h2 class="section-title">What Does This <em>Integration Do</em>?</h2>
       </div>
       <div class="sap-body reveal">
-        <p>WooCommerce gives you full control of the store, which also means the accounting side is entirely yours to wire up. Orders sit in WordPress, gateway deposits land in the bank as net figures, and someone reconciles the difference by hand at month-end.</p>
-        <p>This integration posts WooCommerce orders into QuickBooks as invoices or sales receipts with tax, shipping, and coupon lines mapped to the right accounts, creates credit memos for refunds, and reconciles gateway payouts — Stripe, PayPal, or WooPayments — against the orders and fees inside them.</p>
-        <p>Two things shape the build. Your <strong>QuickBooks edition</strong> decides the transport: Online has a cloud REST API, Desktop is reached through the Web Connector on a polling schedule. And your <strong>order volume</strong> decides whether every order posts individually or the day rolls up into a summary, which keeps the company file usable at scale.</p>
+        <p>Getting paid in the field is where a lot of revenue quietly leaks. A technician finishes, the customer says they'll pay later, and someone spends the next week reconciling who did and didn't &mdash; matching bank lines to jobs by hand.</p>
+        <p>This integration lets a Zuper invoice generate a Stripe charge or payment link at the job, captures the payment on card or online, and writes settlement, failure, and refund status straight back onto the Zuper job so the record always reflects what actually cleared.</p>
       </div>
     </div>
   </section>
@@ -302,44 +303,44 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Data Flow</div>
         <h2 class="section-title">What <em>Syncs</em>, and Which Way</h2>
-        <p class="sap-lead">Most WooCommerce + QuickBooks projects cover the same ground. Extension-heavy stores (subscriptions, bookings, multi-vendor) add mapping work we scope up front.</p>
+        <p class="sap-lead">Most Zuper + Stripe projects sync the same core events. Whether you collect on-site, by link, or both is the first thing we scope with you.</p>
       </div>
       <div class="sap-cards">
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-cart-shopping"></i></div>
-          <h3>Orders</h3>
-          <p class="sap-card__systems">WooCommerce → QuickBooks</p>
-          <p class="sap-card__flows">Invoices or sales receipts with tax, shipping, and coupon lines mapped</p>
+          <div class="sap-card__icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Card Payments</h3>
+          <p class="sap-card__systems">Zuper &rarr; Stripe</p>
+          <p class="sap-card__flows">Charges raised against the job total at completion</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-user"></i></div>
-          <h3>Customers</h3>
-          <p class="sap-card__systems">WooCommerce → QuickBooks</p>
-          <p class="sap-card__flows">Buyers matched to existing customers or created without duplicates</p>
+          <div class="sap-card__icon"><i class="fas fa-link"></i></div>
+          <h3>Payment Links</h3>
+          <p class="sap-card__systems">Zuper &rarr; Stripe</p>
+          <p class="sap-card__flows">Hosted links sent to the customer to pay online</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-boxes-stacked"></i></div>
-          <h3>Products &amp; Items</h3>
-          <p class="sap-card__systems">Both directions</p>
-          <p class="sap-card__flows">SKUs matched to QuickBooks items so revenue reports by product</p>
+          <div class="sap-card__icon"><i class="fas fa-circle-check"></i></div>
+          <h3>Settlement Status</h3>
+          <p class="sap-card__systems">Stripe &rarr; Zuper</p>
+          <p class="sap-card__flows">Paid, pending, and failed states written back to the job</p>
         </div>
         <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-rotate-left"></i></div>
           <h3>Refunds</h3>
-          <p class="sap-card__systems">WooCommerce → QuickBooks</p>
-          <p class="sap-card__flows">Full and partial refunds posted against the original sale</p>
+          <p class="sap-card__systems">Two-way</p>
+          <p class="sap-card__flows">Refunds issued in Stripe reflected on the Zuper job</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-building-columns"></i></div>
-          <h3>Gateway Deposits</h3>
-          <p class="sap-card__systems">Gateway → QuickBooks</p>
-          <p class="sap-card__flows">Stripe, PayPal, or WooPayments payouts reconciled net of fees</p>
+          <div class="sap-card__icon"><i class="fas fa-receipt"></i></div>
+          <h3>Receipts</h3>
+          <p class="sap-card__systems">Stripe &rarr; Customer</p>
+          <p class="sap-card__flows">Automatic receipts sent on successful payment</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-repeat"></i></div>
-          <h3>Subscriptions</h3>
-          <p class="sap-card__systems">WooCommerce → QuickBooks</p>
-          <p class="sap-card__flows">Recurring orders posted as scheduled invoices, where Subscriptions is used</p>
+          <div class="sap-card__icon"><i class="fas fa-triangle-exclamation"></i></div>
+          <h3>Failed Payments</h3>
+          <p class="sap-card__systems">Stripe &rarr; Zuper</p>
+          <p class="sap-card__flows">Declines surfaced so the team can follow up quickly</p>
         </div>
       </div>
     </div>
@@ -350,22 +351,22 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Methods</div>
         <h2 class="section-title">How We <em>Build It</em></h2>
-        <p class="sap-lead">WooCommerce exposes a REST API and webhooks, and being self-hosted it can also run custom server-side logic — which is often the cleanest option.</p>
+        <p class="sap-lead">Stripe exposes a mature REST API and rich webhooks for payment events; Zuper ships a native Stripe connector alongside its own REST API. The decision is where the charge originates and how failures are handled.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
           <tbody>
-            <tr><td><strong>WooCommerce REST API &amp; webhooks</strong></td><td>Authenticated REST access plus order and refund events</td><td>Posting sales as they happen, reading order detail</td><td>Webhook reliability depends on your hosting and caching setup</td></tr>
-            <tr><td><strong>Custom WordPress plugin hook</strong></td><td>Server-side logic running inside WordPress on order events</td><td>Complex stores where the data needs shaping before it leaves</td><td>Lives in the WordPress codebase and must survive updates</td></tr>
-            <tr><td><strong>QuickBooks Online REST API</strong></td><td>Cloud REST API secured with OAuth 2.0</td><td>Modern builds on QBO, near real-time posting</td><td>Rate limits; production app review before go-live</td></tr>
-            <tr><td><strong>Web Connector (Desktop / QBXML)</strong></td><td>Intuit tool that exchanges QBXML with the local company file</td><td>QuickBooks Desktop stores that can't be reached from the cloud</td><td>Polling schedule only; runs on the host machine</td></tr>
+            <tr><td><strong>Zuper native Stripe connector</strong></td><td>Pre-built marketplace integration inside Zuper</td><td>Standard pay-the-invoice flows</td><td>Covers supported payment types only</td></tr>
+            <tr><td><strong>Stripe API &amp; webhooks</strong></td><td>Charges, payment links, and event callbacks</td><td>Custom collection points and failure handling</td><td>Webhook signatures and retries must be handled correctly</td></tr>
+            <tr><td><strong>Zuper REST API</strong></td><td>Direct access to jobs and invoices</td><td>Writing settlement status onto the right job</td><td>Requires developer resource on your side or ours</td></tr>
+            <tr><td><strong>Custom middleware (n8n / code)</strong></td><td>Orchestration wrapping both APIs</td><td>Deposits, part-payments, and financing flows</td><td>Needs a partner who can maintain it (that's us)</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-callout reveal">
         <i class="fas fa-circle-check"></i>
-        <p><strong>Worth knowing:</strong> we build WordPress and WooCommerce stores as well as integrations, so when the cleanest fix is on the store side — a hook, a data change, a plugin conflict — we can make it there instead of working around it in middleware.</p>
+        <p><strong>Where a template usually falls short:</strong> taking a payment is the easy half. Handling declines and retries, deposits and part-payments, and reconciling refunds back to the exact job is where the reconciliation headaches live &mdash; and where a proper build pays for itself.</p>
       </div>
     </div>
   </section>
@@ -375,20 +376,20 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Pricing</div>
         <h2 class="section-title">How Much Does It <em>Cost</em>?</h2>
-        <p class="sap-lead">A WooCommerce + QuickBooks integration typically costs between <strong>$2,000 and $10,000</strong> to implement, depending on edition, extension complexity, and whether payout reconciliation is included.</p>
+        <p class="sap-lead">A Zuper + Stripe integration typically costs between <strong>$3,000 and $16,000</strong> to implement, depending on how many collection points you support and how you handle deposits and refunds.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
           <tbody>
-            <tr><td>Orders and customers into QuickBooks Online</td><td><strong>$2,000 &ndash; $4,500</strong></td><td>$50 &ndash; $300/month if an iPaaS is used</td></tr>
-            <tr><td>Full flow with refunds, fees &amp; deposit matching</td><td><strong>$4,500 &ndash; $8,000</strong></td><td>Platform subscription plus support retainer</td></tr>
-            <tr><td>QuickBooks Desktop, subscriptions or multi-store</td><td><strong>$7,000 &ndash; $10,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+            <tr><td>Native connector setup &amp; configuration</td><td><strong>$3,000 &ndash; $6,000</strong></td><td>Included in your Zuper subscription</td></tr>
+            <tr><td>Charges + payment links + status-back</td><td><strong>$5,000 &ndash; $11,000</strong></td><td>iPaaS platform + support retainer</td></tr>
+            <tr><td>Deposits, part-payments, refunds &amp; financing</td><td><strong>$10,000 &ndash; $16,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-body reveal">
-        <p>The number moves most on whether you're on <strong>QuickBooks Online or Desktop</strong>, how many <strong>WooCommerce extensions</strong> shape the order data (subscriptions, bookings, multi-vendor), and whether <strong>gateway payout reconciliation</strong> is in scope. We quote a fixed price after a scoping call.</p>
+        <p>The number moves most on how many <strong>collection points</strong> you support (on-site card, online link, deposit at estimate), whether you handle <strong>part-payments and deposits</strong>, and how <strong>refunds</strong> must reconcile back. We quote a fixed price after a scoping call, so you know the cost before we write a line of code.</p>
       </div>
     </div>
   </section>
@@ -398,18 +399,18 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Timeline</div>
         <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
-        <p class="sap-lead">Plugin sprawl is the usual surprise — tax, shipping, and discount plugins each change the order payload, so we audit the live data before mapping anything.</p>
+        <p class="sap-lead">Payment integrations are less about data cleanup and more about failure handling &mdash; we spend the time up front making sure declines, retries, and refunds behave correctly.</p>
       </div>
       <div class="sap-timeline reveal">
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">2–3 weeks</div>
-          <h4>Standard WooCommerce store</h4>
-          <p>Orders, customers, and refunds posting to QuickBooks Online.</p>
+          <div class="sap-timeline__weeks">1&ndash;2 weeks</div>
+          <h4>Native connector</h4>
+          <p>Turn on and configure the marketplace connector for standard pay-the-invoice flows.</p>
         </div>
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">4–5 weeks</div>
-          <h4>Desktop or extension-heavy store</h4>
-          <p>Web Connector setup, subscriptions, payout matching, multiple gateways.</p>
+          <div class="sap-timeline__weeks">4&ndash;7 weeks</div>
+          <h4>Custom collection flows</h4>
+          <p>Deposits, part-payments, financing at estimate, and full refund reconciliation.</p>
         </div>
       </div>
     </div>
@@ -423,10 +424,10 @@
         <p class="sap-lead">Every engagement follows the same five stages &mdash; you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
       </div>
       <div class="sap-steps">
-        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We audit your store, active extensions, tax setup, and QuickBooks chart of accounts.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, account, direction, and error rule before building.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a staging copy of your site and a QuickBooks sandbox or test file.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real order scenarios — partial refunds, coupons, failed payments, retries.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We review where and how you collect &mdash; on-site, by link, deposits &mdash; and your refund policy.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a Zuper sandbox and Stripe test mode.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real payment scenarios &mdash; declines, retries, partial refunds, and webhook replays.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
       </div>
     </div>
@@ -440,28 +441,28 @@
       </div>
       <div class="sap-faq">
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How do WooCommerce orders reach QuickBooks?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Either a WooCommerce webhook or a server-side hook fires on the order event, and the data is posted as a QuickBooks invoice or sales receipt over the QBO REST API — or through the Web Connector for Desktop.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can customers pay a Zuper job by card with Stripe?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. A Zuper invoice can raise a Stripe charge for on-site card payment or generate a hosted payment link the customer pays online, with settlement written back to the job.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Should every order post individually or as a daily summary?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>It depends on volume. Per-order posting gives customer-level detail; a daily summary keeps the company file lean for high-volume stores. We usually recommend summaries above a few hundred orders a day.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Does payment status update the Zuper job automatically?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Stripe webhooks confirm paid, pending, and failed states in real time and that status is written straight back onto the Zuper job, so no one reconciles by hand.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Do WooCommerce extensions affect the integration?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Subscriptions, bookings, multi-vendor, and tax plugins all reshape the order data, so we audit which extensions are active and map against your real payloads rather than a generic order structure.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you handle deposits and part-payments?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes, with a custom build. Deposits taken at estimate stage and part-payments against a job are mapped explicitly so the balance and settlement stay accurate.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can gateway payouts be reconciled?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Stripe, PayPal, and WooPayments deposit net of fees; we post the deposit with fees split to an expense account so the bank feed clears without manual matching.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How are refunds handled?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Refunds issued in Stripe are reflected back on the corresponding Zuper job, so the record matches what actually cleared and what was returned.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Does this work with QuickBooks Desktop?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes, through the QuickBooks Web Connector using QBXML. It runs on a polling schedule rather than syncing instantly, so Desktop flows are closer to batch than real time.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How much does a Zuper + Stripe integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most projects run $3,000 to $16,000 depending on collection points, deposits, and refund handling. See the cost table above for a full breakdown.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you fix a WooCommerce sync plugin that keeps failing?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Plugin-based syncs that silently stop, duplicate orders, or break after a WordPress update are regular rescue work — and we can fix the store side as well as the integration.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Stripe to Zuper connection?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work &mdash; payments that didn't post back, mishandled declines, and refunds that never reconciled &mdash; is a regular part of our practice.</p></div>
         </div>
       </div>
     </div>
@@ -469,8 +470,8 @@
 
   <section class="sap-finalcta">
     <div class="container">
-      <h2>Ready to Connect QuickBooks to WooCommerce?</h2>
-      <p>Every order exported by hand and every gateway deposit reconciled in a spreadsheet is time your team shouldn't be spending. A scoped integration removes that work permanently — and you'll know the exact cost before we start.</p>
+      <h2>Ready to Connect Stripe to Zuper?</h2>
+      <p>Every job that ends without a clean payment is revenue you chase and hours you spend reconciling. A scoped integration removes that friction permanently &mdash; and you'll know the exact cost before we start.</p>
       <div class="sap-finalcta__btns">
         <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
         <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
@@ -480,29 +481,18 @@
 
 </main>
 
-  <!-- ═══ CONTACT ═══ -->
- <section class="contact" id="contact">
+  <section class="contact" id="contact">
   <div class="container">
     <div class="contact__grid">
       <div class="contact__left">
         <div class="section-label">Contact us</div>
         <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
         <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
-        <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
-
+        <a href="tel:+919920996021" class="contact__phone">&#128222; +91-99209-96021</a>
         <div class="contact__benefits">
-          <div class="benefit-col">
-            <div class="benefit">✓ Client-oriented</div>
-            <div class="benefit">✓ Independent</div>
-            <div class="benefit">✓ Competent</div>
-          </div>
-          <div class="benefit-col">
-            <div class="benefit">✓ Results-driven</div>
-            <div class="benefit">✓ Problem-solving</div>
-            <div class="benefit">✓ Transparent</div>
-          </div>
+          <div class="benefit-col"><div class="benefit">&#10003; Client-oriented</div><div class="benefit">&#10003; Independent</div><div class="benefit">&#10003; Competent</div></div>
+          <div class="benefit-col"><div class="benefit">&#10003; Results-driven</div><div class="benefit">&#10003; Problem-solving</div><div class="benefit">&#10003; Transparent</div></div>
         </div>
-
         <div class="contact__steps">
           <h4>What happens next?</h4>
           <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
@@ -510,112 +500,45 @@
           <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
         </div>
       </div>
-
       <div class="contact__right">
         <div class="contact__form-card" id="form">
           <h3>Schedule a Free Consultation</h3>
-
-          <div class="form-progress">
-            <div class="form-progress__bar"><div class="form-progress__fill" id="progressFill"></div></div>
-            <span class="form-progress__label"><span id="stepCurrent">1</span> of <span id="stepTotal">2</span></span>
-          </div>
-
+          <div class="form-progress"><div class="form-progress__bar"><div class="form-progress__fill" id="progressFill"></div></div><span class="form-progress__label"><span id="stepCurrent">1</span> of <span id="stepTotal">2</span></span></div>
           <form class="contact-form contact-form--wizard" id="contactForm" novalidate>
-
             <div class="form-step is-active" data-step="1">
               <div class="form-step__eyebrow">Tell us about you</div>
-
               <div class="form-row">
-                <div class="form-group">
-                  <label>First name</label>
-                  <input type="text" name="first_name" placeholder="John" required>
-                </div>
-                <div class="form-group">
-                  <label>Last name</label>
-                  <input type="text" name="last_name" placeholder="Doe" required>
-                </div>
+                <div class="form-group"><label>First name</label><input type="text" name="first_name" placeholder="John" required></div>
+                <div class="form-group"><label>Last name</label><input type="text" name="last_name" placeholder="Doe" required></div>
               </div>
-
               <div class="form-row">
-                <div class="form-group">
-                  <label>Company Email</label>
-                  <input type="email" name="email" placeholder="john@company.com" required>
-                </div>
-                <div class="form-group">
-                  <label>Phone <span class="optional-tag">(optional)</span></label>
-                  <input type="tel" name="phone" placeholder="+91 00000 00000">
-                </div>
+                <div class="form-group"><label>Company Email</label><input type="email" name="email" placeholder="john@company.com" required></div>
+                <div class="form-group"><label>Phone <span class="optional-tag">(optional)</span></label><input type="tel" name="phone" placeholder="+91 00000 00000"></div>
               </div>
-
               <div class="form-row">
-                <div class="form-group">
-                  <label>Company / Organization <span class="optional-tag">(optional)</span></label>
-                  <input type="text" name="company" placeholder="Acme Corp">
-                </div>
-                <div class="form-group">
-                  <label>How Can We Help You?</label>
+                <div class="form-group"><label>Company / Organization <span class="optional-tag">(optional)</span></label><input type="text" name="company" placeholder="Acme Corp"></div>
+                <div class="form-group"><label>How Can We Help You?</label>
                   <select name="service" required>
-                    <option value="">Select Option</option>
-                    <option>Managed Services</option>
-                    <option>IT Consulting &amp; Advisory</option>
-                    <option>Cyber Security</option>
-                    <option>Web Development</option>
-                    <option>Mobile Development</option>
-                    <option>Cloud Services</option>
-                    <option>Other</option>
+                    <option value="">Select Option</option><option>Managed Services</option><option>IT Consulting &amp; Advisory</option><option>Cyber Security</option><option>Web Development</option><option>Mobile Development</option><option>Cloud Services</option><option>Other</option>
                   </select>
                 </div>
               </div>
-
-              <div class="form-group">
-                <label>Message <span class="optional-tag">(optional)</span></label>
-                <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
-              </div>
+              <div class="form-group"><label>Message <span class="optional-tag">(optional)</span></label><textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea></div>
             </div>
-
             <div class="form-step" data-step="2">
               <div class="form-step__eyebrow">Pick a date &amp; time that works for you</div>
-
-              <div class="form-group">
-                <label>Preferred Date</label>
-                <input type="text" name="preferred_date" id="preferredDate" placeholder="Select a date" required readonly>
-              </div>
-
-              <div class="form-group">
-                <label>Preferred Time</label>
-                <select name="preferred_time" id="preferredTime" required>
-                  <option value="">Select a date first</option>
-                </select>
-              </div>
-
-              <div class="form-group form-group--check">
-                <label class="check-label">
-                  <input type="checkbox" id="privacy" name="privacy" required>
-                  I agree to the <a href="/privacy.html" target="_blank">Privacy Policy</a> and consent to being contacted.
-                </label>
-              </div>
+              <div class="form-group"><label>Preferred Date</label><input type="text" name="preferred_date" id="preferredDate" placeholder="Select a date" required readonly></div>
+              <div class="form-group"><label>Preferred Time</label><select name="preferred_time" id="preferredTime" required><option value="">Select a date first</option></select></div>
+              <div class="form-group form-group--check"><label class="check-label"><input type="checkbox" id="privacy" name="privacy" required> I agree to the <a href="/privacy.html" target="_blank">Privacy Policy</a> and consent to being contacted.</label></div>
             </div>
-
             <input type="hidden" name="g_recaptcha_token" id="gRecaptchaToken">
-
             <div class="form-nav">
-              <button type="button" class="btn btn--ghost" id="btnBack" style="visibility:hidden;">← Back</button>
-              <button type="button" class="btn btn--primary" id="btnNext">Continue →</button>
-              <button type="submit" class="btn btn--primary" id="submitBtn" style="display:none;">
-                <span id="btnText">Submit</span>
-                <span id="btnLoader" style="display:none;">Sending…</span>
-              </button>
+              <button type="button" class="btn btn--ghost" id="btnBack" style="visibility:hidden;">&larr; Back</button>
+              <button type="button" class="btn btn--primary" id="btnNext">Continue &rarr;</button>
+              <button type="submit" class="btn btn--primary" id="submitBtn" style="display:none;"><span id="btnText">Submit</span><span id="btnLoader" style="display:none;">Sending&hellip;</span></button>
             </div>
-
-            <p class="text-xs text-muted mt-2" style="font-size:0.75rem; color:#7A6F68; margin-top:0.5rem;">
-              This site is protected by reCAPTCHA and the Google
-              <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration:underline;">Privacy Policy</a> and
-              <a href="https://policies.google.com/terms" target="_blank" style="text-decoration:underline;">Terms of Service</a> apply.
-            </p>
-
-            <div class="form-success" id="formSuccess">
-              ✅ Thanks! We've received your message and will be in touch shortly.
-            </div>
+            <p class="text-xs text-muted mt-2" style="font-size:0.75rem; color:#7A6F68; margin-top:0.5rem;">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration:underline;">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" style="text-decoration:underline;">Terms of Service</a> apply.</p>
+            <div class="form-success" id="formSuccess">&#9989; Thanks! We've received your message and will be in touch shortly.</div>
           </form>
         </div>
       </div>
@@ -680,7 +603,6 @@
     </div>
   </footer>
 
- <!-- Toast -->
   <div class="toast" id="toast"></div>
 
   <script src="../js/sap-business-one-integration.js"></script>
@@ -688,6 +610,6 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
- <script src="/js/contact.js"></script>
+  <script src="/js/contact.js"></script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+:root {
+  --zp-blue:       #0B3B6F;
+  --zp-blue-light: #1C7ED6;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--zuper     { background: transparent; }
+.sap-popular__logo--zuper svg { border-radius: 5px; }
+
+.sap-popular__logo--hubspot    { background: #FFF1EC; }
+.sap-popular__logo--hubspot i  { color: #FF7A59; }
+
+.sap-popular__logo--quickbooks { background: transparent; }
+
+.sap-popular__logo--salesforce { background: #EAF6FD; }
+
+.sap-popular__logo--stripe     { background: #F0F0FF; }
+.sap-popular__logo--stripe i   { color: #635BFF; }
+
+.sap-popular__logo--zendesk    { background: #F2F4F7; }
+.sap-popular__logo--zendesk i  { color: #17494D; }
+
+.sap-popular__logo--slack      { background: #F3F0FA; }
+.sap-popular__logo--slack i    { color: #4A154B; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+═══════════════════════════════ */
+.zp-pairing .sap-hub__core {
+  background: linear-gradient(160deg, #0B3B6F 0%, #1C7ED6 100%);
+}
+
+.zp-pairing .sap-badge .badge__dot { background: var(--zp-blue, #0B3B6F); }
+
+.zp-pairing .sap-hero__visual .sap-hub__node--1,
+.zp-pairing .sap-hero__visual .sap-hub__node--2,
+.zp-pairing .sap-hero__visual .sap-hub__node--3,
+.zp-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(11, 59, 111, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.zp-pairing--hubspot    .sap-hub__node i { color: #FF7A59; }
+.zp-pairing--quickbooks .sap-hub__node i { color: #2CA01C; }
+.zp-pairing--salesforce .sap-hub__node i { color: #00A1E0; }
+.zp-pairing--stripe     .sap-hub__node i { color: #635BFF; }
+.zp-pairing--zendesk    .sap-hub__node i { color: #17494D; }
+.zp-pairing--slack      .sap-hub__node i { color: #4A154B; }
