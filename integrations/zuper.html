@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zuper Integration Services | RethinkingWeb</title>
-  <meta name="description" content="Connect Zuper field service management to your CRM, accounting, payments, and supplier systems with fixed-price integration consulting — honest costs and timelines." />
+  <title>Zuper Customization Services | RethinkingWeb</title>
+  <meta name="description" content="Configure and customize Zuper field service management for your business — workflows, custom fields, dashboards, proposal layouts, and Developer Hub automation. Fixed-price consulting." />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/contact.css" />
   <link rel="canonical" href="https://www.rethinkingweb.com/integrations/zuper.html" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -40,7 +41,6 @@
       }
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
@@ -52,15 +52,15 @@
   "@graph": [
     {
       "@type": "Service",
-      "name": "Zuper Integration Services",
-      "serviceType": "Field Service Management Integration Consulting",
+      "name": "Zuper Customization Services",
+      "serviceType": "Field Service Management Customization Consulting",
       "provider": {
         "@type": "ProfessionalService",
         "name": "RethinkingWeb",
         "url": "https://rethinkingweb.com/",
         "areaServed": ["US", "GB", "AU", "IN"]
       },
-      "description": "Connect Zuper field service management to your CRM, accounting, payments, and supplier systems. Fixed-price, platform-agnostic integration consulting.",
+      "description": "Configure and customize the Zuper field service platform for your business — no-code workflows, custom fields and forms, dashboards, proposal and invoice layouts, and Developer Hub custom functions. Fixed-price, platform-agnostic consulting.",
       "url": "https://rethinkingweb.com/integrations/zuper.html"
     },
     {
@@ -74,12 +74,13 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Does Zuper have an API?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zuper exposes a REST API and webhooks, plus 60+ pre-built native integrations in its app marketplace." } },
-        { "@type": "Question", "name": "What's the difference between a native integration and a custom build?", "acceptedAnswer": { "@type": "Answer", "text": "Native integrations are pre-built and free to turn on inside Zuper for supported apps. Custom builds use Zuper's API and webhooks directly when your requirement goes beyond what the native connector supports." } },
-        { "@type": "Question", "name": "Can you sync Zuper with HubSpot or Salesforce?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. These are two of the most common Zuper CRM integrations, syncing deals and leads into scheduled jobs and pushing job status back to the CRM." } },
-        { "@type": "Question", "name": "Can you connect Zuper to QuickBooks or Xero?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Job completion and invoicing data sync automatically to QuickBooks Online, QuickBooks Desktop, or Xero." } },
-        { "@type": "Question", "name": "How much does Zuper integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most Zuper integrations run $3,000 to $25,000 depending on approach and entity count. See the cost table above for a full breakdown." } },
-        { "@type": "Question", "name": "Can you fix a broken Zuper integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work on failed native connectors, broken middleware, and abandoned custom builds is a regular part of our practice." } }
+        { "@type": "Question", "name": "Can Zuper be customized without writing code?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most of Zuper's customization — workflows, checklists, custom fields, dashboards, and proposal layouts — is configured through drag-and-drop settings panels with no code required." } },
+        { "@type": "Question", "name": "What parts of Zuper can I customize?", "acceptedAnswer": { "@type": "Answer", "text": "You can tailor workflows and job checklists, add custom fields and forms for jobs, customers or assets, build dashboard widgets, control proposal and invoice layouts, and write custom automation functions through the Developer Hub." } },
+        { "@type": "Question", "name": "Does Zuper have a Developer Hub for custom automation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Developer Hub lets you write custom functions and generate API keys for logic that goes beyond the standard no-code workflow builder." } },
+        { "@type": "Question", "name": "Can you build custom reports and dashboards in Zuper?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zuper supports custom reports pulling from jobs, customers, and assets, plus configurable dashboard widgets for managers and dispatchers." } },
+        { "@type": "Question", "name": "What happens if a configuration change goes wrong?", "acceptedAnswer": { "@type": "Answer", "text": "Zuper retains deleted items for up to 90 days, so configuration mistakes and lost records can generally be recovered or undone." } },
+        { "@type": "Question", "name": "How much does Zuper customization cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most Zuper customization projects run $1,500 to $20,000 depending on scope, from settings-only configuration up to Developer Hub and API-driven builds. See the cost table above for a full breakdown." } },
+        { "@type": "Question", "name": "Can you fix a broken or half-finished Zuper configuration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work on abandoned workflows, misconfigured proposal layouts, and broken custom functions is a regular part of our practice." } }
       ]
     }
   ]
@@ -344,7 +345,6 @@
         <a href="quickbooks.html">QuickBooks</a>
         <a href="woocommerce.html">WooCommerce</a>
         <a href="zoho.html">Zoho</a>
- <a href="zuper.html">zuper</a>
         <a href="zuper.html">Zuper</a>
       </div>
     </div>
@@ -393,37 +393,37 @@
             <span>›</span>
             <span class="current">Zuper</span>
           </nav>
-          <div class="sap-badge"><span class="badge__dot"></span> Field Service Integration Consultancy</div>
-          <h1 class="sap-hero__title">Zuper <em>Integration Services</em></h1>
+          <div class="sap-badge"><span class="badge__dot"></span> Field Service Configuration Consultancy</div>
+          <h1 class="sap-hero__title">Zuper <em>Customization Services</em></h1>
           <p class="sap-hero__sub">
-            <strong>Zuper integration</strong> connects the Zuper field service management platform to the CRM, accounting, payments, and supplier systems your business already runs on. We build these as an independent consultancy: we don't resell a single connector, so we recommend the approach that actually fits your requirement.
+            <strong>Zuper customization</strong> shapes the field service platform around how your business actually runs — workflows, custom fields, dashboards, proposal and invoice layouts, and Developer Hub automation. We build these as an independent consultancy, so we recommend no-code settings over custom code whenever the no-code path genuinely covers your requirement.
           </p>
           <div class="sap-hero__cta">
             <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
-            <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
+            <a href="#cost" class="btn btn--outline btn--lg">See Customization Pricing</a>
           </div>
         </div>
 
-        <!-- Integration hub visual -->
+        <!-- Customization hub visual -->
         <div class="sap-hero__visual" aria-hidden="true">
           <div class="sap-hub">
             <div class="sap-hub__ring"></div>
             <div class="sap-hub__core"><strong>Zuper</strong><span>Field Service Core</span></div>
-            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-arrows-spin"></i> HubSpot</div>
-            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-file-invoice-dollar"></i> QuickBooks</div>
-            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-cloud"></i> Salesforce</div>
-            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-credit-card"></i> Stripe</div>
-            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-headset"></i> Zendesk</div>
-            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-message"></i> Slack</div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-diagram-project"></i> Workflows</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-table-list"></i> Custom Fields</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-gauge-high"></i> Dashboards</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-file-invoice"></i> Proposals</div>
+            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-code"></i> Custom Functions</div>
+            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-chart-column"></i> Reports</div>
           </div>
         </div>
       </div>
 
       <!-- Stats strip -->
       <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">60+</div><span class="stat-label">Systems Zuper already connects to</span></div>
-        <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
-        <div class="sap-stat"><div class="stat-num">1–12</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">6</div><span class="stat-label">Core areas of the platform you can customize</span></div>
+        <div class="sap-stat"><div class="stat-num">90</div><span class="stat-label">Days Zuper retains deleted items for recovery</span></div>
+        <div class="sap-stat"><div class="stat-num">1–10</div><span class="stat-label">Weeks to typical go-live</span></div>
         <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
       </div>
     </div>
@@ -434,87 +434,63 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">The Basics</div>
-        <h2 class="section-title">What Is Zuper <em>Integration</em>?</h2>
+        <h2 class="section-title">What Is Zuper <em>Customization</em>?</h2>
       </div>
       <div class="sap-body reveal">
-        <p>Zuper integration is the process of exchanging data automatically between the Zuper field service platform and external applications, so records like customers, jobs, invoices, payments, and leads stay consistent across systems without manual re-entry. It's how a HubSpot deal becomes a scheduled, dispatched Zuper job, or a completed job in Zuper becomes a QuickBooks invoice, in minutes instead of days.</p>
-        <p>Most Zuper customers run field crews alongside a CRM, an accounting system, a payments processor, and a handful of supplier or measurement tools. Every one of them is a potential silo. Integration turns that stack into a single operating picture, cuts double data entry, and removes the errors that come from copying job and customer records by hand.</p>
+        <p>Zuper customization is the process of configuring the platform's settings, fields, dashboards, and automation logic to match how your business actually operates, rather than working around a default setup. Most of it is no-code: workflows, checklists, custom fields, dashboard widgets, and proposal layouts are all built through settings panels accessible from the profile or gear icon in the Zuper web app.</p>
+        <p>For requirements that go beyond what the settings panels cover, Zuper's Developer Hub adds custom functions and API access, so you can automate business rules, generate custom reports, or trigger actions that the standard workflow engine wasn't built for. The right mix depends on how standard your process is and how much logic sits behind it.</p>
       </div>
     </div>
   </section>
 
-  <!-- ───────── WHAT CAN YOU INTEGRATE ───────── -->
+  <!-- ───────── WHAT CAN YOU CUSTOMIZE ───────── -->
   <section class="sap-section sap-section--alt">
     <div class="container">
       <div class="sap-section__head reveal">
-        <div class="section-label">Compatibility</div>
-        <h2 class="section-title">What Can You Integrate with <em>Zuper</em>?</h2>
-        <p class="sap-lead">Zuper ships 60+ native integrations out of the box. The most common categories we work with are CRM, accounting and expense management, payments and financing, measurements, suppliers, and customer service.</p>
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">What Can You Customize in <em>Zuper</em>?</h2>
+        <p class="sap-lead">Zuper's settings cover most of what field service businesses need out of the box. The areas we configure most often are workflows, fields and forms, dashboards, proposal and invoice layouts, Developer Hub functions, and reporting.</p>
       </div>
       <div class="sap-cards">
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-cloud"></i></div>
-          <h3>CRM</h3>
-          <p class="sap-card__systems"><a href="zuper-hubspot-integration.html">HubSpot</a>, <a href="zuper-salesforce-integration.html">Salesforce</a>, Zoho, RepCard</p>
-          <p class="sap-card__flows">Deals, leads, customers, service requests, job status back to CRM</p>
+          <div class="sap-card__icon"><i class="fas fa-diagram-project"></i></div>
+          <h3>Workflows &amp; Checklists</h3>
+          <p class="sap-card__systems">Drag-and-drop automation builder</p>
+          <p class="sap-card__flows">Status transitions, job checklists, and automated actions for field technicians</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3>Accounting &amp; Expense</h3>
-          <p class="sap-card__systems"><a href="zuper-quickbooks-integration.html">QuickBooks</a>, Xero, Zoho Books, Sage Intacct, Concur, Clyr</p>
-          <p class="sap-card__flows">Invoices, payments, job costing, expense reports</p>
+          <div class="sap-card__icon"><i class="fas fa-table-list"></i></div>
+          <h3>Fields &amp; Forms</h3>
+          <p class="sap-card__systems">Custom fields, dynamic forms</p>
+          <p class="sap-card__flows">Capture business-specific data on jobs, customers, and assets</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-credit-card"></i></div>
-          <h3>Payments &amp; Financing</h3>
-          <p class="sap-card__systems"><a href="zuper-stripe-integration.html">Stripe</a>, Wisetack</p>
-          <p class="sap-card__flows">Online payments, card processing, customer financing at estimate stage</p>
+          <div class="sap-card__icon"><i class="fas fa-gauge-high"></i></div>
+          <h3>Dashboards &amp; Widgets</h3>
+          <p class="sap-card__systems">Real-time interactive widgets</p>
+          <p class="sap-card__flows">Manager-level metrics and live schedules for dispatchers</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-ruler-combined"></i></div>
-          <h3>Measurements</h3>
-          <p class="sap-card__systems">Hover, EagleView, RoofScope, GAF QuickMeasure</p>
-          <p class="sap-card__flows">Roof, gutter &amp; siding measurement reports synced into the job</p>
+          <div class="sap-card__icon"><i class="fas fa-file-invoice"></i></div>
+          <h3>Proposal &amp; Invoice Layouts</h3>
+          <p class="sap-card__systems">Layout builder</p>
+          <p class="sap-card__flows">Rename, reorder, hide, or lock pages within quotes and proposals</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-truck-field"></i></div>
-          <h3>Suppliers</h3>
-          <p class="sap-card__systems">ABC Supply, SRS Distribution, QXO</p>
-          <p class="sap-card__flows">Purchase orders sent to the supplier branch from the work order</p>
+          <div class="sap-card__icon"><i class="fas fa-code"></i></div>
+          <h3>Custom Functions &amp; API</h3>
+          <p class="sap-card__systems">Developer Hub</p>
+          <p class="sap-card__flows">Custom automation logic and API keys for logic beyond the workflow builder</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
-          <h3>Customer Service &amp; Collaboration</h3>
-          <p class="sap-card__systems"><a href="zuper-zendesk-integration.html">Zendesk</a>, Freshdesk, <a href="zuper-slack-integration.html">Slack</a>, Microsoft Teams</p>
-          <p class="sap-card__flows">Tickets, timesheet &amp; job updates, team notifications</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
-          <h3>Customer Service &amp; Collaboration</h3>
-          <p class="sap-card__systems"><a href="zuper-billdozer-integration.html">Zendesk</a>, Freshdesk, <a href="zuper-slack-integration.html">Slack</a>, Microsoft Teams</p>
-          <p class="sap-card__flows">Tickets, timesheet &amp; job updates, team notifications</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
-          <h3>Customer Service &amp; Collaboration</h3>
-          <p class="sap-card__systems"><a href="zuper-business-central-integration.html">Zendesk</a>, Freshdesk, <a href="zuper-slack-integration.html">Slack</a>, Microsoft Teams</p>
-          <p class="sap-card__flows">Tickets, timesheet &amp; job updates, team notifications</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
-          <h3>Customer Service &amp; Collaboration</h3>
-          <p class="sap-card__systems"><a href="zuper-freshsales-integration.html">Zendesk</a>, Freshdesk, <a href="zuper-slack-integration.html">Slack</a>, Microsoft Teams</p>
-          <p class="sap-card__flows">Tickets, timesheet &amp; job updates, team notifications</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
-          <h3>Customer Service &amp; Collaboration</h3>
-          <p class="sap-card__systems"><a href="zuper-zoho-crm-integration.html">Zendesk</a>, Freshdesk, <a href="zuper-slack-integration.html">Slack</a>, Microsoft Teams</p>
-          <p class="sap-card__flows">Tickets, timesheet &amp; job updates, team notifications</p>
+          <div class="sap-card__icon"><i class="fas fa-chart-column"></i></div>
+          <h3>Reports &amp; Templates</h3>
+          <p class="sap-card__systems">Custom reports, communication templates</p>
+          <p class="sap-card__flows">Detail and summary reports plus tailored customer alert, email &amp; SMS templates</p>
         </div>
       </div>
       <div class="sap-body reveal">
-        <p>If your system isn't listed, it's almost certainly still integrable. Zuper already ships 60+ native integrations and exposes a REST API and webhooks, so we scope against your actual requirement, not a connector catalogue.</p>
+        <p>If your requirement isn't listed here, it's likely still configurable. Between the settings panels and the Developer Hub, Zuper covers most business-specific customization without a ground-up build — we scope against your actual process, not a generic feature list.</p>
       </div>
     </div>
   </section>
@@ -605,7 +581,8 @@
           <h3>Zuper <em>+</em> Slack</h3>
           <p>Timesheet, job &amp; dispatch alerts pushed to your team</p>
         </a>
-<a href="zuper-zoho-crm-integration.html" class="sap-popular__card reveal">
+
+        <a href="zuper-zoho-crm-integration.html" class="sap-popular__card reveal">
           <div class="sap-popular__logos">
             <span class="sap-popular__logo sap-popular__logo--zuper">
               <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0B3B6F"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Zuper</text></svg>
@@ -660,33 +637,33 @@
           <h3>Zuper <em>+</em> Business Central</h3>
           <p>Post completed jobs as invoices &amp; job costing entries</p>
         </a>
-        
+
       </div>
     </div>
   </section>
 
-  <!-- ───────── HOW DO YOU INTEGRATE ───────── -->
+  <!-- ───────── HOW DO YOU CUSTOMIZE ───────── -->
   <section class="sap-section">
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Methods</div>
-        <h2 class="section-title">How Do You Integrate Zuper with <em>Other Systems</em>?</h2>
-        <p class="sap-lead">Zuper integration is built on a mix of <strong>native marketplace connectors</strong>, a <strong>REST API and webhooks</strong> for direct access to jobs, customers, and invoices, and <strong>iPaaS middleware</strong> like Zapier, Make, or n8n. The right choice depends on your record types, transaction volume, and how standard your requirement is.</p>
+        <h2 class="section-title">How Do You Customize Zuper for <em>Your Business</em>?</h2>
+        <p class="sap-lead">Zuper customization runs on a mix of <strong>no-code settings panels</strong> for workflows, fields, dashboards and proposal layouts, and the <strong>Developer Hub</strong> for custom functions and API access when a requirement needs logic the settings can't express. The right choice depends on how standard your process is and how much automation logic sits behind it.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
           <tbody>
-            <tr><td><strong>Native integrations</strong></td><td>Pre-built connectors in the Zuper marketplace (HubSpot, QuickBooks, Salesforce, Stripe, etc.)</td><td>Standard flows, fastest go-live</td><td>Only covers Zuper's supported app list</td></tr>
-            <tr><td><strong>Zuper REST API / Webhooks</strong></td><td>Direct API access to jobs, customers, invoices, and assets</td><td>Custom builds, real-time flows, non-standard requirements</td><td>Requires developer resource on your side or ours</td></tr>
-            <tr><td><strong>iPaaS / middleware</strong></td><td>Orchestration layer (Zapier, Make, n8n) wrapping Zuper's API with the other app's API</td><td>Mid-complexity flows without heavy custom code</td><td>Subscription cost; templates bend only so far</td></tr>
-            <tr><td><strong>Custom middleware</strong></td><td>Purpose-built orchestration (code, n8n) for multi-system or AI-driven workflows</td><td>Non-standard requirements, multi-system workflows, AI automation</td><td>Needs a partner who can maintain it (that's us)</td></tr>
+            <tr><td><strong>No-code settings</strong></td><td>Drag-and-drop configuration of workflows, fields, dashboards, and proposal layouts</td><td>Standard configuration, fastest go-live</td><td>Ceiling on logic complexity</td></tr>
+            <tr><td><strong>Developer Hub custom functions</strong></td><td>No-code/low-code functions for automation rules beyond the workflow builder</td><td>Business rules that don't fit standard triggers</td><td>Needs testing before it goes live</td></tr>
+            <tr><td><strong>REST API &amp; webhooks</strong></td><td>Direct programmatic access to jobs, customers, invoices, and assets</td><td>Custom reporting, external triggers, non-standard data needs</td><td>Requires developer resource on your side or ours</td></tr>
+            <tr><td><strong>Combined build</strong></td><td>Settings, custom functions, and API work layered together</td><td>Multi-step or AI-driven configurations</td><td>Needs a partner who can maintain it (that's us)</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-callout reveal">
         <i class="fas fa-circle-check"></i>
-        <p><strong>The truth most vendors won't tell you:</strong> Zuper's native marketplace is genuinely the right answer for most standard integrations — it's free and pre-built. We'll tell you when it is, help you turn it on and configure it correctly, and only build custom API/webhook work when your requirement goes beyond it.</p>
+        <p><strong>The truth most vendors won't tell you:</strong> Zuper's no-code settings genuinely cover most customization requirements — they're included in your subscription. We'll tell you when they're enough, configure them correctly, and only reach for Developer Hub or API work when your requirement goes beyond them.</p>
       </div>
     </div>
   </section>
@@ -696,21 +673,22 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">How Much Does Zuper Integration <em>Cost</em>?</h2>
-        <p class="sap-lead">A typical Zuper integration costs between <strong>$3,000 and $25,000</strong> to implement — turning on and configuring a native connector sits at the low end; a fully custom API/webhook build sits at the high end. Fixed price, quoted before we start.</p>
+        <h2 class="section-title">How Much Does Zuper Customization <em>Cost</em>?</h2>
+        <p class="sap-lead">A typical Zuper customization project costs between <strong>$1,500 and $20,000</strong> to implement — settings-only configuration sits at the low end; a full Developer Hub and API-driven build sits at the high end. Fixed price, quoted before we start.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
           <tbody>
-            <tr><td>Native integration setup &amp; configuration</td><td><strong>$3,000 – $8,000</strong></td><td>Included in your Zuper subscription</td></tr>
-            <tr><td>iPaaS orchestration (Zapier / Make / n8n)</td><td><strong>$6,000 – $15,000</strong></td><td>$50 – $400/month platform + support retainer</td></tr>
-            <tr><td>Custom API / webhook build</td><td><strong>$10,000 – $25,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+            <tr><td>Settings &amp; workflow configuration</td><td><strong>$1,500 – $5,000</strong></td><td>Included in your Zuper subscription</td></tr>
+            <tr><td>Custom fields, forms &amp; dashboards</td><td><strong>$2,000 – $8,000</strong></td><td>Included in your Zuper subscription</td></tr>
+            <tr><td>Developer Hub functions &amp; custom reports</td><td><strong>$4,000 – $12,000</strong></td><td>Support retainer for logic changes</td></tr>
+            <tr><td>Full build (functions + API + workflows)</td><td><strong>$8,000 – $20,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-body reveal">
-        <p>Three factors move the number most: how many <strong>entities</strong> you sync (customers, jobs, invoices, assets), whether flows are <strong>one-way or bi-directional</strong>, and how much <strong>transformation logic</strong> sits between the systems. We quote fixed prices after a scoping call, so you know the cost before we write a line of code.</p>
+        <p>Three factors move the number most: how many <strong>modules</strong> you're configuring (workflows, fields, dashboards, proposals, reports), whether logic is <strong>settings-based or code-based</strong>, and how much <strong>testing depth</strong> a change needs before it touches live jobs. We quote fixed prices after a scoping call, so you know the cost before we configure a single field.</p>
       </div>
     </div>
   </section>
@@ -721,18 +699,23 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Timeline</div>
         <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
-        <p class="sap-lead">The single biggest schedule risk isn't development — it's unclean master data in Zuper and the connected system, which is why data review is the first step of our process.</p>
+        <p class="sap-lead">The single biggest schedule risk isn't building the configuration — it's unclear requirements and unclean master data, which is why requirement mapping is the first step of our process.</p>
       </div>
       <div class="sap-timeline reveal">
         <div class="sap-timeline__card">
           <div class="sap-timeline__weeks">1–3 weeks</div>
-          <h4>Native integrations</h4>
-          <p>Turn on and configure an existing Zuper marketplace connector, live fast against your account.</p>
+          <h4>No-code settings</h4>
+          <p>Workflow, checklist, field, and dashboard configuration through Zuper's settings panels.</p>
         </div>
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">6–12 weeks</div>
-          <h4>Custom builds</h4>
-          <p>Bespoke API / webhook work, scaled to entity count, custom fields, and testing depth.</p>
+          <div class="sap-timeline__weeks">3–6 weeks</div>
+          <h4>Layout &amp; reporting builds</h4>
+          <p>Proposal and invoice layout builds, custom reports, and communication templates.</p>
+        </div>
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">6–10 weeks</div>
+          <h4>Developer Hub &amp; API builds</h4>
+          <p>Custom functions and API-driven logic, scaled to complexity and testing depth.</p>
         </div>
       </div>
     </div>
@@ -743,15 +726,15 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Our Process</div>
-        <h2 class="section-title">What Does Our Integration Process <em>Look Like</em>?</h2>
-        <p class="sap-lead">Every engagement follows the same five stages — you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
+        <h2 class="section-title">What Does Our Customization Process <em>Look Like</em>?</h2>
+        <p class="sap-lead">Every engagement follows the same five stages — you get a fixed-price scope and a configuration sheet you sign off before we build.</p>
       </div>
       <div class="sap-steps">
-        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your systems, Zuper objects (jobs, customers, assets, invoices), volumes, and the outcome you need.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement via native connector, API/webhook, or middleware, in a Zuper sandbox account.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real job, customer, and invoice scenarios end to end — failure cases, retries, duplicate handling.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your workflows, Zuper objects (jobs, customers, assets, invoices), and the outcome you need.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, workflow rule, layout change, and function before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We configure via settings panels, Developer Hub functions, or API work, in a Zuper sandbox account.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real job, customer, and invoice scenarios end to end — edge cases, permissions, rollback checks.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with a named contact for future configuration changes.</p></div>
       </div>
     </div>
   </section>
@@ -761,49 +744,49 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Why Trust Us</div>
-        <h2 class="section-title">Why Integrate with <em>RethinkingWeb</em></h2>
-        <p class="sap-lead">Integration only pays off if it keeps running after go-live. These are the reasons companies hand us the connection between Zuper and everything else — and keep us on to look after it.</p>
+        <h2 class="section-title">Why Customize Zuper with <em>RethinkingWeb</em></h2>
+        <p class="sap-lead">Customization only pays off if it keeps working after go-live. These are the reasons companies hand us their Zuper configuration — and keep us on to look after it.</p>
       </div>
       <div class="sap-trust">
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-scale-balanced"></i></div>
-          <h3>Vendor-Neutral by Design</h3>
-          <p>We don't resell a single connector, so we have no reason to push one. We recommend the approach that fits your requirement — even when that means a product we don't earn a cent from.</p>
+          <h3>No-Code First, Custom Code Only When Needed</h3>
+          <p>We don't default to custom builds. If Zuper's settings panels genuinely cover your requirement, that's what we configure — even though a custom build would be a bigger invoice.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-file-signature"></i></div>
           <h3>Fixed Price Before We Build</h3>
-          <p>You approve a signed mapping sheet and a fixed quote before a single field is configured. No open-ended hourly meters, no scope surprises mid-project.</p>
+          <p>You approve a signed configuration sheet and a fixed quote before a single field is set up. No open-ended hourly meters, no scope surprises mid-project.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-user-gear"></i></div>
           <h3>A Named Engineer, Not a Queue</h3>
-          <p>The person who built your integration is the person who answers when something changes. No ticket lottery, no re-explaining your setup to a new agent each time.</p>
+          <p>The person who built your configuration is the person who answers when something changes. No ticket lottery, no re-explaining your setup to a new agent each time.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-handshake-angle"></i></div>
           <h3>Official Twenty CRM Partner</h3>
-          <p>We're a recognized Twenty CRM partner and a WordPress &amp; WooCommerce development agency — so we know both sides of the sync, not just the field service half.</p>
+          <p>We're a recognized Twenty CRM partner and a WordPress &amp; WooCommerce development agency — so we know how your Zuper configuration should line up with the rest of your stack.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-globe"></i></div>
           <h3>Proven Across Four Countries</h3>
-          <p>We build and run integrations for businesses in the US, UK, Australia, and India, spanning field service, home services, and B2B trading.</p>
+          <p>We configure and run Zuper for businesses in the US, UK, Australia, and India, spanning field service, home services, and B2B trading.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-life-ring"></i></div>
           <h3>Rescue &amp; Take-Over Specialists</h3>
-          <p>A large share of our work is fixing abandoned integrations and broken connectors. If your last Zuper integration failed, we've almost certainly seen your exact situation.</p>
+          <p>A large share of our work is fixing abandoned workflows, misconfigured proposal layouts, and half-finished Developer Hub functions. If your last configuration effort stalled, we've likely seen it before.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-robot"></i></div>
           <h3>AI Automation on the Claude API</h3>
-          <p>Beyond moving data, we build AI agents on the Claude API that act on your Zuper records — natural-language reporting, automated job handling, and smart routing.</p>
+          <p>Beyond standard configuration, we build AI agents on the Claude API that act on your Zuper records — natural-language reporting, automated job handling, and smart routing.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-shield-halved"></i></div>
-          <h3>Monitored After Go-Live</h3>
-          <p>Every integration ships with logging, alerting, and retry handling, so a failed sync surfaces to us before it becomes a problem you have to chase down.</p>
+          <h3>Built with Rollback in Mind</h3>
+          <p>Every configuration change is tested in a sandbox first, and we document what changed, so a misconfigured rule is easy to trace and undo.</p>
         </div>
       </div>
     </div>
@@ -815,18 +798,18 @@
       <div class="sap-why__inner">
         <div class="sap-why__text reveal">
           <div class="section-label">Why RethinkingWeb</div>
-          <h2 class="section-title">The Team on <em>Both Sides</em> of the Sync</h2>
-          <p>We build and run integrations for companies across the US, UK, Australia, and India. Our team combines Zuper integration work with deep roots in the platforms on the other side of the sync: we're a WordPress and WooCommerce development agency, an official Twenty CRM partner, and we build AI automation on the Claude API.</p>
-          <p>Zuper is one field service platform among several systems we connect. If you're weighing platforms or run more than one, see our <a href="salesforce.html">Salesforce integration</a> work, our <a href="quickbooks.html">QuickBooks integration</a> services, and our <a href="netsuite.html">NetSuite integration</a> practice.</p>
+          <h2 class="section-title">The Team That Knows <em>Both the Settings and the Code</em></h2>
+          <p>We configure and run Zuper for companies across the US, UK, Australia, and India. Our team combines Zuper customization work with deep roots in the platforms your operation likely runs alongside it: we're a WordPress and WooCommerce development agency, an official Twenty CRM partner, and we build AI automation on the Claude API.</p>
+          <p>Zuper customization often sits alongside connecting Zuper to the rest of your stack. If you also need data flowing between systems, see our <a href="salesforce.html">Salesforce integration</a> work, our <a href="quickbooks.html">QuickBooks integration</a> services, and our <a href="netsuite.html">NetSuite integration</a> practice.</p>
           <div class="sap-midcta">
-            <a href="#form" class="btn btn--primary btn--lg">Get a Fixed-Price Integration Quote</a>
+            <a href="#form" class="btn btn--primary btn--lg">Get a Fixed-Price Customization Quote</a>
           </div>
         </div>
         <div class="sap-why__aside reveal">
-          <div class="sap-why__check"><i class="fas fa-check"></i> Platform-agnostic — we recommend, not resell</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> No-code first — custom code only when it's needed</div>
           <div class="sap-why__check"><i class="fas fa-check"></i> Fixed pricing before we build</div>
-          <div class="sap-why__check"><i class="fas fa-check"></i> We understand both Zuper and the connected app</div>
-          <div class="sap-why__check"><i class="fas fa-check"></i> Rescue &amp; take-over of broken integrations</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Settings panels and Developer Hub, both covered</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Rescue &amp; take-over of stalled configurations</div>
           <div class="sap-why__check"><i class="fas fa-check"></i> AI automation on the Claude API</div>
         </div>
       </div>
@@ -842,35 +825,35 @@
       </div>
       <div class="sap-faq">
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Does Zuper have an API?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Zuper exposes a REST API and webhooks, plus 60+ pre-built native integrations in its app marketplace.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can Zuper be customized without writing code?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Most customization — workflows, checklists, custom fields, dashboards, and proposal layouts — is configured through drag-and-drop settings panels with no code required.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">What's the difference between a native integration and a custom build?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Native integrations are pre-built and free to turn on inside Zuper for supported apps. Custom builds use Zuper's API and webhooks directly when your requirement goes beyond what the native connector supports.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">What parts of Zuper can I customize?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>You can tailor workflows and job checklists, add custom fields and forms for jobs, customers or assets, build dashboard widgets, control proposal and invoice layouts, and write custom automation functions through the Developer Hub.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you sync Zuper with HubSpot or Salesforce?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. These are two of the most common Zuper CRM integrations, syncing deals and leads into scheduled jobs and pushing job status back to the CRM.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Does Zuper have a Developer Hub for custom automation?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. The Developer Hub lets you write custom functions and generate API keys for logic that goes beyond the standard no-code workflow builder.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you connect Zuper to QuickBooks or Xero?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Job completion and invoicing data sync automatically to QuickBooks Online, QuickBooks Desktop, or Xero.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you build custom reports and dashboards in Zuper?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Zuper supports custom reports pulling from jobs, customers, and assets, plus configurable dashboard widgets for managers and dispatchers.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Real-time or scheduled integration with Zuper?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Both. Native connectors and webhooks handle real-time flows; high-volume batch syncs, such as supplier purchase orders or tax data, can run on a schedule.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">What happens if a configuration change goes wrong?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Zuper retains deleted items for up to 90 days, so configuration mistakes and lost records can generally be recovered or undone.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How much does Zuper integration cost?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Most Zuper integrations land between $3,000 and $25,000 depending on approach and entity count. See the cost table above for a full breakdown.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How much does Zuper customization cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most Zuper customization projects run $1,500 to $20,000 depending on scope, from settings-only configuration up to Developer Hub and API-driven builds. See the cost table above for a full breakdown.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Zuper integration?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Rescue work — failed native connectors, broken middleware, abandoned custom builds — is a regular part of our practice.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken or half-finished Zuper configuration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work on abandoned workflows, misconfigured proposal layouts, and broken custom functions is a regular part of our practice.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you build AI automation on Zuper data?<i class="fas fa-plus"></i></button>
+          <button class="sap-faq__q" aria-expanded="false">Can you build AI automation on top of Zuper?<i class="fas fa-plus"></i></button>
           <div class="sap-faq__a"><p>Yes. We build AI agents on the Claude API that query and act on Zuper job, customer, and invoice data.</p></div>
         </div>
       </div>
@@ -880,11 +863,11 @@
   <!-- ───────── FINAL CTA ───────── -->
   <section class="sap-finalcta">
     <div class="container">
-      <h2>Ready to Connect Zuper to the Rest of Your Stack?</h2>
-      <p>Every week your systems stay disconnected, your team re-keys data another few hundred times. A scoped <strong>Zuper integration</strong> removes that work permanently — and you'll know the exact cost before we start.</p>
+      <h2>Ready to Make Zuper Fit the Way You Work?</h2>
+      <p>Every week your team works around a default setup, they're re-doing work Zuper's settings could handle automatically. A scoped <strong>Zuper customization</strong> removes that friction permanently — and you'll know the exact cost before we start.</p>
       <div class="sap-finalcta__btns">
         <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
-        <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
+        <a href="#cost" class="btn btn--outline btn--lg">See Our Customization Pricing</a>
       </div>
     </div>
   </section>
