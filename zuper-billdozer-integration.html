@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zuper + Zendesk Integration | RethinkingWeb</title>
-  <meta name="description" content="Turn Zendesk support tickets into dispatched Zuper field jobs and sync job updates back to the ticket. Fixed-price, platform-agnostic integration consulting." />
+  <title>Zuper + Billdozer Integration | RethinkingWeb</title>
+  <meta name="description" content="Turn completed Zuper field jobs into recurring invoices and debit order collections in Billdozer, with payment and arrears status synced back. Fixed-price, platform-agnostic integration consulting." />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/zuper-pairings.css" />
   <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/integrations/zuper-zendesk-integration.html" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/zuper-billdozer-integration.html" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -44,8 +44,8 @@
   "@graph": [
     {
       "@type": "Service",
-      "name": "Zuper + Zendesk Integration",
-      "serviceType": "Customer Service and Field Service Integration Consulting",
+      "name": "Zuper + Billdozer Integration",
+      "serviceType": "Field Service and Recurring Billing Integration Consulting",
       "provider": {
         "@type": "ProfessionalService",
         "name": "RethinkingWeb",
@@ -57,8 +57,8 @@
           "IN"
         ]
       },
-      "description": "Turn Zendesk support tickets into dispatched Zuper field jobs and sync job updates back to the ticket. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://www.rethinkingweb.com/integrations/zuper-zendesk-integration.html"
+      "description": "Turn completed Zuper field jobs into recurring invoices and debit order collections in Billdozer, with payment and arrears status synced back. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://www.rethinkingweb.com/zuper-billdozer-integration.html"
     },
     {
       "@type": "BreadcrumbList",
@@ -73,72 +73,30 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Integrations",
-          "item": "https://rethinkingweb.com/integrations/"
+          "item": "https://rethinkingweb.com/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Zuper",
-          "item": "https://rethinkingweb.com/integrations/zuper.html"
+          "item": "https://rethinkingweb.com/zuper.html"
         },
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "Zendesk"
+          "name": "Billdozer"
         }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can a Zendesk ticket create a Zuper job?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. A Zendesk trigger or webhook fires when a ticket matches your criteria, and the payload is transformed into a scheduled, dispatched Zuper job through the native connector or Zuper's REST API."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do agents see field updates back in Zendesk?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Appointment time, assigned technician, field notes, and completion status are written back onto the ticket so agents can answer customer questions without leaving Zendesk."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which tickets become jobs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Only the ones you choose. We scope the exact ticket types, tags, or field values that should create a job, so routine tickets don't flood the field team."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does the ticket close when the job is done?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It can. On job completion we can move or solve the ticket automatically, or leave that to an agent &mdash; whichever fits your service process."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a Zuper + Zendesk integration cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most projects run $3,000 to $16,000 depending on ticket types, context sync, and status routing. See the cost table above for a full breakdown."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you fix a broken Zendesk to Zuper connection?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Rescue work &mdash; tickets that stopped creating jobs and updates that never made it back &mdash; is a regular part of our practice."
-          }
-        }
+        {"@type": "Question", "name": "Can a completed Zuper job create a Billdozer invoice?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. When a job is marked complete, the job and any parts used are transformed into an invoice or subscription line item in Billdozer through its REST API."}},
+        {"@type": "Question", "name": "Does Zuper know if a customer hasn't paid?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you choose two-way sync. Payment, failed collection, and arrears status can be written back onto the Zuper customer record so dispatch sees it before scheduling the next visit."}},
+        {"@type": "Question", "name": "Can recurring maintenance contracts bill automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Active service contracts in Zuper can be mapped to Billdozer's subscription billing so recurring debit order collections happen on schedule without manual invoicing."}},
+        {"@type": "Question", "name": "What happens if an account falls into arrears?", "acceptedAnswer": {"@type": "Answer", "text": "That's configurable. We can flag the account, hold future scheduled jobs, or simply notify your team &mdash; whichever fits your collections policy."}},
+        {"@type": "Question", "name": "How much does a Zuper + Billdozer integration cost?", "acceptedAnswer": {"@type": "Answer", "text": "Most projects run $4,000 to $18,000 depending on whether billing is job-based, contract-based, or both, and whether arrears automation is included. See the cost table above for a full breakdown."}},
+        {"@type": "Question", "name": "Can you fix a broken Zuper to Billdozer connection?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rescue work &mdash; jobs that stopped generating invoices and payment status that never made it back to Zuper &mdash; is a regular part of our practice."}}
       ]
     }
   ]
@@ -247,7 +205,7 @@
 </div>
 <div class="nav-overlay" id="navOverlay"></div>
 
-<main class="sap sap-pairing zp-pairing zp-pairing--zendesk">
+<main class="sap sap-pairing zp-pairing zp-pairing--billdozer">
 
   <section class="sap-hero">
     <div class="container">
@@ -257,11 +215,11 @@
             <a href="../index.html">Home</a><span>&rsaquo;</span>
             <a href="zuper.html">Integrations</a><span>&rsaquo;</span>
             <a href="zuper.html">Zuper</a><span>&rsaquo;</span>
-            <span class="current">Zendesk</span>
+            <span class="current">Billdozer</span>
           </nav>
-          <div class="sap-badge"><span class="badge__dot"></span> Customer Service Integration</div>
-          <h1 class="sap-hero__title">Zuper <em>+ Zendesk</em> Integration</h1>
-          <p class="sap-hero__sub">Connect Zendesk to <strong>Zuper</strong> so a support ticket that needs a technician becomes a dispatched field job in one step &mdash; and every field update flows back onto the ticket so agents never have to ask 'what's happening on site?'</p>
+          <div class="sap-badge"><span class="badge__dot"></span> Field Service &amp; Recurring Billing Integration</div>
+          <h1 class="sap-hero__title">Zuper <em>+ Billdozer</em> Integration</h1>
+          <p class="sap-hero__sub">Connect Billdozer to <strong>Zuper</strong> so completed jobs and active service contracts turn into invoices and debit order collections automatically &mdash; and payment or arrears status flows back so dispatch always knows who's paid up.</p>
           <div class="sap-hero__cta">
             <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
             <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
@@ -271,17 +229,17 @@
           <div class="sap-hub sap-hub--pair">
             <div class="sap-hub__ring"></div>
             <div class="sap-hub__core"><strong>Zuper</strong><span>Field Service Core</span></div>
-            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-ticket"></i> Tickets</div>
-            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-calendar-check"></i> Jobs</div>
-            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-arrows-rotate"></i> Updates</div>
-            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-user"></i> Customers</div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-calendar-check"></i> Jobs</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-file-invoice-dollar"></i> Invoices</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-money-check-dollar"></i> Collections</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-list-check"></i> Contracts</div>
           </div>
         </div>
       </div>
       <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Tickets in, job updates out</span></div>
-        <div class="sap-stat"><div class="stat-num">Real-time</div><span class="stat-label">Webhook-driven job creation</span></div>
-        <div class="sap-stat"><div class="stat-num">1&ndash;8</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Job data in, payment status out</span></div>
+        <div class="sap-stat"><div class="stat-num">Recurring</div><span class="stat-label">Built for subscription &amp; maintenance billing</span></div>
+        <div class="sap-stat"><div class="stat-num">2&ndash;9</div><span class="stat-label">Weeks to typical go-live</span></div>
         <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
       </div>
     </div>
@@ -294,8 +252,8 @@
         <h2 class="section-title">What Does This <em>Integration Do</em>?</h2>
       </div>
       <div class="sap-body reveal">
-        <p>When a support ticket needs someone physically on site, the handoff from the help desk to the field is where things stall. An agent copies the address and problem into Zuper, and from then on the ticket goes quiet while the customer keeps asking for updates.</p>
-        <p>This integration turns a qualifying Zendesk ticket into a scheduled, dispatched Zuper job automatically, keeps customer details aligned, and writes scheduling, technician, and completion updates back onto the ticket so agents can answer 'when is someone coming?' without leaving Zendesk.</p>
+        <p>Field service businesses running maintenance plans, service contracts, or recurring visits often end up billing manually &mdash; someone checks which jobs closed this month, then keys invoices into a separate billing tool by hand. That's slow, and it's where missed billing cycles and payment disputes creep in.</p>
+        <p>This integration turns completed Zuper jobs and active service contracts into invoices and debit order collections in Billdozer automatically, and syncs payment status and arrears back to Zuper so dispatchers can flag or pause service for accounts that have fallen behind.</p>
       </div>
     </div>
   </section>
@@ -305,44 +263,44 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Data Flow</div>
         <h2 class="section-title">What <em>Syncs</em>, and Which Way</h2>
-        <p class="sap-lead">Most Zuper + Zendesk projects sync the same core objects. Which ticket type or trigger creates a job is the first thing we scope with you.</p>
+        <p class="sap-lead">Most Zuper + Billdozer projects sync the same core objects. How billing is triggered &mdash; per job, per contract cycle, or both &mdash; is the first thing we scope with you.</p>
       </div>
       <div class="sap-cards">
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-ticket"></i></div>
-          <h3>Tickets</h3>
-          <p class="sap-card__systems">Zendesk &rarr; Zuper</p>
-          <p class="sap-card__flows">Qualifying tickets become scheduled, dispatched jobs</p>
-        </div>
-        <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-calendar-check"></i></div>
-          <h3>Job Scheduling</h3>
-          <p class="sap-card__systems">Zuper &rarr; Zendesk</p>
-          <p class="sap-card__flows">Appointment time and assigned technician posted to the ticket</p>
+          <h3>Job Completion</h3>
+          <p class="sap-card__systems">Zuper &rarr; Billdozer</p>
+          <p class="sap-card__flows">Completed jobs generate an invoice or line item automatically</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-user"></i></div>
+          <div class="sap-card__icon"><i class="fas fa-list-check"></i></div>
+          <h3>Service Contracts</h3>
+          <p class="sap-card__systems">Zuper &rarr; Billdozer</p>
+          <p class="sap-card__flows">Recurring maintenance plans mapped to Billdozer subscription billing</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-address-book"></i></div>
           <h3>Customers</h3>
           <p class="sap-card__systems">Two-way</p>
-          <p class="sap-card__flows">Requester and customer details matched and aligned</p>
+          <p class="sap-card__flows">Customer records and debit order mandates matched and kept aligned</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-clipboard-check"></i></div>
-          <h3>Completion Updates</h3>
-          <p class="sap-card__systems">Zuper &rarr; Zendesk</p>
-          <p class="sap-card__flows">Job completion and outcome written back to the ticket</p>
+          <div class="sap-card__icon"><i class="fas fa-money-check-dollar"></i></div>
+          <h3>Payment Status</h3>
+          <p class="sap-card__systems">Billdozer &rarr; Zuper</p>
+          <p class="sap-card__flows">Paid, failed, and arrears status written back onto the customer record</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-comments"></i></div>
-          <h3>Comments &amp; Notes</h3>
-          <p class="sap-card__systems">Two-way</p>
-          <p class="sap-card__flows">Field notes surfaced to agents; ticket context sent to the tech</p>
+          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Invoices</h3>
+          <p class="sap-card__systems">Zuper &rarr; Billdozer</p>
+          <p class="sap-card__flows">Job pricing and parts used carried into the invoice line items</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-circle-check"></i></div>
-          <h3>Ticket Status</h3>
-          <p class="sap-card__systems">Zuper &rarr; Zendesk</p>
-          <p class="sap-card__flows">Ticket moved or solved when the job is completed</p>
+          <div class="sap-card__icon"><i class="fas fa-coins"></i></div>
+          <h3>Arrears Alerts</h3>
+          <p class="sap-card__systems">Billdozer &rarr; Zuper</p>
+          <p class="sap-card__flows">Overdue accounts flagged so dispatch can hold or prioritize service</p>
         </div>
       </div>
     </div>
@@ -353,22 +311,22 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Methods</div>
         <h2 class="section-title">How We <em>Build It</em></h2>
-        <p class="sap-lead">Zendesk exposes a REST API, triggers, and webhooks; Zuper ships a native Zendesk connector alongside its own REST API. The decision is which tickets become jobs and how much context travels with them.</p>
+        <p class="sap-lead">Billdozer exposes a REST API for invoicing, mandates, and collection status; Zuper exposes its own REST API and webhooks for job and contract events. Since there's no off-the-shelf connector between the two, the integration is built directly against both APIs.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
           <tbody>
-            <tr><td><strong>Zuper native Zendesk connector</strong></td><td>Pre-built marketplace integration inside Zuper</td><td>Standard ticket-to-job and update-back flows</td><td>Covers the supported field set only</td></tr>
-            <tr><td><strong>Zendesk triggers &amp; webhooks</strong></td><td>Fire on ticket type, tag, or field change</td><td>Creating jobs from exactly the right tickets</td><td>Webhook delivery needs retry handling</td></tr>
-            <tr><td><strong>Zuper REST API</strong></td><td>Direct access to jobs and customers</td><td>Custom field mapping and scheduling logic</td><td>Requires developer resource on your side or ours</td></tr>
-            <tr><td><strong>iPaaS (Zapier / Make / n8n)</strong></td><td>Orchestration wrapping both APIs</td><td>Mid-complexity flows without heavy code</td><td>Subscription cost; templates bend only so far</td></tr>
+            <tr><td><strong>Billdozer REST API + webhooks</strong></td><td>Direct access to invoices, mandates, and collection status</td><td>Job-to-invoice and contract-to-subscription mapping</td><td>Requires developer resource on your side or ours</td></tr>
+            <tr><td><strong>Zuper REST API + webhooks</strong></td><td>Fires on job completion, contract renewal, or status change</td><td>Triggering billing at the right moment</td><td>Retry and idempotency handling needed for webhook delivery</td></tr>
+            <tr><td><strong>Xero as a billing bridge</strong></td><td>Route invoices through Xero, where Billdozer already syncs</td><td>Businesses already using Xero for accounting</td><td>Adds a hop; invoice data must round-trip through Xero first</td></tr>
+            <tr><td><strong>iPaaS (Zapier / Make / n8n)</strong></td><td>Orchestration wrapping both APIs</td><td>Mid-complexity flows without heavy code</td><td>Subscription cost; complex billing logic may exceed no-code limits</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-callout reveal">
         <i class="fas fa-circle-check"></i>
-        <p><strong>Where a template usually falls short:</strong> creating the job is the easy half. Deciding which tickets qualify, carrying the right context to the technician, and moving the ticket status in step with the job is where a real service-desk build earns its keep.</p>
+        <p><strong>Where a template usually falls short:</strong> generating one invoice from one completed job is the easy half. Handling recurring maintenance contracts correctly, avoiding duplicate invoices on retried webhooks, and deciding what happens to future scheduled jobs when an account goes into arrears is where a real billing integration earns its keep.</p>
       </div>
     </div>
   </section>
@@ -378,20 +336,20 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Pricing</div>
         <h2 class="section-title">How Much Does It <em>Cost</em>?</h2>
-        <p class="sap-lead">A Zuper + Zendesk integration typically costs between <strong>$3,000 and $16,000</strong> to implement, depending on how many ticket types trigger jobs and how much context syncs both ways.</p>
+        <p class="sap-lead">A Zuper + Billdozer integration typically costs between <strong>$4,000 and $18,000</strong> to implement, depending on whether billing is job-based, contract-based, or both, and how much arrears logic feeds back into scheduling.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
           <tbody>
-            <tr><td>Native connector setup &amp; configuration</td><td><strong>$3,000 &ndash; $6,000</strong></td><td>Included in your Zuper subscription</td></tr>
-            <tr><td>Ticket-to-job with update-back</td><td><strong>$5,000 &ndash; $11,000</strong></td><td>iPaaS platform + support retainer</td></tr>
-            <tr><td>Custom multi-ticket-type &amp; routing</td><td><strong>$10,000 &ndash; $16,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+            <tr><td>Job-to-invoice sync (one-way)</td><td><strong>$4,000 &ndash; $7,500</strong></td><td>Support retainer only, no platform fee</td></tr>
+            <tr><td>Two-way sync with payment status</td><td><strong>$7,000 &ndash; $12,500</strong></td><td>iPaaS platform + support retainer</td></tr>
+            <tr><td>Full contract billing &amp; arrears automation</td><td><strong>$11,000 &ndash; $18,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-body reveal">
-        <p>The number moves most on how many <strong>ticket types</strong> trigger jobs, whether customer and comment sync is <strong>one-way or bi-directional</strong>, and how tightly <strong>ticket status</strong> must track the job. We quote a fixed price after a scoping call, so you know the cost before we write a line of code.</p>
+        <p>The number moves most on whether billing is triggered <strong>per job or per recurring contract</strong>, whether payment and arrears status syncs <strong>back to Zuper</strong>, and whether overdue accounts should automatically <strong>pause future scheduling</strong>. We quote a fixed price after a scoping call, so you know the cost before we write a line of code.</p>
       </div>
     </div>
   </section>
@@ -401,18 +359,18 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Timeline</div>
         <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
-        <p class="sap-lead">The usual bottleneck is deciding which tickets should ever become jobs and matching requesters to existing Zuper customers &mdash; both settled before go-live.</p>
+        <p class="sap-lead">The usual bottleneck is agreeing how recurring maintenance contracts map to Billdozer's subscription billing and what should happen when a debit order fails &mdash; both settled before go-live.</p>
       </div>
       <div class="sap-timeline reveal">
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">1&ndash;3 weeks</div>
-          <h4>Native connector</h4>
-          <p>Turn on and configure the marketplace connector for standard ticket-to-job flows.</p>
+          <div class="sap-timeline__weeks">2&ndash;4 weeks</div>
+          <h4>Job-to-invoice only</h4>
+          <p>Every completed job generates an invoice in Billdozer, one-way.</p>
         </div>
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">5&ndash;8 weeks</div>
-          <h4>Custom / multi-type</h4>
-          <p>Several ticket types, two-way context sync, and status routing.</p>
+          <div class="sap-timeline__weeks">5&ndash;9 weeks</div>
+          <h4>Contracts &amp; arrears automation</h4>
+          <p>Recurring billing, two-way payment status, and scheduling holds for overdue accounts.</p>
         </div>
       </div>
     </div>
@@ -426,10 +384,10 @@
         <p class="sap-lead">Every engagement follows the same five stages &mdash; you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
       </div>
       <div class="sap-steps">
-        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We review your Zendesk ticket types, tags, and which should create Zuper jobs.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We review your service contracts, job types, and how each should trigger billing.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a Zuper sandbox and a Zendesk test instance.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real ticket scenarios &mdash; re-opens, reassignments, retries, and status routing.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a Billdozer sandbox account and a Zuper sandbox.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real billing scenarios &mdash; retried jobs, failed debit orders, and contract renewals.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
       </div>
     </div>
@@ -443,28 +401,28 @@
       </div>
       <div class="sap-faq">
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can a Zendesk ticket create a Zuper job?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. A Zendesk trigger or webhook fires when a ticket matches your criteria, and the payload is transformed into a scheduled, dispatched Zuper job through the native connector or Zuper's REST API.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can a completed Zuper job create a Billdozer invoice?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. When a job is marked complete, the job and any parts used are transformed into an invoice or subscription line item in Billdozer through its REST API.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Do agents see field updates back in Zendesk?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Appointment time, assigned technician, field notes, and completion status are written back onto the ticket so agents can answer customer questions without leaving Zendesk.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Does Zuper know if a customer hasn't paid?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes, if you choose two-way sync. Payment, failed collection, and arrears status can be written back onto the Zuper customer record so dispatch sees it before scheduling the next visit.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Which tickets become jobs?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Only the ones you choose. We scope the exact ticket types, tags, or field values that should create a job, so routine tickets don't flood the field team.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can recurring maintenance contracts bill automatically?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Active service contracts in Zuper can be mapped to Billdozer's subscription billing so recurring debit order collections happen on schedule without manual invoicing.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Does the ticket close when the job is done?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>It can. On job completion we can move or solve the ticket automatically, or leave that to an agent &mdash; whichever fits your service process.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">What happens if an account falls into arrears?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>That's configurable. We can flag the account, hold future scheduled jobs, or simply notify your team &mdash; whichever fits your collections policy.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How much does a Zuper + Zendesk integration cost?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Most projects run $3,000 to $16,000 depending on ticket types, context sync, and status routing. See the cost table above for a full breakdown.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How much does a Zuper + Billdozer integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most projects run $4,000 to $18,000 depending on whether billing is job-based, contract-based, or both, and whether arrears automation is included. See the cost table above for a full breakdown.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Zendesk to Zuper connection?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Rescue work &mdash; tickets that stopped creating jobs and updates that never made it back &mdash; is a regular part of our practice.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Zuper to Billdozer connection?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work &mdash; jobs that stopped generating invoices and payment status that never made it back to Zuper &mdash; is a regular part of our practice.</p></div>
         </div>
       </div>
     </div>
@@ -472,8 +430,8 @@
 
   <section class="sap-finalcta">
     <div class="container">
-      <h2>Ready to Connect Zendesk to Zuper?</h2>
-      <p>Every ticket that needs a technician but stalls at the handoff is a customer left waiting and an agent left guessing. A scoped integration removes that gap permanently &mdash; and you'll know the exact cost before we start.</p>
+      <h2>Ready to Automate Billing Between Zuper and Billdozer?</h2>
+      <p>Every completed job that gets invoiced manually is time your office staff doesn't get back, and every missed billing cycle is revenue left on the table. A scoped integration removes that gap permanently &mdash; and you'll know the exact cost before we start.</p>
       <div class="sap-finalcta__btns">
         <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
         <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>

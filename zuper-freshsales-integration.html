@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zuper + Slack Integration | RethinkingWeb</title>
-  <meta name="description" content="Push Zuper job, dispatch, and timesheet alerts into Slack channels in real time. Fixed-price, platform-agnostic integration consulting with honest costs and timelines." />
+  <title>Zuper + Freshsales Integration | RethinkingWeb</title>
+  <meta name="description" content="Turn Freshsales deals into dispatched Zuper field jobs and sync job outcomes back to the deal timeline. Fixed-price, platform-agnostic integration consulting." />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/zuper-pairings.css" />
   <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/integrations/zuper-slack-integration.html" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/zuper-freshsales-integration.html" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -44,8 +44,8 @@
   "@graph": [
     {
       "@type": "Service",
-      "name": "Zuper + Slack Integration",
-      "serviceType": "Collaboration and Field Service Integration Consulting",
+      "name": "Zuper + Freshsales Integration",
+      "serviceType": "CRM and Field Service Integration Consulting",
       "provider": {
         "@type": "ProfessionalService",
         "name": "RethinkingWeb",
@@ -57,8 +57,8 @@
           "IN"
         ]
       },
-      "description": "Push Zuper job, dispatch, and timesheet alerts into Slack channels in real time. Fixed-price, platform-agnostic integration consulting with honest costs and timelines.",
-      "url": "https://www.rethinkingweb.com/integrations/zuper-slack-integration.html"
+      "description": "Turn Freshsales deals into dispatched Zuper field jobs and sync job outcomes back to the deal timeline. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://www.rethinkingweb.com/zuper-freshsales-integration.html"
     },
     {
       "@type": "BreadcrumbList",
@@ -73,72 +73,30 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Integrations",
-          "item": "https://rethinkingweb.com/integrations/"
+          "item": "https://rethinkingweb.com/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Zuper",
-          "item": "https://rethinkingweb.com/integrations/zuper.html"
+          "item": "https://rethinkingweb.com/zuper.html"
         },
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "Slack"
+          "name": "Freshsales"
         }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can Zuper post job alerts into Slack?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. New, updated, and completed jobs, dispatch changes, and timesheet events can be pushed into the Slack channels your teams watch, in real time and formatted cleanly."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can we route different events to different channels?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Events can be routed by team, region, or job type so each channel only sees what's relevant, which keeps the alerts worth reading."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can we act on a job from Slack?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "With an interactive app build, yes &mdash; useful actions like acknowledging or updating a job can be added as buttons, writing back to Zuper."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Will it flood our channels?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Not if it's scoped well. We spend the discovery time deciding which events genuinely deserve a notification, so the signal stays high and people keep reading them."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a Zuper + Slack integration cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most projects run $2,000 to $12,000 depending on event count, routing, and whether you want actions back. See the cost table above for a full breakdown."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you fix a broken Zuper to Slack connection?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Rescue work &mdash; alerts that stopped firing or landing in the wrong channel &mdash; is a regular part of our practice."
-          }
-        }
+        {"@type": "Question", "name": "Can a Freshsales deal create a Zuper job?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Once a deal reaches the stage or pipeline you choose, the details are transformed into a scheduled, dispatched Zuper job through the Freshworks Marketplace app or Zuper's REST API."}},
+        {"@type": "Question", "name": "Do reps see job outcomes back in Freshsales?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Appointment time, assigned technician, field notes, and completion status can be logged directly onto the deal timeline so reps see it alongside calls and emails."}},
+        {"@type": "Question", "name": "Which deals become jobs?", "acceptedAnswer": {"@type": "Answer", "text": "Only the ones you choose. We scope the exact pipeline, stage, or field values that should create a job, so early-stage deals don't flood the field team."}},
+        {"@type": "Question", "name": "Does the deal update when the job is complete?", "acceptedAnswer": {"@type": "Answer", "text": "It can. On job completion we can log a timeline activity, update a custom field, or move the deal into a follow-up pipeline &mdash; whichever fits your sales process."}},
+        {"@type": "Question", "name": "How much does a Zuper + Freshsales integration cost?", "acceptedAnswer": {"@type": "Answer", "text": "Most projects run $2,800 to $15,000 depending on pipelines, quote sync, and timeline detail. See the cost table above for a full breakdown."}},
+        {"@type": "Question", "name": "Can you fix a broken Freshsales to Zuper connection?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rescue work &mdash; deals that stopped creating jobs and outcomes that never made it back to the timeline &mdash; is a regular part of our practice."}}
       ]
     }
   ]
@@ -247,7 +205,7 @@
 </div>
 <div class="nav-overlay" id="navOverlay"></div>
 
-<main class="sap sap-pairing zp-pairing zp-pairing--slack">
+<main class="sap sap-pairing zp-pairing zp-pairing--freshsales">
 
   <section class="sap-hero">
     <div class="container">
@@ -257,11 +215,11 @@
             <a href="../index.html">Home</a><span>&rsaquo;</span>
             <a href="zuper.html">Integrations</a><span>&rsaquo;</span>
             <a href="zuper.html">Zuper</a><span>&rsaquo;</span>
-            <span class="current">Slack</span>
+            <span class="current">Freshsales</span>
           </nav>
-          <div class="sap-badge"><span class="badge__dot"></span> Collaboration Integration</div>
-          <h1 class="sap-hero__title">Zuper <em>+ Slack</em> Integration</h1>
-          <p class="sap-hero__sub">Connect Zuper to <strong>Slack</strong> so job, dispatch, and timesheet events land in the right channel the moment they happen &mdash; your office team sees what's going on in the field without living inside Zuper.</p>
+          <div class="sap-badge"><span class="badge__dot"></span> Sales &amp; Field Service Integration</div>
+          <h1 class="sap-hero__title">Zuper <em>+ Freshsales</em> Integration</h1>
+          <p class="sap-hero__sub">Connect Freshsales to <strong>Zuper</strong> so a deal marked 'Won' becomes a scheduled field job automatically &mdash; and every job outcome lands back on the deal timeline so your sales team never has to chase the field team for an update.</p>
           <div class="sap-hero__cta">
             <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
             <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
@@ -271,17 +229,17 @@
           <div class="sap-hub sap-hub--pair">
             <div class="sap-hub__ring"></div>
             <div class="sap-hub__core"><strong>Zuper</strong><span>Field Service Core</span></div>
-            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-bell"></i> Alerts</div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-handshake"></i> Deals</div>
             <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-calendar-check"></i> Jobs</div>
-            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-truck-fast"></i> Dispatch</div>
-            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-clock"></i> Timesheets</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-clipboard-check"></i> Outcomes</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-user-plus"></i> Leads</div>
           </div>
         </div>
       </div>
       <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">Real-time</div><span class="stat-label">Events pushed the moment they fire</span></div>
-        <div class="sap-stat"><div class="stat-num">Per-channel</div><span class="stat-label">Routed to the right team channel</span></div>
-        <div class="sap-stat"><div class="stat-num">1&ndash;5</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Deals in, outcomes out</span></div>
+        <div class="sap-stat"><div class="stat-num">Marketplace App</div><span class="stat-label">Available in the Freshworks Marketplace</span></div>
+        <div class="sap-stat"><div class="stat-num">1&ndash;7</div><span class="stat-label">Weeks to typical go-live</span></div>
         <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
       </div>
     </div>
@@ -294,8 +252,8 @@
         <h2 class="section-title">What Does This <em>Integration Do</em>?</h2>
       </div>
       <div class="sap-body reveal">
-        <p>The office usually finds out what happened in the field last &mdash; a job ran over, a technician clocked in late, a dispatch got reassigned &mdash; and only when someone thinks to check Zuper or picks up the phone.</p>
-        <p>This integration pushes the Zuper events that matter &mdash; new jobs, dispatch changes, completions, timesheet clock-ins, and exceptions &mdash; into the Slack channels your teams already watch, formatted cleanly and routed so the right people see the right updates in real time.</p>
+        <p>Freshsales is where your team tracks leads, deals, and the sales conversation. Zuper is where the actual installation, delivery, or service visit gets scheduled and completed. Without a connection, someone re-types the deal into a work order, and the rep loses visibility the moment the deal closes.</p>
+        <p>This integration turns a qualifying Freshsales deal into a scheduled, dispatched Zuper job automatically, carries the lead and contact details across, and writes appointment time, technician, and job outcome back onto the deal so reps and managers can answer 'is this done yet?' from inside Freshsales.</p>
       </div>
     </div>
   </section>
@@ -305,44 +263,44 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Data Flow</div>
         <h2 class="section-title">What <em>Syncs</em>, and Which Way</h2>
-        <p class="sap-lead">Zuper + Slack is mostly a one-way notification flow, with optional actions back. Which events go to which channel is the first thing we scope with you.</p>
+        <p class="sap-lead">Most Zuper + Freshsales projects sync the same core objects. Which deal stage or pipeline triggers a job is the first thing we scope with you.</p>
       </div>
       <div class="sap-cards">
         <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-handshake"></i></div>
+          <h3>Deals</h3>
+          <p class="sap-card__systems">Freshsales &rarr; Zuper</p>
+          <p class="sap-card__flows">Deals reaching 'Won' or a chosen stage become scheduled jobs</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-user-plus"></i></div>
+          <h3>Leads &amp; Contacts</h3>
+          <p class="sap-card__systems">Two-way</p>
+          <p class="sap-card__flows">Lead and contact details matched and kept aligned across both systems</p>
+        </div>
+        <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-calendar-check"></i></div>
-          <h3>Job Events</h3>
-          <p class="sap-card__systems">Zuper &rarr; Slack</p>
-          <p class="sap-card__flows">New, updated, and completed jobs posted to the channel</p>
+          <h3>Job Scheduling</h3>
+          <p class="sap-card__systems">Zuper &rarr; Freshsales</p>
+          <p class="sap-card__flows">Appointment time and assigned technician logged to the deal timeline</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-truck-fast"></i></div>
-          <h3>Dispatch Changes</h3>
-          <p class="sap-card__systems">Zuper &rarr; Slack</p>
-          <p class="sap-card__flows">Assignments and reassignments announced in real time</p>
+          <div class="sap-card__icon"><i class="fas fa-clipboard-check"></i></div>
+          <h3>Job Outcome &amp; Notes</h3>
+          <p class="sap-card__systems">Zuper &rarr; Freshsales</p>
+          <p class="sap-card__flows">Completion status and field notes posted as timeline activity</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-clock"></i></div>
-          <h3>Timesheets</h3>
-          <p class="sap-card__systems">Zuper &rarr; Slack</p>
-          <p class="sap-card__flows">Clock-in and clock-out events surfaced for the office</p>
+          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Quotes</h3>
+          <p class="sap-card__systems">Two-way</p>
+          <p class="sap-card__flows">Quoted value and job pricing kept consistent between platforms</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-triangle-exclamation"></i></div>
-          <h3>Exceptions &amp; SLAs</h3>
-          <p class="sap-card__systems">Zuper &rarr; Slack</p>
-          <p class="sap-card__flows">Overruns and at-risk jobs flagged to the right people</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-hashtag"></i></div>
-          <h3>Channel Routing</h3>
-          <p class="sap-card__systems">Zuper &rarr; Slack</p>
-          <p class="sap-card__flows">Events routed by team, region, or job type to the right channel</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-reply"></i></div>
-          <h3>Optional Actions</h3>
-          <p class="sap-card__systems">Slack &rarr; Zuper</p>
-          <p class="sap-card__flows">Acknowledge or update a job from Slack where useful</p>
+          <div class="sap-card__icon"><i class="fas fa-arrows-rotate"></i></div>
+          <h3>Sales Activities</h3>
+          <p class="sap-card__systems">Zuper &rarr; Freshsales</p>
+          <p class="sap-card__flows">Job milestones logged as activities for accurate pipeline reporting</p>
         </div>
       </div>
     </div>
@@ -353,22 +311,22 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Methods</div>
         <h2 class="section-title">How We <em>Build It</em></h2>
-        <p class="sap-lead">Slack exposes incoming webhooks, a Web API, and interactive apps; Zuper ships a native Slack connector alongside its own REST API and webhooks. The decision is how much routing and formatting sits between an event and a message.</p>
+        <p class="sap-lead">Zuper ships an app in the Freshworks Marketplace alongside a full REST API; Freshsales adds workflows and webhooks on its side that fire on deal stage or field changes. The decision is how much of the standard app covers your process versus what needs custom mapping.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
           <tbody>
-            <tr><td><strong>Zuper native Slack connector</strong></td><td>Pre-built marketplace integration inside Zuper</td><td>Standard event-to-channel notifications</td><td>Covers the supported event set and formatting</td></tr>
-            <tr><td><strong>Slack incoming webhooks</strong></td><td>Simple one-way message posting</td><td>Getting key events into a channel fast</td><td>Limited formatting and no interactivity</td></tr>
-            <tr><td><strong>Slack Web API / interactive app</strong></td><td>Rich messages plus action buttons</td><td>Routing, formatting, and acting from Slack</td><td>Requires app setup and maintenance</td></tr>
-            <tr><td><strong>Custom middleware (n8n / code)</strong></td><td>Zuper webhooks orchestrated to Slack</td><td>Conditional routing and multi-channel logic</td><td>Needs a partner who can maintain it (that's us)</td></tr>
+            <tr><td><strong>Freshworks Marketplace app</strong></td><td>Pre-built app connecting Zuper into the Freshworks suite</td><td>Standard deal-to-job flows with common fields</td><td>Covers the app's supported fields and stages only</td></tr>
+            <tr><td><strong>Freshsales workflows &amp; webhooks</strong></td><td>Fire on deal stage, pipeline, or field change</td><td>Creating jobs from exactly the deals you choose</td><td>Webhook delivery needs retry and de-dupe handling</td></tr>
+            <tr><td><strong>Zuper REST API</strong></td><td>Direct access to jobs, customers, and quotes</td><td>Custom field mapping and multi-pipeline sync</td><td>Requires developer resource on your side or ours</td></tr>
+            <tr><td><strong>iPaaS (Zapier / Make / n8n)</strong></td><td>Orchestration wrapping both APIs</td><td>Mid-complexity flows without heavy code</td><td>Subscription cost; templates bend only so far</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-callout reveal">
         <i class="fas fa-circle-check"></i>
-        <p><strong>Where a template usually falls short:</strong> posting a message is the easy half. Routing the right events to the right channel, keeping the noise down so alerts still get read, and adding useful actions back into Slack is where a thoughtful build makes the difference.</p>
+        <p><strong>Where a template usually falls short:</strong> installing the marketplace app is the easy half. Deciding which pipeline and stage should ever create a job, avoiding duplicate customer records between Freshsales and Zuper, and logging job outcomes back as clean timeline activity is where a real implementation earns its keep.</p>
       </div>
     </div>
   </section>
@@ -378,20 +336,20 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Pricing</div>
         <h2 class="section-title">How Much Does It <em>Cost</em>?</h2>
-        <p class="sap-lead">A Zuper + Slack integration typically costs between <strong>$2,000 and $12,000</strong> to implement &mdash; simple channel notifications sit at the low end, conditional routing and two-way actions at the high end.</p>
+        <p class="sap-lead">A Zuper + Freshsales integration typically costs between <strong>$2,800 and $15,000</strong> to implement, depending on how many pipelines feed jobs and how much detail syncs back to the deal timeline.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
           <tbody>
-            <tr><td>Native connector setup &amp; configuration</td><td><strong>$2,000 &ndash; $5,000</strong></td><td>Included in your Zuper subscription</td></tr>
-            <tr><td>Multi-channel routing &amp; formatting</td><td><strong>$4,000 &ndash; $9,000</strong></td><td>iPaaS platform + support retainer</td></tr>
-            <tr><td>Interactive app with actions back</td><td><strong>$8,000 &ndash; $12,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+            <tr><td>Marketplace app install &amp; configuration</td><td><strong>$2,800 &ndash; $6,000</strong></td><td>Included in your Zuper subscription</td></tr>
+            <tr><td>Deal-to-job with outcome sync</td><td><strong>$5,000 &ndash; $10,000</strong></td><td>iPaaS platform + support retainer</td></tr>
+            <tr><td>Custom multi-pipeline &amp; quote sync</td><td><strong>$9,000 &ndash; $15,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-body reveal">
-        <p>The number moves most on how many <strong>event types</strong> you notify on, how much <strong>conditional routing</strong> (by team, region, or job type) is involved, and whether you want <strong>actions back</strong> into Zuper from Slack. We quote a fixed price after a scoping call, so you know the cost before we write a line of code.</p>
+        <p>The number moves most on how many <strong>pipelines and stages</strong> feed jobs, whether quotes sync <strong>bi-directionally</strong>, and how much job detail is written back as <strong>timeline activity</strong> versus a simple status field. We quote a fixed price after a scoping call, so you know the cost before we write a line of code.</p>
       </div>
     </div>
   </section>
@@ -401,18 +359,18 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Timeline</div>
         <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
-        <p class="sap-lead">This is one of the faster integrations to ship &mdash; the time goes into deciding which events are worth a notification so channels stay useful rather than noisy.</p>
+        <p class="sap-lead">The usual bottleneck is deciding which pipeline stage should ever create a job and matching Freshsales contacts to existing Zuper customers &mdash; both settled before go-live.</p>
       </div>
       <div class="sap-timeline reveal">
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">1&ndash;2 weeks</div>
-          <h4>Native / webhook notifications</h4>
-          <p>Turn on the connector or webhooks for standard event-to-channel alerts.</p>
+          <div class="sap-timeline__weeks">1&ndash;3 weeks</div>
+          <h4>Marketplace app</h4>
+          <p>Install and configure the Freshworks Marketplace app for standard deal-to-job flows.</p>
         </div>
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">3&ndash;5 weeks</div>
-          <h4>Routing + interactive app</h4>
-          <p>Conditional multi-channel routing and actions back into Zuper from Slack.</p>
+          <div class="sap-timeline__weeks">4&ndash;7 weeks</div>
+          <h4>Custom / multi-pipeline</h4>
+          <p>Several pipelines, bi-directional quote sync, and detailed timeline logging.</p>
         </div>
       </div>
     </div>
@@ -426,10 +384,10 @@
         <p class="sap-lead">Every engagement follows the same five stages &mdash; you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
       </div>
       <div class="sap-steps">
-        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We review which Zuper events matter, who needs to see them, and in which channels.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every event, its channel, format, and any action-back rule before building.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a Zuper sandbox and a Slack test workspace.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real event scenarios &mdash; bursts, routing edge cases, and retries.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We review your Freshsales pipelines, deal stages, and which should create Zuper jobs.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a Zuper sandbox and a Freshsales trial account.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real deal scenarios &mdash; reopened deals, stage rollbacks, retries, and outcome logging.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
       </div>
     </div>
@@ -443,28 +401,28 @@
       </div>
       <div class="sap-faq">
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can Zuper post job alerts into Slack?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. New, updated, and completed jobs, dispatch changes, and timesheet events can be pushed into the Slack channels your teams watch, in real time and formatted cleanly.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can a Freshsales deal create a Zuper job?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Once a deal reaches the stage or pipeline you choose, the details are transformed into a scheduled, dispatched Zuper job through the Freshworks Marketplace app or Zuper's REST API.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can we route different events to different channels?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Events can be routed by team, region, or job type so each channel only sees what's relevant, which keeps the alerts worth reading.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Do reps see job outcomes back in Freshsales?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Appointment time, assigned technician, field notes, and completion status can be logged directly onto the deal timeline so reps see it alongside calls and emails.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can we act on a job from Slack?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>With an interactive app build, yes &mdash; useful actions like acknowledging or updating a job can be added as buttons, writing back to Zuper.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Which deals become jobs?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Only the ones you choose. We scope the exact pipeline, stage, or field values that should create a job, so early-stage deals don't flood the field team.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Will it flood our channels?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Not if it's scoped well. We spend the discovery time deciding which events genuinely deserve a notification, so the signal stays high and people keep reading them.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Does the deal update when the job is complete?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>It can. On job completion we can log a timeline activity, update a custom field, or move the deal into a follow-up pipeline &mdash; whichever fits your sales process.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How much does a Zuper + Slack integration cost?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Most projects run $2,000 to $12,000 depending on event count, routing, and whether you want actions back. See the cost table above for a full breakdown.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How much does a Zuper + Freshsales integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most projects run $2,800 to $15,000 depending on pipelines, quote sync, and timeline detail. See the cost table above for a full breakdown.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Zuper to Slack connection?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Rescue work &mdash; alerts that stopped firing or landing in the wrong channel &mdash; is a regular part of our practice.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Freshsales to Zuper connection?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work &mdash; deals that stopped creating jobs and outcomes that never made it back to the timeline &mdash; is a regular part of our practice.</p></div>
         </div>
       </div>
     </div>
@@ -472,8 +430,8 @@
 
   <section class="sap-finalcta">
     <div class="container">
-      <h2>Ready to Connect Slack to Zuper?</h2>
-      <p>Every field event the office hears about late is a slower response and a missed heads-up. A scoped integration puts the right updates in front of the right people permanently &mdash; and you'll know the exact cost before we start.</p>
+      <h2>Ready to Connect Freshsales to Zuper?</h2>
+      <p>Every won deal that needs a technician but stalls at the handoff is a customer waiting and a rep left guessing. A scoped integration removes that gap permanently &mdash; and you'll know the exact cost before we start.</p>
       <div class="sap-finalcta__btns">
         <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
         <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>

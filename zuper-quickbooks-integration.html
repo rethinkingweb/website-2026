@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zuper + HubSpot Integration | RethinkingWeb</title>
-  <meta name="description" content="Sync HubSpot deals, tickets, and contacts with Zuper field service jobs. Fixed-price, platform-agnostic integration consulting with honest costs and timelines." />
+  <title>Zuper + QuickBooks Integration | RethinkingWeb</title>
+  <meta name="description" content="Sync Zuper job completion, invoices, and payments with QuickBooks Online or Desktop. Fixed-price, platform-agnostic integration consulting with honest costs and timelines." />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/zuper-pairings.css" />
   <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/integrations/zuper-hubspot-integration.html" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/zuper-quickbooks-integration.html" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -44,8 +44,8 @@
   "@graph": [
     {
       "@type": "Service",
-      "name": "Zuper + HubSpot Integration",
-      "serviceType": "CRM and Field Service Integration Consulting",
+      "name": "Zuper + QuickBooks Integration",
+      "serviceType": "Accounting and Field Service Integration Consulting",
       "provider": {
         "@type": "ProfessionalService",
         "name": "RethinkingWeb",
@@ -57,8 +57,8 @@
           "IN"
         ]
       },
-      "description": "Sync HubSpot deals, tickets, and contacts with Zuper field service jobs. Fixed-price, platform-agnostic integration consulting with honest costs and timelines.",
-      "url": "https://www.rethinkingweb.com/integrations/zuper-hubspot-integration.html"
+      "description": "Sync Zuper job completion, invoices, and payments with QuickBooks Online or Desktop. Fixed-price, platform-agnostic integration consulting with honest costs and timelines.",
+      "url": "https://www.rethinkingweb.com/zuper-quickbooks-integration.html"
     },
     {
       "@type": "BreadcrumbList",
@@ -73,18 +73,18 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Integrations",
-          "item": "https://rethinkingweb.com/integrations/"
+          "item": "https://rethinkingweb.com/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Zuper",
-          "item": "https://rethinkingweb.com/integrations/zuper.html"
+          "item": "https://rethinkingweb.com/zuper.html"
         },
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "HubSpot"
+          "name": "QuickBooks"
         }
       ]
     },
@@ -93,50 +93,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How does a HubSpot deal become a Zuper job?",
+          "name": "Can you connect Zuper to QuickBooks Online and Desktop?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A HubSpot workflow or webhook fires when a deal reaches the stage you choose, and the payload is transformed into a Zuper customer and scheduled job through the native connector or Zuper's REST API, with retry handling if a system is briefly unavailable."
+            "text": "Yes. QuickBooks Online connects through its REST API for near real-time invoicing; QuickBooks Desktop connects through the Web Connector or a sync bridge on a schedule. We scope which fits your setup."
           }
         },
         {
           "@type": "Question",
-          "name": "Can support tickets create jobs too?",
+          "name": "How does a completed job become an invoice?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. HubSpot Service Hub tickets can trigger dispatched Zuper jobs, which is common for maintenance and callout work booked through support."
+            "text": "When a Zuper job is marked complete, its line items, quantities, and tax are transformed into a QuickBooks invoice against the matched customer, either through the native connector or Zuper's REST API."
           }
         },
         {
           "@type": "Question",
-          "name": "Does job status show up back in HubSpot?",
+          "name": "Does payment status come back into Zuper?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Scheduled, in-progress, completed, and invoice states are pushed back onto the deal or ticket so your sales and service teams see the field outcome without leaving HubSpot."
+            "text": "Yes. When an invoice is paid in QuickBooks, that status flows back to the Zuper job so the field team knows the work has settled."
           }
         },
         {
           "@type": "Question",
-          "name": "How are duplicate contacts handled?",
+          "name": "Can you push job costing for profitability?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Contacts are matched on email or phone and reconciled during the mapping stage, so you don't end up with the same customer twice across the two systems."
+            "text": "Yes. With a custom build we can map labour, materials, and expenses back so you can report profitability per job, which the standard connector doesn't fully cover."
           }
         },
         {
           "@type": "Question",
-          "name": "How much does a Zuper + HubSpot integration cost?",
+          "name": "How much does a Zuper + QuickBooks integration cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most projects run $3,000 to $18,000 depending on pipelines, ticket triggers, and how much contact reconciliation is needed. See the cost table above for a full breakdown."
+            "text": "Most projects run $3,000 to $20,000 depending on edition, tax complexity, and job costing. See the cost table above for a full breakdown."
           }
         },
         {
           "@type": "Question",
-          "name": "Can you take over a broken HubSpot to Zuper connector?",
+          "name": "Can you fix a broken QuickBooks sync?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Rescue work is a large share of our practice &mdash; stalled native connectors, duplicated jobs, and status that quietly stopped syncing back to the CRM."
+            "text": "Yes. Rescue work &mdash; duplicated invoices, mismatched customers, and payment status that stopped flowing back &mdash; is a regular part of our practice."
           }
         }
       ]
@@ -247,7 +247,7 @@
 </div>
 <div class="nav-overlay" id="navOverlay"></div>
 
-<main class="sap sap-pairing zp-pairing zp-pairing--hubspot">
+<main class="sap sap-pairing zp-pairing zp-pairing--quickbooks">
 
   <section class="sap-hero">
     <div class="container">
@@ -257,11 +257,11 @@
             <a href="../index.html">Home</a><span>&rsaquo;</span>
             <a href="zuper.html">Integrations</a><span>&rsaquo;</span>
             <a href="zuper.html">Zuper</a><span>&rsaquo;</span>
-            <span class="current">HubSpot</span>
+            <span class="current">QuickBooks</span>
           </nav>
-          <div class="sap-badge"><span class="badge__dot"></span> CRM Integration</div>
-          <h1 class="sap-hero__title">Zuper <em>+ HubSpot</em> Integration</h1>
-          <p class="sap-hero__sub">Connect HubSpot to <strong>Zuper</strong> so a won deal or a support ticket becomes a scheduled, dispatched field job automatically &mdash; and job status flows back to the CRM without anyone updating two systems.</p>
+          <div class="sap-badge"><span class="badge__dot"></span> Accounting Integration</div>
+          <h1 class="sap-hero__title">Zuper <em>+ QuickBooks</em> Integration</h1>
+          <p class="sap-hero__sub">Connect Zuper to <strong>QuickBooks</strong> so a completed job turns into an accurate invoice, customers and payments stay aligned, and your books stop waiting on someone to re-type field paperwork.</p>
           <div class="sap-hero__cta">
             <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
             <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
@@ -271,17 +271,17 @@
           <div class="sap-hub sap-hub--pair">
             <div class="sap-hub__ring"></div>
             <div class="sap-hub__core"><strong>Zuper</strong><span>Field Service Core</span></div>
-            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-handshake"></i> Deals</div>
-            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-user"></i> Contacts</div>
-            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-calendar-check"></i> Jobs</div>
-            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-arrows-rotate"></i> Status</div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-file-invoice"></i> Invoices</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-user"></i> Customers</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-credit-card"></i> Payments</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-boxes-stacked"></i> Items</div>
           </div>
         </div>
       </div>
       <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Deals in, job status out</span></div>
-        <div class="sap-stat"><div class="stat-num">Real-time</div><span class="stat-label">Webhook-driven job creation</span></div>
-        <div class="sap-stat"><div class="stat-num">1&ndash;8</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Invoices out, payments back</span></div>
+        <div class="sap-stat"><div class="stat-num">Online + Desktop</div><span class="stat-label">Both QuickBooks editions supported</span></div>
+        <div class="sap-stat"><div class="stat-num">1&ndash;10</div><span class="stat-label">Weeks to typical go-live</span></div>
         <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
       </div>
     </div>
@@ -294,8 +294,8 @@
         <h2 class="section-title">What Does This <em>Integration Do</em>?</h2>
       </div>
       <div class="sap-body reveal">
-        <p>A sales team lives in HubSpot and a field crew lives in Zuper, and the handoff between them is usually a person copying a deal into a job by hand. Details get dropped, the address is retyped, and nobody in sales knows whether the work actually happened.</p>
-        <p>This integration turns a closed-won HubSpot deal &mdash; or a service ticket &mdash; into a Zuper customer and scheduled job the moment it qualifies, keeps contact details aligned both ways, and pushes job status, completion, and invoice state back onto the HubSpot record so the sales team sees the full picture.</p>
+        <p>In most field service businesses the accounting lag is the paperwork lag. A job finishes, the sheet sits in a van or an inbox, and days later someone keys it into QuickBooks &mdash; sometimes with the wrong customer, sometimes not at all.</p>
+        <p>This integration posts completed Zuper jobs into QuickBooks as invoices with the correct customer, line items, and tax, keeps the customer list aligned across both systems, and brings payment status back into Zuper so the field and finance teams see the same reality.</p>
       </div>
     </div>
   </section>
@@ -305,44 +305,44 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Data Flow</div>
         <h2 class="section-title">What <em>Syncs</em>, and Which Way</h2>
-        <p class="sap-lead">Most Zuper + HubSpot projects sync the same core objects. Which trigger creates a job (deal stage vs. ticket) is the first thing we scope with you.</p>
+        <p class="sap-lead">Most Zuper + QuickBooks projects sync the same core records. Which edition you run &mdash; Online or Desktop &mdash; changes how the connection is made, and we scope that first.</p>
       </div>
       <div class="sap-cards">
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-handshake"></i></div>
-          <h3>Deals</h3>
-          <p class="sap-card__systems">HubSpot &rarr; Zuper</p>
-          <p class="sap-card__flows">Closed-won deals create a Zuper job at the stage you choose</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
-          <h3>Tickets</h3>
-          <p class="sap-card__systems">HubSpot &rarr; Zuper</p>
-          <p class="sap-card__flows">Service tickets become dispatched field jobs</p>
+          <div class="sap-card__icon"><i class="fas fa-file-invoice"></i></div>
+          <h3>Invoices</h3>
+          <p class="sap-card__systems">Zuper &rarr; QuickBooks</p>
+          <p class="sap-card__flows">Completed jobs post as invoices with line items and tax</p>
         </div>
         <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-user"></i></div>
-          <h3>Contacts &amp; Companies</h3>
+          <h3>Customers</h3>
           <p class="sap-card__systems">Two-way</p>
           <p class="sap-card__flows">Customer records matched and kept aligned on both sides</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-calendar-check"></i></div>
-          <h3>Job Status</h3>
-          <p class="sap-card__systems">Zuper &rarr; HubSpot</p>
-          <p class="sap-card__flows">Scheduled, in-progress, and completed states post to the deal</p>
+          <div class="sap-card__icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Payments</h3>
+          <p class="sap-card__systems">QuickBooks &rarr; Zuper</p>
+          <p class="sap-card__flows">Paid status flows back so the field team sees settlement</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3>Invoicing State</h3>
-          <p class="sap-card__systems">Zuper &rarr; HubSpot</p>
-          <p class="sap-card__flows">Invoice raised and paid status surfaced on the CRM record</p>
+          <div class="sap-card__icon"><i class="fas fa-boxes-stacked"></i></div>
+          <h3>Items &amp; Services</h3>
+          <p class="sap-card__systems">QuickBooks &rarr; Zuper</p>
+          <p class="sap-card__flows">Product and service items mapped for accurate invoicing</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-note-sticky"></i></div>
-          <h3>Notes &amp; Attachments</h3>
-          <p class="sap-card__systems">Two-way</p>
-          <p class="sap-card__flows">Job notes and completion photos linked back to the contact</p>
+          <div class="sap-card__icon"><i class="fas fa-percent"></i></div>
+          <h3>Tax Codes</h3>
+          <p class="sap-card__systems">QuickBooks &rarr; Zuper</p>
+          <p class="sap-card__flows">Tax rates and codes applied correctly per line</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-receipt"></i></div>
+          <h3>Estimates</h3>
+          <p class="sap-card__systems">Zuper &rarr; QuickBooks</p>
+          <p class="sap-card__flows">Approved estimates carried through to invoicing</p>
         </div>
       </div>
     </div>
@@ -353,22 +353,22 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Methods</div>
         <h2 class="section-title">How We <em>Build It</em></h2>
-        <p class="sap-lead">HubSpot exposes a full REST API plus workflow webhooks, and Zuper ships a native HubSpot connector alongside its own REST API. The decision is how much logic sits between a deal stage and a dispatched job.</p>
+        <p class="sap-lead">QuickBooks Online exposes a REST API; QuickBooks Desktop connects through the Web Connector or a sync bridge. Zuper ships a native QuickBooks connector alongside its own REST API. The right method depends on your edition and invoicing rules.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
           <tbody>
-            <tr><td><strong>Zuper native HubSpot connector</strong></td><td>Pre-built marketplace integration inside Zuper</td><td>Standard deal-to-job and status-back flows</td><td>Covers the supported field set only</td></tr>
-            <tr><td><strong>HubSpot workflows &amp; webhooks</strong></td><td>Trigger on deal stage or ticket change</td><td>Firing job creation at exactly the right moment</td><td>Webhook delivery needs retry handling</td></tr>
-            <tr><td><strong>Zuper REST API</strong></td><td>Direct access to jobs, customers, invoices</td><td>Custom field mapping and job logic</td><td>Requires developer resource on your side or ours</td></tr>
-            <tr><td><strong>iPaaS (Zapier / Make / n8n)</strong></td><td>Orchestration wrapping both APIs</td><td>Mid-complexity flows without heavy code</td><td>Subscription cost; templates bend only so far</td></tr>
+            <tr><td><strong>Zuper native QuickBooks connector</strong></td><td>Pre-built marketplace integration inside Zuper</td><td>Standard job-to-invoice and payment-back flows</td><td>Covers supported fields; edition-dependent</td></tr>
+            <tr><td><strong>QuickBooks Online API</strong></td><td>REST access to invoices, customers, items</td><td>Cloud QBO, real-time invoicing</td><td>Governance and rate limits on large syncs</td></tr>
+            <tr><td><strong>QuickBooks Desktop (Web Connector)</strong></td><td>Scheduled sync bridge to on-prem QuickBooks</td><td>Businesses still on Desktop</td><td>Runs on a schedule, not truly real-time</td></tr>
+            <tr><td><strong>Custom middleware (n8n / code)</strong></td><td>Orchestration wrapping both APIs</td><td>Non-standard tax, multi-entity, job costing</td><td>Needs a partner who can maintain it (that's us)</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-callout reveal">
         <i class="fas fa-circle-check"></i>
-        <p><strong>Where a template usually falls short:</strong> creating the job is the easy half. Deciding which deal stage triggers it, de-duplicating contacts that exist in both systems, and mapping job outcomes back to the right deal property is where the real mapping work starts.</p>
+        <p><strong>Where a template usually falls short:</strong> posting an invoice is the easy half. Matching items to the right service, applying the correct tax code per jurisdiction, and mapping job costing back for profitability is where the accounting detail lives &mdash; and where templates stop.</p>
       </div>
     </div>
   </section>
@@ -378,20 +378,20 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Pricing</div>
         <h2 class="section-title">How Much Does It <em>Cost</em>?</h2>
-        <p class="sap-lead">A Zuper + HubSpot integration typically costs between <strong>$3,000 and $18,000</strong> to implement, depending on how many objects you sync and how much custom routing sits between the two.</p>
+        <p class="sap-lead">A Zuper + QuickBooks integration typically costs between <strong>$3,000 and $20,000</strong> to implement, depending on your edition, tax complexity, and whether you need job costing.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
           <tbody>
-            <tr><td>Native connector setup &amp; configuration</td><td><strong>$3,000 &ndash; $7,000</strong></td><td>Included in your Zuper subscription</td></tr>
-            <tr><td>Deal/ticket-to-job with status-back</td><td><strong>$6,000 &ndash; $12,000</strong></td><td>iPaaS platform + support retainer</td></tr>
-            <tr><td>Custom API build, multi-pipeline &amp; routing</td><td><strong>$11,000 &ndash; $18,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+            <tr><td>Native connector setup &amp; configuration</td><td><strong>$3,000 &ndash; $8,000</strong></td><td>Included in your Zuper subscription</td></tr>
+            <tr><td>Job-to-invoice with payment sync (QBO)</td><td><strong>$6,000 &ndash; $13,000</strong></td><td>iPaaS platform + support retainer</td></tr>
+            <tr><td>Desktop / job costing / multi-entity</td><td><strong>$12,000 &ndash; $20,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-body reveal">
-        <p>The number moves most on how many <strong>pipelines and ticket types</strong> trigger jobs, whether contact sync is <strong>one-way or bi-directional</strong>, and how much <strong>de-duplication</strong> your existing data needs. We quote a fixed price after a scoping call, so you know the cost before we write a line of code.</p>
+        <p>The number moves most on your <strong>QuickBooks edition</strong> (Online vs. Desktop), <strong>tax complexity</strong>, and whether you need <strong>job costing</strong> pushed back for profitability reporting. We quote a fixed price after a scoping call, so you know the cost before we write a line of code.</p>
       </div>
     </div>
   </section>
@@ -401,18 +401,18 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Timeline</div>
         <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
-        <p class="sap-lead">The usual bottleneck isn't development &mdash; it's contacts that exist in both HubSpot and Zuper with mismatched details, which we reconcile before anything syncs.</p>
+        <p class="sap-lead">The usual bottleneck is item and customer data that doesn't line up between Zuper and QuickBooks &mdash; that reconciliation happens before anything syncs.</p>
       </div>
       <div class="sap-timeline reveal">
         <div class="sap-timeline__card">
           <div class="sap-timeline__weeks">1&ndash;3 weeks</div>
-          <h4>Native connector</h4>
-          <p>Turn on and configure the marketplace connector for standard deal-to-job flows.</p>
+          <h4>Native connector (QBO)</h4>
+          <p>Turn on and configure the marketplace connector for standard job-to-invoice flows.</p>
         </div>
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">5&ndash;8 weeks</div>
-          <h4>Custom / multi-pipeline</h4>
-          <p>Several pipelines, ticket triggers, two-way contact sync, and status routing.</p>
+          <div class="sap-timeline__weeks">6&ndash;10 weeks</div>
+          <h4>Desktop / job costing</h4>
+          <p>QuickBooks Desktop bridge, tax nuance, job costing, and multi-entity mapping.</p>
         </div>
       </div>
     </div>
@@ -426,10 +426,10 @@
         <p class="sap-lead">Every engagement follows the same five stages &mdash; you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
       </div>
       <div class="sap-steps">
-        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We review your HubSpot pipelines, ticket types, and which stages should create Zuper jobs.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We review your QuickBooks edition, chart of accounts, item list, and tax setup.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a Zuper sandbox and a HubSpot test portal.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real deal and ticket scenarios &mdash; duplicates, re-opens, retries, and status routing.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a Zuper sandbox and a QuickBooks test company.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real invoicing scenarios &mdash; partial payments, credits, tax edge cases, retries.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
       </div>
     </div>
@@ -443,28 +443,28 @@
       </div>
       <div class="sap-faq">
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How does a HubSpot deal become a Zuper job?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>A HubSpot workflow or webhook fires when a deal reaches the stage you choose, and the payload is transformed into a Zuper customer and scheduled job through the native connector or Zuper's REST API, with retry handling if a system is briefly unavailable.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you connect Zuper to QuickBooks Online and Desktop?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. QuickBooks Online connects through its REST API for near real-time invoicing; QuickBooks Desktop connects through the Web Connector or a sync bridge on a schedule. We scope which fits your setup.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can support tickets create jobs too?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. HubSpot Service Hub tickets can trigger dispatched Zuper jobs, which is common for maintenance and callout work booked through support.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How does a completed job become an invoice?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>When a Zuper job is marked complete, its line items, quantities, and tax are transformed into a QuickBooks invoice against the matched customer, either through the native connector or Zuper's REST API.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Does job status show up back in HubSpot?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Scheduled, in-progress, completed, and invoice states are pushed back onto the deal or ticket so your sales and service teams see the field outcome without leaving HubSpot.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Does payment status come back into Zuper?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. When an invoice is paid in QuickBooks, that status flows back to the Zuper job so the field team knows the work has settled.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How are duplicate contacts handled?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Contacts are matched on email or phone and reconciled during the mapping stage, so you don't end up with the same customer twice across the two systems.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you push job costing for profitability?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. With a custom build we can map labour, materials, and expenses back so you can report profitability per job, which the standard connector doesn't fully cover.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How much does a Zuper + HubSpot integration cost?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Most projects run $3,000 to $18,000 depending on pipelines, ticket triggers, and how much contact reconciliation is needed. See the cost table above for a full breakdown.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How much does a Zuper + QuickBooks integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most projects run $3,000 to $20,000 depending on edition, tax complexity, and job costing. See the cost table above for a full breakdown.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you take over a broken HubSpot to Zuper connector?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Rescue work is a large share of our practice &mdash; stalled native connectors, duplicated jobs, and status that quietly stopped syncing back to the CRM.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken QuickBooks sync?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work &mdash; duplicated invoices, mismatched customers, and payment status that stopped flowing back &mdash; is a regular part of our practice.</p></div>
         </div>
       </div>
     </div>
@@ -472,8 +472,8 @@
 
   <section class="sap-finalcta">
     <div class="container">
-      <h2>Ready to Connect HubSpot to Zuper?</h2>
-      <p>Every deal your team closes without an automatic job is a manual re-key and a chance to drop the details. A scoped integration removes that work permanently &mdash; and you'll know the exact cost before we start.</p>
+      <h2>Ready to Connect QuickBooks to Zuper?</h2>
+      <p>Every job that waits on manual invoicing is cash sitting still and a chance to bill the wrong amount. A scoped integration removes that delay permanently &mdash; and you'll know the exact cost before we start.</p>
       <div class="sap-finalcta__btns">
         <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
         <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
