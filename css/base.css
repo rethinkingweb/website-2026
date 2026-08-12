@@ -97,7 +97,14 @@ input, select, textarea, button { font-family: inherit; }
 .nav__dropdown.active .dropdown__panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
 .dropdown__panel a { display: block; padding: .45rem .75rem; font-size: .84rem; color: var(--text-muted); border-radius: 6px; transition: all var(--trans); white-space: nowrap; font-weight: 600; }
 .dropdown__panel a:hover { background: var(--orange-pale); color: var(--orange); }
-
+.nav__link--dropdown-toggle {
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
 /* ── Mega Menu (Solutions) ── */
 .mega-menu {
   position: absolute; top: calc(100% + 10px); left: 50%;

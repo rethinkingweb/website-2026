@@ -187,15 +187,17 @@
       <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
 
       <div class="nav__dropdown">
-        <a href="solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
-          Solutions
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="mega-menu">
-          <div class="mega-menu__header">
-            <span class="mega-menu__label">Our Solutions</span>
-            <a href="solutions.html" class="mega-menu__all">View all services <span>→</span></a>
-          </div>
+  <a href="solutions.html" 
+     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+     onclick="event.preventDefault();">
+    Solutions
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </a>
+  <div class="mega-menu">
+    <div class="mega-menu__header">
+      <span class="mega-menu__label">Our Solutions</span>
+      <a href="solutions.html" class="mega-menu__all">View all services</a>
+    </div>
           <div class="mega-menu__grid">
             <a href="managed.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-server"></i></div><div class="mega-item__content"><span class="mega-item__title">Managed Services</span><span class="mega-item__desc">24/7 IT infrastructure &amp; support</span></div></a>
             <a href="consulting.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div><div class="mega-item__content"><span class="mega-item__title">IT Consulting &amp; Advisory</span><span class="mega-item__desc">Strategic technology guidance</span></div></a>
@@ -212,13 +214,16 @@
       </div>
 
       <div class="nav__dropdown">
-         <a href="integrations/integration-services.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
-          Integrations
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="mega-menu mega-menu--integrations">
-          <div class="mega-menu__header">
+  <a href="integration-services.html" 
+     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+     onclick="event.preventDefault();">
+    Integrations
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </a>
+  <div class="mega-menu mega-menu--integrations">
+            <div class="mega-menu__header">
             <span class="mega-menu__label">Integrations</span>
+            <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
           </div>
           <div class="mega-menu__grid">
             <a href="integrations/sap-business-one.html" class="mega-item">
@@ -341,7 +346,7 @@
     <!-- Integrations accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="integrations/integration-services.html" class="mob-accordion__link">Integrations</a>
+        <a href="integration-services.html" class="mob-accordion__link">Integrations</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>

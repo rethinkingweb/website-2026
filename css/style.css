@@ -194,7 +194,14 @@ input, select, textarea, button { font-family: inherit; }
 /* ── Overlay ── */
 .nav-overlay { position: fixed; inset: 0; z-index: 1999; background: rgba(0,0,0,0.45); display: none; pointer-events: none; }
 .nav-overlay.active { display: block; pointer-events: auto; }
-
+.nav__link--dropdown-toggle {
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
 /* ── Mobile Nav Drawer ── */
 .mobile-nav { position: fixed; inset: 0; z-index: 2000; background: var(--white); display: flex; flex-direction: column; transform: translateX(100%); transition: transform .4s cubic-bezier(.77,0,.175,1); border-left: 3px solid var(--orange); padding: 0; overflow-y: auto; }
 .mobile-nav.open { transform: translateX(0); }
