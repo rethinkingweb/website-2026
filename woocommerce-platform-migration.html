@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WooCommerce Platform Migration for a Premium Jewelry Retailer – RethinkingWeb Case Study</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="canonical" href="https://www.rethinkingweb.com/woocommerce-platform-migration.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/case2.css" />
-  <!-- Tailwind CSS -->
+ <title>WooCommerce Platform Migration for a Premium Jewelry Retailer – RethinkingWeb Case Study</title>
+  <meta name="description" content="Sync WooCommerce orders, customers, and multi-location stock with NetSuite. Fixed-price integration consulting from a WooCommerce development agency." />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/woocommerce-pairings.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/woocommerce-platform-migration.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -40,7 +41,51 @@
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
+  <style>.grecaptcha-badge { visibility: hidden; }</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "NetSuite + 3PL / WMS Integration",
+      "serviceType": "Warehouse and Logistics Integration Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "RethinkingWeb",
+        "url": "https://rethinkingweb.com/",
+        "areaServed": ["US", "GB", "AU", "IN"]
+      },
+      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://rethinkingweb.com/netsuite-3pl-wms-integration.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/" },
+        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/netsuite.html" },
+        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
+        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
+        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
+        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
+        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
+        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -155,56 +200,56 @@
             <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
           </div>
           <div class="mega-menu__grid">
-            <a href="integrations/sap-business-one.html" class="mega-item">
+            <a href="sap-business-one.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">SAP Business One</span>
                 <span class="mega-item__desc">ERP integration &amp; consulting</span>
               </div>
             </a>
-            <a href="integrations/salesforce.html" class="mega-item">
+            <a href="salesforce.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Salesforce</span>
                 <span class="mega-item__desc">CRM &amp; order-to-cash sync</span>
               </div>
             </a>
-            <a href="integrations/netsuite.html" class="mega-item">
+            <a href="netsuite.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0C3B5D"/><text x="12" y="17" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">N</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">NetSuite</span>
                 <span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span>
               </div>
             </a>
-            <a href="integrations/shopify.html" class="mega-item">
+            <a href="shopify.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/><path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z" opacity=".12"/><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Shopify</span>
                 <span class="mega-item__desc">Ecommerce &#8596; back office</span>
               </div>
             </a>
-            <a href="integrations/quickbooks.html" class="mega-item">
+            <a href="quickbooks.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">QuickBooks</span>
                 <span class="mega-item__desc">Accounting &amp; invoice sync</span>
               </div>
             </a>
-            <a href="integrations/woocommerce.html" class="mega-item">
+            <a href="woocommerce.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">WooCommerce</span>
                 <span class="mega-item__desc">WordPress store integration</span>
               </div>
             </a>
-            <a href="integrations/zoho.html" class="mega-item">
+            <a href="zoho.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Zoho</span>
                 <span class="mega-item__desc">Zoho One suite integration</span>
               </div>
             </a>
- <a href="integrations/zuper.html" class="mega-item">
+ <a href="zuper.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Zuper</span>
@@ -293,13 +338,13 @@
         </svg>
       </button>
       <div class="mob-accordion__panel">
-        <a href="integrations/sap-business-one.html">SAP Business One</a>
-        <a href="integrations/salesforce.html">Salesforce</a>
-        <a href="integrations/netsuite.html">NetSuite</a>
-        <a href="integrations/shopify.html">Shopify</a>
-        <a href="integrations/quickbooks.html">QuickBooks</a>
-        <a href="integrations/woocommerce.html">WooCommerce</a>
-        <a href="integrations/zoho.html">Zoho</a>
+        <a href="sap-business-one.html">SAP Business One</a>
+        <a href="salesforce.html">Salesforce</a>
+        <a href="netsuite.html">NetSuite</a>
+        <a href="shopify.html">Shopify</a>
+        <a href="quickbooks.html">QuickBooks</a>
+        <a href="woocommerce.html">WooCommerce</a>
+        <a href="zoho.html">Zoho</a>
       </div>
     </div>
 

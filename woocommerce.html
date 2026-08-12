@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>WooCommerce Integration Services | RethinkingWeb</title>
+  <meta name="description" content="Connect WooCommerce to your ERP, accounting, CRM, shipping, and marketing systems. Fixed-price integration consulting from a WooCommerce development agency." />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/woocommerce-pairings.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/woocommerce.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
+  <style>.grecaptcha-badge { visibility: hidden; }</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "NetSuite + 3PL / WMS Integration",
+      "serviceType": "Warehouse and Logistics Integration Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "RethinkingWeb",
+        "url": "https://rethinkingweb.com/",
+        "areaServed": ["US", "GB", "AU", "IN"]
+      },
+      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://rethinkingweb.com/netsuite-3pl-wms-integration.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/" },
+        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/netsuite.html" },
+        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
+        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
+        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
+        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
+        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
+        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+      <a href="../index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="../solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="../solutions.html" class="mega-menu__all">View all services <span>&rarr;</span></a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="../managed.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-server"></i></div><div class="mega-item__content"><span class="mega-item__title">Managed Services</span><span class="mega-item__desc">24/7 IT infrastructure &amp; support</span></div></a>
+            <a href="../consulting.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div><div class="mega-item__content"><span class="mega-item__title">IT Consulting &amp; Advisory</span><span class="mega-item__desc">Strategic technology guidance</span></div></a>
+            <a href="../cyber.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div><div class="mega-item__content"><span class="mega-item__title">Cyber Security</span><span class="mega-item__desc">Protect your digital assets</span></div></a>
+            <a href="web_development.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-code"></i></div><div class="mega-item__content"><span class="mega-item__title">Web Development</span><span class="mega-item__desc">Custom websites &amp; web apps</span></div></a>
+            <a href="../mobile-development.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div><div class="mega-item__content"><span class="mega-item__title">Mobile Development</span><span class="mega-item__desc">iOS &amp; Android solutions</span></div></a>
+            <a href="../cloud.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-cloud"></i></div><div class="mega-item__content"><span class="mega-item__title">Cloud Services</span><span class="mega-item__desc">Scalable cloud infrastructure</span></div></a>
+            <a href="../software.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div><div class="mega-item__content"><span class="mega-item__title">Software Development</span><span class="mega-item__desc">Bespoke software solutions</span></div></a>
+            <a href="../airtable.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-table-cells"></i></div><div class="mega-item__content"><span class="mega-item__title">Enterprise Airtable</span><span class="mega-item__desc">No-code workflow automation</span></div></a>
+            <a href="../web-performance.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div><div class="mega-item__content"><span class="mega-item__title">Web Performance</span><span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span></div></a>
+            <a href="../seo.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div><div class="mega-item__content"><span class="mega-item__title">On-page Technical SEO</span><span class="mega-item__desc">Rank higher, grow faster</span></div></a>
+          </div>
+        </div>
+      </div>
+<div class="nav__dropdown">
+  <button type="button" class="nav__link nav__link--dropdown-toggle px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange" aria-haspopup="true" aria-expanded="false">
+    Integrations
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </button>
+  <div class="mega-menu mega-menu--integrations">
+    <div class="mega-menu__header">
+      <span class="mega-menu__label">Integrations</span>
+      <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
+    </div>
+    <div class="mega-menu__grid">
+      <a href="sap-business-one.html" class="mega-item">...</a>
+      <a href="salesforce.html" class="mega-item">...</a>
+      <a href="netsuite.html" class="mega-item">...</a>
+      <a href="shopify.html" class="mega-item">...</a>
+      <a href="quickbooks.html" class="mega-item">...</a>
+      <a href="woocommerce.html" class="mega-item">...</a>
+      <a href="zoho.html" class="mega-item">...</a>
+      <a href="zuper.html" class="mega-item">...</a>
+    </div>
+  </div>
+</div>
+
+      <div class="nav__dropdown">
+        <a href="../about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="../about.html">About Us</a>
+          <a href="../whyus.html">Why Us</a>
+          <a href="../team.html">Team</a>
+          <a href="../careers.html">Careers</a>
+          <a href="../testimonials.html">Testimonials</a>
+          <a href="../case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="../case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="../contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    </div>
+
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="../index.html"><img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" /></a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">&#10005;</button>
+  </div>
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../managed.html">Managed Services</a>
+        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="../cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="../mobile-development.html">Mobile Development</a>
+        <a href="../cloud.html">Cloud Services</a>
+        <a href="../software.html">Software Development</a>
+        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="../web-performance.html">Web Performance Optimization</a>
+        <a href="../seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="sap-business-one.html" class="mob-accordion__link">Integrations</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="sap-business-one.html">SAP Business One</a>
+        <a href="salesforce.html">Salesforce</a>
+        <a href="netsuite.html">NetSuite</a>
+        <a href="shopify.html">Shopify</a>
+        <a href="quickbooks.html">QuickBooks</a>
+        <a href="woocommerce.html">WooCommerce</a>
+        <a href="zoho.html">Zoho</a>
+ <a href="zuper.html">zuper</a>
+      </div>
+    </div>
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../about.html">About Us</a>
+        <a href="../whyus.html">Why Us</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../case.html">Case Studies</a>
+      </div>
+    </div>
+    <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+    <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+  </nav>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ═══════════════════════════════════════════
+     PILLAR PAGE CONTENT
+═══════════════════════════════════════════ -->
+<main class="sap">
+
+  <!-- ───────── HERO ───────── -->
+  <section class="sap-hero">
+    <div class="container">
+      <div class="sap-hero__inner">
+        <div class="sap-hero__text">
+          <nav class="sap-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>›</span>
+            <span>Integrations</span>
+            <span>›</span>
+            <span class="current">WooCommerce</span>
+          </nav>
+          <div class="sap-badge"><span class="badge__dot"></span> WooCommerce Development Agency</div>
+          <h1 class="sap-hero__title">WooCommerce <em>Integration Services</em></h1>
+          <p class="sap-hero__sub">
+            <strong>WooCommerce integration</strong> connects your store to the systems that run the rest of the business — ERP, accounting, CRM, shipping, and marketing. We're a WordPress and WooCommerce development agency as well as an integration consultancy, so when the cleanest fix is on the store side we can make it there instead of working around it in middleware.
+          </p>
+          <div class="sap-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+            <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
+          </div>
+        </div>
+
+        <!-- Integration hub visual -->
+        <div class="sap-hero__visual" aria-hidden="true">
+          <div class="sap-hub">
+            <div class="sap-hub__ring"></div>
+            <div class="sap-hub__core"><strong>Woo</strong><span>WooCommerce Store</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-industry"></i> SAP B1</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-cubes"></i> NetSuite</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-file-invoice-dollar"></i> QuickBooks</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-cloud"></i> Salesforce</div>
+            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-truck-fast"></i> ShipStation</div>
+            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-envelope"></i> Mailchimp</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="sap-stats">
+        <div class="sap-stat"><div class="stat-num">12+</div><span class="stat-label">Systems we connect to WooCommerce</span></div>
+        <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
+        <div class="sap-stat"><div class="stat-num">2–10</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHAT IS ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">The Basics</div>
+        <h2 class="section-title">What Is WooCommerce <em>Integration</em>?</h2>
+      </div>
+      <div class="sap-body reveal">
+        <p>WooCommerce integration is the process of exchanging data automatically between your store and the other systems your business runs on, so records like orders, customers, products, and stock levels stay consistent everywhere without manual re-entry. It's how a WooCommerce order becomes a sales order in your ERP, an invoice in your accounting package, and a shipping label — all from one checkout, in seconds.</p>
+        <p>WooCommerce is different from hosted platforms in one way that shapes every integration: it's <strong>self-hosted</strong>. That's an advantage — you can run server-side logic inside WordPress, shape the data before it ever leaves the site, and there's no platform gatekeeper between you and your own database. It's also a responsibility, because webhook reliability, cron scheduling, and performance all depend on how your hosting is configured rather than on someone else's infrastructure.</p>
+        <p>Most WooCommerce merchants run several other systems: an accounting package, a shipping tool, a CRM, an email platform, sometimes an ERP. Every one is a potential silo. Integration turns that stack into a single operating picture, cuts data entry, and removes the reconciliation errors that come from copying orders by hand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHAT CAN YOU INTEGRATE ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Compatibility</div>
+        <h2 class="section-title">What Can You Integrate with <em>WooCommerce</em>?</h2>
+        <p class="sap-lead">You can integrate WooCommerce with almost any modern system that exposes an API. The categories we work with most are ERP, accounting, CRM, shipping and fulfilment, marketing, and marketplaces.</p>
+      </div>
+      <div class="sap-cards">
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-industry"></i></div>
+          <h3>ERP</h3>
+          <p class="sap-card__systems"><a href="woocommerce-sap-integration.html">SAP Business One</a>, <a href="woocommerce-netsuite-integration.html">NetSuite</a></p>
+          <p class="sap-card__flows">Orders, items, stock, pricing, invoices, master data</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Accounting</h3>
+          <p class="sap-card__systems"><a href="woocommerce-quickbooks-integration.html">QuickBooks</a>, Xero, Zoho Books</p>
+          <p class="sap-card__flows">Invoices, refunds, gateway fees, deposit reconciliation</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-cloud"></i></div>
+          <h3>CRM</h3>
+          <p class="sap-card__systems"><a href="woocommerce-salesforce-integration.html">Salesforce</a>, HubSpot, Zoho CRM, Twenty CRM</p>
+          <p class="sap-card__flows">Customers, order history, lifetime value, service cases</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-truck-fast"></i></div>
+          <h3>Shipping &amp; Fulfilment</h3>
+          <p class="sap-card__systems"><a href="woocommerce-shipstation-integration.html">ShipStation</a>, 3PL portals, carriers</p>
+          <p class="sap-card__flows">Labels, tracking, fulfilment status, returns</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-envelope"></i></div>
+          <h3>Marketing &amp; ESP</h3>
+          <p class="sap-card__systems"><a href="woocommerce-mailchimp-integration.html">Mailchimp</a>, Klaviyo, Zoho Campaigns</p>
+          <p class="sap-card__flows">Subscribers, abandoned carts, purchase-based segments</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Payments &amp; Marketplaces</h3>
+          <p class="sap-card__systems">Stripe, PayPal, WooPayments, Amazon</p>
+          <p class="sap-card__flows">Charges, payouts, fees, marketplace order sync</p>
+        </div>
+      </div>
+      <div class="sap-body reveal">
+        <p>If your system isn't listed, it's almost certainly still integrable. Because WooCommerce is self-hosted, we can also reach data that a hosted platform would keep locked away. We scope against your actual requirement, not a connector catalogue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── POPULAR INTEGRATIONS ───────── -->
+  <section class="sap-section sap-popular">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Popular Pairings</div>
+        <h2 class="section-title">Popular WooCommerce <em>Integrations</em></h2>
+        <p class="sap-lead">These are the WooCommerce pairings we build most often. Click any card to see how that integration works.</p>
+      </div>
+
+      <div class="sap-popular__grid">
+
+        <a href="woocommerce-sap-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--woocommerce">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--sap">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="popSapWoo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="5" fill="url(#popSapWoo)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg>
+            </span>
+          </div>
+          <h3>WooCommerce <em>+</em> SAP Business One</h3>
+          <p>Orders to ERP, stock &amp; pricing back</p>
+        </a>
+
+        <a href="woocommerce-netsuite-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--woocommerce">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--netsuite">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0C3B5D"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">NetSuite</text></svg>
+            </span>
+          </div>
+          <h3>WooCommerce <em>+</em> NetSuite</h3>
+          <p>Order-to-cash &amp; multi-location stock</p>
+        </a>
+
+        <a href="woocommerce-quickbooks-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--woocommerce">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--quickbooks">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg>
+            </span>
+          </div>
+          <h3>WooCommerce <em>+</em> QuickBooks</h3>
+          <p>Invoices, refunds &amp; gateway deposits</p>
+        </a>
+
+        <a href="woocommerce-salesforce-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--woocommerce">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--salesforce">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg>
+            </span>
+          </div>
+          <h3>WooCommerce <em>+</em> Salesforce</h3>
+          <p>Customers, order history &amp; lifetime value</p>
+        </a>
+
+        <a href="woocommerce-shipstation-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--woocommerce">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--shipstation"><i class="fas fa-truck-fast"></i></span>
+          </div>
+          <h3>WooCommerce <em>+</em> ShipStation</h3>
+          <p>Labels, tracking &amp; fulfilment status</p>
+        </a>
+
+        <a href="woocommerce-mailchimp-integration.html" class="sap-popular__card reveal">
+          <div class="sap-popular__logos">
+            <span class="sap-popular__logo sap-popular__logo--woocommerce">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            </span>
+            <span class="sap-popular__plus">+</span>
+            <span class="sap-popular__logo sap-popular__logo--mailchimp"><i class="fab fa-mailchimp"></i></span>
+          </div>
+          <h3>WooCommerce <em>+</em> Mailchimp</h3>
+          <p>Subscribers, carts &amp; purchase segments</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── HOW DO YOU INTEGRATE ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Methods</div>
+        <h2 class="section-title">How Do You Integrate WooCommerce with <em>Other Systems</em>?</h2>
+        <p class="sap-lead">WooCommerce gives you more ways in than a hosted platform does: the <strong>REST API</strong> for standard record access, <strong>webhooks</strong> for real-time order events, <strong>WordPress action and filter hooks</strong> for server-side logic that runs before data ever leaves the site, <strong>Action Scheduler</strong> for reliable background jobs, and third-party <strong>iPaaS connectors</strong> on top. The right choice depends on your order volume, which extensions are active, and how much shaping the data needs.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
+          <tbody>
+            <tr><td><strong>WooCommerce REST API</strong></td><td>Authenticated REST access to orders, products, customers, coupons</td><td>Standard reads and writes from an external system</td><td>Key/secret must be scoped correctly; large queries need pagination</td></tr>
+            <tr><td><strong>Webhooks</strong></td><td>Push notifications on order, product, and customer events</td><td>Posting orders downstream the moment they are placed</td><td>Delivery depends on your hosting, caching, and security plugins</td></tr>
+            <tr><td><strong>WordPress hooks (custom plugin)</strong></td><td>Server-side PHP running inside WordPress on store events</td><td>Complex stores where data needs shaping before it leaves</td><td>Lives in your codebase and must survive core and plugin updates</td></tr>
+            <tr><td><strong>Action Scheduler</strong></td><td>WooCommerce's own background job queue</td><td>Retries, batching, and long-running syncs without blocking checkout</td><td>Needs a real cron trigger; WP-Cron alone is unreliable at low traffic</td></tr>
+            <tr><td><strong>iPaaS connectors</strong></td><td>Pre-built templates on Zapier, Make, n8n, or Celigo</td><td>Standard order and customer flows going live fast</td><td>Subscription cost forever; templates bend only so far</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-callout reveal">
+        <i class="fas fa-circle-check"></i>
+        <p><strong>The advantage most agencies don't use:</strong> because WooCommerce runs on your own server, the cleanest fix is often a small piece of code inside WordPress rather than a workaround in middleware. We build WordPress and WooCommerce sites too, so we can make that change on the store side — something an integration-only vendor can't offer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── COST ───────── -->
+  <section class="sap-section sap-section--alt" id="cost">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">How Much Does WooCommerce Integration <em>Cost</em>?</h2>
+        <p class="sap-lead">A typical WooCommerce integration costs between <strong>$2,000 and $18,000</strong> to implement, depending on the approach. Templated connectors sit at the low end plus a monthly platform subscription; custom plugin and API builds sit at the high end with no recurring platform fee.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
+          <tbody>
+            <tr><td>Templated connector / iPaaS flow</td><td><strong>$2,000 – $6,000</strong></td><td>$30 – $300/month platform subscription</td></tr>
+            <tr><td>iPaaS orchestration (Make, n8n)</td><td><strong>$4,000 – $10,000</strong></td><td>$50 – $300/month platform + support retainer</td></tr>
+            <tr><td>Custom plugin / REST API build</td><td><strong>$8,000 – $18,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-body reveal">
+        <p>Four factors move the number most: your <strong>order volume</strong> (which decides per-order vs batched posting), how many <strong>extensions</strong> reshape the order data (Subscriptions, Bookings, multi-vendor, tax plugins), whether flows are <strong>one-way or bi-directional</strong>, and whether <strong>payout or stock reconciliation</strong> is in scope. We quote fixed prices after a scoping call, so you know the cost before we write a line of code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── TIMELINE ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Timeline</div>
+        <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
+        <p class="sap-lead">The single biggest schedule risk isn't development — it's plugin sprawl and mismatched SKUs, which is why we audit your live order data before mapping anything.</p>
+      </div>
+      <div class="sap-timeline reveal">
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">2–4 weeks</div>
+          <h4>Templated integrations</h4>
+          <p>Standard order and customer flows on a connector or iPaaS template, live fast.</p>
+        </div>
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">5–10 weeks</div>
+          <h4>Custom builds</h4>
+          <p>Bespoke plugin or REST API work, scaled to extensions, entity count, and testing depth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── PROCESS ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title">What Does Our Integration Process <em>Look Like</em>?</h2>
+        <p class="sap-lead">Every engagement follows the same five stages — you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
+      </div>
+      <div class="sap-steps">
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We audit your store, active extensions, hosting, order volume, and the outcome you need.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a staging copy of your site, never against production.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real order scenarios end to end — partial refunds, coupons, failed payments, retries.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CONSULTANT VS PLUGIN ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Why a Consultant</div>
+        <h2 class="section-title">Consultant vs. <em>Buying a Sync Plugin</em></h2>
+        <p class="sap-lead">A sync plugin is cheap until it isn't. It works on a clean store with standard settings, then quietly breaks the week a core update ships or a new extension changes the order payload — and nobody notices until month-end.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table sap-table--compare">
+          <thead><tr><th></th><th>Sync plugin</th><th>RethinkingWeb</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Handles your extensions</strong></td><td>Only the ones it was built for</td><td>Mapped against your real order payload</td></tr>
+            <tr><td><strong>When WordPress updates</strong></td><td>You wait for the vendor</td><td>We test and patch it ourselves</td></tr>
+            <tr><td><strong>Non-standard requirements</strong></td><td>Feature request, maybe never</td><td>Custom logic is the core offering</td></tr>
+            <tr><td><strong>When it silently stops</strong></td><td>You find out at month-end</td><td>Alerting tells us before you notice</td></tr>
+            <tr><td><strong>Store-side fixes</strong></td><td>Out of scope</td><td>We build WooCommerce sites too</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHY RTW (dark band) ───────── -->
+  <section class="sap-why">
+    <div class="container">
+      <div class="sap-why__inner">
+        <div class="sap-why__text reveal">
+          <div class="section-label">Why RethinkingWeb</div>
+          <h2 class="section-title">The Team on <em>Both Sides</em> of the Sync</h2>
+          <p>We build and run integrations for companies across the US, UK, Australia, and India. WooCommerce is home ground for us: we're a WordPress and WooCommerce development agency, an official Twenty CRM partner, and we build AI automation on the Claude API. That means we can fix the store, the sync, or both — rather than pointing at whichever one isn't ours.</p>
+          <p>WooCommerce rarely lives alone. We regularly connect it to <a href="sap-business-one.html">SAP Business One</a>, <a href="netsuite.html">NetSuite</a>, <a href="quickbooks.html">QuickBooks</a>, <a href="salesforce.html">Salesforce</a>, and <a href="zoho.html">Zoho</a>
+ <a href="zuper.html">zuper</a> — often all within one orchestrated architecture.</p>
+          <div class="sap-midcta">
+            <a href="#form" class="btn btn--primary btn--lg">Get a Fixed-Price Integration Quote</a>
+          </div>
+        </div>
+        <div class="sap-why__aside reveal">
+          <div class="sap-why__check"><i class="fas fa-check"></i> WooCommerce development agency, not just integrators</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Fixed pricing before we build</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> We can fix the store side as well as the sync</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Rescue &amp; take-over of broken sync plugins</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> AI automation on the Claude API</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── TRUST FACTORS ───────── -->
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Why Trust Us</div>
+        <h2 class="section-title">Why Integrate with <em>RethinkingWeb</em></h2>
+        <p class="sap-lead">Integration only pays off if it keeps running after go-live. These are the reasons merchants hand us the connection between their store and everything else — and keep us on to look after it.</p>
+      </div>
+      <div class="sap-trust">
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fab fa-wordpress"></i></div>
+          <h3>A WooCommerce Agency First</h3>
+          <p>We build WordPress and WooCommerce stores as well as integrations. When the real problem is a plugin conflict or a hook firing at the wrong time, we fix it at the source instead of working around it.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Fixed Price Before We Build</h3>
+          <p>You approve a signed mapping sheet and a fixed quote before a single field is configured. No open-ended hourly meters, no scope surprises mid-project.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-user-gear"></i></div>
+          <h3>A Named Engineer, Not a Queue</h3>
+          <p>The person who built your integration is the person who answers when something changes. No ticket lottery, no re-explaining your setup to a new agent each time.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-plug-circle-check"></i></div>
+          <h3>Built for Your Extensions</h3>
+          <p>Subscriptions, Bookings, multi-vendor, and tax plugins all reshape the order payload. We map against your live data, not a generic WooCommerce order.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-globe"></i></div>
+          <h3>Proven Across Four Countries</h3>
+          <p>We build and run integrations for businesses in the US, UK, Australia, and India, spanning retail, subscription, and B2B commerce.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-life-ring"></i></div>
+          <h3>Rescue &amp; Take-Over Specialists</h3>
+          <p>A large share of our work is fixing sync plugins that stopped silently, duplicated orders, or broke after a core update. If your last one failed, we've almost certainly seen your exact situation.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-robot"></i></div>
+          <h3>AI Automation on the Claude API</h3>
+          <p>Beyond moving data, we build AI agents on the Claude API that act on store data — natural-language sales reporting, automated order triage, and smart customer segmentation.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Monitored After Go-Live</h3>
+          <p>Every integration ships with logging, alerting, and retry handling, so a failed sync surfaces to us before it becomes a problem you have to chase down.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FAQ ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      </div>
+      <div class="sap-faq">
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Does WooCommerce have an API?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. WooCommerce ships a REST API (currently v3) authenticated with consumer key and secret over HTTPS, covering orders, products, customers, coupons, and reports. It also supports webhooks that fire on order and product events, and because WooCommerce is self-hosted you can additionally run server-side PHP logic through WordPress action and filter hooks.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">What is HPOS and does it affect integration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>High-Performance Order Storage moves orders out of the WordPress posts table into dedicated tables. It significantly improves performance on high-volume stores, but any integration or plugin that queries orders directly in the database rather than through the WooCommerce API needs to be HPOS-compatible. We check this before building.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Are WooCommerce webhooks reliable?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>They are reliable when the site is configured for it. Because WooCommerce runs on your own hosting, aggressive page caching, security plugins, and WP-Cron misconfiguration can all delay or drop webhook delivery. We audit the hosting setup and add retry handling as part of every build.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you sync WooCommerce with an ERP like SAP or NetSuite?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Pushing WooCommerce orders into an ERP as sales orders, and pulling stock and pricing back to the storefront, is one of our most common projects. We build against the ERP's own API, whether that is the SAP B1 Service Layer, NetSuite SuiteTalk, or another platform.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Do WooCommerce plugins affect the integration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes, significantly. Subscriptions, Bookings, multi-vendor, and tax plugins all reshape the order payload, so we audit which extensions are active and map against your real order data rather than a generic WooCommerce order structure.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How much does WooCommerce integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most WooCommerce integrations land between $2,000 and $18,000 depending on approach, entity count, and how many extensions shape the order data. See the cost table above for a breakdown by method.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a WooCommerce sync plugin that keeps failing?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Plugin-based syncs that silently stop, duplicate orders, or break after a WordPress core update are regular rescue work for us. Because we build WordPress and WooCommerce sites as well as integrations, we can fix the store side as well as the sync.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can WooCommerce integrate with multiple stores or a multisite network?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Each store connects with its own credentials and can map to a separate entity, subsidiary, or account in the connected system, with consolidated reporting across all of them.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Do you build AI automation on WooCommerce data?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. We build AI agents on the Claude API that act on store data: natural-language sales reporting, automated order triage, product description generation, and intelligent customer segmentation.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FINAL CTA ───────── -->
+  <section class="sap-finalcta">
+    <div class="container">
+      <h2>Ready to Connect WooCommerce to the Rest of Your Stack?</h2>
+      <p>Every week your store stays disconnected, someone exports another spreadsheet and re-keys another few hundred orders. A scoped <strong>WooCommerce integration</strong> removes that work permanently — and you'll know the exact cost before we start.</p>
+      <div class="sap-finalcta__btns">
+        <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+        <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- ═══ CONTACT ═══ -->
+ <section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__left">
+        <div class="section-label">Contact us</div>
+        <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+        <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+        <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+        <div class="contact__benefits">
+          <div class="benefit-col">
+            <div class="benefit">✓ Client-oriented</div>
+            <div class="benefit">✓ Independent</div>
+            <div class="benefit">✓ Competent</div>
+          </div>
+          <div class="benefit-col">
+            <div class="benefit">✓ Results-driven</div>
+            <div class="benefit">✓ Problem-solving</div>
+            <div class="benefit">✓ Transparent</div>
+          </div>
+        </div>
+
+        <div class="contact__steps">
+          <h4>What happens next?</h4>
+          <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+          <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+          <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+        </div>
+      </div>
+
+      <div class="contact__right">
+        <div class="contact__form-card" id="form">
+          <h3>Schedule a Free Consultation</h3>
+
+          <div class="form-progress">
+            <div class="form-progress__bar"><div class="form-progress__fill" id="progressFill"></div></div>
+            <span class="form-progress__label"><span id="stepCurrent">1</span> of <span id="stepTotal">2</span></span>
+          </div>
+
+          <form class="contact-form contact-form--wizard" id="contactForm" novalidate>
+
+            <div class="form-step is-active" data-step="1">
+              <div class="form-step__eyebrow">Tell us about you</div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First name</label>
+                  <input type="text" name="first_name" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                  <label>Last name</label>
+                  <input type="text" name="last_name" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Company Email</label>
+                  <input type="email" name="email" placeholder="john@company.com" required>
+                </div>
+                <div class="form-group">
+                  <label>Phone <span class="optional-tag">(optional)</span></label>
+                  <input type="tel" name="phone" placeholder="+91 00000 00000">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Company / Organization <span class="optional-tag">(optional)</span></label>
+                  <input type="text" name="company" placeholder="Acme Corp">
+                </div>
+                <div class="form-group">
+                  <label>How Can We Help You?</label>
+                  <select name="service" required>
+                    <option value="">Select Option</option>
+                    <option>Managed Services</option>
+                    <option>IT Consulting &amp; Advisory</option>
+                    <option>Cyber Security</option>
+                    <option>Web Development</option>
+                    <option>Mobile Development</option>
+                    <option>Cloud Services</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Message <span class="optional-tag">(optional)</span></label>
+                <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-step" data-step="2">
+              <div class="form-step__eyebrow">Pick a date &amp; time that works for you</div>
+
+              <div class="form-group">
+                <label>Preferred Date</label>
+                <input type="text" name="preferred_date" id="preferredDate" placeholder="Select a date" required readonly>
+              </div>
+
+              <div class="form-group">
+                <label>Preferred Time</label>
+                <select name="preferred_time" id="preferredTime" required>
+                  <option value="">Select a date first</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group--check">
+                <label class="check-label">
+                  <input type="checkbox" id="privacy" name="privacy" required>
+                  I agree to the <a href="/privacy.html" target="_blank">Privacy Policy</a> and consent to being contacted.
+                </label>
+              </div>
+            </div>
+
+            <input type="hidden" name="g_recaptcha_token" id="gRecaptchaToken">
+
+            <div class="form-nav">
+              <button type="button" class="btn btn--ghost" id="btnBack" style="visibility:hidden;">← Back</button>
+              <button type="button" class="btn btn--primary" id="btnNext">Continue →</button>
+              <button type="submit" class="btn btn--primary" id="submitBtn" style="display:none;">
+                <span id="btnText">Submit</span>
+                <span id="btnLoader" style="display:none;">Sending…</span>
+              </button>
+            </div>
+
+            <p class="text-xs text-muted mt-2" style="font-size:0.75rem; color:#7A6F68; margin-top:0.5rem;">
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration:underline;">Privacy Policy</a> and
+              <a href="https://policies.google.com/terms" target="_blank" style="text-decoration:underline;">Terms of Service</a> apply.
+            </p>
+
+            <div class="form-success" id="formSuccess">
+              ✅ Thanks! We've received your message and will be in touch shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- ───────── FOOTER ───────── -->
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="../index.html" class="inline-block mb-4"><img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" /></a>
+          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="../consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="../cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="../mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="../cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="../software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="../airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="../web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="../seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="../whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="../team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="../careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="../testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India &ndash; 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="../contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">&copy; 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="../terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="../privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="../js/sap-business-one-integration.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+ <script src="/js/contact.js"></script>
+</body>
+</html>
