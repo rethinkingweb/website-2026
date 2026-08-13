@@ -325,14 +325,6 @@
 .isvc-finalcta .btn--outline { color: #fff; border-color: rgba(255,255,255,0.4); }
 .isvc-finalcta .btn--outline:hover { border-color: rgba(255,255,255,0.8); color: #fff; background: rgba(255,255,255,0.08); }
 
-
-.mob-accordion__panel {
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-.mob-accordion.open .mob-accordion__panel {
-  max-height: 1000px !important;
-}
 /* ═══════════════════════════════
    REVEAL
 ═══════════════════════════════ */
