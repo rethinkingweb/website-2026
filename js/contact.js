@@ -375,19 +375,23 @@ if (form) {
   return;
 }
 
-      // 3) Verified — now send the notification email via EmailJS
+// 3) Verified — now send the notification email via EmailJS
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
-
-      form.reset();
-      form.querySelectorAll('.form-group').forEach(g => g.classList.remove('error', 'valid'));
-      form.querySelectorAll('.field-error').forEach(el => el.remove());
-      if (fp) fp.clear();
-      populateTimes();
-      showStep(0, false); // reset to step 1 without an extra scroll jolt
 
       formSuccess.classList.add('show');
       formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       setTimeout(() => formSuccess.classList.remove('show'), 6000);
+
+      try {
+        if (fp) fp.clear();          // clear Flatpickr BEFORE form.reset()
+        form.reset();
+        form.querySelectorAll('.form-group').forEach(g => g.classList.remove('error', 'valid'));
+        form.querySelectorAll('.field-error').forEach(el => el.remove());
+        populateTimes();
+        showStep(0, false); // reset to step 1 without an extra scroll jolt
+      } catch (cleanupErr) {
+        console.warn('Post-submit UI reset error (message was still sent):', cleanupErr);
+      }
     } catch (err) {
       console.error('Submission error:', err);
       alert('Something went wrong sending your message. Please try again or email us directly at info@rethinkingweb.com.');
@@ -399,7 +403,7 @@ if (form) {
   });
 
   populateTimes();
-  showStep(0, false); // FIX: don't scroll on initial page load
+  showStep(0, false);
 }
 
 /* ═══ SMOOTH SCROLL FOR ANCHOR LINKS ═══ */
