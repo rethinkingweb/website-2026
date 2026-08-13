@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-  <meta charset="UTF-8" />
+   <meta charset="UTF-8" />
+ <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SAP Business One + Zuper Integration | RethinkingWeb</title>
   <meta name="description" content="Sync service calls, customers, equipment, and sales orders between SAP Business One and Zuper FSM. Expert integration with transparent pricing." />
@@ -104,35 +105,36 @@
     </a>
 
     <!-- DESKTOP LINKS -->
-    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
-      <a href="../index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
-
+      <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+     <a href="/" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
       <div class="nav__dropdown">
-        <a href="../solutions.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
-          Solutions
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="mega-menu">
-          <div class="mega-menu__header">
-            <span class="mega-menu__label">Our Solutions</span>
-            <a href="../solutions.html" class="mega-menu__all">View all services </a>
-          </div>
+  <a href="solutions.html" 
+     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+     onclick="event.preventDefault();">
+    Solutions
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </a>
+  <div class="mega-menu">
+    <div class="mega-menu__header">
+      <span class="mega-menu__label">Our Solutions</span>
+      <a href="solutions.html" class="mega-menu__all">View all services</a>
+    </div>
           <div class="mega-menu__grid">
-            <a href="../managed.html" class="mega-item">
+            <a href="managed.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-server"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Managed Services</span>
                 <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
               </div>
             </a>
-            <a href="../consulting.html" class="mega-item">
+            <a href="consulting.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">IT Consulting &amp; Advisory</span>
                 <span class="mega-item__desc">Strategic technology guidance</span>
               </div>
             </a>
-            <a href="../cyber.html" class="mega-item">
+            <a href="cyber.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Cyber Security</span>
@@ -146,42 +148,42 @@
                 <span class="mega-item__desc">Custom websites &amp; web apps</span>
               </div>
             </a>
-            <a href="../mobile-development.html" class="mega-item">
+            <a href="mobile-development.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Mobile Development</span>
                 <span class="mega-item__desc">iOS &amp; Android solutions</span>
               </div>
             </a>
-            <a href="../cloud.html" class="mega-item">
+            <a href="cloud.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Cloud Services</span>
                 <span class="mega-item__desc">Scalable cloud infrastructure</span>
               </div>
             </a>
-            <a href="../software.html" class="mega-item">
+            <a href="software.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Software Development</span>
                 <span class="mega-item__desc">Bespoke software solutions</span>
               </div>
             </a>
-            <a href="../airtable.html" class="mega-item">
+            <a href="airtable.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Enterprise Airtable</span>
                 <span class="mega-item__desc">No-code workflow automation</span>
               </div>
             </a>
-            <a href="../web-performance.html" class="mega-item">
+            <a href="web-performance.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Web Performance</span>
                 <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
               </div>
             </a>
-            <a href="../seo.html" class="mega-item">
+            <a href="seo.html" class="mega-item">
               <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">On-page Technical SEO</span>
@@ -191,6 +193,7 @@
           </div>
         </div>
       </div>
+
 
      <div class="nav__dropdown">
   <button type="button" class="nav__link nav__link--dropdown-toggle px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange" aria-haspopup="true" aria-expanded="false">
@@ -252,33 +255,40 @@
                 <span class="mega-item__desc">Zoho One suite integration</span>
               </div>
             </a>
+            <a href="zuper.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Zuper</span>
+                <span class="mega-item__desc">Field service management sync</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
+ <div class="nav__dropdown">
+  <a href="about.html" 
+     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+     onclick="event.preventDefault();">
+    Company
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </a>
+  <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+    <a href="about.html">About Us</a>
+    <a href="whyus.html">Why Us</a>
+    <a href="team.html">Team</a>
+    <a href="careers.html">Careers</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="case.html">Case Studies</a>
+  </div>
+</div>
 
-      <div class="nav__dropdown">
-        <a href="../about.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
-          Company
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
-          <a href="../about.html">About Us</a>
-          <a href="../whyus.html">Why Us</a>
-          <a href="../team.html">Team</a>
-          <a href="../careers.html">Careers</a>
-          <a href="../testimonials.html">Testimonials</a>
-          <a href="../case.html">Case Studies</a>
-        </div>
-      </div>
-
-      <a href="../case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
-
+      <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+      
     </nav>
 
     <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
-      <a href="../contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
     </div>
-
     <!-- HAMBURGER BUTTON -->
     <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
       <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
@@ -383,8 +393,7 @@
           <nav class="sap-breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a>
             <span>›</span>
-            <span>Integrations</span>
-            <span>›</span>
+         
             <a href="sap-business-one.html">SAP Business One</a>
             <span>›</span>
             <span class="current">Zuper</span>

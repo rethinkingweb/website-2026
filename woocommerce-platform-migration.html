@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-  <meta charset="UTF-8" />
+   <meta charset="UTF-8" />
+ <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>WooCommerce Platform Migration for a Premium Jewelry Retailer – RethinkingWeb Case Study</title>
   <meta name="description" content="Sync WooCommerce orders, customers, and multi-location stock with NetSuite. Fixed-price integration consulting from a WooCommerce development agency." />
@@ -89,17 +90,23 @@
 </head>
 <body>
 
+  <!-- ═══ BACKGROUND ═══ -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
 <!-- ───────── NAV ───────── -->
 <header class="nav nav--light" id="nav">
   <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
-    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
-      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
     </a>
 
-    <!-- DESKTOP LINKS -->
+   <!-- DESKTOP LINKS -->
     <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
-      <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
-
+     <a href="/" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
       <div class="nav__dropdown">
   <a href="solutions.html" 
      class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
@@ -187,17 +194,15 @@
         </div>
       </div>
 
-      <div class="nav__dropdown">
-  <a href="integration-services.html" 
-     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-     onclick="event.preventDefault();">
+     <div class="nav__dropdown">
+  <button type="button" class="nav__link nav__link--dropdown-toggle px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange" aria-haspopup="true" aria-expanded="false">
     Integrations
     <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-  </a>
+  </button>
   <div class="mega-menu mega-menu--integrations">
-            <div class="mega-menu__header">
+<div class="mega-menu__header">
             <span class="mega-menu__label">Integrations</span>
-            <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
+<a href="integration-services.html" class="mega-menu__all">View all integrations</a>
           </div>
           <div class="mega-menu__grid">
             <a href="sap-business-one.html" class="mega-item">
@@ -249,7 +254,7 @@
                 <span class="mega-item__desc">Zoho One suite integration</span>
               </div>
             </a>
- <a href="zuper.html" class="mega-item">
+             <a href="zuper.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Zuper</span>
@@ -260,7 +265,7 @@
         </div>
       </div>
 
-     <div class="nav__dropdown">
+       <div class="nav__dropdown">
   <a href="about.html" 
      class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
      onclick="event.preventDefault();">
@@ -278,7 +283,7 @@
 </div>
 
       <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
-
+      
     </nav>
 
     <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
@@ -297,42 +302,42 @@
 <!-- ───────── MOBILE NAV DRAWER ───────── -->
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
-    <a href="index.html">
-      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    <a href="../index.html">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
     </a>
     <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
   </div>
 
   <nav class="flex flex-col px-6 pb-8 pt-3">
-    <a href="index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+    <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
 
     <!-- Solutions accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <div class="mob-accordion__header"></div>
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
       <div class="mob-accordion__panel">
-        <a href="managed.html">Managed Services</a>
-        <a href="consulting.html">IT Consulting &amp; Advisory</a>
-        <a href="cyber.html">Cyber Security</a>
+        <a href="../managed.html">Managed Services</a>
+        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="../cyber.html">Cyber Security</a>
         <a href="web_development.html">Web Development</a>
-        <a href="mobile-development.html">Mobile Development</a>
-        <a href="cloud.html">Cloud Services</a>
-        <a href="software.html">Software Development</a>
-        <a href="airtable.html">Enterprise Airtable Managed Services</a>
-        <a href="web-performance.html">Web Performance Optimization</a>
-        <a href="seo.html">On-page Technical SEO</a>
+        <a href="../mobile-development.html">Mobile Development</a>
+        <a href="../cloud.html">Cloud Services</a>
+        <a href="../software.html">Software Development</a>
+        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="../web-performance.html">Web Performance Optimization</a>
+        <a href="../seo.html">On-page Technical SEO</a>
       </div>
     </div>
 
     <!-- Integrations accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="integration-services.html" class="mob-accordion__link">Integrations</a>
+        <a href="sap-business-one.html" class="mob-accordion__link">Integrations</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
@@ -345,37 +350,40 @@
         <a href="quickbooks.html">QuickBooks</a>
         <a href="woocommerce.html">WooCommerce</a>
         <a href="zoho.html">Zoho</a>
+         <a href="zuper.html">zuper</a>
       </div>
     </div>
 
     <!-- Company accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="about.html" class="mob-accordion__link">Company</a>
+        <a href="../about.html" class="mob-accordion__link">Company</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
       <div class="mob-accordion__panel">
-        <a href="about.html">About Us</a>
-        <a href="whyus.html">Why Us</a>
-        <a href="team.html">Team</a>
-        <a href="careers.html">Careers</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="case.html">Case Studies</a>
+        <a href="../about.html">About Us</a>
+        <a href="../whyus.html">Why Us</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../case.html">Case Studies</a>
       </div>
     </div>
 
-    <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+    <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
 
-    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+    <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
   </nav>
 </div>
 
 <!-- Overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
-
-
+<!-- ═══════════════════════════════════════════
+     PILLAR PAGE CONTENT
+═══════════════════════════════════════════ -->
+<main class="sap sap-pairing woo-pairing woo-pairing--platform"></main>
   <!-- ───────── HERO ───────── -->
   <section class="cs-detail-hero">
     <div class="cs-hero__bg">
