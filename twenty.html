@@ -4,14 +4,14 @@
    <meta charset="UTF-8" />
  <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>WooCommerce Integration Services | RethinkingWeb</title>
-  <meta name="description" content="Connect WooCommerce to your ERP, accounting, CRM, shipping, and marketing systems. Fixed-price integration consulting from a WooCommerce development agency." />
+<title>Twenty CRM Integration Services | RethinkingWeb</title>
+  <meta name="description" content="Connect Twenty — the open-source CRM — to your email, ecommerce, support, payments, and marketing systems. Fixed-price integration consulting on Twenty's REST &amp; GraphQL APIs, cloud or self-hosted." />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/woocommerce-pairings.css" />
+  <link rel="stylesheet" href="../css/twenty-pairings.css" />
   <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/woocommerce.html" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/twenty.html" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -53,35 +53,34 @@
   "@graph": [
     {
       "@type": "Service",
-      "name": "NetSuite + 3PL / WMS Integration",
-      "serviceType": "Warehouse and Logistics Integration Consulting",
+      "name": "Twenty CRM Integration Services",
+      "serviceType": "CRM Integration Consulting",
       "provider": {
         "@type": "ProfessionalService",
         "name": "RethinkingWeb",
         "url": "https://rethinkingweb.com/",
         "areaServed": ["US", "GB", "AU", "IN"]
       },
-      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://rethinkingweb.com/netsuite-3pl-wms-integration.html"
+      "description": "Connect Twenty \u2014 the open-source, self-hostable CRM \u2014 to email, ecommerce, payments, support and marketing systems using its REST and GraphQL APIs and webhooks. Fixed-price, platform-agnostic integration consulting for Twenty Cloud and self-hosted instances.",
+      "url": "https://rethinkingweb.com/twenty.html"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
         { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/" },
-        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/netsuite.html" },
-        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
+        { "@type": "ListItem", "position": 3, "name": "Twenty" }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
-        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
-        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
-        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
-        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
-        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
+        { "@type": "Question", "name": "Does Twenty have an API?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Twenty auto-generates both a REST and a GraphQL API from your workspace data model, plus a Metadata API for schema and webhooks for real-time events. Endpoints use your own object and field names, and authentication is via API keys or OAuth." } },
+        { "@type": "Question", "name": "Can you integrate a self-hosted Twenty instance?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Twenty is open-source and self-hostable, and self-hosted instances expose the same REST, GraphQL and webhook capabilities as Twenty Cloud. We work with both \u2014 for self-hosted we account for firewall, VPN and network access as part of scoping." } },
+        { "@type": "Question", "name": "What is Twenty's data model \u2014 objects, records and fields?", "acceptedAnswer": { "@type": "Answer", "text": "Twenty ships standard objects (People, Companies, Opportunities, Notes, Tasks) and lets you define custom objects, fields and relations from the UI. Every object instantly gets matching REST and GraphQL endpoints, so integrations map external data onto your exact schema." } },
+        { "@type": "Question", "name": "Can you sync Twenty with Stripe, Shopify or HubSpot?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Syncing Twenty with Stripe, Shopify and HubSpot is among the most common requests, moving customers, opportunities, invoices and revenue between the systems automatically." } },
+        { "@type": "Question", "name": "How much does Twenty integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most Twenty integrations land between $1,800 and $16,000 depending on approach, object count, sync direction and whether the instance is cloud or self-hosted. See the cost table above for a breakdown by method." } },
+        { "@type": "Question", "name": "Can you fix or take over a broken Twenty integration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work is a large share of our practice \u2014 broken Zapier or Make scenarios, abandoned custom builds, and duplicate-record messes that no longer match the sales process." } }
       ]
     }
   ]
@@ -412,6 +411,8 @@
         <a href="woocommerce.html">WooCommerce</a>
         <a href="zoho.html">Zoho</a>
          <a href="zuper.html">zuper</a>
+         <a href="attio.html">Attio</a>
+         <a href="twenty.html">Twenty</a>
       </div>
     </div>
 
@@ -444,7 +445,7 @@
 <!-- ═══════════════════════════════════════════
      PILLAR PAGE CONTENT
 ═══════════════════════════════════════════ -->
-<main class="sap">
+<main class="sap twenty-pairing">
 
   <!-- ───────── HERO ───────── -->
   <section class="sap-hero">
@@ -454,13 +455,12 @@
           <nav class="sap-breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a>
             <span>›</span>
-         
-            <span class="current">WooCommerce</span>
+            <span class="current">Twenty</span>
           </nav>
-          <div class="sap-badge"><span class="badge__dot"></span> WooCommerce Development Agency</div>
-          <h1 class="sap-hero__title">WooCommerce <em>Integration Services</em></h1>
+          <div class="sap-badge"><span class="badge__dot"></span> Open-Source CRM Integration Consultancy</div>
+          <h1 class="sap-hero__title">Twenty <em>Integration Services</em></h1>
           <p class="sap-hero__sub">
-            <strong>WooCommerce integration</strong> connects your store to the systems that run the rest of the business — ERP, accounting, CRM, shipping, and marketing. We're a WordPress and WooCommerce development agency as well as an integration consultancy, so when the cleanest fix is on the store side we can make it there instead of working around it in middleware.
+            <strong>Twenty integration</strong> connects the open-source CRM to the systems your go-to-market team actually runs on — email, calendars, ecommerce, support, payments, and marketing tools. We build on <strong>Twenty's REST and GraphQL APIs and webhooks</strong> — on Twenty Cloud or your self-hosted instance — as an independent consultancy: we don't sell a connector, so we recommend the approach that actually fits your requirement.
           </p>
           <div class="sap-hero__cta">
             <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
@@ -472,22 +472,22 @@
         <div class="sap-hero__visual" aria-hidden="true">
           <div class="sap-hub">
             <div class="sap-hub__ring"></div>
-            <div class="sap-hub__core"><strong>Woo</strong><span>WooCommerce Store</span></div>
-            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-industry"></i> SAP B1</div>
-            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-cubes"></i> NetSuite</div>
-            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-file-invoice-dollar"></i> QuickBooks</div>
-            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-cloud"></i> Salesforce</div>
-            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-truck-fast"></i> ShipStation</div>
-            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-envelope"></i> Mailchimp</div>
+            <div class="sap-hub__core"><strong>Twenty</strong><span>CRM Core</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-envelope"></i> Gmail</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-credit-card"></i> Stripe</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-cart-shopping"></i> Shopify</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-headset"></i> Intercom</div>
+            <div class="sap-hub__node sap-hub__node--5"><i class="fab fa-slack"></i> Slack</div>
+            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-bullseye"></i> HubSpot</div>
           </div>
         </div>
       </div>
 
       <!-- Stats strip -->
       <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">12+</div><span class="stat-label">Systems we connect to WooCommerce</span></div>
+        <div class="sap-stat"><div class="stat-num">10+</div><span class="stat-label">Systems we sync with Twenty</span></div>
         <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
-        <div class="sap-stat"><div class="stat-num">2–10</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">2–8</div><span class="stat-label">Weeks to typical go-live</span></div>
         <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
       </div>
     </div>
@@ -498,12 +498,12 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">The Basics</div>
-        <h2 class="section-title">What Is WooCommerce <em>Integration</em>?</h2>
+        <h2 class="section-title">What Is Twenty <em>Integration</em>?</h2>
       </div>
       <div class="sap-body reveal">
-        <p>WooCommerce integration is the process of exchanging data automatically between your store and the other systems your business runs on, so records like orders, customers, products, and stock levels stay consistent everywhere without manual re-entry. It's how a WooCommerce order becomes a sales order in your ERP, an invoice in your accounting package, and a shipping label — all from one checkout, in seconds.</p>
-        <p>WooCommerce is different from hosted platforms in one way that shapes every integration: it's <strong>self-hosted</strong>. That's an advantage — you can run server-side logic inside WordPress, shape the data before it ever leaves the site, and there's no platform gatekeeper between you and your own database. It's also a responsibility, because webhook reliability, cron scheduling, and performance all depend on how your hosting is configured rather than on someone else's infrastructure.</p>
-        <p>Most WooCommerce merchants run several other systems: an accounting package, a shipping tool, a CRM, an email platform, sometimes an ERP. Every one is a potential silo. Integration turns that stack into a single operating picture, cuts data entry, and removes the reconciliation errors that come from copying orders by hand.</p>
+        <p>Twenty integration is the process of exchanging data automatically between Twenty and the other applications your team runs, so records like people, companies, opportunities, notes, and tasks stay consistent everywhere without manual re-entry. It's how a new Stripe customer becomes a Twenty record, or a closed-won opportunity triggers a Slack message, in seconds instead of at the next team sync.</p>
+        <p>Twenty is a modern, open-source CRM — a community-driven alternative to Salesforce and HubSpot, built on a <strong>metadata-driven data model</strong>. It ships standard objects (People, Companies, Opportunities, Notes, Tasks) and lets you define <strong>custom objects, fields, and relations</strong> from the UI. The moment you add an object, Twenty auto-generates matching <strong>REST and GraphQL endpoints</strong> for it, so integrations map onto your exact schema using your own object and field names — there are no opaque IDs to reverse-engineer.</p>
+        <p>Because Twenty is <strong>self-hostable</strong>, your CRM can live on your own infrastructure — a real draw for teams with data-sovereignty or compliance requirements. Whether you run Twenty Cloud or a self-hosted instance, integration turns a stack of disconnected tools into a single source of truth, cuts re-keying, and removes the reconciliation errors that come from copying records by hand.</p>
       </div>
     </div>
   </section>
@@ -513,49 +513,49 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Compatibility</div>
-        <h2 class="section-title">What Can You Integrate with <em>WooCommerce</em>?</h2>
-        <p class="sap-lead">You can integrate WooCommerce with almost any modern system that exposes an API. The categories we work with most are ERP, accounting, CRM, shipping and fulfilment, marketing, and marketplaces.</p>
+        <h2 class="section-title">What Can You Integrate with <em>Twenty</em>?</h2>
+        <p class="sap-lead">You can integrate Twenty with almost any modern system that exposes an API. The most common categories we work with are email &amp; calendar, ecommerce, payments, support, marketing, and internal notifications — feeding activity and revenue into your CRM automatically.</p>
       </div>
       <div class="sap-cards">
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-industry"></i></div>
-          <h3>ERP</h3>
-          <p class="sap-card__systems"><a href="woocommerce-sap-integration.html">SAP Business One</a>, <a href="woocommerce-netsuite-integration.html">NetSuite</a></p>
-          <p class="sap-card__flows">Orders, items, stock, pricing, invoices, master data</p>
+          <div class="sap-card__icon"><i class="fas fa-envelope-open-text"></i></div>
+          <h3>Email &amp; Calendar</h3>
+          <p class="sap-card__systems"><a href="twenty-gmail-integration.html">Gmail</a>, <a href="twenty-outlook-integration.html">Outlook</a>, Google Calendar</p>
+          <p class="sap-card__flows">Logged emails, meetings, and calendar activity against records</p>
         </div>
         <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3>Accounting</h3>
-          <p class="sap-card__systems"><a href="woocommerce-quickbooks-integration.html">QuickBooks</a>, Xero, Zoho Books</p>
-          <p class="sap-card__flows">Invoices, refunds, gateway fees, deposit reconciliation</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-cloud"></i></div>
-          <h3>CRM</h3>
-          <p class="sap-card__systems"><a href="woocommerce-salesforce-integration.html">Salesforce</a>, HubSpot, Zoho CRM, Twenty CRM</p>
-          <p class="sap-card__flows">Customers, order history, lifetime value, service cases</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-truck-fast"></i></div>
-          <h3>Shipping &amp; Fulfilment</h3>
-          <p class="sap-card__systems"><a href="woocommerce-shipstation-integration.html">ShipStation</a>, 3PL portals, carriers</p>
-          <p class="sap-card__flows">Labels, tracking, fulfilment status, returns</p>
-        </div>
-        <div class="sap-card reveal">
-          <div class="sap-card__icon"><i class="fas fa-envelope"></i></div>
-          <h3>Marketing &amp; ESP</h3>
-          <p class="sap-card__systems"><a href="woocommerce-mailchimp-integration.html">Mailchimp</a>, Klaviyo, Zoho Campaigns</p>
-          <p class="sap-card__flows">Subscribers, abandoned carts, purchase-based segments</p>
+          <div class="sap-card__icon"><i class="fas fa-cart-shopping"></i></div>
+          <h3>Ecommerce</h3>
+          <p class="sap-card__systems"><a href="twenty-shopify-integration.html">Shopify</a>, WooCommerce, BigCommerce</p>
+          <p class="sap-card__flows">Customers, orders, and lifetime value synced to company records</p>
         </div>
         <div class="sap-card reveal">
           <div class="sap-card__icon"><i class="fas fa-credit-card"></i></div>
-          <h3>Payments &amp; Marketplaces</h3>
-          <p class="sap-card__systems">Stripe, PayPal, WooPayments, Amazon</p>
-          <p class="sap-card__flows">Charges, payouts, fees, marketplace order sync</p>
+          <h3>Payments</h3>
+          <p class="sap-card__systems"><a href="twenty-stripe-integration.html">Stripe</a>, Chargebee, Paddle</p>
+          <p class="sap-card__flows">Subscriptions, invoices, MRR and churn signals on the record</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-headset"></i></div>
+          <h3>Support</h3>
+          <p class="sap-card__systems"><a href="twenty-intercom-integration.html">Intercom</a>, Zendesk, Front</p>
+          <p class="sap-card__flows">Tickets, conversation history and CSAT tied back to the account</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Marketing</h3>
+          <p class="sap-card__systems"><a href="twenty-hubspot-integration.html">HubSpot</a>, Mailchimp, Customer.io</p>
+          <p class="sap-card__flows">Lead source, campaign engagement, and pipeline stage sync</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-bell"></i></div>
+          <h3>Notifications &amp; Ops</h3>
+          <p class="sap-card__systems"><a href="twenty-slack-integration.html">Slack</a>, internal tools, custom systems</p>
+          <p class="sap-card__flows">Opportunity-stage alerts, new-record pings, and workflow triggers</p>
         </div>
       </div>
       <div class="sap-body reveal">
-        <p>If your system isn't listed, it's almost certainly still integrable. Because WooCommerce is self-hosted, we can also reach data that a hosted platform would keep locked away. We scope against your actual requirement, not a connector catalogue.</p>
+        <p>If your system isn't listed, it's almost certainly still integrable. We scope against your actual requirement, not a connector catalogue.</p>
       </div>
     </div>
   </section>
@@ -565,90 +565,84 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Popular Pairings</div>
-        <h2 class="section-title">Popular WooCommerce <em>Integrations</em></h2>
-        <p class="sap-lead">These are the WooCommerce pairings we build most often. Click any card to see how that integration works.</p>
+        <h2 class="section-title">Popular Twenty <em>Integrations</em></h2>
+        <p class="sap-lead">These are the Twenty pairings we build most often. Click any card to see how that integration works.</p>
       </div>
 
       <div class="sap-popular__grid">
 
-        <a href="woocommerce-sap-integration.html" class="sap-popular__card reveal">
+        <a href="twenty-stripe-integration.html" class="sap-popular__card reveal">
           <div class="sap-popular__logos">
-            <span class="sap-popular__logo sap-popular__logo--woocommerce">
-              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            <span class="sap-popular__logo sap-popular__logo--twenty">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#000000"/><text x="26" y="17.5" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle">Twenty</text></svg>
             </span>
             <span class="sap-popular__plus">+</span>
-            <span class="sap-popular__logo sap-popular__logo--sap">
-              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="popSapWoo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="5" fill="url(#popSapWoo)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg>
-            </span>
+            <span class="sap-popular__logo sap-popular__logo--stripe"><i class="fas fa-credit-card"></i></span>
           </div>
-          <h3>WooCommerce <em>+</em> SAP Business One</h3>
-          <p>Orders to ERP, stock &amp; pricing back</p>
+          <h3>Twenty <em>+</em> Stripe</h3>
+          <p>Subscriptions, invoices &amp; revenue on the record</p>
         </a>
 
-        <a href="woocommerce-netsuite-integration.html" class="sap-popular__card reveal">
+        <a href="twenty-gmail-integration.html" class="sap-popular__card reveal">
           <div class="sap-popular__logos">
-            <span class="sap-popular__logo sap-popular__logo--woocommerce">
-              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            <span class="sap-popular__logo sap-popular__logo--twenty">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#000000"/><text x="26" y="17.5" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle">Twenty</text></svg>
             </span>
             <span class="sap-popular__plus">+</span>
-            <span class="sap-popular__logo sap-popular__logo--netsuite">
-              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#0C3B5D"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">NetSuite</text></svg>
-            </span>
+            <span class="sap-popular__logo sap-popular__logo--gmail"><i class="fas fa-envelope"></i></span>
           </div>
-          <h3>WooCommerce <em>+</em> NetSuite</h3>
-          <p>Order-to-cash &amp; multi-location stock</p>
+          <h3>Twenty <em>+</em> Gmail</h3>
+          <p>Email &amp; meeting activity logged automatically</p>
         </a>
 
-        <a href="woocommerce-quickbooks-integration.html" class="sap-popular__card reveal">
+        <a href="twenty-shopify-integration.html" class="sap-popular__card reveal">
           <div class="sap-popular__logos">
-            <span class="sap-popular__logo sap-popular__logo--woocommerce">
-              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            <span class="sap-popular__logo sap-popular__logo--twenty">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#000000"/><text x="26" y="17.5" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle">Twenty</text></svg>
             </span>
             <span class="sap-popular__plus">+</span>
-            <span class="sap-popular__logo sap-popular__logo--quickbooks">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg>
+            <span class="sap-popular__logo sap-popular__logo--shopify">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/><path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z" opacity=".12"/><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg>
             </span>
           </div>
-          <h3>WooCommerce <em>+</em> QuickBooks</h3>
-          <p>Invoices, refunds &amp; gateway deposits</p>
+          <h3>Twenty <em>+</em> Shopify</h3>
+          <p>Customers, orders &amp; lifetime value synced</p>
         </a>
 
-        <a href="woocommerce-salesforce-integration.html" class="sap-popular__card reveal">
+        <a href="twenty-intercom-integration.html" class="sap-popular__card reveal">
           <div class="sap-popular__logos">
-            <span class="sap-popular__logo sap-popular__logo--woocommerce">
-              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            <span class="sap-popular__logo sap-popular__logo--twenty">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#000000"/><text x="26" y="17.5" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle">Twenty</text></svg>
             </span>
             <span class="sap-popular__plus">+</span>
-            <span class="sap-popular__logo sap-popular__logo--salesforce">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg>
-            </span>
+            <span class="sap-popular__logo sap-popular__logo--intercom"><i class="fas fa-headset"></i></span>
           </div>
-          <h3>WooCommerce <em>+</em> Salesforce</h3>
-          <p>Customers, order history &amp; lifetime value</p>
+          <h3>Twenty <em>+</em> Intercom</h3>
+          <p>Support conversations tied to the account</p>
         </a>
 
-        <a href="woocommerce-shipstation-integration.html" class="sap-popular__card reveal">
+        <a href="twenty-hubspot-integration.html" class="sap-popular__card reveal">
           <div class="sap-popular__logos">
-            <span class="sap-popular__logo sap-popular__logo--woocommerce">
-              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            <span class="sap-popular__logo sap-popular__logo--twenty">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#000000"/><text x="26" y="17.5" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle">Twenty</text></svg>
             </span>
             <span class="sap-popular__plus">+</span>
-            <span class="sap-popular__logo sap-popular__logo--shipstation"><i class="fas fa-truck-fast"></i></span>
+            <span class="sap-popular__logo sap-popular__logo--hubspot"><i class="fab fa-hubspot"></i></span>
           </div>
-          <h3>WooCommerce <em>+</em> ShipStation</h3>
-          <p>Labels, tracking &amp; fulfilment status</p>
+          <h3>Twenty <em>+</em> HubSpot</h3>
+          <p>Lead source &amp; campaign data on the record</p>
         </a>
 
-        <a href="woocommerce-mailchimp-integration.html" class="sap-popular__card reveal">
+        <a href="twenty-slack-integration.html" class="sap-popular__card reveal">
           <div class="sap-popular__logos">
-            <span class="sap-popular__logo sap-popular__logo--woocommerce">
-              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#7F54B3"/><text x="26" y="18" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg>
+            <span class="sap-popular__logo sap-popular__logo--twenty">
+              <svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="26" rx="5" fill="#000000"/><text x="26" y="17.5" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle">Twenty</text></svg>
             </span>
             <span class="sap-popular__plus">+</span>
-            <span class="sap-popular__logo sap-popular__logo--mailchimp"><i class="fab fa-mailchimp"></i></span>
+            <span class="sap-popular__logo sap-popular__logo--slack"><i class="fab fa-slack"></i></span>
           </div>
-          <h3>WooCommerce <em>+</em> Mailchimp</h3>
-          <p>Subscribers, carts &amp; purchase segments</p>
+          <h3>Twenty <em>+</em> Slack</h3>
+          <p>Opportunity-stage alerts &amp; new-record pings</p>
         </a>
 
       </div>
@@ -660,24 +654,25 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Methods</div>
-        <h2 class="section-title">How Do You Integrate WooCommerce with <em>Other Systems</em>?</h2>
-        <p class="sap-lead">WooCommerce gives you more ways in than a hosted platform does: the <strong>REST API</strong> for standard record access, <strong>webhooks</strong> for real-time order events, <strong>WordPress action and filter hooks</strong> for server-side logic that runs before data ever leaves the site, <strong>Action Scheduler</strong> for reliable background jobs, and third-party <strong>iPaaS connectors</strong> on top. The right choice depends on your order volume, which extensions are active, and how much shaping the data needs.</p>
+        <h2 class="section-title">How Do You Integrate Twenty with <em>Other Systems</em>?</h2>
+        <p class="sap-lead">Twenty auto-generates both a <strong>REST and a GraphQL API</strong> from your workspace, secured with an API key or OAuth, plus a <strong>Metadata API</strong> for schema and <strong>webhooks</strong> for event-driven flows on record changes. Around that sit <strong>native sync and workflow automation</strong>, and <strong>iPaaS connectors</strong> for teams who don't want to maintain code.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
           <tbody>
-            <tr><td><strong>WooCommerce REST API</strong></td><td>Authenticated REST access to orders, products, customers, coupons</td><td>Standard reads and writes from an external system</td><td>Key/secret must be scoped correctly; large queries need pagination</td></tr>
-            <tr><td><strong>Webhooks</strong></td><td>Push notifications on order, product, and customer events</td><td>Posting orders downstream the moment they are placed</td><td>Delivery depends on your hosting, caching, and security plugins</td></tr>
-            <tr><td><strong>WordPress hooks (custom plugin)</strong></td><td>Server-side PHP running inside WordPress on store events</td><td>Complex stores where data needs shaping before it leaves</td><td>Lives in your codebase and must survive core and plugin updates</td></tr>
-            <tr><td><strong>Action Scheduler</strong></td><td>WooCommerce's own background job queue</td><td>Retries, batching, and long-running syncs without blocking checkout</td><td>Needs a real cron trigger; WP-Cron alone is unreliable at low traffic</td></tr>
-            <tr><td><strong>iPaaS connectors</strong></td><td>Pre-built templates on Zapier, Make, n8n, or Celigo</td><td>Standard order and customer flows going live fast</td><td>Subscription cost forever; templates bend only so far</td></tr>
+            <tr><td><strong>Twenty REST API (Core)</strong></td><td>Auto-generated CRUD over records — People, Companies, Opportunities, custom objects</td><td>Straightforward integrations and simple create/update/list flows</td><td>Endpoints are per-workspace — nothing is assumed, everything is mapped to your schema</td></tr>
+            <tr><td><strong>Twenty GraphQL API (Core)</strong></td><td>The same data with relation traversal, filtering, and batch upserts in one query</td><td>Complex, nested syncs and deep bi-directional mapping</td><td>Slightly steeper learning curve than REST; worth it for related-object flows</td></tr>
+            <tr><td><strong>Metadata API</strong></td><td>Programmatic schema management — create or modify objects, fields, relations</td><td>Provisioning custom objects an integration depends on</td><td>Schema changes should be version-controlled and reviewed before go-live</td></tr>
+            <tr><td><strong>Webhooks</strong></td><td>Twenty push notifications on record create, update, and delete</td><td>Triggering downstream flows the moment a record changes</td><td>Still fetch the full record over the API after the ping</td></tr>
+            <tr><td><strong>Native sync &amp; Workflows</strong></td><td>Built-in Gmail/Outlook &amp; calendar sync plus the visual workflow builder</td><td>Standard email/meeting logging and simple no-code automations</td><td>Great for activity logging; won't cover custom multi-system mapping</td></tr>
+            <tr><td><strong>iPaaS / Custom middleware</strong></td><td>Templates on Zapier/Make/n8n, or purpose-built orchestration over the API</td><td>Fast standard flows, or non-standard requirements and AI automation</td><td>Subscription cost forever for iPaaS; custom needs a partner who maintains it (that's us)</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-callout reveal">
         <i class="fas fa-circle-check"></i>
-        <p><strong>The advantage most agencies don't use:</strong> because WooCommerce runs on your own server, the cleanest fix is often a small piece of code inside WordPress rather than a workaround in middleware. We build WordPress and WooCommerce sites too, so we can make that change on the store side — something an integration-only vendor can't offer.</p>
+        <p><strong>The truth most vendors won't tell you:</strong> for many standard requirements, Twenty's native sync, its workflow builder, or a pre-built iPaaS template is genuinely the right answer. We'll tell you when that's the case, help you choose and configure it, and only build custom when your object model or workflow demands it.</p>
       </div>
     </div>
   </section>
@@ -687,21 +682,21 @@
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">How Much Does WooCommerce Integration <em>Cost</em>?</h2>
-        <p class="sap-lead">A typical WooCommerce integration costs between <strong>$2,000 and $18,000</strong> to implement, depending on the approach. Templated connectors sit at the low end plus a monthly platform subscription; custom plugin and API builds sit at the high end with no recurring platform fee.</p>
+        <h2 class="section-title">How Much Does Twenty Integration <em>Cost</em>?</h2>
+        <p class="sap-lead">A typical Twenty integration costs between <strong>$1,800 and $16,000</strong> to implement, depending on the approach. Templated iPaaS connectors sit at the low end plus a monthly platform subscription; custom REST/GraphQL builds with bi-directional sync and custom-object mapping sit at the high end with no recurring platform fee.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table">
           <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
           <tbody>
-            <tr><td>Templated connector / iPaaS flow</td><td><strong>$2,000 – $6,000</strong></td><td>$30 – $300/month platform subscription</td></tr>
-            <tr><td>iPaaS orchestration (Make, n8n)</td><td><strong>$4,000 – $10,000</strong></td><td>$50 – $300/month platform + support retainer</td></tr>
-            <tr><td>Custom plugin / REST API build</td><td><strong>$8,000 – $18,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
+            <tr><td>Templated iPaaS connector (Zapier/Make)</td><td><strong>$1,800 – $5,500</strong></td><td>$30 – $300/month platform subscription</td></tr>
+            <tr><td>iPaaS orchestration (Make, n8n)</td><td><strong>$3,000 – $9,000</strong></td><td>$30 – $250/month platform + support retainer</td></tr>
+            <tr><td>Custom REST / GraphQL / webhook build</td><td><strong>$6,000 – $16,000+</strong></td><td>Support retainer only, no platform fee</td></tr>
           </tbody>
         </table>
       </div>
       <div class="sap-body reveal">
-        <p>Four factors move the number most: your <strong>order volume</strong> (which decides per-order vs batched posting), how many <strong>extensions</strong> reshape the order data (Subscriptions, Bookings, multi-vendor, tax plugins), whether flows are <strong>one-way or bi-directional</strong>, and whether <strong>payout or stock reconciliation</strong> is in scope. We quote fixed prices after a scoping call, so you know the cost before we write a line of code.</p>
+        <p>Four factors move the number most: how many <strong>objects</strong> you sync (people, companies, opportunities, or custom objects), whether flows are <strong>one-way or bi-directional</strong>, how much <strong>field and relation mapping</strong> the workflow needs, and whether you run <strong>Twenty Cloud or a self-hosted instance</strong> (self-hosting can add firewall/VPN and network work). We quote fixed prices after a scoping call, so you know the cost before we write a line of code.</p>
       </div>
     </div>
   </section>
@@ -712,18 +707,18 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Timeline</div>
         <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
-        <p class="sap-lead">The single biggest schedule risk isn't development — it's plugin sprawl and mismatched SKUs, which is why we audit your live order data before mapping anything.</p>
+        <p class="sap-lead">The single biggest schedule risk isn't development — it's an undocumented custom-object model and duplicate people/company records in Twenty, which is why data review is the first step of our process.</p>
       </div>
       <div class="sap-timeline reveal">
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">2–4 weeks</div>
+          <div class="sap-timeline__weeks">2–3 weeks</div>
           <h4>Templated integrations</h4>
-          <p>Standard order and customer flows on a connector or iPaaS template, live fast.</p>
+          <p>Standard record flows on a pre-built connector or iPaaS template against Twenty's API, live fast.</p>
         </div>
         <div class="sap-timeline__card">
-          <div class="sap-timeline__weeks">5–10 weeks</div>
+          <div class="sap-timeline__weeks">4–8 weeks</div>
           <h4>Custom builds</h4>
-          <p>Bespoke plugin or REST API work, scaled to extensions, entity count, and testing depth.</p>
+          <p>Bespoke REST/GraphQL and webhook work, scaled to object count, workspace structure, and testing depth.</p>
         </div>
       </div>
     </div>
@@ -738,32 +733,32 @@
         <p class="sap-lead">Every engagement follows the same five stages — you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
       </div>
       <div class="sap-steps">
-        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We audit your store, active extensions, hosting, order volume, and the outcome you need.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your systems, objects, volumes, and the business outcome you need.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, transformation, and error rule before building.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against a staging copy of your site, never against production.</p></div>
-        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real order scenarios end to end — partial refunds, coupons, failed payments, retries.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement on the chosen platform or codebase, against a Twenty sandbox workspace.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real record scenarios end to end — failure cases, retries, duplicate handling.</p></div>
         <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ───────── CONSULTANT VS PLUGIN ───────── -->
+  <!-- ───────── CONSULTANT VS CONNECTOR ───────── -->
   <section class="sap-section">
     <div class="container">
       <div class="sap-section__head reveal">
         <div class="section-label">Why a Consultant</div>
-        <h2 class="section-title">Consultant vs. <em>Buying a Sync Plugin</em></h2>
-        <p class="sap-lead">A sync plugin is cheap until it isn't. It works on a clean store with standard settings, then quietly breaks the week a core update ships or a new extension changes the order payload — and nobody notices until month-end.</p>
+        <h2 class="section-title">Consultant vs. <em>Buying a Connector</em></h2>
+        <p class="sap-lead">A connector vendor can only sell you their connector. An independent consultant starts from your requirement and picks the tool afterwards — which matters most when your custom-object model doesn't match a generic template, or you need webhook-driven, real-time flows against a self-hosted instance.</p>
       </div>
       <div class="sap-table-wrap reveal">
         <table class="sap-table sap-table--compare">
-          <thead><tr><th></th><th>Sync plugin</th><th>RethinkingWeb</th></tr></thead>
+          <thead><tr><th></th><th>Connector vendor</th><th>RethinkingWeb</th></tr></thead>
           <tbody>
-            <tr><td><strong>Handles your extensions</strong></td><td>Only the ones it was built for</td><td>Mapped against your real order payload</td></tr>
-            <tr><td><strong>When WordPress updates</strong></td><td>You wait for the vendor</td><td>We test and patch it ourselves</td></tr>
-            <tr><td><strong>Non-standard requirements</strong></td><td>Feature request, maybe never</td><td>Custom logic is the core offering</td></tr>
-            <tr><td><strong>When it silently stops</strong></td><td>You find out at month-end</td><td>Alerting tells us before you notice</td></tr>
-            <tr><td><strong>Store-side fixes</strong></td><td>Out of scope</td><td>We build WooCommerce sites too</td></tr>
+            <tr><td><strong>Recommends</strong></td><td>Their product</td><td>Whatever fits, including their product</td></tr>
+            <tr><td><strong>Non-standard requirements</strong></td><td>Change requests or workarounds</td><td>Custom logic is the core offering</td></tr>
+            <tr><td><strong>Self-hosted Twenty</strong></td><td>Often cloud-only</td><td>Cloud or self-hosted, firewall/VPN included</td></tr>
+            <tr><td><strong>When it breaks</strong></td><td>Support ticket queue</td><td>Named engineer who built it</td></tr>
+            <tr><td><strong>Multiple systems</strong></td><td>One connector per pair</td><td>One orchestrated architecture</td></tr>
           </tbody>
         </table>
       </div>
@@ -777,18 +772,17 @@
         <div class="sap-why__text reveal">
           <div class="section-label">Why RethinkingWeb</div>
           <h2 class="section-title">The Team on <em>Both Sides</em> of the Sync</h2>
-          <p>We build and run integrations for companies across the US, UK, Australia, and India. WooCommerce is home ground for us: we're a WordPress and WooCommerce development agency, an official Twenty CRM partner, and we build AI automation on the Claude API. That means we can fix the store, the sync, or both — rather than pointing at whichever one isn't ours.</p>
-          <p>WooCommerce rarely lives alone. We regularly connect it to <a href="sap-business-one.html">SAP Business One</a>, <a href="netsuite.html">NetSuite</a>, <a href="quickbooks.html">QuickBooks</a>, <a href="salesforce.html">Salesforce</a>, and <a href="zoho.html">Zoho</a>
- <a href="zuper.html">zuper</a> — often all within one orchestrated architecture.</p>
+          <p>We're an official <strong>Twenty CRM partner</strong>, and we build and run integrations for companies across the US, UK, Australia, and India. Our team pairs Twenty integration work with deep roots in the platforms on the other side of the sync: we're a WordPress and WooCommerce development agency, and we build AI automation on the Claude API.</p>
+          <p>Twenty is one hub among several we connect. We also build integrations for <a href="salesforce.html">Salesforce</a>, <a href="quickbooks.html">QuickBooks</a>, <a href="netsuite.html">NetSuite</a>, <a href="shopify.html">Shopify</a>, and <a href="woocommerce.html">WooCommerce</a> — so whichever system sits opposite Twenty, we know it from the inside.</p>
           <div class="sap-midcta">
             <a href="#form" class="btn btn--primary btn--lg">Get a Fixed-Price Integration Quote</a>
           </div>
         </div>
         <div class="sap-why__aside reveal">
-          <div class="sap-why__check"><i class="fas fa-check"></i> WooCommerce development agency, not just integrators</div>
-          <div class="sap-why__check"><i class="fas fa-check"></i> Fixed pricing before we build</div>
-          <div class="sap-why__check"><i class="fas fa-check"></i> We can fix the store side as well as the sync</div>
-          <div class="sap-why__check"><i class="fas fa-check"></i> Rescue &amp; take-over of broken sync plugins</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Official Twenty CRM partner</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Platform-agnostic — we recommend, not resell</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Cloud &amp; self-hosted instances alike</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> REST, GraphQL &amp; webhook-driven, real-time where it matters</div>
           <div class="sap-why__check"><i class="fas fa-check"></i> AI automation on the Claude API</div>
         </div>
       </div>
@@ -801,13 +795,23 @@
       <div class="sap-section__head reveal">
         <div class="section-label">Why Trust Us</div>
         <h2 class="section-title">Why Integrate with <em>RethinkingWeb</em></h2>
-        <p class="sap-lead">Integration only pays off if it keeps running after go-live. These are the reasons merchants hand us the connection between their store and everything else — and keep us on to look after it.</p>
+        <p class="sap-lead">Integration only pays off if it keeps running after go-live. These are the reasons companies hand us the connection between their CRM and everything else — and keep us on to look after it.</p>
       </div>
       <div class="sap-trust">
         <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fab fa-wordpress"></i></div>
-          <h3>A WooCommerce Agency First</h3>
-          <p>We build WordPress and WooCommerce stores as well as integrations. When the real problem is a plugin conflict or a hook firing at the wrong time, we fix it at the source instead of working around it.</p>
+          <div class="sap-trust__icon"><i class="fas fa-handshake-angle"></i></div>
+          <h3>Official Twenty CRM Partner</h3>
+          <p>We're a recognized Twenty CRM partner and a WordPress &amp; WooCommerce development agency — so we know both sides of the sync, not just the CRM half.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Vendor-Neutral by Design</h3>
+          <p>We don't sell a connector, so we have no reason to push one. We recommend the approach that fits your requirement — even when that means a product we don't earn a cent from.</p>
+        </div>
+        <div class="sap-trust__card reveal">
+          <div class="sap-trust__icon"><i class="fas fa-server"></i></div>
+          <h3>Cloud &amp; Self-Hosted Experts</h3>
+          <p>Twenty's open-source, self-hostable model is a feature, not a footnote. We integrate Twenty Cloud and self-hosted instances alike, handling the firewall, VPN, and network access that self-hosting brings.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-file-signature"></i></div>
@@ -820,29 +824,19 @@
           <p>The person who built your integration is the person who answers when something changes. No ticket lottery, no re-explaining your setup to a new agent each time.</p>
         </div>
         <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-plug-circle-check"></i></div>
-          <h3>Built for Your Extensions</h3>
-          <p>Subscriptions, Bookings, multi-vendor, and tax plugins all reshape the order payload. We map against your live data, not a generic WooCommerce order.</p>
-        </div>
-        <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-globe"></i></div>
           <h3>Proven Across Four Countries</h3>
-          <p>We build and run integrations for businesses in the US, UK, Australia, and India, spanning retail, subscription, and B2B commerce.</p>
+          <p>We build and run integrations for businesses in the US, UK, Australia, and India, spanning SaaS, ecommerce, and professional services CRM setups.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-life-ring"></i></div>
           <h3>Rescue &amp; Take-Over Specialists</h3>
-          <p>A large share of our work is fixing sync plugins that stopped silently, duplicated orders, or broke after a core update. If your last one failed, we've almost certainly seen your exact situation.</p>
+          <p>A large share of our work is fixing abandoned custom builds, broken Zapier scenarios, and duplicate-record messes. If your last Twenty integration failed, we've almost certainly seen your exact situation.</p>
         </div>
         <div class="sap-trust__card reveal">
           <div class="sap-trust__icon"><i class="fas fa-robot"></i></div>
           <h3>AI Automation on the Claude API</h3>
-          <p>Beyond moving data, we build AI agents on the Claude API that act on store data — natural-language sales reporting, automated order triage, and smart customer segmentation.</p>
-        </div>
-        <div class="sap-trust__card reveal">
-          <div class="sap-trust__icon"><i class="fas fa-shield-halved"></i></div>
-          <h3>Monitored After Go-Live</h3>
-          <p>Every integration ships with logging, alerting, and retry handling, so a failed sync surfaces to us before it becomes a problem you have to chase down.</p>
+          <p>Beyond moving data, we build AI agents on the Claude API that act on your Twenty records — natural-language pipeline reporting, automated record enrichment, and smart opportunity-stage triggers.</p>
         </div>
       </div>
     </div>
@@ -857,40 +851,44 @@
       </div>
       <div class="sap-faq">
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Does WooCommerce have an API?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. WooCommerce ships a REST API (currently v3) authenticated with consumer key and secret over HTTPS, covering orders, products, customers, coupons, and reports. It also supports webhooks that fire on order and product events, and because WooCommerce is self-hosted you can additionally run server-side PHP logic through WordPress action and filter hooks.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Does Twenty have an API?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Twenty auto-generates both a REST and a GraphQL API from your workspace data model, plus a Metadata API for schema and webhooks for real-time events. Endpoints use your own object and field names, and authentication is via API keys or OAuth.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">What is HPOS and does it affect integration?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>High-Performance Order Storage moves orders out of the WordPress posts table into dedicated tables. It significantly improves performance on high-volume stores, but any integration or plugin that queries orders directly in the database rather than through the WooCommerce API needs to be HPOS-compatible. We check this before building.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you integrate a self-hosted Twenty instance?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Twenty is open-source and self-hostable, and self-hosted instances expose the same REST, GraphQL, and webhook capabilities as Twenty Cloud. We work with both — for self-hosted we account for firewall, VPN, and network access as part of scoping.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Are WooCommerce webhooks reliable?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>They are reliable when the site is configured for it. Because WooCommerce runs on your own hosting, aggressive page caching, security plugins, and WP-Cron misconfiguration can all delay or drop webhook delivery. We audit the hosting setup and add retry handling as part of every build.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Should we use Twenty's REST or GraphQL API?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Both hit the same data. We use REST for straightforward create/update/list operations, and GraphQL when a flow needs nested relations, filtering, or batch upserts in a single call. We pick per-flow, so you get the simplest option that does the job.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you sync WooCommerce with an ERP like SAP or NetSuite?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Pushing WooCommerce orders into an ERP as sales orders, and pulling stock and pricing back to the storefront, is one of our most common projects. We build against the ERP's own API, whether that is the SAP B1 Service Layer, NetSuite SuiteTalk, or another platform.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">What's Twenty's data model — objects, records, and custom objects?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Twenty ships standard objects (People, Companies, Opportunities, Notes, Tasks) and lets you define custom objects, fields, and relations from the UI. Every object instantly gets matching REST and GraphQL endpoints, so integrations map external data onto your exact structure.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Do WooCommerce plugins affect the integration?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes, significantly. Subscriptions, Bookings, multi-vendor, and tax plugins all reshape the order payload, so we audit which extensions are active and map against your real order data rather than a generic WooCommerce order structure.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you sync Twenty with Stripe, Shopify, or HubSpot?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Syncing Twenty with Stripe, Shopify, and HubSpot is among the most common requests, moving customers, opportunities, invoices, and revenue between the systems automatically.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">How much does WooCommerce integration cost?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Most WooCommerce integrations land between $2,000 and $18,000 depending on approach, entity count, and how many extensions shape the order data. See the cost table above for a breakdown by method.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Is Twenty integration real-time or scheduled?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Twenty supports near real-time flows using webhooks and its REST/GraphQL APIs. Where the other system only offers batch exports or polling, we match the sync pattern to your data volume and urgency.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can you fix a WooCommerce sync plugin that keeps failing?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Plugin-based syncs that silently stop, duplicate orders, or break after a WordPress core update are regular rescue work for us. Because we build WordPress and WooCommerce sites as well as integrations, we can fix the store side as well as the sync.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you sync opportunities and records both ways?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Two-way sync of records, fields, and relations is possible, though we design bi-directional flows carefully with clear rules on which system owns each field to avoid duplicate or conflicting records.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Can WooCommerce integrate with multiple stores or a multisite network?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. Each store connects with its own credentials and can map to a separate entity, subsidiary, or account in the connected system, with consolidated reporting across all of them.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">How much does Twenty integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most Twenty integrations land between $1,800 and $16,000 depending on approach, object count, sync direction, and whether the instance is cloud or self-hosted. See the cost table above for a breakdown by method.</p></div>
         </div>
         <div class="sap-faq__item reveal">
-          <button class="sap-faq__q" aria-expanded="false">Do you build AI automation on WooCommerce data?<i class="fas fa-plus"></i></button>
-          <div class="sap-faq__a"><p>Yes. We build AI agents on the Claude API that act on store data: natural-language sales reporting, automated order triage, product description generation, and intelligent customer segmentation.</p></div>
+          <button class="sap-faq__q" aria-expanded="false">Can you fix a broken Twenty integration?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Rescue work is a large share of our practice: broken Zapier or Make scenarios, abandoned custom builds, and duplicate-record messes that no longer match the sales process.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you connect Twenty to a support desk or ticketing system?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. We connect Twenty to support platforms like Intercom, Zendesk, and Front, syncing tickets, conversation history, and CSAT scores back onto the account record.</p></div>
         </div>
       </div>
     </div>
@@ -899,8 +897,8 @@
   <!-- ───────── FINAL CTA ───────── -->
   <section class="sap-finalcta">
     <div class="container">
-      <h2>Ready to Connect WooCommerce to the Rest of Your Stack?</h2>
-      <p>Every week your store stays disconnected, someone exports another spreadsheet and re-keys another few hundred orders. A scoped <strong>WooCommerce integration</strong> removes that work permanently — and you'll know the exact cost before we start.</p>
+      <h2>Ready to Connect Twenty to the Rest of Your Stack?</h2>
+      <p>Every week your systems stay disconnected, your team re-keys leads and updates another few hundred times by hand. A scoped <strong>Twenty integration</strong> removes that work permanently — and you'll know the exact cost before we start.</p>
       <div class="sap-finalcta__btns">
         <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
         <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
@@ -909,7 +907,6 @@
   </section>
 
 </main>
-
   <!-- ═══ CONTACT ═══ -->
  <section class="contact" id="contact">
   <div class="container">
@@ -1058,7 +1055,9 @@
     <div class="max-w-[1200px] mx-auto px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
         <div>
-          <a href="../index.html" class="inline-block mb-4"><img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" /></a>
+          <a href="../index.html" class="inline-block mb-4">
+            <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
           <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
           <div class="flex gap-4">
             <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
@@ -1066,6 +1065,7 @@
             <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
           </div>
         </div>
+
         <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
           <div class="flex flex-col gap-3">
@@ -1081,6 +1081,7 @@
             <a href="../seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
           </div>
         </div>
+
         <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
           <div class="flex flex-col gap-3">
@@ -1092,17 +1093,19 @@
             <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
           </div>
         </div>
+
         <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
           <div class="flex flex-col gap-3">
-            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India &ndash; 400081</a>
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
             <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
             <a href="../contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
           </div>
         </div>
       </div>
+
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-        <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">&copy; 2026 RethinkingWeb</a>
+        <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
         <div class="flex gap-6">
           <a href="../terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
           <a href="../privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
@@ -1111,14 +1114,14 @@
     </div>
   </footer>
 
- <!-- Toast -->
+
+  <!-- Toast -->
   <div class="toast" id="toast"></div>
 
- <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
 <script src="../js/sap-business-one-integration.js"></script>
 <script src="../js/theme.js"></script>
 </body>
 </html>
-

@@ -1,0 +1,55 @@
+:root {
+  --twenty-black: #000000;
+  --twenty-ink:   #16151A;
+  --twenty-blue:  #1961ED;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--twenty     { background: transparent; }
+.sap-popular__logo--twenty svg { border-radius: 5px; }
+
+.sap-popular__logo--gmail      { background: #FCE8E6; }
+.sap-popular__logo--gmail i    { color: #EA4335; }
+
+.sap-popular__logo--intercom   { background: #EAF3FF; }
+.sap-popular__logo--intercom i { color: #1F8FFF; }
+
+.sap-popular__logo--slack      { background: #F3EFFB; }
+.sap-popular__logo--slack i    { color: #4A154B; }
+
+.sap-popular__logo--hubspot    { background: #FFF1EC; }
+.sap-popular__logo--hubspot i  { color: #FF7A59; }
+
+/* .sap-popular__logo--stripe and --shopify already exist on the SAP
+   page; these only fill in an accent if that rule doesn't set one. */
+.sap-popular__logo--stripe i   { color: #635BFF; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+═══════════════════════════════ */
+.twenty-pairing .sap-hub__core {
+  background: linear-gradient(160deg, #000000 0%, #16151A 100%);
+}
+
+.twenty-pairing .sap-badge .badge__dot { background: var(--twenty-blue, #1961ED); }
+
+.twenty-pairing .sap-hero__visual .sap-hub__node--1,
+.twenty-pairing .sap-hero__visual .sap-hub__node--2,
+.twenty-pairing .sap-hero__visual .sap-hub__node--3,
+.twenty-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(25, 97, 237, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.twenty-pairing--stripe    .sap-hub__node i { color: #635BFF; }
+.twenty-pairing--gmail     .sap-hub__node i { color: #EA4335; }
+.twenty-pairing--shopify   .sap-hub__node i { color: #5E8E3E; }
+.twenty-pairing--intercom  .sap-hub__node i { color: #1F8FFF; }
+.twenty-pairing--hubspot   .sap-hub__node i { color: #FF7A59; }
+.twenty-pairing--slack     .sap-hub__node i { color: #4A154B; }
