@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dedicated Expert Pods — Ready-Made Delivery Teams | RethinkingWeb</title>
+  <meta name="description" content="A cross-functional squad — developers, QA and a lead — that owns your product end-to-end. One accountable team, one cadence, outcomes you can measure." />
+  <link rel="canonical" href="https://www.rethinkingweb.com/dedicated-expert-pods.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dedicated-expert-pods.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {
+        colors: {
+          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+          muted: '#7A6F68',
+        },
+        fontFamily: { display: ['"Inter Tight"','sans-serif'], body: ['"Inter Tight"','sans-serif'] },
+        maxWidth: { container: '1200px', nav: '1280px' },
+        boxShadow: {
+          card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+          'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange:'0 8px 30px rgba(231,92,35,0.25)',
+        },
+      } }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Dedicated Expert Pods",
+    "serviceType": "Dedicated Expert Pods",
+    "provider": { "@type": "Organization", "name": "RethinkingWeb", "url": "https://www.rethinkingweb.com/" },
+    "areaServed": "Global",
+    "description": "A cross-functional squad — developers, QA and a lead — that owns your product end-to-end. One accountable team, one cadence, outcomes you can measure.",
+    "url": "https://www.rethinkingweb.com/dedicated-expert-pods.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rethinkingweb.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Staff Augmentation", "item": "https://www.rethinkingweb.com/staff-augmentation.html" },
+      { "@type": "ListItem", "position": 3, "name": "Dedicated Expert Pods", "item": "https://www.rethinkingweb.com/dedicated-expert-pods.html" }
+    ]
+  }
+  </script>
+</head>
+<body class="sa-page">
+
+<!-- ───────── NAV ───────── -->
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+      <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+
+      <!-- Solutions -->
+      <div class="nav__dropdown">
+        <a href="solutions.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="solutions.html" class="mega-menu__all">View all services</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="managed.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Managed Services</span><span class="mega-item__desc">24/7 IT infrastructure &amp; support</span></div>
+            </a>
+            <a href="consulting.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">IT Consulting &amp; Advisory</span><span class="mega-item__desc">Strategic technology guidance</span></div>
+            </a>
+            <a href="cyber.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Cyber Security</span><span class="mega-item__desc">Protect your digital assets</span></div>
+            </a>
+            <a href="web_development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Web Development</span><span class="mega-item__desc">Custom websites &amp; web apps</span></div>
+            </a>
+            <a href="mobile-development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Mobile Development</span><span class="mega-item__desc">iOS &amp; Android solutions</span></div>
+            </a>
+            <a href="cloud.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Cloud Services</span><span class="mega-item__desc">Scalable cloud infrastructure</span></div>
+            </a>
+            <a href="software.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Software Development</span><span class="mega-item__desc">Bespoke software solutions</span></div>
+            </a>
+            <a href="airtable.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Enterprise Airtable</span><span class="mega-item__desc">No-code workflow automation</span></div>
+            </a>
+            <a href="web-performance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Web Performance</span><span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span></div>
+            </a>
+            <a href="seo.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">On-page Technical SEO</span><span class="mega-item__desc">Rank higher, grow faster</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Staff Augmentation (NEW — rank 3) -->
+      <div class="nav__dropdown">
+        <a href="staff-augmentation.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Staff Augmentation
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--staffaug">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Staff Augmentation</span>
+            <a href="staff-augmentation.html" class="mega-menu__all">View all</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="specialist-staff-augmentation.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-gear"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Specialist Staff Augmentation</span>
+                <span class="mega-item__desc">Vetted engineers into your team</span>
+              </div>
+            </a>
+            <a href="dedicated-expert-pods.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-people-group"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Dedicated Expert Pods</span>
+                <span class="mega-item__desc">A cross-functional squad that owns delivery</span>
+              </div>
+            </a>
+            <a href="sme-on-demand.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-graduate"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">SME-on-Demand</span>
+                <span class="mega-item__desc">Subject-matter experts, on call</span>
+              </div>
+            </a>
+            <a href="fractional-interim-leadership.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-tie"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Fractional & Interim Leadership</span>
+                <span class="mega-item__desc">Fractional CTO / CIO leadership</span>
+              </div>
+            </a>
+            <a href="tool-experts.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Tool Experts</span>
+                <span class="mega-item__desc">Zoho, Airtable, SAP, Salesforce & automation</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Integrations -->
+      <div class="nav__dropdown">
+        <a href="integration-services.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Integrations
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--integrations">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Integrations</span>
+            <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="sap-business-one.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-database"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">SAP Business One</span><span class="mega-item__desc">ERP integration &amp; consulting</span></div>
+            </a>
+            <a href="salesforce.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Salesforce</span><span class="mega-item__desc">CRM &amp; order-to-cash sync</span></div>
+            </a>
+            <a href="netsuite.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cubes"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">NetSuite</span><span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span></div>
+            </a>
+            <a href="shopify.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-bag-shopping"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Shopify</span><span class="mega-item__desc">Ecommerce &#8596; back office</span></div>
+            </a>
+            <a href="quickbooks.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">QuickBooks</span><span class="mega-item__desc">Accounting &amp; invoice sync</span></div>
+            </a>
+            <a href="woocommerce.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fab fa-wordpress"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">WooCommerce</span><span class="mega-item__desc">WordPress store integration</span></div>
+            </a>
+            <a href="zoho.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-circle-nodes"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Zoho</span><span class="mega-item__desc">Zoho One suite integration</span></div>
+            </a>
+            <a href="zuper.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+              <div class="mega-item__content"><span class="mega-item__title">Zuper</span><span class="mega-item__desc">Field service management sync</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="nav__dropdown">
+        <a href="about.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    </div>
+
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="index.html"><img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" /></a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+
+    <!-- Solutions accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- Staff Augmentation accordion (NEW — rank 3) -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="staff-augmentation.html" class="mob-accordion__link">Staff Augmentation</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="specialist-staff-augmentation.html">Specialist Staff Augmentation</a>
+        <a href="dedicated-expert-pods.html">Dedicated Expert Pods</a>
+        <a href="sme-on-demand.html">SME-on-Demand</a>
+        <a href="fractional-interim-leadership.html">Fractional & Interim Leadership</a>
+        <a href="tool-experts.html">Tool Experts</a>
+      </div>
+    </div>
+
+    <!-- Integrations accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="integration-services.html" class="mob-accordion__link">Integrations</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="sap-business-one.html">SAP Business One</a>
+        <a href="salesforce.html">Salesforce</a>
+        <a href="netsuite.html">NetSuite</a>
+        <a href="shopify.html">Shopify</a>
+        <a href="quickbooks.html">QuickBooks</a>
+        <a href="woocommerce.html">WooCommerce</a>
+        <a href="zoho.html">Zoho</a>
+        <a href="zuper.html">Zuper</a>
+      </div>
+    </div>
+
+    <!-- Company accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+  </nav>
+</div>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+  <main>
+    <!-- ═══ HERO ═══ -->
+    <section class="sa-hero">
+      <div class="container">
+        <div class="sa-hero__inner">
+          <div class="sa-hero__content">
+            <div class="sa-breadcrumb">
+              <a href="staff-augmentation.html">Staff Augmentation</a>
+              <span>›</span>
+              <span>Dedicated Expert Pods</span>
+            </div>
+            <div class="section-label">Staff Augmentation</div>
+            <h1 class="sa-hero__title">Dedicated <em>Expert Pods</em></h1>
+            <p class="sa-hero__sub">A cross-functional squad — developers, QA and a delivery lead — that owns your product end-to-end. One accountable team, one cadence, outcomes you can measure.</p>
+            <div class="sa-hero__cta">
+              <a href="contact.html#form" class="btn btn--primary btn--lg">Schedule a Free Consultation</a>
+              <a href="#benefits" class="btn btn--outline btn--lg">See Benefits</a>
+            </div>
+          </div>
+          <div class="sa-hero__visual">
+            <div class="sa-hero__icon-grid">
+              <div class="sa-icon-card"><span><i class="fas fa-people-group"></i></span><p>Cross-Functional</p></div>
+              <div class="sa-icon-card"><span><i class="fas fa-diagram-project"></i></span><p>One Team</p></div>
+              <div class="sa-icon-card"><span><i class="fas fa-flag-checkered"></i></span><p>Owns Delivery</p></div>
+              <div class="sa-icon-card"><span><i class="fas fa-repeat"></i></span><p>Agile Cadence</p></div>
+              <div class="sa-icon-card"><span><i class="fas fa-clipboard-check"></i></span><p>QA Built-In</p></div>
+              <div class="sa-icon-card"><span><i class="fas fa-user-tie"></i></span><p>Dedicated Lead</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sa-stats">
+          <div class="sa-stat reveal"><span class="stat-num" data-target="1">0</span><span class="stat-plus"></span><span class="stat-label">Accountable Team</span></div>
+          <div class="sa-stat reveal"><span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span><span class="stat-label">Client Satisfaction</span></div>
+          <div class="sa-stat reveal"><span class="stat-num" data-target="2">0</span><span class="stat-plus">wk</span><span class="stat-label">Typical Sprint</span></div>
+          <div class="sa-stat reveal"><span class="stat-num" data-target="698">0</span><span class="stat-plus">+</span><span class="stat-label">Projects Delivered</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BENEFITS ═══ -->
+    <section class="sa-benefits" id="benefits">
+      <div class="container">
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">Dedicated Expert Pods <br/><em>by RethinkingWeb</em></h2>
+
+        <div class="sa-benefits__grid">
+          <div class="sa-benefits__text reveal">
+            <p class="sa-lead">Coordinating freelancers and juggling handoffs kills momentum. A pod gives you a single, dedicated team that already knows how to work together — planning, building, testing and shipping as one unit against your goals.</p>
+            <ul class="sa-list">
+              <li><span class="sa-list__dot"></span>A complete squad — engineering, QA and a delivery lead — assembled around your product.</li>
+              <li><span class="sa-list__dot"></span>One roadmap, one cadence, one point of accountability for outcomes, not hours.</li>
+              <li><span class="sa-list__dot"></span>The same people stay with you, so context compounds instead of resetting each engagement.</li>
+              <li><span class="sa-list__dot"></span>Ideal for building a product, modernising a platform, or running a long-lived workstream.</li>
+            </ul>
+            <a href="contact.html#form" class="btn btn--primary btn--lg" style="margin-top:1.5rem">Get Started Today</a>
+          </div>
+          <div class="sa-benefits__cards">
+            <div class="sa-benefit-card reveal">
+              <div class="sa-benefit-card__icon"><i class="fas fa-cubes"></i></div>
+              <h3>Complete Squad</h3>
+              <p>Devs, QA and a lead in one pod — no gaps to fill or vendors to chase.</p>
+            </div>
+            <div class="sa-benefit-card reveal">
+              <div class="sa-benefit-card__icon"><i class="fas fa-bolt"></i></div>
+              <h3>Faster Delivery</h3>
+              <p>A team that already gels moves quicker than assembled individuals.</p>
+            </div>
+            <div class="sa-benefit-card reveal">
+              <div class="sa-benefit-card__icon"><i class="fas fa-bullseye"></i></div>
+              <h3>Outcome-Owned</h3>
+              <p>The pod owns the goal end-to-end and is measured on what ships.</p>
+            </div>
+            <div class="sa-benefit-card reveal">
+              <div class="sa-benefit-card__icon"><i class="fas fa-infinity"></i></div>
+              <h3>Compounding Context</h3>
+              <p>Consistent people mean deep product knowledge that stays with you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOCUS BAND ═══ -->
+    <section class="sa-focus">
+      <div class="container">
+        <div class="sa-focus__inner reveal">
+          <div class="sa-focus__text">
+            <div class="section-label sa-focus__label">Our Approach</div>
+            <h2 class="section-title" style="color:#fff;">One squad that <em>owns the outcome</em></h2>
+            <p>Individually sourced contractors need managing, aligning and stitching together. A dedicated pod arrives as a working team with its own rituals and a lead who runs delivery — so you brief the goal, not the tasks, and get a predictable, accountable cadence of shipped work.</p>
+          </div>
+          <div class="sa-focus__cta">
+            <a href="contact.html#form" class="btn btn--primary btn--lg">Schedule a Free Consultation</a>
+            <div class="sa-focus__review">
+              <div class="sa-focus__stars">★★★★★</div>
+              <div>
+                <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Reviewed on Google</div>
+                <div style="font-size:0.95rem;font-weight:700;color:#fff;">22 Reviews · 5/5</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ WHAT'S INCLUDED ═══ -->
+    <section class="sa-inc">
+      <div class="container">
+        <div class="section-label">What's Included</div>
+        <h2 class="section-title">How an <em>Expert Pod</em> works</h2>
+        <div class="sa-inc__grid">
+          <div class="sa-inc-card reveal">
+            <div class="sa-inc-card__num">01</div>
+            <div class="sa-inc-card__icon"><i class="fas fa-people-roof"></i></div>
+            <h3>Pod Assembly</h3>
+            <p>We compose the right blend of skills and seniority for your product and stage.</p>
+          </div>
+          <div class="sa-inc-card reveal">
+            <div class="sa-inc-card__num">02</div>
+            <div class="sa-inc-card__icon"><i class="fas fa-list-check"></i></div>
+            <h3>Discovery & Backlog</h3>
+            <p>The pod shapes scope with you and builds a prioritised, estimate-backed backlog.</p>
+          </div>
+          <div class="sa-inc-card reveal">
+            <div class="sa-inc-card__num">03</div>
+            <div class="sa-inc-card__icon"><i class="fas fa-arrows-spin"></i></div>
+            <h3>Sprint Delivery</h3>
+            <p>Regular sprints with demos, so you see working software at a steady cadence.</p>
+          </div>
+          <div class="sa-inc-card reveal">
+            <div class="sa-inc-card__num">04</div>
+            <div class="sa-inc-card__icon"><i class="fas fa-vial-circle-check"></i></div>
+            <h3>Quality Engineering</h3>
+            <p>Testing is inside the pod, not bolted on — fewer regressions, cleaner releases.</p>
+          </div>
+          <div class="sa-inc-card reveal">
+            <div class="sa-inc-card__num">05</div>
+            <div class="sa-inc-card__icon"><i class="fas fa-gauge"></i></div>
+            <h3>Delivery Reporting</h3>
+            <p>Velocity, burn-down and risks surfaced by the pod lead every sprint.</p>
+          </div>
+          <div class="sa-inc-card reveal">
+            <div class="sa-inc-card__num">06</div>
+            <div class="sa-inc-card__icon"><i class="fas fa-arrow-up-right-dots"></i></div>
+            <h3>Scale The Pod</h3>
+            <p>Grow or reshape the pod as the product and roadmap evolve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ RELATED STAFF AUG SERVICES ═══ -->
+    <section class="sa-related">
+      <div class="container">
+        <div class="section-label">More Staff Augmentation</div>
+        <h2 class="section-title">Explore the rest of<br/><em>Staff Augmentation</em></h2>
+        <div class="sa-related__grid">
+          <a href="specialist-staff-augmentation.html" class="sa-related-card reveal">
+            <div class="sa-related-card__icon"><i class="fas fa-user-gear"></i></div>
+            <h3>Specialist Staff Augmentation</h3>
+            <p>Vetted engineers into your team.</p>
+            <span class="sa-related-card__link">Explore →</span>
+          </a>
+          <a href="sme-on-demand.html" class="sa-related-card reveal">
+            <div class="sa-related-card__icon"><i class="fas fa-user-graduate"></i></div>
+            <h3>SME-on-Demand</h3>
+            <p>Subject-matter experts, on call.</p>
+            <span class="sa-related-card__link">Explore →</span>
+          </a>
+          <a href="fractional-interim-leadership.html" class="sa-related-card reveal">
+            <div class="sa-related-card__icon"><i class="fas fa-user-tie"></i></div>
+            <h3>Fractional & Interim Leadership</h3>
+            <p>Fractional CTO / CIO leadership.</p>
+            <span class="sa-related-card__link">Explore →</span>
+          </a>
+          <a href="tool-experts.html" class="sa-related-card reveal">
+            <div class="sa-related-card__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+            <h3>Tool Experts</h3>
+            <p>Zoho, Airtable, SAP, Salesforce & automation.</p>
+            <span class="sa-related-card__link">Explore →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FINAL CTA ═══ -->
+    <section class="sa-cta">
+      <div class="container">
+        <div class="sa-cta__inner reveal">
+          <h2>Ready to hand a workstream to a team that owns it?</h2>
+          <p>Tell us what you're building and we'll put the right people on it. Book a free, no-obligation consultation.</p>
+          <div class="sa-cta__btns">
+            <a href="contact.html#form" class="btn btn--primary btn--lg">Schedule a Free Consultation</a>
+            <a href="tel:+919920996021" class="btn btn--outline btn--lg">📞 +91-99209-96021</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- ───────── FOOTER ───────── -->
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+  <div class="max-w-[1200px] mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div>
+        <a href="index.html" class="inline-block mb-4"><img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" /></a>
+        <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+        <div class="flex gap-4">
+          <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+          <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+          <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+        <div class="flex flex-col gap-3">
+          <a href="managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+          <a href="consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+          <a href="cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+          <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+          <a href="cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+          <a href="software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Staff Augmentation</h4>
+        <div class="flex flex-col gap-3">
+            <a href="specialist-staff-augmentation.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Specialist Staff Augmentation</a>
+            <a href="dedicated-expert-pods.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Dedicated Expert Pods</a>
+            <a href="sme-on-demand.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">SME-on-Demand</a>
+            <a href="fractional-interim-leadership.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Fractional & Interim Leadership</a>
+            <a href="tool-experts.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Tool Experts</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+        <div class="flex flex-col gap-3">
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
+          <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+          <a href="contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+      <a href="index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+      <div class="flex gap-6">
+        <a href="terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+        <a href="privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/staff-augmentation.js"></script>
+</body>
+</html>
