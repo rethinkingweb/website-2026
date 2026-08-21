@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+ <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Attio + HubSpot Integration | RethinkingWeb</title>
+  <meta name="description" content="Sync HubSpot lead source, campaign engagement, and list membership into Attio records. Fixed-price, platform-agnostic integration consulting." />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/attio-pairings.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/attio-hubspot-integration.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
+  <style>.grecaptcha-badge { visibility: hidden; }</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Attio + HubSpot Integration",
+      "serviceType": "CRM Integration Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "RethinkingWeb",
+        "url": "https://rethinkingweb.com/",
+        "areaServed": ["US", "GB", "AU", "IN"]
+      },
+      "description": "Sync HubSpot lead source, campaign engagement, and list membership into Attio records. Fixed-price, platform-agnostic integration consulting.",
+      "url": "https://rethinkingweb.com/attio-hubspot-integration.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/" },
+        { "@type": "ListItem", "position": 3, "name": "Attio", "item": "https://rethinkingweb.com/attio.html" },
+        { "@type": "ListItem", "position": 4, "name": "HubSpot" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+                {{ "@type": "Question", "name": "How does HubSpot connect to Attio?", "acceptedAnswer": {{ "@type": "Answer", "text": "HubSpot webhooks push contact and engagement events to a listener, which writes lead source and engagement data onto the matching Attio record over the Attio REST API." }} }},
+        {{ "@type": "Question", "name": "Can this run alongside HubSpot's own CRM if we also use Attio?", "acceptedAnswer": {{ "@type": "Answer", "text": "Yes. Many teams run HubSpot for marketing and Attio for sales; this integration is built specifically for that split, not a full CRM migration." }} }},
+        {{ "@type": "Question", "name": "Does list membership sync in both directions?", "acceptedAnswer": {{ "@type": "Answer", "text": "It can. HubSpot lists can update Attio lists, and Attio status changes (like sales-qualified) can add a contact to a HubSpot list to trigger a workflow." }} }},
+        {{ "@type": "Question", "name": "How is lead source attribution decided?", "acceptedAnswer": {{ "@type": "Answer", "text": "We confirm your attribution model &mdash; first-touch, last-touch, or weighted &mdash; during scoping, and build the logic to match rather than assuming a default." }} }},
+        {{ "@type": "Question", "name": "How much does an Attio + HubSpot integration cost?", "acceptedAnswer": {{ "@type": "Answer", "text": "Most projects run $2,500 to $8,500 depending on attribution complexity and scope. See the cost table above for a full breakdown." }} }},
+        {{ "@type": "Question", "name": "Can you migrate an existing HubSpot + spreadsheet workflow into a real sync?", "acceptedAnswer": {{ "@type": "Answer", "text": "Yes. Replacing a manual export/import routine between HubSpot and a CRM is one of the most common projects we take on." }} }}
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+<!-- NAV -->
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+     <a href="/" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+     <div class="nav__dropdown">
+  <a href="solutions.html"
+     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+     onclick="event.preventDefault();">
+    Solutions
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </a>
+  <div class="mega-menu">
+    <div class="mega-menu__header">
+      <span class="mega-menu__label">Our Solutions</span>
+      <a href="solutions.html" class="mega-menu__all">View all services</a>
+    </div>
+          <div class="mega-menu__grid">
+            <a href="managed.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-server"></i></div><div class="mega-item__content"><span class="mega-item__title">Managed Services</span><span class="mega-item__desc">24/7 IT infrastructure &amp; support</span></div></a>
+            <a href="consulting.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div><div class="mega-item__content"><span class="mega-item__title">IT Consulting &amp; Advisory</span><span class="mega-item__desc">Strategic technology guidance</span></div></a>
+            <a href="cyber.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div><div class="mega-item__content"><span class="mega-item__title">Cyber Security</span><span class="mega-item__desc">Protect your digital assets</span></div></a>
+            <a href="web_development.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-code"></i></div><div class="mega-item__content"><span class="mega-item__title">Web Development</span><span class="mega-item__desc">Custom websites &amp; web apps</span></div></a>
+            <a href="mobile-development.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div><div class="mega-item__content"><span class="mega-item__title">Mobile Development</span><span class="mega-item__desc">iOS &amp; Android solutions</span></div></a>
+            <a href="cloud.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-cloud"></i></div><div class="mega-item__content"><span class="mega-item__title">Cloud Services</span><span class="mega-item__desc">Scalable cloud infrastructure</span></div></a>
+            <a href="software.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div><div class="mega-item__content"><span class="mega-item__title">Software Development</span><span class="mega-item__desc">Bespoke software solutions</span></div></a>
+            <a href="airtable.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-table-cells"></i></div><div class="mega-item__content"><span class="mega-item__title">Enterprise Airtable</span><span class="mega-item__desc">No-code workflow automation</span></div></a>
+            <a href="web-performance.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div><div class="mega-item__content"><span class="mega-item__title">Web Performance</span><span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span></div></a>
+            <a href="seo.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div><div class="mega-item__content"><span class="mega-item__title">On-page Technical SEO</span><span class="mega-item__desc">Rank higher, grow faster</span></div></a>
+          </div>
+        </div>
+      </div>
+ <div class="nav__dropdown">
+        <a href="staff-augmentation.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Staff Augmentation
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--staffaug">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Staff Augmentation</span>
+            <a href="staff-augmentation.html" class="mega-menu__all">View all</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="specialist-staff-augmentation.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-user-gear"></i></div><div class="mega-item__content"><span class="mega-item__title">Specialist Staff Augmentation</span><span class="mega-item__desc">Vetted engineers into your team</span></div></a>
+            <a href="dedicated-expert-pods.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-people-group"></i></div><div class="mega-item__content"><span class="mega-item__title">Dedicated Expert Pods</span><span class="mega-item__desc">A cross-functional squad that owns delivery</span></div></a>
+            <a href="sme-on-demand.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-user-graduate"></i></div><div class="mega-item__content"><span class="mega-item__title">SME-on-Demand</span><span class="mega-item__desc">Subject-matter experts, on call</span></div></a>
+            <a href="fractional-interim-leadership.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-user-tie"></i></div><div class="mega-item__content"><span class="mega-item__title">Fractional & Interim Leadership</span><span class="mega-item__desc">Fractional CTO / CIO leadership</span></div></a>
+            <a href="tool-experts.html" class="mega-item"><div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div><div class="mega-item__content"><span class="mega-item__title">Tool Experts</span><span class="mega-item__desc">Zoho, Airtable, SAP, Salesforce & automation</span></div></a>
+          </div>
+        </div>
+      </div>
+     <div class="nav__dropdown">
+  <button type="button" class="nav__link nav__link--dropdown-toggle px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange" aria-haspopup="true" aria-expanded="false">
+    Integrations
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </button>
+  <div class="mega-menu mega-menu--integrations">
+<div class="mega-menu__header">
+            <span class="mega-menu__label">Integrations</span>
+<a href="integration-services.html" class="mega-menu__all">View all integrations</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="sap-business-one.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div><div class="mega-item__content"><span class="mega-item__title">SAP Business One</span><span class="mega-item__desc">ERP integration &amp; consulting</span></div></a>
+            <a href="salesforce.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg></div><div class="mega-item__content"><span class="mega-item__title">Salesforce</span><span class="mega-item__desc">CRM &amp; order-to-cash sync</span></div></a>
+            <a href="netsuite.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0C3B5D"/><text x="12" y="17" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">N</text></svg></div><div class="mega-item__content"><span class="mega-item__title">NetSuite</span><span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span></div></a>
+            <a href="shopify.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/><path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z" opacity=".12"/><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg></div><div class="mega-item__content"><span class="mega-item__title">Shopify</span><span class="mega-item__desc">Ecommerce &#8596; back office</span></div></a>
+            <a href="quickbooks.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div><div class="mega-item__content"><span class="mega-item__title">QuickBooks</span><span class="mega-item__desc">Accounting &amp; invoice sync</span></div></a>
+            <a href="woocommerce.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div><div class="mega-item__content"><span class="mega-item__title">WooCommerce</span><span class="mega-item__desc">WordPress store integration</span></div></a>
+            <a href="zoho.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div><div class="mega-item__content"><span class="mega-item__title">Zoho</span><span class="mega-item__desc">Zoho One suite integration</span></div></a>
+              <a href="zuper.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div><div class="mega-item__content"><span class="mega-item__title">Zuper</span><span class="mega-item__desc">Field service management sync</span></div></a>
+            <a href="attio.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#16151A"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">At</text></svg></div><div class="mega-item__content"><span class="mega-item__title">Attio</span><span class="mega-item__desc">CRM &amp; record sync</span></div></a>
+<a href="twenty.html" class="mega-item"><div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#000000"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">20</text></svg></div><div class="mega-item__content"><span class="mega-item__title">Twenty</span><span class="mega-item__desc">Open-source CRM sync</span></div></a>
+          </div>
+        </div>
+      </div>
+       <div class="nav__dropdown">
+  <a href="about.html"
+     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+     onclick="event.preventDefault();">
+    Company
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </a>
+  <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+    <a href="about.html">About Us</a>
+    <a href="whyus.html">Why Us</a>
+    <a href="team.html">Team</a>
+    <a href="careers.html">Careers</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="case.html">Case Studies</a>
+  </div>
+</div>
+      <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    </div>
+
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="../index.html">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">&#10005;</button>
+  </div>
+
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../managed.html">Managed Services</a>
+        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="../cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="../mobile-development.html">Mobile Development</a>
+        <a href="../cloud.html">Cloud Services</a>
+        <a href="../software.html">Software Development</a>
+        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="../web-performance.html">Web Performance Optimization</a>
+        <a href="../seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="sap-business-one.html" class="mob-accordion__link">Integrations</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="sap-business-one.html">SAP Business One</a>
+        <a href="salesforce.html">Salesforce</a>
+        <a href="netsuite.html">NetSuite</a>
+        <a href="shopify.html">Shopify</a>
+        <a href="quickbooks.html">QuickBooks</a>
+        <a href="woocommerce.html">WooCommerce</a>
+        <a href="zoho.html">Zoho</a>
+        <a href="zuper.html">zuper</a>
+        <a href="attio.html">Attio</a>
+        <a href="twenty.html">Twenty</a>
+      </div>
+    </div>
+
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="../about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="../about.html">About Us</a>
+        <a href="../whyus.html">Why Us</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+    <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+  </nav>
+</div>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- PILLAR PAGE CONTENT -->
+<main class="sap sap-pairing attio-pairing attio-pairing--hubspot">
+
+  <section class="sap-hero">
+    <div class="container">
+      <div class="sap-hero__inner">
+        <div class="sap-hero__text">
+          <nav class="sap-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>&rsaquo;</span>
+            <a href="attio.html">Attio</a><span>&rsaquo;</span>
+            <span class="current">HubSpot</span>
+          </nav>
+          <div class="sap-badge"><span class="badge__dot"></span> Marketing Integration</div>
+          <h1 class="sap-hero__title">Attio <em>+ HubSpot</em> Integration</h1>
+          <p class="sap-hero__sub">Connect HubSpot to <strong>Attio</strong> so lead source, campaign engagement, and list membership show up on the record automatically, whether HubSpot runs marketing only or the full CRM alongside Attio.</p>
+          <div class="sap-hero__cta">
+            <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+            <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
+          </div>
+        </div>
+        <div class="sap-hero__visual" aria-hidden="true">
+          <div class="sap-hub sap-hub--pair">
+            <div class="sap-hub__ring"></div>
+            <div class="sap-hub__core"><strong>Attio</strong><span>CRM Core</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-bullhorn"></i> Campaigns</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-filter"></i> Lead Source</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-list"></i> Lists</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-gauge-high"></i> Lead Score</div>
+          </div>
+        </div>
+      </div>
+      <div class="sap-stats">
+        <div class="sap-stat"><div class="stat-num">Webhooks</div><span class="stat-label">Contact & engagement events in real time</span></div>
+        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">List membership sync between systems</span></div>
+        <div class="sap-stat"><div class="stat-num">2-4</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">The Basics</div>
+        <h2 class="section-title">What Does This <em>Integration Do</em>?</h2>
+      </div>
+      <div class="sap-body reveal">
+        <p>HubSpot knows exactly which campaign, form, or ad brought a lead in and how engaged they've been since; Attio is where sales actually works the deal. Without a sync, that context gets typed in manually once, then goes stale the moment the lead opens another email.</p>
+        <p>This integration listens for HubSpot contact and engagement events and writes lead source, campaign attribution, and engagement score onto the matching record in Attio, and can push Attio list membership back to HubSpot to trigger nurture workflows.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Data Flow</div>
+        <h2 class="section-title">What <em>Syncs</em>, and Which Way</h2>
+        <p class="sap-lead">Most HubSpot + Attio projects sync the same core objects. We adjust field mapping and attribution rules to match your marketing stack.</p>
+      </div>
+      <div class="sap-cards">
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-filter"></i></div>
+          <h3>Lead Source & Attribution</h3>
+          <p class="sap-card__systems">HubSpot &rarr; Attio</p>
+          <p class="sap-card__flows">Original and most-recent campaign source logged on the record</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-gauge-high"></i></div>
+          <h3>Engagement & Lead Score</h3>
+          <p class="sap-card__systems">HubSpot &rarr; Attio</p>
+          <p class="sap-card__flows">Email opens, clicks, and form fills roll up into a score field</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-list"></i></div>
+          <h3>List Membership</h3>
+          <p class="sap-card__systems">HubSpot &harr; Attio</p>
+          <p class="sap-card__flows">Static and active lists kept in sync in both directions</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Campaign Activity</h3>
+          <p class="sap-card__systems">HubSpot &rarr; Attio</p>
+          <p class="sap-card__flows">Campaign name and last-touch date attached to the record</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-envelope-circle-check"></i></div>
+          <h3>Marketing Consent</h3>
+          <p class="sap-card__systems">HubSpot &harr; Attio</p>
+          <p class="sap-card__flows">Opt-in/opt-out status kept consistent for compliance</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-handshake"></i></div>
+          <h3>Deal Handoff</h3>
+          <p class="sap-card__systems">Attio &rarr; HubSpot</p>
+          <p class="sap-card__flows">Sales-qualified status pushed back to trigger nurture workflows</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Methods</div>
+        <h2 class="section-title">How We <em>Build It</em></h2>
+        <p class="sap-lead">HubSpot exposes webhooks for real-time contact and engagement events, plus a REST API for lookups, lists, and backfills. Attio's API handles the write side.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
+          <tbody>
+            <tr><td><strong>HubSpot webhooks</strong></td><td>Real-time notifications for contact property and engagement changes</td><td>Keeping lead score and attribution current as it happens</td><td>Needs a reliable listener with retry handling</td></tr>
+            <tr><td><strong>HubSpot REST API</strong></td><td>On-demand lookups of contacts, lists, and campaign data</td><td>Backfills and scheduled attribution reconciliation</td><td>Rate limits scale with the HubSpot subscription tier</td></tr>
+            <tr><td><strong>Attio REST API</strong></td><td>Records, lists, and attribute endpoints secured with an API key or OAuth</td><td>Writing marketing data onto records and reading list changes</td><td>High-volume marketing lists need batched writes</td></tr>
+            <tr><td><strong>HubSpot Workflows</strong></td><td>No-code automation triggered by property changes or list membership</td><td>Simple trigger rules that call the sync without custom code</td><td>Limited logic; complex attribution still needs custom build</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-callout reveal">
+        <i class="fas fa-circle-check"></i>
+        <p><strong>Where a template usually falls short:</strong> deciding which of several touches counts as the attributed source &mdash; first touch, last touch, or a weighted model &mdash; is where generic automation stops and real logic starts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section sap-section--alt" id="cost">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">How Much Does It <em>Cost</em>?</h2>
+        <p class="sap-lead">An Attio + HubSpot integration typically costs between <strong>$2,500 and $8,500</strong> to implement, depending on attribution complexity and whether two-way list sync is included.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
+          <tbody>
+            <tr><td>Basic lead source & campaign logging</td><td><strong>$2,500 &ndash; $4,000</strong></td><td>Support retainer only</td></tr>
+            <tr><td>Engagement scoring & one-way list sync</td><td><strong>$4,000 &ndash; $6,000</strong></td><td>Support retainer only</td></tr>
+            <tr><td>Full two-way sync with deal handoff</td><td><strong>$6,000 &ndash; $8,500+</strong></td><td>Support retainer only, no platform fee</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-body reveal">
+        <p>The number moves most on <strong>attribution model complexity</strong>, whether <strong>list membership</strong> needs to sync both ways, and whether a <strong>sales-qualified handoff</strong> back to HubSpot is in scope. We quote a fixed price after a scoping call.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Timeline</div>
+        <h2 class="section-title">How Long Does It <em>Take</em>?</h2>
+        <p class="sap-lead">The biggest schedule risk is an undefined attribution model &mdash; we confirm first-touch vs. last-touch (or a weighted rule) before any code is written.</p>
+      </div>
+      <div class="sap-timeline reveal">
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">2-3 weeks</div>
+          <h4>Basic attribution sync</h4>
+          <p>Lead source and campaign data logged on the record, one-way.</p>
+        </div>
+        <div class="sap-timeline__card">
+          <div class="sap-timeline__weeks">4 weeks</div>
+          <h4>Full lifecycle sync</h4>
+          <p>Engagement scoring, two-way list membership, and deal handoff workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section sap-section--alt">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title">What Does Our Integration Process <em>Look Like</em>?</h2>
+        <p class="sap-lead">Every engagement follows the same five stages &mdash; you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
+      </div>
+      <div class="sap-steps">
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We review your Attio workspace, objects, and your HubSpot account setup.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every event, direction, field mapping, and error rule before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We implement against an Attio sandbox workspace and HubSpot's test/sandbox environment.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real-world scenarios end to end before touching production data.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      </div>
+      <div class="sap-faq">
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How does HubSpot connect to Attio?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>HubSpot webhooks push contact and engagement events to a listener, which writes lead source and engagement data onto the matching Attio record over the Attio REST API.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can this run alongside HubSpot's own CRM if we also use Attio?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Many teams run HubSpot for marketing and Attio for sales; this integration is built specifically for that split, not a full CRM migration.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Does list membership sync in both directions?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>It can. HubSpot lists can update Attio lists, and Attio status changes (like sales-qualified) can add a contact to a HubSpot list to trigger a workflow.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How is lead source attribution decided?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>We confirm your attribution model &mdash; first-touch, last-touch, or weighted &mdash; during scoping, and build the logic to match rather than assuming a default.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How much does an Attio + HubSpot integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most projects run $2,500 to $8,500 depending on attribution complexity and scope. See the cost table above for a full breakdown.</p></div>
+        </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can you migrate an existing HubSpot + spreadsheet workflow into a real sync?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Replacing a manual export/import routine between HubSpot and a CRM is one of the most common projects we take on.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sap-finalcta">
+    <div class="container">
+      <h2>Ready to Connect HubSpot to Attio?</h2>
+      <p>Every lead that arrives in Attio with no context on where it came from is a slower first call. A scoped integration puts marketing history on the record automatically &mdash; and you'll know the exact cost before we start.</p>
+      <div class="sap-finalcta__btns">
+        <a href="#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+        <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- CONTACT -->
+ <section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__left">
+        <div class="section-label">Contact us</div>
+        <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+        <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+        <a href="tel:+919920996021" class="contact__phone">&#128222; +91-99209-96021</a>
+
+        <div class="contact__benefits">
+          <div class="benefit-col">
+            <div class="benefit">&#10003; Client-oriented</div>
+            <div class="benefit">&#10003; Independent</div>
+            <div class="benefit">&#10003; Competent</div>
+          </div>
+          <div class="benefit-col">
+            <div class="benefit">&#10003; Results-driven</div>
+            <div class="benefit">&#10003; Problem-solving</div>
+            <div class="benefit">&#10003; Transparent</div>
+          </div>
+        </div>
+
+        <div class="contact__steps">
+          <h4>What happens next?</h4>
+          <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+          <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+          <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+        </div>
+      </div>
+
+      <div class="contact__right">
+        <div class="contact__form-card" id="form">
+          <h3>Schedule a Free Consultation</h3>
+
+          <div class="form-progress">
+            <div class="form-progress__bar"><div class="form-progress__fill" id="progressFill"></div></div>
+            <span class="form-progress__label"><span id="stepCurrent">1</span> of <span id="stepTotal">2</span></span>
+          </div>
+
+          <form class="contact-form contact-form--wizard" id="contactForm" novalidate>
+
+            <div class="form-step is-active" data-step="1">
+              <div class="form-step__eyebrow">Tell us about you</div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First name</label>
+                  <input type="text" name="first_name" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                  <label>Last name</label>
+                  <input type="text" name="last_name" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Company Email</label>
+                  <input type="email" name="email" placeholder="john@company.com" required>
+                </div>
+                <div class="form-group">
+                  <label>Phone <span class="optional-tag">(optional)</span></label>
+                  <input type="tel" name="phone" placeholder="+91 00000 00000">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Company / Organization <span class="optional-tag">(optional)</span></label>
+                  <input type="text" name="company" placeholder="Acme Corp">
+                </div>
+                <div class="form-group">
+                  <label>How Can We Help You?</label>
+                  <select name="service" required>
+                    <option value="">Select Option</option>
+                    <option>Managed Services</option>
+                    <option>IT Consulting &amp; Advisory</option>
+                    <option>Cyber Security</option>
+                    <option>Web Development</option>
+                    <option>Mobile Development</option>
+                    <option>Cloud Services</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Message <span class="optional-tag">(optional)</span></label>
+                <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-step" data-step="2">
+              <div class="form-step__eyebrow">Pick a date &amp; time that works for you</div>
+
+              <div class="form-group">
+                <label>Preferred Date</label>
+                <input type="text" name="preferred_date" id="preferredDate" placeholder="Select a date" required readonly>
+              </div>
+
+              <div class="form-group">
+                <label>Preferred Time</label>
+                <select name="preferred_time" id="preferredTime" required>
+                  <option value="">Select a date first</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group--check">
+                <label class="check-label">
+                  <input type="checkbox" id="privacy" name="privacy" required>
+                  I agree to the <a href="/privacy.html" target="_blank">Privacy Policy</a> and consent to being contacted.
+                </label>
+              </div>
+            </div>
+
+            <input type="hidden" name="g_recaptcha_token" id="gRecaptchaToken">
+
+            <div class="form-nav">
+              <button type="button" class="btn btn--ghost" id="btnBack" style="visibility:hidden;">&larr; Back</button>
+              <button type="button" class="btn btn--primary" id="btnNext">Continue &rarr;</button>
+              <button type="submit" class="btn btn--primary" id="submitBtn" style="display:none;">
+                <span id="btnText">Submit</span>
+                <span id="btnLoader" style="display:none;">Sending&hellip;</span>
+              </button>
+            </div>
+
+            <p class="text-xs text-muted mt-2" style="font-size:0.75rem; color:#7A6F68; margin-top:0.5rem;">
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy" target="_blank" style="text-decoration:underline;">Privacy Policy</a> and
+              <a href="https://policies.google.com/terms" target="_blank" style="text-decoration:underline;">Terms of Service</a> apply.
+            </p>
+
+            <div class="form-success" id="formSuccess">
+              &#9989; Thanks! We've received your message and will be in touch shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="../index.html" class="inline-block mb-4"><img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" /></a>
+          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="../consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="../cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="../mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="../cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="../software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="../airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="../web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="../seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="../about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="../whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="../team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="../careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="../testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India &ndash; 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="../contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">&copy; 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="../terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="../privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+<script src="../js/sap-business-one-integration.js"></script>
+<script src="../js/theme.js"></script>
+</body>
+</html>

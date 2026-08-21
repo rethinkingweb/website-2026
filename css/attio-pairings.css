@@ -1,0 +1,54 @@
+:root {
+  --attio-black:  #16151A;
+  --attio-purple: #6C47FF;
+}
+
+/* ═══════════════════════════════
+   POPULAR PAIRINGS — logo chips
+   (layout comes from sap-business-one-integration.css)
+═══════════════════════════════ */
+.sap-popular__logo--attio     { background: transparent; }
+.sap-popular__logo--attio svg { border-radius: 5px; }
+
+.sap-popular__logo--gmail      { background: #FCE8E6; }
+.sap-popular__logo--gmail i    { color: #EA4335; }
+
+.sap-popular__logo--intercom   { background: #EAF3FF; }
+.sap-popular__logo--intercom i { color: #1F8FFF; }
+
+.sap-popular__logo--slack      { background: #F3EFFB; }
+.sap-popular__logo--slack i    { color: #4A154B; }
+
+.sap-popular__logo--hubspot    { background: #FFF1EC; }
+.sap-popular__logo--hubspot i  { color: #FF7A59; }
+
+/* .sap-popular__logo--stripe and --shopify already exist on the SAP
+   page; these only fill in a background if that rule doesn't set one. */
+.sap-popular__logo--stripe i   { color: #635BFF; }
+
+
+/* ═══════════════════════════════
+   PAIRING DETAIL PAGES
+   (accent overrides only — layout comes from
+    sap-business-one-integration.css)
+═══════════════════════════════ */
+.attio-pairing .sap-hub__core {
+  background: linear-gradient(160deg, #000000 0%, #16151A 100%);
+}
+
+.attio-pairing .sap-badge .badge__dot { background: var(--attio-purple, #6C47FF); }
+
+.attio-pairing .sap-hero__visual .sap-hub__node--1,
+.attio-pairing .sap-hero__visual .sap-hub__node--2,
+.attio-pairing .sap-hero__visual .sap-hub__node--3,
+.attio-pairing .sap-hero__visual .sap-hub__node--4 {
+  border-color: rgba(108, 71, 255, 0.22);
+}
+
+/* Per-pairing node icon accent */
+.attio-pairing--stripe    .sap-hub__node i { color: #635BFF; }
+.attio-pairing--gmail     .sap-hub__node i { color: #EA4335; }
+.attio-pairing--shopify   .sap-hub__node i { color: #5E8E3E; }
+.attio-pairing--intercom  .sap-hub__node i { color: #1F8FFF; }
+.attio-pairing--hubspot   .sap-hub__node i { color: #FF7A59; }
+.attio-pairing--slack     .sap-hub__node i { color: #4A154B; }

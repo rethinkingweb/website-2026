@@ -1,0 +1,34 @@
+# RethinkingWeb — redirect old /integrations/*.html and other .html URLs
+# to new flat, extension-less URLs. 301 = permanent (preserves SEO value).
+# Generated 2026-08-21 from the "Top pages" GSC export.
+
+# --- /integrations/ pages -> flat top-level slug ---
+/integrations/sap-business-one.html                    /sap-business-one                    301
+/integrations/quickbooks.html                          /quickbooks                          301
+/integrations/woocommerce.html                         /woocommerce                         301
+/integrations/zoho.html                                /zoho                                301
+/integrations/shopify.html                             /shopify                             301
+/integrations/salesforce.html                          /salesforce                          301
+/integrations/netsuite.html                            /netsuite                            301
+/integrations/netsuite-avalara-integration.html        /netsuite-avalara-integration        301
+/integrations/sap-business-one-amazon-integration.html /sap-business-one-amazon-integration 301
+/integrations/woocommerce-shipstation-integration.html /woocommerce-shipstation-integration 301
+/integrations/sap-business-one-stripe-integration.html /sap-business-one-stripe-integration 301
+/integrations/sap-business-one-edi-integration.html    /sap-business-one-edi-integration    301
+/integrations/salesforce-shopify-integration.html      /salesforce-shopify-integration      301
+/integrations/sap-business-one-zuper-integration.html  /sap-business-one-zuper-integration  301
+/integrations/woocommerce-netsuite-integration.html    /woocommerce-netsuite-integration    301
+/integrations/zoho-salesforce-integration.html         /zoho-salesforce-integration         301
+/integrations/zuper-hubspot-integration.html           /zuper-hubspot-integration           301
+
+# --- other root-level .html pages -> extension-less ---
+/web-performance.html                                  /web-performance                     301
+/seo.html                                               /seo                                 301
+/d2c-logistics-integration-ecommerce.html               /d2c-logistics-integration-ecommerce 301
+/influencer-marketing-commission-platform.html          /influencer-marketing-commission-platform 301
+/shopify-shipstation-integration.html                   /shopify-shipstation-integration     301
+
+# --- catch-all fallback for any /integrations/ URL not listed above ---
+# (keeps .html on the far end since Netlify can't chain two rewrites in one hop;
+#  add an explicit line above if a specific old URL needs the extension stripped too)
+/integrations/*                                         /:splat                              301
