@@ -4,13 +4,15 @@
    <meta charset="UTF-8" />
  <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Performance Optimization Services | RethinkingWeb</title>
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/web-performance.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/web-performance.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  <!-- Tailwind CSS -->
+<title>Twenty + HubSpot Integration | RethinkingWeb</title>
+  <meta name="description" content="Sync HubSpot with Twenty CRM — lead source, campaign engagement, and pipeline stage land on the record automatically. Fixed-price integration consulting." />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/twenty-pairings.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/twenty-hubspot-integration.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -41,32 +43,68 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="css/contact.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
   <style>.grecaptcha-badge { visibility: hidden; }</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Twenty + HubSpot Integration",
+      "serviceType": "CRM Marketing Integration Consulting",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "RethinkingWeb",
+        "url": "https://rethinkingweb.com/",
+        "areaServed": ["US", "GB", "AU", "IN"]
+      },
+      "description": "Connect HubSpot to Twenty CRM so lead source, campaign engagement, and pipeline stage land on Company and People records automatically, using Twenty's REST/GraphQL APIs and webhooks alongside the HubSpot API.",
+      "url": "https://rethinkingweb.com/twenty-hubspot-integration.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Twenty", "item": "https://rethinkingweb.com/twenty.html" },
+        { "@type": "ListItem", "position": 3, "name": "HubSpot" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does the Twenty + HubSpot integration update pipeline stage automatically?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Deal stage changes, campaign engagement, and lifecycle-stage updates in HubSpot update the matching Twenty record via webhooks, so marketing and sales activity is visible without opening HubSpot." } },
+        { "@type": "Question", "name": "Does Twenty have a native HubSpot connector?", "acceptedAnswer": { "@type": "Answer", "text": "No — HubSpot is not a native Twenty integration, so this pairing is built on the HubSpot API and webhooks, matched against Twenty's REST/GraphQL API and standard or custom objects." } },
+        { "@type": "Question", "name": "Can hot leads and stage changes trigger an alert?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We commonly pair this integration with a Slack or email notification on marketing-qualified leads, deal-stage changes, or high-intent campaign engagement, so sales isn't discovering a hot lead a day late." } },
+        { "@type": "Question", "name": "Can campaign and form-fill history sync into Twenty, not just lead source?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can log full campaign and form-submission history or just a rolled-up engagement score, depending on how much detail your sales team needs inside Twenty." } },
+        { "@type": "Question", "name": "How much does a Twenty + HubSpot integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most Twenty + HubSpot integrations cost between $3,000 and $11,000 depending on pipeline complexity, whether campaign engagement syncs in full, and how much lead-scoring logic is needed. We quote a fixed price after scoping." } }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
-  <!-- ── Animated background orbs ── -->
+  <!-- ═══ BACKGROUND ═══ -->
   <div class="hero__bg">
     <div class="orb orb--1"></div>
     <div class="orb orb--2"></div>
     <div class="orb orb--3"></div>
     <div class="grid-overlay"></div>
   </div>
-
 <!-- ───────── NAV ───────── -->
 <header class="nav nav--light" id="nav">
   <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
-    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
-      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
     </a>
 
-    <!-- DESKTOP LINKS -->
+   <!-- DESKTOP LINKS -->
     <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
-      <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
-
+     <a href="/" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
          <div class="nav__dropdown">
   <a href="solutions.html" 
      class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
@@ -207,17 +245,15 @@
 
 
 
-      <div class="nav__dropdown">
-  <a href="integration-services.html" 
-     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-     onclick="event.preventDefault();">
+     <div class="nav__dropdown">
+  <button type="button" class="nav__link nav__link--dropdown-toggle px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange" aria-haspopup="true" aria-expanded="false">
     Integrations
     <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-  </a>
+  </button>
   <div class="mega-menu mega-menu--integrations">
-            <div class="mega-menu__header">
+<div class="mega-menu__header">
             <span class="mega-menu__label">Integrations</span>
-            <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
+<a href="integration-services.html" class="mega-menu__all">View all integrations</a>
           </div>
           <div class="mega-menu__grid">
             <a href="sap-business-one.html" class="mega-item">
@@ -295,7 +331,7 @@
         </div>
       </div>
 
-      <div class="nav__dropdown">
+       <div class="nav__dropdown">
   <a href="about.html" 
      class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
      onclick="event.preventDefault();">
@@ -332,55 +368,42 @@
 <!-- ───────── MOBILE NAV DRAWER ───────── -->
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
-    <a href="index.html">
-      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    <a href="../index.html">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
     </a>
     <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
   </div>
 
   <nav class="flex flex-col px-6 pb-8 pt-3">
-    <a href="index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+    <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
 
     <!-- Solutions accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <div class="mob-accordion__header"></div>
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
       <div class="mob-accordion__panel">
-        <a href="managed.html">Managed Services</a>
-        <a href="consulting.html">IT Consulting &amp; Advisory</a>
-        <a href="cyber.html">Cyber Security</a>
+        <a href="../managed.html">Managed Services</a>
+        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="../cyber.html">Cyber Security</a>
         <a href="web_development.html">Web Development</a>
-        <a href="mobile-development.html">Mobile Development</a>
-        <a href="cloud.html">Cloud Services</a>
-        <a href="software.html">Software Development</a>
-        <a href="airtable.html">Enterprise Airtable Managed Services</a>
-        <a href="web-performance.html">Web Performance Optimization</a>
-        <a href="seo.html">On-page Technical SEO</a>
-      </div>
-    </div>
-<div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="staff-augmentation.html" class="mob-accordion__link">Staff Augmentation</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="specialist-staff-augmentation.html">Specialist Staff Augmentation</a>
-        <a href="dedicated-expert-pods.html">Dedicated Expert Pods</a>
-        <a href="sme-on-demand.html">SME-on-Demand</a>
-        <a href="fractional-interim-leadership.html">Fractional & Interim Leadership</a>
-        <a href="tool-experts.html">Tool Experts</a>
+        <a href="../mobile-development.html">Mobile Development</a>
+        <a href="../cloud.html">Cloud Services</a>
+        <a href="../software.html">Software Development</a>
+        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="../web-performance.html">Web Performance Optimization</a>
+        <a href="../seo.html">On-page Technical SEO</a>
       </div>
     </div>
 
     <!-- Integrations accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="integration-services.html" class="mob-accordion__link">Integrations</a>
+        <a href="sap-business-one.html" class="mob-accordion__link">Integrations</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
@@ -393,506 +416,279 @@
         <a href="quickbooks.html">QuickBooks</a>
         <a href="woocommerce.html">WooCommerce</a>
         <a href="zoho.html">Zoho</a>
+         <a href="zuper.html">zuper</a>
          <a href="attio.html">Attio</a>
-        
+         <a href="twenty.html">Twenty</a>
       </div>
     </div>
 
     <!-- Company accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="about.html" class="mob-accordion__link">Company</a>
+        <a href="../about.html" class="mob-accordion__link">Company</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
       <div class="mob-accordion__panel">
-        <a href="about.html">About Us</a>
-        <a href="whyus.html">Why Us</a>
-        <a href="team.html">Team</a>
-        <a href="careers.html">Careers</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="case.html">Case Studies</a>
+        <a href="../about.html">About Us</a>
+        <a href="../whyus.html">Why Us</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../case.html">Case Studies</a>
       </div>
     </div>
 
-    <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
-    
-    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+    <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+
+    <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
   </nav>
 </div>
 
 <!-- Overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
+<!-- ═══════════════════════════════════════════
+     PAIRING DETAIL PAGE CONTENT
+═══════════════════════════════════════════ -->
+<main class="sap twenty-pairing twenty-pairing--hubspot">
 
-  <!-- ══════════════════════════════
-       HERO
-  ══════════════════════════════ -->
-  <section class="cs-hero">
+  <!-- ───────── HERO ───────── -->
+  <section class="sap-hero">
     <div class="container">
-      <div class="cs-hero__inner">
-
-        <!-- Left: Copy -->
-        <div class="cs-hero__copy">
-          <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-            <a href="/">Home</a>
+      <div class="sap-hero__inner">
+        <div class="sap-hero__text">
+          <nav class="sap-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
             <span>›</span>
-            <a href="#">Services</a>
+            <a href="twenty.html">Twenty</a>
             <span>›</span>
-            <span>Web Performance Optimization</span>
+            <span class="current">HubSpot</span>
           </nav>
-
-          <div class="hero__badge">
-            <span class="badge__dot"></span>
-            Core Web Vitals · Page Speed · LCP · CLS · FID
-          </div>
-
-          <h1 class="cs-hero__title">
-           Web Performance <br>
-            <em>Optimization Services</em>
-          </h1>
-
-          <p class="cs-hero__sub">
-            We audit, optimise, and continuously monitor your web performance — slashing load times, boosting Core Web Vitals scores, and turning every millisecond saved into real revenue growth.
+          <div class="sap-badge"><span class="badge__dot"></span> Twenty CRM Integration Consultancy</div>
+          <h1 class="sap-hero__title">Twenty <em>+ HubSpot</em> Integration</h1>
+          <p class="sap-hero__sub">
+            <strong>Twenty + HubSpot integration</strong> puts lead source, campaign engagement, and pipeline stage directly on your Company and People records, so sales stops chasing marketing for context on every lead. We build on the <strong>HubSpot API and Twenty's REST/GraphQL API</strong>, using HubSpot webhooks for real-time deal and engagement events.
           </p>
-
-          <div class="cs-hero__cta">
-            <a href="#form" class="btn btn--primary btn--lg">Schedule Free Consultation</a>
-            <a href="#benefits" class="btn btn--outline btn--lg">See What We Fix</a>
-          </div>
-
-          <div class="hero__social-proof">
-            <span class="stars">★★★★★</span>
-            <strong>4.9/5</strong>
-            <span class="divider">|</span>
-            <span>Avg. 68% load time improvement</span>
-            <span class="divider">|</span>
-            <span>50+ sites optimised</span>
+          <div class="sap-hero__cta">
+            <a href="../contact.html#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+            <a href="#cost" class="btn btn--outline btn--lg">See Integration Pricing</a>
           </div>
         </div>
 
-        <!-- Right: Performance Visual -->
-        <div class="cs-hero__visual">
-          <div class="at-wrap">
-            <div class="at-frame">
-              <div class="at-screen">
-
-                <!-- Speed Score Meter -->
-                <div class="at-header">
-                  <span class="at-icon">⚡</span>
-                  <span class="at-title">PageSpeed Insights — After Optimisation</span>
-                </div>
-
-                <div class="perf-scores">
-                  <div class="score-ring score--green">
-                    <svg viewBox="0 0 42 42" class="score-svg">
-                      <circle cx="21" cy="21" r="16" fill="none" stroke="#e8e2dc" stroke-width="4"/>
-                      <circle cx="21" cy="21" r="16" fill="none" stroke="#22c55e" stroke-width="4"
-                              stroke-dasharray="96 4" stroke-dashoffset="25" stroke-linecap="round"/>
-                    </svg>
-                    <span class="score-num">97</span>
-                  </div>
-                  <div class="score-labels">
-                    <div class="score-row"><span class="score-dot green"></span><span>Performance</span><strong>97</strong></div>
-                    <div class="score-row"><span class="score-dot green"></span><span>Accessibility</span><strong>98</strong></div>
-                    <div class="score-row"><span class="score-dot green"></span><span>Best Practices</span><strong>100</strong></div>
-                    <div class="score-row"><span class="score-dot green"></span><span>SEO</span><strong>99</strong></div>
-                  </div>
-                </div>
-
-                <!-- Vitals table -->
-                <div class="at-table">
-                  <div class="at-row">
-                    <div class="at-cell at-cell--header">Metric</div>
-                    <div class="at-cell at-cell--header">Before</div>
-                    <div class="at-cell at-cell--header">After</div>
-                  </div>
-                  <div class="at-row">
-                    <div class="at-cell">LCP</div>
-                    <div class="at-cell at-cell--tag yellow">4.8s</div>
-                    <div class="at-cell at-cell--tag">1.2s</div>
-                  </div>
-                  <div class="at-row">
-                    <div class="at-cell">FID</div>
-                    <div class="at-cell at-cell--tag yellow">210ms</div>
-                    <div class="at-cell at-cell--tag">18ms</div>
-                  </div>
-                  <div class="at-row">
-                    <div class="at-cell">CLS</div>
-                    <div class="at-cell at-cell--tag yellow">0.32</div>
-                    <div class="at-cell at-cell--tag">0.02</div>
-                  </div>
-                  <div class="at-row">
-                    <div class="at-cell">TTFB</div>
-                    <div class="at-cell at-cell--tag yellow">820ms</div>
-                    <div class="at-cell at-cell--tag">95ms</div>
-                  </div>
-                </div>
-
-                <div class="at-views">
-                  <div class="at-view av--active">Mobile</div>
-                  <div class="at-view">Desktop</div>
-                  <div class="at-view">Lighthouse</div>
-                </div>
-
-                <div class="at-status">
-                  <span class="status-dot"></span>
-                  All Core Web Vitals: Passed ✓
-                </div>
-
-              </div>
-            </div>
-            <div class="at-glow"></div>
-          </div>
-
-          <!-- Icon grid beside phone -->
-          <div class="cs-icon-grid">
-            <div class="cs-icon-card">
-              <span>🚀</span><p>Speed Boost</p>
-            </div>
-            <div class="cs-icon-card">
-              <span>📊</span><p>CWV Audit</p>
-            </div>
-            <div class="cs-icon-card">
-              <span>🖼️</span><p>Image Opt.</p>
-            </div>
-            <div class="cs-icon-card">
-              <span>🌐</span><p>CDN Setup</p>
-            </div>
+        <!-- Pairing visual -->
+        <div class="sap-hero__visual" aria-hidden="true">
+          <div class="sap-hub">
+            <div class="sap-hub__ring"></div>
+            <div class="sap-hub__core"><strong>Twenty</strong><span>+ HubSpot</span></div>
+            <div class="sap-hub__node sap-hub__node--1"><i class="fas fa-bullseye"></i> Leads</div>
+            <div class="sap-hub__node sap-hub__node--2"><i class="fas fa-bullhorn"></i> Campaigns</div>
+            <div class="sap-hub__node sap-hub__node--3"><i class="fas fa-diagram-project"></i> Pipeline Stage</div>
+            <div class="sap-hub__node sap-hub__node--4"><i class="fas fa-envelope-open-text"></i> Email Engagement</div>
+            <div class="sap-hub__node sap-hub__node--5"><i class="fas fa-file-lines"></i> Forms</div>
+            <div class="sap-hub__node sap-hub__node--6"><i class="fas fa-arrow-trend-up"></i> Lifecycle Stage</div>
           </div>
         </div>
-
       </div>
 
       <!-- Stats strip -->
-      <div class="cs-stats">
-        <div class="cs-stat reveal">
-          <div class="stat-num">68<span class="stat-plus">%</span></div>
-          <span class="stat-label">Avg. Load Time Reduction</span>
-        </div>
-        <div class="cs-stat reveal">
-          <div class="stat-num">50<span class="stat-plus">+</span></div>
-          <span class="stat-label">Websites Optimised</span>
-        </div>
-        <div class="cs-stat reveal">
-          <div class="stat-num">3×</div>
-          <span class="stat-label">Avg. Conversion Uplift</span>
-        </div>
-        <div class="cs-stat reveal">
-          <div class="stat-num">99<span class="stat-plus">%</span></div>
-          <span class="stat-label">Client Satisfaction Rate</span>
-        </div>
+      <div class="sap-stats">
+        <div class="sap-stat"><div class="stat-num">API</div><span class="stat-label">Built on HubSpot API &amp; webhooks</span></div>
+        <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
+        <div class="sap-stat"><div class="stat-num">1–3</div><span class="stat-label">Weeks to typical go-live</span></div>
+        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════
-       BENEFITS
-  ══════════════════════════════ -->
-  <section class="cs-benefits" id="benefits">
+  <!-- ───────── WHAT IT DOES ───────── -->
+  <section class="sap-section">
     <div class="container">
-      <div class="cs-benefits__grid">
-        <div>
-          <div class="section-label">Why Performance Matters</div>
-          <h2 class="section-title">Slow sites lose<br><em>customers & rankings</em></h2>
-          <p class="cs-lead">A 1-second delay in page load time can reduce conversions by 7%, lower search rankings, and spike bounce rates. We fix the root causes — not just the symptoms.</p>
-          <p class="cs-lead">Our performance engineers go deep: JavaScript bundles, render-blocking resources, server response times, third-party scripts, and more — systematically eliminated.</p>
-          <!-- <a href="#contact" class="btn btn--primary" style="margin-top:1.5rem">Start With a Free Audit</a> -->
-        </div>
-
-        <div class="cs-benefits__cards">
-          <div class="cs-benefit-card reveal">
-            <div class="cs-benefit-card__icon"><i class="fas fa-bolt"></i></div>
-            <h3>Core Web Vitals Fixes</h3>
-            <p>LCP, FID, CLS — we diagnose and resolve every Google CWV flag to protect your search visibility.</p>
-          </div>
-          <div class="cs-benefit-card reveal">
-            <div class="cs-benefit-card__icon"><i class="fas fa-image"></i></div>
-            <h3>Image & Asset Optimisation</h3>
-            <p>Next-gen formats (WebP/AVIF), lazy loading, responsive images, and compression without quality loss.</p>
-          </div>
-          <div class="cs-benefit-card reveal">
-            <div class="cs-benefit-card__icon"><i class="fas fa-box"></i></div>
-            <h3>JavaScript Optimisation</h3>
-            <p>Code splitting, tree-shaking, deferred loading, and removal of unused scripts that bloat your pages.</p>
-          </div>
-          <div class="cs-benefit-card reveal">
-            <div class="cs-benefit-card__icon"><i class="fas fa-globe"></i></div>
-            <h3>CDN & Caching Strategy</h3>
-            <p>Global edge delivery, browser caching headers, server-side caching, and smart invalidation rules.</p>
-          </div>
-        </div>
+      <div class="sap-section__head reveal">
+        <div class="section-label">The Basics</div>
+        <h2 class="section-title">What Does a Twenty <em>+ HubSpot</em> Integration Do?</h2>
+      </div>
+      <div class="sap-body reveal">
+        <p>Campaigns and lead activity live in HubSpot, but deal context lives in the CRM — without integration, sales reps work leads with no idea which campaigns or emails actually moved them. A Twenty + HubSpot integration matches HubSpot contacts and companies against Twenty People and Company records, and keeps lead source, engagement, and pipeline stage current automatically.</p>
+        <p>HubSpot isn't a native Twenty connector, so this integration runs on the <strong>HubSpot API</strong> reading contacts, campaigns, and deals, paired with HubSpot <strong>webhooks</strong> for real-time events on form submissions, email engagement, and deal-stage changes.</p>
+        <p>On the Twenty side, we write matched records through the <strong>REST or GraphQL API</strong>, updating standard fields for simple cases or a custom Campaign/Engagement object where marketing and sales need deeper reporting.</p>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════
-       FOCUS (DARK BAND)
-  ══════════════════════════════ -->
-  <section class="cs-focus">
+  <!-- ───────── WHAT SYNCS ───────── -->
+  <section class="sap-section sap-section--alt">
     <div class="container">
-      <div class="cs-focus__inner">
-        <div class="cs-focus__text">
-          <div class="section-label">Our Approach</div>
-          <h2 class="section-title">Performance as a<br><em>continuous practice</em></h2>
-          <p>We don't just run a one-off audit and disappear. Our managed performance service means your site is monitored, tested, and improved every single month — keeping you ahead of algorithm updates and user expectations.</p>
-          <div class="cs-focus__checklist" style="margin-top:2rem">
-            <div class="cs-focus__check"><span>✓</span> Full Lighthouse & CWV baseline audit</div>
-            <div class="cs-focus__check"><span>✓</span> Prioritised fix roadmap with effort vs. impact scoring</div>
-            <div class="cs-focus__check"><span>✓</span> Monthly monitoring reports & regression alerts</div>
-            <div class="cs-focus__check"><span>✓</span> Ongoing optimisation sprints — not a one-time fix</div>
-            <div class="cs-focus__check"><span>✓</span> Dedicated performance engineer assigned to your account</div>
-          </div>
+      <div class="sap-section__head reveal">
+        <div class="section-label">What Syncs</div>
+        <h2 class="section-title">What Data Moves Between <em>HubSpot and Twenty</em>?</h2>
+      </div>
+      <div class="sap-cards">
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-bullseye"></i></div>
+          <h3>Leads</h3>
+          <p class="sap-card__systems">Source &amp; lifecycle stage</p>
+          <p class="sap-card__flows">Kept current on the record as contacts move from lead to MQL to customer</p>
         </div>
-
-        <div class="cs-focus__cta">
-          <div class="cs-focus__review">
-            <div>
-              <div class="cs-focus__stars">★★★★★</div>
-              <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;margin-top:0.4rem;font-style:italic">"Our site went from a 42 to a 97 PageSpeed score. Revenue up 34% in 60 days."</p>
-              <p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:0.5rem">— Rohan M., E-commerce Director</p>
-            </div>
-          </div>
-          <a href="#contact" class="btn btn--primary btn--lg btn--full">Book a Performance Consultation</a>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Campaign Engagement</h3>
+          <p class="sap-card__systems">Email opens, clicks &amp; forms</p>
+          <p class="sap-card__flows">Logged against the record so sales can see what actually drove interest</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-diagram-project"></i></div>
+          <h3>Pipeline Stage</h3>
+          <p class="sap-card__systems">Deal stage &amp; value</p>
+          <p class="sap-card__flows">Synced per account and written back as a field for at-a-glance reporting</p>
+        </div>
+        <div class="sap-card reveal">
+          <div class="sap-card__icon"><i class="fas fa-envelope-open-text"></i></div>
+          <h3>Forms &amp; Intent Signals</h3>
+          <p class="sap-card__systems">Submissions &amp; high-intent actions</p>
+          <p class="sap-card__flows">Flagged on the record — and optionally alerted in Slack — the moment they happen</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════
-       CLIENTS
-  ══════════════════════════════ -->
- <section class="clients">
-  <div class="clients-wrap">
-
-    <!-- LEFT: Text content -->
-    <div class="clients-left">
-      <div style="margin-bottom: 18px"><span class="label-pill">Our Clients</span></div>
-      <h2 class="clients__headline">Working with<br>the <em>best</em> in<br>the industry</h2>
-      <p class="clients__sub">We serve a diverse range of clients who rely on us for innovative solutions that exceed expectations, every single time.</p>
-      <a href="contact.html" class="btn btn-dark">Become a partner </a>
-    </div>
-
-    <!-- RIGHT: Scrolling logo columns -->
-    <div class="clients-right">
-
-      <!-- Column 1 — scrolls UP -->
-      <div class="logo-col">
-        <div class="logo-track logo-track--up">
-          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
-          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
-          <div class="logo-card"><img src="images/case-web-ecommerce.jpeg" alt="Soezi"><span>Soezi</span></div>
-          <div class="logo-card"><img src="images/case-ecommerce.jpeg" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
-          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
-          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
-          <!-- duplicate for seamless loop -->
-          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
-          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
-          <div class="logo-card"><img src="images/case-web-ecommerce.jpeg" alt="Soezi"><span>Soezi</span></div>
-          <div class="logo-card"><img src="images/case-ecommerce.jpeg" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
-          <div class="logo-card"><img src="images/centrum.webp" alt="Marwadi University"><span>centrum</span></div>
-          <div class="logo-card"><img src="images/bharti.webp" alt="Smarkerz"><span>Bharti</span></div>
-        </div>
-      </div>
-
-      <!-- Column 2 — scrolls DOWN (offset start) -->
-      <div class="logo-col">
-        <div class="logo-track logo-track--down">
-          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
-          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
-          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
-          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
-          <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
-          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
-          <!-- duplicate for seamless loop -->
-          <div class="logo-card"><img src="images/5.webp" alt="Marwadi University"><span>Marwadi Univ.</span></div>
-          <div class="logo-card"><img src="images/smarkerz.webp" alt="Smarkerz"><span>Smarkerz</span></div>
-          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
-          <div class="logo-card"><img src="images/tata.webp" alt="Tata AIG"><span>Tata AIG</span></div>
-           <div class="logo-card"><img src="images/tenders.webp" alt="centrum"><span>Tenders</span></div>
-          <div class="logo-card"><img src="images/wockhardt-Logo.webp" alt="Bharti"><span>Wockhardt</span></div>
-        </div>
-      </div>
-
-      <!-- Column 3 — scrolls UP (slightly faster) -->
-      <div class="logo-col">
-        <div class="logo-track logo-track--up logo-track--fast">
-          <div class="logo-card"><img src="images/case-web-ecommerce.jpeg" alt="Soezi"><span>Soezi</span></div>
-          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
-          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
-          <div class="logo-card"><img src="images/case-ecommerce.jpeg" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
-          <!-- duplicate for seamless loop -->
-          <div class="logo-card"><img src="images/case-web-ecommerce.jpeg" alt="Soezi"><span>Soezi</span></div>
-          <div class="logo-card"><img src="images/1.webp" alt="One Australia Group"><span>One Australia</span></div>
-          <div class="logo-card"><img src="images/zuper.webp" alt="Zuper"><span>Zuper</span></div>
-          <div class="logo-card"><img src="images/case-ecommerce.jpeg" alt="Shay & Company"><span>Shay &amp; Co.</span></div>
-        </div>
-      </div>
-
-    </div><!-- /.clients-right -->
-  </div>
-</section>
-
-  <!-- ══════════════════════════════
-       RELATED SERVICES
-  ══════════════════════════════ -->
-  <section class="cs-related">
+  <!-- ───────── HOW DO YOU INTEGRATE ───────── -->
+  <section class="sap-section">
     <div class="container">
-      <div class="section-label">Related Services</div>
-      <h2 class="section-title">Everything your site<br><em>needs to win</em></h2>
-      <p class="cs-related__sub">Web performance is just the start. Pair it with our complementary services to build an unstoppable digital foundation.</p>
+      <div class="sap-section__head reveal">
+        <div class="section-label">Methods</div>
+        <h2 class="section-title">How Do You Integrate HubSpot with <em>Twenty</em>?</h2>
+        <p class="sap-lead">HubSpot has no native Twenty connector, so every integration runs on the <strong>HubSpot API and webhooks</strong>. The choice is between event-driven webhook sync and scheduled polling, depending on how time-sensitive your lead and pipeline reporting needs to be.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>What it is</th><th>Best for</th><th>Watch out for</th></tr></thead>
+          <tbody>
+            <tr><td><strong>HubSpot Webhooks + Twenty API</strong></td><td>Real-time push on deal, campaign, and engagement events into Twenty via REST or GraphQL</td><td>Real-time lead-scoring and pipeline accuracy</td><td>Requires a small always-on service to receive and verify webhook signatures</td></tr>
+            <tr><td><strong>HubSpot API (scheduled sync)</strong></td><td>Periodic pulls of contacts and deal stages</td><td>Lower-urgency reporting or nightly reconciliation</td><td>Not real-time — hot-lead signals arrive with a delay</td></tr>
+            <tr><td><strong>iPaaS templates (Zapier/Make)</strong></td><td>Pre-built HubSpot-to-CRM flow triggers</td><td>Simple one-way status updates on a small contact base</td><td>Custom lead-scoring and Campaign objects outgrow the template quickly</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-callout reveal">
+        <i class="fas fa-circle-check"></i>
+        <p><strong>The truth most vendors won't tell you:</strong> if you just need basic contact and deal-stage sync, Twenty's native sync is genuinely the right answer and costs nothing extra to run. We'll tell you when that's the case rather than pitching a custom build you don't need.</p>
+      </div>
+    </div>
+  </section>
 
-      <div class="cs-related__grid">
-        <div class="cs-related-card reveal">
-          <div class="cs-related-card__num">01</div>
-          <div class="cs-related-card__icon"><i class="fas fa-magnifying-glass"></i></div>
-          <h3>Technical SEO Audit</h3>
-          <p>Speed and structure go hand-in-hand. Our SEO audits surface crawl issues, structured data gaps, and indexability problems that slow your rankings.</p>
+  <!-- ───────── COST ───────── -->
+  <section class="sap-section sap-section--alt" id="cost">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">How Much Does a Twenty + HubSpot Integration <em>Cost</em>?</h2>
+        <p class="sap-lead">A typical Twenty + HubSpot integration costs between <strong>$3,000 and $11,000</strong>, depending on pipeline complexity and how much lead-scoring logic is required.</p>
+      </div>
+      <div class="sap-table-wrap reveal">
+        <table class="sap-table">
+          <thead><tr><th>Approach</th><th>Implementation</th><th>Ongoing</th></tr></thead>
+          <tbody>
+            <tr><td>Templated iPaaS connector (Zapier/Make)</td><td><strong>$3,000 – $5,800</strong></td><td>$30 – $250/month platform subscription</td></tr>
+            <tr><td>Webhook-driven lead &amp; pipeline sync</td><td><strong>$5,200 – $8,800</strong></td><td>Support retainer only</td></tr>
+            <tr><td>Custom Campaign/Engagement object with lead-scoring alerts</td><td><strong>$8,000 – $11,000</strong></td><td>Support retainer only</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sap-body reveal">
+        <p>The number moves most on <strong>pipeline and campaign complexity</strong>, whether full engagement history needs to sync as opposed to just lifecycle-stage fields, and whether you want <strong>lead-scoring alerts</strong> layered on top (e.g. a Slack ping on a marketing-qualified lead). We quote a fixed price after a scoping call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── PROCESS ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title">What Does Our Integration Process <em>Look Like</em>?</h2>
+        <p class="sap-lead">Every engagement follows the same five stages — you get a fixed-price scope and a mapping sheet you sign off before we build.</p>
+      </div>
+      <div class="sap-steps">
+        <div class="sap-step reveal"><div class="sap-step__num">1</div><h4>Discover</h4><p>We map your marketing and sales workflow, team size, and the matching rules you need.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">2</div><h4>Map</h4><p>We document every field, direction, and matching rule before building.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">3</div><h4>Build</h4><p>We configure native sync or implement custom middleware against a sandbox workspace.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">4</div><h4>Test</h4><p>We run real lead and campaign scenarios end to end — false matches, edge cases, duplicates.</p></div>
+        <div class="sap-step reveal"><div class="sap-step__num">5</div><h4>Support</h4><p>We monitor after go-live, with alerting, logging, and a named contact.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── WHY RTW (dark band) ───────── -->
+  <section class="sap-why">
+    <div class="container">
+      <div class="sap-why__inner">
+        <div class="sap-why__text reveal">
+          <div class="section-label">Why RethinkingWeb</div>
+          <h2 class="section-title">The Team on <em>Both Sides</em> of the Sync</h2>
+          <p>We're an official <strong>Twenty CRM partner</strong>, and we build and run integrations for companies across the US, UK, Australia, and India. We recommend native sync when it fits and build custom only when your pipeline reporting demands it — no reason to oversell you a service you don't need.</p>
+          <p>HubSpot is one integration among several we connect to Twenty. See our full <a href="twenty.html">Twenty CRM integration services</a> page, or explore other popular pairings like <a href="twenty-intercom-integration.html">Intercom</a> and <a href="twenty-slack-integration.html">Slack</a>.</p>
+          <div class="sap-midcta">
+            <a href="../contact.html#form" class="btn btn--primary btn--lg">Get a Fixed-Price Integration Quote</a>
+          </div>
         </div>
-        <div class="cs-related-card reveal">
-          <div class="cs-related-card__num">02</div>
-          <div class="cs-related-card__icon"><i class="fas fa-cloud"></i></div>
-          <h3>Cloud & Hosting Migration</h3>
-          <p>Move to performant infrastructure — AWS, Cloudflare, Vercel, or a custom stack — with zero downtime and measurable TTFB improvements.</p>
-        </div>
-        <div class="cs-related-card reveal">
-          <div class="cs-related-card__num">03</div>
-          <div class="cs-related-card__icon"><i class="fas fa-mobile-screen"></i></div>
-          <h3>Mobile Performance</h3>
-          <p>Over 60% of traffic is mobile. We apply mobile-first optimisation strategies — AMP, responsive images, viewport rendering fixes, and more.</p>
-        </div>
-        <div class="cs-related-card reveal">
-          <div class="cs-related-card__num">04</div>
-          <div class="cs-related-card__icon"><i class="fas fa-lock"></i></div>
-          <h3>Security & HTTPS Hardening</h3>
-          <p>HTTP/2, HSTS, TLS 1.3, and CSP headers — security improvements that also unlock browser rendering performance gains.</p>
-        </div>
-        <div class="cs-related-card reveal">
-          <div class="cs-related-card__num">05</div>
-          <div class="cs-related-card__icon"><i class="fas fa-chart-line"></i></div>
-          <h3>Analytics & RUM Setup</h3>
-          <p>Real User Monitoring (RUM), Google Analytics 4, and custom dashboards so you always know exactly how fast your site feels to real users.</p>
-        </div>
-        <div class="cs-related-card cs-related-card--cta reveal">
-          <div class="cs-related-card__icon"><i class="fas fa-handshake"></i></div>
-          <h3>Not sure where to start?</h3>
-          <p>Book a free 30-minute strategy call and we'll map the right services to your goals.</p>
-          <a href="contact.html" class="btn btn--primary" style="margin-top:0.5rem">Talk to an Expert</a>
+        <div class="sap-why__aside reveal">
+          <div class="sap-why__check"><i class="fas fa-check"></i> Official Twenty CRM partner</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Platform-agnostic — we recommend, not resell</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Real-time webhook sync for pipeline accuracy</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> Fixed price before we build</div>
+          <div class="sap-why__check"><i class="fas fa-check"></i> AI automation on the Claude API</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════
-       TESTIMONIALS
-  ══════════════════════════════ -->
-  <section class="testimonials">
-  <div class="testi-glow1"></div>
-  <div class="testi-glow2"></div>
-
-  <div class="container">
-    <div class="testimonials__head">
-      <div>
-        <div class="section-label">What clients say</div>
-        <h2 class="section-title">Trusted by <em>Leaders</em></h2>
+  <!-- ───────── FAQ ───────── -->
+  <section class="sap-section">
+    <div class="container">
+      <div class="sap-section__head reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
       </div>
-      <!-- <div class="testi-badge">
-        <div class="testi-badge-dot"></div>
-        5-star rated
-      </div> -->
-    </div>
-  </div>
-
-  <div class="testimonials__track-outer">
-    <div class="testimonials__track" id="testiTrack">
-
-      <div class="testi-card">
-        <div class="testi-card__top">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-qbig">"</div>
+      <div class="sap-faq">
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Does the Twenty + HubSpot integration update pipeline stage automatically?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. Deal stage changes, campaign engagement, and lifecycle-stage updates in HubSpot update the matching Twenty record via webhooks, so marketing and sales activity is visible without opening HubSpot.</p></div>
         </div>
-        <p>RethinkingWeb implemented a robust platform allowing uninterrupted service even when our team switched to remote work during COVID-19. The transition was completely seamless.</p>
-        <div class="testi-sep"></div>
-        <div class="testi-author">
-          <div class="testi-avatar">MK</div>
-          <div>
-            <strong>Mustafa Khambati</strong>
-            <span>CEO, Global Voyages — Dubai, UAE</span>
-          </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Does Twenty have a native HubSpot connector?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>No — HubSpot is not a native Twenty integration, so this pairing is built on the HubSpot API and webhooks, matched against Twenty's REST/GraphQL API and standard or custom objects.</p></div>
         </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-card__top">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-qbig">"</div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can hot leads and stage changes trigger an alert?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. We commonly pair this integration with a Slack or email notification on marketing-qualified leads, deal-stage changes, or high-intent campaign engagement, so sales isn't discovering a hot lead a day late.</p></div>
         </div>
-        <p>RethinkingWeb proved to be an exceptional partner. Professionalism, expertise, and dedication to customer service — they played a vital role building our IT infrastructure.</p>
-        <div class="testi-sep"></div>
-        <div class="testi-author">
-          <div class="testi-avatar">SK</div>
-          <div>
-            <strong>Saqib Khan</strong>
-            <span>CEO, Smarkerz</span>
-          </div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">Can campaign and form-fill history sync into Twenty, not just lead source?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Yes. We can log full campaign and form-submission history or just a rolled-up engagement score, depending on how much detail your sales team needs inside Twenty.</p></div>
         </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-card__top">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-qbig">"</div>
+        <div class="sap-faq__item reveal">
+          <button class="sap-faq__q" aria-expanded="false">How much does a Twenty + HubSpot integration cost?<i class="fas fa-plus"></i></button>
+          <div class="sap-faq__a"><p>Most Twenty + HubSpot integrations cost between $3,000 and $11,000 depending on pipeline complexity, whether campaign engagement syncs in full, and how much lead-scoring logic is needed. We quote a fixed price after scoping.</p></div>
         </div>
-        <p>As a customer for over ten years, RethinkingWeb exemplifies how Managed Services should be executed. They consistently go above and beyond to ensure success.</p>
-        <div class="testi-sep"></div>
-        <div class="testi-author">
-          <div class="testi-avatar">HG</div>
-          <div>
-            <strong>Haresh Gajra</strong>
-            <span>Head of Technology, GajraBros</span>
-          </div>
-        </div>
-      </div>
-   <div class="testi-card">
-        <div class="testi-card__top">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-qbig">"</div>
-        </div>
-        <p>RethinkingWeb proved to be an exceptional partner. After understanding my requirements,
-           they recommended the right approach instead of a proprietary solution. Their expertise, optimization skills,
-           and ongoing support played a vital role in delivering a high-quality website experience.</p>
-        <div class="testi-sep"></div>
-        <div class="testi-author">
-          <div class="testi-avatar">MK</div>
-          <div>
-            <strong>Malcolm Kalwachwala</strong>
-            <span>Founder, one Australia Group</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-card__top">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-qbig">"</div>
-        </div>
-        <p>RethinkingWeb has always been a great partner to work with. They successfully redesigned and developed our eCommerce website,
-           delivering it on time and within budget.</p>
-        <div class="testi-sep"></div>
-        <div class="testi-author">
-          <div class="testi-avatar">SK</div>
-          <div>
-            <strong>Sanjay Vyas</strong>
-            <span>TendersOnTime</span>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
-  </div>
+  </section>
 
-</section>
-  <!-- ───────── CONTACT ───────── -->
+  <!-- ───────── FINAL CTA ───────── -->
+  <section class="sap-finalcta">
+    <div class="container">
+      <h2>Ready to See Lead Source and Pipeline Stage on Every Record?</h2>
+      <p>Every week your CRM and marketing platform stay disconnected, your sales team is working leads blind instead of acting on engagement signals. A scoped <strong>Twenty + HubSpot integration</strong> removes that guesswork permanently — and you'll know the exact cost before we start.</p>
+      <div class="sap-finalcta__btns">
+        <a href="../contact.html#form" class="btn btn--primary btn--lg">Book a Scoping Call</a>
+        <a href="#cost" class="btn btn--outline btn--lg">See Our Integration Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+  <!-- ═══ CONTACT ═══ -->
  <section class="contact" id="contact">
   <div class="container">
     <div class="contact__grid">
@@ -1034,13 +830,14 @@
     </div>
   </div>
 </section>
+
    <!-- ───────── FOOTER ───────── -->
 <footer class="bg-[#0f172a] text-white pt-16 pb-8">
     <div class="max-w-[1200px] mx-auto px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
         <div>
-          <a href="index.html" class="inline-block mb-4">
-            <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          <a href="../index.html" class="inline-block mb-4">
+            <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
           </a>
           <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
           <div class="flex gap-4">
@@ -1053,29 +850,28 @@
         <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
           <div class="flex flex-col gap-3">
-            <a href="managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
-            <a href="consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
-            <a href="cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="../managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="../consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="../cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
             <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
-            <a href="mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
-            <a href="cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
-            <a href="software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
-            <a href="airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
-            <a href="web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
-            <a href="seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+            <a href="../mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="../cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="../software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="../airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="../web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="../seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
           </div>
         </div>
 
         <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
           <div class="flex flex-col gap-3">
-            <a href="about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
-            <a href="whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
-            <a href="team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
-            <a href="careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
-            <a href="testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
-            <a href="case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
-   
+            <a href="../about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="../whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="../team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="../careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="../testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
           </div>
         </div>
 
@@ -1084,29 +880,29 @@
           <div class="flex flex-col gap-3">
             <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
             <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
-            <a href="contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+            <a href="../contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
           </div>
         </div>
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-        <a href="index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+        <a href="../index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
         <div class="flex gap-6">
-          <a href="terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
-          <a href="privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+          <a href="../terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="../privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
         </div>
       </div>
     </div>
   </footer>
 
 
-  <!-- Toast notification -->
-  <div class="toast" id="toast">⚡ Audit request received!</div>
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
-<script src="/js/web-performance.js"></script>
+<script src="../js/sap-business-one-integration.js"></script>
+<script src="../js/theme.js"></script>
 </body>
 </html>
-
