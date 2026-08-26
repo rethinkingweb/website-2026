@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
- <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — RethinkingWeb</title>
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="canonical" href="https://www.rethinkingweb.com/privacy.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  <!-- Base design system -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Privacy page styles -->
-  <link rel="stylesheet" href="css/privacy.css" />
-  <!-- Tailwind CSS -->
+  <title>Blog | RethinkingWeb</title>
+  <meta name="description" content="Insights on integrations, automation, and web development from the RethinkingWeb team." />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/blog.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -42,21 +39,29 @@
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/blog.css" />
 </head>
 <body>
 
+  <!-- ═══ BACKGROUND ═══ -->
+  <div class="hero__bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-overlay"></div>
+  </div>
 <!-- ───────── NAV ───────── -->
 <header class="nav nav--light" id="nav">
   <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
-    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
-      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    <a href="../index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
     </a>
 
-    <!-- DESKTOP LINKS -->
+   <!-- DESKTOP LINKS -->
     <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
-      <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
-
+     <a href="/" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
          <div class="nav__dropdown">
   <a href="solutions.html" 
      class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
@@ -197,17 +202,15 @@
 
 
 
-      <div class="nav__dropdown">
-  <a href="integration-services.html" 
-     class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-     onclick="event.preventDefault();">
+     <div class="nav__dropdown">
+  <button type="button" class="nav__link nav__link--dropdown-toggle px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange" aria-haspopup="true" aria-expanded="false">
     Integrations
     <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-  </a>
+  </button>
   <div class="mega-menu mega-menu--integrations">
-            <div class="mega-menu__header">
+<div class="mega-menu__header">
             <span class="mega-menu__label">Integrations</span>
-            <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
+<a href="integration-services.html" class="mega-menu__all">View all integrations</a>
           </div>
           <div class="mega-menu__grid">
             <a href="sap-business-one.html" class="mega-item">
@@ -259,7 +262,7 @@
                 <span class="mega-item__desc">Zoho One suite integration</span>
               </div>
             </a>
-  <a href="zuper.html" class="mega-item">
+              <a href="zuper.html" class="mega-item">
               <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div>
               <div class="mega-item__content">
                 <span class="mega-item__title">Zuper</span>
@@ -280,12 +283,11 @@
             <span class="mega-item__desc">Open-source CRM sync</span>
           </div>
         </a>
- 
           </div>
         </div>
       </div>
 
-     <div class="nav__dropdown">
+       <div class="nav__dropdown">
   <a href="about.html" 
      class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
      onclick="event.preventDefault();">
@@ -324,55 +326,42 @@
 <!-- ───────── MOBILE NAV DRAWER ───────── -->
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
-    <a href="index.html">
-      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    <a href="../index.html">
+      <img src="../images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
     </a>
     <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
   </div>
 
   <nav class="flex flex-col px-6 pb-8 pt-3">
-    <a href="index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+    <a href="../index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
 
     <!-- Solutions accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <div class="mob-accordion__header"></div>
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <a href="../solutions.html" class="mob-accordion__link">Solutions</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
       <div class="mob-accordion__panel">
-        <a href="managed.html">Managed Services</a>
-        <a href="consulting.html">IT Consulting &amp; Advisory</a>
-        <a href="cyber.html">Cyber Security</a>
+        <a href="../managed.html">Managed Services</a>
+        <a href="../consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="../cyber.html">Cyber Security</a>
         <a href="web_development.html">Web Development</a>
-        <a href="mobile-development.html">Mobile Development</a>
-        <a href="cloud.html">Cloud Services</a>
-        <a href="software.html">Software Development</a>
-        <a href="airtable.html">Enterprise Airtable Managed Services</a>
-        <a href="web-performance.html">Web Performance Optimization</a>
-        <a href="seo.html">On-page Technical SEO</a>
-      </div>
-    </div>
-<div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="staff-augmentation.html" class="mob-accordion__link">Staff Augmentation</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="specialist-staff-augmentation.html">Specialist Staff Augmentation</a>
-        <a href="dedicated-expert-pods.html">Dedicated Expert Pods</a>
-        <a href="sme-on-demand.html">SME-on-Demand</a>
-        <a href="fractional-interim-leadership.html">Fractional & Interim Leadership</a>
-        <a href="tool-experts.html">Tool Experts</a>
+        <a href="../mobile-development.html">Mobile Development</a>
+        <a href="../cloud.html">Cloud Services</a>
+        <a href="../software.html">Software Development</a>
+        <a href="../airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="../web-performance.html">Web Performance Optimization</a>
+        <a href="../seo.html">On-page Technical SEO</a>
       </div>
     </div>
 
     <!-- Integrations accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="integration-services.html" class="mob-accordion__link">Integrations</a>
+        <a href="sap-business-one.html" class="mob-accordion__link">Integrations</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
@@ -385,257 +374,116 @@
         <a href="quickbooks.html">QuickBooks</a>
         <a href="woocommerce.html">WooCommerce</a>
         <a href="zoho.html">Zoho</a>
-         <a href="attio.html">Attio</a>
-        
+         <a href="zuper.html">zuper</a>
+           <a href="attio.html">zuper</a>
       </div>
     </div>
 
     <!-- Company accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="about.html" class="mob-accordion__link">Company</a>
+        <a href="../about.html" class="mob-accordion__link">Company</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
       <div class="mob-accordion__panel">
-        <a href="about.html">About Us</a>
-        <a href="whyus.html">Why Us</a>
-        <a href="team.html">Team</a>
-        <a href="careers.html">Careers</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="case.html">Case Studies</a>
+        <a href="../about.html">About Us</a>
+        <a href="../whyus.html">Why Us</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../case.html">Case Studies</a>
       </div>
     </div>
 
-    <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
-    
-    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+    <a href="../case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+<a href="../blog.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Blog</a>
+    <a href="../contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
   </nav>
 </div>
 
 <!-- Overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
+<main class="rw-blog-section">
+  <div class="rw-blog-container">
+    <header class="rw-blog-header">
+      <h1>Insights on integrations &amp; web development</h1>
+      <p>Practical guides and updates from our team on CRM integrations, automation, and building better websites.</p>
+    </header>
 
-
-  <!-- ───────── HERO ───────── -->
-  <section class="cs-hero">
-    <div class="cs-hero__bg">
-      <div class="orb orb--1"></div>
-      <div class="orb orb--2"></div>
-      <div class="grid-overlay"></div>
+    <div id="rw-blog-grid" class="rw-blog-grid">
+      <div class="rw-blog-skeleton"></div>
+      <div class="rw-blog-skeleton"></div>
+      <div class="rw-blog-skeleton"></div>
     </div>
-    <div class="container cs-hero__inner">
-      <div class="section-label">Legal</div>
-      <h1 class="cs-hero__title">Privacy <em>Policy</em></h1>
-      <p class="cs-hero__sub">for Tecnologia LLC — how we collect, use, and protect your personal information.</p>
-      <div class="pp-updated">Last updated: January 2024</div>
-    </div>
-  </section>
 
-  <!-- ───────── MAIN CONTENT ───────── -->
-  <section style="background:var(--bg2); padding-bottom:5rem;">
-    <div class="container">
-      <div class="pp-layout">
+    <div id="rw-blog-pagination" class="rw-blog-pagination"></div>
+  </div>
+</main>
 
-        <!-- Sticky sidebar TOC -->
-        <aside class="pp-sidebar">
-          <div class="pp-toc">
-            <div class="pp-toc__label">Contents</div>
-            <nav>
-              <a href="#intro">Overview</a>
-              <a href="#collect">What we collect</a>
-              <a href="#how">How we collect</a>
-              <a href="#confidentiality">Confidentiality</a>
-              <a href="#complaint">Making a complaint</a>
-              <a href="#contact-us">Contact us</a>
-            </nav>
-          </div>
-        </aside>
-
-        <!-- Main content -->
-        <main class="pp-content">
-
-          <!-- Overview intro card -->
-          <div class="pp-intro-card" id="intro">
-            <div class="section-label" style="margin-bottom:0.75rem;">Overview</div>
-            <p>
-              This Privacy Policy describes how <strong>RethinkingWeb (Tecnologia LLC)</strong> collects, uses, and protects any information that you give us when you use this website or interact with our services. We are committed to ensuring that your privacy is protected at all times.
-            </p>
-            <p>
-              Should we ask you to provide certain information by which you can be identified when using this website, you can be assured that it will only be used in accordance with this privacy statement.
-            </p>
-          </div>
-
-          <!-- Section 1 — What we collect -->
-          <div class="pp-section" id="collect">
-            <div class="pp-section-card">
-              <div class="pp-section__icon"><i class="fas fa-folder-open"></i></div>
-              <div class="pp-section__num">Section 01</div>
-              <h2>What information do we collect?</h2>
-              <p>
-                When you interact with us, we may collect your <strong>name</strong>, <strong>address</strong>, <strong>email address(es)</strong>, <strong>telephone number(s)</strong>, and, where appropriate, <strong>date of birth</strong>.
-              </p>
-              <p>
-                This information is collected only when voluntarily provided by you through our contact forms, consultation requests, or direct communication. We do not collect any personal information passively without your knowledge.
-              </p>
-            </div>
-          </div>
-
-          <!-- Section 2 — How we collect -->
-          <div class="pp-section" id="how">
-            <div class="pp-section-card">
-              <div class="pp-section__icon"><i class="fas fa-magnifying-glass"></i></div>
-              <div class="pp-section__num">Section 02</div>
-              <h2>How do we collect information?</h2>
-              <p>
-                We may collect information about you whenever you interact with us. For example, when you contact us regarding our activities, register as a supporter, send or receive information, or sign a petition, you specifically and knowingly provide us with your personal information.
-              </p>
-              <p>
-                We may also receive information about you from third parties — but only if you have given them permission to share your information with us. In all cases, the collection of your data is transparent and consensual.
-              </p>
-            </div>
-          </div>
-
-          <!-- Section 3 — Confidentiality -->
-          <div class="pp-section" id="confidentiality">
-            <div class="pp-section-card">
-              <div class="pp-section__icon"><i class="fas fa-lock"></i></div>
-              <div class="pp-section__num">Section 03</div>
-              <h2>Confidentiality</h2>
-              <p>
-                We will not be responsible for the privacy of data collected by websites not owned or managed by RethinkingWeb (Tecnologia LLC), including those linked through our website.
-              </p>
-              <p>
-                We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure we have put in place suitable physical, electronic, and managerial procedures to safeguard and secure the information we collect online.
-              </p>
-              <div class="pp-highlight">
-                <strong>Third-party links:</strong> Our website may contain links to third-party websites of interest. Once you use these links to leave our site, we do not have any control over those sites and cannot be responsible for the protection and privacy of any information you provide while visiting such sites.
-              </div>
-            </div>
-          </div>
-
-          <!-- Section 4 — Complaint -->
-          <div class="pp-section" id="complaint">
-            <div class="pp-section-card">
-              <div class="pp-section__icon"><i class="fas fa-envelope-open-text"></i></div>
-              <div class="pp-section__num">Section 04</div>
-              <h2>Making a complaint</h2>
-              <p>
-                If you are not satisfied with the response received from us, please contact us at
-                <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
-                with the details explaining your concerns.
-              </p>
-              <p>
-                We will review your complaint and investigate whether the right procedures have been followed, then respond back to you as appropriate.
-              </p>
-              <div class="pp-highlight">
-                <strong>Response time:</strong> We aim to complete this investigation within <strong>15 working days</strong> of receiving your complaint. However, in some cases it may take longer. If you are still unsatisfied with the response, you may contact us again and we will escalate accordingly.
-              </div>
-            </div>
-          </div>
-
-          <!-- Section 5 — Contact -->
-          <div class="pp-section" id="contact-us">
-            <div class="pp-section-card">
-              <div class="pp-section__icon"><i class="fas fa-envelope"></i></div>
-              <div class="pp-section__num">Section 05</div>
-              <h2>Contact us</h2>
-              <p>
-                If you have any questions about this privacy policy or how we handle your personal data, please don't hesitate to reach out to us directly.
-              </p>
-              <div class="pp-highlight">
-                <strong>RethinkingWeb (Tecnologia LLC)</strong><br>
-                Mulund East, Mumbai, India – 400081<br>
-                📞 <a href="tel:+919920996021">+91-9920-9960-21</a><br>
-                ✉️ <a href="mailto:info@rethinkingweb.com">info@rethinkingweb.com</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- CTA banner -->
-          <div class="pp-cta">
-            <div class="pp-cta__text">
-              <h3>Have questions about your data?</h3>
-              <p>Our team is happy to clarify anything in this policy.</p>
-            </div>
-            <a href="contact.html" class="btn btn--primary btn--lg">Contact Us</a>
-          </div>
-
-        </main>
-      </div>
-    </div>
-  </section>
-
-    <!-- ───────── FOOTER ───────── -->
+<!-- ───────── FOOTER ───────── -->
 <footer class="bg-[#0f172a] text-white pt-16 pb-8">
-    <div class="max-w-[1200px] mx-auto px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-        <div>
-          <a href="index.html" class="inline-block mb-4">
-            <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
-          </a>
-          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
-          <div class="flex gap-4">
-            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
-            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
-            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
-          </div>
+  <div class="max-w-[1200px] mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div>
+        <a href="/index.html" class="inline-block mb-4"><img src="/images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" /></a>
+        <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+        <div class="flex gap-4">
+          <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+          <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+          <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
         </div>
-
-        <div>
-          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
-          <div class="flex flex-col gap-3">
-            <a href="managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
-            <a href="consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
-            <a href="cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
-            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
-            <a href="mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
-            <a href="cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
-            <a href="software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
-            <a href="airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
-            <a href="web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
-            <a href="seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
-          </div>
+      </div>
+      <div>
+        <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+        <div class="flex flex-col gap-3">
+          <a href="/managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+          <a href="/consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+          <a href="/cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+          <a href="/web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+          <a href="/mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+          <a href="/cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+          <a href="/software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+          <a href="/airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+          <a href="/web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+          <a href="/seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
         </div>
-
-        <div>
+      </div>
+    <div>
           <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
           <div class="flex flex-col gap-3">
-            <a href="about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
-            <a href="whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
-            <a href="team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
-            <a href="careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
-            <a href="testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
-            <a href="case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
-   
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
-          <div class="flex flex-col gap-3">
-            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
-            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
-            <a href="contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+            <a href="../about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="../whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="../team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="../careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="../testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="../case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+             <a href="../blog.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Blog</a>
           </div>
         </div>
       </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-        <a href="index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
-        <div class="flex gap-6">
-          <a href="terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
-          <a href="privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+      <div>
+        <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+        <div class="flex flex-col gap-3">
+          <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
+          <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+          <a href="/contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
         </div>
       </div>
     </div>
-  </footer>
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+      <a href="/index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+      <div class="flex gap-6">
+        <a href="/terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+        <a href="/privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-
-  <!-- JavaScript -->
-  <script src="/js/privacy.js"></script>
-
+<script src="/js/theme.js"></script>
+<script src="js/wp-config.js"></script>
+<script src="js/blog-list.js"></script>
 </body>
 </html>
-

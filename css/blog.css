@@ -1,0 +1,332 @@
+/* ==========================================================================
+   RethinkingWeb Blog — styles
+   Reuses the site's own CSS variables from base.css (--bg, --orange,
+   --charcoal, --border, etc.) so it always matches your live theme —
+   no separate color palette to maintain.
+   ========================================================================== */
+
+.rw-blog-section {
+  background: var(--bg2, #F8F6F4);
+  color: var(--charcoal, #1A1A1A);
+  font-family: var(--font-body, "Inter Tight", sans-serif);
+  padding: 8rem 2rem 6rem;
+}
+
+.rw-blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- Header / intro ---------- */
+.rw-blog-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.rw-blog-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange, #E75C23);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.rw-blog-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: var(--charcoal, #1A1A1A);
+  margin: 0 0 0.75rem;
+}
+
+.rw-blog-header p {
+  color: var(--text-muted, #7A6F68);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---------- Filters (optional category bar) ---------- */
+.rw-blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.rw-blog-filter-btn {
+  background: var(--white, #fff);
+  border: 1px solid var(--border, #E8E2DC);
+  color: var(--text-muted, #7A6F68);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--trans, 0.3s ease);
+}
+
+.rw-blog-filter-btn:hover,
+.rw-blog-filter-btn.is-active {
+  border-color: var(--orange, #E75C23);
+  color: var(--orange, #E75C23);
+  background: var(--orange-pale, #FFF3EB);
+}
+
+/* ---------- Grid + Cards ---------- */
+.rw-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .rw-blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .rw-blog-grid { grid-template-columns: 1fr; }
+}
+
+.rw-blog-card {
+  background: var(--white, #fff);
+  border: 1px solid var(--border, #E8E2DC);
+  border-radius: var(--radius-lg, 20px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow, 0 4px 24px rgba(0,0,0,0.08));
+  transition: all var(--trans, 0.3s ease);
+  position: relative;
+}
+
+.rw-blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange, #E75C23), var(--orange-light, #FFA213));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--trans, 0.3s ease);
+}
+
+.rw-blog-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(231, 92, 35, 0.25);
+  box-shadow: var(--shadow-orange, 0 8px 30px rgba(231,92,35,0.25));
+}
+
+.rw-blog-card:hover::before { transform: scaleX(1); }
+
+.rw-blog-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--bg3, #F2EFEC);
+  display: block;
+}
+
+.rw-blog-card-body {
+  padding: 1.5rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.rw-blog-card-meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-muted, #7A6F68);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.rw-blog-card-meta .rw-cat {
+  color: var(--orange, #E75C23);
+}
+
+.rw-blog-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--charcoal, #1A1A1A);
+  margin: 0;
+}
+
+.rw-blog-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted, #7A6F68);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+.rw-blog-card-readmore {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--orange, #E75C23);
+  margin-top: 0.25rem;
+  transition: letter-spacing var(--trans, 0.3s ease);
+}
+
+.rw-blog-card:hover .rw-blog-card-readmore {
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Pagination ---------- */
+.rw-blog-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.rw-blog-pagination button {
+  background: var(--white, #fff);
+  border: 1.5px solid var(--border, #E8E2DC);
+  color: var(--charcoal, #1A1A1A);
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--trans, 0.3s ease);
+}
+
+.rw-blog-pagination button:hover:not(:disabled) {
+  border-color: var(--orange, #E75C23);
+  color: var(--orange, #E75C23);
+  background: var(--orange-pale, #FFF3EB);
+}
+
+.rw-blog-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rw-blog-pagination .rw-page-status {
+  font-size: 0.82rem;
+  color: var(--text-muted, #7A6F68);
+  font-weight: 600;
+}
+
+/* ---------- States ---------- */
+.rw-blog-state {
+  text-align: center;
+  color: var(--text-muted, #7A6F68);
+  padding: 4rem 0;
+  font-size: 0.95rem;
+  grid-column: 1 / -1;
+}
+
+.rw-blog-skeleton {
+  background: linear-gradient(90deg, var(--bg3, #F2EFEC) 25%, var(--border, #E8E2DC) 50%, var(--bg3, #F2EFEC) 75%);
+  background-size: 200% 100%;
+  border: 1px solid var(--border, #E8E2DC);
+  border-radius: var(--radius-lg, 20px);
+  aspect-ratio: 16 / 13;
+  animation: rw-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes rw-pulse {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==========================================================================
+   Single post page
+   ========================================================================== */
+
+.rw-post {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--white, #fff);
+  border: 1px solid var(--border, #E8E2DC);
+  border-radius: var(--radius-lg, 20px);
+  padding: 2.5rem 3rem 3rem;
+  box-shadow: var(--shadow, 0 4px 24px rgba(0,0,0,0.08));
+}
+
+@media (max-width: 620px) {
+  .rw-post { padding: 1.75rem 1.5rem 2rem; }
+}
+
+.rw-post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted, #7A6F68);
+  text-decoration: none;
+  margin-bottom: 1.75rem;
+  transition: color var(--trans, 0.3s ease);
+}
+
+.rw-post-back:hover { color: var(--orange, #E75C23); }
+
+.rw-post-meta {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--text-muted, #7A6F68);
+  margin-bottom: 0.9rem;
+}
+
+.rw-post-meta .rw-cat { color: var(--orange, #E75C23); }
+
+.rw-post h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--charcoal, #1A1A1A);
+  margin: 0 0 1.5rem;
+}
+
+.rw-post-image {
+  width: 100%;
+  border-radius: var(--radius, 12px);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+/* WordPress post content — targets .rw-post-content since content.rendered
+   ships its own inline markup (p, h2, ul, blockquote, img, etc.) */
+.rw-post-content {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--charcoal2, #2D2D2D);
+}
+
+.rw-post-content p { margin: 0 0 1.25rem; }
+.rw-post-content h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--charcoal); margin: 2.5rem 0 1rem; }
+.rw-post-content h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--charcoal); margin: 2rem 0 0.9rem; }
+.rw-post-content ul,
+.rw-post-content ol { margin: 0 0 1.25rem; padding-left: 1.4rem; }
+.rw-post-content li { margin-bottom: 0.5rem; }
+.rw-post-content a { color: var(--orange, #E75C23); text-decoration: underline; }
+.rw-post-content img { max-width: 100%; height: auto; border-radius: 10px; margin: 0.75rem 0 1.5rem; }
+.rw-post-content blockquote {
+  border-left: 3px solid var(--orange, #E75C23);
+  padding: 0.25rem 0 0.25rem 1.1rem;
+  margin: 0 0 1.5rem;
+  color: var(--text-muted, #7A6F68);
+  font-style: italic;
+}
