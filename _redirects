@@ -3,7 +3,7 @@
 # Generated 2026-08-21 from the "Top pages" GSC export.
 
 # --- blog post pretty URLs (rewrite, not redirect — keeps URL bar as-is) ---
-/blog/slug=*                                            /blog-post                            200
+/blog/:slug                                              /blog-post                            200
 
 # --- /integrations/ pages -> flat top-level slug ---
 /integrations/sap-business-one.html                    /sap-business-one                    301
@@ -32,6 +32,4 @@
 /shopify-shipstation-integration.html                   /shopify-shipstation-integration     301
 
 # --- catch-all fallback for any /integrations/ URL not listed above ---
-# (keeps .html on the far end since Netlify can't chain two rewrites in one hop;
-#  add an explicit line above if a specific old URL needs the extension stripped too)
 /integrations/*                                         /:splat                              301

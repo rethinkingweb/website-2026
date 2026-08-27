@@ -1,19 +1,17 @@
 /* ==========================================================================
    RethinkingWeb Blog — single post page logic
-   Requires wp-config.js to be loaded first. Expects ?slug=your-post-slug
+   Requires wp-config.js to be loaded first. Reads slug from /blog/your-slug
    ========================================================================== */
 
 (function () {
   const container = document.getElementById('rw-post');
 
   function getSlugFromUrl() {
-    // New pretty URL: /blog/slug=your-post-slug (rewritten server-side to
-    // blog-post.html, so there's no real query string to read anymore).
-    const pathMatch = window.location.pathname.match(/\/blog\/slug=([^/]+)\/?$/);
+    // Pretty URL: /blog/your-post-slug
+    const pathMatch = window.location.pathname.match(/\/blog\/([^/]+)\/?$/);
     if (pathMatch) return decodeURIComponent(pathMatch[1]);
 
-    // Fallback: old-style ?slug=xxx query string, in case any old links
-    // or bookmarks still use it.
+    // Fallback: old-style ?slug=xxx query string
     const params = new URLSearchParams(window.location.search);
     return params.get('slug');
   }
@@ -26,7 +24,7 @@
     container.innerHTML = `
       <div class="rw-blog-state">
         Post not found.<br /><br />
-        <a class="rw-post-back" href="blog.html">&larr; Back to all posts</a>
+        <a class="rw-post-back" href="/blog.html">&larr; Back to all posts</a>
       </div>`;
   }
 
@@ -46,7 +44,7 @@
     }
 
     container.innerHTML = `
-      <a class="rw-post-back" href="blog.html">&larr; Back to all posts</a>
+      <a class="rw-post-back" href="/blog.html">&larr; Back to all posts</a>
       <div class="rw-post-meta">
         ${category ? `<span class="rw-cat">${category}</span> &middot; ` : ''}${date}
       </div>
