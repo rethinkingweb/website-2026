@@ -3,7 +3,7 @@
 # Generated 2026-08-21 from the "Top pages" GSC export.
 
 # --- blog post pretty URLs (rewrite, not redirect — keeps URL bar as-is) ---
-/blog/slug=*                                            /blog-post.html                      200
+/blog/slug=*                                            /blog-post                            200
 
 # --- /integrations/ pages -> flat top-level slug ---
 /integrations/sap-business-one.html                    /sap-business-one                    301
