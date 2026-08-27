@@ -4,104 +4,86 @@
    ========================================================================== */
 
 (function () {
-  const list = document.getElementById('rw-blog-list');
-  const loadMoreEl = document.getElementById('rw-blog-loadmore');
+  const grid = document.getElementById('rw-blog-grid');
+  const paginationEl = document.getElementById('rw-blog-pagination');
   let currentPage = 1;
   let totalPages = 1;
-  let isFirstLoad = true;
 
   function renderSkeleton() {
-    list.innerHTML = Array.from({ length: 3 })
+    grid.innerHTML = Array.from({ length: WP_POSTS_PER_PAGE })
       .map(() => '<div class="rw-blog-skeleton"></div>')
       .join('');
   }
 
   function renderError() {
-    list.innerHTML = '<div class="rw-blog-state">Couldn\'t load posts right now. Please refresh or try again shortly.</div>';
+    grid.innerHTML = '<div class="rw-blog-state">Couldn\'t load posts right now. Please refresh or try again shortly.</div>';
   }
 
   function renderEmpty() {
-    list.innerHTML = '<div class="rw-blog-state">No posts published yet — check back soon.</div>';
+    grid.innerHTML = '<div class="rw-blog-state">No posts published yet — check back soon.</div>';
   }
 
-  function cardHtml(post) {
-    const image = wpFeaturedImage(post, '/images/blog-placeholder.jpg');
-    const category = wpCategoryName(post);
-    const excerpt = wpPlainExcerpt(post.excerpt.rendered);
-    const date = wpFormatDate(post.date);
-    return `
-      <a class="rw-blog-card" href="/blog/${encodeURIComponent(post.slug)}">
-        <img class="rw-blog-card-image" src="${image}" alt="${post.title.rendered}" loading="lazy" />
-        <div class="rw-blog-card-body">
-          <div class="rw-blog-card-meta">
-            ${category ? `<span class="rw-cat">${category}</span><span>&middot;</span>` : ''}
-            <span>${date}</span>
-          </div>
-          <h3>${post.title.rendered}</h3>
-          <p>${excerpt}</p>
-          <span class="rw-blog-card-readmore">Read more &rarr;</span>
-        </div>
-      </a>
-    `;
+  function renderPosts(posts) {
+    grid.innerHTML = posts
+      .map((post) => {
+        const image = wpFeaturedImage(post, '/images/blog-placeholder.jpg');
+        const category = wpCategoryName(post);
+        const excerpt = wpPlainExcerpt(post.excerpt.rendered);
+        const date = wpFormatDate(post.date);
+        return `
+          <a class="rw-blog-card" href="/blog/${encodeURIComponent(post.slug)}">
+            <div class="rw-blog-card-image-wrap">
+              <img class="rw-blog-card-image" src="${image}" alt="${post.title.rendered}" loading="lazy" />
+            </div>
+            <div class="rw-blog-card-body">
+              <div class="rw-blog-card-meta">
+                ${category ? `<span class="rw-cat">${category}</span><span>&middot;</span>` : ''}
+                <span class="rw-blog-card-date"><i class="fa-regular fa-calendar"></i>${date}</span>
+              </div>
+              <h3>${post.title.rendered}</h3>
+              <p>${excerpt}</p>
+              <span class="rw-blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </a>
+        `;
+      })
+      .join('');
   }
 
-  function renderPosts(posts, append) {
-    const html = posts.map(cardHtml).join('');
-    if (append) {
-      list.insertAdjacentHTML('beforeend', html);
-    } else {
-      list.innerHTML = html;
-    }
-  }
-
-  function renderLoadMoreButton() {
-    if (currentPage >= totalPages) {
-      loadMoreEl.innerHTML = '';
+  function renderPagination() {
+    if (totalPages <= 1) {
+      paginationEl.innerHTML = '';
       return;
     }
-    loadMoreEl.innerHTML = `<button id="rw-load-more">Load More</button>`;
-    const btn = document.getElementById('rw-load-more');
-    if (btn) btn.addEventListener('click', loadNextPage);
+    paginationEl.innerHTML = `
+      <button id="rw-prev-page" ${currentPage <= 1 ? 'disabled' : ''}>&larr; Previous</button>
+      <span class="rw-page-status">Page ${currentPage} of ${totalPages}</span>
+      <button id="rw-next-page" ${currentPage >= totalPages ? 'disabled' : ''}>Next &rarr;</button>
+    `;
+    const prevBtn = document.getElementById('rw-prev-page');
+    const nextBtn = document.getElementById('rw-next-page');
+    if (prevBtn) prevBtn.addEventListener('click', () => loadPage(currentPage - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => loadPage(currentPage + 1));
   }
 
-  async function loadNextPage() {
-    const btn = document.getElementById('rw-load-more');
-    if (btn) {
-      btn.disabled = true;
-      btn.textContent = 'Loading…';
-    }
-    currentPage += 1;
-    try {
-      const { posts, totalPages: tp } = await wpFetchPosts(currentPage);
-      totalPages = tp;
-      renderPosts(posts, true);
-      renderLoadMoreButton();
-    } catch (err) {
-      console.error(err);
-      currentPage -= 1;
-      if (btn) {
-        btn.disabled = false;
-        btn.textContent = 'Load More';
-      }
-    }
-  }
-
-  async function loadFirstPage() {
+  async function loadPage(page) {
+    currentPage = page;
     renderSkeleton();
+    window.scrollTo({ top: grid.offsetTop - 100, behavior: 'smooth' });
     try {
-      const { posts, totalPages: tp } = await wpFetchPosts(1);
+      const { posts, totalPages: tp } = await wpFetchPosts(page);
       totalPages = tp;
       if (!posts.length) {
         renderEmpty();
       } else {
-        renderPosts(posts, false);
+        renderPosts(posts);
       }
-      renderLoadMoreButton();
+      renderPagination();
     } catch (err) {
       console.error(err);
       renderError();
     }
   }
 
-  loadFirstPage();
+  loadPage(1);
 })();
