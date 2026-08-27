@@ -7,6 +7,13 @@
   const container = document.getElementById('rw-post');
 
   function getSlugFromUrl() {
+    // New pretty URL: /blog/slug=your-post-slug (rewritten server-side to
+    // blog-post.html, so there's no real query string to read anymore).
+    const pathMatch = window.location.pathname.match(/\/blog\/slug=([^/]+)\/?$/);
+    if (pathMatch) return decodeURIComponent(pathMatch[1]);
+
+    // Fallback: old-style ?slug=xxx query string, in case any old links
+    // or bookmarks still use it.
     const params = new URLSearchParams(window.location.search);
     return params.get('slug');
   }

@@ -31,7 +31,7 @@
         const excerpt = wpPlainExcerpt(post.excerpt.rendered);
         const date = wpFormatDate(post.date);
         return `
-          <a class="rw-blog-card" href="blog-post.html?slug=${encodeURIComponent(post.slug)}">
+          <a class="rw-blog-card" href="/blog/slug=${encodeURIComponent(post.slug)}">
             <img class="rw-blog-card-image" src="${image}" alt="${post.title.rendered}" loading="lazy" />
             <div class="rw-blog-card-body">
               <div class="rw-blog-card-meta">
