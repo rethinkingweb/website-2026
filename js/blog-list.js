@@ -62,28 +62,30 @@
     `;
     const prevBtn = document.getElementById('rw-prev-page');
     const nextBtn = document.getElementById('rw-next-page');
-    if (prevBtn) prevBtn.addEventListener('click', () => loadPage(currentPage - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => loadPage(currentPage + 1));
+if (prevBtn) prevBtn.addEventListener('click', () => loadPage(currentPage - 1, true));
+if (nextBtn) nextBtn.addEventListener('click', () => loadPage(currentPage + 1, true));
   }
 
-  async function loadPage(page) {
-    currentPage = page;
-    renderSkeleton();
+async function loadPage(page, shouldScroll = false) {
+  currentPage = page;
+  renderSkeleton();
+  if (shouldScroll) {
     window.scrollTo({ top: grid.offsetTop - 100, behavior: 'smooth' });
-    try {
-      const { posts, totalPages: tp } = await wpFetchPosts(page);
-      totalPages = tp;
-      if (!posts.length) {
-        renderEmpty();
-      } else {
-        renderPosts(posts);
-      }
-      renderPagination();
-    } catch (err) {
-      console.error(err);
-      renderError();
-    }
   }
+  try {
+    const { posts, totalPages: tp } = await wpFetchPosts(page);
+    totalPages = tp;
+    if (!posts.length) {
+      renderEmpty();
+    } else {
+      renderPosts(posts);
+    }
+    renderPagination();
+  } catch (err) {
+    console.error(err);
+    renderError();
+  }
+}
 
   loadPage(1);
 })();

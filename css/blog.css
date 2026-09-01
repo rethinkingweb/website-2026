@@ -6,7 +6,12 @@
    ========================================================================== */
 
 .rw-blog-section {
-  background: var(--bg2, #F8F6F4);
+  background: radial-gradient(at 8% 8%, #0a000f, transparent 42%),
+    radial-gradient(at 88% 15%, rgba(72,0,88,0.75), transparent 50%),
+    radial-gradient(at 90% 82%, rgba(231,92,35,0.50), transparent 48%),
+    radial-gradient(at 15% 85%, rgba(72,0,88,0.45), transparent 46%),
+    radial-gradient(at 55% 50%, rgba(255,162,19,0.10), transparent 42%),
+    linear-gradient(148deg, #0d000f 0%, #1a0025 35%, #2a0830 60%, #12001a);
   color: var(--charcoal, #1A1A1A);
   font-family: var(--font-body, "Inter Tight", sans-serif);
   padding: 8rem 2rem 6rem;
@@ -36,15 +41,17 @@
 }
 
 .rw-blog-header h1 {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-  font-weight: 800;
-  color: var(--charcoal, #1A1A1A);
-  margin: 0 0 0.75rem;
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: #fff;
+    margin: 0 0 0.75rem;
 }
 
 .rw-blog-header p {
-  color: var(--text-muted, #7A6F68);
+  color: #fff;
   font-size: 1rem;
   line-height: 1.7;
   margin: 0;
@@ -468,7 +475,26 @@
   text-decoration: none;
   transition: transform var(--trans, 0.3s ease);
 }
+.cs-hero__title { font-family: var(--font-display); font-size: clamp(2.6rem,5.5vw,4.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -.02em; color: var(--charcoal); margin-bottom: 1.25rem; animation: fadeUp .7s .1s ease both; }
 
+.cs-hero__title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--orange, #E75C23), var(--orange-dark, #C44A18));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes rw-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .rw-post-cta-btn:hover { transform: translateY(-2px); }
 
 .rw-toc {
