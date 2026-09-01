@@ -79,6 +79,7 @@ input, select, textarea, button { font-family: inherit; }
   gap: 4rem;
   align-items: start;
   margin-bottom: 4rem;
+  margin-top: 4rem;
 }
 .breadcrumb {
   display: flex; align-items: center; gap: 0.5rem;
