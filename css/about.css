@@ -18,38 +18,6 @@ a {
 img { max-width: 100%; display: block; }
 input, select, textarea, button { font-family: inherit; }
 
-/* ── Utility ── */
-
-/* ── Buttons ── */
-
-/* ═══════════════════════════════
-   NAV
-═══════════════════════════════ */
-
-/* Dropdown */
-
-/* Burger — hidden desktop, flex on mobile */
-
-/* ── Overlay ── */
-
-/* ── Mobile Nav Drawer ── */
-
-/* Header row inside drawer */
-
-/* Links wrapper */
-
-/* Plain links */
-
-/* CTA link */
-
-/* Accordion wrapper */
-
-/* Accordion trigger */
-
-/* Chevron */
-
-/* Panel — JS sets maxHeight on open */
-
 /* ═══════════════════════════════
    REVEAL ANIMATION
 ═══════════════════════════════ */
@@ -108,7 +76,11 @@ input, select, textarea, button { font-family: inherit; }
    CORE VALUES
 ═══════════════════════════════ */
 .values { padding: 2rem 0; background: var(--bg2); }
-.values-intro { max-width: 700px; margin: 0 auto 3.5rem; text-align: center; }
+.values-intro { 
+   /* max-width: 700px;  */
+   margin: 0 auto 3.5rem; 
+   text-align: center; 
+}
 .values-intro .section-label { justify-content: center; }
 .values-intro .section-label::before { display: none; }
 .values__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
