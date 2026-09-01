@@ -457,35 +457,98 @@
           </div>
         </div>
 
-        <!-- Right: Browser Visual -->
-        <div class="page-hero__visual">
-          <div class="browser-graphic">
-            <div class="browser-bar">
-              <span class="browser-dot" style="background:#ff5f57"></span>
-              <span class="browser-dot" style="background:#febc2e"></span>
-              <span class="browser-dot" style="background:#28c840"></span>
-              <!-- <div class="browser-url">rethinkingweb.com</div> -->
-               <img src="images/web.webp" alt="image">
-            </div>
-            <div class="browser-body">
-              <div class="browser-hero-block">
-                <div class="browser-line bw-60"></div>
-                <div class="browser-line bw-40"></div>
-              </div>
-              <div class="browser-cards">
-                <div class="browser-card bc-orange"></div>
-                <div class="browser-card bc-light"></div>
-                <div class="browser-card bc-light"></div>
-              </div>
-              <div class="browser-img-block"></div>
-              <div class="browser-text-lines">
-                <div class="browser-line bw-80"></div>
-                <div class="browser-line bw-60"></div>
-                <div class="browser-line bw-70"></div>
-              </div>
+       <!-- Right: Browser mockup -->
+<div class="page-hero__visual md-hero__visual">
+
+  <!-- floating tech chips -->
+  <div class="md-chip md-chip--1"><span class="md-chip__dot" style="background:#e34f26;"></span>HTML5</div>
+  <div class="md-chip md-chip--2"><span class="md-chip__dot" style="background:#61dafb;"></span>React</div>
+  <div class="md-chip md-chip--3"><span class="md-chip__dot" style="background:#3c873a;"></span>Node.js</div>
+  <div class="md-chip md-chip--4"><span class="md-chip__dot" style="background:#68a063;"></span>Next.js</div>
+
+  <!-- browser mockup -->
+  <div class="md-browser">
+    <div class="md-browser__frame">
+
+      <!-- browser top bar -->
+      <div class="md-browser__topbar">
+        <div class="md-browser__dots">
+          <span style="background:#ff5f57;"></span>
+          <span style="background:#febc2e;"></span>
+          <span style="background:#28c840;"></span>
+        </div>
+        <div class="md-browser__url">
+          <span class="md-browser__lock">🔒</span> rethinkingweb.com
+        </div>
+        <div class="md-browser__refresh">⟳</div>
+      </div>
+
+      <!-- browser screen -->
+      <div class="md-browser__screen">
+        <div class="md-phone__glow"></div>
+
+        <div class="md-phone__header">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="md-phone__icon">✦</div>
+            <div>
+              <div class="md-phone__app-name">MySite AI</div>
+              <div class="md-phone__app-sub">Web Intelligence Suite</div>
             </div>
           </div>
+          <div class="md-phone__online"><span class="md-online-dot"></span> Online</div>
         </div>
+
+        <div class="md-browser__body">
+
+          <!-- AI insight card -->
+          <div class="md-ai-card">
+            <div class="md-ai-card__glow"></div>
+            <div class="md-ai-card__row">
+              <span class="md-ai-card__label">✦ AI Insights</span>
+              <span class="md-ai-live"><span class="md-live-dot"></span>LIVE</span>
+            </div>
+            <p class="md-ai-card__text">Organic traffic is up <strong>18.6%</strong> this month — driven by faster page loads and better on-page SEO.</p>
+            <div class="md-ai-card__bar-row">
+              <div class="md-ai-card__bar"><div class="md-ai-card__fill"></div></div>
+              <span class="md-ai-card__conf">96% confidence</span>
+            </div>
+          </div>
+
+          <!-- metrics row (3-up for wider browser layout) -->
+          <div class="md-metrics md-metrics--3">
+            <div class="md-metric">
+              <div class="md-metric__label">Page Speed</div>
+              <div class="md-metric__val">98<span style="font-size:11px;">/100</span> <span class="md-metric__up">▲9%</span></div>
+            </div>
+            <div class="md-metric">
+              <div class="md-metric__label">Monthly Visitors</div>
+              <div class="md-metric__val">12.9K <span class="md-metric__up">▲14%</span></div>
+            </div>
+            <div class="md-metric">
+              <div class="md-metric__label">Bounce Rate</div>
+              <div class="md-metric__val">21% <span class="md-metric__up">▲6%</span></div>
+            </div>
+          </div>
+
+          <!-- sparkline -->
+          <div class="md-spark">
+            <div class="md-spark__head"><span>Traffic</span><span>7d</span></div>
+            <div class="md-spark__bars">
+              <div style="height:36%"></div><div style="height:58%"></div><div style="height:46%"></div>
+              <div style="height:74%"></div><div style="height:62%"></div>
+              <div style="height:100%;background:linear-gradient(180deg,#f5934f,#E75C23);"></div>
+              <div style="height:82%"></div>
+            </div>
+          </div>
+
+          <!-- ask bar -->
+          <div class="md-ask"><span>Ask AI anything…</span><span class="md-ask__btn">↑</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
       </div>
 
