@@ -2499,7 +2499,7 @@ clamp:(3rem, 4.5rem, 5vw);
 
   /* ── Solution cards ── */
   .solutions__grid {
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
