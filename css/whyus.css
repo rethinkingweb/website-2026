@@ -597,7 +597,7 @@ input, select, textarea, button { font-family: inherit; }
 
      .page-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+  font-size: clamp(1.8rem, 5.5vw, 4.2rem);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -614,7 +614,7 @@ input, select, textarea, button { font-family: inherit; }
   background-clip: text;
 }
 .page-hero__sub {
-  font-size: 1.05rem; color: var(--text-muted);
+  font-size: 1.0rem; color: var(--text-muted);
   margin-bottom: 2rem; max-width: 500px; line-height: 1.75;
   animation: fadeUp 0.7s 0.2s ease both;
   text-align: center;
