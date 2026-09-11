@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+ <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zuper to NetSuite Invoice Sync for a Parking Technology Company – RethinkingWeb Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="canonical" href="https://www.rethinkingweb.com/zuper-netsuite-invoice-sync.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/case3.css" />
+  <!-- Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+<!-- ───────── NAV ───────── -->
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
+      <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+
+      <div class="nav__dropdown">
+        <a href="solutions.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="solutions.html" class="mega-menu__all">View all services</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="managed.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Managed Services</span>
+                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+              </div>
+            </a>
+            <a href="consulting.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
+                <span class="mega-item__desc">Strategic technology guidance</span>
+              </div>
+            </a>
+            <a href="cyber.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cyber Security</span>
+                <span class="mega-item__desc">Protect your digital assets</span>
+              </div>
+            </a>
+            <a href="web_development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Development</span>
+                <span class="mega-item__desc">Custom websites &amp; web apps</span>
+              </div>
+            </a>
+            <a href="mobile-development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Mobile Development</span>
+                <span class="mega-item__desc">iOS &amp; Android solutions</span>
+              </div>
+            </a>
+            <a href="cloud.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cloud Services</span>
+                <span class="mega-item__desc">Scalable cloud infrastructure</span>
+              </div>
+            </a>
+            <a href="software.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Software Development</span>
+                <span class="mega-item__desc">Bespoke software solutions</span>
+              </div>
+            </a>
+            <a href="airtable.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Enterprise Airtable</span>
+                <span class="mega-item__desc">No-code workflow automation</span>
+              </div>
+            </a>
+            <a href="web-performance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Performance</span>
+                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
+              </div>
+            </a>
+            <a href="seo.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">On-page Technical SEO</span>
+                <span class="mega-item__desc">Rank higher, grow faster</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="staff-augmentation.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Staff Augmentation
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--staffaug">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Staff Augmentation</span>
+            <a href="staff-augmentation.html" class="mega-menu__all">View all</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="specialist-staff-augmentation.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-gear"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Specialist Staff Augmentation</span>
+                <span class="mega-item__desc">Vetted engineers into your team</span>
+              </div>
+            </a>
+            <a href="dedicated-expert-pods.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-people-group"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Dedicated Expert Pods</span>
+                <span class="mega-item__desc">A cross-functional squad that owns delivery</span>
+              </div>
+            </a>
+            <a href="sme-on-demand.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-graduate"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">SME-on-Demand</span>
+                <span class="mega-item__desc">Subject-matter experts, on call</span>
+              </div>
+            </a>
+            <a href="fractional-interim-leadership.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-tie"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Fractional & Interim Leadership</span>
+                <span class="mega-item__desc">Fractional CTO / CIO leadership</span>
+              </div>
+            </a>
+            <a href="tool-experts.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Tool Experts</span>
+                <span class="mega-item__desc">Zoho, Airtable, SAP, Salesforce & automation</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="integration-services.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Integrations
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--integrations">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Integrations</span>
+            <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="sap-business-one.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">SAP Business One</span>
+                <span class="mega-item__desc">ERP integration &amp; consulting</span>
+              </div>
+            </a>
+            <a href="salesforce.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Salesforce</span>
+                <span class="mega-item__desc">CRM &amp; order-to-cash sync</span>
+              </div>
+            </a>
+            <a href="netsuite.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0C3B5D"/><text x="12" y="17" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">N</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">NetSuite</span>
+                <span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span>
+              </div>
+            </a>
+            <a href="shopify.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Shopify</span>
+                <span class="mega-item__desc">Ecommerce &#8596; back office</span>
+              </div>
+            </a>
+            <a href="quickbooks.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">QuickBooks</span>
+                <span class="mega-item__desc">Accounting &amp; invoice sync</span>
+              </div>
+            </a>
+            <a href="woocommerce.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">WooCommerce</span>
+                <span class="mega-item__desc">WordPress store integration</span>
+              </div>
+            </a>
+            <a href="zoho.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Zoho</span>
+                <span class="mega-item__desc">Zoho One suite integration</span>
+              </div>
+            </a>
+            <a href="zuper.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Zuper</span>
+                <span class="mega-item__desc">Field service management sync</span>
+              </div>
+            </a>
+            <a href="attio.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#16151A"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">At</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Attio</span>
+                <span class="mega-item__desc">CRM &amp; record sync</span>
+              </div>
+            </a>
+            <a href="twenty.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#000000"/><text x="12" y="16.5" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff" text-anchor="middle">20</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Twenty</span>
+                <span class="mega-item__desc">Open-source CRM sync</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav__dropdown">
+        <a href="about.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+      <a href="blog.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Blog</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="index.html">
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+    <a href="index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
+
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="staff-augmentation.html" class="mob-accordion__link">Staff Augmentation</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="specialist-staff-augmentation.html">Specialist Staff Augmentation</a>
+        <a href="dedicated-expert-pods.html">Dedicated Expert Pods</a>
+        <a href="sme-on-demand.html">SME-on-Demand</a>
+        <a href="fractional-interim-leadership.html">Fractional & Interim Leadership</a>
+        <a href="tool-experts.html">Tool Experts</a>
+      </div>
+    </div>
+
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="integration-services.html" class="mob-accordion__link">Integrations</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="sap-business-one.html">SAP Business One</a>
+        <a href="salesforce.html">Salesforce</a>
+        <a href="netsuite.html">NetSuite</a>
+        <a href="shopify.html">Shopify</a>
+        <a href="quickbooks.html">QuickBooks</a>
+        <a href="woocommerce.html">WooCommerce</a>
+        <a href="zoho.html">Zoho</a>
+        <a href="zuper.html">Zuper</a>
+        <a href="attio.html">Attio</a>
+        <a href="twenty.html">Twenty</a>
+      </div>
+    </div>
+
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+
+    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+
+  <!-- ───────── HERO ───────── -->
+  <section class="cs-detail-hero">
+    <div class="cs-hero__bg">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="container cs-detail-hero__inner">
+      <div class="cs-detail-hero__text">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="case.html">Case Studies</a>
+          <span>›</span>
+          <span>Zuper–NetSuite Invoice Sync</span>
+        </div>
+        <div class="section-label">Integration Development</div>
+        <h1 class="cs-detail-hero__title">Automating <em>Invoice Sync</em> Between Zuper and NetSuite for a Parking Technology Company</h1>
+        <div class="cs-detail-hero__meta">
+          <span class="meta-tag">Field Service Management</span>
+          <span class="meta-tag">Finance &amp; Accounting</span>
+          <span class="meta-tag">USA &amp; Canada</span>
+        </div>
+      </div>
+      <div class="cs-hero-image">
+        <img src="images/case-software-finance.jpeg" alt="Zuper to NetSuite Invoice Sync Integration" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── MAIN CONTENT ───────── -->
+  <section class="cs-content-section">
+    <div class="container cs-content-grid">
+
+      <!-- SIDEBAR -->
+      <aside class="cs-sidebar">
+        <div class="sidebar-card">
+          <h4>Industry</h4>
+          <p>Field Service &amp; Parking Technology</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Service</h4>
+          <p>Integration Development</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Location</h4>
+          <p>USA &amp; Canada</p>
+        </div>
+        <div class="sidebar-card sidebar-card--highlight">
+          <h4>Results at a Glance</h4>
+          <ul>
+            <li>✔ Zero Manual Invoice Entry</li>
+            <li>✔ Automatic Subsidiary Routing</li>
+            <li>✔ Built-in Duplicate Prevention</li>
+            <li>✔ Full Run Logging &amp; Exceptions</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h4>Related Integrations</h4>
+          <p style="margin-bottom:0.5rem;"><a href="zuper.html" style="color:#E75C23; font-weight:600;">Zuper Integration →</a></p>
+          <p><a href="netsuite.html" style="color:#E75C23; font-weight:600;">NetSuite Integration →</a></p>
+        </div>
+        <a href="contact.html" class="btn btn--primary btn--full sidebar-cta">Start Your Project</a>
+      </aside>
+
+      <!-- ARTICLE -->
+      <article class="cs-article">
+
+        <div class="cs-section-block">
+          <h2>Introduction</h2>
+          <p>A parking technology company operating across the US and Canada relied on Zuper to manage field service jobs but had no automated way to move approved invoices into NetSuite. This case study covers the design and build of a scheduled, one-way integration that eliminates that manual step entirely.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Problem Statement</h2>
+          <p>Every invoice approved in Zuper had to be re-keyed into NetSuite by hand, with the finance team manually working out the correct posting period and subsidiary for each record. This was slow, error-prone, and created a real risk of duplicate or misposted invoices as job volume grew across two countries.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Solution</h2>
+          <p>We built a scheduled Zuper → NetSuite integration that runs daily, filters invoices against clear business rules, and creates fully-mapped invoice records in NetSuite automatically — with duplicate protection and exception logging built in from day one.</p>
+
+          <div class="cs-solution-cards">
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-clock"></i></div>
+              <h3>Scheduled Batch Sync</h3>
+              <p>A daily 2:00 AM run transfers every qualifying invoice created or updated since the last successful sync.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-filter"></i></div>
+              <h3>Qualification Filtering</h3>
+              <p>Only invoices in Release to Accounting status, under approved job categories, are picked up for transfer.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-copy"></i></div>
+              <h3>Duplicate Prevention</h3>
+              <p>Every create operation checks the Invoice Number field in NetSuite first, so no invoice is ever synced twice.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-diagram-project"></i></div>
+              <h3>Header &amp; Line Mapping</h3>
+              <p>Full field mapping from Zuper to NetSuite, including a derived posting period and line-level item, quantity and rate detail.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-earth-americas"></i></div>
+              <h3>Subsidiary Determination</h3>
+              <p>Subsidiary is assigned automatically from the service address country, routing US and Canadian invoices correctly every time.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card__icon"><i class="fas fa-list-check"></i></div>
+              <h3>Run Logging &amp; Exceptions</h3>
+              <p>Every run produces a summary of records created, skipped and failed, with clear reasons for finance to review.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>How It Works</h2>
+          <p>The workflow follows a consistent daily process from trigger to traceability:</p>
+          <ol style="padding-left: 1.25rem; display:flex; flex-direction:column; gap:0.6rem; color:var(--text-muted);">
+            <li>The scheduler triggers the sync daily at 2:00 AM CST.</li>
+            <li>Zuper invoices created or updated since the last successful run are retrieved.</li>
+            <li>Each invoice is checked against the qualification criteria; non-qualifying records are skipped and logged.</li>
+            <li>Qualifying invoices are checked against NetSuite for an existing Invoice Number match to prevent duplicates.</li>
+            <li>New invoices are created in NetSuite with mapped header fields, derived posting period and subsidiary, and full line-item detail.</li>
+            <li>The NetSuite internal ID and sync status are written back to Zuper for traceability.</li>
+            <li>A run summary lists everything created, skipped and failed, with reasons.</li>
+          </ol>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Implementation</h2>
+          <p>Implementation began with mapping the finance team's approval workflow in Zuper against NetSuite's invoice, customer, item and subsidiary structures, so every field had a clear source and destination before any code was written.</p>
+          <p>The integration was built create-only by design — once an invoice exists in NetSuite it is never altered by the sync — with the qualification, duplicate-check and subsidiary-routing logic implemented as configurable rules rather than hard-coded values, so future job categories or entities can be added without redevelopment.</p>
+        </div>
+
+        <div class="cs-section-block">
+          <h2>Results &amp; Achievements</h2>
+          <p>The new integration replaced a fully manual process with a reliable, auditable daily sync:</p>
+
+          <div class="cs-results-grid">
+            <div class="result-item">
+              <div class="result-item__icon"><i class="fas fa-file-invoice"></i></div>
+              <h3>No More Manual Entry</h3>
+              <p>Approved Zuper invoices post to NetSuite automatically every day, removing a recurring manual finance task.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon"><i class="fas fa-building-columns"></i></div>
+              <h3>Correct Subsidiary, Every Time</h3>
+              <p>US and Canadian invoices are routed to the right subsidiary automatically based on service address country.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon"><i class="fas fa-shield-halved"></i></div>
+              <h3>No Duplicate Invoices</h3>
+              <p>A pre-create Invoice Number check means no invoice is ever posted twice, even across retried or overlapping runs.</p>
+            </div>
+            <div class="result-item">
+              <div class="result-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <h3>Full Visibility</h3>
+              <p>Every run is logged with records created, skipped and failed, giving finance a clear audit trail without extra effort.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-summary-box">
+          <h2>Conclusion</h2>
+          <p>RethinkingWeb designed and built a scheduled, duplicate-safe Zuper-to-NetSuite invoice sync for a parking technology company operating across the US and Canada, eliminating manual invoice entry while ensuring every invoice lands in the correct subsidiary and posting period.</p>
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+  <!-- ───────── MORE CASE STUDIES ───────── -->
+  <section class="cs-more">
+    <div class="container">
+      <div class="section-label">Case Studies</div>
+      <h2 class="section-title">See More <em>Case Studies</em></h2>
+
+      <div class="cs-more-grid">
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/case-software-finance.jpeg" alt="CRM Integration for a Stock Broking Firm" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Integrating CRM Across Trading Platforms for a Stock Broking Firm</h3>
+            <p class="cs-card__desc">How we connected Zoho CRM to multiple trading platforms via API, giving relationship managers a single, unified client view.</p>
+            <a href="crm-integration-stock-broking-firm.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/case-software-finance.jpeg" alt="Accounting Integration for a Healthcare Company" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Automating Accounting Workflows for a Healthcare Company</h3>
+            <p class="cs-card__desc">How we integrated two accounting platforms for a healthcare company, automating reconciliation and unifying financial reporting.</p>
+            <a href="healthcare-accounting-integration.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="cs-card">
+          <div class="cs-card__image">
+            <img src="images/case-software-finance.jpeg" alt="Accounting & Scheduling Software Integration" loading="lazy" />
+          </div>
+          <div class="cs-card__body">
+            <h3 class="cs-card__title">Integrating Accounting &amp; Scheduling Software for a Service Business</h3>
+            <p class="cs-card__desc">How we connected a scheduling platform to Xero, automating invoice generation from completed bookings.</p>
+            <a href="accounting-scheduling-software-integration.html" class="cs-card__link">Learn more <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CONTACT ───────── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label">Contact us</div>
+          <h2 class="section-title">Collaborate with us to achieve all-inclusive IT solutions.</h2>
+          <p>We're happy to answer any questions you may have and help you determine which of our services best fit your needs.</p>
+          <a href="tel:+919920996021" class="contact__phone">📞 +91-99209-96021</a>
+
+          <div class="contact__benefits">
+            <div class="benefit-col">
+              <div class="benefit">✓ Client-oriented</div>
+              <div class="benefit">✓ Independent</div>
+              <div class="benefit">✓ Competent</div>
+            </div>
+            <div class="benefit-col">
+              <div class="benefit">✓ Results-driven</div>
+              <div class="benefit">✓ Problem-solving</div>
+              <div class="benefit">✓ Transparent</div>
+            </div>
+          </div>
+
+          <div class="contact__steps">
+            <h4>What happens next?</h4>
+            <div class="step"><span class="step-num">1</span> We Schedule a call at your convenience</div>
+            <div class="step"><span class="step-num">2</span> We do a discovery and consulting meeting</div>
+            <div class="step"><span class="step-num">3</span> We prepare a proposal</div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <div class="contact__form-card" id="form">
+            <h3>Schedule a Free Consultation</h3>
+            <form class="contact-form" id="contactForm" action="contact-submit.php" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First name</label>
+                  <input type="text" name="first_name" placeholder="John" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Last name</label>
+                  <input type="text" name="last_name" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Company / Organization</label>
+                <input type="text" name="company" placeholder="Acme Corp">
+              </div>
+
+              <div class="form-group">
+                <label>Company Email</label>
+                <input type="email" name="email" placeholder="john@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" placeholder="+91 00000 00000">
+              </div>
+
+              <div class="form-group">
+                <label>How Can We Help You?</label>
+                <select name="service" required>
+                  <option value="">Select Option</option>
+                  <option>Managed Services</option>
+                  <option>IT Consulting & Advisory</option>
+                  <option>Cyber Security</option>
+                  <option>Web Development</option>
+                  <option>Mobile Development</option>
+                  <option>Cloud Services</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="index.html" class="inline-block mb-4">
+            <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
+          </a>
+          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <a href="index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/case2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="/js/form-handler.js"></script>
+</body>
+</html>
