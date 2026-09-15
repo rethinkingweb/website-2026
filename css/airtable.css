@@ -32,7 +32,7 @@ input, select, textarea, button { font-family: inherit; }
    HERO
 ═══════════════════════════════ */
 .cs-hero {
-  position: relative; padding: 9rem 0 4rem; overflow: hidden;
+  position: relative; padding: 9rem 0 3.5rem; overflow: hidden;
   background:
     radial-gradient(at 8% 8%, #0a000f, transparent 42%),
     radial-gradient(at 88% 15%, rgba(72,0,88,0.75), transparent 50%),
@@ -64,9 +64,7 @@ input, select, textarea, button { font-family: inherit; }
 }
 
 .cs-breadcrumb {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;
-}
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem;}
 .cs-breadcrumb a { color: var(--orange); font-weight: 600; transition: opacity var(--trans); }
 .cs-breadcrumb a:hover { opacity: 0.75; }
 
@@ -82,7 +80,7 @@ input, select, textarea, button { font-family: inherit; }
 
 .cs-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-size: clamp(2.1rem, 5vw, 4.8rem);
   font-weight: 900; line-height: 1.05; letter-spacing: -0.025em;
   color: var(--charcoal); margin-bottom: 1.25rem;
   animation: fadeUp 0.7s 0.1s ease both;
@@ -469,21 +467,13 @@ input, select, textarea, button { font-family: inherit; }
 @media (max-width: 768px) {
   .nav__links, .nav__actions { display: none; }
   .nav__burger           { display: flex; margin-left: auto; }
-  .cs-hero               { padding: 5rem 0 3rem; }
+  .cs-hero               { padding: 6.5rem 0 60px; }
   .cs-stats              { grid-template-columns: repeat(2,1fr); }
   .cs-benefits__cards    { grid-template-columns: 1fr; }
   .cs-related__grid      { grid-template-columns: 1fr; }
-    .cs-hero__cta {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+    .cs-hero__cta {flex-direction: column; align-items: stretch;}
 
-    .cs-hero__cta .btn {
-        width: 100%;
-        max-width: 260px; /* controls button size */
-        justify-content: center; /* centers text inside button */
-    }
+    .cs-hero__cta .btn {justify-content: center; }
   .cs-footer__top        { grid-template-columns: 1fr; }
   .cs-footer__bottom     { flex-direction: column; gap: 1rem; text-align: center; }
   .testi-card            { min-width: 300px; }
@@ -493,15 +483,4 @@ input, select, textarea, button { font-family: inherit; }
   .cs-form-card          { padding: 1.5rem; }
   .form-row              { grid-template-columns: 1fr; }
   .cs-contact__benefits  { flex-direction: column; gap: 0.5rem; }
-    .cs-hero__cta {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .cs-hero__cta .btn {
-        width: 100%;
-        max-width: 260px; /* controls button size */
-        justify-content: center; /* centers text inside button */
-    }
 }

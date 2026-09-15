@@ -33,7 +33,7 @@ input, select, textarea, button { font-family: inherit; }
    HERO
 ═══════════════════════════════ */
 .cs-hero {
-  position: relative; padding: 9rem 0 4rem; overflow: hidden;
+  position: relative; padding: 9rem 0 3.5rem; overflow: hidden;
   background:
     radial-gradient(at 8% 8%, #0a000f, transparent 42%),
     radial-gradient(at 88% 15%, rgba(72,0,88,0.75), transparent 50%),
@@ -51,9 +51,7 @@ input, select, textarea, button { font-family: inherit; }
 }
 
 .cs-breadcrumb {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;
-}
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem;}
 .cs-breadcrumb a { color: var(--orange); font-weight: 600; transition: opacity var(--trans); }
 .cs-breadcrumb a:hover { opacity: 0.75; }
 
@@ -208,7 +206,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    BENEFITS
 ═══════════════════════════════ */
-.cs-benefits { padding: 3rem 0; background: var(--bg2); }
+.cs-benefits { padding: 0px 0 60px; background: var(--bg2); }
 .cs-benefits__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .cs-lead { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
 .cs-benefits__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
@@ -232,7 +230,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    FOCUS DARK BAND
 ═══════════════════════════════ */
-.cs-focus { padding: 3rem 0; background: #0f172a; overflow: hidden; }
+.cs-focus { padding: 0px 0 60px; background: #0f172a; overflow: hidden; }
 .cs-focus .section-label { color: var(--orange-light); }
 .cs-focus .section-label::before { background: var(--orange-light); }
 .cs-focus .section-title { color: var(--white); }
@@ -275,8 +273,8 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    RELATED SERVICES
 ═══════════════════════════════ */
-.cs-related { padding: 3rem 0; background: var(--bg); }
-.cs-related__sub { max-width: 640px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; }
+.cs-related { padding: 0px 0 60px; background: var(--bg); }
+.cs-related__sub { max-width: 640px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;}
 .cs-related__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 
 .cs-related-card {
@@ -298,107 +296,6 @@ input, select, textarea, button { font-family: inherit; }
 .cs-related-card__icon { font-size: 2rem; }
 .cs-related-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--charcoal); }
 .cs-related-card p { font-size: 0.875rem; color: var(--text-muted); flex: 1; line-height: 1.65; }
-
-/* ═══════════════════════════════
-   TESTIMONIALS
-═══════════════════════════════ */
-/* .cs-testimonials { padding: 6rem 0; background: #0f172a; overflow: hidden; }
-.cs-testimonials .section-label { color: var(--orange-light); }
-.cs-testimonials .section-label::before { background: var(--orange-light); }
-.cs-testimonials .section-title { color: var(--white); }
-.cs-testimonials .section-title em {
-  background: linear-gradient(135deg, var(--orange-light), #ffb89a);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.cs-testi__track {
-  display: flex; gap: 1.5rem;
-  overflow-x: auto; scroll-snap-type: x mandatory;
-  scrollbar-width: none; padding-bottom: 0.5rem;
-}
-.cs-testi__track::-webkit-scrollbar { display: none; }
-.testi-card {
-  min-width: 400px;
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-lg); padding: 2rem;
-  display: flex; flex-direction: column; gap: 1rem;
-  scroll-snap-align: start; flex-shrink: 0; transition: all var(--trans);
-}
-.testi-card:hover { background: rgba(231,92,35,0.12); border-color: rgba(231,92,35,0.35); }
-.testi-stars { color: #F59E0B; font-size: 1.1rem; }
-.testi-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.7; flex: 1; font-style: italic; }
-.testi-author { display: flex; align-items: center; gap: 0.75rem; }
-.testi-avatar {
-  width: 42px; height: 42px; background: var(--orange); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
-  color: var(--white); flex-shrink: 0;
-}
-.testi-author strong { display: block; font-size: 0.9rem; color: var(--white); }
-.testi-author span { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.cs-testi__nav { display: flex; gap: 0.75rem; margin-top: 2rem; }
-.cs-testi__nav button {
-  width: 44px; height: 44px;
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 50%; color: var(--white); font-size: 1.1rem; cursor: pointer;
-  transition: all var(--trans); display: flex; align-items: center; justify-content: center;
-}
-.cs-testi__nav button:hover { background: var(--orange); border-color: var(--orange); } */
-
-/* ═══════════════════════════════
-   CONTACT
-═══════════════════════════════ */
-/* .cs-contact { padding: 3rem 0; background: var(--bg); }
-.cs-contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.cs-contact__left { position: sticky; top: 7rem; }
-.cs-contact__left > p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
-.cs-contact__phone {
-  display: block; font-family: var(--font-display); font-size: 1.05rem; font-weight: 700;
-  color: var(--orange); margin-bottom: 2rem; transition: opacity var(--trans);
-}
-.cs-contact__phone:hover { opacity: 0.8; }
-.cs-contact__benefits { display: flex; gap: 2rem; margin-bottom: 2rem; }
-.benefit-col { display: flex; flex-direction: column; gap: 0.5rem; }
-.benefit { font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem; }
-.cs-contact__steps h4 {
-  font-family: var(--font-display); font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;
-}
-.step { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.75rem; }
-.step-num {
-  width: 28px; height: 28px; flex-shrink: 0;
-  background: var(--orange-pale); border: 1.5px solid rgba(231,92,35,0.35);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--orange);
-}
-.cs-form-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md);
-}
-.cs-form-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1.75rem; }
-.cs-form { display: flex; flex-direction: column; gap: 1rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-group label { font-size: 0.8rem; font-weight: 500; color: var(--text-muted); }
-.form-group input,
-.form-group select,
-.form-group textarea {
-  background: var(--bg2); border: 1.5px solid var(--border);
-  border-radius: 8px; padding: 0.7rem 1rem;
-  color: var(--charcoal); font-size: 0.9rem;
-  transition: border-color var(--trans); outline: none;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus { border-color: var(--orange); background: var(--white); }
-.form-group select option { background: var(--white); }
-.form-group textarea { resize: vertical; }
-.form-success {
-  display: none; align-items: center; gap: 0.5rem;
-  padding: 1rem 1.25rem; background: #ecfdf5;
-  border: 1px solid #6ee7b7; border-radius: 8px;
-  font-size: 0.9rem; font-weight: 600; color: #065f46;
-}
-.form-success.show { display: flex; } */
 
 /* ═══════════════════════════════
    FOOTER
@@ -477,39 +374,21 @@ input, select, textarea, button { font-family: inherit; }
 @media (max-width: 768px) {
   .nav__links, .nav__actions { display: none; }
   .nav__burger           { display: flex; margin-left: auto; }
-  .cs-hero               { padding: 5rem 0 3rem; }
+  .cs-hero               {  padding: 6.5rem 0 60px; }
   .cs-stats              { grid-template-columns: repeat(2,1fr); }
   .cs-benefits__cards    { grid-template-columns: 1fr; }
   .cs-related__grid      { grid-template-columns: 1fr; }
-    .page-hero__cta {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .page-hero__cta .btn {
-        width: 100%;
-        max-width: 260px; /* controls button size */
-        justify-content: center; /* centers text inside button */
-    }
   .cs-footer__top        { grid-template-columns: 1fr; }
   .cs-footer__bottom     { flex-direction: column; gap: 1rem; text-align: center; }
   .testi-card            { min-width: 300px; }
+    .cs-hero__cta { flex-direction: column; align-items: stretch; }
+
+    .cs-hero__cta .btn { justify-content: center; }
 }
 @media (max-width: 480px) {
   .cs-stats              { grid-template-columns: 1fr 1fr; }
   .cs-form-card          { padding: 1.5rem; }
   .form-row              { grid-template-columns: 1fr; }
   .cs-contact__benefits  { flex-direction: column; gap: 0.5rem; }
-    .cs-hero__cta {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .cs-hero__cta .btn {
-        width: 100%;
-        max-width: 260px; /* controls button size */
-        justify-content: center; /* centers text inside button */
-    }
+  
 }

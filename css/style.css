@@ -430,7 +430,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    WHAT WE DO
 ═══════════════════════════════ */
-.what-we-do { padding: 30px; background: var(--bg2); }
+.what-we-do {padding: 0px 0 36px; background: var(--bg2); }
 .pillars {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -471,7 +471,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    SOLUTIONS
 ═══════════════════════════════ */
-.solutions { padding: 48px 0; background: var(--bg); }
+.solutions {padding: 0px 0 36px; background: var(--bg); }
 .solutions__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -529,7 +529,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    INDUSTRIES
 ═══════════════════════════════ */
-.industries { padding: 2rem 0; background: var(--bg2); }
+.industries {padding: 0px 0 36px; background: var(--bg2); }
 .industries__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .industry-card {
   position: relative;
@@ -562,7 +562,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    CASE STUDIES
 ═══════════════════════════════ */
-.cases { padding: 2rem 0; background: var(--bg); }
+.cases {padding: 0px 0 36px; background: var(--bg); }
 .cases__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .case-card {
   background: var(--white);
@@ -589,7 +589,7 @@ input, select, textarea, button { font-family: inherit; }
 
 /* ── TESTIMONIALS SECTION ── */
 .testimonials {
-  padding: 3rem;
+  padding: 0px 0 20px;
      background-image: linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   position: relative;
@@ -619,7 +619,6 @@ input, select, textarea, button { font-family: inherit; }
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 3rem;
   position: relative;
   z-index: 1;
 }
@@ -779,7 +778,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    CONTACT
 ═══════════════════════════════ */
-.contact { padding: 2rem 0; background: var(--bg); }
+.contact {padding: 0px 0 36px; background: var(--bg); }
 .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .contact__left { position: sticky; top: 7rem; }
 .contact__left > p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
@@ -2460,7 +2459,7 @@ clamp:(3rem, 4.5rem, 5vw);
 }
 @media (max-width: 768px) {
   .hero-v2 {
-    padding: 7rem 1.25rem 4rem;
+    padding: 6rem 1.25rem 4rem;
     min-height: auto;
   }
   .hero-v2__headline { font-size: 2.4rem; }

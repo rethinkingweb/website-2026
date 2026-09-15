@@ -9,7 +9,7 @@
 ═══════════════════════════════ */
 .ms-hero {
   position: relative;
-  padding: 9rem 2rem 4rem;
+  padding: 9rem 2rem 3.5rem;
   overflow: hidden;
   background:
     radial-gradient(at 8% 8%, #0a000f, transparent 42%),
@@ -33,12 +33,13 @@
 
 /* Breadcrumb */
 .ms-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.25rem;
 }
 .ms-breadcrumb a {
   color: var(--orange-light);
@@ -62,13 +63,12 @@
 /* Title */
 .ms-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 6vw, 5.5rem);
+  font-size: clamp(2.1rem, 5vw, 4rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.06;
   letter-spacing: -0.025em;
   color: #fff;
   margin-bottom: 1.25rem;
-  text-align: center;
   animation: fadeUp 0.7s 0.1s ease both;
 }
 .ms-hero__title em {
@@ -79,11 +79,11 @@
   background-clip: text;
 }
 .ms-hero__sub {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: rgba(255,255,255,0.72);
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
   line-height: 1.7;
-  text-align: center;
+  max-width: 620px;
   animation: fadeUp 0.7s 0.2s ease both;
 }
 .ms-hero__cta {
@@ -143,28 +143,47 @@
 }
 
 /* Stats strip */
+
 .ms-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
+
 .ms-stat {
-  text-align: center;
-  padding: 1.5rem 1rem;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  padding: 1.5rem 1rem;
+  text-align: center;
   transition: all var(--trans);
+  box-shadow: var(--shadow);
 }
+
 .ms-stat:hover {
   border-color: var(--orange);
   transform: translateY(-4px);
   box-shadow: var(--shadow-orange);
 }
+
+.ms-stat .stat-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.ms-stat .stat-plus {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
 .ms-stat .stat-label {
   display: block;
   font-size: 0.78rem;
@@ -177,7 +196,7 @@
    BENEFITS
 ═══════════════════════════════ */
 .ms-benefits {
-  padding: 3rem 0;
+  padding: 0px 0 50px;
   background: var(--bg2);
 }
 .ms-benefits__grid {
@@ -259,7 +278,7 @@
    FOCUS DARK BAND
 ═══════════════════════════════ */
 .ms-focus {
-  padding: 3rem 0;
+  padding: 0px 0 50px;
   background: #0f172a;
   overflow: hidden;
 }
@@ -296,7 +315,7 @@
    CLIENTS
 ═══════════════════════════════ */
 .ms-clients {
-  padding: 5rem 0;
+  padding: 0px 0 50px;
   background: var(--bg2);
 }
 
@@ -304,7 +323,7 @@
    RELATED SERVICES
 ═══════════════════════════════ */
 .ms-related {
-  padding: 1rem 0;
+  padding: 0px 0 50px;
   background: var(--bg);
 }
 .ms-related__sub {
@@ -441,22 +460,13 @@
   .ms-focus__inner   { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 @media (max-width: 768px) {
-  .ms-hero       { padding: 5rem 1.5rem 3rem; }
+  .ms-hero       {padding: 6.5rem 0 60px; }
   .ms-stats      { grid-template-columns: repeat(2, 1fr); }
   .ms-benefits__cards { grid-template-columns: 1fr; }
   .ms-related__grid   { grid-template-columns: 1fr; }
-  .ms-hero__cta  {
-     flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .ms-hero__cta .btn {
-        width: 100%;
-        max-width: 260px; /* controls button size */
-        justify-content: center; /* centers text inside button */
-    }
-    }
+  .ms-hero__cta { flex-direction: column; align-items: stretch; }
+  .ms-hero__cta .btn { justify-content: center; }
+}
 
 @media (max-width: 480px) {
   .ms-stats { grid-template-columns: 1fr 1fr; }

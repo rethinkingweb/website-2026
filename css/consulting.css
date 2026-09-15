@@ -1,15 +1,9 @@
-/* ─────────────────────────────────────────────
-   it-consulting.css
-   Page-specific styles — relies on style.css
-   variables and base rules.
-───────────────────────────────────────────── */
-
 /* ═══════════════════════════════
    HERO
 ═══════════════════════════════ */
 .itc-hero {
   position: relative;
-  padding: 9rem 2rem 4rem;
+  padding: 9rem 2rem 3.5rem;
   overflow: hidden;
   background:
     radial-gradient(at 8% 8%, #0a000f, transparent 42%),
@@ -26,7 +20,15 @@
 .itc-hero .itc-breadcrumb { color: rgba(255,255,255,0.7); }
 .itc-hero .itc-breadcrumb a { color: var(--orange-light); }
 .itc-hero .itc-breadcrumb span { color: rgba(255,255,255,0.7); }
-/* .itc-hero .section-label { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); color: #fff; } */
+.itc-hero .section-label {
+  display: inline-flex;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: #fff;
+}
+.itc-hero .section-label::before { background: #fff; }
 .itc-hero .btn--outline { color: #fff; border-color: rgba(255,255,255,0.35); }
 .itc-hero .btn--outline:hover { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
 
@@ -44,9 +46,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 .itc-breadcrumb a { color: var(--orange); font-weight: 600; transition: opacity var(--trans); }
 .itc-breadcrumb a:hover { opacity: 0.75; }
@@ -54,9 +57,9 @@
 /* Title */
 .itc-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-size: clamp(2.1rem, 5vw, 4rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.06;
   letter-spacing: -0.025em;
   color: #fff;
   margin-bottom: 1.25rem;
@@ -72,8 +75,9 @@
 .itc-hero__sub {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.72);
-  margin-bottom: 2.25rem;
-  line-height: 1.75;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  max-width: 620px;
   animation: fadeUp 0.7s 0.2s ease both;
 }
 .itc-hero__cta {
@@ -156,28 +160,47 @@
 }
 
 /* Stats strip */
+/* Stats strip */
 .itc-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-top: 4rem;
   padding-top: 3rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
+
 .itc-stat {
-  text-align: center;
-  padding: 1.5rem 1rem;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  padding: 1.5rem 1rem;
+  text-align: center;
   transition: all var(--trans);
+  box-shadow: var(--shadow);
 }
+
 .itc-stat:hover {
   border-color: var(--orange);
   transform: translateY(-4px);
   box-shadow: var(--shadow-orange);
 }
+
+.itc-stat .stat-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.itc-stat .stat-plus {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
 .itc-stat .stat-label {
   display: block;
   font-size: 0.78rem;
@@ -185,7 +208,6 @@
   margin-top: 0.4rem;
   line-height: 1.3;
 }
-
 /* ═══════════════════════════════
    BENEFITS
 ═══════════════════════════════ */
@@ -452,22 +474,14 @@
   .itc-focus__inner      { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 @media (max-width: 768px) {
-  .itc-hero              { padding: 5rem 1.5rem 3rem; }
+  .itc-hero              { padding: 6.5rem 0 60px; }
   .itc-stats             { grid-template-columns: repeat(2, 1fr); }
   .itc-benefits__grid    { grid-template-columns: 1fr; }
-  .itc-hero__cta         { 
-    flex-direction: column;
-        align-items: center;
-        width: 100%;
-  }
-    .itc-hero__cta .btn {
-        width: 100%;
-        max-width: 260px; /* controls button size */
-        justify-content: center; /* centers text inside button */
-    }
-  }
+  .itc-hero__cta         { flex-direction: column; align-items: stretch; }
+  .itc-hero__cta .btn    { justify-content: center; }
   .itc-acc-header        { padding: 1rem 1.25rem; }
   /* .itc-acc-item.open .itc-acc-body { padding: 0.5rem 1.25rem 1.25rem; } */
+}
 @media (max-width: 480px) {
   .itc-stats             { grid-template-columns: 1fr 1fr; }
 }

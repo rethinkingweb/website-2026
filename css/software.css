@@ -31,7 +31,7 @@ input, select, textarea, button { font-family: inherit; }
    HERO
 ═══════════════════════════════ */
 .sd-hero {
-  position: relative; padding: 9rem 0 4rem; overflow: hidden;
+  position: relative; padding: 9rem 0 3.5rem; overflow: hidden;
   background:
     radial-gradient(at 8% 8%, #0a000f, transparent 42%),
     radial-gradient(at 88% 15%, rgba(72,0,88,0.75), transparent 50%),
@@ -45,11 +45,12 @@ input, select, textarea, button { font-family: inherit; }
   gap: 4rem; align-items: center; margin-bottom: 4rem;
 }
 .sd-breadcrumb {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-bottom: 1rem;
-}
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem;}
 .sd-breadcrumb a { color: var(--orange-light); font-weight: 600; transition: opacity var(--trans); }
 .sd-breadcrumb a:hover { opacity: 0.75; }
+.sd-breadcrumb span:last-child {
+    color: rgba(255, 255, 255, 0.7);
+}
 .hero__badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
@@ -177,7 +178,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    BENEFITS
 ═══════════════════════════════ */
-.sd-benefits { padding: 3rem 0; background: var(--bg2); }
+.sd-benefits { padding: 0px 0 60px; background: var(--bg2); }
 .sd-benefits__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .sd-lead { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
 .sd-benefits__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
@@ -201,7 +202,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    FOCUS DARK BAND
 ═══════════════════════════════ */
-.sd-focus { padding: 3rem 0; background: #0f172a; overflow: hidden; }
+.sd-focus { padding: 0px 0 60px; background: #0f172a; overflow: hidden; }
 .sd-focus .section-label { color: var(--orange-light); }
 .sd-focus .section-label::before { background: var(--orange-light); }
 .sd-focus .section-title { color: var(--white); }
@@ -244,7 +245,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    RELATED SERVICES
 ═══════════════════════════════ */
-.sd-related { padding: 3rem 0; background: var(--bg); }
+.sd-related { padding: 0px 0 60px; background: var(--bg); }
 .sd-related__sub { max-width: 640px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; }
 .sd-related__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 .sd-related-card {
@@ -440,21 +441,12 @@ input, select, textarea, button { font-family: inherit; }
 @media (max-width: 768px) {
   .nav__links, .nav__actions { display: none; }
   .nav__burger        { display: flex; margin-left: auto; }
-  .sd-hero            { padding: 5rem 0 3rem; }
+  .sd-hero            {padding: 6.5rem 0 60px; }
   .sd-stats           { grid-template-columns: repeat(2,1fr); }
   .sd-benefits__cards { grid-template-columns: 1fr; }
   .sd-related__grid   { grid-template-columns: 1fr; }
-   .sd-hero__cta {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .sd-hero__cta .btn {
-        width: 100%;
-        max-width: 260px; /* controls button size */
-        justify-content: center; /* centers text inside button */
-    }
+  .sd-hero__cta { flex-direction: column; align-items: stretch; }
+  .sd-hero__cta .btn {justify-content: center;}
   .sd-footer__top     { grid-template-columns: 1fr; }
   .sd-footer__bottom  { flex-direction: column; gap: 1rem; text-align: center; }
   .testi-card         { min-width: 300px; }
@@ -464,15 +456,5 @@ input, select, textarea, button { font-family: inherit; }
   .sd-form-card       { padding: 1.5rem; }
   .form-row           { grid-template-columns: 1fr; }
   .sd-contact__benefits { flex-direction: column; gap: 0.5rem; }
-    .sd-hero__cta {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .sd-hero__cta .btn {
-        width: 100%;
-        max-width: 260px; /* controls button size */
-        justify-content: center; /* centers text inside button */
-    }
+   
 }
