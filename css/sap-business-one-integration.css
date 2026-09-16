@@ -316,7 +316,7 @@
 /* ═══════════════════════════════
    WHY US — dark band
 ═══════════════════════════════ */
-.sap-why { padding: 4.5rem 0; background: #0f172a; position: relative; z-index: 1; overflow: hidden; }
+.sap-why { padding: 2rem 0; background: #0f172a; position: relative; z-index: 1; overflow: hidden; }
 .sap-why .container { max-width: 1120px; }
 .sap-why__inner { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; align-items: center; }
 .sap-why .section-label { color: var(--orange-light); }
@@ -442,44 +442,3 @@
   .sap-xchg__sap span { font-size: 0.62rem; letter-spacing: 0.1em; }
   .sap-xchg__sync { width: 34px; height: 34px; font-size: 0.8rem; }
 }
-
-.sap, .sap * { box-sizing: border-box; }
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.sap-hero,
-.sap-hero .container,
-.sap-hero__inner,
-.sap-section,
-.sap-section .container,
-.sap-why,
-.sap-why .container,
-.sap-finalcta,
-.sap-finalcta .container {
-  max-width: 100%;
-}
-
-/* grid tracks won't shrink below content size by default — this fixes it */
-.sap-hero__inner,
-.sap-why__inner,
-.sap-cards,
-.sap-popular__grid,
-.sap-trust,
-.sap-steps,
-.sap-timeline {
-  min-width: 0;
-}
-.sap-hero__inner > *,
-.sap-why__inner > *,
-.sap-cards > *,
-.sap-popular__grid > *,
-.sap-trust > *,
-.sap-steps > *,
-.sap-timeline > * {
-  min-width: 0;
-}
-
-.sap-hub { max-width: min(400px, 100%); }
