@@ -255,7 +255,7 @@
 .sap-popular__card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
 
 /* ── Tables ── */
-.sap-table-wrap { overflow-x: auto; margin: 1.75rem 0; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow); }
+.sap-table-wrap { overflow-x: auto; margin: 1.75rem 0; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow); max-width: 100%; -webkit-overflow-scrolling: touch; }
 .sap-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: var(--card-bg); min-width: 600px; }
 .sap-table th {
   text-align: left; padding: 0.95rem 1.1rem; background: var(--charcoal);
@@ -416,8 +416,6 @@
 @media (max-width: 1024px) {
   .sap-hero__inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .sap-hero__visual { display: none; }
-  /* Keep the SAP⇄Zuper interchange visible on tablet/phone (hub visual stays hidden) */
-  .sap-hero__visual:has(.sap-xchg) { display: block; }
   .sap-cards { grid-template-columns: repeat(2,1fr); }
   .sap-popular__grid { grid-template-columns: repeat(3,1fr); }
   .sap-steps { grid-template-columns: repeat(2,1fr); }
@@ -444,3 +442,44 @@
   .sap-xchg__sap span { font-size: 0.62rem; letter-spacing: 0.1em; }
   .sap-xchg__sync { width: 34px; height: 34px; font-size: 0.8rem; }
 }
+
+.sap, .sap * { box-sizing: border-box; }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.sap-hero,
+.sap-hero .container,
+.sap-hero__inner,
+.sap-section,
+.sap-section .container,
+.sap-why,
+.sap-why .container,
+.sap-finalcta,
+.sap-finalcta .container {
+  max-width: 100%;
+}
+
+/* grid tracks won't shrink below content size by default — this fixes it */
+.sap-hero__inner,
+.sap-why__inner,
+.sap-cards,
+.sap-popular__grid,
+.sap-trust,
+.sap-steps,
+.sap-timeline {
+  min-width: 0;
+}
+.sap-hero__inner > *,
+.sap-why__inner > *,
+.sap-cards > *,
+.sap-popular__grid > *,
+.sap-trust > *,
+.sap-steps > *,
+.sap-timeline > * {
+  min-width: 0;
+}
+
+.sap-hub { max-width: min(400px, 100%); }
