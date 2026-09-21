@@ -1,91 +1,70 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
- <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Attio Integration Services | RethinkingWeb</title>
-  <meta name="description" content="Connect Attio CRM to your email, ecommerce, support, payments, and marketing systems. Fixed-price integration consulting with honest costs and timelines." />
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/attio-pairings.css" />
-  <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/attio.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <title>Attio Integration Services | RethinkingWeb</title>
+  <meta name="description" content="Independent SAP Business One integration consultancy. We connect SAP B1 to ecommerce, CRM, field service, payments and EDI — fixed price, vendor-neutral." />
+  <link rel="canonical" href="https://www.rethinkingweb.com/sap-business-one.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
   <script>
+    tailwind = window.tailwind || {};
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
-            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
-            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
-            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
-            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
-            muted: '#7A6F68',
-          },
-          fontFamily: {
-            display: ['"Inter Tight"', 'sans-serif'],
-            body:    ['"Inter Tight"', 'sans-serif'],
-          },
-          maxWidth: { container: '1200px', nav: '1280px' },
-          boxShadow: {
-            card:    '0 4px 24px rgba(0,0,0,0.08)',
-            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
-            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
-            orange:  '0 8px 30px rgba(231,92,35,0.25)',
-          },
-        }
-      }
+      theme: { extend: {
+        colors: {
+          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+          muted: '#7A6F68',
+        },
+        fontFamily: { display: ['"Inter Tight"','sans-serif'], body: ['"Inter Tight"','sans-serif'] },
+        maxWidth: { container: '1200px', nav: '1280px' },
+        boxShadow: {
+          card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+          'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange:'0 8px 30px rgba(231,92,35,0.25)',
+        },
+      } }
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Contact form deps — these were missing and broke the form -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
   <style>.grecaptcha-badge { visibility: hidden; }</style>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "NetSuite + 3PL / WMS Integration",
-      "serviceType": "Warehouse and Logistics Integration Consulting",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "RethinkingWeb",
-        "url": "https://rethinkingweb.com/",
-        "areaServed": ["US", "GB", "AU", "IN"]
-      },
-      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://rethinkingweb.com/netsuite-3pl-wms-integration.html"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
-        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/" },
-        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/netsuite.html" },
-        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
-        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
-        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
-        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
-        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
-        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
-      ]
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SAP Business One Integration Services",
+    "serviceType": "ERP Integration",
+    "provider": { "@type": "Organization", "name": "RethinkingWeb", "url": "https://www.rethinkingweb.com/" },
+    "areaServed": "Global",
+    "description": "Independent SAP Business One integration consultancy connecting SAP B1 to ecommerce, CRM, field service, payments and EDI.",
+    "url": "https://www.rethinkingweb.com/sap-business-one.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rethinkingweb.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://www.rethinkingweb.com/integration-services.html" },
+      { "@type": "ListItem", "position": 3, "name": "SAP Business One", "item": "https://www.rethinkingweb.com/sap-business-one.html" }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -491,12 +470,24 @@
         </div>
       </div>
 
-      <!-- Stats strip -->
-      <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">10+</div><span class="stat-label">Systems we sync with Attio</span></div>
-        <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
-        <div class="sap-stat"><div class="stat-num">2–8</div><span class="stat-label">Weeks to typical go-live</span></div>
-        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+       <!-- Stats -->
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years Proven Track Record</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects Across Technologies</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+        </div>
       </div>
     </div>
   </section>

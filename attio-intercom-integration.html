@@ -1,91 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 <head>
-   <meta charset="UTF-8" />
- <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Attio + Intercom Integration | RethinkingWeb</title>
-  <meta name="description" content="Sync Intercom conversations, tickets, and CSAT into Attio account records. Fixed-price, platform-agnostic integration consulting." />
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/attio-pairings.css" />
-  <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/attio-intercom-integration.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <title>Attio + Intercom Integration | RethinkingWeb</title>
+  <meta name="description" content="Independent SAP Business One integration consultancy. We connect SAP B1 to ecommerce, CRM, field service, payments and EDI — fixed price, vendor-neutral." />
+  <link rel="canonical" href="https://www.rethinkingweb.com/sap-business-one.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
   <script>
+    tailwind = window.tailwind || {};
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
-            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
-            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
-            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
-            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
-            muted: '#7A6F68',
-          },
-          fontFamily: {
-            display: ['"Inter Tight"', 'sans-serif'],
-            body:    ['"Inter Tight"', 'sans-serif'],
-          },
-          maxWidth: { container: '1200px', nav: '1280px' },
-          boxShadow: {
-            card:    '0 4px 24px rgba(0,0,0,0.08)',
-            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
-            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
-            orange:  '0 8px 30px rgba(231,92,35,0.25)',
-          },
-        }
-      }
+      theme: { extend: {
+        colors: {
+          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+          muted: '#7A6F68',
+        },
+        fontFamily: { display: ['"Inter Tight"','sans-serif'], body: ['"Inter Tight"','sans-serif'] },
+        maxWidth: { container: '1200px', nav: '1280px' },
+        boxShadow: {
+          card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+          'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange:'0 8px 30px rgba(231,92,35,0.25)',
+        },
+      } }
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Contact form deps — these were missing and broke the form -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
   <style>.grecaptcha-badge { visibility: hidden; }</style>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Attio + Intercom Integration",
-      "serviceType": "CRM Integration Consulting",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "RethinkingWeb",
-        "url": "https://rethinkingweb.com/",
-        "areaServed": ["US", "GB", "AU", "IN"]
-      },
-      "description": "Sync Intercom conversations, tickets, and CSAT into Attio account records. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://rethinkingweb.com/attio-intercom-integration.html"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
-        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/" },
-        { "@type": "ListItem", "position": 3, "name": "Attio", "item": "https://rethinkingweb.com/attio.html" },
-        { "@type": "ListItem", "position": 4, "name": "Intercom" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-                {{ "@type": "Question", "name": "How does Intercom connect to Attio?", "acceptedAnswer": {{ "@type": "Answer", "text": "Intercom webhooks push conversation and ticket events to a listener, which logs them against the matching Attio record over the Attio REST API." }} }},
-        {{ "@type": "Question", "name": "Will every single message flood the Attio record?", "acceptedAnswer": {{ "@type": "Answer", "text": "No. We filter for meaningful events &mdash; new tickets, resolutions, escalations, and CSAT responses &mdash; rather than logging every back-and-forth reply." }} }},
-        {{ "@type": "Question", "name": "Can support ticket volume be visible to the sales team before a renewal?", "acceptedAnswer": {{ "@type": "Answer", "text": "Yes. Open ticket count, priority, and CSAT trend can roll up as fields on the account record so the owner sees support health at a glance." }} }},
-        {{ "@type": "Question", "name": "Does this work if support uses a different email than the sales contact?", "acceptedAnswer": {{ "@type": "Answer", "text": "Yes, matching is done at the company level using the account domain, in addition to person-level email matching." }} }},
-        {{ "@type": "Question", "name": "How much does an Attio + Intercom integration cost?", "acceptedAnswer": {{ "@type": "Answer", "text": "Most projects run $2,200 to $7,500 depending on ticket volume and scope. See the cost table above for a full breakdown." }} }},
-        {{ "@type": "Question", "name": "Can you connect Intercom to Attio alongside an existing helpdesk tool?", "acceptedAnswer": {{ "@type": "Answer", "text": "Yes. Running Intercom alongside Zendesk or Front and consolidating both into Attio is a common scope for us." }} }}
-      ]
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SAP Business One Integration Services",
+    "serviceType": "ERP Integration",
+    "provider": { "@type": "Organization", "name": "RethinkingWeb", "url": "https://www.rethinkingweb.com/" },
+    "areaServed": "Global",
+    "description": "Independent SAP Business One integration consultancy connecting SAP B1 to ecommerce, CRM, field service, payments and EDI.",
+    "url": "https://www.rethinkingweb.com/sap-business-one.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rethinkingweb.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://www.rethinkingweb.com/integration-services.html" },
+      { "@type": "ListItem", "position": 3, "name": "SAP Business One", "item": "https://www.rethinkingweb.com/sap-business-one.html" }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -293,8 +272,7 @@
         <div class="sap-hero__text">
           <nav class="sap-breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a><span>&rsaquo;</span>
-            <a href="attio.html">Attio</a><span>&rsaquo;</span>
-            <span class="current">Intercom</span>
+            <a href="attio.html">Attio</a>
           </nav>
           <div class="sap-badge"><span class="badge__dot"></span> Support Integration</div>
           <h1 class="sap-hero__title">Attio <em>+ Intercom</em> Integration</h1>
@@ -315,11 +293,24 @@
           </div>
         </div>
       </div>
-      <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">Webhooks</div><span class="stat-label">Conversation & ticket events in real time</span></div>
-        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Contact details sync between systems</span></div>
-        <div class="sap-stat"><div class="stat-num">2-3</div><span class="stat-label">Weeks to typical go-live</span></div>
-        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+      <!-- Stats -->
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years Proven Track Record</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects Across Technologies</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+        </div>
       </div>
     </div>
   </section>

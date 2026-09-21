@@ -1,107 +1,70 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
- <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zuper + Billdozer Integration | RethinkingWeb</title>
-  <meta name="description" content="Turn completed Zuper field jobs into recurring invoices and debit order collections in Billdozer, with payment and arrears status synced back. Fixed-price, platform-agnostic integration consulting." />
-<link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="css/sap-business-one-integration.css" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/zuper-pairings.css" />
-<link rel="stylesheet" href="css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/zuper-billdozer-integration.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Independent SAP Business One integration consultancy. We connect SAP B1 to ecommerce, CRM, field service, payments and EDI — fixed price, vendor-neutral." />
+  <link rel="canonical" href="https://www.rethinkingweb.com/sap-business-one.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
   <script>
+    tailwind = window.tailwind || {};
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
-            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
-            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
-            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
-            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
-            muted: '#7A6F68',
-          },
-          fontFamily: { display: ['"Inter Tight"', 'sans-serif'], body: ['"Inter Tight"', 'sans-serif'] },
-          maxWidth: { container: '1200px', nav: '1280px' },
-          boxShadow: { card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)', 'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange: '0 8px 30px rgba(231,92,35,0.25)' },
-        }
-      }
+      theme: { extend: {
+        colors: {
+          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+          muted: '#7A6F68',
+        },
+        fontFamily: { display: ['"Inter Tight"','sans-serif'], body: ['"Inter Tight"','sans-serif'] },
+        maxWidth: { container: '1200px', nav: '1280px' },
+        boxShadow: {
+          card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+          'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange:'0 8px 30px rgba(231,92,35,0.25)',
+        },
+      } }
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Contact form deps — these were missing and broke the form -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
   <style>.grecaptcha-badge { visibility: hidden; }</style>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Zuper + Billdozer Integration",
-      "serviceType": "Field Service and Recurring Billing Integration Consulting",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "RethinkingWeb",
-        "url": "https://rethinkingweb.com/",
-        "areaServed": [
-          "US",
-          "GB",
-          "AU",
-          "IN"
-        ]
-      },
-      "description": "Turn completed Zuper field jobs into recurring invoices and debit order collections in Billdozer, with payment and arrears status synced back. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://www.rethinkingweb.com/zuper-billdozer-integration.html"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://rethinkingweb.com/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Integrations",
-          "item": "https://rethinkingweb.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Zuper",
-          "item": "https://rethinkingweb.com/zuper.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Billdozer"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "Can a completed Zuper job create a Billdozer invoice?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. When a job is marked complete, the job and any parts used are transformed into an invoice or subscription line item in Billdozer through its REST API."}},
-        {"@type": "Question", "name": "Does Zuper know if a customer hasn't paid?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you choose two-way sync. Payment, failed collection, and arrears status can be written back onto the Zuper customer record so dispatch sees it before scheduling the next visit."}},
-        {"@type": "Question", "name": "Can recurring maintenance contracts bill automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Active service contracts in Zuper can be mapped to Billdozer's subscription billing so recurring debit order collections happen on schedule without manual invoicing."}},
-        {"@type": "Question", "name": "What happens if an account falls into arrears?", "acceptedAnswer": {"@type": "Answer", "text": "That's configurable. We can flag the account, hold future scheduled jobs, or simply notify your team &mdash; whichever fits your collections policy."}},
-        {"@type": "Question", "name": "How much does a Zuper + Billdozer integration cost?", "acceptedAnswer": {"@type": "Answer", "text": "Most projects run $4,000 to $18,000 depending on whether billing is job-based, contract-based, or both, and whether arrears automation is included. See the cost table above for a full breakdown."}},
-        {"@type": "Question", "name": "Can you fix a broken Zuper to Billdozer connection?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rescue work &mdash; jobs that stopped generating invoices and payment status that never made it back to Zuper &mdash; is a regular part of our practice."}}
-      ]
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SAP Business One Integration Services",
+    "serviceType": "ERP Integration",
+    "provider": { "@type": "Organization", "name": "RethinkingWeb", "url": "https://www.rethinkingweb.com/" },
+    "areaServed": "Global",
+    "description": "Independent SAP Business One integration consultancy connecting SAP B1 to ecommerce, CRM, field service, payments and EDI.",
+    "url": "https://www.rethinkingweb.com/sap-business-one.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rethinkingweb.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://www.rethinkingweb.com/integration-services.html" },
+      { "@type": "ListItem", "position": 3, "name": "SAP Business One", "item": "https://www.rethinkingweb.com/sap-business-one.html" }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -478,8 +441,7 @@
         <div class="sap-hero__text">
           <nav class="sap-breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a><span>&rsaquo;</span>
-            <a href="zuper.html">Zuper</a><span>&rsaquo;</span>
-            <span class="current">Billdozer</span>
+            <a href="zuper.html">Zuper</a>
           </nav>
           <div class="sap-badge"><span class="badge__dot"></span> Field Service &amp; Recurring Billing Integration</div>
           <h1 class="sap-hero__title">Zuper <em>+ Billdozer</em> Integration</h1>
@@ -500,11 +462,24 @@
           </div>
         </div>
       </div>
-      <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Job data in, payment status out</span></div>
-        <div class="sap-stat"><div class="stat-num">Recurring</div><span class="stat-label">Built for subscription &amp; maintenance billing</span></div>
-        <div class="sap-stat"><div class="stat-num">2&ndash;9</div><span class="stat-label">Weeks to typical go-live</span></div>
-        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+      <!-- Stats -->
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years Proven Track Record</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects Across Technologies</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+        </div>
       </div>
     </div>
   </section>

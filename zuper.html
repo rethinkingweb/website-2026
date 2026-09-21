@@ -1,91 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 <head>
-   <meta charset="UTF-8" />
- <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zuper Customization Services | RethinkingWeb</title>
-  <meta name="description" content="Configure and customize Zuper field service management for your business — workflows, custom fields, dashboards, proposal layouts, and Developer Hub automation. Fixed-price consulting." />
- <link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="css/sap-business-one-integration.css" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/zuper-pairings.css" />
-<link rel="stylesheet" href="css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/zuper.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Independent SAP Business One integration consultancy. We connect SAP B1 to ecommerce, CRM, field service, payments and EDI — fixed price, vendor-neutral." />
+  <link rel="canonical" href="https://www.rethinkingweb.com/sap-business-one.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
   <script>
+    tailwind = window.tailwind || {};
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
-            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
-            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
-            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
-            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
-            muted: '#7A6F68',
-          },
-          fontFamily: {
-            display: ['"Inter Tight"', 'sans-serif'],
-            body:    ['"Inter Tight"', 'sans-serif'],
-          },
-          maxWidth: { container: '1200px', nav: '1280px' },
-          boxShadow: {
-            card:    '0 4px 24px rgba(0,0,0,0.08)',
-            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
-            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
-            orange:  '0 8px 30px rgba(231,92,35,0.25)',
-          },
-        }
-      }
+      theme: { extend: {
+        colors: {
+          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+          muted: '#7A6F68',
+        },
+        fontFamily: { display: ['"Inter Tight"','sans-serif'], body: ['"Inter Tight"','sans-serif'] },
+        maxWidth: { container: '1200px', nav: '1280px' },
+        boxShadow: {
+          card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+          'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange:'0 8px 30px rgba(231,92,35,0.25)',
+        },
+      } }
     }
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Contact form deps — these were missing and broke the form -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
   <style>.grecaptcha-badge { visibility: hidden; }</style>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Zuper Customization Services",
-      "serviceType": "Field Service Management Customization Consulting",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "RethinkingWeb",
-        "url": "https://rethinkingweb.com/",
-        "areaServed": ["US", "GB", "AU", "IN"]
-      },
-      "description": "Configure and customize the Zuper field service platform for your business — no-code workflows, custom fields and forms, dashboards, proposal and invoice layouts, and Developer Hub custom functions. Fixed-price, platform-agnostic consulting.",
-      "url": "https://rethinkingweb.com/zuper.html"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
-        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/" },
-        { "@type": "ListItem", "position": 3, "name": "Zuper" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Can Zuper be customized without writing code?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most of Zuper's customization — workflows, checklists, custom fields, dashboards, and proposal layouts — is configured through drag-and-drop settings panels with no code required." } },
-        { "@type": "Question", "name": "What parts of Zuper can I customize?", "acceptedAnswer": { "@type": "Answer", "text": "You can tailor workflows and job checklists, add custom fields and forms for jobs, customers or assets, build dashboard widgets, control proposal and invoice layouts, and write custom automation functions through the Developer Hub." } },
-        { "@type": "Question", "name": "Does Zuper have a Developer Hub for custom automation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Developer Hub lets you write custom functions and generate API keys for logic that goes beyond the standard no-code workflow builder." } },
-        { "@type": "Question", "name": "Can you build custom reports and dashboards in Zuper?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zuper supports custom reports pulling from jobs, customers, and assets, plus configurable dashboard widgets for managers and dispatchers." } },
-        { "@type": "Question", "name": "What happens if a configuration change goes wrong?", "acceptedAnswer": { "@type": "Answer", "text": "Zuper retains deleted items for up to 90 days, so configuration mistakes and lost records can generally be recovered or undone." } },
-        { "@type": "Question", "name": "How much does Zuper customization cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most Zuper customization projects run $1,500 to $20,000 depending on scope, from settings-only configuration up to Developer Hub and API-driven builds. See the cost table above for a full breakdown." } },
-        { "@type": "Question", "name": "Can you fix a broken or half-finished Zuper configuration?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rescue work on abandoned workflows, misconfigured proposal layouts, and broken custom functions is a regular part of our practice." } }
-      ]
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SAP Business One Integration Services",
+    "serviceType": "ERP Integration",
+    "provider": { "@type": "Organization", "name": "RethinkingWeb", "url": "https://www.rethinkingweb.com/" },
+    "areaServed": "Global",
+    "description": "Independent SAP Business One integration consultancy connecting SAP B1 to ecommerce, CRM, field service, payments and EDI.",
+    "url": "https://www.rethinkingweb.com/sap-business-one.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rethinkingweb.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://www.rethinkingweb.com/integration-services.html" },
+      { "@type": "ListItem", "position": 3, "name": "SAP Business One", "item": "https://www.rethinkingweb.com/sap-business-one.html" }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -492,12 +471,24 @@
         </div>
       </div>
 
-      <!-- Stats strip -->
-      <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">6</div><span class="stat-label">Core areas of the platform you can customize</span></div>
-        <div class="sap-stat"><div class="stat-num">90</div><span class="stat-label">Days Zuper retains deleted items for recovery</span></div>
-        <div class="sap-stat"><div class="stat-num">1–10</div><span class="stat-label">Weeks to typical go-live</span></div>
-        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+<!-- Stats -->
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years Proven Track Record</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects Across Technologies</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+        </div>
       </div>
     </div>
   </section>

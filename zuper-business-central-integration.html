@@ -1,107 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 <head>
-   <meta charset="UTF-8" />
- <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zuper + Microsoft Dynamics 365 Business Central Integration | RethinkingWeb</title>
-  <meta name="description" content="Turn completed Zuper field jobs into sales invoices and job costing entries in Business Central, with inventory and customer data synced both ways. Fixed-price, platform-agnostic integration consulting." />
-<link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="css/sap-business-one-integration.css" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/zuper-pairings.css" />
-<link rel="stylesheet" href="css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/zuper-business-central-integration.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Independent SAP Business One integration consultancy. We connect SAP B1 to ecommerce, CRM, field service, payments and EDI — fixed price, vendor-neutral." />
+  <link rel="canonical" href="https://www.rethinkingweb.com/sap-business-one.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
   <script>
+    tailwind = window.tailwind || {};
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
-            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
-            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
-            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
-            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
-            muted: '#7A6F68',
-          },
-          fontFamily: { display: ['"Inter Tight"', 'sans-serif'], body: ['"Inter Tight"', 'sans-serif'] },
-          maxWidth: { container: '1200px', nav: '1280px' },
-          boxShadow: { card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)', 'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange: '0 8px 30px rgba(231,92,35,0.25)' },
-        }
-      }
+      theme: { extend: {
+        colors: {
+          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+          muted: '#7A6F68',
+        },
+        fontFamily: { display: ['"Inter Tight"','sans-serif'], body: ['"Inter Tight"','sans-serif'] },
+        maxWidth: { container: '1200px', nav: '1280px' },
+        boxShadow: {
+          card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+          'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange:'0 8px 30px rgba(231,92,35,0.25)',
+        },
+      } }
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Contact form deps — these were missing and broke the form -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
   <style>.grecaptcha-badge { visibility: hidden; }</style>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Zuper + Microsoft Dynamics 365 Business Central Integration",
-      "serviceType": "ERP and Field Service Integration Consulting",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "RethinkingWeb",
-        "url": "https://rethinkingweb.com/",
-        "areaServed": [
-          "US",
-          "GB",
-          "AU",
-          "IN"
-        ]
-      },
-      "description": "Turn completed Zuper field jobs into sales invoices and job costing entries in Business Central, with inventory and customer data synced both ways. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://www.rethinkingweb.com/zuper-business-central-integration.html"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://rethinkingweb.com/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Integrations",
-          "item": "https://rethinkingweb.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Zuper",
-          "item": "https://rethinkingweb.com/zuper.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Business Central"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "Can a completed Zuper job post a sales invoice in Business Central?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. When a job is marked complete, the job, parts used, and labor are transformed into a sales invoice or order through Business Central's standard API pages."}},
-        {"@type": "Question", "name": "Does Zuper see current inventory from Business Central?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you choose two-way sync. Item availability and pricing can be pulled into Zuper so technicians and dispatchers see accurate stock before scheduling a job."}},
-        {"@type": "Question", "name": "Can job costing post to the general ledger automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Labor, parts, and travel cost from a completed job can post against the job costing dimensions your finance team already uses in Business Central."}},
-        {"@type": "Question", "name": "What happens if a job is re-opened after invoicing?", "acceptedAnswer": {"@type": "Answer", "text": "That's scoped up front. We can create a credit memo, hold the posting, or route it for manual review &mdash; whichever fits your accounting policy."}},
-        {"@type": "Question", "name": "How much does a Zuper + Business Central integration cost?", "acceptedAnswer": {"@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on whether inventory sync and job costing dimensions are included. See the cost table above for a full breakdown."}},
-        {"@type": "Question", "name": "Can you fix a broken Zuper to Business Central connection?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rescue work &mdash; jobs that stopped posting invoices and inventory counts that drifted out of sync &mdash; is a regular part of our practice."}}
-      ]
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SAP Business One Integration Services",
+    "serviceType": "ERP Integration",
+    "provider": { "@type": "Organization", "name": "RethinkingWeb", "url": "https://www.rethinkingweb.com/" },
+    "areaServed": "Global",
+    "description": "Independent SAP Business One integration consultancy connecting SAP B1 to ecommerce, CRM, field service, payments and EDI.",
+    "url": "https://www.rethinkingweb.com/sap-business-one.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rethinkingweb.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://www.rethinkingweb.com/integration-services.html" },
+      { "@type": "ListItem", "position": 3, "name": "SAP Business One", "item": "https://www.rethinkingweb.com/sap-business-one.html" }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -478,8 +441,7 @@
         <div class="sap-hero__text">
           <nav class="sap-breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a><span>&rsaquo;</span>
-            <a href="zuper.html">Zuper</a><span>&rsaquo;</span>
-            <span class="current">Business Central</span>
+            <a href="zuper.html">Zuper</a>
           </nav>
           <div class="sap-badge"><span class="badge__dot"></span> ERP &amp; Field Service Integration</div>
           <h1 class="sap-hero__title">Zuper <em>+ Business Central</em> Integration</h1>
@@ -500,14 +462,28 @@
           </div>
         </div>
       </div>
-      <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">2-way</div><span class="stat-label">Master data in, financials out</span></div>
-        <div class="sap-stat"><div class="stat-num">OData v4</div><span class="stat-label">Native Business Central API</span></div>
-        <div class="sap-stat"><div class="stat-num">3&ndash;9</div><span class="stat-label">Weeks to typical go-live</span></div>
-        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+      <!-- Stats -->
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years Proven Track Record</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects Across Technologies</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+        </div>
       </div>
     </div>
   </section>
+
 
   <section class="sap-section">
     <div class="container">
