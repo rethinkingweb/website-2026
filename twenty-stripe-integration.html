@@ -1,88 +1,70 @@
-<!DOCTYPE html>
+<!DOCTYPE html>   
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
- <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Twenty + Stripe Integration | RethinkingWeb</title>
-  <meta name="description" content="Sync Stripe with Twenty CRM — subscriptions, invoices, MRR and churn signals land on the record automatically. Fixed-price integration consulting." />
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/twenty-pairings.css" />
-  <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/twenty-stripe-integration.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <title>Twenty + Stripe Integration | RethinkingWeb</title>
+  <meta name="description" content="Independent SAP Business One integration consultancy. We connect SAP B1 to ecommerce, CRM, field service, payments and EDI — fixed price, vendor-neutral." />
+  <link rel="canonical" href="https://www.rethinkingweb.com/sap-business-one.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sap-business-one-integration.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
   <script>
+    tailwind = window.tailwind || {};
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
-            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
-            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
-            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
-            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
-            muted: '#7A6F68',
-          },
-          fontFamily: {
-            display: ['"Inter Tight"', 'sans-serif'],
-            body:    ['"Inter Tight"', 'sans-serif'],
-          },
-          maxWidth: { container: '1200px', nav: '1280px' },
-          boxShadow: {
-            card:    '0 4px 24px rgba(0,0,0,0.08)',
-            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
-            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
-            orange:  '0 8px 30px rgba(231,92,35,0.25)',
-          },
-        }
-      }
+      theme: { extend: {
+        colors: {
+          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+          muted: '#7A6F68',
+        },
+        fontFamily: { display: ['"Inter Tight"','sans-serif'], body: ['"Inter Tight"','sans-serif'] },
+        maxWidth: { container: '1200px', nav: '1280px' },
+        boxShadow: {
+          card: '0 4px 24px rgba(0,0,0,0.08)', 'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+          'card-lg':'0 12px 30px rgba(0,0,0,0.08)', orange:'0 8px 30px rgba(231,92,35,0.25)',
+        },
+      } }
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Contact form deps — these were missing and broke the form -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
   <style>.grecaptcha-badge { visibility: hidden; }</style>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Twenty + Stripe Integration",
-      "serviceType": "CRM Payments Integration Consulting",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "RethinkingWeb",
-        "url": "https://rethinkingweb.com/",
-        "areaServed": ["US", "GB", "AU", "IN"]
-      },
-      "description": "Connect Stripe to Twenty CRM so subscriptions, invoices, MRR, and churn signals land on Company and People records automatically, using Twenty's REST/GraphQL APIs and webhooks alongside the Stripe API.",
-      "url": "https://rethinkingweb.com/twenty-stripe-integration.html"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
-        { "@type": "ListItem", "position": 2, "name": "Twenty", "item": "https://rethinkingweb.com/twenty.html" },
-        { "@type": "ListItem", "position": 3, "name": "Stripe" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Does the Twenty + Stripe integration update MRR automatically?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Subscription creation, upgrades, downgrades, and cancellations from Stripe update MRR and subscription-status fields on the matching Twenty record via webhooks, without manual reconciliation." } },
-        { "@type": "Question", "name": "Does Twenty have a native Stripe connector?", "acceptedAnswer": { "@type": "Answer", "text": "No — Stripe is not a native Twenty integration, so this pairing is built on the Stripe API and webhooks, matched against Twenty's REST/GraphQL API and standard or custom objects." } },
-        { "@type": "Question", "name": "Can failed payments and churn trigger an alert?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We commonly pair this integration with a Slack or email notification on failed charges, cancellations, or churn-risk events, so account owners aren't discovering it from a support ticket." } },
-        { "@type": "Question", "name": "How much does a Twenty + Stripe integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most Twenty + Stripe integrations cost between $2,800 and $12,000 depending on subscription complexity, whether invoices sync as documents, and how much churn/MRR reporting logic is needed. We quote a fixed price after scoping." } }
-      ]
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SAP Business One Integration Services",
+    "serviceType": "ERP Integration",
+    "provider": { "@type": "Organization", "name": "RethinkingWeb", "url": "https://www.rethinkingweb.com/" },
+    "areaServed": "Global",
+    "description": "Independent SAP Business One integration consultancy connecting SAP B1 to ecommerce, CRM, field service, payments and EDI.",
+    "url": "https://www.rethinkingweb.com/sap-business-one.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rethinkingweb.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://www.rethinkingweb.com/integration-services.html" },
+      { "@type": "ListItem", "position": 3, "name": "SAP Business One", "item": "https://www.rethinkingweb.com/sap-business-one.html" }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -463,8 +445,6 @@
             <a href="../index.html">Home</a>
             <span>›</span>
             <a href="twenty.html">Twenty</a>
-            <span>›</span>
-            <span class="current">Stripe</span>
           </nav>
           <div class="sap-badge"><span class="badge__dot"></span> Twenty CRM Integration Consultancy</div>
           <h1 class="sap-hero__title">Twenty <em>+ Stripe</em> Integration</h1>
@@ -492,12 +472,24 @@
         </div>
       </div>
 
-      <!-- Stats strip -->
-      <div class="sap-stats">
-        <div class="sap-stat"><div class="stat-num">API</div><span class="stat-label">Built on Stripe API &amp; webhooks</span></div>
-        <div class="sap-stat"><div class="stat-num">4</div><span class="stat-label">Countries served — US · UK · AU · IN</span></div>
-        <div class="sap-stat"><div class="stat-num">1–3</div><span class="stat-label">Weeks to typical go-live</span></div>
-        <div class="sap-stat"><div class="stat-num">Fixed</div><span class="stat-label">Price quoted before we build</span></div>
+     <!-- Stats -->
+      <div class="hero__stats">
+        <div class="stat-card">
+          <div class="stat-num">10<span class="stat-plus">+</span></div>
+          <span class="stat-label">Years Proven Track Record</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-plus">%</span></div>
+          <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">698</div>
+          <span class="stat-label">Projects Across Technologies</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">03</div>
+          <span class="stat-label">Offices: Mumbai, Vadodara, Portland</span>
+        </div>
       </div>
     </div>
   </section>
