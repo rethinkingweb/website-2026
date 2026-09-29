@@ -66,6 +66,24 @@
     ]
   }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RethinkingWeb",
+  "alternateName": "RTW",
+  "url": "https://www.rethinkingweb.com",
+  "logo": "https://www.rethinkingweb.com/images/rtw_logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+919920996021",
+    "contactType": "customer service",
+    "areaServed": ["US", "GB", "IN"],
+    "availableLanguage": "en"
+  },
+  "sameAs": ["https://www.linkedin.com/company/rethinkingweb/"]
+}
+</script>
 </head>
 <body>
 
@@ -77,148 +95,82 @@
     </a>
 
     <!-- DESKTOP LINKS -->
-    <nav class="hidden lg:flex items-center gap-1 ml-auto" id="navLinks">
-      <a href="index.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md transition-colors duration-300 flex items-center gap-1 hover:text-orange">Home</a>
+    <!-- Order: Agents | Integrations | Solutions | Staff Augmentation | Company | Case Studies | Blog | CTA -->
+    <nav class="hidden xl:flex items-center gap-1 ml-auto" id="navLinks">
 
+      <!-- 1. AGENTS -->
       <div class="nav__dropdown">
-        <a href="solutions.html"
-           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-           onclick="event.preventDefault();">
-          Solutions
+        <a href="agent.html" class="nav__link nav__link--active px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Agents
           <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </a>
-        <div class="mega-menu">
+        <div class="mega-menu mega-menu--integrations mega-menu--agents">
           <div class="mega-menu__header">
-            <span class="mega-menu__label">Our Solutions</span>
-            <a href="solutions.html" class="mega-menu__all">View all services</a>
+            <span class="mega-menu__label">AI Agents</span>
+            <a href="agent.html" class="mega-menu__all">View all agents</a>
           </div>
           <div class="mega-menu__grid">
-            <a href="managed.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+            <a href="voice-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-microphone-lines"></i></div>
               <div class="mega-item__content">
-                <span class="mega-item__title">Managed Services</span>
-                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+                <span class="mega-item__title">Voice Agents</span>
+                <span class="mega-item__desc">Calls answered &amp; made by AI</span>
               </div>
             </a>
-            <a href="consulting.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+            <a href="email-and-document-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-envelope-open-text"></i></div>
               <div class="mega-item__content">
-                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
-                <span class="mega-item__desc">Strategic technology guidance</span>
+                <span class="mega-item__title">Email &amp; Document Agents</span>
+                <span class="mega-item__desc">Triage, extract &amp; reply at scale</span>
               </div>
             </a>
-            <a href="cyber.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+            <a href="customer-support-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-headset"></i></div>
               <div class="mega-item__content">
-                <span class="mega-item__title">Cyber Security</span>
-                <span class="mega-item__desc">Protect your digital assets</span>
+                <span class="mega-item__title">Customer Support Agents</span>
+                <span class="mega-item__desc">24/7 resolution across channels</span>
               </div>
             </a>
-            <a href="web_development.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+            <a href="sales-and-crm-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-handshake"></i></div>
               <div class="mega-item__content">
-                <span class="mega-item__title">Web Development</span>
-                <span class="mega-item__desc">Custom websites &amp; web apps</span>
+                <span class="mega-item__title">Sales &amp; CRM Agents</span>
+                <span class="mega-item__desc">Lead follow-up &amp; CRM upkeep</span>
               </div>
             </a>
-            <a href="mobile-development.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+            <a href="operations-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gears"></i></div>
               <div class="mega-item__content">
-                <span class="mega-item__title">Mobile Development</span>
-                <span class="mega-item__desc">iOS &amp; Android solutions</span>
+                <span class="mega-item__title">Operations Agents</span>
+                <span class="mega-item__desc">Scheduling, routing &amp; back-office</span>
               </div>
             </a>
-            <a href="cloud.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+            <a href="finance-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-file-invoice-dollar"></i></div>
               <div class="mega-item__content">
-                <span class="mega-item__title">Cloud Services</span>
-                <span class="mega-item__desc">Scalable cloud infrastructure</span>
+                <span class="mega-item__title">Finance Agents</span>
+                <span class="mega-item__desc">Invoices, collections &amp; matching</span>
               </div>
             </a>
-            <a href="software.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+            <a href="agent-governance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-scale-balanced"></i></div>
               <div class="mega-item__content">
-                <span class="mega-item__title">Software Development</span>
-                <span class="mega-item__desc">Bespoke software solutions</span>
+                <span class="mega-item__title">Agent Governance</span>
+                <span class="mega-item__desc">Guardrails, approvals &amp; audit trails</span>
               </div>
             </a>
-            <a href="airtable.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+            <a href="ai-workflow-audit.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-clipboard-check"></i></div>
               <div class="mega-item__content">
-                <span class="mega-item__title">Enterprise Airtable</span>
-                <span class="mega-item__desc">No-code workflow automation</span>
-              </div>
-            </a>
-            <a href="web-performance.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Web Performance</span>
-                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
-              </div>
-            </a>
-            <a href="seo.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">On-page Technical SEO</span>
-                <span class="mega-item__desc">Rank higher, grow faster</span>
+                <span class="mega-item__title">AI Workflow Audit</span>
+                <span class="mega-item__desc">Find the best workflows to automate</span>
               </div>
             </a>
           </div>
         </div>
       </div>
 
-      <div class="nav__dropdown">
-        <a href="staff-augmentation.html"
-           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-           onclick="event.preventDefault();">
-          Staff Augmentation
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="mega-menu mega-menu--staffaug">
-          <div class="mega-menu__header">
-            <span class="mega-menu__label">Staff Augmentation</span>
-            <a href="staff-augmentation.html" class="mega-menu__all">View all</a>
-          </div>
-          <div class="mega-menu__grid">
-            <a href="specialist-staff-augmentation.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-user-gear"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Specialist Staff Augmentation</span>
-                <span class="mega-item__desc">Vetted engineers into your team</span>
-              </div>
-            </a>
-            <a href="dedicated-expert-pods.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-people-group"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Dedicated Expert Pods</span>
-                <span class="mega-item__desc">A cross-functional squad that owns delivery</span>
-              </div>
-            </a>
-            <a href="sme-on-demand.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-user-graduate"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">SME-on-Demand</span>
-                <span class="mega-item__desc">Subject-matter experts, on call</span>
-              </div>
-            </a>
-            <a href="fractional-interim-leadership.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-user-tie"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Fractional &amp; Interim Leadership</span>
-                <span class="mega-item__desc">Fractional CTO / CIO leadership</span>
-              </div>
-            </a>
-            <a href="tool-experts.html" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Tool Experts</span>
-                <span class="mega-item__desc">Zoho, Airtable, SAP, Salesforce &amp; automation</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
+      <!-- 2. INTEGRATIONS -->
       <div class="nav__dropdown">
         <a href="integration-services.html"
            class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
@@ -306,6 +258,148 @@
         </div>
       </div>
 
+      <!-- 3. SOLUTIONS -->
+      <div class="nav__dropdown">
+        <a href="solutions.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="solutions.html" class="mega-menu__all">View all services</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="managed.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Managed Services</span>
+                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+              </div>
+            </a>
+            <a href="consulting.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
+                <span class="mega-item__desc">Strategic technology guidance</span>
+              </div>
+            </a>
+            <a href="cyber.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cyber Security</span>
+                <span class="mega-item__desc">Protect your digital assets</span>
+              </div>
+            </a>
+            <a href="web_development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Development</span>
+                <span class="mega-item__desc">Custom websites &amp; web apps</span>
+              </div>
+            </a>
+            <a href="mobile-development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Mobile Development</span>
+                <span class="mega-item__desc">iOS &amp; Android solutions</span>
+              </div>
+            </a>
+            <a href="cloud.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cloud Services</span>
+                <span class="mega-item__desc">Scalable cloud infrastructure</span>
+              </div>
+            </a>
+            <a href="software.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Software Development</span>
+                <span class="mega-item__desc">Bespoke software solutions</span>
+              </div>
+            </a>
+            <a href="airtable.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Enterprise Airtable</span>
+                <span class="mega-item__desc">No-code workflow automation</span>
+              </div>
+            </a>
+            <a href="web-performance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Performance</span>
+                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
+              </div>
+            </a>
+            <a href="seo.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">On-page Technical SEO</span>
+                <span class="mega-item__desc">Rank higher, grow faster</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. STAFF AUGMENTATION -->
+      <div class="nav__dropdown">
+        <a href="staff-augmentation.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Staff Augmentation
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--staffaug">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Staff Augmentation</span>
+            <a href="staff-augmentation.html" class="mega-menu__all">View all</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="specialist-staff-augmentation.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-gear"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Specialist Staff Augmentation</span>
+                <span class="mega-item__desc">Vetted engineers into your team</span>
+              </div>
+            </a>
+            <a href="dedicated-expert-pods.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-people-group"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Dedicated Expert Pods</span>
+                <span class="mega-item__desc">A cross-functional squad that owns delivery</span>
+              </div>
+            </a>
+            <a href="sme-on-demand.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-graduate"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">SME-on-Demand</span>
+                <span class="mega-item__desc">Subject-matter experts, on call</span>
+              </div>
+            </a>
+            <a href="fractional-interim-leadership.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-tie"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Fractional &amp; Interim Leadership</span>
+                <span class="mega-item__desc">Fractional CTO / CIO leadership</span>
+              </div>
+            </a>
+            <a href="tool-experts.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Tool Experts</span>
+                <span class="mega-item__desc">Zoho, Airtable, SAP, Salesforce &amp; automation</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. COMPANY -->
       <div class="nav__dropdown">
         <a href="about.html"
            class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
@@ -323,16 +417,21 @@
         </div>
       </div>
 
+      <!-- 6. CASE STUDIES -->
       <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+
+      <!-- 7. BLOG -->
       <a href="blog.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Blog</a>
+
     </nav>
 
-    <div class="hidden lg:flex items-center gap-4 ml-6 flex-shrink-0">
-      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Connect</a>
+    <!-- 8. CTA BUTTON -->
+    <div class="hidden xl:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Book an AI Workflow Audit</a>
     </div>
 
     <!-- HAMBURGER BUTTON -->
-    <button class="nav__burger lg:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+    <button class="nav__burger xl:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
       <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
       <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
       <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
@@ -350,46 +449,28 @@
   </div>
 
   <nav class="flex flex-col px-6 pb-8 pt-3">
-    <a href="index.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Home</a>
 
-    <!-- Solutions accordion -->
+    <!-- 1. Agents accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <a href="agent.html" class="mob-accordion__link">Agents</a>
         <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
           <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
       <div class="mob-accordion__panel">
-        <a href="managed.html">Managed Services</a>
-        <a href="consulting.html">IT Consulting &amp; Advisory</a>
-        <a href="cyber.html">Cyber Security</a>
-        <a href="web_development.html">Web Development</a>
-        <a href="mobile-development.html">Mobile Development</a>
-        <a href="cloud.html">Cloud Services</a>
-        <a href="software.html">Software Development</a>
-        <a href="airtable.html">Enterprise Airtable Managed Services</a>
-        <a href="web-performance.html">Web Performance Optimization</a>
-        <a href="seo.html">On-page Technical SEO</a>
+        <a href="voice-agents.html">Voice Agents</a>
+        <a href="email-and-document-agents.html">Email &amp; Document Agents</a>
+        <a href="customer-support-agents.html">Customer Support Agents</a>
+        <a href="sales-and-crm-agents.html">Sales &amp; CRM Agents</a>
+        <a href="operations-agents.html">Operations Agents</a>
+        <a href="finance-agents.html">Finance Agents</a>
+        <a href="agent-governance.html">Agent Governance</a>
+        <a href="ai-workflow-audit.html">AI Workflow Audit</a>
       </div>
     </div>
 
-    <!-- Staff Augmentation accordion -->
-    <div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="staff-augmentation.html" class="mob-accordion__link">Staff Augmentation</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="specialist-staff-augmentation.html">Specialist Staff Augmentation</a>
-        <a href="dedicated-expert-pods.html">Dedicated Expert Pods</a>
-        <a href="sme-on-demand.html">SME-on-Demand</a>
-        <a href="fractional-interim-leadership.html">Fractional &amp; Interim Leadership</a>
-        <a href="tool-experts.html">Tool Experts</a>
-      </div>
-    </div>
-
-    <!-- Integrations accordion -->
+    <!-- 2. Integrations accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
         <a href="integration-services.html" class="mob-accordion__link">Integrations</a>
@@ -411,7 +492,45 @@
       </div>
     </div>
 
-    <!-- Company accordion -->
+    <!-- 3. Solutions accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- 4. Staff Augmentation accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="staff-augmentation.html" class="mob-accordion__link">Staff Augmentation</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="specialist-staff-augmentation.html">Specialist Staff Augmentation</a>
+        <a href="dedicated-expert-pods.html">Dedicated Expert Pods</a>
+        <a href="sme-on-demand.html">SME-on-Demand</a>
+        <a href="fractional-interim-leadership.html">Fractional &amp; Interim Leadership</a>
+        <a href="tool-experts.html">Tool Experts</a>
+      </div>
+    </div>
+
+    <!-- 5. Company accordion -->
     <div class="mob-accordion border-b border-[#E8E2DC]">
       <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
         <a href="about.html" class="mob-accordion__link">Company</a>
@@ -429,15 +548,19 @@
       </div>
     </div>
 
+    <!-- 6. Case Studies -->
     <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+
+    <!-- 7. Blog -->
     <a href="blog.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Blog</a>
-    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Connect</a>
+
+    <!-- 8. CTA -->
+    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Book an AI Workflow Audit</a>
   </nav>
 </div>
 
 <!-- Overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
-
 <!-- ═══════════════════════════════════════════
      PILLAR PAGE CONTENT
 ═══════════════════════════════════════════ -->

@@ -67,9 +67,12 @@ input, select, textarea, button { font-family: inherit; }
 
 .cs-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 6vw, 5.5rem);
-  font-weight: 900; line-height: 1.05; letter-spacing: -0.025em;
-  color: var(--charcoal); margin-bottom: 1.25rem;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin-bottom: 1.25rem;
   animation: fadeUp 0.7s 0.1s ease both;
 }
 .cs-hero__title em {
@@ -178,7 +181,7 @@ input, select, textarea, button { font-family: inherit; }
   background: var(--white); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 1.1rem 0.75rem;
   text-align: center; box-shadow: var(--shadow);
-  transition: all var(--trans); opacity: 0; transform: translateY(16px);
+  transition: all var(--trans); opacity: 1; transform: translateY(16px);
 }
 .cs-icon-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
 .cs-icon-card span { font-size: 1.6rem; display: block; margin-bottom: 0.35rem; }

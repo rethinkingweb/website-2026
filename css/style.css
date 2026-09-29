@@ -87,7 +87,7 @@ input, select, textarea, button { font-family: inherit; }
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   color: var(--charcoal);
   text-align: center;
@@ -175,6 +175,7 @@ input, select, textarea, button { font-family: inherit; }
 .nav__link { padding: .5rem .75rem; font-size: .875rem; font-weight: 600; color: var(--charcoal3); border-radius: 6px; transition: color var(--trans); display: flex; align-items: center; gap: 4px; }
 .nav__link:hover, .nav__link--active { color: var(--orange); }
 .nav__link--active { font-weight: 700; }
+#navLinks .nav__link { white-space: nowrap; }
 
 /* Dropdown */
 .nav__dropdown { position: relative; }
@@ -365,8 +366,20 @@ input, select, textarea, button { font-family: inherit; }
 }
 
 .proof-chip .stars { color: #F59E0B; }
-
-
+@media (max-width: 640px) {
+  .hero__proof {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+  .proof-chip { text-align: center; font-size: 1.0rem; }
+  .proof-chip:last-child { grid-column: 1 / -1; justify-self: center; }
+}
+@media (max-width: 380px) {
+  .proof-chip { font-size: 1.0rem; padding: .35rem .65rem; }
+}
 .hero__stats {
   display: flex;
   align-items: stretch;
@@ -904,8 +917,32 @@ input, select, textarea, button { font-family: inherit; }
   .contact__form-card { padding: 1.5rem; }
   .form-row { grid-template-columns: 1fr; }
 }
-/* Apply variables */
-/* Example elements */
+@media (max-width: 640px) {
+  .hero__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: .75rem;
+    margin-top: 2rem;
+    padding: 0 .25rem;
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+
+  .stat-pill {
+    min-width: 0;            
+    padding: 1rem .5rem;    
+    border-radius: 14px;
+  }
+
+  .stat-pill__num   { font-size: 1.8rem; }
+  .stat-pill__label { font-size: .7rem; }
+}
+
+@media (max-width: 360px) {
+  .hero__stats { gap: .5rem; }
+  .stat-pill__num   { font-size: 1.6rem; }
+  .stat-pill__label { font-size: .65rem; }
+}
 .navbar {
   background: var(--card-bg);
 }
@@ -1774,7 +1811,7 @@ clamp:(3rem, 4.5rem, 5vw);
 .clients__headline {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   color: var(--text, #1a1a1a);
   margin-bottom: 1.25rem;
@@ -2299,16 +2336,6 @@ clamp:(3rem, 4.5rem, 5vw);
 .btn--full { width: 100%; justify-content: center; }
 
 }
-
-
-
-
-
-
-
-
-
-
 .hero-v2 {
   position: relative;
   min-height: 80vh;
@@ -2421,7 +2448,7 @@ clamp:(3rem, 4.5rem, 5vw);
   border: 1px solid rgba(231, 92, 35, 0.22);
   border-radius: 50px;
   padding: 0.4rem 1.1rem;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2444,7 +2471,7 @@ clamp:(3rem, 4.5rem, 5vw);
 .hero-v2__headline {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5.5vw, 4.5rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--charcoal);
