@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/rtw_logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Operations Agents | Scheduling &amp; Dispatch Automation | RethinkingWeb</title>
+  <link rel="canonical" href="https://www.rethinkingweb.com/operations-agents.html" />
+  <meta name="description" content="Custom AI operations agents that schedule and dispatch work, re-plan around delays, keep customers informed and handle back-office tasks inside Zuper, Zoho, SAP Business One and NetSuite." />
+  <meta property="og:title" content="AI Operations Agents | Scheduling &amp; Dispatch Automation | RethinkingWeb" />
+  <meta property="og:description" content="Operations agents that build the day, dispatch the right person and re-plan when things change, inside the systems you already run." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.rethinkingweb.com/operations-agents.html" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: {
+            display: ['"Inter Tight"', 'sans-serif'],
+            body:    ['"Inter Tight"', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px', nav: '1280px' },
+          boxShadow: {
+            card:    '0 4px 24px rgba(0,0,0,0.08)',
+            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
+            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
+            orange:  '0 8px 30px rgba(231,92,35,0.25)',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/agent.css" />
+  <link rel="stylesheet" href="css/operations-agents.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
+  <style>
+    .grecaptcha-badge { visibility: hidden; }
+    /* keep desktop menu labels on one line */
+    #navLinks .nav__link { white-space: nowrap; }
+  </style>
+
+  <!-- FAQ structured data (matches the visible FAQ on the page) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an AI operations agent, and how is it different from scheduling software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Scheduling software gives your team a board to plan on. An AI operations agent does the planning work on that board: it reads jobs, skills, availability, locations and parts from your systems, assigns and re-assigns work within rules you set, notifies customers and technicians, and flags anything it should not decide alone. Your existing software stays in place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which systems can operations agents work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We build operations agents on field service and back-office systems such as Zuper, Zoho, SAP Business One, NetSuite and QuickBooks, and connect them to calendars, maps, email and SMS. If you run something else, tell us and we will scope the connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the agent change the schedule on its own?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only within the limits you set. For example, you might let it move a job within the same day and window, but require a dispatcher's approval to change the day, the technician on a named account, or anything that adds overtime. Every change is recorded with the reason, so dispatchers can review or undo it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the agent handle last-minute changes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When a technician is unavailable, a part is late, a job overruns or the weather turns, the agent finds the affected jobs, works out the best re-plan within your rules, updates the schedule and notifies the customers and technicians involved. Anything it cannot solve cleanly goes to a dispatcher with the options laid out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will customers be notified automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you want them to be. The agent can send booking confirmations, arrival windows, on-the-way messages and delay notices by SMS or email using wording you approve, and it records replies on the job. Complaints and sensitive conversations are passed to your team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can operations agents help with back-office work too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Agents can check that job notes, photos and sign-off are complete, chase technicians for missing items, raise purchase requests for parts, update timesheets and pass billing details to your accounting system. Approvals above your limits stay with your team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do operations agents cost, and how long do they take to launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cost depends on the number of technicians and jobs, the systems involved, the quality of your job and skills data, and the level of ongoing support. A focused agent for one workflow, such as daily dispatch or delay notifications, can often be piloted in a matter of weeks. After a short discovery call we give you a scoped proposal with a realistic range."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we measure whether the agent is working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We agree the measures before launch, typically unassigned jobs at the start of the day, on-time arrivals, travel time between jobs, time to re-plan after a disruption and hours spent on admin. Your dispatchers review the agent's decisions during the pilot, and we tune the rules from what we see."
+      }
+    }
+  ]
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RethinkingWeb",
+  "alternateName": "RTW",
+  "url": "https://www.rethinkingweb.com",
+  "logo": "https://www.rethinkingweb.com/images/rtw_logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+919920996021",
+    "contactType": "customer service",
+    "areaServed": ["US", "GB", "IN"],
+    "availableLanguage": "en"
+  },
+  "sameAs": ["https://www.linkedin.com/company/rethinkingweb/"]
+}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ───────── NAV ───────── -->
+<header class="nav nav--light" id="nav">
+  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <!-- Order: Agents | Integrations | Solutions | Staff Augmentation | Company | Case Studies | Blog | CTA -->
+    <nav class="hidden xl:flex items-center gap-1 ml-auto" id="navLinks">
+
+      <!-- 1. AGENTS -->
+      <div class="nav__dropdown">
+        <a href="agent.html" class="nav__link nav__link--active px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+          Agents
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--integrations mega-menu--agents">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">AI Agents</span>
+            <a href="agent.html" class="mega-menu__all">View all agents</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="voice-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-microphone-lines"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Voice Agents</span>
+                <span class="mega-item__desc">Calls answered &amp; made by AI</span>
+              </div>
+            </a>
+            <a href="email-and-document-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-envelope-open-text"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Email &amp; Document Agents</span>
+                <span class="mega-item__desc">Triage, extract &amp; reply at scale</span>
+              </div>
+            </a>
+            <a href="customer-support-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-headset"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Customer Support Agents</span>
+                <span class="mega-item__desc">24/7 resolution across channels</span>
+              </div>
+            </a>
+            <a href="sales-and-crm-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-handshake"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Sales &amp; CRM Agents</span>
+                <span class="mega-item__desc">Lead follow-up &amp; CRM upkeep</span>
+              </div>
+            </a>
+            <a href="operations-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gears"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Operations Agents</span>
+                <span class="mega-item__desc">Scheduling, routing &amp; back-office</span>
+              </div>
+            </a>
+            <a href="finance-agents.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Finance Agents</span>
+                <span class="mega-item__desc">Invoices, collections &amp; matching</span>
+              </div>
+            </a>
+            <a href="agent-governance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-scale-balanced"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Agent Governance</span>
+                <span class="mega-item__desc">Guardrails, approvals &amp; audit trails</span>
+              </div>
+            </a>
+            <a href="ai-workflow-audit.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-clipboard-check"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">AI Workflow Audit</span>
+                <span class="mega-item__desc">Find the best workflows to automate</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. INTEGRATIONS -->
+      <div class="nav__dropdown">
+        <a href="integration-services.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Integrations
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--integrations">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Integrations</span>
+            <a href="integration-services.html" class="mega-menu__all">View all integrations</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="sap-business-one.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">SAP Business One</span>
+                <span class="mega-item__desc">ERP integration &amp; consulting</span>
+              </div>
+            </a>
+            <a href="salesforce.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Salesforce</span>
+                <span class="mega-item__desc">CRM &amp; order-to-cash sync</span>
+              </div>
+            </a>
+            <a href="netsuite.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0C3B5D"/><text x="12" y="17" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">N</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">NetSuite</span>
+                <span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span>
+              </div>
+            </a>
+            <a href="shopify.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/><path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z" opacity=".12"/><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Shopify</span>
+                <span class="mega-item__desc">Ecommerce &#8596; back office</span>
+              </div>
+            </a>
+            <a href="quickbooks.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">QuickBooks</span>
+                <span class="mega-item__desc">Accounting &amp; invoice sync</span>
+              </div>
+            </a>
+            <a href="woocommerce.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">WooCommerce</span>
+                <span class="mega-item__desc">WordPress store integration</span>
+              </div>
+            </a>
+            <a href="zoho.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Zoho</span>
+                <span class="mega-item__desc">Zoho One suite integration</span>
+              </div>
+            </a>
+            <a href="zuper.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Zuper</span>
+                <span class="mega-item__desc">Field service management sync</span>
+              </div>
+            </a>
+            <a href="attio.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#16151A"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">At</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Attio</span>
+                <span class="mega-item__desc">CRM &amp; record sync</span>
+              </div>
+            </a>
+            <a href="twenty.html" class="mega-item">
+              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#000000"/><text x="12" y="16.5" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff" text-anchor="middle">20</text></svg></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Twenty</span>
+                <span class="mega-item__desc">Open-source CRM sync</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. SOLUTIONS -->
+      <div class="nav__dropdown">
+        <a href="solutions.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Our Solutions</span>
+            <a href="solutions.html" class="mega-menu__all">View all services</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="managed.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Managed Services</span>
+                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+              </div>
+            </a>
+            <a href="consulting.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
+                <span class="mega-item__desc">Strategic technology guidance</span>
+              </div>
+            </a>
+            <a href="cyber.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cyber Security</span>
+                <span class="mega-item__desc">Protect your digital assets</span>
+              </div>
+            </a>
+            <a href="web_development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Development</span>
+                <span class="mega-item__desc">Custom websites &amp; web apps</span>
+              </div>
+            </a>
+            <a href="mobile-development.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Mobile Development</span>
+                <span class="mega-item__desc">iOS &amp; Android solutions</span>
+              </div>
+            </a>
+            <a href="cloud.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Cloud Services</span>
+                <span class="mega-item__desc">Scalable cloud infrastructure</span>
+              </div>
+            </a>
+            <a href="software.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Software Development</span>
+                <span class="mega-item__desc">Bespoke software solutions</span>
+              </div>
+            </a>
+            <a href="airtable.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Enterprise Airtable</span>
+                <span class="mega-item__desc">No-code workflow automation</span>
+              </div>
+            </a>
+            <a href="web-performance.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Web Performance</span>
+                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
+              </div>
+            </a>
+            <a href="seo.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">On-page Technical SEO</span>
+                <span class="mega-item__desc">Rank higher, grow faster</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. STAFF AUGMENTATION -->
+      <div class="nav__dropdown">
+        <a href="staff-augmentation.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Staff Augmentation
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="mega-menu mega-menu--staffaug">
+          <div class="mega-menu__header">
+            <span class="mega-menu__label">Staff Augmentation</span>
+            <a href="staff-augmentation.html" class="mega-menu__all">View all</a>
+          </div>
+          <div class="mega-menu__grid">
+            <a href="specialist-staff-augmentation.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-gear"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Specialist Staff Augmentation</span>
+                <span class="mega-item__desc">Vetted engineers into your team</span>
+              </div>
+            </a>
+            <a href="dedicated-expert-pods.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-people-group"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Dedicated Expert Pods</span>
+                <span class="mega-item__desc">A cross-functional squad that owns delivery</span>
+              </div>
+            </a>
+            <a href="sme-on-demand.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-graduate"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">SME-on-Demand</span>
+                <span class="mega-item__desc">Subject-matter experts, on call</span>
+              </div>
+            </a>
+            <a href="fractional-interim-leadership.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-user-tie"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Fractional &amp; Interim Leadership</span>
+                <span class="mega-item__desc">Fractional CTO / CIO leadership</span>
+              </div>
+            </a>
+            <a href="tool-experts.html" class="mega-item">
+              <div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+              <div class="mega-item__content">
+                <span class="mega-item__title">Tool Experts</span>
+                <span class="mega-item__desc">Zoho, Airtable, SAP, Salesforce &amp; automation</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. COMPANY -->
+      <div class="nav__dropdown">
+        <a href="about.html"
+           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+           onclick="event.preventDefault();">
+          Company
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+          <a href="about.html">About Us</a>
+          <a href="whyus.html">Why Us</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="case.html">Case Studies</a>
+        </div>
+      </div>
+
+      <!-- 6. CASE STUDIES -->
+      <a href="case.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
+
+      <!-- 7. BLOG -->
+      <a href="blog.html" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Blog</a>
+
+    </nav>
+
+    <!-- 8. CTA BUTTON -->
+    <div class="hidden xl:flex items-center gap-4 ml-6 flex-shrink-0">
+      <a href="contact.html" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Book an AI Workflow Audit</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="nav__burger xl:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ───────── MOBILE NAV DRAWER ───────── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+    <a href="index.html">
+      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+    </a>
+    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="flex flex-col px-6 pb-8 pt-3">
+
+    <!-- 1. Agents accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="agent.html" class="mob-accordion__link">Agents</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="voice-agents.html">Voice Agents</a>
+        <a href="email-and-document-agents.html">Email &amp; Document Agents</a>
+        <a href="customer-support-agents.html">Customer Support Agents</a>
+        <a href="sales-and-crm-agents.html">Sales &amp; CRM Agents</a>
+        <a href="operations-agents.html">Operations Agents</a>
+        <a href="finance-agents.html">Finance Agents</a>
+        <a href="agent-governance.html">Agent Governance</a>
+        <a href="ai-workflow-audit.html">AI Workflow Audit</a>
+      </div>
+    </div>
+
+    <!-- 2. Integrations accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="integration-services.html" class="mob-accordion__link">Integrations</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="sap-business-one.html">SAP Business One</a>
+        <a href="salesforce.html">Salesforce</a>
+        <a href="netsuite.html">NetSuite</a>
+        <a href="shopify.html">Shopify</a>
+        <a href="quickbooks.html">QuickBooks</a>
+        <a href="woocommerce.html">WooCommerce</a>
+        <a href="zoho.html">Zoho</a>
+        <a href="zuper.html">Zuper</a>
+        <a href="attio.html">Attio</a>
+        <a href="twenty.html">Twenty</a>
+      </div>
+    </div>
+
+    <!-- 3. Solutions accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <div class="mob-accordion__header"></div>
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="solutions.html" class="mob-accordion__link">Solutions</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="managed.html">Managed Services</a>
+        <a href="consulting.html">IT Consulting &amp; Advisory</a>
+        <a href="cyber.html">Cyber Security</a>
+        <a href="web_development.html">Web Development</a>
+        <a href="mobile-development.html">Mobile Development</a>
+        <a href="cloud.html">Cloud Services</a>
+        <a href="software.html">Software Development</a>
+        <a href="airtable.html">Enterprise Airtable Managed Services</a>
+        <a href="web-performance.html">Web Performance Optimization</a>
+        <a href="seo.html">On-page Technical SEO</a>
+      </div>
+    </div>
+
+    <!-- 4. Staff Augmentation accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="staff-augmentation.html" class="mob-accordion__link">Staff Augmentation</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="specialist-staff-augmentation.html">Specialist Staff Augmentation</a>
+        <a href="dedicated-expert-pods.html">Dedicated Expert Pods</a>
+        <a href="sme-on-demand.html">SME-on-Demand</a>
+        <a href="fractional-interim-leadership.html">Fractional &amp; Interim Leadership</a>
+        <a href="tool-experts.html">Tool Experts</a>
+      </div>
+    </div>
+
+    <!-- 5. Company accordion -->
+    <div class="mob-accordion border-b border-[#E8E2DC]">
+      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
+        <a href="about.html" class="mob-accordion__link">Company</a>
+        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="mob-accordion__panel">
+        <a href="about.html">About Us</a>
+        <a href="whyus.html">Why Us</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case.html">Case Studies</a>
+      </div>
+    </div>
+
+    <!-- 6. Case Studies -->
+    <a href="case.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
+
+    <!-- 7. Blog -->
+    <a href="blog.html" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Blog</a>
+
+    <!-- 8. CTA -->
+    <a href="contact.html" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Book an AI Workflow Audit</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main class="ag-page op-page" id="main">
+
+<!-- ═════════ 1. HERO (same as agent page) ═════════ -->
+<section id="op-top" class="agh">
+  <video class="agh-video" src="video/agents-orchestration.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="agh-shade"></div>
+  <div class="agh-wrap">
+    <div class="agh-copy">
+      <div class="agh-eyebrow agh-rise"><span class="agh-dot"></span> AI operations agent development</div>
+      <h1 class="agh-title agh-rise">Plans that adjust before the day falls apart.</h1>
+      <div class="agh-row agh-rise-late">
+        <p>Operations agents that schedule and dispatch the right person, catch delays early, keep customers informed and clear the back-office paperwork, inside the systems you already run.</p>
+        <a href="contact.html" class="agh-btn">See a dispatch decision <svg class="agh-i"><use href="#i-arrow-down"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 2. INTRO + BEFORE / AFTER SLIDER (opi) ═════════ -->
+<section id="op-intro" class="op-sec opi">
+  <div class="op-wrap opi-grid">
+    <div>
+      <p class="op-eyebrow">AI operations agents</p>
+      <h2 class="op-title">AI agents for scheduling, dispatch and back-office operations.</h2>
+      <p class="opi-text">Operations teams spend their mornings rebuilding the plan: a job left unassigned, a technician double-booked, a van sent across town, a customer who was never told about the delay. Our AI operations agents do that coordination for you. They read jobs, people, skills, locations and parts from your systems, build the day, dispatch the right person and adjust the plan the moment something changes.</p>
+      <p class="opi-text opi-muted">We build operations agents inside the tools you already use, including <a href="zuper.html">Zuper</a>, <a href="zoho.html">Zoho</a>, <a href="sap-business-one.html">SAP Business One</a> and <a href="netsuite.html">NetSuite</a>. You set the rules for what the agent can change on its own and what needs a dispatcher's approval, and every change is recorded.</p>
+    </div>
+
+    <div class="opi-flip" id="opiFlip">
+      <div class="opi-switch" role="group" aria-label="Compare the schedule">
+        <span class="opi-pill" aria-hidden="true"></span>
+        <button type="button" class="opi-opt is-on" data-v="0" aria-pressed="true">Without an agent</button>
+        <button type="button" class="opi-opt" data-v="1" aria-pressed="false">With an operations agent</button>
+      </div>
+      <div class="opi-board">
+        <div class="opi-board-head"><span>Monday, 8:40 am</span><b id="opiCount">5 problems</b></div>
+        <ul>
+          <li style="--i:0"><span class="opi-ic"><i class="fas fa-xmark"></i><i class="fas fa-check"></i></span><span class="opi-txt"><span class="opi-b">Job #214 still unassigned</span><span class="opi-a">Job #214 assigned to Sara by skill and area</span></span></li>
+          <li style="--i:1"><span class="opi-ic"><i class="fas fa-xmark"></i><i class="fas fa-check"></i></span><span class="opi-txt"><span class="opi-b">Ravi double-booked at 10:00</span><span class="opi-a">Ravi's 10:00 clash moved to 13:00, customer told</span></span></li>
+          <li style="--i:2"><span class="opi-ic"><i class="fas fa-xmark"></i><i class="fas fa-check"></i></span><span class="opi-txt"><span class="opi-b">Van 3 sent across town for its next job</span><span class="opi-a">Van 3 routed to jobs in the same zone</span></span></li>
+          <li style="--i:3"><span class="opi-ic"><i class="fas fa-xmark"></i><i class="fas fa-check"></i></span><span class="opi-txt"><span class="opi-b">Customer on Elm Street not told about the delay</span><span class="opi-a">Elm Street customer sent a new arrival window</span></span></li>
+          <li style="--i:4"><span class="opi-ic"><i class="fas fa-xmark"></i><i class="fas fa-check"></i></span><span class="opi-txt"><span class="opi-b">Parts for job #219 never ordered</span><span class="opi-a">Parts request for job #219 raised for approval</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 3. DISPATCH MAP (opm) ═════════ -->
+<section id="op-dispatch" class="op-sec opm">
+  <div class="op-wrap">
+    <div class="op-head op-head-row">
+      <div>
+        <p class="op-eyebrow">Dispatch, decided in seconds</p>
+        <h2 class="op-title">Pick a new job and watch the agent choose who goes.</h2>
+      </div>
+      <p class="op-lead">The agent checks skills, availability and travel time for every technician, sends the best match, and tells the customer when to expect them.</p>
+    </div>
+
+    <div class="opm-tabs" role="tablist" aria-label="New jobs" id="opmTabs">
+      <button type="button" role="tab" class="opm-tab is-active" aria-selected="true" data-j="0"><i class="fas fa-faucet-drip"></i> Burst pipe, urgent</button>
+      <button type="button" role="tab" class="opm-tab" aria-selected="false" tabindex="-1" data-j="1"><i class="fas fa-snowflake"></i> AC not cooling</button>
+      <button type="button" role="tab" class="opm-tab" aria-selected="false" tabindex="-1" data-j="2"><i class="fas fa-bolt"></i> Tripped circuit, office</button>
+    </div>
+
+    <div class="opm-grid">
+      <div class="opm-map">
+        <svg viewBox="0 0 600 380" id="opmSvg" role="img" aria-label="Map of technicians and the new job">
+          <defs>
+            <pattern id="opmGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" class="opm-gridline"/></pattern>
+          </defs>
+          <rect width="600" height="380" fill="url(#opmGrid)"/>
+          <path class="opm-road" d="M0 150H600M0 230H600M200 0V380M420 0V380"/>
+          <rect class="opm-park" x="230" y="20" width="160" height="100" rx="10"/>
+          <path class="opm-route" id="opmRoute" d="M0 0" pathLength="1"/>
+          <g class="opm-job" id="opmJob"><circle class="opm-job-ring" r="22"/><circle r="11"/><text y="4" text-anchor="middle">!</text></g>
+          <g class="opm-tech" data-t="0"><circle r="17"/><text y="5" text-anchor="middle">AN</text></g>
+          <g class="opm-tech" data-t="1"><circle r="17"/><text y="5" text-anchor="middle">SA</text></g>
+          <g class="opm-tech" data-t="2"><circle r="17"/><text y="5" text-anchor="middle">DE</text></g>
+          <g class="opm-tech" data-t="3"><circle r="17"/><text y="5" text-anchor="middle">MI</text></g>
+        </svg>
+        <div class="opm-legend"><span><i class="opm-dot opm-dot-free"></i> Available</span><span><i class="opm-dot opm-dot-busy"></i> On a job</span><span><i class="opm-dot opm-dot-job"></i> New job</span></div>
+      </div>
+
+      <div class="opm-panel">
+        <p class="opm-panel-cap">Agent's decision</p>
+        <h3 class="opm-panel-title" id="opmTitle">Burst pipe, urgent</h3>
+        <p class="opm-need" id="opmNeed"></p>
+        <ol class="opm-cands" id="opmCands" aria-live="polite"></ol>
+        <div class="opm-result" id="opmResult" hidden></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 4. DISRUPTION SIMULATOR (opd) ═════════ -->
+<section id="op-replan" class="op-sec opd">
+  <div class="op-wrap">
+    <div class="op-head">
+      <p class="op-eyebrow opd-eyebrow">When the plan breaks</p>
+      <h2 class="op-title">Throw a problem at the schedule and watch it re-plan.</h2>
+      <p class="op-lead opd-lead">Pick a disruption. The agent moves the affected jobs, keeps customer windows where it can, and tells everyone who needs to know.</p>
+    </div>
+
+    <div class="opd-events" id="opdEvents" role="group" aria-label="Disruptions">
+      <button type="button" class="opd-ev" data-e="sick"><i class="fas fa-user-slash"></i> Anil calls in sick</button>
+      <button type="button" class="opd-ev" data-e="part"><i class="fas fa-box-open"></i> Part delayed for job #219</button>
+      <button type="button" class="opd-ev" data-e="storm"><i class="fas fa-cloud-bolt"></i> Storm warning after 3 pm</button>
+      <button type="button" class="opd-reset" id="opdReset"><i class="fas fa-rotate-left"></i> Reset</button>
+    </div>
+
+    <div class="opd-board">
+      <div class="opd-gantt">
+        <div class="opd-hours" aria-hidden="true"><span>8:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span></div>
+        <div class="opd-rows">
+          <div class="opd-names">
+            <span data-r="0">Anil</span><span data-r="1">Sara</span><span data-r="2">Dev</span><span data-r="3">Mia</span>
+          </div>
+          <div class="opd-track" id="opdTrack"></div>
+        </div>
+      </div>
+      <aside class="opd-feed">
+        <h3><i class="fas fa-robot"></i> What the agent did</h3>
+        <ul id="opdFeed" aria-live="polite"><li class="opd-empty">Pick a disruption above.</li></ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 5. EXPANDING PANELS (opw) ═════════ -->
+<section id="op-work" class="op-sec opw">
+  <div class="op-wrap">
+    <div class="op-head opw-head">
+      <p class="op-eyebrow">What agents take on</p>
+      <h2 class="op-title">The coordination work that eats your operations team's day.</h2>
+      <p class="op-lead">Hover or tap a panel to see where the agent works alone and where your team stays in charge.</p>
+    </div>
+
+    <div class="opw-panels" id="opwPanels">
+      <article class="opw-panel is-open" tabindex="0" style="--tint:#D6E8FF">
+        <span class="opw-num">01</span>
+        <h3 class="opw-name"><i class="fas fa-calendar-days"></i> Scheduling and dispatch</h3>
+        <div class="opw-body">
+          <p>Builds each day from open jobs, skills, availability and location, and assigns new work as it arrives.</p>
+          <dl><div><dt>Agent</dt><dd>Assigns jobs within your rules</dd></div><div><dt>Your team</dt><dd>Approves changes outside them</dd></div></dl>
+        </div>
+      </article>
+      <article class="opw-panel" tabindex="0" style="--tint:#D8F3DC">
+        <span class="opw-num">02</span>
+        <h3 class="opw-name"><i class="fas fa-route"></i> Route planning</h3>
+        <div class="opw-body">
+          <p>Groups jobs by area and orders stops to cut driving time between visits.</p>
+          <dl><div><dt>Agent</dt><dd>Orders stops and updates routes</dd></div><div><dt>Your team</dt><dd>Sets zones and priorities</dd></div></dl>
+        </div>
+      </article>
+      <article class="opw-panel" tabindex="0" style="--tint:#FFE1CC">
+        <span class="opw-num">03</span>
+        <h3 class="opw-name"><i class="fas fa-comment-sms"></i> Customer updates</h3>
+        <div class="opw-body">
+          <p>Sends arrival windows, reminders and delay notices by SMS or email, and records replies on the job.</p>
+          <dl><div><dt>Agent</dt><dd>Sends approved messages</dd></div><div><dt>Your team</dt><dd>Handles complaints and disputes</dd></div></dl>
+        </div>
+      </article>
+      <article class="opw-panel" tabindex="0" style="--tint:#E6DCFF">
+        <span class="opw-num">04</span>
+        <h3 class="opw-name"><i class="fas fa-boxes-stacked"></i> Parts and inventory</h3>
+        <div class="opw-body">
+          <p>Checks stock for upcoming jobs and raises purchase requests in your ERP before a job is blocked.</p>
+          <dl><div><dt>Agent</dt><dd>Drafts requests and tracks delivery</dd></div><div><dt>Your team</dt><dd>Approves spend above your limit</dd></div></dl>
+        </div>
+      </article>
+      <article class="opw-panel" tabindex="0" style="--tint:#FFF3C4">
+        <span class="opw-num">05</span>
+        <h3 class="opw-name"><i class="fas fa-clipboard-check"></i> Job close-out</h3>
+        <div class="opw-body">
+          <p>Checks photos, notes and sign-off are complete, closes the job and passes billing details to accounts.</p>
+          <dl><div><dt>Agent</dt><dd>Flags missing items to the technician</dd></div><div><dt>Your team</dt><dd>Reviews jobs with exceptions</dd></div></dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 6. A DAY ON THE CLOCK (opc) ═════════ -->
+<section id="op-day" class="op-sec opc">
+  <div class="op-wrap opc-grid">
+    <div class="opc-dial-wrap">
+      <svg class="opc-dial" viewBox="0 0 320 320" aria-hidden="true">
+        <circle class="opc-face" cx="160" cy="160" r="140"/>
+        <circle class="opc-ring" cx="160" cy="160" r="122"/>
+        <g id="opcTicks"></g>
+        <g id="opcMarks"></g>
+        <g class="opc-hand" id="opcHand"><line x1="160" y1="160" x2="160" y2="52"/><circle cx="160" cy="52" r="7"/></g>
+        <circle class="opc-hub" cx="160" cy="160" r="10"/>
+      </svg>
+      <div class="opc-now"><strong id="opcTime">06:00</strong><small>agent time</small></div>
+    </div>
+
+    <div>
+      <p class="op-eyebrow">A day with an operations agent</p>
+      <h2 class="op-title">From the first route to tomorrow's plan.</h2>
+      <div class="opc-card" id="opcCard" aria-live="polite">
+        <h3 id="opcEvTitle"></h3>
+        <p id="opcEvText"></p>
+      </div>
+      <div class="opc-chips" id="opcChips" role="group" aria-label="Moments in the day"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 7. CTA (opx) ═════════ -->
+<section id="op-cta" class="opx">
+  <div class="opx-wrap">
+    <p class="opx-eyebrow">Built for your operations team</p>
+    <h2 class="opx-title">Fewer gaps in the schedule. Fewer calls asking where the technician is.</h2>
+    <p class="opx-lead">Start with one workflow, such as daily dispatch or delay notifications, review the results with your dispatchers, then extend.</p>
+    <div class="opx-btns">
+      <a href="contact.html" class="agh-btn">Talk to us about operations agents <svg class="agh-i"><use href="#i-arrow-right"/></svg></a>
+      <a href="ai-workflow-audit.html" class="agc-btn">Start with an AI Workflow Audit</a>
+    </div>
+    <ul class="opx-checks">
+      <li><svg class="opx-i"><use href="#i-check"/></svg> Works inside <a href="zuper.html">Zuper</a>, <a href="zoho.html">Zoho</a>, <a href="sap-business-one.html">SAP Business One</a> and <a href="netsuite.html">NetSuite</a></li>
+      <li><svg class="opx-i"><use href="#i-check"/></svg> Dispatchers approve what you choose</li>
+      <li><svg class="opx-i"><use href="#i-check"/></svg> Every change logged. <a href="agent-governance.html">See Agent Governance</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═════════ 8. FAQ (same as agent page) ═════════ -->
+<section id="op-faq" class="agf">
+  <div class="agf-wrap">
+    <div>
+      <p class="agf-eyebrow">Questions</p>
+      <h2 class="agf-title">Answers before you ask.</h2>
+    </div>
+    <div class="agf-list">
+      <details class="agf-item"><summary>What is an AI operations agent, and how is it different from scheduling software?</summary><p>Scheduling software gives your team a board to plan on. An AI operations agent does the planning work on that board: it reads jobs, skills, availability, locations and parts from your systems, assigns and re-assigns work within rules you set, notifies customers and technicians, and flags anything it should not decide alone. Your existing software stays in place.</p></details>
+      <details class="agf-item"><summary>Which systems can operations agents work with?</summary><p>We build operations agents on field service and back-office systems such as <a href="zuper.html">Zuper</a>, <a href="zoho.html">Zoho</a>, <a href="sap-business-one.html">SAP Business One</a>, <a href="netsuite.html">NetSuite</a> and <a href="quickbooks.html">QuickBooks</a>, and connect them to calendars, maps, email and SMS. If you run something else, tell us and we will scope the connection.</p></details>
+      <details class="agf-item"><summary>Can the agent change the schedule on its own?</summary><p>Only within the limits you set. For example, you might let it move a job within the same day and window, but require a dispatcher's approval to change the day, the technician on a named account, or anything that adds overtime. Every change is recorded with the reason, so dispatchers can review or undo it.</p></details>
+      <details class="agf-item"><summary>How does the agent handle last-minute changes?</summary><p>When a technician is unavailable, a part is late, a job overruns or the weather turns, the agent finds the affected jobs, works out the best re-plan within your rules, updates the schedule and notifies the customers and technicians involved. Anything it cannot solve cleanly goes to a dispatcher with the options laid out.</p></details>
+      <details class="agf-item"><summary>Will customers be notified automatically?</summary><p>If you want them to be. The agent can send booking confirmations, arrival windows, on-the-way messages and delay notices by SMS or email using wording you approve, and it records replies on the job. Complaints and sensitive conversations are passed to your team.</p></details>
+      <details class="agf-item"><summary>Can operations agents help with back-office work too?</summary><p>Yes. Agents can check that job notes, photos and sign-off are complete, chase technicians for missing items, raise purchase requests for parts, update timesheets and pass billing details to your accounting system. Approvals above your limits stay with your team.</p></details>
+      <details class="agf-item"><summary>How much do operations agents cost, and how long do they take to launch?</summary><p>Cost depends on the number of technicians and jobs, the systems involved, the quality of your job and skills data, and the level of ongoing support. A focused agent for one workflow, such as daily dispatch or delay notifications, can often be piloted in a matter of weeks. After a short discovery call we give you a scoped proposal with a realistic range.</p></details>
+      <details class="agf-item"><summary>How do we measure whether the agent is working?</summary><p>We agree the measures before launch, typically unassigned jobs at the start of the day, on-time arrivals, travel time between jobs, time to re-plan after a disruption and hours spent on admin. Your dispatchers review the agent's decisions during the pilot, and we tune the rules from what we see.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ───────── FOOTER ───────── -->
+<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+         <a href="/" class="inline-block mb-4">
+  <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:38px;width:auto;" />
+</a>
+          <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://github.com/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">GitHub</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <div class="flex flex-col gap-3">
+            <a href="managed.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
+            <a href="consulting.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
+            <a href="cyber.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
+            <a href="web_development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
+            <a href="mobile-development.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="cloud.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
+            <a href="software.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
+            <a href="airtable.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
+            <a href="web-performance.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
+            <a href="seo.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="about.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
+            <a href="whyus.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
+            <a href="team.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="careers.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="testimonials.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="case.html" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <div class="flex flex-col gap-3">
+            <a href="https://goo.gl/maps/FQ94WC487zmjWJQh8" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mulund East, Mumbai, India – 400081</a>
+            <a href="mailto:info@rethinkingweb.com" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">info@rethinkingweb.com</a>
+            <a href="contact.html" class="inline-flex items-center justify-center mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+      <a href="index.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+        <div class="flex gap-6">
+          <a href="terms.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
+          <a href="privacy.html" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="js/agent.js"></script>                             <!-- reused: hero video + FAQ one-at-a-time -->
+<script src="js/operations-agents.js"></script>
+</body>
+</html>

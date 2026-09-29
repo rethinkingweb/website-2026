@@ -30,7 +30,7 @@
 .agh-title{margin:0;font-size:clamp(3rem,6.5vw,6.5rem);line-height:.95;max-width:56rem;text-align:left}
 .agh-row{display:flex;flex-direction:column;align-items:flex-start;gap:1.5rem;margin-top:1.5rem;max-width:36rem}
 .agh-row p{margin:0;max-width:36rem;font-size:1.125rem;line-height:1.8;text-align:left;color:color-mix(in oklch,var(--primary-foreground) 72%,transparent)}
-.agh-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;align-self:flex-start;flex-shrink:0;margin:0;height:3rem;padding:0 1.5rem;border-radius:var(--radius);font:600 .875rem var(--font-sans);white-space:nowrap;background:var(--signal);color:var(--signal-foreground);transition:background .2s}
+.agh-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;align-self:flex-start;flex-shrink:0;margin:0;height:3rem;padding:15px;border-radius:var(--radius);font:600 .875rem var(--font-sans);white-space:nowrap;background:var(--signal);color:var(--signal-foreground);transition:background .2s}
 .agh-btn:hover{background:color-mix(in oklch,var(--signal) 90%,transparent)}
 .agh-i{width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .agh-rise{animation:agh-rise .7s cubic-bezier(.22,1,.36,1) both}
