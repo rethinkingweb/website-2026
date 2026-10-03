@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Voice Agent Development Services | Custom Voice AI Agents | RethinkingWeb</title>
-  <link rel="canonical" href="https://www.rethinkingweb.com/voice-agents.html" />
-  <meta name="description" content="Custom AI voice agent development services. Voice agents that answer, qualify, book and follow up by phone, connected to your CRM, calendar and helpdesk, with guardrails and human handoff." />
-  <meta property="og:title" content="AI Voice Agent Development Services | Custom Voice AI Agents | RethinkingWeb" />
-  <meta property="og:description" content="Voice agents that handle inbound and outbound calls inside the systems you already run, with a clean handoff to your team." />
+  <title>AI Workflow Audit | Find the Best Workflows to Automate | RethinkingWeb</title>
+  <link rel="canonical" href="https://www.rethinkingweb.com/ai-workflow-audit.html" />
+  <meta name="description" content="An AI workflow audit maps how work moves through your team and systems, scores each workflow for value and feasibility, and gives you a ranked plan for your first AI agent." />
+  <meta property="og:title" content="AI Workflow Audit | Find the Best Workflows to Automate | RethinkingWeb" />
+  <meta property="og:description" content="Map your workflows, score them for value and feasibility, and get a ranked plan for your first AI agent." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.rethinkingweb.com/voice-agents.html" />
+  <meta property="og:url" content="https://www.rethinkingweb.com/ai-workflow-audit.html" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
@@ -18,65 +18,42 @@
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
-            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
-            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
-            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
-            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
-            muted: '#7A6F68',
-          },
-          fontFamily: {
-            display: ['"Inter Tight"', 'sans-serif'],
-            body:    ['"Inter Tight"', 'sans-serif'],
-          },
-          maxWidth: { container: '1200px', nav: '1280px' },
-          boxShadow: {
-            card:    '0 4px 24px rgba(0,0,0,0.08)',
-            'card-md':'0 8px 40px rgba(0,0,0,0.1)',
-            'card-lg':'0 12px 30px rgba(0,0,0,0.08)',
-            orange:  '0 8px 30px rgba(231,92,35,0.25)',
-          },
-        }
-      }
+      theme: { extend: {
+        colors: {
+          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+          muted: '#7A6F68',
+        },
+        fontFamily: { display: ['"Inter Tight"', 'sans-serif'], body: ['"Inter Tight"', 'sans-serif'] },
+        maxWidth: { container: '1200px', nav: '1280px' },
+      } }
     }
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/contact.css" />
-  <link rel="stylesheet" href="css/agent.css" />
-   <link rel="stylesheet" href="css/voice-agents.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
-  <script src="https://www.google.com/recaptcha/api.js?render=6LclLGktAAAAAPfi8Y1FG-CtGUINZ_Q3nTo2lp99"></script>
-  <style>
-    .grecaptcha-badge { visibility: hidden; }
-    /* keep desktop menu labels on one line */
-    #navLinks .nav__link { white-space: nowrap; }
-  </style>
+  <link rel="stylesheet" href="css/agent.css" />                    <!-- reused: hero (agh), FAQ (agf), tokens -->
+  <link rel="stylesheet" href="css/ai-workflow-audit.css" />        <!-- new sections -->
+  <style>.grecaptcha-badge{visibility:hidden}#navLinks .nav__link{white-space:nowrap}</style>
 
-  <!-- FAQ structured data (matches the visible FAQ on the page) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question","name": "What is an AI agent, and how is it different from a chatbot or basic automation?","acceptedAnswer": {"@type": "Answer","text": "An AI agent takes a goal, reads context from your systems, decides the next step within rules you set, and acts across your tools. A chatbot mostly answers questions, and basic automation follows fixed if-then paths. An agent can handle variation in the work and knows when to hand a case to a person."}},
-      {"@type": "Question","name": "Do we need to replace our CRM, ERP or helpdesk?","acceptedAnswer": {"@type": "Answer","text": "No. Agents work inside the systems you already run and connect to them through their existing interfaces. There is no new platform for your team to log in to or manage."}},
-      {"@type": "Question","name": "How do you keep agents under control?","acceptedAnswer": {"@type": "Answer","text": "You define the rules, permissions and approval steps. Each agent only has access to the tools it needs, and every action is recorded with what the agent saw, decided and changed. Read more about Agent Governance."}},
-      {"@type": "Question","name": "Which workflow should we start with?","acceptedAnswer": {"@type": "Answer","text": "Start with a repetitive, high-volume workflow that has clear rules and a measurable outcome, such as inbound requests, scheduling, or overdue invoice follow-up. An AI Workflow Audit helps rank your candidates by value and feasibility."}},
-      {"@type": "Question","name": "Which systems can agents connect to?","acceptedAnswer": {"@type": "Answer","text": "We work with Salesforce, NetSuite, SAP Business One, Shopify, QuickBooks, WooCommerce, Zoho, Zuper, Attio and Twenty, among others. If you run something else, tell us and we will scope the connection."}},
-      {"@type": "Question","name": "What happens when an agent is not sure what to do?","acceptedAnswer": {"@type": "Answer","text": "It escalates to a person with the full context instead of guessing. You set the thresholds that decide when an agent acts on its own and when it asks for approval."}},
-      {"@type": "Question","name": "What are AI agent development services?","acceptedAnswer": {"@type": "Answer","text": "AI agent development services cover the strategy, design, build, integration and ongoing management of AI agents that complete tasks on their own inside your business systems. That includes choosing the workflow, selecting the language model, connecting your tools, adding guardrails and approvals, testing, deployment and monitoring."}},
-      {"@type": "Question","name": "How much do AI agent development services cost?","acceptedAnswer": {"@type": "Answer","text": "Cost depends on the number of workflows, how many systems the agent connects to, the quality of your data, and the level of ongoing support. A focused single-workflow agent costs much less than a multi-agent system across several departments. After a short discovery call we give you a scoped proposal with a realistic range."}},
-      {"@type": "Question","name": "How long does it take to build an AI agent?","acceptedAnswer": {"@type": "Answer","text": "A focused agent for one workflow can often go through audit, design and pilot in a matter of weeks. Multi-agent systems with several integrations take longer. We start with one workflow, prove it with your team reviewing results, and then extend to the next."}},
-      {"@type": "Question","name": "What is a multi-agent system?","acceptedAnswer": {"@type": "Answer","text": "A multi-agent system is a set of AI agents that each own a specific role and pass work to each other. For example, one agent reads an incoming invoice, another matches it to the purchase order, and a third updates the schedule. An orchestration layer coordinates the handoffs and keeps a record of every step."}},
-      {"@type": "Question","name": "What is RAG, and do AI agents need it?","acceptedAnswer": {"@type": "Answer","text": "RAG (retrieval-augmented generation) lets an agent search your documents, policies and records before it responds. Most business agents need it, because it keeps answers based on your own information instead of the model's general knowledge, and it reduces made-up answers."}},
-      {"@type": "Question","name": "How do you reduce AI hallucinations in agents?","acceptedAnswer": {"@type": "Answer","text": "We combine several controls: retrieval from your approved data, tightly written instructions, output validation, confidence thresholds, limited tool permissions and human approval for sensitive actions. Every run is logged, so errors can be found and fixed quickly."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"RethinkingWeb","alternateName":"RTW","url":"https://www.rethinkingweb.com","logo":"https://www.rethinkingweb.com/images/rtw_logo.png","contactPoint":{"@type":"ContactPoint","telephone":"+919920996021","contactType":"customer service","areaServed":["US","GB","IN"],"availableLanguage":"en"},"sameAs":["https://www.linkedin.com/company/rethinkingweb/"]}
   </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is an AI workflow audit?","acceptedAnswer":{"@type":"Answer","text":"An AI workflow audit is a structured review of how work moves through your team and systems. We map the workflows, measure volume and effort, score each one for value, feasibility and risk, and give you a ranked plan that shows which workflows to hand to an AI agent first and which to leave with people."}},
+    {"@type":"Question","name":"Who should do an AI workflow audit, and when?","acceptedAnswer":{"@type":"Answer","text":"It suits teams that know their work is slow or repetitive but are unsure where an AI agent would help most, or that have a long list of ideas and need to choose one. It is best done before building anything, because it stops you automating the wrong workflow first."}},
+    {"@type":"Question","name":"What do you need from our team?","acceptedAnswer":{"@type":"Answer","text":"We need time with the people who run each workflow, a few example cases or documents, and a view of the systems involved, such as your CRM, ERP and helpdesk. Sample documents can be anonymised where needed. One person who can make decisions on priorities helps keep the audit moving."}},
+    {"@type":"Question","name":"How do you score and rank workflows?","acceptedAnswer":{"@type":"Answer","text":"Each workflow is rated on value, feasibility, data readiness and risk. Value reflects volume, time spent and cost of delay. Feasibility reflects how clear the rules are and whether your systems can be reached. The scores place each workflow on a map, so the best starting points are easy to see."}},
+    {"@type":"Question","name":"What do we receive at the end of the audit?","acceptedAnswer":{"@type":"Answer","text":"You receive a workflow map showing handoffs and delays, an opportunity scorecard, a readiness check on your data and systems, notes on risks and the approvals each workflow needs, and a pilot plan with a sequenced roadmap."}},
+    {"@type":"Question","name":"How long does an AI workflow audit take, and what does it cost?","acceptedAnswer":{"@type":"Answer","text":"Timing and cost depend on how many workflows and teams are in scope and how many systems are involved. A focused audit of a few workflows is quicker than one that spans several departments. After a short call we give you a scoped proposal with a realistic range."}},
+    {"@type":"Question","name":"Do we have to build agents with RethinkingWeb after the audit?","acceptedAnswer":{"@type":"Answer","text":"No. The roadmap is written so that your own team or another partner could act on it. If you want us to build the first agent, we can scope it directly from the audit findings."}},
+    {"@type":"Question","name":"What if no workflow is a good fit for an AI agent?","acceptedAnswer":{"@type":"Answer","text":"We will tell you. The audit may find that data, process or system issues should be fixed first, or that a simpler automation does the job. A clear answer of not yet is still a useful result, because it saves you from building something that would not work."}}
+  ]}
+  </script>
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -578,142 +555,248 @@
 
 <!-- Overlay -->
 <div class="nav-overlay" id="navOverlay"></div>
-<main class="ag-page vg-page" id="main">
+
+
+<main class="ag-page wa-page" id="main">
 
 <!-- ═════════ 1. HERO (same as agent page) ═════════ -->
-<section id="vg-top" class="agh">
+<section id="wa-top" class="agh">
   <video class="agh-video" src="video/agents-orchestration.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="agh-shade"></div>
   <div class="agh-wrap">
     <div class="agh-copy">
-      <div class="agh-eyebrow agh-rise"><span class="agh-dot"></span> AI voice agent development services</div>
-      <h1 class="agh-title agh-rise">Every call answered, every time.</h1>
+      <div class="agh-eyebrow agh-rise"><span class="agh-dot"></span> AI workflow audit</div>
+      <h1 class="agh-title agh-rise">Find the workflows worth giving to an agent.</h1>
       <div class="agh-row agh-rise-late">
-        <p>Natural-sounding voice agents that answer, qualify, book and follow up by phone, connected to the CRM, calendar and helpdesk you already run.</p>
-        <a href="contact.html" class="agh-btn">Hear how it works <svg class="agh-i"><use href="#i-arrow-down"/></svg></a>
+        <p>A structured audit that maps how work really moves through your team and systems, scores each workflow for value and feasibility, and hands you a ranked plan.</p>
+        <a href="contact.html" class="agh-btn">See how workflows are scored <svg class="agh-i"><use href="#i-arrow-down"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═════════ 2. INTRO + LIVE WAVEFORM (vgi) ═════════ -->
-<section id="vg-intro" class="vg-sec vgi">
-  <div class="vg-wrap vgi-grid">
-    <div class="vg-rise">
-      <p class="vg-eyebrow">AI voice agent development company</p>
-      <h2 class="vg-title">Voice AI agents that sound natural and finish the job.</h2>
-      <p class="vg-lead">RethinkingWeb designs, builds and manages custom AI voice agents for teams that lose calls, time and revenue to the phone. Each agent listens, understands, acts inside your systems, and speaks back in real time.</p>
-      <p class="vgi-more">Unlike an old phone tree, a voice agent has a real conversation. It can ask follow-up questions, check an order, book a slot, and log the call in your CRM. When a caller needs a person, it transfers the call with a summary so nobody repeats themselves. Our voice agent development services cover use-case selection, conversation design, speech and language models, integrations, testing and ongoing monitoring.</p>
-    </div>
-    <div class="vgi-card vg-rise">
-      <div class="vgi-live"><span><i class="vgi-dot"></i> Live call</span><span>AI voice agent</span></div>
-      <div class="vg-bars is-big" data-bars="28" aria-hidden="true"></div>
-      <p class="vgi-cap">“Thanks for calling. I can help with that. Let me check your account.”</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═════════ 3. LIVE CALL DEMO (vgd) ═════════ -->
-<section id="vg-demo" class="vg-sec vgd">
-  <div class="vg-wrap">
-    <div class="vg-rise">
-      <p class="vg-eyebrow">See a call unfold</p>
-      <h2 class="vg-title">Pick a scenario and watch the agent work.</h2>
-      <p class="vg-lead">Sample conversations showing what the caller hears and what the agent does behind the scenes.</p>
-    </div>
-    <div class="vgd-grid vg-rise">
-      <div class="vgd-tabs" role="tablist" aria-label="Call scenarios">
-        <button class="vgd-tab is-active" role="tab" aria-selected="true" data-i="0" type="button"><small>Inbound</small>Book an appointment</button>
-        <button class="vgd-tab" role="tab" aria-selected="false" data-i="1" type="button"><small>Inbound</small>Order status</button>
-        <button class="vgd-tab" role="tab" aria-selected="false" data-i="2" type="button"><small>Outbound</small>Overdue invoice</button>
+<!-- ═════════ 2. INTRO + WORKFLOW MAP THAT DRAWS ITSELF (wai) ═════════ -->
+<section id="wa-intro" class="wa-sec wai">
+  <div class="wa-wrap">
+    <div class="wai-head">
+      <div>
+        <p class="wa-eyebrow">AI workflow audit</p>
+        <h2 class="wa-title">Start by seeing where the work actually gets stuck.</h2>
       </div>
-      <div class="vgd-phone">
-        <div class="vgd-bar"><span>Sample call</span><span class="vg-bars is-mini" data-bars="6" aria-hidden="true"></span></div>
-        <div class="vgd-body" id="vgdBody" aria-live="polite"></div>
-        <div class="vgd-acts" id="vgdActs"></div>
+      <div>
+        <p class="wa-lead">An AI workflow audit is the step before building. We map the workflows your team runs today, find the handoffs, delays and rework, and measure what each one costs in time.</p>
+        <p class="wai-more">Then we score every workflow for value, feasibility, data readiness and risk. The outcome is an automation roadmap: the workflows to hand to an AI agent first, the ones that need preparation, and the ones that should stay with people.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ═════════ 4. HOW A CALL FLOWS (vgp) ═════════ -->
-<section id="vg-flow" class="vg-sec vgp">
-  <div class="vg-wrap">
-    <div class="vg-rise">
-      <p class="vg-eyebrow">Under the hood</p>
-      <h2 class="vg-title">What happens in the second after a caller speaks.</h2>
-      <p class="vg-lead">Five steps run in real time, with your rules and permissions applied at every one.</p>
-    </div>
-    <ol class="vgp-list" id="vgpList">
-      <li class="vgp-step"><span class="vgp-num">1</span><h3>Hear</h3><p>Speech-to-text turns the caller's words into text, tuned for accents, noise and interruptions.</p></li>
-      <li class="vgp-step"><span class="vgp-num">2</span><h3>Understand</h3><p>A language model works out intent, using RAG to check your policies, prices and records.</p></li>
-      <li class="vgp-step"><span class="vgp-num">3</span><h3>Act</h3><p>Function calling books the slot, checks the order or updates the CRM through approved APIs.</p></li>
-      <li class="vgp-step"><span class="vgp-num">4</span><h3>Speak</h3><p>Text-to-speech replies in a natural voice you choose, in a few hundred milliseconds.</p></li>
-      <li class="vgp-step"><span class="vgp-num">5</span><h3>Record</h3><p>Transcript, summary and outcome are logged, so every call is reviewable and searchable.</p></li>
+    <p class="wai-cap">A typical request, before an agent</p>
+    <ol class="wai-map" id="waiMap">
+      <li style="--i:0"><span class="wai-node"><i class="fas fa-envelope"></i></span><b>Request arrives by email</b><span class="wai-pain">Sits in a shared inbox</span></li>
+      <li style="--i:1"><span class="wai-node"><i class="fas fa-keyboard"></i></span><b>Details retyped into a sheet</b><span class="wai-pain">Retyped by hand</span></li>
+      <li style="--i:2"><span class="wai-node"><i class="fas fa-magnifying-glass"></i></span><b>Checked in another system</b><span class="wai-pain">Waiting on a person</span></li>
+      <li style="--i:3"><span class="wai-node"><i class="fas fa-user-check"></i></span><b>Approval chased by message</b><span class="wai-pain">Waiting on a person</span></li>
+      <li style="--i:4"><span class="wai-node"><i class="fas fa-database"></i></span><b>Record updated manually</b><span class="wai-pain">Risk of errors</span></li>
     </ol>
   </div>
 </section>
 
-<!-- ═════════ 5. USE CASES (vgu) ═════════ -->
-<section id="vg-use" class="vg-sec vgu">
-  <div class="vg-wrap">
-    <div class="vg-rise">
-      <p class="vg-eyebrow">What voice agents handle</p>
-      <h2 class="vg-title">The calls your team shouldn't have to take.</h2>
+<!-- ═════════ 3. VALUE × FEASIBILITY MAP (was) ═════════ -->
+<section id="wa-score" class="wa-sec was">
+  <div class="wa-wrap">
+    <div class="wa-head">
+      <p class="wa-eyebrow">Opportunity scorecard</p>
+      <h2 class="wa-title">Every workflow lands on the map. The best starting points stand out.</h2>
+      <p class="wa-lead">Select a bubble to see how it was rated. These are example workflows. Yours will be scored from your own volumes, systems and data.</p>
     </div>
-    <div class="vgu-grid">
-      <article class="vgu-card vg-rise"><span class="vgu-idx">01</span><span class="vgu-icon"><i class="fas fa-phone-volume"></i></span><h3>Inbound call answering</h3><p>Pick up instantly, day or night, and route or resolve the call without a queue.</p></article>
-      <article class="vgu-card vg-rise"><span class="vgu-idx">02</span><span class="vgu-icon"><i class="fas fa-calendar-check"></i></span><h3>Appointment scheduling</h3><p>Check live availability, book, reschedule and confirm by text.</p></article>
-      <article class="vgu-card vg-rise"><span class="vgu-idx">03</span><span class="vgu-icon"><i class="fas fa-user-check"></i></span><h3>Lead qualification</h3><p>Ask your qualifying questions and pass warm leads to a rep with notes.</p></article>
-      <article class="vgu-card vg-rise"><span class="vgu-idx">04</span><span class="vgu-icon"><i class="fas fa-phone"></i></span><h3>Outbound follow-up</h3><p>Reminders, callbacks and no-show recovery, at times and volumes you set.</p></article>
-      <article class="vgu-card vg-rise"><span class="vgu-idx">05</span><span class="vgu-icon"><i class="fas fa-box-open"></i></span><h3>Order &amp; status enquiries</h3><p>Look up orders, jobs and tickets and give the caller a straight answer.</p></article>
-      <article class="vgu-card vg-rise"><span class="vgu-idx">06</span><span class="vgu-icon"><i class="fas fa-file-invoice-dollar"></i></span><h3>Payment reminders</h3><p>Polite collection calls that log every reply and escalate disputes to a person.</p></article>
-    </div>
-  </div>
-</section>
 
-<!-- ═════════ 6. HANDOFF + CTA (vgt) ═════════ -->
-<section id="vg-handoff" class="vgt">
-  <div class="vgt-wrap">
-    <div>
-      <p class="vgt-eyebrow">Built for real callers</p>
-      <h2 class="vgt-title">A person is always one step away.</h2>
-      <p class="vgt-lead">Voice agents hand over smoothly, keep records for review, and stay inside the rules you define. <a href="agent-governance.html">See how Agent Governance works</a>.</p>
-      <ul class="vgt-checks">
-        <li><svg class="vgt-i"><use href="#i-check"/></svg> Warm transfer with a call summary</li>
-        <li><svg class="vgt-i"><use href="#i-check"/></svg> Escalation triggers you control</li>
-        <li><svg class="vgt-i"><use href="#i-check"/></svg> Recordings and transcripts for every call</li>
-        <li><svg class="vgt-i"><use href="#i-check"/></svg> Consent and disclosure built into the script</li>
-      </ul>
-      <div class="vgt-btns">
-        <a href="contact.html" class="agh-btn">Talk to us about voice agents <svg class="agh-i"><use href="#i-arrow-right"/></svg></a>
+    <div class="was-filters" id="wasFilters" role="group" aria-label="Filter by team">
+      <button type="button" class="is-on" data-d="all" aria-pressed="true">All teams</button>
+      <button type="button" data-d="Support" aria-pressed="false"><i class="was-k d-support"></i> Support</button>
+      <button type="button" data-d="Finance" aria-pressed="false"><i class="was-k d-finance"></i> Finance</button>
+      <button type="button" data-d="Sales" aria-pressed="false"><i class="was-k d-sales"></i> Sales</button>
+      <button type="button" data-d="Operations" aria-pressed="false"><i class="was-k d-ops"></i> Operations</button>
+    </div>
+
+    <div class="was-grid">
+      <div class="was-chart" id="wasChart" role="group" aria-label="Workflows plotted by value and feasibility">
+        <span class="was-q was-q-tl">Prepare first</span>
+        <span class="was-q was-q-tr">Start here</span>
+        <span class="was-q was-q-bl">Not yet</span>
+        <span class="was-q was-q-br">Nice to have</span>
+        <span class="was-ax was-ax-x">Feasibility, from harder to easier</span>
+        <span class="was-ax was-ax-y">Value, from lower to higher</span>
+      </div>
+      <div class="was-side">
+        <div class="was-card" id="wasCard" aria-live="polite"></div>
+        <ol class="was-list" id="wasList"></ol>
       </div>
     </div>
-    <div class="vgt-mic" aria-hidden="true"><span></span><span></span><span></span><i class="fas fa-microphone-lines"></i></div>
   </div>
 </section>
 
-<!-- ═════════ 7. FAQ (same as agent page) ═════════ -->
-<section id="vg-faq" class="agf">
+<!-- ═════════ 4. AUDIT PROCESS CAROUSEL (wap) ═════════ -->
+<section id="wa-process" class="wa-sec wap">
+  <div class="wa-wrap">
+    <div class="wap-top">
+      <div class="wa-head">
+        <p class="wa-eyebrow">How the audit runs</p>
+        <h2 class="wa-title">Five steps from a long list of ideas to a short list you can act on.</h2>
+      </div>
+      <div class="wap-btns">
+        <button type="button" id="wapPrev" aria-label="Previous step"><svg class="agh-i" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg></button>
+        <button type="button" id="wapNext" aria-label="Next step"><svg class="agh-i"><use href="#i-arrow-right"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="wap-track" id="wapTrack" tabindex="0" aria-label="Audit steps, scroll sideways">
+    <article class="wap-card">
+      <span class="wap-n">1</span><h3>Discover</h3>
+      <dl><div><dt>We</dt><dd>Agree goals, teams and systems in scope</dd></div><div><dt>You</dt><dd>Join a kickoff call and share your biggest pain points</dd></div><div><dt>You get</dt><dd>A shared scope and success measures</dd></div></dl>
+    </article>
+    <article class="wap-card">
+      <span class="wap-n">2</span><h3>Map</h3>
+      <dl><div><dt>We</dt><dd>Walk through each workflow with the people who run it</dd></div><div><dt>You</dt><dd>Give process owners' time and a few example cases</dd></div><div><dt>You get</dt><dd>A map of handoffs, delays and rework</dd></div></dl>
+    </article>
+    <article class="wap-card">
+      <span class="wap-n">3</span><h3>Measure</h3>
+      <dl><div><dt>We</dt><dd>Size volume, time per item, error rates and system access</dd></div><div><dt>You</dt><dd>Share reports or samples from your systems</dd></div><div><dt>You get</dt><dd>Baseline numbers for every workflow</dd></div></dl>
+    </article>
+    <article class="wap-card">
+      <span class="wap-n">4</span><h3>Score</h3>
+      <dl><div><dt>We</dt><dd>Rate each workflow on value, feasibility, data readiness and risk</dd></div><div><dt>You</dt><dd>Review the scores and challenge our assumptions</dd></div><div><dt>You get</dt><dd>A ranked opportunity scorecard</dd></div></dl>
+    </article>
+    <article class="wap-card">
+      <span class="wap-n">5</span><h3>Roadmap</h3>
+      <dl><div><dt>We</dt><dd>Plan the first pilot, with the limits and approvals it needs</dd></div><div><dt>You</dt><dd>Decide priorities and the order of work</dd></div><div><dt>You get</dt><dd>A pilot plan and a sequenced roadmap</dd></div></dl>
+    </article>
+  </div>
+  <div class="wa-wrap"><div class="wap-bar" aria-hidden="true"><span id="wapBar"></span></div></div>
+</section>
+
+<!-- ═════════ 5. DELIVERABLES FAN (wad) ═════════ -->
+<section id="wa-deliverables" class="wa-sec wad">
+  <div class="wa-wrap">
+    <div class="wa-head">
+      <p class="wa-eyebrow">What you receive</p>
+      <h2 class="wa-title">A pack your team can act on the next day.</h2>
+      <p class="wa-lead">Hover, tap or tab to lift a document out of the pack.</p>
+    </div>
+
+    <div class="wad-fan">
+      <article class="wad-card" style="--r:-7deg;--c:#FFD6E5" tabindex="0">
+        <i class="fas fa-diagram-project"></i>
+        <h3>Workflow map</h3>
+        <p>Each workflow drawn step by step, with owners, handoffs, delays and rework marked.</p>
+      </article>
+      <article class="wad-card" style="--r:-3.5deg;--c:#D6E8FF" tabindex="0">
+        <i class="fas fa-chart-simple"></i>
+        <h3>Opportunity scorecard</h3>
+        <p>Every workflow rated and placed on a value and feasibility map, in ranked order.</p>
+      </article>
+      <article class="wad-card" style="--r:0deg;--c:#D8F3DC" tabindex="0">
+        <i class="fas fa-database"></i>
+        <h3>Readiness check</h3>
+        <p>What your data, documents and systems can support today, and what needs tidying first.</p>
+      </article>
+      <article class="wad-card" style="--r:3.5deg;--c:#FFF3C4" tabindex="0">
+        <i class="fas fa-scale-balanced"></i>
+        <h3>Risk and approvals</h3>
+        <p>The limits, approvals and guardrails each workflow needs, in line with <a href="agent-governance.html">Agent Governance</a>.</p>
+      </article>
+      <article class="wad-card" style="--r:7deg;--c:#E6DCFF" tabindex="0">
+        <i class="fas fa-route"></i>
+        <h3>Pilot plan and roadmap</h3>
+        <p>The first agent scoped end to end, plus the order of the workflows that follow.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 6. TIME-AT-STAKE ESTIMATOR (war) ═════════ -->
+<section id="wa-estimate" class="wa-sec war">
+  <div class="wa-wrap war-grid">
+    <div>
+      <p class="wa-eyebrow">Size a workflow</p>
+      <h2 class="wa-title">How much time is tied up in one repetitive workflow?</h2>
+      <p class="wa-lead">A rough way to size a workflow before the audit measures it properly. It is an estimate for planning, not a promise of results.</p>
+    </div>
+
+    <div class="war-panel">
+      <div class="war-field">
+        <label for="warVol">Items handled per week <output id="warVolO">400</output></label>
+        <input type="range" id="warVol" min="20" max="3000" step="10" value="400" />
+      </div>
+      <div class="war-field">
+        <label for="warMin">Minutes of work per item <output id="warMinO">6</output></label>
+        <input type="range" id="warMin" min="1" max="45" step="1" value="6" />
+      </div>
+      <div class="war-field">
+        <label for="warShare">Share an agent could handle on its own <output id="warShareO">50%</output></label>
+        <input type="range" id="warShare" min="10" max="90" step="5" value="50" />
+      </div>
+
+      <div class="war-out" aria-live="polite">
+        <div><span class="war-big" id="warWeek">0</span><span class="war-unit">hours a week now spent on this</span></div>
+        <div class="war-bar" aria-hidden="true"><span class="war-agent" id="warBarA"></span><span class="war-person" id="warBarP"></span></div>
+        <div class="war-split">
+          <span><i class="war-k a"></i> Could move to an agent: <b id="warFree">0</b> hrs a week, about <b id="warYear">0</b> hrs a year</span>
+          <span><i class="war-k p"></i> Stays with your team: <b id="warKeep">0</b> hrs a week</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 7. KICKOFF CHECKLIST CTA (wax) ═════════ -->
+<section id="wa-cta" class="wax">
+  <div class="wax-wrap">
+    <div>
+      <p class="wax-eyebrow">Ready to start</p>
+      <h2 class="wax-title">Bring a short list. We'll help you find the right first workflow.</h2>
+      <p class="wax-lead">You do not need a finished brief. Tick what you already have for the first call.</p>
+      <div class="wax-btns">
+        <a href="contact.html" class="agh-btn">Book an AI Workflow Audit <svg class="agh-i"><use href="#i-arrow-right"/></svg></a>
+        <a href="agent.html" class="agc-btn">Explore AI agents</a>
+      </div>
+    </div>
+
+    <div class="wax-card">
+      <div class="wax-ring" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" class="wax-track"/><circle cx="32" cy="32" r="26" class="wax-prog" id="waxProg"/></svg>
+        <span id="waxCount">0/4</span>
+      </div>
+      <ul class="wax-list" id="waxList">
+        <li><label><input type="checkbox" /><span class="wax-box"></span><span>A list of the workflows that frustrate your team most</span></label></li>
+        <li><label><input type="checkbox" /><span class="wax-box"></span><span>A few example cases or documents (anonymised is fine)</span></label></li>
+        <li><label><input type="checkbox" /><span class="wax-box"></span><span>One person who knows how each workflow really runs</span></label></li>
+        <li><label><input type="checkbox" /><span class="wax-box"></span><span>A rough idea of the systems involved, such as CRM, ERP or helpdesk</span></label></li>
+      </ul>
+      <p class="wax-note" id="waxNote">Nothing here is required. We can help with any of it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 8. FAQ (same as agent page) ═════════ -->
+<section id="wa-faq" class="agf">
   <div class="agf-wrap">
     <div>
       <p class="agf-eyebrow">Questions</p>
       <h2 class="agf-title">Answers before you ask.</h2>
     </div>
     <div class="agf-list">
-      <details class="agf-item"><summary>What is an AI voice agent, and how is it different from an IVR or phone tree?</summary><p>An AI voice agent holds a real spoken conversation, understands what the caller wants, and completes the task in your systems. A phone tree only offers fixed menu options such as “press 1”. A voice agent can handle varied requests in natural language and knows when to transfer to a person.</p></details>
-      <details class="agf-item"><summary>Can it handle both inbound and outbound calls?</summary><p>Yes. Inbound agents answer, qualify, book and resolve. Outbound agents make reminder, follow-up and callback calls on the schedule and volume you set, within your calling rules.</p></details>
-      <details class="agf-item"><summary>Which systems can a voice agent connect to?</summary><p>We connect voice agents to your CRM, calendar, helpdesk, ERP and accounting tools, including <a href="integration-services.html">Salesforce, NetSuite, SAP Business One, Zoho, QuickBooks and more</a>. If you run something else, tell us and we will scope the connection.</p></details>
-      <details class="agf-item"><summary>What happens when the agent can't help the caller?</summary><p>It transfers the call to a person with a summary of what was said and what was already done, so the caller does not repeat themselves. You set the triggers, such as unhappy callers, sensitive topics or low confidence.</p></details>
-      <details class="agf-item"><summary>How do you handle call recording, consent and privacy?</summary><p>We build disclosure and consent steps into the call script, apply the recording rules for the regions you call, and limit the agent's access to only the data it needs. Every call is logged with a transcript for review. Your legal team should confirm requirements for your markets.</p></details>
-      <details class="agf-item"><summary>Can voice agents speak multiple languages and understand accents?</summary><p>Modern speech models cover many languages and accents. We confirm coverage for your callers and test with real call samples before launch, then tune vocabulary such as product names and place names.</p></details>
-      <details class="agf-item"><summary>How do you stop a voice agent from giving wrong answers?</summary><p>The agent answers from your approved data using retrieval, follows tightly written instructions, and can only take actions it has permission for. Confidence thresholds trigger a handoff instead of a guess, and every call is logged so errors can be found and fixed.</p></details>
-      <details class="agf-item"><summary>How much do AI voice agent development services cost, and how long do they take?</summary><p>Cost depends on call volume, the number of systems connected, and the level of ongoing support. A focused single-workflow voice agent can often be piloted in a matter of weeks. After a short discovery call we give you a scoped proposal with a realistic range.</p></details>
+      <details class="agf-item"><summary>What is an AI workflow audit?</summary><p>An AI workflow audit is a structured review of how work moves through your team and systems. We map the workflows, measure volume and effort, score each one for value, feasibility and risk, and give you a ranked plan that shows which workflows to hand to an AI agent first and which to leave with people.</p></details>
+      <details class="agf-item"><summary>Who should do an AI workflow audit, and when?</summary><p>It suits teams that know their work is slow or repetitive but are unsure where an AI agent would help most, or that have a long list of ideas and need to choose one. It is best done before building anything, because it stops you automating the wrong workflow first.</p></details>
+      <details class="agf-item"><summary>What do you need from our team?</summary><p>We need time with the people who run each workflow, a few example cases or documents, and a view of the systems involved, such as your CRM, ERP and helpdesk. Sample documents can be anonymised where needed. One person who can make decisions on priorities helps keep the audit moving.</p></details>
+      <details class="agf-item"><summary>How do you score and rank workflows?</summary><p>Each workflow is rated on value, feasibility, data readiness and risk. Value reflects volume, time spent and cost of delay. Feasibility reflects how clear the rules are and whether your systems can be reached. The scores place each workflow on a map, so the best starting points are easy to see.</p></details>
+      <details class="agf-item"><summary>What do we receive at the end of the audit?</summary><p>You receive a workflow map showing handoffs and delays, an opportunity scorecard, a readiness check on your data and systems, notes on risks and the approvals each workflow needs, and a pilot plan with a sequenced roadmap.</p></details>
+      <details class="agf-item"><summary>How long does an AI workflow audit take, and what does it cost?</summary><p>Timing and cost depend on how many workflows and teams are in scope and how many systems are involved. A focused audit of a few workflows is quicker than one that spans several departments. After a short call we give you a scoped proposal with a realistic range.</p></details>
+      <details class="agf-item"><summary>Do we have to build agents with RethinkingWeb after the audit?</summary><p>No. The roadmap is written so that your own team or another partner could act on it. If you want us to build the first agent, we can scope it directly from the audit findings.</p></details>
+      <details class="agf-item"><summary>What if no workflow is a good fit for an AI agent?</summary><p>We will tell you. The audit may find that data, process or system issues should be fixed first, or that a simpler automation does the job. A clear answer of not yet is still a useful result, because it saves you from building something that would not work.</p></details>
     </div>
   </div>
 </section>
 </main>
- <!-- ───────── FOOTER ───────── -->
+<!-- ───────── FOOTER ───────── -->
 <footer class="bg-[#0f172a] text-white pt-16 pb-8">
     <div class="max-w-[1200px] mx-auto px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
@@ -776,13 +859,12 @@
       </div>
     </div>
   </footer>
-<!-- ═══ FOOTER: paste the exact same <footer>…</footer> from agent.html here ═══ -->
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
 <script src="/js/script.js"></script>
-<script src="js/agent.js"></script>          <!-- reused: hero video + FAQ one-at-a-time -->
-<script src="js/voice-agents.js"></script>
+<script src="js/agent.js"></script>                      
+<script src="js/ai-workflow-audit.js"></script>
 </body>
 </html>

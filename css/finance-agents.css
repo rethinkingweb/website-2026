@@ -1,0 +1,169 @@
+
+/* ───────── shared ───────── */
+.fa-sec{padding:4rem 1.25rem}
+.fa-wrap{max-width:1440px;margin:0 auto;padding:0 1.25rem}
+.fa-head{display:grid;gap:1.25rem;max-width:56rem}
+.fa-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--signal)}
+.fa-title{font-size:2.25rem;line-height:1.08;max-width:48rem}
+.fa-lead{margin-top:1.25rem;max-width:42rem;font-size:1.125rem;line-height:1.8;color:var(--muted-foreground)}
+.fa-lead a,.fai-more a{color:var(--signal);font-weight:600;border-bottom:1px solid currentColor}
+.fa-page :where(a,button,input,.faw-rail):focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+@media (min-width:768px){.fa-sec{padding:6rem 2.5rem}.fa-wrap{padding:0 2.5rem}.fa-title{font-size:clamp(2.25rem,3.6vw,3.5rem)}}
+
+/* ───────── 2. intro + printing receipt (fai) ───────── */
+.fai{background:var(--background)}
+.fai-grid{display:grid;gap:3rem;align-items:center}
+.fai-more{margin-top:1.25rem;max-width:42rem;line-height:1.85;color:var(--muted-foreground)}
+.fai-printer{width:min(100%,24rem);margin-inline:auto}
+.fai-slot{position:relative;z-index:2;height:.9rem;border-radius:999px;background:var(--surface-deep);box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.fai-print{margin:-.45rem .9rem 0;clip-path:inset(0 0 100% 0);transition:clip-path 2.8s linear}
+.fai-printer.is-on .fai-print{clip-path:inset(0 0 0 0)}
+.fai-receipt{padding:1.75rem 1.25rem 2.25rem;background:#fffdf8;border:1px solid var(--border);border-top:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.8125rem;color:var(--ink-soft);
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
+  filter:drop-shadow(0 16px 20px rgba(0,0,0,.12))}
+.fai-rh{margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px dashed var(--border);font-weight:700;color:var(--foreground)}
+.fai-receipt ul{display:grid;gap:.7rem}
+.fai-receipt li{display:flex;align-items:baseline;gap:.5rem}
+.fai-receipt li i{flex:1;border-bottom:1px dotted var(--border)}
+.fai-receipt li b{color:var(--foreground);font-weight:600;text-align:right}
+.fai-rf{margin-top:1.25rem;padding-top:.75rem;border-top:1px dashed var(--border);text-align:center;color:var(--signal);font-weight:700}
+@media (min-width:960px){.fai-grid{grid-template-columns:1.1fr .9fr;gap:5rem}}
+
+/* ───────── 3. invoice pipeline (faf) ───────── */
+.faf{background:var(--secondary)}
+.faf-controls{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem;margin-top:2.5rem}
+.faf-play{display:inline-flex;align-items:center;gap:.6rem;height:2.75rem;padding:0 1.25rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);color:var(--foreground);font:600 .875rem var(--font-sans);cursor:pointer;transition:border-color .2s,background .2s}
+.faf-play:hover{border-color:var(--signal)}
+.faf-play[aria-pressed="true"]{background:var(--signal);border-color:var(--signal);color:var(--signal-foreground)}
+.faf-switch{display:inline-flex;align-items:center;gap:.75rem;font-size:.9375rem;cursor:pointer;color:var(--ink-soft)}
+.faf-switch input{position:absolute;opacity:0;pointer-events:none}
+.faf-slider{position:relative;flex:none;width:2.75rem;height:1.5rem;border-radius:999px;background:var(--border);transition:background .25s}
+.faf-slider::after{content:"";position:absolute;left:.2rem;top:.2rem;width:1.1rem;height:1.1rem;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3);transition:transform .25s}
+.faf-switch input:checked + .faf-slider{background:var(--signal)}
+.faf-switch input:checked + .faf-slider::after{transform:translateX(1.25rem)}
+.faf-switch input:focus-visible + .faf-slider{outline:2px solid var(--signal);outline-offset:3px}
+
+.faf-board{margin-top:2rem;padding:1.5rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--card)}
+.faf-track-wrap{position:relative;overflow-x:auto;padding:.5rem .25rem 1rem}
+.faf-inner{position:relative;min-width:34rem}
+.faf-track{position:relative;z-index:2;display:flex;justify-content:space-between}
+.faf-track li{flex:1;display:flex;justify-content:center}
+.faf-stage{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:0;border:0;background:none;font:inherit;color:var(--muted-foreground);cursor:pointer}
+.faf-node{display:grid;place-items:center;width:3rem;height:3rem;border:1px solid var(--border);border-radius:50%;background:var(--card);color:var(--muted-foreground);transition:background .3s,border-color .3s,color .3s,transform .3s}
+.faf-stage span{font-size:.8125rem;font-weight:600;transition:color .3s}
+.faf-stage.is-past .faf-node{border-color:var(--signal);color:var(--signal)}
+.faf-stage.is-now .faf-node{background:var(--signal);border-color:var(--signal);color:var(--signal-foreground);transform:scale(1.12)}
+.faf-stage.is-now span,.faf-stage.is-past span{color:var(--foreground)}
+.faf-stage.is-person .faf-node{border-style:dashed}
+.faf-stage.is-person.is-now .faf-node{background:var(--success);border-color:var(--success)}
+.faf-rail{position:absolute;left:calc(100%/12);right:calc(100%/12);top:1.5rem;height:2px;background:var(--border);z-index:1}
+.faf-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--signal);transition:width .6s cubic-bezier(.22,1,.36,1)}
+.faf-doc{position:absolute;left:0;top:-1.6rem;display:grid;place-items:center;width:1.6rem;height:1.6rem;margin-left:-.8rem;border-radius:4px;background:var(--surface-deep);color:#fff;font-size:.7rem;transition:left .6s cubic-bezier(.22,1,.36,1);box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.faf-card{margin-top:1rem;padding:1.5rem;border-top:1px solid var(--border);display:grid;gap:.75rem}
+.faf-card.is-swap{animation:fa-rise .4s cubic-bezier(.22,1,.36,1) both}
+.faf-card h3{font-size:1.5rem}
+.faf-card p{max-width:44rem;line-height:1.75;color:var(--muted-foreground)}
+.faf-meta{display:flex;flex-wrap:wrap;gap:.6rem}
+.faf-chip{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .75rem;border:1px solid var(--border);border-radius:999px;font-size:.8125rem;font-weight:600;color:var(--ink-soft)}
+.faf-chip.is-agent{background:color-mix(in oklch,var(--signal) 10%,transparent);border-color:color-mix(in oklch,var(--signal) 40%,transparent);color:var(--signal)}
+.faf-chip.is-person{background:color-mix(in oklch,var(--success) 14%,transparent);border-color:color-mix(in oklch,var(--success) 45%,transparent);color:oklch(.45 .12 158)}
+@keyframes fa-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ───────── 4. collections simulator (fac) ───────── */
+.fac{background:var(--background)}
+.fac-grid{display:grid;gap:1.5rem;margin-top:2.5rem}
+.fac-pick{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.25rem}
+.fac-opt{flex:0 0 auto;display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);color:var(--foreground);font:600 .9375rem var(--font-sans);text-align:left;cursor:pointer;transition:border-color .2s,background .2s,transform .25s}
+.fac-opt i{color:var(--muted-foreground);transition:color .2s}
+.fac-opt:hover{border-color:var(--signal)}
+.fac-opt.is-active{border-color:var(--signal);background:color-mix(in oklch,var(--signal) 8%,var(--card))}
+.fac-opt.is-active i{color:var(--signal)}
+.fac-out{padding:1.75rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--secondary);min-height:24rem}
+.fac-out.is-swap > *{animation:fa-rise .45s cubic-bezier(.22,1,.36,1) both}
+.fac-out.is-swap > *:nth-child(2){animation-delay:.12s}
+.fac-out.is-swap > *:nth-child(3){animation-delay:.24s}
+.fac-out.is-swap > *:nth-child(4){animation-delay:.36s}
+.fac-msg{max-width:30rem;padding:.9rem 1.1rem;border-radius:.9rem;font-size:.9375rem;line-height:1.6}
+.fac-msg small{display:block;margin-bottom:.25rem;font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.fac-msg.is-agent{margin-left:auto;background:var(--surface-deep);color:#fff;border-bottom-right-radius:.2rem}
+.fac-msg.is-cust{background:var(--card);border:1px solid var(--border);border-bottom-left-radius:.2rem;margin-top:.75rem}
+.fac-acts{margin:1.5rem 0 1rem;display:grid;gap:.6rem}
+.fac-acts li{display:flex;gap:.75rem;align-items:flex-start;line-height:1.5;color:var(--ink-soft)}
+.fac-acts li::before{content:"";flex:none;width:.5rem;height:.5rem;margin-top:.5em;border-radius:50%;background:var(--signal)}
+.fac-end{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1rem;border-radius:999px;font-size:.875rem;font-weight:700}
+.fac-end.is-auto{background:color-mix(in oklch,var(--success) 16%,transparent);color:oklch(.42 .12 158)}
+.fac-end.is-human{background:color-mix(in oklch,var(--signal) 14%,transparent);color:oklch(.5 .17 36)}
+@media (min-width:960px){.fac-grid{grid-template-columns:19rem 1fr;gap:2rem;align-items:start}.fac-pick{flex-direction:column;overflow:visible}.fac-opt{width:100%}.fac-opt.is-active{transform:translateX(6px)}.fac-out{padding:2.25rem}}
+
+/* ───────── 5. expanding panels (faw) ───────── */
+.faw{background:var(--secondary)}
+.faw-row{display:flex;flex-direction:column;gap:.75rem;margin-top:3rem}
+.faw-panel{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);transition:flex-grow .55s cubic-bezier(.22,1,.36,1),border-color .3s,background-color .3s}
+.faw-rail{display:none}
+.faw-body{padding:1.5rem}
+.faw-body h3{font-size:1.375rem}
+.faw-body p{margin-top:.75rem;line-height:1.7;color:var(--muted-foreground)}
+.faw-body ul{margin-top:1.25rem;border-top:1px solid var(--border)}
+.faw-body li{padding:.7rem 0 .7rem 1.5rem;position:relative;border-bottom:1px solid var(--border);color:var(--ink-soft);font-size:.9375rem}
+.faw-body li::before{content:"";position:absolute;left:.1rem;top:1.05em;width:.6rem;height:.35rem;border-left:2px solid var(--signal);border-bottom:2px solid var(--signal);transform:rotate(-45deg)}
+@media (min-width:900px){
+  .faw-row{flex-direction:row;height:26rem}
+  .faw-panel{flex:1 1 0;min-width:0}
+  .faw-panel.is-active{flex-grow:5;border-color:var(--signal);background:color-mix(in oklch,var(--signal) 5%,var(--card))}
+  .faw-rail{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.5rem 0;border:0;background:none;color:var(--foreground);font:inherit;cursor:pointer;transition:opacity .25s}
+  .faw-rail i{font-size:1.25rem;color:var(--signal)}
+  .faw-rail span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:1rem;font-weight:600;white-space:nowrap}
+  .faw-panel.is-active .faw-rail{opacity:0;pointer-events:none}
+  .faw-body{position:absolute;inset:0 auto 0 0;width:26rem;max-width:100%;padding:2rem;opacity:0;transition:opacity .2s}
+  .faw-panel.is-active .faw-body{opacity:1;transition:opacity .35s .3s}
+}
+
+/* ───────── 6. audit log terminal (fak) ───────── */
+.fak{background:var(--background)}
+.fak-grid{display:grid;gap:3rem;align-items:center}
+.fak-term{overflow:hidden;border-radius:var(--radius);background:var(--surface-deep);color:#ece7e2;box-shadow:0 24px 50px -24px rgba(0,0,0,.5)}
+.fak-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem;padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.fak-dots{display:flex;gap:.4rem}
+.fak-dots i{width:.6rem;height:.6rem;border-radius:50%;background:rgba(255,255,255,.22)}
+.fak-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin-left:auto}
+.fak-filters button{padding:.3rem .75rem;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:transparent;color:#ece7e2;font:600 .75rem var(--font-sans);cursor:pointer;transition:background .2s,border-color .2s}
+.fak-filters button:hover{border-color:var(--signal)}
+.fak-filters button.is-on{background:var(--signal);border-color:var(--signal);color:var(--signal-foreground)}
+.fak-replay{width:2rem;height:2rem;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:transparent;color:#ece7e2;cursor:pointer;transition:border-color .2s}
+.fak-replay:hover{border-color:var(--signal)}
+.fak-log{height:23rem;overflow-y:auto;padding:1rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.8125rem;line-height:1.5}
+.fak-line{display:grid;grid-template-columns:3rem 4.6rem 1fr;gap:.75rem;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.07);animation:fa-rise .35s ease both}
+.fak-line[hidden]{display:none}
+.fak-time{color:rgba(255,255,255,.45)}
+.fak-tag{font-weight:700}
+.fak-line.is-agent .fak-tag{color:var(--signal)}
+.fak-line.is-person .fak-tag{color:oklch(.78 .13 158)}
+.fak-line.is-flag .fak-tag{color:#FFC24B}
+.fak-cursor::after{content:"";display:inline-block;width:.5rem;height:1em;margin-left:.2rem;vertical-align:-.15em;background:var(--signal);animation:fa-blink 1s steps(2) infinite}
+@keyframes fa-blink{to{opacity:0}}
+@media (min-width:960px){.fak-grid{grid-template-columns:.85fr 1.15fr;gap:5rem}}
+
+/* ───────── 7. CTA with drifting rows (fax) ───────── */
+.fax{position:relative;overflow:hidden;padding:6rem 1.25rem;color:var(--primary-foreground);
+  background:radial-gradient(at 8% 8%,#0a000f,transparent 42%),radial-gradient(at 88% 15%,rgba(72,0,88,.75),transparent 50%),radial-gradient(at 90% 82%,rgba(231,92,35,.5),transparent 48%),linear-gradient(148deg,#0d000f 0%,#1a0025 40%,#2a0830 65%,#12001a)}
+.fax-rows{position:absolute;inset:-20% -10%;display:flex;flex-direction:column;justify-content:center;gap:1.5rem;transform:rotate(-6deg);opacity:.16;pointer-events:none}
+.fax-row{display:flex;gap:1.5rem;width:max-content;animation:fa-drift 50s linear infinite}
+.fax-rev{animation-direction:reverse;animation-duration:62s}
+.fax-row span{padding:.6rem 1.6rem;border:1px solid rgba(255,255,255,.6);border-radius:999px;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:500;white-space:nowrap}
+@keyframes fa-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.fax-wrap{position:relative;z-index:2;max-width:56rem;margin:0 auto;text-align:center}
+.fax-eyebrow{margin-bottom:1.25rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:color-mix(in oklch,var(--primary-foreground) 65%,transparent)}
+.fax-title{font-size:clamp(2.25rem,4.4vw,4rem);line-height:1.06}
+.fax-lead{margin:1.5rem auto 0;max-width:36rem;font-size:1.125rem;line-height:1.75;color:color-mix(in oklch,var(--primary-foreground) 72%,transparent)}
+.fax-btns{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1rem;margin-top:2.25rem}
+.fax .agc-btn{margin-top:0}
+@media (min-width:768px){.fax{padding:8rem 2.5rem}}
+
+/* ───────── reduced motion ───────── */
+@media (prefers-reduced-motion:reduce){
+  .fai-print{clip-path:none;transition:none}
+  .faf-card.is-swap,.fac-out.is-swap > *,.fak-line{animation:none}
+  .faf-fill,.faf-doc,.faf-node,.faw-panel,.faw-body{transition:none}
+  .fax-row,.fak-cursor::after{animation:none}
+  .fax-rows{opacity:.1}
+}
