@@ -197,6 +197,11 @@ body.dark .mega-item__icon--brand { background: #fff; }
 .mob-accordion__panel a { display: block !important; font-size: 0.875rem !important; font-weight: 600 !important; color: var(--text-muted) !important; padding: 0.65rem 1rem !important; border-bottom: 1px solid var(--border) !important; text-decoration: none !important; transition: color var(--trans), background var(--trans); }
 .mob-accordion__panel a:last-child { border-bottom: none !important; }
 .mob-accordion__panel a:hover { color: var(--orange) !important; background: var(--orange-pale); }
+/* Parent row = [link][chevron toggle]; created by script.js so the link is no longer inside the button */
+.mob-accordion__row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.mob-accordion__row .mob-accordion__link { flex: 1 1 auto; display: block; padding: 0.85rem 0; font-size: 0.875rem; font-weight: 600; color: var(--charcoal); transition: color var(--trans); }
+.mob-accordion__row .mob-accordion__link:hover { color: var(--orange); }
+.mob-accordion__row .mob-accordion__btn { width: auto !important; flex: 0 0 auto; padding: 0.85rem 0.75rem !important; min-width: 44px; min-height: 44px; justify-content: center !important; }
 .mob-chevron { flex-shrink: 0; transition: transform 0.3s ease; }
 .mob-accordion.open .mob-chevron,
 [aria-expanded="true"] .mob-chevron { transform: rotate(180deg); }

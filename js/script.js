@@ -1,5 +1,6 @@
 /* ─────────────────────────────────────────────
-   RethinkingWeb — script.js  (fixed: no auto-scroll on load)
+   RethinkingWeb — script.js  (fixed: no auto-scroll on load,
+   mobile drawer parent links now navigate)
 ───────────────────────────────────────────── */
 
 // ── Counter Animation ──
@@ -69,7 +70,9 @@ document.querySelectorAll('.solution-card, .case-card, .industry-card, .testi-ca
 // ── Smooth scroll for anchors ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -327,10 +330,28 @@ if (burger && mobileNav && overlay && closeBtn) {
 }
 
 // ── Mobile accordion ──
+// FIX: the drawer HTML nests <a> inside <button>, which is invalid and makes
+// the parent links (Agents, Integrations, Solutions, Staff Augmentation,
+// Company) un-tappable on mobile. We split each row into [link][toggle button]
+// here, so every page that uses this drawer is fixed without editing its HTML.
+document.querySelectorAll('.mob-accordion__btn').forEach(btn => {
+  const link = btn.querySelector('a.mob-accordion__link');
+  if (!link) return;
+  if (btn.parentElement && btn.parentElement.classList.contains('mob-accordion__row')) return;
+
+  const row = document.createElement('div');
+  row.className = 'mob-accordion__row';
+  btn.parentNode.insertBefore(row, btn);
+  row.appendChild(link);   // link moves out of the button
+  row.appendChild(btn);    // button (now just the chevron) sits beside it
+  btn.setAttribute('aria-label', 'Toggle ' + link.textContent.trim() + ' menu');
+});
+
 const accordionBtns = document.querySelectorAll('.mob-accordion__btn');
 accordionBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    const panel  = btn.nextElementSibling;
+    const accordion = btn.closest('.mob-accordion');
+    const panel = accordion ? accordion.querySelector('.mob-accordion__panel') : null;
     if (!panel) return;
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
@@ -568,7 +589,7 @@ const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2N
     return allValid;
   }
 
-  /* ── FIX: showStep now takes a shouldScroll flag.
+  /* ── showStep takes a shouldScroll flag.
         Default true (Next/Back/reset still scroll),
         but the very first call on page load passes false. ── */
   function showStep(index, shouldScroll = true) {
@@ -692,5 +713,5 @@ const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2N
   });
 
   populateTimes();
-  showStep(0, false); // FIX: don't scroll on initial page load
+  showStep(0, false); // don't scroll on initial page load
 })();

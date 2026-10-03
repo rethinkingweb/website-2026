@@ -67,7 +67,7 @@
 .age-title{font-size:2.25rem;line-height:1.08;max-width:56rem;color:#fff}
 .age-lead{margin-top:.25rem;max-width:42rem;font-size:1.125rem;line-height:2rem;color:var(--muted-foreground)}
 .age-i{width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
-@media (min-width:768px){.age{padding:2rem 2.5rem}.age-wrap{padding:0 2.5rem}.age-title{font-size:clamp(2.25rem,3.6vw,3.5rem;color:)}}
+@media (min-width:768px){.age{padding:2rem 2.5rem}.age-wrap{padding:0 2.5rem}.age-title{font-size:clamp(2.25rem,3.6vw,3.5rem)}}
 .age-head{padding-bottom:4rem;border-bottom:1px solid var(--border)}
 .age-ent{display:grid;gap:1.5rem;margin-top:3rem}
 .age-tabs{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
