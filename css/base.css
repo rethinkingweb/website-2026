@@ -129,6 +129,28 @@ input, select, textarea, button { font-family: inherit; }
   height: 12px;
 }
 
+/* ── Mega menu: viewport-safe positioning (fixes cut-off at 110% / 125% zoom) ──
+   Before: each menu was centred on its own trigger. Agents / Integrations sit
+   near the left of the nav, so a 760px+ menu centred on them ran off the left
+   edge of the screen as soon as browser zoom shrank the viewport.
+   Now: the menus are anchored to the centre of the nav bar instead, so they sit
+   in the middle of the viewport at any zoom level.
+   - .nav > div            becomes the positioning parent for the menus
+   - dropdowns that hold a mega menu stop being their own positioning parent
+     (the Company dropdown is unchanged)
+   - max-width             stops a menu from ever being wider than the screen
+   - __grid max-height     scrolls inside the menu if the window is too short
+   - bigger ::before       keeps hover alive across the slightly larger gap     */
+.nav > div { position: relative; }
+.nav__dropdown:has(> .mega-menu) { position: static; }
+.nav .nav__dropdown .mega-menu { max-width: calc(100vw - 2rem); }
+.nav .mega-menu::before { top: -24px; height: 24px; }
+.nav .mega-menu__grid {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
 .mega-menu__header {
   display: flex; align-items: center; justify-content: space-between;
   padding-bottom: .85rem; margin-bottom: .75rem;
@@ -155,7 +177,7 @@ input, select, textarea, button { font-family: inherit; }
   transition: background .18s ease; text-decoration: none;
 }
 /* .mega-item:hover { background: var(--bg2); }
-.mega-item:hover .mega-item__icon { 
+.mega-item:hover .mega-item__icon {
   background: var(--orange);
    color: #fff; } */
 
