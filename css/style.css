@@ -90,7 +90,7 @@ input, select, textarea, button { font-family: inherit; }
   font-weight: 600;
   line-height: 1.15;
   color: var(--charcoal);
-  text-align: center;
+  text-align: left;
   margin-bottom: 2.5rem;
 }
 .section-title em {
