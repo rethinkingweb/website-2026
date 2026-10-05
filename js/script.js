@@ -588,7 +588,97 @@ const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2N
     fields.forEach(f => { if (!validateField(f)) allValid = false; });
     return allValid;
   }
+/* ── Agents showcase carousel (homepage) ── */
+(function () {
+  var stage = document.getElementById('agxStage');
+  if (!stage) return;
 
+  var cards = [].slice.call(stage.querySelectorAll('.agx-card'));
+  var dotsWrap = document.getElementById('agxDots');
+  var prevBtn = document.getElementById('agxPrev');
+  var nextBtn = document.getElementById('agxNext');
+  var n = cards.length;
+  var cur = 0;
+  var timer = null;
+  var dragged = false;
+
+  // dots
+  var dots = cards.map(function (c, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'agx-dot';
+    b.setAttribute('aria-label', 'Show agent ' + (i + 1));
+    b.addEventListener('click', function () { go(i); });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  function render() {
+    cards.forEach(function (c, i) {
+      var d = (((i - cur) % n) + n) % n;
+      if (d > n / 2) d -= n;                       // range -2..3 for 6 cards
+      var pos = Math.abs(d) > 2 ? 'far' : d;
+      c.setAttribute('data-pos', pos);
+      c.setAttribute('tabindex', d === 0 ? '0' : '-1');
+      c.setAttribute('aria-hidden', pos === 'far' ? 'true' : 'false');
+      if (d === 0) c.setAttribute('aria-current', 'true'); else c.removeAttribute('aria-current');
+    });
+    dots.forEach(function (b, i) { b.classList.toggle('is-on', i === cur); });
+  }
+
+  function go(i)   { cur = ((i % n) + n) % n; render(); }
+  function next()  { go(cur + 1); }
+  function prev()  { go(cur - 1); }
+
+  // clicking a side card centers it; clicking the centre card follows the link
+  cards.forEach(function (c, i) {
+    c.addEventListener('click', function (e) {
+      if (dragged) { e.preventDefault(); return; }
+      if (c.getAttribute('data-pos') !== '0') { e.preventDefault(); go(i); }
+    });
+  });
+
+  prevBtn.addEventListener('click', function () { prev(); restart(); });
+  nextBtn.addEventListener('click', function () { next(); restart(); });
+
+  stage.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { next(); restart(); }
+    if (e.key === 'ArrowLeft')  { prev(); restart(); }
+  });
+
+  // swipe / drag
+  var startX = null;
+  stage.addEventListener('pointerdown', function (e) { startX = e.clientX; dragged = false; stop(); });
+  stage.addEventListener('pointerup', function (e) {
+    if (startX === null) return;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 40) { dragged = true; dx < 0 ? next() : prev(); setTimeout(function () { dragged = false; }, 50); }
+    startX = null;
+    restart();
+  });
+  stage.addEventListener('pointercancel', function () { startX = null; });
+
+  // autoplay (only while visible, paused on hover/focus, off for reduced-motion)
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var visible = false;
+  function start() { if (reduce || !visible || timer) return; timer = setInterval(next, 4500); }
+  function stop()  { clearInterval(timer); timer = null; }
+  function restart() { stop(); start(); }
+
+  stage.addEventListener('mouseenter', stop);
+  stage.addEventListener('mouseleave', start);
+  stage.addEventListener('focusin', stop);
+  stage.addEventListener('focusout', start);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      visible ? start() : stop();
+    }, { threshold: 0.35 }).observe(stage);
+  }
+
+  render();
+})();
   /* ── showStep takes a shouldScroll flag.
         Default true (Next/Back/reset still scroll),
         but the very first call on page load passes false. ── */

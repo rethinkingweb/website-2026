@@ -369,3 +369,16 @@ body.dark .mega-item__icon--brand { background: #fff; }
   font-size: 1.5rem;
   color: var(--orange);
 }
+/* ── Unified site width: nav + all sections line up ── */
+:root { --site-max: 1536px; --site-pad: 2rem; }
+
+/* Beats Tailwind CDN's .container and .max-w-[1280px] (higher specificity) */
+body .container,
+header#nav > div {
+  width: 100%;
+  max-width: var(--site-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-pad);
+  padding-right: var(--site-pad);
+}

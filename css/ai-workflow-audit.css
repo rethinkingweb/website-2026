@@ -4,7 +4,14 @@
 .wa-wrap{max-width:1440px;margin:0 auto;padding:0 1.25rem}
 .wa-head{display:grid;gap:1.25rem;max-width:56rem}
 .wa-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--signal)}
-.wa-title{font-size:2.25rem;line-height:1.08;max-width:48rem}
+.wa-title{.section-title {
+    margin: 0 0 16px;
+    font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    max-width: 22ch;
+}}
 .wa-lead{margin-top:1.25rem;max-width:42rem;font-size:1.125rem;line-height:1.8;color:var(--muted-foreground)}
 .wa-page :where(a,button,input,[tabindex]):focus-visible{outline:2px solid var(--signal);outline-offset:3px}
 @media (min-width:768px){.wa-sec{padding:6rem 2.5rem}.wa-wrap{padding:0 2.5rem}.wa-title{font-size:clamp(2.25rem,3.6vw,3.5rem)}}
