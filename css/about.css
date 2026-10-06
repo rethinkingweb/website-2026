@@ -29,7 +29,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    PAGE HERO (About)
 ═══════════════════════════════ */
-.page-hero { padding: 4rem; background: var(--bg2); position: relative; overflow: hidden; }
+.page-hero { padding: 7rem; background: var(--bg2); position: relative; overflow: hidden; }
 .page-hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .page-hero__inner { position: relative; z-index: 1; }
 .page-hero__title { font-family: var(--font-display); font-size: clamp(2.6rem,5.5vw,4.8rem); font-weight: 600; line-height: 1.1; letter-spacing: -.02em; color: var(--charcoal); margin-bottom: 1.25rem; animation: fadeUp .7s .1s ease both; }
