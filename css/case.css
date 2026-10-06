@@ -18,7 +18,6 @@ a {
 img { max-width: 100%; display: block; }
 input, select, textarea, button { font-family: inherit; }
 
-/* ── Utility ── */
 /* ═══════════════════════════════
    PAGE HERO
 ═══════════════════════════════ */
@@ -65,6 +64,8 @@ input, select, textarea, button { font-family: inherit; }
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+  position: relative;          /* NEW: anchor for the full-card click area */
+  cursor: pointer;             /* NEW */
 }
 .cs-card:hover { border-color: rgba(231,92,35,.3); transform: translateY(-5px); box-shadow: var(--shadow-orange); }
 .cs-card .cs-card__image { position: relative; overflow: hidden; flex-shrink: 0; }
@@ -84,12 +85,24 @@ input, select, textarea, button { font-family: inherit; }
 }
 
 /* Card content */
-.cs-card__title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--charcoal); line-height: 1.35; }
+.cs-card__title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--charcoal); line-height: 1.35; transition: color var(--trans); }
+.cs-card:hover .cs-card__title { color: var(--orange); }   /* NEW: title highlights on card hover */
 .cs-card__desc { font-size: .875rem; color: var(--text-muted); line-height: 1.75; flex: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .cs-card__link { display: inline-flex; align-items: center; gap: .35rem; font-size: .875rem; font-weight: 700; color: var(--orange); margin-top: auto; transition: gap var(--trans), letter-spacing var(--trans); }
-.cs-card__link:hover { gap: .6rem; letter-spacing: .02em; }
+.cs-card__link:hover,
+.cs-card:hover .cs-card__link { gap: .6rem; letter-spacing: .02em; }   /* NEW: arrow animates on card hover */
 .cs-card__link span { display: inline-block; transition: transform var(--trans); }
-.cs-card__link:hover span { transform: translateX(4px); }
+.cs-card__link:hover span,
+.cs-card:hover .cs-card__link span { transform: translateX(4px); }
+
+/* NEW: stretched link — the "Learn more" link covers the whole card */
+.cs-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+.cs-card:focus-within { outline: 2px solid var(--orange); outline-offset: 2px; }   /* NEW: keyboard focus */
 
 /* AOS */
 [data-aos] { opacity: 1; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
