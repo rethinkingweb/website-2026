@@ -402,6 +402,31 @@ document.addEventListener('DOMContentLoaded', () => {
   showStep(0, false);
 })();
 
+(function () {
+  const input = document.getElementById('resumeInput');
+  const zone  = document.getElementById('dropzone');
+  const text  = document.getElementById('dropzoneText');
+  const msg   = document.getElementById('fileMsg');
+  if (!input) return;
+  const original = text.innerHTML;
+
+  function check() {
+    msg.textContent = '';
+    const f = input.files[0];
+    if (!f) { zone.classList.remove('has-file'); text.innerHTML = original; return; }
+    const okType = /\.(pdf|doc|docx)$/i.test(f.name);
+    if (!okType || f.size > 4 * 1024 * 1024) {
+      msg.textContent = !okType ? 'Please attach a PDF, DOC or DOCX file.' : 'File is larger than 4 MB.';
+      input.value = ''; zone.classList.remove('has-file'); text.innerHTML = original; return;
+    }
+    zone.classList.add('has-file');
+    text.textContent = f.name + ' (' + (f.size / 1024 / 1024).toFixed(2) + ' MB)';
+  }
+  input.addEventListener('change', check);
+  ['dragenter','dragover'].forEach(e => zone.addEventListener(e, () => zone.classList.add('is-drag')));
+  ['dragleave','drop'].forEach(e => zone.addEventListener(e, () => zone.classList.remove('is-drag')));
+})();
+
   /* ══════════════════════════════
      7. SMOOTH SCROLL for anchor links
   ══════════════════════════════ */
