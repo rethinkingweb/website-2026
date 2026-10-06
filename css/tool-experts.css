@@ -94,7 +94,7 @@
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
 /* ═══════════════════════════════ BENEFITS ═══════════════════════════════ */
-.sa-benefits {padding: 0px 0 60px; background: var(--bg2); }
+.sa-benefits {padding: 3rem 0 4rem;; background: var(--bg2); }
 .sa-benefits__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 2.5rem; }
 .sa-lead { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem; }
 .sa-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; padding: 0; margin: 0; }
@@ -118,7 +118,7 @@
 .sa-benefit-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
 
 /* ═══════════════════════════════ FOCUS BAND ═══════════════════════════════ */
-.sa-focus {padding: 0px 0 60px; background: #0f172a; overflow: hidden; }
+.sa-focus {padding: 3rem 0 4rem;; background: #0f172a; overflow: hidden; }
 .sa-focus__inner { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
 .sa-focus__label { color: var(--orange-light) !important; }
 .sa-focus__label::before { background: var(--orange-light) !important; }
@@ -131,7 +131,7 @@
 .sa-focus__stars { color: #F59E0B; font-size: 1.3rem; }
 
 /* ═══════════════════════════════ WHAT'S INCLUDED ═══════════════════════════════ */
-.sa-inc {padding: 0px 0 60px; background: var(--bg); }
+.sa-inc {padding: 3rem 0 4rem;; background: var(--bg); }
 .sa-inc__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
 .sa-inc-card {
   background: linear-gradient(135deg, var(--orange-pale), #fff5f2);
@@ -151,7 +151,7 @@
 .sa-inc-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
 
 /* ═══════════════════════════════ RELATED ═══════════════════════════════ */
-.sa-related {padding: 0px 0 60px; background: var(--bg2); }
+.sa-related {padding: 3rem 0 4rem;; background: var(--bg2); }
 .sa-related__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
 .sa-related-card {
   display: flex; flex-direction: column; gap: 0.4rem;

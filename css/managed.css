@@ -196,7 +196,7 @@
    BENEFITS
 ═══════════════════════════════ */
 .ms-benefits {
-  padding: 0px 0 50px;
+  padding: 3rem 0 4rem;
   background: var(--bg2);
 }
 .ms-benefits__grid {
@@ -278,7 +278,7 @@
    FOCUS DARK BAND
 ═══════════════════════════════ */
 .ms-focus {
-  padding: 0px 0 50px;
+  padding: 3rem 0 4rem;
   background: #0f172a;
   overflow: hidden;
 }
@@ -315,7 +315,7 @@
    CLIENTS
 ═══════════════════════════════ */
 .ms-clients {
-  padding: 0px 0 50px;
+  padding: 3rem 0 4rem;
   background: var(--bg2);
 }
 
@@ -323,7 +323,7 @@
    RELATED SERVICES
 ═══════════════════════════════ */
 .ms-related {
-  padding: 0px 0 50px;
+  padding: 3rem 0 4rem;
   background: var(--bg);
 }
 .ms-related__sub {

@@ -787,7 +787,7 @@ input, select, textarea, button { font-family: inherit; }
 
 /* ── TESTIMONIALS SECTION ── */
 .testimonials {
-  padding: 0px 0 20px;
+  padding: 3rem 0 4rem;
      background-image: linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   position: relative;

@@ -208,7 +208,7 @@ input, select, textarea, button { font-family: inherit; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
 
 /* ═══ WHAT WE DO ═══ */
-.what-we-do { padding: 0px 0 36px; background: var(--bg2); }
+.what-we-do {padding: 3rem 0 4rem; background: var(--bg2); }
 .benefits-intro { color: var(--text-muted); max-width: 700px; margin-bottom: 2.5rem; font-size: 0.95rem; line-height: 1.8; }
 .pillars {
   display: grid;
@@ -236,7 +236,7 @@ input, select, textarea, button { font-family: inherit; }
 .pillar p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
 
 /* ═══ FOCUS SECTION ═══ */
-.focus-section { padding: 0px 0 36px; background: var(--bg); }
+.focus-section {padding: 3rem 0 4rem; background: var(--bg); }
 .focus-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -267,7 +267,7 @@ input, select, textarea, button { font-family: inherit; }
 .check-item p { font-size: 0.85rem; color: var(--text-muted); }
 
 /* ═══ SOLUTIONS ═══ */
-.solutions { padding:0px 0 36px; background: var(--bg2); }
+.solutions { padding:3rem 0 4rem; background: var(--bg2); }
 .solutions__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

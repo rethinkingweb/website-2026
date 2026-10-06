@@ -221,7 +221,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ══════════════════════════════
    BENEFITS
 ══════════════════════════════ */
-.cs-benefits { padding: 0px 0 60px; background: var(--bg2); }
+.cs-benefits { padding: 3rem 0 4rem;; background: var(--bg2); }
 .cs-benefits__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .cs-lead { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
 .cs-benefits__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
@@ -245,7 +245,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ══════════════════════════════
    FOCUS DARK BAND
 ══════════════════════════════ */
-.cs-focus { padding:0px 0 60px; background: #0f172a; overflow: hidden; }
+.cs-focus { padding:3rem 0 4rem; background: #0f172a; overflow: hidden; }
 .cs-focus .section-label { color: var(--orange-light); }
 .cs-focus .section-label::before { background: var(--orange-light); }
 .cs-focus .section-title { color: var(--white); }
@@ -288,7 +288,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ══════════════════════════════
    RELATED SERVICES
 ══════════════════════════════ */
-.cs-related { padding: 0px 0 60px; background: var(--bg); }
+.cs-related { padding: 3rem 0 4rem;; background: var(--bg); }
 .cs-related__sub { max-width: 640px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; }
 .cs-related__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 .cs-related-card {
