@@ -420,15 +420,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         saved = true; // application is stored from this point on
 
-        // 4) Notification email. A failure here must not look like a lost application.
+               // 4) Notification email: small explicit params only (no file, no base64)
         try {
-          if (resumeLink) resumeLink.value = verification.resume_url || '';
-          if (resumeInput) resumeInput.disabled = true; // keep the file out of EmailJS
-          await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+          const mailParams = {
+            first_name:         payload.first_name,
+            last_name:          payload.last_name,
+            email:              payload.email,
+            phone:              payload.phone,
+            service:            payload.service,
+            work_type:          payload.work_type,
+            currently_employed: payload.currently_employed,
+            notice_period:      payload.notice_period,
+            current_ctc:        payload.current_ctc,
+            expected_ctc:       payload.expected_ctc,
+            linkedin:           payload.linkedin,
+            resume_link:        verification.resume_url || '',
+            page_url:           payload.page_url,
+            submitted_at:       payload.submitted_at
+          };
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, mailParams);
         } catch (mailErr) {
           console.error('EmailJS failed (application WAS saved):', mailErr, mailErr && mailErr.status, mailErr && mailErr.text);
-        } finally {
-          if (resumeInput) resumeInput.disabled = false;
         }
 
         resetFormUI();
