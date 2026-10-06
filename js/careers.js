@@ -406,7 +406,13 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { 'Content-Type': 'text/plain;charset=utf-8' },
             body: JSON.stringify(payload)
           });
-          verification = await sheetRes.json();
+                   const raw = await sheetRes.text();
+          try {
+            verification = JSON.parse(raw);
+          } catch (_) {
+            console.error('Webhook returned non-JSON:', raw.slice(0, 300));
+            throw new Error('Webhook returned an unexpected response');
+          }
         }
 
         if (!verification.success) {
