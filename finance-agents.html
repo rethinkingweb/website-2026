@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="images/rtw_logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Finance Agents | Accounts Payable &amp; Receivable Automation | RethinkingWeb</title>
-    <base href="/">
+  <base href="/">
   <link rel="canonical" href="https://www.rethinkingweb.com/finance-agents" />
-  <meta name="description" content="Custom AI finance agents that capture invoices, match purchase orders, follow up on overdue balances and flag exceptions inside your accounting system, with approvals and an audit trail." />
-  <meta property="og:title" content="AI Finance Agents | Accounts Payable &amp; Receivable Automation | RethinkingWeb" />
-  <meta property="og:description" content="Agents that capture invoices, match records and chase overdue balances, with your approvals and a full audit trail." />
+  <meta name="description"
+    content="Custom AI finance agents that capture invoices, match purchase orders, follow up on overdue balances and flag exceptions inside your accounting system, with approvals and an audit trail." />
+  <meta property="og:title"
+    content="AI Finance Agents | Accounts Payable &amp; Receivable Automation | RethinkingWeb" />
+  <meta property="og:description"
+    content="Agents that capture invoices, match records and chase overdue balances, with your approvals and a full audit trail." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.rethinkingweb.com/finance-agents" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: { extend: {
-        colors: {
-          orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
-          charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
-          bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
-          surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
-          'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
-          muted: '#7A6F68',
-        },
-        fontFamily: { display: ['"Inter Tight"', 'sans-serif'], body: ['"Inter Tight"', 'sans-serif'] },
-        maxWidth: { container: '1200px', nav: '1280px' },
-      } }
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#E75C23', dark: '#C44A18', light: '#FFA213', pale: '#FFF3EB' },
+            charcoal: { DEFAULT: '#1A1A1A', 2: '#2D2D2D', 3: '#3D3D3D' },
+            bg: { DEFAULT: '#FFFFFF', 2: '#F8F6F4', 3: '#F2EFEC' },
+            surface: { DEFAULT: '#FFFFFF', 2: '#F5F2EF' },
+            'rtw-border': { DEFAULT: '#E8E2DC', dark: '#D4CCC4' },
+            muted: '#7A6F68',
+          },
+          fontFamily: { display: ['"Inter Tight"', 'sans-serif'], body: ['"Inter Tight"', 'sans-serif'] },
+          maxWidth: { container: '1200px', nav: '1280px' },
+        }
+      }
     }
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/contact.css" />
-  <link rel="stylesheet" href="css/agent.css" />                    <!-- reused: hero (agh), FAQ (agf), tokens -->
-  <link rel="stylesheet" href="css/finance-agents.css" />           <!-- new sections -->
-  <style>.grecaptcha-badge{visibility:hidden}#navLinks .nav__link{white-space:nowrap}</style>
+  <link rel="stylesheet" href="css/agent.css" /> <!-- reused: hero (agh), FAQ (agf), tokens -->
+  <link rel="stylesheet" href="css/finance-agents.css" /> <!-- new sections -->
+  <style>
+    .grecaptcha-badge {
+      visibility: hidden
+    }
+
+    #navLinks .nav__link {
+      white-space: nowrap
+    }
+  </style>
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"RethinkingWeb","alternateName":"RTW","url":"https://www.rethinkingweb.com","logo":"https://www.rethinkingweb.com/images/rtw_logo.png","contactPoint":{"@type":"ContactPoint","telephone":"+919920996021","contactType":"customer service","areaServed":["US","GB","IN"],"availableLanguage":"en"},"sameAs":["https://www.linkedin.com/company/rethinkingweb/"]}
@@ -72,354 +88,584 @@
   "sameAs": ["https://www.linkedin.com/company/rethinkingweb/"]
 }
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1P5PFXZJR5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P5PFXZJR5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-1P5PFXZJR5');
-</script>
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="RethinkingWeb">
-<meta property="og:title" content="RethinkingWeb | IT Services, AI Agents &amp; Integrations">
-<meta property="og:description" content="RethinkingWeb helps businesses innovate smarter and transform faster with managed IT services, AI agents, system integrations, cybersecurity, cloud and custom web and mobile development.">
-<meta property="og:image" content="https://www.rethinkingweb.com/images/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="RethinkingWeb: Innovate Smarter, Transform Faster">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RethinkingWeb | IT Services, AI Agents &amp; Integrations">
-<meta name="twitter:description" content="RethinkingWeb helps businesses innovate smarter and transform faster with managed IT services, AI agents, system integrations, cybersecurity, cloud and custom web and mobile development.">
-<meta name="twitter:image" content="https://www.rethinkingweb.com/images/og-image.png">
+    gtag('config', 'G-1P5PFXZJR5');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RethinkingWeb">
+  <meta property="og:title" content="RethinkingWeb | IT Services, AI Agents &amp; Integrations">
+  <meta property="og:description"
+    content="RethinkingWeb helps businesses innovate smarter and transform faster with managed IT services, AI agents, system integrations, cybersecurity, cloud and custom web and mobile development.">
+  <meta property="og:image" content="https://www.rethinkingweb.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="RethinkingWeb: Innovate Smarter, Transform Faster">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RethinkingWeb | IT Services, AI Agents &amp; Integrations">
+  <meta name="twitter:description"
+    content="RethinkingWeb helps businesses innovate smarter and transform faster with managed IT services, AI agents, system integrations, cybersecurity, cloud and custom web and mobile development.">
+  <meta name="twitter:image" content="https://www.rethinkingweb.com/images/og-image.png">
 </head>
+
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
-    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
-  </defs>
-</svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24">
+        <path d="M12 5v14M19 12l-7 7-7-7" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M20 6 9 17l-5-5" />
+      </symbol>
+    </defs>
+  </svg>
 
-  
-<header class="nav nav--light" id="nav">
-  <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
-    <a href="index" class="flex items-center gap-2 flex-shrink-0">
-      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
-    </a>
-    <nav class="hidden xl:flex items-center gap-1 ml-auto" id="navLinks">
 
-        
-      <div class="nav__dropdown">
-        <a href="agent" class="nav__link nav__link--active px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
-          Agents
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="mega-menu mega-menu--integrations mega-menu--agents">
-          <div class="mega-menu__header">
-            <span class="mega-menu__label">AI Agents</span>
-            <a href="agent" class="mega-menu__all">View all agents</a>
+  <header class="nav nav--light" id="nav">
+    <div class="max-w-[1280px] mx-auto px-8 flex items-center gap-4">
+      <a href="index" class="flex items-center gap-2 flex-shrink-0">
+        <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:40px;width:auto;" />
+      </a>
+      <nav class="hidden xl:flex items-center gap-1 ml-auto" id="navLinks">
+
+
+        <div class="nav__dropdown">
+          <a href="agent"
+            class="nav__link nav__link--active px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange">
+            Agents
+            <svg width="12" height="12" viewBox="0 0 12 12">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            </svg>
+          </a>
+          <div class="mega-menu mega-menu--integrations mega-menu--agents">
+            <div class="mega-menu__header">
+              <span class="mega-menu__label">AI Agents</span>
+              <a href="agent" class="mega-menu__all">View all agents</a>
+            </div>
+            <div class="mega-menu__grid">
+              <a href="voice-agents" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-microphone-lines"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Voice Agents</span>
+                  <span class="mega-item__desc">Calls answered &amp; made by AI</span>
+                </div>
+              </a>
+              <a href="email-and-document-agents" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-envelope-open-text"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Email &amp; Document Agents</span>
+                  <span class="mega-item__desc">Triage, extract &amp; reply at scale</span>
+                </div>
+              </a>
+              <a href="customer-support-agents" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-headset"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Customer Support Agents</span>
+                  <span class="mega-item__desc">24/7 resolution across channels</span>
+                </div>
+              </a>
+              <a href="sales-and-crm-agents" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-handshake"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Sales &amp; CRM Agents</span>
+                  <span class="mega-item__desc">Lead follow-up &amp; CRM upkeep</span>
+                </div>
+              </a>
+              <a href="operations-agents" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-gears"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Operations Agents</span>
+                  <span class="mega-item__desc">Scheduling, routing &amp; back-office</span>
+                </div>
+              </a>
+              <a href="finance-agents" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Finance Agents</span>
+                  <span class="mega-item__desc">Invoices, collections &amp; matching</span>
+                </div>
+              </a>
+              <a href="agent-governance" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-scale-balanced"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Agent Governance</span>
+                  <span class="mega-item__desc">Guardrails, approvals &amp; audit trails</span>
+                </div>
+              </a>
+              <a href="ai-workflow-audit" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-clipboard-check"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">AI Workflow Audit</span>
+                  <span class="mega-item__desc">Find the best workflows to automate</span>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="mega-menu__grid">
-            <a href="voice-agents" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-microphone-lines"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Voice Agents</span>
-                <span class="mega-item__desc">Calls answered &amp; made by AI</span>
-              </div>
-            </a>
-            <a href="email-and-document-agents" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-envelope-open-text"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Email &amp; Document Agents</span>
-                <span class="mega-item__desc">Triage, extract &amp; reply at scale</span>
-              </div>
-            </a>
-            <a href="customer-support-agents" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-headset"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Customer Support Agents</span>
-                <span class="mega-item__desc">24/7 resolution across channels</span>
-              </div>
-            </a>
-            <a href="sales-and-crm-agents" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-handshake"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Sales &amp; CRM Agents</span>
-                <span class="mega-item__desc">Lead follow-up &amp; CRM upkeep</span>
-              </div>
-            </a>
-            <a href="operations-agents" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-gears"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Operations Agents</span>
-                <span class="mega-item__desc">Scheduling, routing &amp; back-office</span>
-              </div>
-            </a>
-            <a href="finance-agents" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-file-invoice-dollar"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Finance Agents</span>
-                <span class="mega-item__desc">Invoices, collections &amp; matching</span>
-              </div>
-            </a>
-            <a href="agent-governance" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-scale-balanced"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Agent Governance</span>
-                <span class="mega-item__desc">Guardrails, approvals &amp; audit trails</span>
-              </div>
-            </a>
-            <a href="ai-workflow-audit" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-clipboard-check"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">AI Workflow Audit</span>
-                <span class="mega-item__desc">Find the best workflows to automate</span>
-              </div>
-            </a>
+        </div>
+
+
+        <div class="nav__dropdown">
+          <a href="integration-services"
+            class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+            onclick="event.preventDefault();">
+            Integrations
+            <svg width="12" height="12" viewBox="0 0 12 12">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            </svg>
+          </a>
+          <div class="mega-menu mega-menu--integrations">
+            <div class="mega-menu__header">
+              <span class="mega-menu__label">Integrations</span>
+              <a href="integration-services" class="mega-menu__all">View all integrations</a>
+            </div>
+            <div class="mega-menu__grid">
+              <a href="sap-business-one" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#00aeef" />
+                        <stop offset="1" stop-color="#0a3d8f" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="52" height="26" rx="3" fill="url(#rtwSap)" /><text x="26" y="19"
+                      font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff"
+                      text-anchor="middle">SAP</text>
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">SAP Business One</span>
+                  <span class="mega-item__desc">ERP integration &amp; consulting</span>
+                </div>
+              </a>
+              <a href="salesforce" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#00A1E0"
+                      d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z" />
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Salesforce</span>
+                  <span class="mega-item__desc">CRM &amp; order-to-cash sync</span>
+                </div>
+              </a>
+              <a href="netsuite" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="6" fill="#0C3B5D" /><text x="12" y="17"
+                      font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff"
+                      text-anchor="middle">N</text>
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">NetSuite</span>
+                  <span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span>
+                </div>
+              </a>
+              <a href="shopify" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#95BF47"
+                      d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z" />
+                    <path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z"
+                      opacity=".12" /><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5"
+                      font-weight="700" fill="#fff" text-anchor="middle">S</text>
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Shopify</span>
+                  <span class="mega-item__desc">Ecommerce &#8596; back office</span>
+                </div>
+              </a>
+              <a href="quickbooks" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="11" fill="#2CA01C" /><text x="12" y="16"
+                      font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff"
+                      text-anchor="middle">qb</text>
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">QuickBooks</span>
+                  <span class="mega-item__desc">Accounting &amp; invoice sync</span>
+                </div>
+              </a>
+              <a href="woocommerce" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="6" fill="#7F54B3" /><text x="12" y="16"
+                      font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff"
+                      text-anchor="middle">Woo</text>
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">WooCommerce</span>
+                  <span class="mega-item__desc">WordPress store integration</span>
+                </div>
+              </a>
+              <a href="zoho" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7.5" cy="8" r="3.3" fill="#E42527" />
+                    <circle cx="16.5" cy="8" r="3.3" fill="#F9B21D" />
+                    <circle cx="7.5" cy="16.5" r="3.3" fill="#089949" />
+                    <circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4" />
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Zoho</span>
+                  <span class="mega-item__desc">Zoho One suite integration</span>
+                </div>
+              </a>
+              <a href="zuper" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="6" fill="#0B3B6F" /><text x="12" y="16"
+                      font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff"
+                      text-anchor="middle">Zu</text>
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Zuper</span>
+                  <span class="mega-item__desc">Field service management sync</span>
+                </div>
+              </a>
+              <a href="attio" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="6" fill="#16151A" /><text x="12" y="16"
+                      font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff"
+                      text-anchor="middle">At</text>
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Attio</span>
+                  <span class="mega-item__desc">CRM &amp; record sync</span>
+                </div>
+              </a>
+              <a href="twenty" class="mega-item">
+                <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="6" fill="#000000" /><text x="12" y="16.5"
+                      font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5"
+                      fill="#fff" text-anchor="middle">20</text>
+                  </svg></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Twenty</span>
+                  <span class="mega-item__desc">Open-source CRM sync</span>
+                </div>
+              </a>
+            </div>
           </div>
+        </div>
+
+
+        <div class="nav__dropdown">
+          <a href="solutions"
+            class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+            onclick="event.preventDefault();">
+            Solutions
+            <svg width="12" height="12" viewBox="0 0 12 12">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            </svg>
+          </a>
+          <div class="mega-menu">
+            <div class="mega-menu__header">
+              <span class="mega-menu__label">Our Solutions</span>
+              <a href="solutions" class="mega-menu__all">View all services</a>
+            </div>
+            <div class="mega-menu__grid">
+              <a href="managed" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-server"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Managed Services</span>
+                  <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
+                </div>
+              </a>
+              <a href="consulting" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">IT Consulting &amp; Advisory</span>
+                  <span class="mega-item__desc">Strategic technology guidance</span>
+                </div>
+              </a>
+              <a href="cyber" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Cyber Security</span>
+                  <span class="mega-item__desc">Protect your digital assets</span>
+                </div>
+              </a>
+              <a href="web-development" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-code"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Web Development</span>
+                  <span class="mega-item__desc">Custom websites &amp; web apps</span>
+                </div>
+              </a>
+              <a href="mobile-development" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Mobile Development</span>
+                  <span class="mega-item__desc">iOS &amp; Android solutions</span>
+                </div>
+              </a>
+              <a href="cloud" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Cloud Services</span>
+                  <span class="mega-item__desc">Scalable cloud infrastructure</span>
+                </div>
+              </a>
+              <a href="software" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Software Development</span>
+                  <span class="mega-item__desc">Bespoke software solutions</span>
+                </div>
+              </a>
+              <a href="airtable" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Enterprise Airtable</span>
+                  <span class="mega-item__desc">No-code workflow automation</span>
+                </div>
+              </a>
+              <a href="web-performance" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Web Performance</span>
+                  <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
+                </div>
+              </a>
+              <a href="seo" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">On-page Technical SEO</span>
+                  <span class="mega-item__desc">Rank higher, grow faster</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="nav__dropdown">
+          <a href="staff-augmentation"
+            class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+            onclick="event.preventDefault();">
+            Staff Augmentation
+            <svg width="12" height="12" viewBox="0 0 12 12">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            </svg>
+          </a>
+          <div class="mega-menu mega-menu--staffaug">
+            <div class="mega-menu__header">
+              <span class="mega-menu__label">Staff Augmentation</span>
+              <a href="staff-augmentation" class="mega-menu__all">View all</a>
+            </div>
+            <div class="mega-menu__grid">
+              <a href="specialist-staff-augmentation" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-user-gear"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Specialist Staff Augmentation</span>
+                  <span class="mega-item__desc">Vetted engineers into your team</span>
+                </div>
+              </a>
+              <a href="dedicated-expert-pods" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-people-group"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Dedicated Expert Pods</span>
+                  <span class="mega-item__desc">A cross-functional squad that owns delivery</span>
+                </div>
+              </a>
+              <a href="sme-on-demand" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-user-graduate"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">SME-on-Demand</span>
+                  <span class="mega-item__desc">Subject-matter experts, on call</span>
+                </div>
+              </a>
+              <a href="fractional-interim-leadership" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-user-tie"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Fractional &amp; Interim Leadership</span>
+                  <span class="mega-item__desc">Fractional CTO / CIO leadership</span>
+                </div>
+              </a>
+              <a href="tool-experts" class="mega-item">
+                <div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+                <div class="mega-item__content">
+                  <span class="mega-item__title">Tool Experts</span>
+                  <span class="mega-item__desc">Zoho, Airtable, SAP, Salesforce &amp; automation</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="nav__dropdown">
+          <a href="about"
+            class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
+            onclick="event.preventDefault();">
+            Company
+            <svg width="12" height="12" viewBox="0 0 12 12">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            </svg>
+          </a>
+          <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+            <a href="about">About Us</a>
+            <a href="whyus">Why Us</a>
+            <a href="team">Team</a>
+            <a href="careers">Careers</a>
+            <a href="testimonials">Testimonials</a>
+            <a href="case">Case Studies</a>
+          </div>
+        </div>
+
+
+        <a href="case"
+          class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case
+          Studies</a>
+
+
+        <a href="blog"
+          class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Blog</a>
+
+      </nav>
+
+
+      <div class="hidden xl:flex items-center gap-4 ml-6 flex-shrink-0">
+        <a href="contact"
+          class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Book
+          an AI Workflow Audit</a>
+      </div>
+
+
+      <button
+        class="nav__burger xl:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]"
+        id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
+      </button>
+    </div>
+  </header>
+
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
+      <a href="index">
+        <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
+      </a>
+      <button
+        class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange"
+        id="mobileClose" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="flex flex-col px-6 pb-8 pt-3">
+
+
+      <div class="mob-accordion border-b border-[#E8E2DC]">
+        <button
+          class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange"
+          aria-expanded="false">
+          <a href="agent" class="mob-accordion__link">Agents</a>
+          <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="mob-accordion__panel">
+          <a href="voice-agents">Voice Agents</a>
+          <a href="email-and-document-agents">Email &amp; Document Agents</a>
+          <a href="customer-support-agents">Customer Support Agents</a>
+          <a href="sales-and-crm-agents">Sales &amp; CRM Agents</a>
+          <a href="operations-agents">Operations Agents</a>
+          <a href="finance-agents">Finance Agents</a>
+          <a href="agent-governance">Agent Governance</a>
+          <a href="ai-workflow-audit">AI Workflow Audit</a>
         </div>
       </div>
 
-        
-      <div class="nav__dropdown">
-        <a href="integration-services"
-           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-           onclick="event.preventDefault();">
-          Integrations
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="mega-menu mega-menu--integrations">
-          <div class="mega-menu__header">
-            <span class="mega-menu__label">Integrations</span>
-            <a href="integration-services" class="mega-menu__all">View all integrations</a>
-          </div>
-          <div class="mega-menu__grid">
-            <a href="sap-business-one" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rtwSap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aeef"/><stop offset="1" stop-color="#0a3d8f"/></linearGradient></defs><rect width="52" height="26" rx="3" fill="url(#rtwSap)"/><text x="26" y="19" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">SAP</text></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">SAP Business One</span>
-                <span class="mega-item__desc">ERP integration &amp; consulting</span>
-              </div>
-            </a>
-            <a href="salesforce" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#00A1E0" d="M10.1 6.1a3.8 3.8 0 0 1 6.5-.5 3.2 3.2 0 0 1 4.6 2.9 3.1 3.1 0 0 1-.6 6.1H8a3.9 3.9 0 0 1-1.2-7.6 3.7 3.7 0 0 1 3.3-.9z"/></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Salesforce</span>
-                <span class="mega-item__desc">CRM &amp; order-to-cash sync</span>
-              </div>
-            </a>
-            <a href="netsuite" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0C3B5D"/><text x="12" y="17" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">N</text></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">NetSuite</span>
-                <span class="mega-item__desc">ERP, ecommerce &amp; EDI sync</span>
-              </div>
-            </a>
-            <a href="shopify" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#95BF47" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8c-.3-.3-.9-.2-1.1-.1 0 0-.2 0-.4.1-.3-.8-.8-1.2-1.5-1.2h-.1c-.6-.7-1.3-.6-2 .1-1 1-1.4 2.6-1.6 3.4l-1.4.4c-.4.1-.4.2-.5.6L3.5 19l9 1.7L21 19 15.4 4.3zm-3.1.6-1.2.4c0-.5-.1-1.2-.3-1.6.7.1 1.2.9 1.5 1.2zm-1.9-1.4c.3.6.4 1.3.4 1.7l-1.9.6c.4-1.4 1.1-2 1.5-2.3zm-.9-.9c.1 0 .2 0 .3.1-.5.3-1.2 1-1.5 2.4l-1.4.4C6.7 4.4 7.6 3 8.6 2.9z"/><path fill="#fff" d="M15.4 4.3c-.1 0-1 .2-1 .2s-.7-.7-.8-.8l-.4-.1L14.5 22l6-1.4L15.4 4.3z" opacity=".12"/><text x="12" y="15" font-family="Arial,Helvetica,sans-serif" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Shopify</span>
-                <span class="mega-item__desc">Ecommerce &#8596; back office</span>
-              </div>
-            </a>
-            <a href="quickbooks" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">qb</text></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">QuickBooks</span>
-                <span class="mega-item__desc">Accounting &amp; invoice sync</span>
-              </div>
-            </a>
-            <a href="woocommerce" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#7F54B3"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Woo</text></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">WooCommerce</span>
-                <span class="mega-item__desc">WordPress store integration</span>
-              </div>
-            </a>
-            <a href="zoho" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="8" r="3.3" fill="#E42527"/><circle cx="16.5" cy="8" r="3.3" fill="#F9B21D"/><circle cx="7.5" cy="16.5" r="3.3" fill="#089949"/><circle cx="16.5" cy="16.5" r="3.3" fill="#226DB4"/></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Zoho</span>
-                <span class="mega-item__desc">Zoho One suite integration</span>
-              </div>
-            </a>
-            <a href="zuper" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#0B3B6F"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">Zu</text></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Zuper</span>
-                <span class="mega-item__desc">Field service management sync</span>
-              </div>
-            </a>
-            <a href="attio" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#16151A"/><text x="12" y="16" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">At</text></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Attio</span>
-                <span class="mega-item__desc">CRM &amp; record sync</span>
-              </div>
-            </a>
-            <a href="twenty" class="mega-item">
-              <div class="mega-item__icon mega-item__icon--brand"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#000000"/><text x="12" y="16.5" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff" text-anchor="middle">20</text></svg></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Twenty</span>
-                <span class="mega-item__desc">Open-source CRM sync</span>
-              </div>
-            </a>
-          </div>
+
+      <div class="mob-accordion border-b border-[#E8E2DC]">
+        <button
+          class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange"
+          aria-expanded="false">
+          <a href="integration-services" class="mob-accordion__link">Integrations</a>
+          <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="mob-accordion__panel">
+          <a href="sap-business-one">SAP Business One</a>
+          <a href="salesforce">Salesforce</a>
+          <a href="netsuite">NetSuite</a>
+          <a href="shopify">Shopify</a>
+          <a href="quickbooks">QuickBooks</a>
+          <a href="woocommerce">WooCommerce</a>
+          <a href="zoho">Zoho</a>
+          <a href="zuper">Zuper</a>
+          <a href="attio">Attio</a>
+          <a href="twenty">Twenty</a>
         </div>
       </div>
 
-        
-      <div class="nav__dropdown">
-        <a href="solutions"
-           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-           onclick="event.preventDefault();">
-          Solutions
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="mega-menu">
-          <div class="mega-menu__header">
-            <span class="mega-menu__label">Our Solutions</span>
-            <a href="solutions" class="mega-menu__all">View all services</a>
-          </div>
-          <div class="mega-menu__grid">
-            <a href="managed" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-server"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Managed Services</span>
-                <span class="mega-item__desc">24/7 IT infrastructure &amp; support</span>
-              </div>
-            </a>
-            <a href="consulting" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-lightbulb"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">IT Consulting &amp; Advisory</span>
-                <span class="mega-item__desc">Strategic technology guidance</span>
-              </div>
-            </a>
-            <a href="cyber" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-shield-halved"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Cyber Security</span>
-                <span class="mega-item__desc">Protect your digital assets</span>
-              </div>
-            </a>
-            <a href="web-development" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-code"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Web Development</span>
-                <span class="mega-item__desc">Custom websites &amp; web apps</span>
-              </div>
-            </a>
-            <a href="mobile-development" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-mobile-screen"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Mobile Development</span>
-                <span class="mega-item__desc">iOS &amp; Android solutions</span>
-              </div>
-            </a>
-            <a href="cloud" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-cloud"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Cloud Services</span>
-                <span class="mega-item__desc">Scalable cloud infrastructure</span>
-              </div>
-            </a>
-            <a href="software" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-laptop-code"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Software Development</span>
-                <span class="mega-item__desc">Bespoke software solutions</span>
-              </div>
-            </a>
-            <a href="airtable" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-table-cells"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Enterprise Airtable</span>
-                <span class="mega-item__desc">No-code workflow automation</span>
-              </div>
-            </a>
-            <a href="web-performance" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-gauge-high"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Web Performance</span>
-                <span class="mega-item__desc">Speed, Core Web Vitals &amp; UX</span>
-              </div>
-            </a>
-            <a href="seo" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">On-page Technical SEO</span>
-                <span class="mega-item__desc">Rank higher, grow faster</span>
-              </div>
-            </a>
-          </div>
+
+      <div class="mob-accordion border-b border-[#E8E2DC]">
+        <div class="mob-accordion__header"></div>
+        <button
+          class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange"
+          aria-expanded="false">
+          <a href="solutions" class="mob-accordion__link">Solutions</a>
+          <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="mob-accordion__panel">
+          <a href="managed">Managed Services</a>
+          <a href="consulting">IT Consulting &amp; Advisory</a>
+          <a href="cyber">Cyber Security</a>
+          <a href="web-development">Web Development</a>
+          <a href="mobile-development">Mobile Development</a>
+          <a href="cloud">Cloud Services</a>
+          <a href="software">Software Development</a>
+          <a href="airtable">Enterprise Airtable Managed Services</a>
+          <a href="web-performance">Web Performance Optimization</a>
+          <a href="seo">On-page Technical SEO</a>
         </div>
       </div>
 
-        
-      <div class="nav__dropdown">
-        <a href="staff-augmentation"
-           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-           onclick="event.preventDefault();">
-          Staff Augmentation
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="mega-menu mega-menu--staffaug">
-          <div class="mega-menu__header">
-            <span class="mega-menu__label">Staff Augmentation</span>
-            <a href="staff-augmentation" class="mega-menu__all">View all</a>
-          </div>
-          <div class="mega-menu__grid">
-            <a href="specialist-staff-augmentation" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-user-gear"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Specialist Staff Augmentation</span>
-                <span class="mega-item__desc">Vetted engineers into your team</span>
-              </div>
-            </a>
-            <a href="dedicated-expert-pods" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-people-group"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Dedicated Expert Pods</span>
-                <span class="mega-item__desc">A cross-functional squad that owns delivery</span>
-              </div>
-            </a>
-            <a href="sme-on-demand" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-user-graduate"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">SME-on-Demand</span>
-                <span class="mega-item__desc">Subject-matter experts, on call</span>
-              </div>
-            </a>
-            <a href="fractional-interim-leadership" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-user-tie"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Fractional &amp; Interim Leadership</span>
-                <span class="mega-item__desc">Fractional CTO / CIO leadership</span>
-              </div>
-            </a>
-            <a href="tool-experts" class="mega-item">
-              <div class="mega-item__icon"><i class="fas fa-screwdriver-wrench"></i></div>
-              <div class="mega-item__content">
-                <span class="mega-item__title">Tool Experts</span>
-                <span class="mega-item__desc">Zoho, Airtable, SAP, Salesforce &amp; automation</span>
-              </div>
-            </a>
-          </div>
+
+      <div class="mob-accordion border-b border-[#E8E2DC]">
+        <button
+          class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange"
+          aria-expanded="false">
+          <a href="staff-augmentation" class="mob-accordion__link">Staff Augmentation</a>
+          <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="mob-accordion__panel">
+          <a href="specialist-staff-augmentation">Specialist Staff Augmentation</a>
+          <a href="dedicated-expert-pods">Dedicated Expert Pods</a>
+          <a href="sme-on-demand">SME-on-Demand</a>
+          <a href="fractional-interim-leadership">Fractional &amp; Interim Leadership</a>
+          <a href="tool-experts">Tool Experts</a>
         </div>
       </div>
 
-        
-      <div class="nav__dropdown">
-        <a href="about"
-           class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md flex items-center gap-1 hover:text-orange"
-           onclick="event.preventDefault();">
-          Company
-          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </a>
-        <div class="dropdown__panel" style="grid-template-columns: 1fr;">
+
+      <div class="mob-accordion border-b border-[#E8E2DC]">
+        <button
+          class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange"
+          aria-expanded="false">
+          <a href="about" class="mob-accordion__link">Company</a>
+          <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="mob-accordion__panel">
           <a href="about">About Us</a>
           <a href="whyus">Why Us</a>
           <a href="team">Team</a>
@@ -429,367 +675,337 @@
         </div>
       </div>
 
-        
-      <a href="case" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Case Studies</a>
 
-        
-      <a href="blog" class="nav__link px-3 py-2 text-sm font-light tracking-wide text-charcoal-3 rounded-md hover:text-orange">Blog</a>
+      <a href="case"
+        class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case
+        Studies</a>
 
+
+      <a href="blog"
+        class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Blog</a>
+
+
+      <a href="contact"
+        class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Book
+        an AI Workflow Audit</a>
     </nav>
-
-     
-    <div class="hidden xl:flex items-center gap-4 ml-6 flex-shrink-0">
-      <a href="contact" class="nav-connect-btn btn btn--primary inline-flex items-center gap-1 px-[1.4rem] py-[0.65rem] rounded-lg bg-orange text-white text-sm font-semibold whitespace-nowrap">Book an AI Workflow Audit</a>
-    </div>
-
-      
-    <button class="nav__burger xl:hidden flex flex-col justify-center items-center gap-[5px] bg-transparent border-0 p-1.5 cursor-pointer ml-auto relative z-[1001]" id="navBurger" aria-label="Open menu" aria-expanded="false">
-      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
-      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
-      <span class="block w-6 h-0.5 bg-charcoal rounded-sm transition-all duration-300"></span>
-    </button>
-  </div>
-</header>
-
-  
-<div class="mobile-nav" id="mobileNav" aria-hidden="true">
-  <div class="flex items-center justify-between px-6 py-5 border-b border-[#E8E2DC] flex-shrink-0">
-    <a href="index">
-      <img src="images/rtw_logo.png" alt="RethinkingWeb" style="height:34px;width:auto;" />
-    </a>
-    <button class="mobile-nav__close bg-transparent border-0 text-2xl text-charcoal cursor-pointer leading-none px-1 py-1 transition-colors duration-300 hover:text-orange" id="mobileClose" aria-label="Close menu">✕</button>
   </div>
 
-  <nav class="flex flex-col px-6 pb-8 pt-3">
+  <!-- Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
 
-      
-    <div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="agent" class="mob-accordion__link">Agents</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
-          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="voice-agents">Voice Agents</a>
-        <a href="email-and-document-agents">Email &amp; Document Agents</a>
-        <a href="customer-support-agents">Customer Support Agents</a>
-        <a href="sales-and-crm-agents">Sales &amp; CRM Agents</a>
-        <a href="operations-agents">Operations Agents</a>
-        <a href="finance-agents">Finance Agents</a>
-        <a href="agent-governance">Agent Governance</a>
-        <a href="ai-workflow-audit">AI Workflow Audit</a>
-      </div>
-    </div>
+  <main class="ag-page fa-page" id="main">
 
-      
-    <div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="integration-services" class="mob-accordion__link">Integrations</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
-          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="sap-business-one">SAP Business One</a>
-        <a href="salesforce">Salesforce</a>
-        <a href="netsuite">NetSuite</a>
-        <a href="shopify">Shopify</a>
-        <a href="quickbooks">QuickBooks</a>
-        <a href="woocommerce">WooCommerce</a>
-        <a href="zoho">Zoho</a>
-        <a href="zuper">Zuper</a>
-        <a href="attio">Attio</a>
-        <a href="twenty">Twenty</a>
-      </div>
-    </div>
-
-      
-    <div class="mob-accordion border-b border-[#E8E2DC]">
-      <div class="mob-accordion__header"></div>
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="solutions" class="mob-accordion__link">Solutions</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
-          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="managed">Managed Services</a>
-        <a href="consulting">IT Consulting &amp; Advisory</a>
-        <a href="cyber">Cyber Security</a>
-        <a href="web-development">Web Development</a>
-        <a href="mobile-development">Mobile Development</a>
-        <a href="cloud">Cloud Services</a>
-        <a href="software">Software Development</a>
-        <a href="airtable">Enterprise Airtable Managed Services</a>
-        <a href="web-performance">Web Performance Optimization</a>
-        <a href="seo">On-page Technical SEO</a>
-      </div>
-    </div>
-
-      
-    <div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="staff-augmentation" class="mob-accordion__link">Staff Augmentation</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="specialist-staff-augmentation">Specialist Staff Augmentation</a>
-        <a href="dedicated-expert-pods">Dedicated Expert Pods</a>
-        <a href="sme-on-demand">SME-on-Demand</a>
-        <a href="fractional-interim-leadership">Fractional &amp; Interim Leadership</a>
-        <a href="tool-experts">Tool Experts</a>
-      </div>
-    </div>
-
-     
-    <div class="mob-accordion border-b border-[#E8E2DC]">
-      <button class="mob-accordion__btn w-full flex items-center justify-between bg-transparent border-0 py-[0.85rem] text-sm font-semibold text-charcoal cursor-pointer text-left transition-colors duration-300 hover:text-orange" aria-expanded="false">
-        <a href="about" class="mob-accordion__link">Company</a>
-        <svg class="mob-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 12 12" fill="none">
-          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="mob-accordion__panel">
-        <a href="about">About Us</a>
-        <a href="whyus">Why Us</a>
-        <a href="team">Team</a>
-        <a href="careers">Careers</a>
-        <a href="testimonials">Testimonials</a>
-        <a href="case">Case Studies</a>
-      </div>
-    </div>
-
-      
-    <a href="case" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Case Studies</a>
-
-      
-    <a href="blog" class="mob-link block text-sm font-semibold text-charcoal py-[0.85rem] border-b border-[#E8E2DC] hover:text-orange transition-colors duration-300">Blog</a>
-
-      
-    <a href="contact" class="mob-link mob-link--cta mt-5 bg-orange text-white text-center rounded-lg py-[0.85rem] px-6 text-sm font-semibold block hover:bg-orange-dark transition-colors duration-300">Book an AI Workflow Audit</a>
-  </nav>
-</div>
-
-<!-- Overlay -->
-<div class="nav-overlay" id="navOverlay"></div>
-
-<main class="ag-page fa-page" id="main">
-
-<!-- ═════════ 1. HERO (same as agent page) ═════════ -->
-<section id="fa-top" class="agh">
-  <video class="agh-video" src="video/agents-orchestration.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
-  <div class="agh-shade"></div>
-  <div class="agh-wrap">
-    <div class="agh-copy">
-      <div class="agh-eyebrow agh-rise"><span class="agh-dot"></span> AI finance agent development</div>
-      <h1 class="agh-title agh-rise">Finance agents that never miss a due date.</h1>
-      <div class="agh-row agh-rise-late">
-        <p>Agents that capture invoices, match them to purchase orders, chase overdue balances and flag exceptions, inside the accounting system you already run.</p>
-        <a href="contact.html" class="agh-btn">Follow an invoice <svg class="agh-i"><use href="#i-arrow-down"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═════════ 2. INTRO + PRINTING LEDGER RECEIPT (fai) ═════════ -->
-<section id="fa-intro" class="fa-sec fai">
-  <div class="fa-wrap fai-grid">
-    <div>
-      <p class="fa-eyebrow">AI finance agents</p>
-      <h2 class="fa-title">Accounts payable and receivable automation that shows its work.</h2>
-      <p class="fa-lead">Finance agents read the invoices, statements and emails that reach your team, check them against your records, and take the next step in your accounting or ERP system.</p>
-      <p class="fai-more">Most finance teams still open every invoice, retype the details, chase approvals by email and write the same overdue reminder again and again. Our AI finance agents do that routine work: invoice processing and coding, purchase order matching, payment reminders, and the first pass of reconciliation. You set the limits for what an agent can post alone and what needs approval, and every action is written to an audit trail.</p>
-      <p class="fai-more">Each agent is connected to the system your team already trusts, such as <a href="quickbooks.html">QuickBooks</a>, <a href="netsuite.html">NetSuite</a> or <a href="sap-business-one.html">SAP Business One</a>, so records stay accurate and nothing ends up in a side spreadsheet.</p>
-    </div>
-
-    <div class="fai-printer" id="faiPrinter" aria-hidden="true">
-      <div class="fai-slot"></div>
-      <div class="fai-print">
-        <div class="fai-receipt">
-          <p class="fai-rh">Agent log, invoice 2291</p>
-          <ul>
-            <li style="--d:1"><span>Received</span><i></i><b>Invoice_2291.pdf</b></li>
-            <li style="--d:2"><span>Vendor</span><i></i><b>Northwind Supplies</b></li>
-            <li style="--d:3"><span>Amount</span><i></i><b>4,280.00</b></li>
-            <li style="--d:4"><span>PO match</span><i></i><b>88213, diff 0.00</b></li>
-            <li style="--d:5"><span>Approval</span><i></i><b>Not needed</b></li>
-            <li style="--d:6"><span>Posted</span><i></i><b>Bill created</b></li>
-            <li style="--d:7"><span>Payment</span><i></i><b>Due 15 Oct</b></li>
-          </ul>
-          <p class="fai-rf">Logged. Nothing typed by hand.</p>
+    <!-- ═════════ 1. HERO (same as agent page) ═════════ -->
+    <section id="fa-top" class="agh">
+      <video class="agh-video" src="video/agents-orchestration.mp4" autoplay muted loop playsinline
+        aria-hidden="true"></video>
+      <div class="agh-shade"></div>
+      <div class="agh-wrap">
+        <div class="agh-copy">
+          <div class="agh-eyebrow agh-rise"><span class="agh-dot"></span> AI finance agent development</div>
+          <h1 class="agh-title agh-rise">Finance agents that never miss a due date.</h1>
+          <div class="agh-row agh-rise-late">
+            <p>Agents that capture invoices, match them to purchase orders, chase overdue balances and flag exceptions,
+              inside the accounting system you already run.</p>
+            <a href="contact.html" class="agh-btn">Follow an invoice <svg class="agh-i">
+                <use href="#i-arrow-down" />
+              </svg></a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═════════ 3. INVOICE PIPELINE STEPPER (faf) ═════════ -->
-<section id="fa-flow" class="fa-sec faf">
-  <div class="fa-wrap">
-    <div class="fa-head">
-      <p class="fa-eyebrow">One invoice, start to finish</p>
-      <h2 class="fa-title">Watch an invoice travel through the agent, and see where a person steps in.</h2>
-      <p class="fa-lead">Select a stage, press play, or flip the switch to see what changes when an invoice is above your approval limit.</p>
-    </div>
+    <!-- ═════════ 2. INTRO + PRINTING LEDGER RECEIPT (fai) ═════════ -->
+    <section id="fa-intro" class="fa-sec fai">
+      <div class="fa-wrap fai-grid">
+        <div>
+          <p class="fa-eyebrow">AI finance agents</p>
+          <h2 class="fa-title">Accounts payable and receivable automation that shows its work.</h2>
+          <p class="fa-lead">Finance agents read the invoices, statements and emails that reach your team, check them
+            against your records, and take the next step in your accounting or ERP system.</p>
+          <p class="fai-more">Most finance teams still open every invoice, retype the details, chase approvals by email
+            and write the same overdue reminder again and again. Our AI finance agents do that routine work: invoice
+            processing and coding, purchase order matching, payment reminders, and the first pass of reconciliation. You
+            set the limits for what an agent can post alone and what needs approval, and every action is written to an
+            audit trail.</p>
+          <p class="fai-more">Each agent is connected to the system your team already trusts, such as <a
+              href="quickbooks.html">QuickBooks</a>, <a href="netsuite.html">NetSuite</a> or <a
+              href="sap-business-one.html">SAP Business One</a>, so records stay accurate and nothing ends up in a side
+            spreadsheet.</p>
+        </div>
 
-    <div class="faf-controls">
-      <button type="button" class="faf-play" id="fafPlay" aria-pressed="false"><i class="fas fa-play"></i> <span>Play</span></button>
-      <label class="faf-switch"><input type="checkbox" id="fafOver" /><span class="faf-slider" aria-hidden="true"></span><span>Invoice is above the approval limit</span></label>
-    </div>
-
-    <div class="faf-board">
-      <div class="faf-track-wrap">
-        <div class="faf-inner">
-          <ol class="faf-track" id="fafTrack"></ol>
-          <div class="faf-rail" aria-hidden="true"><span class="faf-fill" id="fafFill"></span><span class="faf-doc" id="fafDoc"><i class="fas fa-file-invoice"></i></span></div>
+        <div class="fai-printer" id="faiPrinter" aria-hidden="true">
+          <div class="fai-slot"></div>
+          <div class="fai-print">
+            <div class="fai-receipt">
+              <p class="fai-rh">Agent log, invoice 2291</p>
+              <ul>
+                <li style="--d:1"><span>Received</span><i></i><b>Invoice_2291.pdf</b></li>
+                <li style="--d:2"><span>Vendor</span><i></i><b>Northwind Supplies</b></li>
+                <li style="--d:3"><span>Amount</span><i></i><b>4,280.00</b></li>
+                <li style="--d:4"><span>PO match</span><i></i><b>88213, diff 0.00</b></li>
+                <li style="--d:5"><span>Approval</span><i></i><b>Not needed</b></li>
+                <li style="--d:6"><span>Posted</span><i></i><b>Bill created</b></li>
+                <li style="--d:7"><span>Payment</span><i></i><b>Due 15 Oct</b></li>
+              </ul>
+              <p class="fai-rf">Logged. Nothing typed by hand.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="faf-card" id="fafCard" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═════════ 4. COLLECTIONS REPLY SIMULATOR (fac) ═════════ -->
-<section id="fa-collections" class="fa-sec fac">
-  <div class="fa-wrap">
-    <div class="fa-head">
-      <p class="fa-eyebrow">Overdue balances</p>
-      <h2 class="fa-title">Choose how the customer replies. See what the agent does next.</h2>
-      <p class="fa-lead">The agent sends reminders on your schedule, reads the reply, updates the invoice and passes disputes to your finance lead with the paperwork attached.</p>
-    </div>
+    <!-- ═════════ 3. INVOICE PIPELINE STEPPER (faf) ═════════ -->
+    <section id="fa-flow" class="fa-sec faf">
+      <div class="fa-wrap">
+        <div class="fa-head">
+          <p class="fa-eyebrow">One invoice, start to finish</p>
+          <h2 class="fa-title">Watch an invoice travel through the agent, and see where a person steps in.</h2>
+          <p class="fa-lead">Select a stage, press play, or flip the switch to see what changes when an invoice is above
+            your approval limit.</p>
+        </div>
 
-    <div class="fac-grid">
-      <div class="fac-pick" role="tablist" aria-label="Customer reply" id="facPick">
-        <button type="button" role="tab" class="fac-opt is-active" aria-selected="true" data-s="0"><i class="fas fa-circle-check"></i> Already paid</button>
-        <button type="button" role="tab" class="fac-opt" aria-selected="false" tabindex="-1" data-s="1"><i class="fas fa-calendar-day"></i> Promises to pay</button>
-        <button type="button" role="tab" class="fac-opt" aria-selected="false" tabindex="-1" data-s="2"><i class="fas fa-triangle-exclamation"></i> Disputes the amount</button>
-        <button type="button" role="tab" class="fac-opt" aria-selected="false" tabindex="-1" data-s="3"><i class="fas fa-hourglass-half"></i> No reply</button>
+        <div class="faf-controls">
+          <button type="button" class="faf-play" id="fafPlay" aria-pressed="false"><i class="fas fa-play"></i>
+            <span>Play</span></button>
+          <label class="faf-switch"><input type="checkbox" id="fafOver" /><span class="faf-slider"
+              aria-hidden="true"></span><span>Invoice is above the approval limit</span></label>
+        </div>
+
+        <div class="faf-board">
+          <div class="faf-track-wrap">
+            <div class="faf-inner">
+              <ol class="faf-track" id="fafTrack"></ol>
+              <div class="faf-rail" aria-hidden="true"><span class="faf-fill" id="fafFill"></span><span class="faf-doc"
+                  id="fafDoc"><i class="fas fa-file-invoice"></i></span></div>
+            </div>
+          </div>
+          <div class="faf-card" id="fafCard" aria-live="polite"></div>
+        </div>
       </div>
-      <div class="fac-out" id="facOut" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═════════ 5. EXPANDING PANELS (faw) ═════════ -->
-<section id="fa-work" class="fa-sec faw">
-  <div class="fa-wrap">
-    <div class="fa-head">
-      <p class="fa-eyebrow">What finance agents take on</p>
-      <h2 class="fa-title">The month-end chores that eat your team's week.</h2>
-      <p class="fa-lead">Hover or tap a strip to open it. Each workflow has its own rules for what the agent does and when it asks.</p>
-    </div>
+    <!-- ═════════ 4. COLLECTIONS REPLY SIMULATOR (fac) ═════════ -->
+    <section id="fa-collections" class="fa-sec fac">
+      <div class="fa-wrap">
+        <div class="fa-head">
+          <p class="fa-eyebrow">Overdue balances</p>
+          <h2 class="fa-title">Choose how the customer replies. See what the agent does next.</h2>
+          <p class="fa-lead">The agent sends reminders on your schedule, reads the reply, updates the invoice and passes
+            disputes to your finance lead with the paperwork attached.</p>
+        </div>
 
-    <div class="faw-row" id="fawRow">
-      <article class="faw-panel is-active">
-        <button type="button" class="faw-rail" aria-expanded="true"><i class="fas fa-file-invoice-dollar"></i><span>Invoice capture</span></button>
-        <div class="faw-body">
-          <h3>Invoice capture and coding</h3>
-          <p>Reads supplier invoices from email or upload and suggests the right account and cost centre.</p>
-          <ul><li>Extracts vendor, totals, dates and line items</li><li>Codes lines from your past decisions</li><li>Sends low-confidence items for review</li></ul>
+        <div class="fac-grid">
+          <div class="fac-pick" role="tablist" aria-label="Customer reply" id="facPick">
+            <button type="button" role="tab" class="fac-opt is-active" aria-selected="true" data-s="0"><i
+                class="fas fa-circle-check"></i> Already paid</button>
+            <button type="button" role="tab" class="fac-opt" aria-selected="false" tabindex="-1" data-s="1"><i
+                class="fas fa-calendar-day"></i> Promises to pay</button>
+            <button type="button" role="tab" class="fac-opt" aria-selected="false" tabindex="-1" data-s="2"><i
+                class="fas fa-triangle-exclamation"></i> Disputes the amount</button>
+            <button type="button" role="tab" class="fac-opt" aria-selected="false" tabindex="-1" data-s="3"><i
+                class="fas fa-hourglass-half"></i> No reply</button>
+          </div>
+          <div class="fac-out" id="facOut" aria-live="polite"></div>
         </div>
-      </article>
-      <article class="faw-panel">
-        <button type="button" class="faw-rail" aria-expanded="false"><i class="fas fa-link"></i><span>PO matching</span></button>
-        <div class="faw-body">
-          <h3>Purchase order matching</h3>
-          <p>Compares each invoice with the purchase order and what was received before anything is posted.</p>
-          <ul><li>Flags price and quantity differences</li><li>Catches possible duplicates</li><li>Routes mismatches to the buyer</li></ul>
-        </div>
-      </article>
-      <article class="faw-panel">
-        <button type="button" class="faw-rail" aria-expanded="false"><i class="fas fa-bell"></i><span>Collections</span></button>
-        <div class="faw-body">
-          <h3>Payment reminders and collections</h3>
-          <p>Follows up on open balances in a tone you approve and records every reply.</p>
-          <ul><li>Reminders on your schedule</li><li>Updates status when a customer pays</li><li>Escalates disputes with the invoice and PO</li></ul>
-        </div>
-      </article>
-      <article class="faw-panel">
-        <button type="button" class="faw-rail" aria-expanded="false"><i class="fas fa-building-columns"></i><span>Reconciliation</span></button>
-        <div class="faw-body">
-          <h3>Bank and ledger reconciliation</h3>
-          <p>Does the first pass of matching bank lines to ledger entries so your team reviews only the gaps.</p>
-          <ul><li>Matches by amount, date and reference</li><li>Lists unmatched items with a likely cause</li><li>Leaves a note for each decision</li></ul>
-        </div>
-      </article>
-      <article class="faw-panel">
-        <button type="button" class="faw-rail" aria-expanded="false"><i class="fas fa-receipt"></i><span>Expenses</span></button>
-        <div class="faw-body">
-          <h3>Expense and spend review</h3>
-          <p>Checks claims and card spend against your policy before they reach an approver.</p>
-          <ul><li>Reads receipts and fills in claim fields</li><li>Flags items outside policy</li><li>Asks the employee for missing details</li></ul>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ═════════ 6. AUDIT TRAIL TERMINAL (fak) ═════════ -->
-<section id="fa-audit" class="fa-sec fak">
-  <div class="fa-wrap fak-grid">
-    <div>
-      <p class="fa-eyebrow">You stay in control</p>
-      <h2 class="fa-title">Every action leaves a record your auditors can read.</h2>
-      <p class="fa-lead">Each step an agent takes is logged with what it saw, what it decided and what it changed. Filter the log to see the agent's work, your team's decisions, or the items it held back. <a href="agent-governance.html">See Agent Governance</a>.</p>
-    </div>
-
-    <div class="fak-term">
-      <div class="fak-bar">
-        <span class="fak-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-        <div class="fak-filters" id="fakFilters" role="group" aria-label="Filter the log">
-          <button type="button" class="is-on" data-f="all" aria-pressed="true">All</button>
-          <button type="button" data-f="agent" aria-pressed="false">Agent</button>
-          <button type="button" data-f="person" aria-pressed="false">People</button>
-          <button type="button" data-f="flag" aria-pressed="false">Held back</button>
-        </div>
-        <button type="button" class="fak-replay" id="fakReplay" aria-label="Replay the log"><i class="fas fa-rotate-right"></i></button>
       </div>
-      <ol class="fak-log" id="fakLog" aria-live="off"></ol>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═════════ 7. CTA WITH DRIFTING DOCUMENT ROWS (fax) ═════════ -->
-<section id="fa-cta" class="fax">
-  <div class="fax-rows" id="faxRows" aria-hidden="true">
-    <div class="fax-row" data-w="Invoices,Purchase orders,Credit notes,Statements,Remittances,Receipts,Bank lines"></div>
-    <div class="fax-row fax-rev" data-w="Reminders,Approvals,Reconciliations,Expense claims,Vendor bills,Journals,Payment runs"></div>
-    <div class="fax-row" data-w="Due dates,Line items,PO numbers,Totals,Tax details,Vendor names,Ledger codes"></div>
-  </div>
-  <div class="fax-wrap">
-    <p class="fax-eyebrow">Built for your finance team</p>
-    <h2 class="fax-title">Close faster. Keep every approval with your team.</h2>
-    <p class="fax-lead">Start with one workflow, review the results with your team, then extend to the next.</p>
-    <div class="fax-btns">
-      <a href="contact.html" class="agh-btn">Talk to us about finance agents <svg class="agh-i"><use href="#i-arrow-right"/></svg></a>
-    </div>
-  </div>
-</section>
+    <!-- ═════════ 5. EXPANDING PANELS (faw) ═════════ -->
+    <section id="fa-work" class="fa-sec faw">
+      <div class="fa-wrap">
+        <div class="fa-head">
+          <p class="fa-eyebrow">What finance agents take on</p>
+          <h2 class="fa-title">The month-end chores that eat your team's week.</h2>
+          <p class="fa-lead">Hover or tap a strip to open it. Each workflow has its own rules for what the agent does
+            and when it asks.</p>
+        </div>
 
-<!-- ═════════ 8. FAQ (same as agent page) ═════════ -->
-<section id="fa-faq" class="agf">
-  <div class="agf-wrap">
-    <div>
-      <p class="agf-eyebrow">Questions</p>
-      <h2 class="agf-title">Answers before you ask.</h2>
-    </div>
-    <div class="agf-list">
-      <details class="agf-item"><summary>What is an AI finance agent, and how is it different from accounting automation or OCR?</summary><p>An AI finance agent reads invoices, statements and emails, extracts the right fields, checks them against your purchase orders and records, and takes the next step within rules you set. OCR only turns an image into text, and basic automation follows fixed paths. An agent copes with new layouts and unusual cases, and sends an item to a person when it is not sure.</p></details>
-      <details class="agf-item"><summary>Which finance workflows should we start with?</summary><p>Start with a repetitive, high-volume task that has clear rules, such as invoice capture and matching, overdue balance follow-up, or bank and ledger reconciliation. An <a href="ai-workflow-audit.html">AI Workflow Audit</a> helps rank your candidates by value and feasibility.</p></details>
-      <details class="agf-item"><summary>Which accounting and ERP systems can finance agents connect to?</summary><p>We work with QuickBooks, NetSuite, SAP Business One, Zoho, Salesforce, Shopify and WooCommerce, among others. Agents read from and write to the system you already run, so there is no new platform to log in to. If you use something else, tell us and we will scope the connection.</p></details>
-      <details class="agf-item"><summary>How do approvals and limits work?</summary><p>You set the amounts, vendors and conditions that decide what the agent can post on its own and what needs a person's approval. Anything above a limit, outside a purchase order or flagged as unusual is routed to the right approver with the agent's work attached.</p></details>
-      <details class="agf-item"><summary>How accurate is invoice data extraction, and what happens to exceptions?</summary><p>Accuracy depends on document quality and layout, which is why we measure it on your own invoices before launch. Each extraction carries a confidence score. Items below your threshold, mismatches and possible duplicates go to a review queue instead of being posted.</p></details>
-      <details class="agf-item"><summary>Can the agent send payment reminders to customers on its own?</summary><p>Yes, on a schedule and in a tone you approve. The agent can send reminders, record replies such as promises to pay, and update the invoice status. Disputes and sensitive accounts can always go to your finance lead.</p></details>
-      <details class="agf-item"><summary>How do you keep financial data secure and auditable?</summary><p>Each agent has access only to the mailboxes, folders and systems in scope, and every action is logged with what the agent saw, decided and changed. Data handling follows your policies, and your security and finance teams should review the setup for your requirements.</p></details>
-      <details class="agf-item"><summary>How much do finance agents cost, and how long do they take to launch?</summary><p>Cost depends on document volume, the number of workflows, the systems connected and the level of ongoing support. A focused agent for one workflow can often be piloted in a matter of weeks. After a short discovery call we give you a scoped proposal with a realistic range.</p></details>
-    </div>
-  </div>
-</section>
-</main>
+        <div class="faw-row" id="fawRow">
+          <article class="faw-panel is-active">
+            <button type="button" class="faw-rail" aria-expanded="true"><i
+                class="fas fa-file-invoice-dollar"></i><span>Invoice capture</span></button>
+            <div class="faw-body">
+              <h3>Invoice capture and coding</h3>
+              <p>Reads supplier invoices from email or upload and suggests the right account and cost centre.</p>
+              <ul>
+                <li>Extracts vendor, totals, dates and line items</li>
+                <li>Codes lines from your past decisions</li>
+                <li>Sends low-confidence items for review</li>
+              </ul>
+            </div>
+          </article>
+          <article class="faw-panel">
+            <button type="button" class="faw-rail" aria-expanded="false"><i class="fas fa-link"></i><span>PO
+                matching</span></button>
+            <div class="faw-body">
+              <h3>Purchase order matching</h3>
+              <p>Compares each invoice with the purchase order and what was received before anything is posted.</p>
+              <ul>
+                <li>Flags price and quantity differences</li>
+                <li>Catches possible duplicates</li>
+                <li>Routes mismatches to the buyer</li>
+              </ul>
+            </div>
+          </article>
+          <article class="faw-panel">
+            <button type="button" class="faw-rail" aria-expanded="false"><i
+                class="fas fa-bell"></i><span>Collections</span></button>
+            <div class="faw-body">
+              <h3>Payment reminders and collections</h3>
+              <p>Follows up on open balances in a tone you approve and records every reply.</p>
+              <ul>
+                <li>Reminders on your schedule</li>
+                <li>Updates status when a customer pays</li>
+                <li>Escalates disputes with the invoice and PO</li>
+              </ul>
+            </div>
+          </article>
+          <article class="faw-panel">
+            <button type="button" class="faw-rail" aria-expanded="false"><i
+                class="fas fa-building-columns"></i><span>Reconciliation</span></button>
+            <div class="faw-body">
+              <h3>Bank and ledger reconciliation</h3>
+              <p>Does the first pass of matching bank lines to ledger entries so your team reviews only the gaps.</p>
+              <ul>
+                <li>Matches by amount, date and reference</li>
+                <li>Lists unmatched items with a likely cause</li>
+                <li>Leaves a note for each decision</li>
+              </ul>
+            </div>
+          </article>
+          <article class="faw-panel">
+            <button type="button" class="faw-rail" aria-expanded="false"><i
+                class="fas fa-receipt"></i><span>Expenses</span></button>
+            <div class="faw-body">
+              <h3>Expense and spend review</h3>
+              <p>Checks claims and card spend against your policy before they reach an approver.</p>
+              <ul>
+                <li>Reads receipts and fills in claim fields</li>
+                <li>Flags items outside policy</li>
+                <li>Asks the employee for missing details</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- ───────── FOOTER ───────── -->
-<footer class="bg-[#0f172a] text-white pt-16 pb-8">
+    <!-- ═════════ 6. AUDIT TRAIL TERMINAL (fak) ═════════ -->
+    <section id="fa-audit" class="fa-sec fak">
+      <div class="fa-wrap fak-grid">
+        <div>
+          <p class="fa-eyebrow">You stay in control</p>
+          <h2 class="fa-title">Every action leaves a record your auditors can read.</h2>
+          <p class="fa-lead">Each step an agent takes is logged with what it saw, what it decided and what it changed.
+            Filter the log to see the agent's work, your team's decisions, or the items it held back. <a
+              href="agent-governance.html">See Agent Governance</a>.</p>
+        </div>
+
+        <div class="fak-term">
+          <div class="fak-bar">
+            <span class="fak-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <div class="fak-filters" id="fakFilters" role="group" aria-label="Filter the log">
+              <button type="button" class="is-on" data-f="all" aria-pressed="true">All</button>
+              <button type="button" data-f="agent" aria-pressed="false">Agent</button>
+              <button type="button" data-f="person" aria-pressed="false">People</button>
+              <button type="button" data-f="flag" aria-pressed="false">Held back</button>
+            </div>
+            <button type="button" class="fak-replay" id="fakReplay" aria-label="Replay the log"><i
+                class="fas fa-rotate-right"></i></button>
+          </div>
+          <ol class="fak-log" id="fakLog" aria-live="off"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 7. CTA WITH DRIFTING DOCUMENT ROWS (fax) ═════════ -->
+    <section id="fa-cta" class="fax">
+      <div class="fax-rows" id="faxRows" aria-hidden="true">
+        <div class="fax-row" data-w="Invoices,Purchase orders,Credit notes,Statements,Remittances,Receipts,Bank lines">
+        </div>
+        <div class="fax-row fax-rev"
+          data-w="Reminders,Approvals,Reconciliations,Expense claims,Vendor bills,Journals,Payment runs"></div>
+        <div class="fax-row" data-w="Due dates,Line items,PO numbers,Totals,Tax details,Vendor names,Ledger codes">
+        </div>
+      </div>
+      <div class="fax-wrap">
+        <p class="fax-eyebrow">Built for your finance team</p>
+        <h2 class="fax-title">Close faster. Keep every approval with your team.</h2>
+        <p class="fax-lead">Start with one workflow, review the results with your team, then extend to the next.</p>
+        <div class="fax-btns">
+          <a href="contact.html" class="agh-btn">Talk to us about finance agents <svg class="agh-i">
+              <use href="#i-arrow-right" />
+            </svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 8. FAQ (same as agent page) ═════════ -->
+    <section id="fa-faq" class="agf">
+      <div class="agf-wrap">
+        <div>
+          <p class="agf-eyebrow">Questions</p>
+          <h2 class="agf-title">Answers before you ask.</h2>
+        </div>
+        <div class="agf-list">
+          <details class="agf-item">
+            <summary>What is an AI finance agent, and how is it different from accounting automation or OCR?</summary>
+            <p>An AI finance agent reads invoices, statements and emails, extracts the right fields, checks them against
+              your purchase orders and records, and takes the next step within rules you set. OCR only turns an image
+              into text, and basic automation follows fixed paths. An agent copes with new layouts and unusual cases,
+              and sends an item to a person when it is not sure.</p>
+          </details>
+          <details class="agf-item">
+            <summary>Which finance workflows should we start with?</summary>
+            <p>Start with a repetitive, high-volume task that has clear rules, such as invoice capture and matching,
+              overdue balance follow-up, or bank and ledger reconciliation. An <a href="ai-workflow-audit.html">AI
+                Workflow Audit</a> helps rank your candidates by value and feasibility.</p>
+          </details>
+          <details class="agf-item">
+            <summary>Which accounting and ERP systems can finance agents connect to?</summary>
+            <p>We work with QuickBooks, NetSuite, SAP Business One, Zoho, Salesforce, Shopify and WooCommerce, among
+              others. Agents read from and write to the system you already run, so there is no new platform to log in
+              to. If you use something else, tell us and we will scope the connection.</p>
+          </details>
+          <details class="agf-item">
+            <summary>How do approvals and limits work?</summary>
+            <p>You set the amounts, vendors and conditions that decide what the agent can post on its own and what needs
+              a person's approval. Anything above a limit, outside a purchase order or flagged as unusual is routed to
+              the right approver with the agent's work attached.</p>
+          </details>
+          <details class="agf-item">
+            <summary>How accurate is invoice data extraction, and what happens to exceptions?</summary>
+            <p>Accuracy depends on document quality and layout, which is why we measure it on your own invoices before
+              launch. Each extraction carries a confidence score. Items below your threshold, mismatches and possible
+              duplicates go to a review queue instead of being posted.</p>
+          </details>
+          <details class="agf-item">
+            <summary>Can the agent send payment reminders to customers on its own?</summary>
+            <p>Yes, on a schedule and in a tone you approve. The agent can send reminders, record replies such as
+              promises to pay, and update the invoice status. Disputes and sensitive accounts can always go to your
+              finance lead.</p>
+          </details>
+          <details class="agf-item">
+            <summary>How do you keep financial data secure and auditable?</summary>
+            <p>Each agent has access only to the mailboxes, folders and systems in scope, and every action is logged
+              with what the agent saw, decided and changed. Data handling follows your policies, and your security and
+              finance teams should review the setup for your requirements.</p>
+          </details>
+          <details class="agf-item">
+            <summary>How much do finance agents cost, and how long do they take to launch?</summary>
+            <p>Cost depends on document volume, the number of workflows, the systems connected and the level of ongoing
+              support. A focused agent for one workflow can often be piloted in a matter of weeks. After a short
+              discovery call we give you a scoped proposal with a realistic range.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="bg-[#0f172a] text-white pt-16 pb-8">
     <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
 
@@ -799,73 +1015,124 @@
           </a>
           <p class="text-white/80 text-sm leading-relaxed mb-6">Streamlining IT for an Ever Changing World</p>
           <div class="flex gap-4">
-            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
-            <a href="https://www.facebook.com/rethinkingweb/" target="_blank" class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
+            <a href="https://www.linkedin.com/company/rethinkingweb/" target="_blank"
+              class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">LinkedIn</a>
+            <a href="https://www.facebook.com/rethinkingweb/" target="_blank"
+              class="text-sm font-light tracking-wide text-white hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Facebook</a>
           </div>
         </div>
 
         <!-- Solutions (column 1) -->
         <div>
-          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Solutions</h4>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">
+            Solutions</h4>
           <div class="flex flex-col gap-3">
-            <a href="managed" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed Services</a>
-            <a href="consulting" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT Consulting &amp; Advisory</a>
-            <a href="cyber" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber Security</a>
-            <a href="web-development" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Development</a>
-            <a href="mobile-development" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile Development</a>
+            <a href="managed"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Managed
+              Services</a>
+            <a href="consulting"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">IT
+              Consulting &amp; Advisory</a>
+            <a href="cyber"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cyber
+              Security</a>
+            <a href="web-development"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web
+              Development</a>
+            <a href="mobile-development"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Mobile
+              Development</a>
           </div>
         </div>
 
         <!-- Solutions (column 2) -->
         <div>
           <div class="flex flex-col gap-3">
-            <a href="cloud" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud Services</a>
-            <a href="software" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software Development</a>
-            <a href="airtable" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise Airtable Managed Services</a>
-            <a href="web-performance" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web Performance Optimization Services</a>
-            <a href="seo" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page Technical SEO implementation</a>
+            <a href="cloud"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Cloud
+              Services</a>
+            <a href="software"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Software
+              Development</a>
+            <a href="airtable"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Enterprise
+              Airtable Managed Services</a>
+            <a href="web-performance"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Web
+              Performance Optimization Services</a>
+            <a href="seo"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">On-page
+              Technical SEO implementation</a>
           </div>
         </div>
 
         <div>
-          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Company</h4>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">
+            Company</h4>
           <div class="flex flex-col gap-3">
-            <a href="about" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About Us</a>
-            <a href="whyus" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why Us</a>
-            <a href="team" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
-            <a href="careers" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
-            <a href="testimonials" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
-            <a href="case" class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case Studies</a>
+            <a href="about"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">About
+              Us</a>
+            <a href="whyus"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Why
+              Us</a>
+            <a href="team"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Team</a>
+            <a href="careers"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Careers</a>
+            <a href="testimonials"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Testimonials</a>
+            <a href="case"
+              class="text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]">Case
+              Studies</a>
           </div>
         </div>
 
         <div>
-          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">Contact</h4>
+          <h4 class="text-xs font-light uppercase tracking-[0.22em] text-white mb-5 font-['Inter_Tight',sans-serif]">
+            Contact</h4>
           <div class="flex flex-col gap-3">
-            <span class="flex items-center gap-3 text-sm font-bold tracking-wide text-white font-['Inter_Tight',sans-serif]"><i class="fas fa-location-dot text-orange"></i>USA</span>
-            <span class="flex items-center gap-3 text-sm font-bold tracking-wide text-white font-['Inter_Tight',sans-serif]"><i class="fas fa-location-dot text-orange"></i>Mumbai</span>
-            <span class="flex items-center gap-3 text-sm font-bold tracking-wide text-white font-['Inter_Tight',sans-serif]"><i class="fas fa-location-dot text-orange"></i>Vadodara</span>
-            <a href="mailto:info@rethinkingweb.com" class="flex items-center gap-3 text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]"><i class="fas fa-envelope text-orange"></i>info@rethinkingweb.com</a>
-            <a href="contact" class="inline-flex items-center justify-center self-start mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule Consultation</a>
+            <span
+              class="flex items-center gap-3 text-sm font-bold tracking-wide text-white font-['Inter_Tight',sans-serif]"><i
+                class="fas fa-location-dot text-orange"></i>USA</span>
+            <span
+              class="flex items-center gap-3 text-sm font-bold tracking-wide text-white font-['Inter_Tight',sans-serif]"><i
+                class="fas fa-location-dot text-orange"></i>Mumbai</span>
+            <span
+              class="flex items-center gap-3 text-sm font-bold tracking-wide text-white font-['Inter_Tight',sans-serif]"><i
+                class="fas fa-location-dot text-orange"></i>Vadodara</span>
+            <a href="mailto:info@rethinkingweb.com"
+              class="flex items-center gap-3 text-sm font-light tracking-wide text-white hover:text-orange transition-colors duration-300 font-['Inter_Tight',sans-serif]"><i
+                class="fas fa-envelope text-orange"></i>info@rethinkingweb.com</a>
+            <a href="contact"
+              class="inline-flex items-center justify-center self-start mt-2 px-5 py-2.5 rounded-lg bg-orange text-white text-sm font-semibold hover:bg-orange-dark transition-all duration-300">Schedule
+              Consultation</a>
           </div>
         </div>
 
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-        <a href="index" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">© 2026 RethinkingWeb</a>
+        <a href="index"
+          class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">©
+          2026 RethinkingWeb</a>
         <div class="flex gap-6">
-          <a href="terms" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms &amp; Conditions</a>
-          <a href="privacy" class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy Policy</a>
+          <a href="terms"
+            class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Terms
+            &amp; Conditions</a>
+          <a href="privacy"
+            class="text-xs font-light tracking-wide text-white/70 hover:text-white transition-colors duration-300 font-['Inter_Tight',sans-serif]">Privacy
+            Policy</a>
         </div>
       </div>
     </div>
   </footer>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
-<script src="/js/script.js"></script>
-<script src="js/agent.js"></script>                         <!-- reused: hero video + FAQ one-at-a-time -->
-<script src="js/finance-agents.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="js/agent.js"></script> <!-- reused: hero video + FAQ one-at-a-time -->
+  <script src="js/finance-agents.js"></script>
 </body>
+
 </html>
