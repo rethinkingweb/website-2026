@@ -444,7 +444,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    WHAT WE DO
 ═══════════════════════════════ */
-.what-we-do {padding: 0px 0 36px; background: var(--bg2); }
+.what-we-do {padding: 3rem 0 4rem; background: var(--bg2); }
 .pillars {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
