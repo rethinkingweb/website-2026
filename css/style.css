@@ -669,7 +669,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    SOLUTIONS
 ═══════════════════════════════ */
-.solutions {padding: 0px 0 36px; background: var(--bg2); }
+.solutions {padding: 3rem 0 4rem; background: var(--bg2); }
 .solutions__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -727,7 +727,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    INDUSTRIES
 ═══════════════════════════════ */
-.industries {padding: 0px 0 36px; background: var(--bg2); }
+.industries {padding: 3rem 0 4rem; background: var(--bg2); }
 .industries__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .industry-card {
   position: relative;
@@ -760,7 +760,7 @@ input, select, textarea, button { font-family: inherit; }
 /* ═══════════════════════════════
    CASE STUDIES
 ═══════════════════════════════ */
-.cases {padding: 0px 0 36px; background: var(--bg); }
+.cases {padding: 3rem 0 4rem; background: var(--bg); }
 .cases__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .case-card {
   background: var(--white);
@@ -1972,7 +1972,7 @@ clamp:(3rem, 4.5rem, 5vw);
 
 /* ── Outer wrapper: left text + right columns ── */
 .clients-wrap {
-  max-width: 1200px;
+  max-width: var(--site-max);
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
