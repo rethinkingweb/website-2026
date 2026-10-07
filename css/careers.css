@@ -35,11 +35,11 @@ input,select,textarea,button { font-family:inherit; }
 .page-hero { padding:9rem 0 5rem; position:relative; overflow:hidden; }
 .page-hero__inner {
   display:grid; grid-template-columns:1fr 1fr;
-  gap:4rem; align-items:center; margin-bottom:4rem;
+  gap:4rem; align-items:center;
 }
 .breadcrumb {
   display:flex; align-items:center; gap:0.5rem;
-  font-size:0.8rem; color:var(--text-muted); margin-bottom:1.5rem;
+  font-size:0.8rem; color:var(--text-muted); margin-bottom:1.5rem; margin-top:1.5rem;
 }
 .breadcrumb a { color:var(--orange); }
 .hero__badge {
@@ -77,7 +77,7 @@ input,select,textarea,button { font-family:inherit; }
     color: var(--charcoal);
     margin-bottom: 1.25rem;
     animation: fadeUp 0.7s 0.1s ease both;
-    text-align: center;
+    text-align: left;
   }
   .page-hero__sub { 
     font-size:1.05rem;
@@ -85,7 +85,7 @@ input,select,textarea,button { font-family:inherit; }
      margin-bottom:2rem; 
      max-width:480px; line-height:1.75;
       animation:fadeUp 0.7s 0.2s ease both; 
-      text-align: center;
+      text-align: left;
   }
 }
 /* ── Culture card (hero right) ── */
@@ -361,14 +361,14 @@ input,select,textarea,button { font-family:inherit; }
 
 /* ═══ RESPONSIVE ═══ */
 @media (max-width:1024px) {
-  .page-hero__inner   { grid-template-columns:1fr; }
+  .page-hero__inner   { grid-template-columns:1fr;padding: 2.5rem 0 60px; }
   .hero__culture-card { max-width:560px; }
   .focus-grid         { grid-template-columns:1fr; gap:3rem; }
   .benefits-grid      { grid-template-columns:repeat(2,1fr); }
   .footer__top        { grid-template-columns:1fr 1fr; gap:2rem; }
   .contact__grid      { grid-template-columns:1fr 1fr; }
   .page-hero__cta { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1.75rem; animation:fadeUp 0.7s 0.3s ease both;flex-direction: column;
-        align-content: center; }
+        align-content: baseline; }
 }
 @media (max-width:768px) {
   .nav__links,.nav__actions { display:none; }

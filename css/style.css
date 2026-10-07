@@ -102,10 +102,10 @@ input, select, textarea, button { font-family: inherit; }
 }
 @media (max-width: 768px) {
   .section-title {
-    font-size: 1.2rem;      /* smaller for mobile */
-    line-height: 1.2;       /* slightly tighter */
+    font-size: 1.2rem;      
+    line-height: 1.2;       
     margin-bottom: 1.5rem; 
-    text-align: center; /* reduce space below */    /* optional but looks better */
+    text-align: left; 
   }
     .section-label {
     font-family: var(--font-display);
@@ -485,8 +485,8 @@ input, select, textarea, button { font-family: inherit; }
    AGENTS SHOWCASE (homepage)
 ═══════════════════════════════ */
 .agx {
-  --cw: 300px;            /* card width  */
-  --ch: 420px;            /* card height */
+  --cw: 300px;          
+  --ch: 420px;            
   padding: 3rem 0 4rem;
   background: var(--bg);
   overflow: hidden;
@@ -526,7 +526,7 @@ input, select, textarea, button { font-family: inherit; }
   transition: transform .6s cubic-bezier(.22,.8,.24,1), opacity .5s ease, filter .5s ease, box-shadow .5s ease;
   will-change: transform;
 }
-.agx-card::after {            /* soft fade on side cards */
+.agx-card::after {          
   content: '';
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.35));
@@ -598,7 +598,6 @@ input, select, textarea, button { font-family: inherit; }
   50%      { transform: translateY(-6px); }
 }
 
-/* Info + glass bar */
 .agx-info { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 3; }
 .agx-desc {
   font-size: 12.5px; line-height: 1.55; color: #fff;
@@ -630,7 +629,7 @@ input, select, textarea, button { font-family: inherit; }
 .agx-card[data-pos="0"]:hover { transform: translateY(-6px) scale(1); }
 .agx-card:not([data-pos="0"]) { cursor: pointer; }
 
-/* Controls */
+
 .agx-controls { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 1.5rem; }
 .agx-arrow {
   width: 42px; height: 42px; border-radius: 50%;
@@ -649,7 +648,7 @@ input, select, textarea, button { font-family: inherit; }
 .agx-dot.is-on { width: 22px; border-radius: 4px; background: var(--orange); }
 .agx-cta { text-align: center; margin-top: 2rem; }
 
-/* Responsive */
+
 @media (max-width: 900px) {
   .agx { --cw: 270px; --ch: 390px; }
 }
@@ -666,9 +665,7 @@ input, select, textarea, button { font-family: inherit; }
   .agx-card, .agx-chip, .agx-desc { transition: none; }
   .agx-ring, .agx-chip { animation: none !important; }
 }
-/* ═══════════════════════════════
-   SOLUTIONS
-═══════════════════════════════ */
+
 .solutions {padding: 3rem 0 4rem; background: var(--bg2); }
 .solutions__grid {
   display: grid;
@@ -710,7 +707,7 @@ input, select, textarea, button { font-family: inherit; }
   border-radius: var(--radius-lg);
    box-shadow: var(--shadow);
   gap: 1rem;
-  /* box-shadow: var(--shadow-orange); */
+
 }
 .solution-card--cta p { color: rgba(255,255,255,0.9); font-size: 1.05rem; font-weight: 600; }
 .solution-card--cta .btn--primary { background: var(--white); color: var(--orange); }
@@ -724,9 +721,7 @@ input, select, textarea, button { font-family: inherit; }
 .solution-card__link { display: inline-block; margin-top: 1.25rem; font-size: 0.875rem; font-weight: 600; color: var(--orange); transition: letter-spacing var(--trans); }
 .solution-card__link:hover { letter-spacing: 0.03em; }
 
-/* ═══════════════════════════════
-   INDUSTRIES
-═══════════════════════════════ */
+
 .industries {padding: 3rem 0 4rem; background: var(--bg2); }
 .industries__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .industry-card {
@@ -757,9 +752,6 @@ input, select, textarea, button { font-family: inherit; }
   font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white);
 }
 
-/* ═══════════════════════════════
-   CASE STUDIES
-═══════════════════════════════ */
 .cases {padding: 3rem 0 4rem; background: var(--bg); }
 .cases__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .case-card {
@@ -1111,7 +1103,6 @@ input, select, textarea, button { font-family: inherit; }
     max-width: 26rem;
     margin-inline: auto;
   }
-
   .stat-pill {
     min-width: 0;            
     padding: 1rem .5rem;    
@@ -2410,7 +2401,7 @@ clamp:(3rem, 4.5rem, 5vw);
   .hero__image { display: flex; justify-content: center; }
   .hero__image img { max-width: 260px; }
   .hero__badge { margin: 0 auto 1.25rem; }
-  .hero__social-proof { justify-content: center; }
+  .hero__social-proof { justify-content: flex-start; }
   .hero__cta {
     display: flex;
     flex-direction: column;
