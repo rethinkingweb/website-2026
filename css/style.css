@@ -2413,7 +2413,7 @@ clamp:(3rem, 4.5rem, 5vw);
   .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1.5rem; }
 
   /* Solutions */
-  .solutions__grid { grid-template-columns: 1fr; }
+  .solutions__grid { grid-template-columns: repeat(2, 1fr); }
   .solution-card--featured,
   .solution-card--cta { grid-column: span 1; }
 
