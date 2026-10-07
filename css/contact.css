@@ -2,12 +2,6 @@
 /* ═══════════════════════════════
    CONTACT HERO
 ═══════════════════════════════ */
-.contact-hero {
-  position: relative;
-  padding: 10rem 2rem 5rem;
-  overflow: hidden;
-  background: var(--bg);
-}
 
 .contact-hero__title {
   font-family: var(--font-display);
@@ -28,27 +22,54 @@
   background-clip: text;
 }
 
+.contact-hero {
+  position: relative;
+  padding: 9rem 2rem 4rem;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.contact-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-hero__left { text-align: left; }
+.contact-hero__right { width: 100%; }
+
 .contact-hero__sub {
   font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 520px;
-  margin: 0 auto 2.75rem;
+  max-width: 480px;
+  margin: 0 0 2.25rem;
   animation: fadeUp 0.7s 0.2s ease both;
 }
 
+/* quick contact card now stacks vertically on the left */
 .contact-hero__quick {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 420px;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   overflow: hidden;
   animation: fadeUp 0.7s 0.3s ease both;
-  flex-wrap: wrap;
 }
 
+.quick-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  flex-shrink: 0;
+}
 .quick-item {
   display: flex;
   flex-direction: column;
@@ -367,23 +388,13 @@
 ═══════════════════════════════ */
 @media (max-width: 1024px) {
   .offices__grid { grid-template-columns: repeat(2, 1fr); }
+   .contact-hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
 @media (max-width: 768px) {
-  .contact-hero { padding: 8rem 1.5rem 4rem; }
-
-  .contact-hero__quick {
-    flex-direction: column;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
-  }
-
-  .quick-item { width: 100%; }
-  .quick-divider { width: 100%; height: 1px; }
-
-  .offices__grid { grid-template-columns: 1fr; }
-
+ .contact-hero { padding: 8rem 1.5rem 3rem; }
+  .contact-hero__quick { max-width: 100%; }
+.offices__grid { grid-template-columns: 1fr; }
   .form-nav { flex-wrap: wrap; }
   .form-review__row { flex-direction: column; gap: 0.15rem; }
   .form-review__row strong { text-align: left; }
