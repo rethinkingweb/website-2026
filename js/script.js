@@ -594,36 +594,21 @@ const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2N
   if (!stage) return;
 
   var cards = [].slice.call(stage.querySelectorAll('.agx-card'));
-  var dotsWrap = document.getElementById('agxDots');
-  var prevBtn = document.getElementById('agxPrev');
-  var nextBtn = document.getElementById('agxNext');
   var n = cards.length;
   var cur = 0;
   var timer = null;
   var dragged = false;
 
-  // dots
-  var dots = cards.map(function (c, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'agx-dot';
-    b.setAttribute('aria-label', 'Show agent ' + (i + 1));
-    b.addEventListener('click', function () { go(i); });
-    dotsWrap.appendChild(b);
-    return b;
-  });
-
   function render() {
     cards.forEach(function (c, i) {
       var d = (((i - cur) % n) + n) % n;
-      if (d > n / 2) d -= n;                       // range -2..3 for 6 cards
+      if (d > n / 2) d -= n;
       var pos = Math.abs(d) > 2 ? 'far' : d;
       c.setAttribute('data-pos', pos);
       c.setAttribute('tabindex', d === 0 ? '0' : '-1');
       c.setAttribute('aria-hidden', pos === 'far' ? 'true' : 'false');
       if (d === 0) c.setAttribute('aria-current', 'true'); else c.removeAttribute('aria-current');
     });
-    dots.forEach(function (b, i) { b.classList.toggle('is-on', i === cur); });
   }
 
   function go(i)   { cur = ((i % n) + n) % n; render(); }
@@ -634,12 +619,9 @@ const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2N
   cards.forEach(function (c, i) {
     c.addEventListener('click', function (e) {
       if (dragged) { e.preventDefault(); return; }
-      if (c.getAttribute('data-pos') !== '0') { e.preventDefault(); go(i); }
+      if (c.getAttribute('data-pos') !== '0') { e.preventDefault(); go(i); restart(); }
     });
   });
-
-  prevBtn.addEventListener('click', function () { prev(); restart(); });
-  nextBtn.addEventListener('click', function () { next(); restart(); });
 
   stage.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowRight') { next(); restart(); }
@@ -661,7 +643,7 @@ const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2N
   // autoplay (only while visible, paused on hover/focus, off for reduced-motion)
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var visible = false;
-  function start() { if (reduce || !visible || timer) return; timer = setInterval(next, 2500); }
+  function start() { if (reduce || !visible || timer) return; timer = setInterval(next, 2000); }
   function stop()  { clearInterval(timer); timer = null; }
   function restart() { stop(); start(); }
 
@@ -679,7 +661,9 @@ const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2N
 
   render();
 })();
-
+  /* ── showStep takes a shouldScroll flag.
+        Default true (Next/Back/reset still scroll),
+        but the very first call on page load passes false. ── */
   function showStep(index, shouldScroll = true) {
     steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
     current = index;
