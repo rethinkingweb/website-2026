@@ -654,7 +654,7 @@ input, select, textarea, button { font-family: inherit; }
 }
 @media (max-width: 640px) {
   .agx { --cw: 250px; --ch: 370px; padding: 2rem 0 3rem; }
-  .agx-sub { margin-top: -.5rem; text-align: center; margin-left: auto; margin-right: auto; }
+  .agx-sub { margin-top: -.5rem; text-align: left; margin-left: auto; margin-right: auto; }
   .agx-card[data-pos="1"]  { transform: translateX(calc(var(--cw) * .72))  scale(.86) rotate(3deg); }
   .agx-card[data-pos="-1"] { transform: translateX(calc(var(--cw) * -.72)) scale(.86) rotate(-3deg); }
   .agx-card[data-pos="2"],
