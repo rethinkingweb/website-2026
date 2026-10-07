@@ -664,26 +664,25 @@ const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwPu2N
   /* ── showStep takes a shouldScroll flag.
         Default true (Next/Back/reset still scroll),
         but the very first call on page load passes false. ── */
-  function showStep(index, shouldScroll = true) {
-    steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
-    current = index;
+function showStep(index, userInitiated = true) {
+  steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
+  current = index;
 
-    if (progressFill)  progressFill.style.width = `${((index + 1) / steps.length) * 100}%`;
-    if (stepCurrentEl) stepCurrentEl.textContent = index + 1;
+  if (progressFill)  progressFill.style.width = `${((index + 1) / steps.length) * 100}%`;
+  if (stepCurrentEl) stepCurrentEl.textContent = index + 1;
 
-    btnBack.style.visibility = index === 0 ? 'hidden' : 'visible';
+  btnBack.style.visibility = index === 0 ? 'hidden' : 'visible';
 
-    const isLast = index === steps.length - 1;
-    btnNext.style.display   = isLast ? 'none' : 'inline-flex';
-    submitBtn.style.display = isLast ? 'inline-flex' : 'none';
+  const isLast = index === steps.length - 1;
+  btnNext.style.display   = isLast ? 'none' : 'inline-flex';
+  submitBtn.style.display = isLast ? 'inline-flex' : 'none';
 
+  if (userInitiated) {
     const firstField = steps[index].querySelector('input, select, textarea');
     if (firstField) firstField.focus({ preventScroll: true });
-
-    if (shouldScroll) {
-      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+}
 
   function goNext() {
     if (!validateStep(current)) return;
