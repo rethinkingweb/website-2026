@@ -89,3 +89,61 @@ async function loadPage(page, shouldScroll = false) {
 
   loadPage(1);
 })();
+/* ══════════════════════════════
+     2. MOBILE NAV
+  ══════════════════════════════ */
+  const burger    = document.getElementById('navBurger');
+  const mobileNav = document.getElementById('mobileNav');
+  const closeBtn  = document.getElementById('mobileClose');
+  const overlay   = document.getElementById('navOverlay');
+
+  if (burger && mobileNav) {
+    const openNav = () => {
+      mobileNav.classList.add('open');
+      if (overlay) overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      burger.setAttribute('aria-expanded', 'true');
+      mobileNav.setAttribute('aria-hidden', 'false');
+    };
+    const closeNav = () => {
+      mobileNav.classList.remove('open');
+      if (overlay) overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      burger.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+    };
+
+    burger.addEventListener('click', openNav);
+    if (closeBtn) closeBtn.addEventListener('click', closeNav);
+    if (overlay)  overlay.addEventListener('click', closeNav);
+
+    // Close on plain anchor links only (not accordion buttons)
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+  }
+
+  /* ══════════════════════════════
+     3. MOBILE ACCORDION
+  ══════════════════════════════ */
+  document.querySelectorAll('.mob-accordion__btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const accordion = btn.closest('.mob-accordion');
+      const panel     = accordion.querySelector('.mob-accordion__panel');
+      const isOpen    = accordion.classList.contains('open');
+
+      // Close all first
+      document.querySelectorAll('.mob-accordion').forEach(a => {
+        a.classList.remove('open');
+        a.querySelector('.mob-accordion__btn').setAttribute('aria-expanded', 'false');
+        const p = a.querySelector('.mob-accordion__panel');
+        if (p) p.style.maxHeight = null;
+      });
+
+      // Toggle clicked one
+      if (!isOpen) {
+        accordion.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
