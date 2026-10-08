@@ -8,16 +8,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Sync WooCommerce orders, customers, and multi-location stock with NetSuite. Fixed-price integration consulting from a WooCommerce development agency." />
   <title>WooCommerce + platform migration | RethinkingWeb</title>
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/sap-business-one-integration.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/woocommerce-pairings.css" />
-  <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="canonical" href="https://www.rethinkingweb.com/woocommerce-platform-migration" />
-   
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="canonical" href="https://www.rethinkingweb.com/structural-engineering-pdf-chatbot" />
+  <base href="/">
+  <link rel="stylesheet" href="css/case2.css" />
+
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -48,54 +46,6 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
-   
-  <style>
-    .grecaptcha-badge {
-      visibility: hidden;
-    }
-  </style>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "NetSuite + 3PL / WMS Integration",
-      "serviceType": "Warehouse and Logistics Integration Consulting",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "RethinkingWeb",
-        "url": "https://rethinkingweb.com/",
-        "areaServed": ["US", "GB", "AU", "IN"]
-      },
-      "description": "Connect NetSuite to your 3PL or WMS \u2014 orders out, shipment confirmations and inventory back. Fixed-price, platform-agnostic integration consulting.",
-      "url": "https://rethinkingweb.com/netsuite-3pl-wms-integration.html"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rethinkingweb.com/index.html" },
-        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://rethinkingweb.com/" },
-        { "@type": "ListItem", "position": 3, "name": "NetSuite", "item": "https://rethinkingweb.com/netsuite.html" },
-        { "@type": "ListItem", "position": 4, "name": "3PL / WMS" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Which 3PLs and WMS platforms do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any provider that exposes an API, an EDI document set, or scheduled file drops. We build to the provider's published spec rather than to a fixed list of supported partners." } },
-        { "@type": "Question", "name": "How do shipment confirmations get back into NetSuite?", "acceptedAnswer": { "@type": "Answer", "text": "The provider's confirmation creates a NetSuite item fulfilment with cartons, weights, and tracking numbers, which then drives customer notification and invoicing." } },
-        { "@type": "Question", "name": "Can inventory in NetSuite stay accurate against the warehouse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled on-hand snapshots and posted adjustments keep quantities aligned, and variances are surfaced rather than silently overwritten." } },
-        { "@type": "Question", "name": "What happens with short ships and split shipments?", "acceptedAnswer": { "@type": "Answer", "text": "They are mapped explicitly. Partial fulfilments post against the correct lines, remaining quantities stay open, and split shipments create separate fulfilments with their own tracking." } },
-        { "@type": "Question", "name": "How much does a NetSuite + 3PL/WMS integration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects run $5,000 to $20,000 depending on transport, warehouse count, and exception handling. See the cost table above for a full breakdown." } },
-        { "@type": "Question", "name": "Can you take over an integration when we switch 3PLs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Provider migrations are a regular part of our practice \u2014 we map the new spec, run both in parallel where possible, and cut over without losing open orders." } }
-      ]
-    }
-  ]
-}
-  </script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1147,11 +1097,10 @@
       </div>
     </div>
   </footer>
+  <script src="/js/case2.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>emailjs.init("5A5LhPvEmbexDOWIK");</script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
-  <script src="../js/sap-business-one-integration.js"></script>
-  <script src="../js/theme.js"></script>
+  <script src="/js/form-handler.js"></script>
 </body>
 
 </html>
